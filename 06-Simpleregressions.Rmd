@@ -1,0 +1,263 @@
+# Simple regressions
+
+```{r include=FALSE}
+data <- cars
+x <- cars$speed
+y <- cars$dist
+d <- rep(0,50)
+```
+
+## Basics regressions
+
+Regressions, correlation and dummy's
+
+Y = Dependent  
+X = Explanatory
+
+**Correlation**
+
+```{r}
+cor(x, y)
+```
+
+**Creating the regression:**
+
+1. To plot the regression model
+2. Evaluates the coefficient of the model
+3. Only the first colum estimattion 
+
+```{r}
+model <- lm(y~x, data = data)
+summary(model)$coef
+est <- summary(model)$coef[,1]
+```
+
+
+### Summarizing regressions:
+
+1. Using stargazer package
+
+```{r}
+library(stargazer)
+
+stargazer(lm(y~x, data=data), type="text")
+
+# Multiple models adjacent
+
+model1 <- lm(y~x, data=data)
+model2 <- lm(x~y, data=data)
+
+stargazer(model1, model2, type="text")
+
+```
+
+2. Using summary function:
+
+```{r}
+summary(lm(y~x))
+```
+
+Regressions
+
+**Plotting regression**
+
+```{r}
+plot(y~x,data=data, 
+     main="Title",
+     ylab="yname",
+     xlab="xname"
+     )
+```
+
+**Including regression line:**
+
+```{r}
+plot(y~x,data=data, 
+     main="Title",
+     ylab="yname",
+     xlab="xname"
+     )
+abline(lm(y~x, data=data), col="blue")
+```
+
+**Confidence interval around slope**
+
+```{r}
+confint(lm(y~x), level=0.95)
+```
+
+**Sub-sampling regression**
+
+Specify dimensions [,]. 
+First is row. Column, second. 
+
+1. Selects the rows where age is larger than 5.
+2. Lower than 5.
+
+```{r}
+sub1 <- summary(lm(y~x, data=data["speed">=5,]))
+sub2 <- summary(lm(y~x, data=data["speed"<=5,]))
+```
+
+###Dummy variables, diff in means
+
+
+### Regression + dummy
+
+Y = Constant0 + B0 * X - Diff in means + B1 * variable1*2
+
+
+**Omitting the intercept:**
+
+Shows the means separately and not the difference between means. Tests whether the expected counts are different from zero. 
+
+```{r}
+lm(y ~ x - 1, data = data)
+```
+
+Reorders group, to specific value to be first.
+ 
+ variable2 <- relevel(variable, "C")
+
+## Prediction  
+
+``` {r}
+model <- lm(y~x)
+
+newdata <- data.frame(variablename = c(1:50))
+pred <- predict(model, newdata = newdata)
+```
+
+**Prediction confidence interval:**
+
+1. One value
+2. Multiple values from a existing data frame
+
+```{r}
+pred1 <- predict(model, data.frame(valuename = x), interval = "confidence", level=0.95)
+pred2 <- predict(model, newdata = newdata, interval = "confidence", level=0.95)
+```
+
+**Prediction interval**
+
+1. One value
+2. Multiple values from a existing data frame
+
+```{r}
+pred1 <- predict(model, data.frame(valuename = x), interval="predict",level=0.95)
+pred2 <- predict(model, newdata, interval="predict",level=0.95)
+```
+
+
+### Confidence and prediction plotting
+
+Adds: observed values, fitted line, conf interval, predicted interval
+
+```{r}
+library(HH)
+fit <- lm(y~x, data = data)
+ci.plot(fit)
+```
+
+###Prediction with dummy variables
+
+Prediction = 𝛼1+𝛼2Constant Dummy+𝛽1𝑆𝑖𝑧𝑒+𝛽2Slope Dummy
+
+###Prediction intervals examples
+
+**Prediction**
+
+```{r}
+fit <- lm(y ~ x + d + d, data = data)
+
+pred <- predict(fit, data.frame(VariableX = c(10), Dummy = c(1), Slopedummy = c(10)) )
+```
+ 
+**Confidence interval prediction**  
+
+```{r}
+fit <- lm(y ~ x + d + d, data = data)
+
+pred <- predict(fit, data.frame(VariableX = c(10), Dummy = c(1), Slopedummy = c(10), interval="confidence"))
+```  
+
+**Prediction interval**
+
+```{r}
+fit <- lm(y ~ x + d + d, data = data)
+
+pred <- predict(fit, data.frame(VariableX = c(10), Dummy = c(1), Slopedummy = c(10), interval="predict"))
+```
+
+
+## Data problems
+
+**Residual plot**
+
+```{r}
+# residual.plots(fitted(fit), resid(fit), sigma.hat(fit), main="Title")
+```
+
+**Influential measure test**
+
+```{r}
+im <- influence.measures(fit)
+```
+
+
+###Multicollinearity
+
+1. F-test
+2. Variance inflation factors greater than 10
+
+```{r}
+fit <- lm(y~x + d, data = data)
+
+anova(fit)
+
+vif(fit)
+```
+
+### ANOVA
+
+**One-way:** one value
+
+```{r}
+res.aov <- aov(y ~ x, data = data)
+summary(res.aov)
+```
+
+**Two-way:** more than two factors 
+
+```{r}
+res.aov <- aov(y ~ x + d, data = data)
+summary(res.aov)
+```
+
+With interaction
+
+```{r}
+res.aov <- aov(y ~ x * d, data = data)
+summary(res.aov)
+```
+
+**Three-way**
+
+1. Three way
+2. With interaction
+
+```{r}
+summary(aov(y ~ x + d, data=data))
+summary(aov(y ~ x + d, data=data))
+```
+
+**MANOVA**: Multiple factors
+
+1. Test in difference
+2. Test separately
+
+
+test_manova <- manova(cbind(y, d) ~ x, data = data)
+summary(test_manova)
+summary.aov(test_manova)
+

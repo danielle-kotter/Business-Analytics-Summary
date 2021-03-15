@@ -80,7 +80,7 @@ P(S | P) & P(NS | P)
 BayesTheorem(prS, prNS)
 ```
 
-### Discrete Probablity
+## Discrete Probablity
 
 #### Uniform discrete probability distribution
 

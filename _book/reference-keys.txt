@@ -23,3 +23,12 @@ final-words
 uniform-discrete-probability-distribution
 binomial-distribution
 poisson-distribution
+simple-regressions
+summarizing-regressions
+regression-dummy
+prediction
+data-problems
+anova
+basics-regressions
+introduction
+confidence-and-prediction-plotting

@@ -2,15 +2,13 @@
 
 **Mathmatical values**
 
-```{r}
 $\mu$ <- Population mean   
 $\sigma$ <- Population sd   
 $\bar{x}$ <- Sample mean   
 ${e}$ <- Standard error 
 $\pi$ <- pie 
 $\ge$ <- Bigger than     
-$\le$ <- Smaller than  
-```
+$\le$ <- Smaller than 
 
 **Sample mean, standard deviation**
 

@@ -1,0 +1,13 @@
+name: r-summaries4
+title: R-Summaries
+username: daniellesophie_kotter
+account: daniellesophie_kotter
+server: bookdown.org
+hostUrl: https://bookdown.org/__api__
+appId: 6924
+bundleId: 36990
+url: https://bookdown.org/daniellesophie_kotter/r-summaries4/
+when: 1615827214.74624
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: 02-Basics.Rmd|03-Charts.Rmd|04-Probability.Rmd|06-Simpleregressions.Rmd|07-references.Rmd

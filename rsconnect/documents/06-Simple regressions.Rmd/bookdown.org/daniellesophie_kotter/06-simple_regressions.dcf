@@ -1,0 +1,13 @@
+name: 06-simple_regressions
+title: 06-Simple regressions
+username: daniellesophie_kotter
+account: daniellesophie_kotter
+server: bookdown.org
+hostUrl: https://bookdown.org/__api__
+appId: 6917
+bundleId: 36983
+url: https://bookdown.org/daniellesophie_kotter/06-simple_regressions/
+when: 1615825664.40636
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: 02-Basics.Rmd|06-references.Rmd
