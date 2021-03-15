@@ -1,0 +1,81 @@
+# Basics
+
+**Mathmatical values**
+
+```{r}
+$\mu$ <- Population mean   
+$\sigma$ <- Population sd   
+$\bar{x}$ <- Sample mean   
+${e}$ <- Standard error 
+$\pi$ <- pie 
+$\ge$ <- Bigger than     
+$\le$ <- Smaller than  
+```
+
+**Sample mean, standard deviation**
+
+```{r}
+mean(variable)
+sd(variable)
+```
+
+Removes values NA in a data set:
+
+```{r}
+mean(variable, na.rm = TRUE)
+sd(variable, na.rm = TRUE)
+```
+
+**Weighted mean & standard deviation**
+
+Package: "HMISC".
+
+```{r}
+weightedmean <- Xbar = wtd.mean(x,y)
+weightedsd <- SQRT(Wtd.var(X,Y))/sqrt(n)
+```
+
+**Variance**
+
+```{r}
+var(x)
+```
+
+**Tables frames & Matrixes**
+
+```{r}
+matrix(c(1,2,3,4,5,6,7,8), nrow = 4, byrow = TRUE) <- organized by row
+matrix(c(1,2,3,4,5,6,7,8), ncol = 4, byrow = FALSE) <- organized by col
+data.frame(Column1 = c(1,2,3,4,5), Column2 = c(1,2,3,4,5))
+data.table(Column1 = c(1,2,3,4,5), Column2 = c(1,2,3,4,5))
+
+as.table(matrix(c(1,2,3,4,5,6,7,8), nrow = 4))
+```
+
+```{r}
+rbind(data, newvariable)
+cbind(data, newvariable)
+
+rownames(datatable) <- c()
+colnames(datatable) <- c()
+```
+
+**Other:**
+
+```{r}
+round(value, 2) <- two decimals
+as.numeric(value)
+rep(5,5) <- repeats 5, 5 times
+percent(value) <- presents 0.25 as -> 25.00%
+describe(variable)
+fivenum(variable)
+summary(variable)
+str(variable) <- explains the variable
+```
+
+**Read excel**
+
+```{r}
+library(readxl)
+data <- read.xls("data.xlsx", stringsAsFactors = TRUE)
+```

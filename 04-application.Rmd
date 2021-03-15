@@ -1,0 +1,496 @@
+# Probability
+
+Package = "prob"
+
+```{r}
+out <- c(“Red”, “White”, “Black”, “Blue”, “Green”)
+freq <- c(1,2,3,4,5)
+s <- probspace(out,probs=freq)
+```
+
+If you toss two fair coins, what is the probability of two heads?
+
+```{r}
+space <- tosscoin(2,makespace=TRUE)
+p <- Prob(space, toss1=="H" & toss2=="H")
+```
+
+When two dice are thrown, what is the probability of a 3 followed by a 5?
+
+```{r}
+space <- rolldie(2, makespace = TRUE)
+p <- Prob(space, X1 == 3 & (X2 == 5) )
+```
+
+Sampling from an urn with or without replacement. 3 balls and sample size of 2:
+
+```{r}
+urnsamples(1:3, size = 2, replace = TRUE, ordered = TRUE)
+urnsamples(1:3, size = 2, replace = FALSE, ordered = TRUE)
+urnsamples(1:3, size = 2, replace = FALSE, ordered = FALSE)
+urnsamples(1:3, size = 2, replace = TRUE, ordered = FALSE)
+```
+
+### Bayes Theorem
+
+**Unconditional probability:**
+
+P(S) and P(NS)
+Success or no success
+
+```{r}
+prS <- c(0.4, 0.6)
+```
+
+**Conditional probability:**
+
+P(P | S ) and P( P | NS)
+Predicted given it is successful  
+Predicted given it is not successful
+
+```{r}
+prNS <- c(0.6, 0.2)
+```
+
+**Bayes prob, posterior probabilities**  
+P(S | P) & P(NS | P)
+
+```{r}
+BayesTheorem(prS, prNS)
+```
+
+
+## Discrete Probablity
+
+###Uniform discrete probability distribution
+
+1. Sample space with a set probability. Size = amount of tries
+2. Density function: Individual probability. F.E. Getting a 4
+3. Cumulatative density: Uniform for a certain value distribution. F.E. 4 or less. 4 or more? 1-punif 3
+4. Inverse cumulative density: Uniform for a certain probability ( up until a certain value). F.E. up to 25% of the tries
+
+```{r}
+1. sample(p, size=n, replace=TRUE)
+2. dunif(X, min = a, max = b)
+3. punif(X, min=0, max=6)
+4. qunif(X, min=0, max=6)
+```
+***Default = # or less. For # or more do: 1-probability of # or less*** 
+
+
+###Binomial distribution
+
+1. Binomial for a specific value for a certain sample. F.E. 2 from the sample are successful.
+2. Binomial for a certain distribution of the sample. F.E. At most 2 in the sample are successful. Or 5 or more. 
+3. Binomial for a certain percentage of the  sample. F.E. 25% of the sample has x value or less. 
+4. Difference between two binomial values. F.E. Prob there are between 4 and 5 of the trials successful.
+
+```{r}
+1. dbinom(x, size = n, prob = y)	
+2. pbinom(x, size = n, prob =y)	
+3. qbinom(p, size = n, prob =y)	
+4. diff(pbinom(c(X,Y), size = n, prob =y)
+```
+
+***Default = # or less (left area of the distribution). For # or more do: 1-probability of # or less*** 
+
+###Poisson distribution
+
+**Expected value =** n * p = LAMDA
+
+1. Poisson for a certain value. Lambda = n*p. F.E. Prob of having a 5
+2. Poisson for a certain value distribution. F.E. Prob of having less than 5. More than 5? = 1-	Ppois(4, lambda)
+3. Poisson for a certain probability to capture a certain value. F.E. Poisson value for 25%.
+
+```{r}
+1. dpois(x,lambda)	
+2. ppois(x, lambda)	
+3. qpois(x,lambda)
+```
+
+***Default = # or less (left area of the distribution). For # or more do: 1-probability of # or less*** 
+
+
+### The normal distribution
+
+**Empirical rule**
+
+For all normal distributions: 68-95-99.7 rule
+
+99.7% of observations are located between: -3 mu and 3  
+95% of observations are located between: -2 mu 2  
+68% of observations are located between: -1 mu 1
+
+**Normal distribution**
+
+**Z-value**
+
+```{r}
+z <- (x-mean)/sd
+```
+
+1. Normal distribution for a certain proportion. Pi = population proportion mean%.
+2. Normal distribution for a certain value distribution. F.E. Prob of value above 5. FALSE
+	Prob less than 9. TRUE
+3. Normal distribution for a certain probability to capture a certain value. F.E. Value that is given at 25% point. 
+4. Difference between two values on the normal distribution. F.E. between 5 and 10. 
+
+```{r}
+1. pnorm(X, pi, sd, lower.tail = FALSE)
+2. pnorm(X, mean = mean, sd = sd, lower.tail = FALSE)
+3. qnorm(p, mean = mean, sd = sd, lower.tail = FALSE) 
+4. diff(pnorm(c(X,Y), mean = mean, sd = sd, lower.tail = FALSE)
+```
+
+lower.tail = TRUE: The area of the left side of the slope  
+lower.tail = FALSE: The area of the right side of the slope
+
+**Confidence interval for normal distribution**
+
+```{r}
+z.test(x, sd=sigma)
+binconf(x = x, n = n) <- proportions
+t.test(variable) <- t-distribution for conf.inv
+```
+
+### Plotting the normal distribution
+
+"With mean = 3 and standard deviation = 7  
+Limits: mean +/- 3 * standard deviation  = 3*7 = 21 
+Lower limit = 3 – 21 = -18  
+Upper limit = 3 + 21 = 24"  
+
+Example:
+
+```{r}
+x <- seq(15, 45, length=50)
+y <- dnorm(x, 30, 5)
+plot(x,y,type="l",lwd=2,col="black")
+
+x <- seq(15,35,length=100)
+y <- dnorm(x, 30,5 )
+polygon(c(15,x,35),c(0,y,0), density = c(15, 35), col = "black")
+
+p <- pnorm(35, mean = 30, sd = 5,lower.tail = TRUE)
+text(0,0.15,"68%")
+```
+
+### Binomial
+
+It will be possible to use the Normal distribution as an approximation to the Binomial if: n is large and p > 0.1 
+
+
+1. Density function (individual probability). 
+2. Cumulative density (between certain values). 
+3. Difference between two binomial values
+4. Inverse cumulative density. For a certain prob. 
+
+```{r}
+1. dbinom(x, mean, sd, lower.tail = FALSE)
+2. pbinom(x, mean, sd, lower.tail = FALSE)
+3. diff(pbinom(c(X,Y), mean = mean, sd = sd, lower.tail = FALSE)
+4. qbinom(p, mean, sd, lower.tail = FALSE)
+```
+
+
+## Samples, estimation & confidence intervals
+
+
+**The standard error of the sampling distribution of the mean**
+
+```{r}
+se <- sigma / sqrt(n)
+```
+
+**Probability sample**
+
+1. To find the probability that X is larger than mu
+2. To find the probability that X is smaller than mu
+
+```{r}
+p <- pnorm(X, mu, se, lower.tail = TRUE) 
+p <- pnorm(X, mu, se, lower.tail = FALSE)
+```
+
+**Probability proportions sample**
+
+```{r}
+sd <- sqrt((pi*(n-pi))/n)
+z <- (p - pi)/sd
+
+pnorm(X, pi, se, lower.tail =FALSE)
+```
+
+**Sample size**
+
+Package = "samplingbook".
+
+Provides the sample size needed to have a 95% confidence to estimate the population mean. 
+Level = confidence level. Se is required standard error. 
+
+```{r}
+sample.size.mean(se, sigma, level=0.95)
+```
+
+## Significance level
+
+### Critical values
+
+**Critical value for normal distribution, sample > 30**  
+
+1. Two-sided: Critical value, 5% significance level = 1.96
+2. Two-sided: Critical value, 1% significance level = 2.58
+3. Two-sided: Critical value, 10% significance level = 1.96
+4. One-sided: Critical value, 5% significance level = 1.64
+5. One-sided: Critical value, 1% significance level = 2.33
+6. One-sided: Critical value, 10% significance level = 1.28
+
+```{r}
+cv <- qnorm(0.975)
+cv <- qnorm(0.995)
+cv <- qnorm(0.95)
+
+cv <- qnorm(0.95)
+cv <- qnorm(0.99)
+cv <- qnorm(0.90)
+```
+
+**Critical values t-distribution**
+
+1. One-sided: critical value at a 5% significance level
+2. One-sided: critical value at a 10% significance level
+3. One-sided: critical value at a 1% significance level
+4. Two-sided: critical value at a 5% significance level
+5. Two-sided: critical value at a 10% significance level
+6. Two-sided: critical value at a 1% significance level
+
+```{r}
+cv <- qt(0.95, df) 
+cv <- qt(0.90, df) 
+cv <- qt(0.99, df)
+
+cv <- qt(0.975, df)
+cv <- qt(0.95, df) 
+cv <- qt(0.995, df)
+```
+
+**Confidence interval**
+
+```{r}
+cv <- cv
+mu <- mu
+sd <- sd
+se <- sd / (sqrt(n))
+n <- n
+
+conf_int95 <- cv * sd / (sqrt(n))
+mu_plus <- mu + conf_int95
+mu_min <- mu - conf_int95
+```
+
+
+**Large sample significance testing**
+
+Package: "BSDA".
+
+1. Two-sided
+2. One-sided: X is greater than the population mean
+3. One-sided: X is less than the population mean
+
+```{r}
+1. tsum.test(mean.x = X, s.x = sd, n.x = n, mu = mu, alternative = "two.sided", var.equal = TRUE) 
+
+2. tsum.test(mean.x = X, s.x = sd, n.x = n, mu = mu, alternative = "greater", var.equal = TRUE) 
+
+3. tsum.test(mean.x = X, s.x = sd, n.x = n, mu = mu, alternative = "less", var.equal = TRUE) 
+```
+
+**For proportions:**
+
+```{r}
+prop.test(x= x,n = n,p = p,correct=TRUE,alternative="two.sided")
+```
+Same goes for above: two.sided, greater, less
+
+
+### Test of equality - two samples
+
+H_0 <- $\mu1 = \mu2$ or $(\mu1 - \mu2) = 0$  
+H_a <- $\mu1 \neq \mu2$ or $\mu1 - \mu2 \neq 0$
+
+
+Difference in two means with a certain confidence level confidence interval. Default = 95%
+
+```{r}
+tsum.test(mean.x = X, s.x = sd, n.x = n, mean.y = X, s.y = sd, n.y = n, var.equal=FALSE)
+```
+
+2-sample test for equality of proportions without continuity correction.
+
+```{r}
+data <- matrix(c(values), byrow=TRUE, nrow=2)  
+prop.test(data, correct=FALSE, alternative="greater")
+```
+
+### Non-Parametric testing
+
+
+#### Contengency table / frequencies
+
+Obtain contingency table
+
+```{r}
+dist <- table(variable)
+```
+
+### Chi-square
+
+1. Chi-square test
+2. Get the expected value
+3. Probability for chi-square 
+
+```{r}
+data <- matrix(c(27,373,33,567),byrow=TRUE,nrow=2)
+chisq.test(data,correct=FALSE)
+
+chisq.test(data,correct=FALSE)$expected
+
+prop.table(chisq.test(data,correct=FALSE)$expected,1)
+prop.table(chisq.test(data,correct=FALSE)$expected,2)
+```
+
+Degree of freedom = # of row - 1 * # of columns = fixed 
+
+***All expected frequencies must be above five! If not, categories must be combined!***
+
+
+### Goodness of fit
+
+**Uniform:**
+
+Degree of freedom =  number of categories - number of parameters - 1.
+
+```{r}
+x <- c(frquencies)
+p <- c(rep(1/5,n))
+chisq.test(x,p=p)
+```
+
+***All expected frequencies must be above five! If not, categories must be combined!***
+
+
+**Binomial:**
+
+Package "actuar".
+
+dbinom(x, size = n, prob = y)	
+
+For example:
+
+```{r}
+cj <- c(-0.5, 0.5, 1.5, 2.5, 3.5, 4.5, 5.5)
+
+#or
+
+cj <- seq(from = -0.5, to=5, by=1)
+
+nj <- c(15,20,20,18,13,10)
+data <- grouped.data(Group = cj, Frequency = nj)
+p <- mean(data)/5
+pr <-c(dbinom(0,5,p),dbinom(1,5,p),dbinom(2,5,p),dbinom(3,5,p),dbinom(4,5,p),dbinom(5,5,p))
+
+nj2 <- c(35,20,18,23)
+pr2 <- c(dbinom(0,5,p)+dbinom(1,5,p),dbinom(2,5,p),dbinom(3,5,p),dbinom(4,5,p)+dbinom(5,5,p))
+
+chisq.test(nj2,p=pr2)
+```
+
+***All expected frequencies must be above five! If not, categories must be combined!***
+
+**Poisson**
+
+Degree of freedom = number of categories - number of parameters - 1.
+
+NOTE! Distribution goes to infinity. Counter for one value that is X or more. 1 - until X. 
+
+Example:
+
+```{r}
+cj <- c(-0.5, 0.5, 1.5, 2.5, 3.5, 4.5, 5.5)
+
+or
+
+cj <- seq(from = -0.5, to=6, by=1)
+nj <- c(16, 30, 37, 7, 10)
+data <- grouped.data(Group = cj, Frequency = nj)
+m <- mean(data)
+
+pr <- c(dpois(0, m),dpois(1,m),dpois(2, m), dpois(3, m), dpois(4, m), + (1-ppois(4,m)) )
+
+chisq.test(nj, p = pr)
+```
+
+**Normal distribution**
+
+Example:
+
+```{r}
+cv <- qchisq(0.90, 2)
+
+cj <- c(0, 1, 3, 10, 15, 30)
+nj <- c(16, 30, 37, 7, 10)
+data <- grouped.data(Group = cj, Frequency = nj) 
+m <- mean(data)
+s <- sqrt(emm(data,2))
+
+pr <- c(pnorm(1,m,s), diff(pnorm(c(1,3),m,s)), diff(pnorm(c(3,10),m,s)), diff(pnorm(c(10,15),m,s)), 1 - pnorm(c(15),m,s) )
+         
+chisq.test(nj,p=pr)
+```
+
+###Mann-whitney test
+
+N = Number of pairs - number of draws
+
+**For small tests**
+
+c1 values sample 1  
+c2 values sample 2  
+
+```{r}
+wilcox.text(c1,c2)
+```
+
+**Larger sample test > 10**
+
+You can use a approximation based on the normal distribution. Therefore critical values will be 1.96 for this two sided test.
+
+
+###Wilcoxon test
+
+Two options  
+	- Do not predict direction --> two sided  
+	- Predict direction --> one sided  
+
+```{r}
+wilcox.test(w1,w2,paired=TRUE,correct=FALSE)
+```
+
+###Run test
+
+Package "randtests".
+
+```{r}
+pers <- c(0,1,1,0,0,0,0,1,1,0,1)
+pers.f <- factor(pers,labels=c("Male","Female"))
+runs.test(pers)
+```
+
+### P-value
+
+Find p value: Probability of getting this test statistic or more:
+
+```{r}
+pchisq(ts,df,lower.tail=FALSE)
+```
+

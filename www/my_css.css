@@ -1,0 +1,57 @@
+h1 {
+  color: #dd4132;
+}
+
+h2 {
+  font-size: 12px;
+}
+
+h3 {
+  color: #1B0C84;
+}
+
+body{ /* Normal  */
+      font-size: 12px;
+      font-family: Arial;
+}
+
+h5 {
+  /* Normal  */
+  text-align: center;
+}
+      
+p, h1, h2, h3, h4, h5, h6 {
+  font-family: Arial;
+}
+
+.watch-out {
+  background-color: #f6f6f6;
+}
+
+table {
+ border-style: solid;
+ border-color: black;
+ border-width: 1px;
+ border-bottom: 1px solid black;
+ text-align: center;
+ 
+}
+
+th {
+ border-style: solid;
+ border-color: black;
+ border-width: 1px;
+ text-align: center;
+}
+
+td {
+ border-style: solid;
+ border-color: #ddd;
+ border-width: 1px;
+}
+
+@page  {
+  @bottom-center {
+    content: counter(page);
+  }
+}
