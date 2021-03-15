@@ -20,3 +20,6 @@ chi-square
 goodness-of-fit
 p-value
 final-words
+uniform-discrete-probability-distribution
+binomial-distribution
+poisson-distribution

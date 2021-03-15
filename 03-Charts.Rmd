@@ -3,6 +3,7 @@
 ```{r}
 library(gridExtra)
 library(hrbrthemes)
+library(ggplot2)
 
 paletteDani <- c( "#ffa500", "#DAF7A6", "#5F7992", "#69b3a2", "#ffd561", "#ee5c42", "#C8A2C8", "#5c3170", "#990000", "#C70039", "#34495E", "#909497")
 ```
