@@ -29,7 +29,8 @@ packages = c(
   "semPlot",
   "lavaan",
   "hrbrthemes",
-  "gridExtra"
+  "gridExtra",
+  "prob"
 )
 
 invisible(

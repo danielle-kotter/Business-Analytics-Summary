@@ -1,6 +1,64 @@
+---
+title: "Summary and examples of r-code"
+date: "`r format(Sys.Date(), '%d %B, %Y')`"
+site: bookdown::bookdown_site
+documentclass: book
+bibliography:
+- book.bib
+- packages.bib
+biblio-style: apalike
+link-citations: yes
+description: This is a summary of r code learned throughout several courses of my
+  master in management.
+---
+
+# Prerequisites
+
+Placeholder
+
+
+
+<!--chapter:end:index.Rmd-->
+
+# Introduction {#intro}
+
+You can label chapter and section titles using `{#label}` after them, e.g., we can reference Chapter \@ref(intro). If you do not manually label them, there will be automatic labels anyway, e.g., Chapter \@ref(methods).
+
+Figures and tables with captions will be placed in `figure` and `table` environments, respectively.
+
+```{r nice-fig, fig.cap='Here is a nice figure!', out.width='80%', fig.asp=.75, fig.align='center'}
+par(mar = c(4, 4, .1, .1))
+plot(pressure, type = 'b', pch = 19)
+```
+
+Reference a figure by its code chunk label with the `fig:` prefix, e.g., see Figure \@ref(fig:nice-fig). Similarly, you can reference tables generated from `knitr::kable()`, e.g., see Table \@ref(tab:nice-tab).
+
+```{r nice-tab, tidy=FALSE}
+knitr::kable(
+  head(iris, 20), caption = 'Here is a nice table!',
+  booktabs = TRUE
+)
+```
+
+You can write citations, too. For example, we are using the **bookdown** package [@R-bookdown] in this sample book, which was built on top of R Markdown and **knitr** [@xie2015].
+
+<!--chapter:end:01-intro.Rmd-->
+
+
+# Basics
+
+Placeholder
+
+
+
+<!--chapter:end:02-Basics.Rmd-->
+
 # Charts templates
 
 ```{r}
+library(gridExtra)
+library(hrbrthemes)
+
 paletteDani <- c( "#ffa500", "#DAF7A6", "#5F7992", "#69b3a2", "#ffd561", "#ee5c42", "#C8A2C8", "#5c3170", "#990000", "#C70039", "#34495E", "#909497")
 ```
 
@@ -99,8 +157,6 @@ ggplot(data = ToothGrowth, aes(y = len, x = supp, colour=factor(supp))) +
 
 **Arrange charts next to eachother on a page**
 
-package = "gridExtra"
-
 ```{r}
 chart1 <- ggplot(data=ToothGrowth, aes(x="", y=len, fill="")) +
     geom_boxplot(fill="#69b3a2", outlier.colour="red", outlier.shape=8, outlier.size=4) +
@@ -130,3 +186,44 @@ chart2 <- ggplot(data=ToothGrowth, aes(x="", y=len, fill="")) +
 
 grid.arrange(chart1, chart2, nrow=1, widths=c(0.9,1))
 ```
+
+<!--chapter:end:03-Charts.Rmd-->
+
+
+# Probability
+
+Placeholder
+
+
+#### Bayes Theorem
+### Discrete Probablity
+#### Uniform discrete probability distribution
+#### Binomial distribution
+#### Poisson distribution
+#### The normal distribution
+#### Plotting the normal distribution
+#### Binomial
+## Samples, estimation & confidence intervals
+## Significance level
+### Critical values
+### Test of equality - two samples
+### Non-Parametric testing
+#### Contengency table / frequencies
+### Chi-square
+### Goodness of fit
+### P-value
+
+<!--chapter:end:04-Probability.Rmd-->
+
+# Final Words
+
+We have finished a nice book.
+
+<!--chapter:end:05-summary.Rmd-->
+
+`r if (knitr::is_html_output()) '
+# References {-}
+'`
+
+<!--chapter:end:06-references.Rmd-->
+
