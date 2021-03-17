@@ -1,5 +1,5 @@
 ---
-title: "Summary and examples of r-code"
+title: "R-coding Cheatsheets & Summary"
 date: "`r format(Sys.Date(), '%d %B, %Y')`"
 site: bookdown::bookdown_site
 documentclass: book
