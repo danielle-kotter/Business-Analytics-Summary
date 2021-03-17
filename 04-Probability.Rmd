@@ -1,13 +1,15 @@
 # Probability
 
-```{r}
+```{r, include=FALSE}
 library(prob)
-library(LaplacesDemon)
+library(LaplacesDemon) # Bayes Theorem
+library(BSDA) #tsumtest
+library(actuar) 
 ```
 
 ```{r, include=FALSE}
 X = 15
-x = 20
+x = 15
 p = 0.5
 n = 30
 a = 10
@@ -16,34 +18,40 @@ mu = 20
 se = 15
 Y = 10
 y = 5
-lambda = 5  
+lambda = 5
+sigma = 4
 pi = 3
 ts = 3
 df = 4
+sd = 2
 ```
-
 
 ```{r}
 out <- c("Red", "White", "Black", "Blue", "Green")
 freq <- c(1,2,3,4,5)
-s <- probspace(out, probs=freq)
+s <- probspace(out, probs = freq)
+print(s)
 ```
 
-If you toss two fair coins, what is the probability of two heads?
+1. If you toss two fair coins, what is the probability of two heads?
 
 ```{r}
 space <- tosscoin(2, makespace = TRUE)
 p <- Prob(space, toss1 == "H" & toss2 == "H")
 ```
 
-When two dice are thrown, what is the probability of a 3 followed by a 5?
+*The probability is: `r p`*
+
+2. When two dice are thrown, what is the probability of a 3 followed by a 5?
 
 ```{r}
 space <- rolldie(2, makespace = TRUE)
 p <- Prob(space, X1 == 3 & (X2 == 5) )
 ```
 
-Sampling from an urn with or without replacement. 3 balls and sample size of 2:
+*The probability is: `r round(p, 2)`*
+
+3. Sampling from an urn with or without replacement. 3 balls and sample size of 2:
 
 ```{r}
 sample1 <- urnsamples(1:3, size = 2, replace = TRUE, ordered = TRUE)
@@ -52,7 +60,9 @@ sample3 <- urnsamples(1:3, size = 2, replace = FALSE, ordered = FALSE)
 sample4 <- urnsamples(1:3, size = 2, replace = TRUE, ordered = FALSE)
 ```
 
-#### Bayes Theorem
+------------------------------------------------------------------------
+
+## Bayes Theorem
 
 **Unconditional probability:**
 
@@ -80,13 +90,15 @@ P(S | P) & P(NS | P)
 BayesTheorem(prS, prNS)
 ```
 
+------------------------------------------------------------------------
+
 ## Discrete Probablity
 
-#### Uniform discrete probability distribution
+### Uniform discrete probability distribution
 
 1. Sample space with a set probability. Size = amount of tries
 2. Density function: Individual probability. F.E. Getting a 4
-3. Cumulatative density: Uniform for a certain value distribution. F.E. 4 or less. 4 or more? 1-punif 3
+3. Cumulative density: Uniform for a certain value distribution. F.E. 4 or less. 4 or more? 1-punif 3
 4. Inverse cumulative density: Uniform for a certain probability ( up until a certain value). F.E. up to 25% of the tries
 
 ```{r, warning = FALSE, include = FALSE}
@@ -95,10 +107,10 @@ two <- dunif(X, min = a, max = b)
 three <- punif(X, min = 0, max = 6)
 four <- qunif(X, min = 0, max = 6)
 ```
+
 ***Default = # or less. For # or more do: 1-probability of # or less*** 
 
-
-#### Binomial distribution
+### Binomial distribution
 
 1. Binomial for a specific value for a certain sample. F.E. 2 from the sample are successful.
 2. Binomial for a certain distribution of the sample. F.E. At most 2 in the sample are successful. Or 5 or more. 
@@ -111,26 +123,28 @@ two <- pbinom(x, size = n, prob = y)
 three <- qbinom(p, size = n, prob = y)	
 four <- diff(pbinom(c(X,Y), size = n, prob = y))
 ```
-***Default = # or less (left area of the distribution). For # or more do: 1-probability of # or less*** 
 
-#### Poisson distribution
+***Default = # or less (left area of the distribution). For # or more do: 1-probability of # or less***
 
-**Expected value =** n * p = LAMDA
+
+### Poisson distribution
+
+**Expected value =** $n * p = LAMDA$
 
 1. Poisson for a certain value. Lambda = n*p. F.E. Prob of having a 5
 2. Poisson for a certain value distribution. F.E. Prob of having less than 5. More than 5? = 1-	Ppois(4, lambda)
 3. Poisson for a certain probability to capture a certain value. F.E. Poisson value for 25%.
 
-```{r}
-one <- dpois(x,lambda)	
-two <- ppois(x, lambda)	
+```{r, warning=FALSE}
+one <- dpois(x,lambda)
+two <- ppois(x,lambda)	
 three <- qpois(x,lambda)
 ```
 
 ***Default = # or less (left area of the distribution). For # or more do: 1-probability of # or less*** 
 
 
-#### The normal distribution
+### The normal distribution
 
 **Empirical rule**
 
@@ -145,7 +159,8 @@ For all normal distributions: 68-95-99.7 rule
 **Z-value**
 
 ```{r}
-z <- (x - mean) / sd
+# z <- (x - mean) / sd. For example:
+(11 - 10) / 2
 ```
 
 1. Normal distribution for a certain proportion. Pi = population proportion mean%.
@@ -156,9 +171,9 @@ z <- (x - mean) / sd
 
 ```{r}
 one <- pnorm(X, pi, sd, lower.tail = FALSE)
-two <- pnorm(X, mean = mean, sd = sd, lower.tail = FALSE)
-three <- qnorm(p, mean = mean, sd = sd, lower.tail = FALSE) 
-four <- diff(pnorm(c(X,Y), mean = mean, sd = sd, lower.tail = FALSE))
+two <- pnorm(X, mu, sd, lower.tail = FALSE)
+three <- qnorm(p, mu, sd, lower.tail = FALSE) 
+four <- diff(pnorm(c(X,Y), mu, sd, lower.tail = FALSE))
 ```
 
 lower.tail = TRUE: The area of the left side of the slope  
@@ -166,11 +181,9 @@ lower.tail = FALSE: The area of the right side of the slope
 
 **Confidence interval for normal distribution**
 
-
 z.test(x, sd=sigma)
 binconf(x = x, n = n) <- proportions
 t.test(variable) <- t-distribution for conf.inv
-
 
 #### Plotting the normal distribution
 
@@ -204,16 +217,16 @@ It will be possible to use the Normal distribution as an approximation to the Bi
 3. Difference between two binomial values
 4. Inverse cumulative density. For a certain prob. 
 
-```{r}
-# 1. dbinom(x, mean, sd, lower.tail = FALSE)
-# 2. pbinom(x, mean, sd, lower.tail = FALSE)
-# 3. diff(pbinom(c(X,Y), mean = mean, sd = sd, lower.tail = FALSE)
-# 4. qbinom(p, mean, sd, lower.tail = FALSE)
+```{r, warning = FALSE}
+one <- dbinom(x, mu, sd)
+two <- pbinom(x, mu, sd, lower.tail = FALSE)
+three <- diff(pbinom(c(X,Y), mu, sd, lower.tail = FALSE))
+four <- qbinom(p, mu, sd, lower.tail = FALSE)
 ```
 
+------------------------------------------------------------------------
 
 ## Samples, estimation & confidence intervals
-
 
 **The standard error of the sampling distribution of the mean**
 
@@ -237,8 +250,9 @@ p <- pnorm(X, mu, se, lower.tail = FALSE)
 sd <- sqrt((pi*(n-pi))/n)
 z <- (p - pi)/sd
 
-pnorm(X, pi, se, lower.tail =FALSE)
+p <- pnorm(X, pi, se, lower.tail =FALSE)
 ```
+
 
 **Sample size**
 
@@ -248,6 +262,8 @@ Provides the sample size needed to have a 95% confidence to estimate the populat
 Level = confidence level. Se is required standard error. 
 
 **sample.size.mean(se, sigma, level=0.95)**
+
+------------------------------------------------------------------------
 
 ## Significance level
 
@@ -263,13 +279,13 @@ Level = confidence level. Se is required standard error.
 6. One-sided: Critical value, 10% significance level = 1.28
 
 ```{r}
-cv <- qnorm(0.975)
-cv <- qnorm(0.995)
-cv <- qnorm(0.95)
+qnorm(0.975)
+qnorm(0.995)
+qnorm(0.95)
 
-cv <- qnorm(0.95)
-cv <- qnorm(0.99)
-cv <- qnorm(0.90)
+qnorm(0.95)
+qnorm(0.99)
+qnorm(0.90)
 ```
 
 **Critical values t-distribution**
@@ -305,16 +321,15 @@ mu_plus <- mu + conf_int95
 mu_min <- mu - conf_int95
 ```
 
-
 **Large sample significance testing**
-
-Package: "BSDA".
 
 1. Two-sided
 2. One-sided: X is greater than the population mean
 3. One-sided: X is less than the population mean
 
 ```{r}
+library(BSDA)
+
 one <- tsum.test(mean.x = X, s.x = sd, n.x = n, mu = mu, alternative = "two.sided", var.equal = TRUE) 
 
 two <- tsum.test(mean.x = X, s.x = sd, n.x = n, mu = mu, alternative = "greater", var.equal = TRUE) 
@@ -324,11 +339,9 @@ three <- tsum.test(mean.x = X, s.x = sd, n.x = n, mu = mu, alternative = "less",
 
 **For proportions:**
 
-```{r}
-prop.test(x= x,n = n,p = p,correct=TRUE,alternative="two.sided")
-```
-Same goes for above: two.sided, greater, less
+prop.test(x = X, n = n, p = p, correct = TRUE, alternative = "two.sided")
 
+Same goes for above: two.sided, greater, less
 
 ### Test of equality - two samples
 
@@ -344,20 +357,18 @@ tsum.test(mean.x = X, s.x = sd, n.x = n, mean.y = X, s.y = sd, n.y = n, var.equa
 
 2-sample test for equality of proportions without continuity correction.
 
-```{r}
-data <- matrix(c(ToothGrowth$len), byrow=TRUE, nrow=2)  
 prop.test(data, correct=FALSE, alternative="greater")
-```
 
-### Non-Parametric testing
+------------------------------------------------------------------------
 
+## Non-Parametric testing
 
-#### Contengency table / frequencies
+### Contengency table / frequencies
 
 Obtain contingency table
 
 ```{r}
-dist <- table(ToothGrowth$len)
+table(ToothGrowth$dose)
 ```
 
 ### Chi-square
@@ -389,7 +400,7 @@ Degree of freedom =  number of categories - number of parameters - 1.
 
 ```{r}
 x <- c(1,2,3,4,5)
-p <- c(rep(1/5, n = 5))
+p <- rep(1/5, 5)
 chisq.test(x, p = p)
 ```
 
@@ -398,13 +409,12 @@ chisq.test(x, p = p)
 
 **Binomial:**
 
-Package "actuar".
-
 dbinom(x, size = n, prob = y)	
 
 For example:
 
 ```{r}
+library(actuar)
 cj <- c(-0.5, 0.5, 1.5, 2.5, 3.5, 4.5, 5.5)
 
 #or
@@ -492,9 +502,8 @@ Two options
 
 ###Run test
 
-Package "randtests".
-
 ```{r}
+library(randtests)
 pers <- c(0,1,1,0,0,0,0,1,1,0,1)
 pers.f <- factor(pers,labels=c("Male","Female"))
 runs.test(pers)

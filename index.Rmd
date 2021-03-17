@@ -13,7 +13,7 @@ description: This is a summary of r code learned throughout several courses of m
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE, class.source = "watch-out", options(scipen=999), out.width = "60%", comment = FALSE) 
+knitr::opts_chunk$set(echo = TRUE, class.source = "watch-out", options(scipen=999), out.width = "60%", comment = "", warning=FALSE) 
 source("www/init.R")
 source("www/Table_Design.R")
 ```
@@ -41,4 +41,4 @@ knitr::write_bib(c(
 ), 'packages.bib')
 ```
 
-*Prepared by: Danielle Kotter*
+*Prepared by: Daniëlle Kotter*

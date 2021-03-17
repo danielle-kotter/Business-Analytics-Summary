@@ -1,14 +1,24 @@
 # Basics
 
+```{r}
+variable <- 1:10
+```
+
+```{r include=FALSE}
+x <- 5
+y <- 10
+n <- 30
+```
+
 **Mathmatical values**
 
-$\mu$ <- Population mean   
-$\sigma$ <- Population sd   
-$\bar{x}$ <- Sample mean   
-${e}$ <- Standard error 
-$\pi$ <- pie 
-$\ge$ <- Bigger than     
-$\le$ <- Smaller than 
+$\mu$ = Population mean   
+$\sigma$ = Population sd   
+$\bar{x}$ = Sample mean   
+${e}$ = Standard error 
+$\pi$ = Pie 
+$\ge$ = Bigger than     
+$\le$ = Smaller than 
 
 **Sample mean, standard deviation**
 
@@ -26,54 +36,77 @@ sd(variable, na.rm = TRUE)
 
 **Weighted mean & standard deviation**
 
-Package: "HMISC".
-
 ```{r}
-weightedmean <- Xbar = wtd.mean(x,y)
-weightedsd <- SQRT(Wtd.var(X,Y))/sqrt(n)
+library(Hmisc)
+weightedmean <- wtd.mean(x,y)
+weightedsd <- sqrt(wtd.var(x,y))/sqrt(n)
 ```
 
 **Variance**
 
 ```{r}
-var(x)
+var(variable)
 ```
 
 **Tables frames & Matrixes**
 
-```{r}
-matrix(c(1,2,3,4,5,6,7,8), nrow = 4, byrow = TRUE) <- organized by row
-matrix(c(1,2,3,4,5,6,7,8), ncol = 4, byrow = FALSE) <- organized by col
-data.frame(Column1 = c(1,2,3,4,5), Column2 = c(1,2,3,4,5))
-data.table(Column1 = c(1,2,3,4,5), Column2 = c(1,2,3,4,5))
+As matrix =
 
-as.table(matrix(c(1,2,3,4,5,6,7,8), nrow = 4))
+```{r}
+library(data.table)
+matrix(c(1:8), nrow = 4, byrow = TRUE) #organized by row
+matrix(c(1:8), ncol = 4, byrow = FALSE) #organized by col
 ```
 
+As data frame = 
+
 ```{r}
-rbind(data, newvariable)
+data.frame(Column1 = c(1:5), Column2 = c(1:5))
+data.table(Column1 = c(1:5), Column2 = c(1:5))
+```
+
+As data table =
+
+```{r}
+data.table(matrix(c(1:8), nrow = 4)) # or
+data.table(Variablex = 1:5, Variabley = 1:5)
+```
+
+Transforming tables from to other formats =
+
+```{r}
+table1 <- data.table(matrix(c(1:8), nrow = 4))
+as.data.frame(table1)
+
+table2 <- data.frame(Column1 = c(1:5), Column2 = c(1:5))
+as.data.table(table2)
+```
+
+Binding and setting names = 
+
+rbind(table, newvariable)
 cbind(data, newvariable)
 
-rownames(datatable) <- c()
-colnames(datatable) <- c()
+```{r}
+rownames(table1) <- c("One", "Two", "Three", "Four")
+colnames(table2) <- c("One", "Two")
 ```
 
 **Other:**
 
 ```{r}
-round(value, 2) <- two decimals
+value <- 5.50
+round(value, 2) # two decimals
 as.numeric(value)
-rep(5,5) <- repeats 5, 5 times
-percent(value) <- presents 0.25 as -> 25.00%
+rep(5,5) #repeats 5, 5 times
 describe(variable)
 fivenum(variable)
 summary(variable)
-str(variable) <- explains the variable
+str(variable) #explains the variable
 ```
 
 **Read excel**
 
-```{r}
 library(readxl)
 data <- read.xls("data.xlsx", stringsAsFactors = TRUE)
-```
+
