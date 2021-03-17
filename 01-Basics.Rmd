@@ -48,7 +48,7 @@ weightedsd <- sqrt(wtd.var(x,y))/sqrt(n)
 var(variable)
 ```
 
-### Tables, frames & Matrices\*\*
+### Tables, frames & Matrices
 
 As matrix =
 
@@ -120,7 +120,7 @@ as.factor(value)
 
 library(readxl) data \<- read.xls("data.xlsx", stringsAsFactors = TRUE)
 
-### Setup rmarkdown:
+### Setup rmarkdown
 
 +--------------------+-------------------------------------------------+
 | Call               | Description                                     |
@@ -146,7 +146,7 @@ library(readxl) data \<- read.xls("data.xlsx", stringsAsFactors = TRUE)
 |                    |                                                 |
 +--------------------+-------------------------------------------------+
 
-### Miscellaneous:
+### Miscellaneous
 
 ```{r}
 round(value, 2) # two decimals
