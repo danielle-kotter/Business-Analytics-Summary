@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter - :4 Simple regressions | Summary and examples of r-code</title>
+  <title>Chapter - 4 Simple regressions | Summary and examples of r-code</title>
   <meta name="description" content="This is a summary of r code learned throughout several courses of my master in management." />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter - :4 Simple regressions | Summary and examples of r-code" />
+  <meta property="og:title" content="Chapter - 4 Simple regressions | Summary and examples of r-code" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter - :4 Simple regressions | Summary and examples of r-code" />
+  <meta name="twitter:title" content="Chapter - 4 Simple regressions | Summary and examples of r-code" />
   
   <meta name="twitter:description" content="This is a summary of r code learned throughout several courses of my master in management." />
   
@@ -30,7 +30,7 @@
   
   
 <link rel="prev" href="probability.html"/>
-<link rel="next" href="references.html"/>
+<link rel="next" href="structure-equation-models.html"/>
 <script src="libs/header-attrs-2.7/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -132,7 +132,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
-<li class="chapter" data-level="1" data-path="basics.html"><a href="basics.html"><i class="fa fa-check"></i><b>1</b> Basics</a></li>
+<li class="chapter" data-level="1" data-path="basics.html"><a href="basics.html"><i class="fa fa-check"></i><b>1</b> Basics</a>
+<ul>
+<li class="chapter" data-level="1.0.1" data-path="basics.html"><a href="basics.html#tables-frames-matrices"><i class="fa fa-check"></i><b>1.0.1</b> Tables, frames &amp; Matrices**</a></li>
+<li class="chapter" data-level="1.0.2" data-path="basics.html"><a href="basics.html#removing-infinite-na-values"><i class="fa fa-check"></i><b>1.0.2</b> Removing infinite + NA values</a></li>
+<li class="chapter" data-level="1.0.3" data-path="basics.html"><a href="basics.html#transforming-variable-types"><i class="fa fa-check"></i><b>1.0.3</b> Transforming variable types</a></li>
+<li class="chapter" data-level="1.0.4" data-path="basics.html"><a href="basics.html#setup-rmarkdown"><i class="fa fa-check"></i><b>1.0.4</b> Setup rmarkdown:</a></li>
+<li class="chapter" data-level="1.0.5" data-path="basics.html"><a href="basics.html#miscellaneous"><i class="fa fa-check"></i><b>1.0.5</b> Miscellaneous:</a></li>
+</ul></li>
 <li class="chapter" data-level="2" data-path="charts-templates.html"><a href="charts-templates.html"><i class="fa fa-check"></i><b>2</b> Charts templates</a></li>
 <li class="chapter" data-level="3" data-path="probability.html"><a href="probability.html"><i class="fa fa-check"></i><b>3</b> Probability</a>
 <ul>
@@ -174,6 +181,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.3.1" data-path="simple-regressions.html"><a href="simple-regressions.html#anova"><i class="fa fa-check"></i><b>4.3.1</b> ANOVA</a></li>
 </ul></li>
 </ul></li>
+<li class="chapter" data-level="5" data-path="structure-equation-models.html"><a href="structure-equation-models.html"><i class="fa fa-check"></i><b>5</b> Structure equation models</a>
+<ul>
+<li class="chapter" data-level="5.0.1" data-path="structure-equation-models.html"><a href="structure-equation-models.html#reliability"><i class="fa fa-check"></i><b>5.0.1</b> Reliability</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -196,14 +207,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
             <section class="normal" id="section-">
 <div id="simple-regressions" class="section level1" number="4">
-<h1><span class="header-section-number">Chapter - :4</span> Simple regressions</h1>
+<h1><span class="header-section-number">Chapter - 4</span> Simple regressions</h1>
 <div id="basics-regressions" class="section level2" number="4.1">
 <h2><span class="header-section-number">4.1</span> Basics regressions</h2>
 <p>Regressions, correlation and dummy’s</p>
 <p>Y = Dependent<br />
 X = Explanatory</p>
 <p><strong>Correlation</strong></p>
-<div class="sourceCode" id="cb117"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb117-1"><a href="simple-regressions.html#cb117-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(x, y)</span></code></pre></div>
+<div class="sourceCode" id="cb125"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb125-1"><a href="simple-regressions.html#cb125-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(x, y)</span></code></pre></div>
 <pre><code>[1] 0.8068949</code></pre>
 <p><strong>Creating the regression:</strong></p>
 <ol style="list-style-type: decimal">
@@ -211,20 +222,20 @@ X = Explanatory</p>
 <li>Evaluates the coefficient of the model</li>
 <li>Only the first colum estimattion</li>
 </ol>
-<div class="sourceCode" id="cb119"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb119-1"><a href="simple-regressions.html#cb119-1" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">lm</span>(y<span class="sc">~</span>x, <span class="at">data =</span> data)</span>
-<span id="cb119-2"><a href="simple-regressions.html#cb119-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model)<span class="sc">$</span>coef</span></code></pre></div>
+<div class="sourceCode" id="cb127"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb127-1"><a href="simple-regressions.html#cb127-1" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">lm</span>(y<span class="sc">~</span>x, <span class="at">data =</span> data)</span>
+<span id="cb127-2"><a href="simple-regressions.html#cb127-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model)<span class="sc">$</span>coef</span></code></pre></div>
 <pre><code>              Estimate Std. Error   t value             Pr(&gt;|t|)
 (Intercept) -17.579095  6.7584402 -2.601058 0.012318816153809090
 x             3.932409  0.4155128  9.463990 0.000000000001489836</code></pre>
-<div class="sourceCode" id="cb121"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb121-1"><a href="simple-regressions.html#cb121-1" aria-hidden="true" tabindex="-1"></a>est <span class="ot">&lt;-</span> <span class="fu">summary</span>(model)<span class="sc">$</span>coef[,<span class="dv">1</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb129"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb129-1"><a href="simple-regressions.html#cb129-1" aria-hidden="true" tabindex="-1"></a>est <span class="ot">&lt;-</span> <span class="fu">summary</span>(model)<span class="sc">$</span>coef[,<span class="dv">1</span>]</span></code></pre></div>
 <div id="summarizing-regressions" class="section level3" number="4.1.1">
 <h3><span class="header-section-number">4.1.1</span> Summarizing regressions:</h3>
 <ol style="list-style-type: decimal">
 <li>Using stargazer package</li>
 </ol>
-<div class="sourceCode" id="cb122"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb122-1"><a href="simple-regressions.html#cb122-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(stargazer)</span>
-<span id="cb122-2"><a href="simple-regressions.html#cb122-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb122-3"><a href="simple-regressions.html#cb122-3" aria-hidden="true" tabindex="-1"></a><span class="fu">stargazer</span>(<span class="fu">lm</span>(y<span class="sc">~</span>x, <span class="at">data=</span>data), <span class="at">type=</span><span class="st">&quot;text&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb130"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb130-1"><a href="simple-regressions.html#cb130-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(stargazer)</span>
+<span id="cb130-2"><a href="simple-regressions.html#cb130-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb130-3"><a href="simple-regressions.html#cb130-3" aria-hidden="true" tabindex="-1"></a><span class="fu">stargazer</span>(<span class="fu">lm</span>(y<span class="sc">~</span>x, <span class="at">data=</span>data), <span class="at">type=</span><span class="st">&quot;text&quot;</span>)</span></code></pre></div>
 <pre><code>
 ===============================================
                         Dependent variable:    
@@ -245,12 +256,12 @@ Residual Std. Error      15.380 (df = 48)
 F Statistic           89.567*** (df = 1; 48)   
 ===============================================
 Note:               *p&lt;0.1; **p&lt;0.05; ***p&lt;0.01</code></pre>
-<div class="sourceCode" id="cb124"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb124-1"><a href="simple-regressions.html#cb124-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Multiple models adjacent</span></span>
-<span id="cb124-2"><a href="simple-regressions.html#cb124-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb124-3"><a href="simple-regressions.html#cb124-3" aria-hidden="true" tabindex="-1"></a>model1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(y<span class="sc">~</span>x, <span class="at">data=</span>data)</span>
-<span id="cb124-4"><a href="simple-regressions.html#cb124-4" aria-hidden="true" tabindex="-1"></a>model2 <span class="ot">&lt;-</span> <span class="fu">lm</span>(x<span class="sc">~</span>y, <span class="at">data=</span>data)</span>
-<span id="cb124-5"><a href="simple-regressions.html#cb124-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb124-6"><a href="simple-regressions.html#cb124-6" aria-hidden="true" tabindex="-1"></a><span class="fu">stargazer</span>(model1, model2, <span class="at">type=</span><span class="st">&quot;text&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb132"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb132-1"><a href="simple-regressions.html#cb132-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Multiple models adjacent</span></span>
+<span id="cb132-2"><a href="simple-regressions.html#cb132-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb132-3"><a href="simple-regressions.html#cb132-3" aria-hidden="true" tabindex="-1"></a>model1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(y<span class="sc">~</span>x, <span class="at">data=</span>data)</span>
+<span id="cb132-4"><a href="simple-regressions.html#cb132-4" aria-hidden="true" tabindex="-1"></a>model2 <span class="ot">&lt;-</span> <span class="fu">lm</span>(x<span class="sc">~</span>y, <span class="at">data=</span>data)</span>
+<span id="cb132-5"><a href="simple-regressions.html#cb132-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb132-6"><a href="simple-regressions.html#cb132-6" aria-hidden="true" tabindex="-1"></a><span class="fu">stargazer</span>(model1, model2, <span class="at">type=</span><span class="st">&quot;text&quot;</span>)</span></code></pre></div>
 <pre><code>
 ==========================================================
                                   Dependent variable:     
@@ -278,7 +289,7 @@ Note:                          *p&lt;0.1; **p&lt;0.05; ***p&lt;0.01</code></pre>
 <ol start="2" style="list-style-type: decimal">
 <li>Using summary function:</li>
 </ol>
-<div class="sourceCode" id="cb126"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb126-1"><a href="simple-regressions.html#cb126-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(<span class="fu">lm</span>(y<span class="sc">~</span>x))</span></code></pre></div>
+<div class="sourceCode" id="cb134"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb134-1"><a href="simple-regressions.html#cb134-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(<span class="fu">lm</span>(y<span class="sc">~</span>x))</span></code></pre></div>
 <pre><code>
 Call:
 lm(formula = y ~ x)
@@ -299,22 +310,22 @@ Multiple R-squared:  0.6511,    Adjusted R-squared:  0.6438
 F-statistic: 89.57 on 1 and 48 DF,  p-value: 0.00000000000149</code></pre>
 <p>Regressions</p>
 <p><strong>Plotting regression</strong></p>
-<div class="sourceCode" id="cb128"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb128-1"><a href="simple-regressions.html#cb128-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(y<span class="sc">~</span>x,<span class="at">data=</span>data, </span>
-<span id="cb128-2"><a href="simple-regressions.html#cb128-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">main=</span><span class="st">&quot;Title&quot;</span>,</span>
-<span id="cb128-3"><a href="simple-regressions.html#cb128-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylab=</span><span class="st">&quot;yname&quot;</span>,</span>
-<span id="cb128-4"><a href="simple-regressions.html#cb128-4" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab=</span><span class="st">&quot;xname&quot;</span></span>
-<span id="cb128-5"><a href="simple-regressions.html#cb128-5" aria-hidden="true" tabindex="-1"></a>     )</span></code></pre></div>
-<p><img src="R-Summaries_files/figure-html/unnamed-chunk-60-1.png" width="100%" /></p>
+<div class="sourceCode" id="cb136"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb136-1"><a href="simple-regressions.html#cb136-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(y<span class="sc">~</span>x,<span class="at">data=</span>data, </span>
+<span id="cb136-2"><a href="simple-regressions.html#cb136-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">main=</span><span class="st">&quot;Title&quot;</span>,</span>
+<span id="cb136-3"><a href="simple-regressions.html#cb136-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylab=</span><span class="st">&quot;yname&quot;</span>,</span>
+<span id="cb136-4"><a href="simple-regressions.html#cb136-4" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab=</span><span class="st">&quot;xname&quot;</span></span>
+<span id="cb136-5"><a href="simple-regressions.html#cb136-5" aria-hidden="true" tabindex="-1"></a>     )</span></code></pre></div>
+<p><img src="R-Summaries_files/figure-html/unnamed-chunk-63-1.png" width="100%" /></p>
 <p><strong>Including regression line:</strong></p>
-<div class="sourceCode" id="cb129"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb129-1"><a href="simple-regressions.html#cb129-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(y<span class="sc">~</span>x,<span class="at">data=</span>data, </span>
-<span id="cb129-2"><a href="simple-regressions.html#cb129-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">main=</span><span class="st">&quot;Title&quot;</span>,</span>
-<span id="cb129-3"><a href="simple-regressions.html#cb129-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylab=</span><span class="st">&quot;yname&quot;</span>,</span>
-<span id="cb129-4"><a href="simple-regressions.html#cb129-4" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab=</span><span class="st">&quot;xname&quot;</span></span>
-<span id="cb129-5"><a href="simple-regressions.html#cb129-5" aria-hidden="true" tabindex="-1"></a>     )</span>
-<span id="cb129-6"><a href="simple-regressions.html#cb129-6" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="fu">lm</span>(y<span class="sc">~</span>x, <span class="at">data=</span>data), <span class="at">col=</span><span class="st">&quot;blue&quot;</span>)</span></code></pre></div>
-<p><img src="R-Summaries_files/figure-html/unnamed-chunk-61-1.png" width="100%" /></p>
+<div class="sourceCode" id="cb137"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb137-1"><a href="simple-regressions.html#cb137-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(y<span class="sc">~</span>x,<span class="at">data=</span>data, </span>
+<span id="cb137-2"><a href="simple-regressions.html#cb137-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">main=</span><span class="st">&quot;Title&quot;</span>,</span>
+<span id="cb137-3"><a href="simple-regressions.html#cb137-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylab=</span><span class="st">&quot;yname&quot;</span>,</span>
+<span id="cb137-4"><a href="simple-regressions.html#cb137-4" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab=</span><span class="st">&quot;xname&quot;</span></span>
+<span id="cb137-5"><a href="simple-regressions.html#cb137-5" aria-hidden="true" tabindex="-1"></a>     )</span>
+<span id="cb137-6"><a href="simple-regressions.html#cb137-6" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="fu">lm</span>(y<span class="sc">~</span>x, <span class="at">data=</span>data), <span class="at">col=</span><span class="st">&quot;blue&quot;</span>)</span></code></pre></div>
+<p><img src="R-Summaries_files/figure-html/unnamed-chunk-64-1.png" width="100%" /></p>
 <p><strong>Confidence interval around slope</strong></p>
-<div class="sourceCode" id="cb130"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb130-1"><a href="simple-regressions.html#cb130-1" aria-hidden="true" tabindex="-1"></a><span class="fu">confint</span>(<span class="fu">lm</span>(y<span class="sc">~</span>x), <span class="at">level=</span><span class="fl">0.95</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb138"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb138-1"><a href="simple-regressions.html#cb138-1" aria-hidden="true" tabindex="-1"></a><span class="fu">confint</span>(<span class="fu">lm</span>(y<span class="sc">~</span>x), <span class="at">level=</span><span class="fl">0.95</span>)</span></code></pre></div>
 <pre><code>                 2.5 %    97.5 %
 (Intercept) -31.167850 -3.990340
 x             3.096964  4.767853</code></pre>
@@ -325,8 +336,8 @@ First is row. Column, second.</p>
 <li>Selects the rows where age is larger than 5.</li>
 <li>Lower than 5.</li>
 </ol>
-<div class="sourceCode" id="cb132"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb132-1"><a href="simple-regressions.html#cb132-1" aria-hidden="true" tabindex="-1"></a>sub1 <span class="ot">&lt;-</span> <span class="fu">summary</span>(<span class="fu">lm</span>(y<span class="sc">~</span>x, <span class="at">data=</span>data[<span class="st">&quot;speed&quot;</span><span class="sc">&gt;=</span><span class="dv">5</span>,]))</span>
-<span id="cb132-2"><a href="simple-regressions.html#cb132-2" aria-hidden="true" tabindex="-1"></a>sub2 <span class="ot">&lt;-</span> <span class="fu">summary</span>(<span class="fu">lm</span>(y<span class="sc">~</span>x, <span class="at">data=</span>data[<span class="st">&quot;speed&quot;</span><span class="sc">&lt;=</span><span class="dv">5</span>,]))</span></code></pre></div>
+<div class="sourceCode" id="cb140"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb140-1"><a href="simple-regressions.html#cb140-1" aria-hidden="true" tabindex="-1"></a>sub1 <span class="ot">&lt;-</span> <span class="fu">summary</span>(<span class="fu">lm</span>(y<span class="sc">~</span>x, <span class="at">data=</span>data[<span class="st">&quot;speed&quot;</span><span class="sc">&gt;=</span><span class="dv">5</span>,]))</span>
+<span id="cb140-2"><a href="simple-regressions.html#cb140-2" aria-hidden="true" tabindex="-1"></a>sub2 <span class="ot">&lt;-</span> <span class="fu">summary</span>(<span class="fu">lm</span>(y<span class="sc">~</span>x, <span class="at">data=</span>data[<span class="st">&quot;speed&quot;</span><span class="sc">&lt;=</span><span class="dv">5</span>,]))</span></code></pre></div>
 <p>###Dummy variables, diff in means</p>
 </div>
 <div id="regression-dummy" class="section level3" number="4.1.2">
@@ -334,7 +345,7 @@ First is row. Column, second.</p>
 <p>Y = Constant0 + B0 * X - Diff in means + B1 * variable1*2</p>
 <p><strong>Omitting the intercept:</strong></p>
 <p>Shows the means separately and not the difference between means. Tests whether the expected counts are different from zero.</p>
-<div class="sourceCode" id="cb133"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb133-1"><a href="simple-regressions.html#cb133-1" aria-hidden="true" tabindex="-1"></a><span class="fu">lm</span>(y <span class="sc">~</span> x <span class="sc">-</span> <span class="dv">1</span>, <span class="at">data =</span> data)</span></code></pre></div>
+<div class="sourceCode" id="cb141"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb141-1"><a href="simple-regressions.html#cb141-1" aria-hidden="true" tabindex="-1"></a><span class="fu">lm</span>(y <span class="sc">~</span> x <span class="sc">-</span> <span class="dv">1</span>, <span class="at">data =</span> data)</span></code></pre></div>
 <pre><code>
 Call:
 lm(formula = y ~ x - 1, data = data)
@@ -348,28 +359,28 @@ Coefficients:
 </div>
 <div id="prediction" class="section level2" number="4.2">
 <h2><span class="header-section-number">4.2</span> Prediction</h2>
-<div class="sourceCode" id="cb135"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb135-1"><a href="simple-regressions.html#cb135-1" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">lm</span>(y<span class="sc">~</span>x)</span>
-<span id="cb135-2"><a href="simple-regressions.html#cb135-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb135-3"><a href="simple-regressions.html#cb135-3" aria-hidden="true" tabindex="-1"></a>newdata <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">variablename =</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">50</span>))</span>
-<span id="cb135-4"><a href="simple-regressions.html#cb135-4" aria-hidden="true" tabindex="-1"></a>pred <span class="ot">&lt;-</span> <span class="fu">predict</span>(model, <span class="at">newdata =</span> newdata)</span></code></pre></div>
+<div class="sourceCode" id="cb143"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb143-1"><a href="simple-regressions.html#cb143-1" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">lm</span>(y<span class="sc">~</span>x)</span>
+<span id="cb143-2"><a href="simple-regressions.html#cb143-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb143-3"><a href="simple-regressions.html#cb143-3" aria-hidden="true" tabindex="-1"></a>newdata <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">variablename =</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">50</span>))</span>
+<span id="cb143-4"><a href="simple-regressions.html#cb143-4" aria-hidden="true" tabindex="-1"></a>pred <span class="ot">&lt;-</span> <span class="fu">predict</span>(model, <span class="at">newdata =</span> newdata)</span></code></pre></div>
 <p><strong>Prediction confidence interval:</strong></p>
 <ol style="list-style-type: decimal">
 <li>One value</li>
 <li>Multiple values from a existing data frame</li>
 </ol>
-<div class="sourceCode" id="cb136"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb136-1"><a href="simple-regressions.html#cb136-1" aria-hidden="true" tabindex="-1"></a>pred1 <span class="ot">&lt;-</span> <span class="fu">predict</span>(model, <span class="fu">data.frame</span>(<span class="at">valuename =</span> x), <span class="at">interval =</span> <span class="st">&quot;confidence&quot;</span>, <span class="at">level=</span><span class="fl">0.95</span>)</span>
-<span id="cb136-2"><a href="simple-regressions.html#cb136-2" aria-hidden="true" tabindex="-1"></a>pred2 <span class="ot">&lt;-</span> <span class="fu">predict</span>(model, <span class="at">newdata =</span> newdata, <span class="at">interval =</span> <span class="st">&quot;confidence&quot;</span>, <span class="at">level=</span><span class="fl">0.95</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb144"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb144-1"><a href="simple-regressions.html#cb144-1" aria-hidden="true" tabindex="-1"></a>pred1 <span class="ot">&lt;-</span> <span class="fu">predict</span>(model, <span class="fu">data.frame</span>(<span class="at">valuename =</span> x), <span class="at">interval =</span> <span class="st">&quot;confidence&quot;</span>, <span class="at">level=</span><span class="fl">0.95</span>)</span>
+<span id="cb144-2"><a href="simple-regressions.html#cb144-2" aria-hidden="true" tabindex="-1"></a>pred2 <span class="ot">&lt;-</span> <span class="fu">predict</span>(model, <span class="at">newdata =</span> newdata, <span class="at">interval =</span> <span class="st">&quot;confidence&quot;</span>, <span class="at">level=</span><span class="fl">0.95</span>)</span></code></pre></div>
 <p><strong>Prediction interval</strong></p>
 <ol style="list-style-type: decimal">
 <li>One value</li>
 <li>Multiple values from a existing data frame</li>
 </ol>
-<div class="sourceCode" id="cb137"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb137-1"><a href="simple-regressions.html#cb137-1" aria-hidden="true" tabindex="-1"></a>pred1 <span class="ot">&lt;-</span> <span class="fu">predict</span>(model, <span class="fu">data.frame</span>(<span class="at">valuename =</span> x), <span class="at">interval=</span><span class="st">&quot;predict&quot;</span>,<span class="at">level=</span><span class="fl">0.95</span>)</span>
-<span id="cb137-2"><a href="simple-regressions.html#cb137-2" aria-hidden="true" tabindex="-1"></a>pred2 <span class="ot">&lt;-</span> <span class="fu">predict</span>(model, newdata, <span class="at">interval=</span><span class="st">&quot;predict&quot;</span>,<span class="at">level=</span><span class="fl">0.95</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb145"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb145-1"><a href="simple-regressions.html#cb145-1" aria-hidden="true" tabindex="-1"></a>pred1 <span class="ot">&lt;-</span> <span class="fu">predict</span>(model, <span class="fu">data.frame</span>(<span class="at">valuename =</span> x), <span class="at">interval=</span><span class="st">&quot;predict&quot;</span>,<span class="at">level=</span><span class="fl">0.95</span>)</span>
+<span id="cb145-2"><a href="simple-regressions.html#cb145-2" aria-hidden="true" tabindex="-1"></a>pred2 <span class="ot">&lt;-</span> <span class="fu">predict</span>(model, newdata, <span class="at">interval=</span><span class="st">&quot;predict&quot;</span>,<span class="at">level=</span><span class="fl">0.95</span>)</span></code></pre></div>
 <div id="confidence-and-prediction-plotting" class="section level3" number="4.2.1">
 <h3><span class="header-section-number">4.2.1</span> Confidence and prediction plotting</h3>
 <p>Adds: observed values, fitted line, conf interval, predicted interval</p>
-<div class="sourceCode" id="cb138"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb138-1"><a href="simple-regressions.html#cb138-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(HH)</span></code></pre></div>
+<div class="sourceCode" id="cb146"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb146-1"><a href="simple-regressions.html#cb146-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(HH)</span></code></pre></div>
 <pre><code>Loading required package: latticeExtra</code></pre>
 <pre><code>
 Attaching package: &#39;latticeExtra&#39;</code></pre>
@@ -412,40 +423,40 @@ Attaching package: &#39;HH&#39;</code></pre>
 <pre><code>The following object is masked from &#39;package:data.table&#39;:
 
     transpose</code></pre>
-<div class="sourceCode" id="cb158"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb158-1"><a href="simple-regressions.html#cb158-1" aria-hidden="true" tabindex="-1"></a>fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(y<span class="sc">~</span>x, <span class="at">data =</span> data)</span>
-<span id="cb158-2"><a href="simple-regressions.html#cb158-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ci.plot</span>(fit)</span></code></pre></div>
-<p><img src="R-Summaries_files/figure-html/unnamed-chunk-68-1.png" width="100%" /></p>
+<div class="sourceCode" id="cb166"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb166-1"><a href="simple-regressions.html#cb166-1" aria-hidden="true" tabindex="-1"></a>fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(y<span class="sc">~</span>x, <span class="at">data =</span> data)</span>
+<span id="cb166-2"><a href="simple-regressions.html#cb166-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ci.plot</span>(fit)</span></code></pre></div>
+<p><img src="R-Summaries_files/figure-html/unnamed-chunk-71-1.png" width="100%" /></p>
 <p>###Prediction with dummy variables</p>
 <p>Prediction = 𝛼1+𝛼2Constant Dummy+𝛽1𝑆𝑖𝑧𝑒+𝛽2Slope Dummy</p>
 <p>###Prediction intervals examples</p>
 <p><strong>Prediction</strong></p>
-<div class="sourceCode" id="cb159"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb159-1"><a href="simple-regressions.html#cb159-1" aria-hidden="true" tabindex="-1"></a>fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(y <span class="sc">~</span> x <span class="sc">+</span> d <span class="sc">+</span> d, <span class="at">data =</span> data)</span>
-<span id="cb159-2"><a href="simple-regressions.html#cb159-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb159-3"><a href="simple-regressions.html#cb159-3" aria-hidden="true" tabindex="-1"></a>pred <span class="ot">&lt;-</span> <span class="fu">predict</span>(fit, <span class="fu">data.frame</span>(<span class="at">VariableX =</span> <span class="fu">c</span>(<span class="dv">10</span>), <span class="at">Dummy =</span> <span class="fu">c</span>(<span class="dv">1</span>), <span class="at">Slopedummy =</span> <span class="fu">c</span>(<span class="dv">10</span>)) )</span></code></pre></div>
+<div class="sourceCode" id="cb167"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb167-1"><a href="simple-regressions.html#cb167-1" aria-hidden="true" tabindex="-1"></a>fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(y <span class="sc">~</span> x <span class="sc">+</span> d <span class="sc">+</span> d, <span class="at">data =</span> data)</span>
+<span id="cb167-2"><a href="simple-regressions.html#cb167-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb167-3"><a href="simple-regressions.html#cb167-3" aria-hidden="true" tabindex="-1"></a>pred <span class="ot">&lt;-</span> <span class="fu">predict</span>(fit, <span class="fu">data.frame</span>(<span class="at">VariableX =</span> <span class="fu">c</span>(<span class="dv">10</span>), <span class="at">Dummy =</span> <span class="fu">c</span>(<span class="dv">1</span>), <span class="at">Slopedummy =</span> <span class="fu">c</span>(<span class="dv">10</span>)) )</span></code></pre></div>
 <p><strong>Confidence interval prediction</strong></p>
-<div class="sourceCode" id="cb160"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb160-1"><a href="simple-regressions.html#cb160-1" aria-hidden="true" tabindex="-1"></a>fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(y <span class="sc">~</span> x <span class="sc">+</span> d <span class="sc">+</span> d, <span class="at">data =</span> data)</span>
-<span id="cb160-2"><a href="simple-regressions.html#cb160-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb160-3"><a href="simple-regressions.html#cb160-3" aria-hidden="true" tabindex="-1"></a>pred <span class="ot">&lt;-</span> <span class="fu">predict</span>(fit, <span class="fu">data.frame</span>(<span class="at">VariableX =</span> <span class="fu">c</span>(<span class="dv">10</span>), <span class="at">Dummy =</span> <span class="fu">c</span>(<span class="dv">1</span>), <span class="at">Slopedummy =</span> <span class="fu">c</span>(<span class="dv">10</span>), <span class="at">interval=</span><span class="st">&quot;confidence&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb168"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb168-1"><a href="simple-regressions.html#cb168-1" aria-hidden="true" tabindex="-1"></a>fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(y <span class="sc">~</span> x <span class="sc">+</span> d <span class="sc">+</span> d, <span class="at">data =</span> data)</span>
+<span id="cb168-2"><a href="simple-regressions.html#cb168-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb168-3"><a href="simple-regressions.html#cb168-3" aria-hidden="true" tabindex="-1"></a>pred <span class="ot">&lt;-</span> <span class="fu">predict</span>(fit, <span class="fu">data.frame</span>(<span class="at">VariableX =</span> <span class="fu">c</span>(<span class="dv">10</span>), <span class="at">Dummy =</span> <span class="fu">c</span>(<span class="dv">1</span>), <span class="at">Slopedummy =</span> <span class="fu">c</span>(<span class="dv">10</span>), <span class="at">interval=</span><span class="st">&quot;confidence&quot;</span>))</span></code></pre></div>
 <p><strong>Prediction interval</strong></p>
-<div class="sourceCode" id="cb161"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb161-1"><a href="simple-regressions.html#cb161-1" aria-hidden="true" tabindex="-1"></a>fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(y <span class="sc">~</span> x <span class="sc">+</span> d <span class="sc">+</span> d, <span class="at">data =</span> data)</span>
-<span id="cb161-2"><a href="simple-regressions.html#cb161-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb161-3"><a href="simple-regressions.html#cb161-3" aria-hidden="true" tabindex="-1"></a>pred <span class="ot">&lt;-</span> <span class="fu">predict</span>(fit, <span class="fu">data.frame</span>(<span class="at">VariableX =</span> <span class="fu">c</span>(<span class="dv">10</span>), <span class="at">Dummy =</span> <span class="fu">c</span>(<span class="dv">1</span>), <span class="at">Slopedummy =</span> <span class="fu">c</span>(<span class="dv">10</span>), <span class="at">interval=</span><span class="st">&quot;predict&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb169"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb169-1"><a href="simple-regressions.html#cb169-1" aria-hidden="true" tabindex="-1"></a>fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(y <span class="sc">~</span> x <span class="sc">+</span> d <span class="sc">+</span> d, <span class="at">data =</span> data)</span>
+<span id="cb169-2"><a href="simple-regressions.html#cb169-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb169-3"><a href="simple-regressions.html#cb169-3" aria-hidden="true" tabindex="-1"></a>pred <span class="ot">&lt;-</span> <span class="fu">predict</span>(fit, <span class="fu">data.frame</span>(<span class="at">VariableX =</span> <span class="fu">c</span>(<span class="dv">10</span>), <span class="at">Dummy =</span> <span class="fu">c</span>(<span class="dv">1</span>), <span class="at">Slopedummy =</span> <span class="fu">c</span>(<span class="dv">10</span>), <span class="at">interval=</span><span class="st">&quot;predict&quot;</span>))</span></code></pre></div>
 </div>
 </div>
 <div id="data-problems" class="section level2" number="4.3">
 <h2><span class="header-section-number">4.3</span> Data problems</h2>
 <p><strong>Residual plot</strong></p>
-<div class="sourceCode" id="cb162"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb162-1"><a href="simple-regressions.html#cb162-1" aria-hidden="true" tabindex="-1"></a><span class="co"># residual.plots(fitted(fit), resid(fit), sigma.hat(fit), main=&quot;Title&quot;)</span></span></code></pre></div>
+<div class="sourceCode" id="cb170"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb170-1"><a href="simple-regressions.html#cb170-1" aria-hidden="true" tabindex="-1"></a><span class="co"># residual.plots(fitted(fit), resid(fit), sigma.hat(fit), main=&quot;Title&quot;)</span></span></code></pre></div>
 <p><strong>Influential measure test</strong></p>
-<div class="sourceCode" id="cb163"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb163-1"><a href="simple-regressions.html#cb163-1" aria-hidden="true" tabindex="-1"></a>im <span class="ot">&lt;-</span> <span class="fu">influence.measures</span>(fit)</span></code></pre></div>
+<div class="sourceCode" id="cb171"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb171-1"><a href="simple-regressions.html#cb171-1" aria-hidden="true" tabindex="-1"></a>im <span class="ot">&lt;-</span> <span class="fu">influence.measures</span>(fit)</span></code></pre></div>
 <p>###Multicollinearity</p>
 <ol style="list-style-type: decimal">
 <li>F-test</li>
 <li>Variance inflation factors greater than 10</li>
 </ol>
-<div class="sourceCode" id="cb164"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb164-1"><a href="simple-regressions.html#cb164-1" aria-hidden="true" tabindex="-1"></a>fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(y<span class="sc">~</span>x <span class="sc">+</span> d, <span class="at">data =</span> data)</span>
-<span id="cb164-2"><a href="simple-regressions.html#cb164-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb164-3"><a href="simple-regressions.html#cb164-3" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(fit)</span></code></pre></div>
+<div class="sourceCode" id="cb172"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb172-1"><a href="simple-regressions.html#cb172-1" aria-hidden="true" tabindex="-1"></a>fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(y<span class="sc">~</span>x <span class="sc">+</span> d, <span class="at">data =</span> data)</span>
+<span id="cb172-2"><a href="simple-regressions.html#cb172-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb172-3"><a href="simple-regressions.html#cb172-3" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(fit)</span></code></pre></div>
 <pre><code>Analysis of Variance Table
 
 Response: y
@@ -454,30 +465,30 @@ x          1  21186 21185.5  89.567 0.00000000000149 ***
 Residuals 48  11354   236.5                             
 ---
 Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
-<div class="sourceCode" id="cb166"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb166-1"><a href="simple-regressions.html#cb166-1" aria-hidden="true" tabindex="-1"></a><span class="fu">vif</span>(fit)</span></code></pre></div>
+<div class="sourceCode" id="cb174"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb174-1"><a href="simple-regressions.html#cb174-1" aria-hidden="true" tabindex="-1"></a><span class="fu">vif</span>(fit)</span></code></pre></div>
 <pre><code>  x   d 
   1 NaN </code></pre>
 <div id="anova" class="section level3" number="4.3.1">
 <h3><span class="header-section-number">4.3.1</span> ANOVA</h3>
 <p><strong>One-way:</strong> one value</p>
-<div class="sourceCode" id="cb168"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb168-1"><a href="simple-regressions.html#cb168-1" aria-hidden="true" tabindex="-1"></a>res.aov <span class="ot">&lt;-</span> <span class="fu">aov</span>(y <span class="sc">~</span> x, <span class="at">data =</span> data)</span>
-<span id="cb168-2"><a href="simple-regressions.html#cb168-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(res.aov)</span></code></pre></div>
+<div class="sourceCode" id="cb176"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb176-1"><a href="simple-regressions.html#cb176-1" aria-hidden="true" tabindex="-1"></a>res.aov <span class="ot">&lt;-</span> <span class="fu">aov</span>(y <span class="sc">~</span> x, <span class="at">data =</span> data)</span>
+<span id="cb176-2"><a href="simple-regressions.html#cb176-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(res.aov)</span></code></pre></div>
 <pre><code>            Df Sum Sq Mean Sq F value           Pr(&gt;F)    
 x            1  21185   21185   89.57 0.00000000000149 ***
 Residuals   48  11354     237                             
 ---
 Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
 <p><strong>Two-way:</strong> more than two factors</p>
-<div class="sourceCode" id="cb170"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb170-1"><a href="simple-regressions.html#cb170-1" aria-hidden="true" tabindex="-1"></a>res.aov <span class="ot">&lt;-</span> <span class="fu">aov</span>(y <span class="sc">~</span> x <span class="sc">+</span> d, <span class="at">data =</span> data)</span>
-<span id="cb170-2"><a href="simple-regressions.html#cb170-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(res.aov)</span></code></pre></div>
+<div class="sourceCode" id="cb178"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb178-1"><a href="simple-regressions.html#cb178-1" aria-hidden="true" tabindex="-1"></a>res.aov <span class="ot">&lt;-</span> <span class="fu">aov</span>(y <span class="sc">~</span> x <span class="sc">+</span> d, <span class="at">data =</span> data)</span>
+<span id="cb178-2"><a href="simple-regressions.html#cb178-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(res.aov)</span></code></pre></div>
 <pre><code>            Df Sum Sq Mean Sq F value           Pr(&gt;F)    
 x            1  21185   21185   89.57 0.00000000000149 ***
 Residuals   48  11354     237                             
 ---
 Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
 <p>With interaction</p>
-<div class="sourceCode" id="cb172"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb172-1"><a href="simple-regressions.html#cb172-1" aria-hidden="true" tabindex="-1"></a>res.aov <span class="ot">&lt;-</span> <span class="fu">aov</span>(y <span class="sc">~</span> x <span class="sc">*</span> d, <span class="at">data =</span> data)</span>
-<span id="cb172-2"><a href="simple-regressions.html#cb172-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(res.aov)</span></code></pre></div>
+<div class="sourceCode" id="cb180"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb180-1"><a href="simple-regressions.html#cb180-1" aria-hidden="true" tabindex="-1"></a>res.aov <span class="ot">&lt;-</span> <span class="fu">aov</span>(y <span class="sc">~</span> x <span class="sc">*</span> d, <span class="at">data =</span> data)</span>
+<span id="cb180-2"><a href="simple-regressions.html#cb180-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(res.aov)</span></code></pre></div>
 <pre><code>            Df Sum Sq Mean Sq F value           Pr(&gt;F)    
 x            1  21185   21185   89.57 0.00000000000149 ***
 Residuals   48  11354     237                             
@@ -488,13 +499,13 @@ Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&
 <li>Three way</li>
 <li>With interaction</li>
 </ol>
-<div class="sourceCode" id="cb174"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb174-1"><a href="simple-regressions.html#cb174-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(<span class="fu">aov</span>(y <span class="sc">~</span> x <span class="sc">+</span> d, <span class="at">data=</span>data))</span></code></pre></div>
+<div class="sourceCode" id="cb182"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb182-1"><a href="simple-regressions.html#cb182-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(<span class="fu">aov</span>(y <span class="sc">~</span> x <span class="sc">+</span> d, <span class="at">data=</span>data))</span></code></pre></div>
 <pre><code>            Df Sum Sq Mean Sq F value           Pr(&gt;F)    
 x            1  21185   21185   89.57 0.00000000000149 ***
 Residuals   48  11354     237                             
 ---
 Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
-<div class="sourceCode" id="cb176"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb176-1"><a href="simple-regressions.html#cb176-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(<span class="fu">aov</span>(y <span class="sc">~</span> x <span class="sc">+</span> d, <span class="at">data=</span>data))</span></code></pre></div>
+<div class="sourceCode" id="cb184"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb184-1"><a href="simple-regressions.html#cb184-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(<span class="fu">aov</span>(y <span class="sc">~</span> x <span class="sc">+</span> d, <span class="at">data=</span>data))</span></code></pre></div>
 <pre><code>            Df Sum Sq Mean Sq F value           Pr(&gt;F)    
 x            1  21185   21185   89.57 0.00000000000149 ***
 Residuals   48  11354     237                             
@@ -518,7 +529,7 @@ summary.aov(test_manova)</p>
         </div>
       </div>
 <a href="probability.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="structure-equation-models.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

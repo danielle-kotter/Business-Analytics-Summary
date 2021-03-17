@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter - :2 Charts templates | Summary and examples of r-code</title>
+  <title>Chapter - 2 Charts templates | Summary and examples of r-code</title>
   <meta name="description" content="This is a summary of r code learned throughout several courses of my master in management." />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter - :2 Charts templates | Summary and examples of r-code" />
+  <meta property="og:title" content="Chapter - 2 Charts templates | Summary and examples of r-code" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter - :2 Charts templates | Summary and examples of r-code" />
+  <meta name="twitter:title" content="Chapter - 2 Charts templates | Summary and examples of r-code" />
   
   <meta name="twitter:description" content="This is a summary of r code learned throughout several courses of my master in management." />
   
@@ -132,7 +132,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
-<li class="chapter" data-level="1" data-path="basics.html"><a href="basics.html"><i class="fa fa-check"></i><b>1</b> Basics</a></li>
+<li class="chapter" data-level="1" data-path="basics.html"><a href="basics.html"><i class="fa fa-check"></i><b>1</b> Basics</a>
+<ul>
+<li class="chapter" data-level="1.0.1" data-path="basics.html"><a href="basics.html#tables-frames-matrices"><i class="fa fa-check"></i><b>1.0.1</b> Tables, frames &amp; Matrices**</a></li>
+<li class="chapter" data-level="1.0.2" data-path="basics.html"><a href="basics.html#removing-infinite-na-values"><i class="fa fa-check"></i><b>1.0.2</b> Removing infinite + NA values</a></li>
+<li class="chapter" data-level="1.0.3" data-path="basics.html"><a href="basics.html#transforming-variable-types"><i class="fa fa-check"></i><b>1.0.3</b> Transforming variable types</a></li>
+<li class="chapter" data-level="1.0.4" data-path="basics.html"><a href="basics.html#setup-rmarkdown"><i class="fa fa-check"></i><b>1.0.4</b> Setup rmarkdown:</a></li>
+<li class="chapter" data-level="1.0.5" data-path="basics.html"><a href="basics.html#miscellaneous"><i class="fa fa-check"></i><b>1.0.5</b> Miscellaneous:</a></li>
+</ul></li>
 <li class="chapter" data-level="2" data-path="charts-templates.html"><a href="charts-templates.html"><i class="fa fa-check"></i><b>2</b> Charts templates</a></li>
 <li class="chapter" data-level="3" data-path="probability.html"><a href="probability.html"><i class="fa fa-check"></i><b>3</b> Probability</a>
 <ul>
@@ -174,6 +181,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.3.1" data-path="simple-regressions.html"><a href="simple-regressions.html#anova"><i class="fa fa-check"></i><b>4.3.1</b> ANOVA</a></li>
 </ul></li>
 </ul></li>
+<li class="chapter" data-level="5" data-path="structure-equation-models.html"><a href="structure-equation-models.html"><i class="fa fa-check"></i><b>5</b> Structure equation models</a>
+<ul>
+<li class="chapter" data-level="5.0.1" data-path="structure-equation-models.html"><a href="structure-equation-models.html#reliability"><i class="fa fa-check"></i><b>5.0.1</b> Reliability</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -196,117 +207,117 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
             <section class="normal" id="section-">
 <div id="charts-templates" class="section level1" number="2">
-<h1><span class="header-section-number">Chapter - :2</span> Charts templates</h1>
-<div class="sourceCode" id="cb47"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb47-1"><a href="charts-templates.html#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gridExtra)</span>
-<span id="cb47-2"><a href="charts-templates.html#cb47-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(hrbrthemes)</span>
-<span id="cb47-3"><a href="charts-templates.html#cb47-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb47-4"><a href="charts-templates.html#cb47-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-5"><a href="charts-templates.html#cb47-5" aria-hidden="true" tabindex="-1"></a>paletteDani <span class="ot">&lt;-</span> <span class="fu">c</span>( <span class="st">&quot;#ffa500&quot;</span>, <span class="st">&quot;#DAF7A6&quot;</span>, <span class="st">&quot;#5F7992&quot;</span>, <span class="st">&quot;#69b3a2&quot;</span>, <span class="st">&quot;#ffd561&quot;</span>, <span class="st">&quot;#ee5c42&quot;</span>, <span class="st">&quot;#C8A2C8&quot;</span>, <span class="st">&quot;#5c3170&quot;</span>, <span class="st">&quot;#990000&quot;</span>, <span class="st">&quot;#C70039&quot;</span>, <span class="st">&quot;#34495E&quot;</span>, <span class="st">&quot;#909497&quot;</span>)</span></code></pre></div>
+<h1><span class="header-section-number">Chapter - 2</span> Charts templates</h1>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb55-1"><a href="charts-templates.html#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gridExtra)</span>
+<span id="cb55-2"><a href="charts-templates.html#cb55-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(hrbrthemes)</span>
+<span id="cb55-3"><a href="charts-templates.html#cb55-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb55-4"><a href="charts-templates.html#cb55-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb55-5"><a href="charts-templates.html#cb55-5" aria-hidden="true" tabindex="-1"></a>paletteDani <span class="ot">&lt;-</span> <span class="fu">c</span>( <span class="st">&quot;#ffa500&quot;</span>, <span class="st">&quot;#DAF7A6&quot;</span>, <span class="st">&quot;#5F7992&quot;</span>, <span class="st">&quot;#69b3a2&quot;</span>, <span class="st">&quot;#ffd561&quot;</span>, <span class="st">&quot;#ee5c42&quot;</span>, <span class="st">&quot;#C8A2C8&quot;</span>, <span class="st">&quot;#5c3170&quot;</span>, <span class="st">&quot;#990000&quot;</span>, <span class="st">&quot;#C70039&quot;</span>, <span class="st">&quot;#34495E&quot;</span>, <span class="st">&quot;#909497&quot;</span>)</span></code></pre></div>
 <p>Several basic options:</p>
 <p><strong>Pie chart</strong></p>
-<div class="sourceCode" id="cb48"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb48-1"><a href="charts-templates.html#cb48-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> ToothGrowth</span>
-<span id="cb48-2"><a href="charts-templates.html#cb48-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb48-3"><a href="charts-templates.html#cb48-3" aria-hidden="true" tabindex="-1"></a>blank_theme <span class="ot">&lt;-</span> </span>
-<span id="cb48-4"><a href="charts-templates.html#cb48-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(</span>
-<span id="cb48-5"><a href="charts-templates.html#cb48-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.title.x =</span> <span class="fu">element_blank</span>(),</span>
-<span id="cb48-6"><a href="charts-templates.html#cb48-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.title.y =</span> <span class="fu">element_blank</span>(),</span>
-<span id="cb48-7"><a href="charts-templates.html#cb48-7" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.border =</span> <span class="fu">element_blank</span>(),</span>
-<span id="cb48-8"><a href="charts-templates.html#cb48-8" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid =</span> <span class="fu">element_blank</span>(),</span>
-<span id="cb48-9"><a href="charts-templates.html#cb48-9" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.ticks =</span> <span class="fu">element_blank</span>(),</span>
-<span id="cb48-10"><a href="charts-templates.html#cb48-10" aria-hidden="true" tabindex="-1"></a>        <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">10</span>, <span class="at">face =</span> <span class="st">&quot;bold&quot;</span>)</span>
-<span id="cb48-11"><a href="charts-templates.html#cb48-11" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb48-12"><a href="charts-templates.html#cb48-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb48-13"><a href="charts-templates.html#cb48-13" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x=</span><span class="st">&quot;&quot;</span>,<span class="at">y =</span> dose, <span class="at">fill =</span> supp)) <span class="sc">+</span></span>
-<span id="cb48-14"><a href="charts-templates.html#cb48-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">width =</span> <span class="dv">1</span>, <span class="at">stat =</span> <span class="st">&quot;identity&quot;</span>) <span class="sc">+</span></span>
-<span id="cb48-15"><a href="charts-templates.html#cb48-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_polar</span>(<span class="st">&quot;y&quot;</span>, <span class="at">start =</span> <span class="dv">0</span>) <span class="sc">+</span></span>
-<span id="cb48-16"><a href="charts-templates.html#cb48-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="st">&quot;Legendname:&quot;</span>,</span>
-<span id="cb48-17"><a href="charts-templates.html#cb48-17" aria-hidden="true" tabindex="-1"></a>                    <span class="at">values =</span> paletteDani)<span class="sc">+</span></span>
-<span id="cb48-18"><a href="charts-templates.html#cb48-18" aria-hidden="true" tabindex="-1"></a>    blank_theme  <span class="sc">+</span></span>
-<span id="cb48-19"><a href="charts-templates.html#cb48-19" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(<span class="at">axis.text.x=</span><span class="fu">element_blank</span>())<span class="sc">+</span></span>
-<span id="cb48-20"><a href="charts-templates.html#cb48-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Title&quot;</span>,</span>
-<span id="cb48-21"><a href="charts-templates.html#cb48-21" aria-hidden="true" tabindex="-1"></a>         <span class="at">x =</span> <span class="st">&quot;variablX&quot;</span>,</span>
-<span id="cb48-22"><a href="charts-templates.html#cb48-22" aria-hidden="true" tabindex="-1"></a>         <span class="at">y =</span> <span class="st">&quot;variableY&quot;</span></span>
-<span id="cb48-23"><a href="charts-templates.html#cb48-23" aria-hidden="true" tabindex="-1"></a>         )</span></code></pre></div>
-<p><img src="R-Summaries_files/figure-html/unnamed-chunk-16-1.png" width="100%" /></p>
-<p><strong>Bar chart</strong></p>
-<div class="sourceCode" id="cb49"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb49-1"><a href="charts-templates.html#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> dose, <span class="at">y =</span> supp)) <span class="sc">+</span> </span>
-<span id="cb49-2"><a href="charts-templates.html#cb49-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">&quot;identity&quot;</span>, <span class="at">fill=</span><span class="st">&quot;#69b3a2&quot;</span>, <span class="at">color=</span><span class="st">&quot;#e9ecef&quot;</span>) <span class="sc">+</span></span>
-<span id="cb49-3"><a href="charts-templates.html#cb49-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position=</span><span class="st">&quot;none&quot;</span>)</span></code></pre></div>
-<p><img src="R-Summaries_files/figure-html/unnamed-chunk-17-1.png" width="100%" /></p>
-<p><strong>Histogram</strong></p>
-<div class="sourceCode" id="cb50"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb50-1"><a href="charts-templates.html#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> data, <span class="fu">aes</span>(len) ) <span class="sc">+</span> </span>
-<span id="cb50-2"><a href="charts-templates.html#cb50-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_histogram</span>(<span class="at">fill=</span><span class="st">&quot;#69b3a2&quot;</span>, <span class="at">color=</span><span class="st">&quot;#e9ecef&quot;</span>, <span class="at">alpha=</span><span class="fl">0.9</span>) <span class="sc">+</span></span>
-<span id="cb50-3"><a href="charts-templates.html#cb50-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggtitle</span>(<span class="st">&quot;Title&quot;</span>) <span class="sc">+</span></span>
-<span id="cb50-4"><a href="charts-templates.html#cb50-4" aria-hidden="true" tabindex="-1"></a>      <span class="fu">xlab</span>(<span class="st">&quot;variablex&quot;</span>) <span class="sc">+</span></span>
-<span id="cb50-5"><a href="charts-templates.html#cb50-5" aria-hidden="true" tabindex="-1"></a>      <span class="fu">ylab</span>(<span class="st">&quot;variabley&quot;</span>) <span class="sc">+</span></span>
-<span id="cb50-6"><a href="charts-templates.html#cb50-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">11</span>))</span></code></pre></div>
-<pre><code>`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
-<p><img src="R-Summaries_files/figure-html/unnamed-chunk-18-1.png" width="100%" /></p>
-<p><strong>Boxplot</strong></p>
-<div class="sourceCode" id="cb52"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb52-1"><a href="charts-templates.html#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>ToothGrowth, <span class="fu">aes</span>(<span class="at">x=</span><span class="st">&quot;&quot;</span>, <span class="at">y=</span>len, <span class="at">fill=</span><span class="st">&quot;&quot;</span>)) <span class="sc">+</span></span>
-<span id="cb52-2"><a href="charts-templates.html#cb52-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_boxplot</span>(<span class="at">fill=</span><span class="st">&quot;#69b3a2&quot;</span>, <span class="at">outlier.colour=</span><span class="st">&quot;red&quot;</span>, <span class="at">outlier.shape=</span><span class="dv">8</span>, <span class="at">outlier.size=</span><span class="dv">4</span>) <span class="sc">+</span></span>
-<span id="cb52-3"><a href="charts-templates.html#cb52-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_ipsum</span>() <span class="sc">+</span></span>
-<span id="cb52-4"><a href="charts-templates.html#cb52-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(</span>
-<span id="cb52-5"><a href="charts-templates.html#cb52-5" aria-hidden="true" tabindex="-1"></a>      <span class="at">legend.position=</span><span class="st">&quot;none&quot;</span>,</span>
-<span id="cb52-6"><a href="charts-templates.html#cb52-6" aria-hidden="true" tabindex="-1"></a>      <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">12</span>)</span>
-<span id="cb52-7"><a href="charts-templates.html#cb52-7" aria-hidden="true" tabindex="-1"></a>      ) <span class="sc">+</span></span>
-<span id="cb52-8"><a href="charts-templates.html#cb52-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggtitle</span>(<span class="st">&quot;Title&quot;</span>) <span class="sc">+</span></span>
-<span id="cb52-9"><a href="charts-templates.html#cb52-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>)) <span class="sc">+</span></span>
-<span id="cb52-10"><a href="charts-templates.html#cb52-10" aria-hidden="true" tabindex="-1"></a>        <span class="fu">xlab</span>(<span class="st">&quot;&quot;</span>)<span class="sc">+</span></span>
-<span id="cb52-11"><a href="charts-templates.html#cb52-11" aria-hidden="true" tabindex="-1"></a>        <span class="fu">ylab</span>(<span class="st">&quot;&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb56-1"><a href="charts-templates.html#cb56-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> ToothGrowth</span>
+<span id="cb56-2"><a href="charts-templates.html#cb56-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-3"><a href="charts-templates.html#cb56-3" aria-hidden="true" tabindex="-1"></a>blank_theme <span class="ot">&lt;-</span> </span>
+<span id="cb56-4"><a href="charts-templates.html#cb56-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(</span>
+<span id="cb56-5"><a href="charts-templates.html#cb56-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.title.x =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb56-6"><a href="charts-templates.html#cb56-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.title.y =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb56-7"><a href="charts-templates.html#cb56-7" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.border =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb56-8"><a href="charts-templates.html#cb56-8" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb56-9"><a href="charts-templates.html#cb56-9" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.ticks =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb56-10"><a href="charts-templates.html#cb56-10" aria-hidden="true" tabindex="-1"></a>        <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">10</span>, <span class="at">face =</span> <span class="st">&quot;bold&quot;</span>)</span>
+<span id="cb56-11"><a href="charts-templates.html#cb56-11" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb56-12"><a href="charts-templates.html#cb56-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-13"><a href="charts-templates.html#cb56-13" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x=</span><span class="st">&quot;&quot;</span>,<span class="at">y =</span> dose, <span class="at">fill =</span> supp)) <span class="sc">+</span></span>
+<span id="cb56-14"><a href="charts-templates.html#cb56-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">width =</span> <span class="dv">1</span>, <span class="at">stat =</span> <span class="st">&quot;identity&quot;</span>) <span class="sc">+</span></span>
+<span id="cb56-15"><a href="charts-templates.html#cb56-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_polar</span>(<span class="st">&quot;y&quot;</span>, <span class="at">start =</span> <span class="dv">0</span>) <span class="sc">+</span></span>
+<span id="cb56-16"><a href="charts-templates.html#cb56-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="st">&quot;Legendname:&quot;</span>,</span>
+<span id="cb56-17"><a href="charts-templates.html#cb56-17" aria-hidden="true" tabindex="-1"></a>                    <span class="at">values =</span> paletteDani)<span class="sc">+</span></span>
+<span id="cb56-18"><a href="charts-templates.html#cb56-18" aria-hidden="true" tabindex="-1"></a>    blank_theme  <span class="sc">+</span></span>
+<span id="cb56-19"><a href="charts-templates.html#cb56-19" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(<span class="at">axis.text.x=</span><span class="fu">element_blank</span>())<span class="sc">+</span></span>
+<span id="cb56-20"><a href="charts-templates.html#cb56-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Title&quot;</span>,</span>
+<span id="cb56-21"><a href="charts-templates.html#cb56-21" aria-hidden="true" tabindex="-1"></a>         <span class="at">x =</span> <span class="st">&quot;variablX&quot;</span>,</span>
+<span id="cb56-22"><a href="charts-templates.html#cb56-22" aria-hidden="true" tabindex="-1"></a>         <span class="at">y =</span> <span class="st">&quot;variableY&quot;</span></span>
+<span id="cb56-23"><a href="charts-templates.html#cb56-23" aria-hidden="true" tabindex="-1"></a>         )</span></code></pre></div>
 <p><img src="R-Summaries_files/figure-html/unnamed-chunk-19-1.png" width="100%" /></p>
-<p><strong>Scatter plot</strong></p>
-<div class="sourceCode" id="cb53"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb53-1"><a href="charts-templates.html#cb53-1" aria-hidden="true" tabindex="-1"></a> <span class="fu">ggplot</span>(<span class="at">data=</span> ToothGrowth, <span class="fu">aes</span>(<span class="at">y =</span> len, <span class="at">x =</span> dose)) <span class="sc">+</span></span>
-<span id="cb53-2"><a href="charts-templates.html#cb53-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size=</span><span class="dv">2</span>) <span class="sc">+</span></span>
-<span id="cb53-3"><a href="charts-templates.html#cb53-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method=</span><span class="st">&quot;lm&quot;</span>, <span class="at">fill =</span> <span class="cn">NA</span>, <span class="at">color=</span><span class="st">&quot;#69b3a2&quot;</span>, <span class="at">fullrange=</span><span class="cn">TRUE</span>, </span>
-<span id="cb53-4"><a href="charts-templates.html#cb53-4" aria-hidden="true" tabindex="-1"></a>              <span class="at">formula =</span> y <span class="sc">~</span> x) <span class="sc">+</span></span>
-<span id="cb53-5"><a href="charts-templates.html#cb53-5" aria-hidden="true" tabindex="-1"></a>   <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>)) <span class="sc">+</span></span>
-<span id="cb53-6"><a href="charts-templates.html#cb53-6" aria-hidden="true" tabindex="-1"></a>        <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Title&quot;</span>,</span>
-<span id="cb53-7"><a href="charts-templates.html#cb53-7" aria-hidden="true" tabindex="-1"></a>         <span class="at">y =</span> <span class="st">&quot;yname&quot;</span>,</span>
-<span id="cb53-8"><a href="charts-templates.html#cb53-8" aria-hidden="true" tabindex="-1"></a>         <span class="at">x =</span> <span class="st">&quot;xname&quot;</span></span>
-<span id="cb53-9"><a href="charts-templates.html#cb53-9" aria-hidden="true" tabindex="-1"></a>         )</span></code></pre></div>
+<p><strong>Bar chart</strong></p>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb57-1"><a href="charts-templates.html#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> dose, <span class="at">y =</span> supp)) <span class="sc">+</span> </span>
+<span id="cb57-2"><a href="charts-templates.html#cb57-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">&quot;identity&quot;</span>, <span class="at">fill=</span><span class="st">&quot;#69b3a2&quot;</span>, <span class="at">color=</span><span class="st">&quot;#e9ecef&quot;</span>) <span class="sc">+</span></span>
+<span id="cb57-3"><a href="charts-templates.html#cb57-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position=</span><span class="st">&quot;none&quot;</span>)</span></code></pre></div>
 <p><img src="R-Summaries_files/figure-html/unnamed-chunk-20-1.png" width="100%" /></p>
-<p><strong>Scatter plot with dummies</strong></p>
-<div class="sourceCode" id="cb54"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb54-1"><a href="charts-templates.html#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> ToothGrowth, <span class="fu">aes</span>(<span class="at">y =</span> len, <span class="at">x =</span> supp, <span class="at">colour=</span><span class="fu">factor</span>(supp))) <span class="sc">+</span> </span>
-<span id="cb54-2"><a href="charts-templates.html#cb54-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size=</span><span class="dv">2</span>) <span class="sc">+</span></span>
-<span id="cb54-3"><a href="charts-templates.html#cb54-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method=</span><span class="st">&quot;lm&quot;</span>, <span class="at">fill =</span> <span class="cn">NA</span>, <span class="at">fullrange=</span><span class="cn">TRUE</span>,  <span class="at">formula =</span> y <span class="sc">~</span> x) <span class="sc">+</span></span>
-<span id="cb54-4"><a href="charts-templates.html#cb54-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>)) <span class="sc">+</span></span>
-<span id="cb54-5"><a href="charts-templates.html#cb54-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_colour_manual</span>(<span class="at">name=</span><span class="st">&quot;Legendtitle&quot;</span>, </span>
-<span id="cb54-6"><a href="charts-templates.html#cb54-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">labels=</span><span class="fu">c</span>(<span class="st">&quot;value1&quot;</span>, <span class="st">&quot;value2&quot;</span>),<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;#69b3a2&quot;</span>, <span class="st">&quot;#F6726A&quot;</span>))<span class="sc">+</span></span>
-<span id="cb54-7"><a href="charts-templates.html#cb54-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Title&quot;</span>,</span>
-<span id="cb54-8"><a href="charts-templates.html#cb54-8" aria-hidden="true" tabindex="-1"></a>         <span class="at">y =</span> <span class="st">&quot;Yname&quot;</span>,</span>
-<span id="cb54-9"><a href="charts-templates.html#cb54-9" aria-hidden="true" tabindex="-1"></a>         <span class="at">x =</span> <span class="st">&quot;Xname&quot;</span></span>
-<span id="cb54-10"><a href="charts-templates.html#cb54-10" aria-hidden="true" tabindex="-1"></a>         )</span></code></pre></div>
+<p><strong>Histogram</strong></p>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb58-1"><a href="charts-templates.html#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> data, <span class="fu">aes</span>(len) ) <span class="sc">+</span> </span>
+<span id="cb58-2"><a href="charts-templates.html#cb58-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_histogram</span>(<span class="at">fill=</span><span class="st">&quot;#69b3a2&quot;</span>, <span class="at">color=</span><span class="st">&quot;#e9ecef&quot;</span>, <span class="at">alpha=</span><span class="fl">0.9</span>) <span class="sc">+</span></span>
+<span id="cb58-3"><a href="charts-templates.html#cb58-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggtitle</span>(<span class="st">&quot;Title&quot;</span>) <span class="sc">+</span></span>
+<span id="cb58-4"><a href="charts-templates.html#cb58-4" aria-hidden="true" tabindex="-1"></a>      <span class="fu">xlab</span>(<span class="st">&quot;variablex&quot;</span>) <span class="sc">+</span></span>
+<span id="cb58-5"><a href="charts-templates.html#cb58-5" aria-hidden="true" tabindex="-1"></a>      <span class="fu">ylab</span>(<span class="st">&quot;variabley&quot;</span>) <span class="sc">+</span></span>
+<span id="cb58-6"><a href="charts-templates.html#cb58-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">11</span>))</span></code></pre></div>
+<pre><code>`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
 <p><img src="R-Summaries_files/figure-html/unnamed-chunk-21-1.png" width="100%" /></p>
-<p><strong>Arrange charts next to eachother on a page</strong></p>
-<div class="sourceCode" id="cb55"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb55-1"><a href="charts-templates.html#cb55-1" aria-hidden="true" tabindex="-1"></a>chart1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data=</span>ToothGrowth, <span class="fu">aes</span>(<span class="at">x=</span><span class="st">&quot;&quot;</span>, <span class="at">y=</span>len, <span class="at">fill=</span><span class="st">&quot;&quot;</span>)) <span class="sc">+</span></span>
-<span id="cb55-2"><a href="charts-templates.html#cb55-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_boxplot</span>(<span class="at">fill=</span><span class="st">&quot;#69b3a2&quot;</span>, <span class="at">outlier.colour=</span><span class="st">&quot;red&quot;</span>, <span class="at">outlier.shape=</span><span class="dv">8</span>, <span class="at">outlier.size=</span><span class="dv">4</span>) <span class="sc">+</span></span>
-<span id="cb55-3"><a href="charts-templates.html#cb55-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_ipsum</span>() <span class="sc">+</span></span>
-<span id="cb55-4"><a href="charts-templates.html#cb55-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(</span>
-<span id="cb55-5"><a href="charts-templates.html#cb55-5" aria-hidden="true" tabindex="-1"></a>      <span class="at">legend.position=</span><span class="st">&quot;none&quot;</span>,</span>
-<span id="cb55-6"><a href="charts-templates.html#cb55-6" aria-hidden="true" tabindex="-1"></a>      <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">12</span>)</span>
-<span id="cb55-7"><a href="charts-templates.html#cb55-7" aria-hidden="true" tabindex="-1"></a>      ) <span class="sc">+</span></span>
-<span id="cb55-8"><a href="charts-templates.html#cb55-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggtitle</span>(<span class="st">&quot;Title&quot;</span>) <span class="sc">+</span></span>
-<span id="cb55-9"><a href="charts-templates.html#cb55-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>)) <span class="sc">+</span></span>
-<span id="cb55-10"><a href="charts-templates.html#cb55-10" aria-hidden="true" tabindex="-1"></a>        <span class="fu">xlab</span>(<span class="st">&quot;&quot;</span>)<span class="sc">+</span></span>
-<span id="cb55-11"><a href="charts-templates.html#cb55-11" aria-hidden="true" tabindex="-1"></a>        <span class="fu">ylab</span>(<span class="st">&quot;&quot;</span>)</span>
-<span id="cb55-12"><a href="charts-templates.html#cb55-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb55-13"><a href="charts-templates.html#cb55-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb55-14"><a href="charts-templates.html#cb55-14" aria-hidden="true" tabindex="-1"></a>chart2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data=</span>ToothGrowth, <span class="fu">aes</span>(<span class="at">x=</span><span class="st">&quot;&quot;</span>, <span class="at">y=</span>len, <span class="at">fill=</span><span class="st">&quot;&quot;</span>)) <span class="sc">+</span></span>
-<span id="cb55-15"><a href="charts-templates.html#cb55-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_boxplot</span>(<span class="at">fill=</span><span class="st">&quot;#69b3a2&quot;</span>, <span class="at">outlier.colour=</span><span class="st">&quot;red&quot;</span>, <span class="at">outlier.shape=</span><span class="dv">8</span>, <span class="at">outlier.size=</span><span class="dv">4</span>) <span class="sc">+</span></span>
-<span id="cb55-16"><a href="charts-templates.html#cb55-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_ipsum</span>() <span class="sc">+</span></span>
-<span id="cb55-17"><a href="charts-templates.html#cb55-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(</span>
-<span id="cb55-18"><a href="charts-templates.html#cb55-18" aria-hidden="true" tabindex="-1"></a>      <span class="at">legend.position=</span><span class="st">&quot;none&quot;</span>,</span>
-<span id="cb55-19"><a href="charts-templates.html#cb55-19" aria-hidden="true" tabindex="-1"></a>      <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">12</span>)</span>
-<span id="cb55-20"><a href="charts-templates.html#cb55-20" aria-hidden="true" tabindex="-1"></a>      ) <span class="sc">+</span></span>
-<span id="cb55-21"><a href="charts-templates.html#cb55-21" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggtitle</span>(<span class="st">&quot;Title&quot;</span>) <span class="sc">+</span></span>
-<span id="cb55-22"><a href="charts-templates.html#cb55-22" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>)) <span class="sc">+</span></span>
-<span id="cb55-23"><a href="charts-templates.html#cb55-23" aria-hidden="true" tabindex="-1"></a>        <span class="fu">xlab</span>(<span class="st">&quot;&quot;</span>)<span class="sc">+</span></span>
-<span id="cb55-24"><a href="charts-templates.html#cb55-24" aria-hidden="true" tabindex="-1"></a>        <span class="fu">ylab</span>(<span class="st">&quot;&quot;</span>)</span>
-<span id="cb55-25"><a href="charts-templates.html#cb55-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb55-26"><a href="charts-templates.html#cb55-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb55-27"><a href="charts-templates.html#cb55-27" aria-hidden="true" tabindex="-1"></a><span class="fu">grid.arrange</span>(chart1, chart2, <span class="at">nrow=</span><span class="dv">1</span>, <span class="at">widths=</span><span class="fu">c</span>(<span class="fl">0.9</span>,<span class="dv">1</span>))</span></code></pre></div>
+<p><strong>Boxplot</strong></p>
+<div class="sourceCode" id="cb60"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb60-1"><a href="charts-templates.html#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>ToothGrowth, <span class="fu">aes</span>(<span class="at">x=</span><span class="st">&quot;&quot;</span>, <span class="at">y=</span>len, <span class="at">fill=</span><span class="st">&quot;&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb60-2"><a href="charts-templates.html#cb60-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_boxplot</span>(<span class="at">fill=</span><span class="st">&quot;#69b3a2&quot;</span>, <span class="at">outlier.colour=</span><span class="st">&quot;red&quot;</span>, <span class="at">outlier.shape=</span><span class="dv">8</span>, <span class="at">outlier.size=</span><span class="dv">4</span>) <span class="sc">+</span></span>
+<span id="cb60-3"><a href="charts-templates.html#cb60-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_ipsum</span>() <span class="sc">+</span></span>
+<span id="cb60-4"><a href="charts-templates.html#cb60-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(</span>
+<span id="cb60-5"><a href="charts-templates.html#cb60-5" aria-hidden="true" tabindex="-1"></a>      <span class="at">legend.position=</span><span class="st">&quot;none&quot;</span>,</span>
+<span id="cb60-6"><a href="charts-templates.html#cb60-6" aria-hidden="true" tabindex="-1"></a>      <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">12</span>)</span>
+<span id="cb60-7"><a href="charts-templates.html#cb60-7" aria-hidden="true" tabindex="-1"></a>      ) <span class="sc">+</span></span>
+<span id="cb60-8"><a href="charts-templates.html#cb60-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggtitle</span>(<span class="st">&quot;Title&quot;</span>) <span class="sc">+</span></span>
+<span id="cb60-9"><a href="charts-templates.html#cb60-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>)) <span class="sc">+</span></span>
+<span id="cb60-10"><a href="charts-templates.html#cb60-10" aria-hidden="true" tabindex="-1"></a>        <span class="fu">xlab</span>(<span class="st">&quot;&quot;</span>)<span class="sc">+</span></span>
+<span id="cb60-11"><a href="charts-templates.html#cb60-11" aria-hidden="true" tabindex="-1"></a>        <span class="fu">ylab</span>(<span class="st">&quot;&quot;</span>)</span></code></pre></div>
 <p><img src="R-Summaries_files/figure-html/unnamed-chunk-22-1.png" width="100%" /></p>
+<p><strong>Scatter plot</strong></p>
+<div class="sourceCode" id="cb61"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb61-1"><a href="charts-templates.html#cb61-1" aria-hidden="true" tabindex="-1"></a> <span class="fu">ggplot</span>(<span class="at">data=</span> ToothGrowth, <span class="fu">aes</span>(<span class="at">y =</span> len, <span class="at">x =</span> dose)) <span class="sc">+</span></span>
+<span id="cb61-2"><a href="charts-templates.html#cb61-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size=</span><span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb61-3"><a href="charts-templates.html#cb61-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method=</span><span class="st">&quot;lm&quot;</span>, <span class="at">fill =</span> <span class="cn">NA</span>, <span class="at">color=</span><span class="st">&quot;#69b3a2&quot;</span>, <span class="at">fullrange=</span><span class="cn">TRUE</span>, </span>
+<span id="cb61-4"><a href="charts-templates.html#cb61-4" aria-hidden="true" tabindex="-1"></a>              <span class="at">formula =</span> y <span class="sc">~</span> x) <span class="sc">+</span></span>
+<span id="cb61-5"><a href="charts-templates.html#cb61-5" aria-hidden="true" tabindex="-1"></a>   <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>)) <span class="sc">+</span></span>
+<span id="cb61-6"><a href="charts-templates.html#cb61-6" aria-hidden="true" tabindex="-1"></a>        <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Title&quot;</span>,</span>
+<span id="cb61-7"><a href="charts-templates.html#cb61-7" aria-hidden="true" tabindex="-1"></a>         <span class="at">y =</span> <span class="st">&quot;yname&quot;</span>,</span>
+<span id="cb61-8"><a href="charts-templates.html#cb61-8" aria-hidden="true" tabindex="-1"></a>         <span class="at">x =</span> <span class="st">&quot;xname&quot;</span></span>
+<span id="cb61-9"><a href="charts-templates.html#cb61-9" aria-hidden="true" tabindex="-1"></a>         )</span></code></pre></div>
+<p><img src="R-Summaries_files/figure-html/unnamed-chunk-23-1.png" width="100%" /></p>
+<p><strong>Scatter plot with dummies</strong></p>
+<div class="sourceCode" id="cb62"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb62-1"><a href="charts-templates.html#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> ToothGrowth, <span class="fu">aes</span>(<span class="at">y =</span> len, <span class="at">x =</span> supp, <span class="at">colour=</span><span class="fu">factor</span>(supp))) <span class="sc">+</span> </span>
+<span id="cb62-2"><a href="charts-templates.html#cb62-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size=</span><span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb62-3"><a href="charts-templates.html#cb62-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method=</span><span class="st">&quot;lm&quot;</span>, <span class="at">fill =</span> <span class="cn">NA</span>, <span class="at">fullrange=</span><span class="cn">TRUE</span>,  <span class="at">formula =</span> y <span class="sc">~</span> x) <span class="sc">+</span></span>
+<span id="cb62-4"><a href="charts-templates.html#cb62-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>)) <span class="sc">+</span></span>
+<span id="cb62-5"><a href="charts-templates.html#cb62-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_colour_manual</span>(<span class="at">name=</span><span class="st">&quot;Legendtitle&quot;</span>, </span>
+<span id="cb62-6"><a href="charts-templates.html#cb62-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">labels=</span><span class="fu">c</span>(<span class="st">&quot;value1&quot;</span>, <span class="st">&quot;value2&quot;</span>),<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;#69b3a2&quot;</span>, <span class="st">&quot;#F6726A&quot;</span>))<span class="sc">+</span></span>
+<span id="cb62-7"><a href="charts-templates.html#cb62-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Title&quot;</span>,</span>
+<span id="cb62-8"><a href="charts-templates.html#cb62-8" aria-hidden="true" tabindex="-1"></a>         <span class="at">y =</span> <span class="st">&quot;Yname&quot;</span>,</span>
+<span id="cb62-9"><a href="charts-templates.html#cb62-9" aria-hidden="true" tabindex="-1"></a>         <span class="at">x =</span> <span class="st">&quot;Xname&quot;</span></span>
+<span id="cb62-10"><a href="charts-templates.html#cb62-10" aria-hidden="true" tabindex="-1"></a>         )</span></code></pre></div>
+<p><img src="R-Summaries_files/figure-html/unnamed-chunk-24-1.png" width="100%" /></p>
+<p><strong>Arrange charts next to eachother on a page</strong></p>
+<div class="sourceCode" id="cb63"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb63-1"><a href="charts-templates.html#cb63-1" aria-hidden="true" tabindex="-1"></a>chart1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data=</span>ToothGrowth, <span class="fu">aes</span>(<span class="at">x=</span><span class="st">&quot;&quot;</span>, <span class="at">y=</span>len, <span class="at">fill=</span><span class="st">&quot;&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb63-2"><a href="charts-templates.html#cb63-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_boxplot</span>(<span class="at">fill=</span><span class="st">&quot;#69b3a2&quot;</span>, <span class="at">outlier.colour=</span><span class="st">&quot;red&quot;</span>, <span class="at">outlier.shape=</span><span class="dv">8</span>, <span class="at">outlier.size=</span><span class="dv">4</span>) <span class="sc">+</span></span>
+<span id="cb63-3"><a href="charts-templates.html#cb63-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_ipsum</span>() <span class="sc">+</span></span>
+<span id="cb63-4"><a href="charts-templates.html#cb63-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(</span>
+<span id="cb63-5"><a href="charts-templates.html#cb63-5" aria-hidden="true" tabindex="-1"></a>      <span class="at">legend.position=</span><span class="st">&quot;none&quot;</span>,</span>
+<span id="cb63-6"><a href="charts-templates.html#cb63-6" aria-hidden="true" tabindex="-1"></a>      <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">12</span>)</span>
+<span id="cb63-7"><a href="charts-templates.html#cb63-7" aria-hidden="true" tabindex="-1"></a>      ) <span class="sc">+</span></span>
+<span id="cb63-8"><a href="charts-templates.html#cb63-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggtitle</span>(<span class="st">&quot;Title&quot;</span>) <span class="sc">+</span></span>
+<span id="cb63-9"><a href="charts-templates.html#cb63-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>)) <span class="sc">+</span></span>
+<span id="cb63-10"><a href="charts-templates.html#cb63-10" aria-hidden="true" tabindex="-1"></a>        <span class="fu">xlab</span>(<span class="st">&quot;&quot;</span>)<span class="sc">+</span></span>
+<span id="cb63-11"><a href="charts-templates.html#cb63-11" aria-hidden="true" tabindex="-1"></a>        <span class="fu">ylab</span>(<span class="st">&quot;&quot;</span>)</span>
+<span id="cb63-12"><a href="charts-templates.html#cb63-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-13"><a href="charts-templates.html#cb63-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-14"><a href="charts-templates.html#cb63-14" aria-hidden="true" tabindex="-1"></a>chart2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data=</span>ToothGrowth, <span class="fu">aes</span>(<span class="at">x=</span><span class="st">&quot;&quot;</span>, <span class="at">y=</span>len, <span class="at">fill=</span><span class="st">&quot;&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb63-15"><a href="charts-templates.html#cb63-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_boxplot</span>(<span class="at">fill=</span><span class="st">&quot;#69b3a2&quot;</span>, <span class="at">outlier.colour=</span><span class="st">&quot;red&quot;</span>, <span class="at">outlier.shape=</span><span class="dv">8</span>, <span class="at">outlier.size=</span><span class="dv">4</span>) <span class="sc">+</span></span>
+<span id="cb63-16"><a href="charts-templates.html#cb63-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_ipsum</span>() <span class="sc">+</span></span>
+<span id="cb63-17"><a href="charts-templates.html#cb63-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(</span>
+<span id="cb63-18"><a href="charts-templates.html#cb63-18" aria-hidden="true" tabindex="-1"></a>      <span class="at">legend.position=</span><span class="st">&quot;none&quot;</span>,</span>
+<span id="cb63-19"><a href="charts-templates.html#cb63-19" aria-hidden="true" tabindex="-1"></a>      <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">12</span>)</span>
+<span id="cb63-20"><a href="charts-templates.html#cb63-20" aria-hidden="true" tabindex="-1"></a>      ) <span class="sc">+</span></span>
+<span id="cb63-21"><a href="charts-templates.html#cb63-21" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggtitle</span>(<span class="st">&quot;Title&quot;</span>) <span class="sc">+</span></span>
+<span id="cb63-22"><a href="charts-templates.html#cb63-22" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>)) <span class="sc">+</span></span>
+<span id="cb63-23"><a href="charts-templates.html#cb63-23" aria-hidden="true" tabindex="-1"></a>        <span class="fu">xlab</span>(<span class="st">&quot;&quot;</span>)<span class="sc">+</span></span>
+<span id="cb63-24"><a href="charts-templates.html#cb63-24" aria-hidden="true" tabindex="-1"></a>        <span class="fu">ylab</span>(<span class="st">&quot;&quot;</span>)</span>
+<span id="cb63-25"><a href="charts-templates.html#cb63-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-26"><a href="charts-templates.html#cb63-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-27"><a href="charts-templates.html#cb63-27" aria-hidden="true" tabindex="-1"></a><span class="fu">grid.arrange</span>(chart1, chart2, <span class="at">nrow=</span><span class="dv">1</span>, <span class="at">widths=</span><span class="fu">c</span>(<span class="fl">0.9</span>,<span class="dv">1</span>))</span></code></pre></div>
+<p><img src="R-Summaries_files/figure-html/unnamed-chunk-25-1.png" width="100%" /></p>
 
 </div>
             </section>

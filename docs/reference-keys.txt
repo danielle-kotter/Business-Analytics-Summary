@@ -1,6 +1,11 @@
 fig:nice-fig
 tab:nice-tab
 basics
+tables-frames-matrices
+removing-infinite-na-values
+transforming-variable-types
+setup-rmarkdown
+miscellaneous
 charts-templates
 probability
 bayes-theorem
@@ -28,10 +33,5 @@ prediction
 confidence-and-prediction-plotting
 data-problems
 anova
-tables-frames-matrices
-removing-infinite-na-values
-transforming-variable-types
-setup-rmarkdown
-miscellaneous
 structure-equation-models
 reliability
