@@ -28,3 +28,10 @@ prediction
 confidence-and-prediction-plotting
 data-problems
 anova
+tables-frames-matrices
+removing-infinite-na-values
+transforming-variable-types
+setup-rmarkdown
+miscellaneous
+structure-equation-models
+reliability

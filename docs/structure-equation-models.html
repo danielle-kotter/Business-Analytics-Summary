@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter - 5 Structure equation models | Summary and examples of r-code</title>
+  <meta name="description" content="This is a summary of r code learned throughout several courses of my master in management." />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter - 5 Structure equation models | Summary and examples of r-code" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This is a summary of r code learned throughout several courses of my master in management." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter - 5 Structure equation models | Summary and examples of r-code" />
+  
+  <meta name="twitter:description" content="This is a summary of r code learned throughout several courses of my master in management." />
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="simple-regressions.html"/>
+<link rel="next" href="references.html"/>
+<script src="libs/header-attrs-2.7/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Summary and examples of r-code</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="1" data-path="basics.html"><a href="basics.html"><i class="fa fa-check"></i><b>1</b> Basics</a>
+<ul>
+<li class="chapter" data-level="1.0.1" data-path="basics.html"><a href="basics.html#tables-frames-matrices"><i class="fa fa-check"></i><b>1.0.1</b> Tables, frames &amp; Matrices**</a></li>
+<li class="chapter" data-level="1.0.2" data-path="basics.html"><a href="basics.html#removing-infinite-na-values"><i class="fa fa-check"></i><b>1.0.2</b> Removing infinite + NA values</a></li>
+<li class="chapter" data-level="1.0.3" data-path="basics.html"><a href="basics.html#transforming-variable-types"><i class="fa fa-check"></i><b>1.0.3</b> Transforming variable types</a></li>
+<li class="chapter" data-level="1.0.4" data-path="basics.html"><a href="basics.html#setup-rmarkdown"><i class="fa fa-check"></i><b>1.0.4</b> Setup rmarkdown:</a></li>
+<li class="chapter" data-level="1.0.5" data-path="basics.html"><a href="basics.html#miscellaneous"><i class="fa fa-check"></i><b>1.0.5</b> Miscellaneous:</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="charts-templates.html"><a href="charts-templates.html"><i class="fa fa-check"></i><b>2</b> Charts templates</a></li>
+<li class="chapter" data-level="3" data-path="probability.html"><a href="probability.html"><i class="fa fa-check"></i><b>3</b> Probability</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="probability.html"><a href="probability.html#bayes-theorem"><i class="fa fa-check"></i><b>3.1</b> Bayes Theorem</a></li>
+<li class="chapter" data-level="3.2" data-path="probability.html"><a href="probability.html#discrete-probablity"><i class="fa fa-check"></i><b>3.2</b> Discrete Probablity</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="probability.html"><a href="probability.html#uniform-discrete-probability-distribution"><i class="fa fa-check"></i><b>3.2.1</b> Uniform discrete probability distribution</a></li>
+<li class="chapter" data-level="3.2.2" data-path="probability.html"><a href="probability.html#binomial-distribution"><i class="fa fa-check"></i><b>3.2.2</b> Binomial distribution</a></li>
+<li class="chapter" data-level="3.2.3" data-path="probability.html"><a href="probability.html#poisson-distribution"><i class="fa fa-check"></i><b>3.2.3</b> Poisson distribution</a></li>
+<li class="chapter" data-level="3.2.4" data-path="probability.html"><a href="probability.html#the-normal-distribution"><i class="fa fa-check"></i><b>3.2.4</b> The normal distribution</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="probability.html"><a href="probability.html#samples-estimation-confidence-intervals"><i class="fa fa-check"></i><b>3.3</b> Samples, estimation &amp; confidence intervals</a></li>
+<li class="chapter" data-level="3.4" data-path="probability.html"><a href="probability.html#significance-level"><i class="fa fa-check"></i><b>3.4</b> Significance level</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="probability.html"><a href="probability.html#critical-values"><i class="fa fa-check"></i><b>3.4.1</b> Critical values</a></li>
+<li class="chapter" data-level="3.4.2" data-path="probability.html"><a href="probability.html#test-of-equality---two-samples"><i class="fa fa-check"></i><b>3.4.2</b> Test of equality - two samples</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="probability.html"><a href="probability.html#non-parametric-testing"><i class="fa fa-check"></i><b>3.5</b> Non-Parametric testing</a>
+<ul>
+<li class="chapter" data-level="3.5.1" data-path="probability.html"><a href="probability.html#contengency-table-frequencies"><i class="fa fa-check"></i><b>3.5.1</b> Contengency table / frequencies</a></li>
+<li class="chapter" data-level="3.5.2" data-path="probability.html"><a href="probability.html#chi-square"><i class="fa fa-check"></i><b>3.5.2</b> Chi-square</a></li>
+<li class="chapter" data-level="3.5.3" data-path="probability.html"><a href="probability.html#goodness-of-fit"><i class="fa fa-check"></i><b>3.5.3</b> Goodness of fit</a></li>
+<li class="chapter" data-level="3.5.4" data-path="probability.html"><a href="probability.html#p-value"><i class="fa fa-check"></i><b>3.5.4</b> P-value</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="simple-regressions.html"><a href="simple-regressions.html"><i class="fa fa-check"></i><b>4</b> Simple regressions</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="simple-regressions.html"><a href="simple-regressions.html#basics-regressions"><i class="fa fa-check"></i><b>4.1</b> Basics regressions</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="simple-regressions.html"><a href="simple-regressions.html#summarizing-regressions"><i class="fa fa-check"></i><b>4.1.1</b> Summarizing regressions:</a></li>
+<li class="chapter" data-level="4.1.2" data-path="simple-regressions.html"><a href="simple-regressions.html#regression-dummy"><i class="fa fa-check"></i><b>4.1.2</b> Regression + dummy</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="simple-regressions.html"><a href="simple-regressions.html#prediction"><i class="fa fa-check"></i><b>4.2</b> Prediction</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="simple-regressions.html"><a href="simple-regressions.html#confidence-and-prediction-plotting"><i class="fa fa-check"></i><b>4.2.1</b> Confidence and prediction plotting</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="simple-regressions.html"><a href="simple-regressions.html#data-problems"><i class="fa fa-check"></i><b>4.3</b> Data problems</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="simple-regressions.html"><a href="simple-regressions.html#anova"><i class="fa fa-check"></i><b>4.3.1</b> ANOVA</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="structure-equation-models.html"><a href="structure-equation-models.html"><i class="fa fa-check"></i><b>5</b> Structure equation models</a>
+<ul>
+<li class="chapter" data-level="5.0.1" data-path="structure-equation-models.html"><a href="structure-equation-models.html#reliability"><i class="fa fa-check"></i><b>5.0.1</b> Reliability</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Summary and examples of r-code</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="structure-equation-models" class="section level1" number="5">
+<h1><span class="header-section-number">Chapter - 5</span> Structure equation models</h1>
+<p>Structural Equation Modeling (SEM): is an extremely broad and flexible framework for data analysis, perhaps better thought of as a family of related methods rather than as a single technique. Measuring latent constructs is challenging and we must also incorporate estimates of measurement error into our models. SEM excels at both of these tasks. SEM is especially suited for causal analysis.</p>
+<p>Path analysis (structural equations)</p>
+<p>Path diagrams = Communicates the structure of our model. Useful for structural equation models.</p>
+<p>Rectangular = any variable that we can observe directly (observed variable), measured variables</p>
+<p>Circle / Ovals = Cannot be observed (Latent variable)</p>
+<p>Arrow = directed effect. One variable impacts the other. Hypothetical causal relationship.</p>
+<p>Numbers by the arrows = regression coefficient. Correlations coefficients.</p>
+<p><img src="images/paste-C79DE382.png" width="352" /></p>
+<p>Triangle is the constant in the Linear Model.</p>
+<p><img src="images/paste-948ED17C.png" width="81" /></p>
+<p>Double handed arrows = indicate covariances or correlations without a causal interpretation.</p>
+<p>SEM -&gt; style=“ram” to get circles around the measurement arrow</p>
+<p>Double handed arrow between two independent variables = they are correlated to each other. Covariance</p>
+<p><img src="images/paste-D2D686C6.png" width="350" /></p>
+<p>Residual error term = measurement errors. We expect that the factor will not perfectly predict the observed variables.</p>
+<p>The bidirected arrows, the ones with two side arrows (in this representation, a connecting line with no arrows) represent covariances among variables.</p>
+<p>OLS = Ordinary least-squares (OLS) models assume that the analyst is fitting a model of a relationship between one or more explanatory variables and a continuous or at least interval outcome variable that minimizes the sum of square errors, where an error is the difference between the actual and the predicted value of the outcome variable. The most common analytic method that utilizes OLS models is linear regression (with a single or multiple predictor variables).</p>
+<p>OLS: b –&gt; beta * k</p>
+<p>Latent variables = unobserved variables or unmeasured variables in SEM lingo. These are theoretical concepts which can be inferred but not directly measured.</p>
+<p>Linear regression model = Y = alpha + betaX + error</p>
+<p>The model has to account for randomization. If there is a factor that that cannot be explained, it is included in the error. When this unmeasured factor that is in the error is correlated to another independent variable, there is endogeneity.</p>
+<p>Endogeneity variables = correlated with the error terms. Arises when the marginal distribution of the independent variable is not independent of the conditional distribution of the dependent variable given the independent.</p>
+<p>Exogenous variables = not driven by other factors (observable or observable)</p>
+<p>Sources of endogeneity =</p>
+<pre><code>1. Omitted variables: relevant variables left out of the model,  attributing to effect to those that were included. 
+2. Simultaneity: where x causes y and y causes x
+3. Selection bias: sampling bias</code></pre>
+<hr />
+<p>Multiple regression</p>
+<p>We can assume that the independent variables are correlated.</p>
+<p>The residual error in multiple regression analysis is actually an unobserved, latent variable. The residual error is 1, to achieve identification.</p>
+<p>Estimator = MLM in the model, protects for non-linearity, non-normality and elasticity of the raw data. Need the raw data, not only the covariance.</p>
+<p>Structural equation = y = beta*x + e; var(y)=cov(y,y)</p>
+<p>Beta^2* var(x) + var(e-) = y</p>
+<hr />
+<p>Divide true variance of the true / observed variance = reliability</p>
+<p>Cov(1,2) = sum (1- mean(1) * (2-mean(2) / n</p>
+<p>Covariance is a measure of how much two random variables vary together. It’s similar to variance, but where variance tells you how a single variable varies, co variance tells you how two variables vary together.</p>
+<p>Difference between covariance and correlation.</p>
+<p><img src="images/paste-BCC7A4B7.png" width="353" /></p>
+<hr />
+<div id="reliability" class="section level3" number="5.0.1">
+<h3><span class="header-section-number">5.0.1</span> Reliability</h3>
+<p>In statistics reliability is the consistency of a set of measurements or measuring instrument, often used to describe a test. This can either be whether the measurements of the same instrument give or are likely to give the same measurement (test-retest), or in the case of more subjective instruments, such as personality or trait inventories, whether two independent assessors give similar scores (inter-rater-reliability). Reliability is inversely related to random error.</p>
+<p><span class="math inline">\(X = T + e\)</span></p>
+<p><span class="math inline">\(Reliability of X = var(T) / var(T) + var(e)\)</span></p>
+<p><span class="math inline">\(var(Tintake) / var(Ointake) = 1 - var(error) / var(Ointake)\)</span></p>
+<p>In words, reliability is defined as a proportion of observed variance that is true variance. Reliability is interpreted as a proportion—reliability cannot be negative.</p>
+<p>Reliability = 1- Latent variable variance / variance variable 1</p>
+<p>K = variance(true)/variance(Observed(true+error))</p>
+<pre><code>1- Measurement error variable 1 / measurement error variable 2 (latent varible)</code></pre>
+<p><a href="https://www.uwo.ca/fhs/tc/labs/07.Reliability.pdf" class="uri">https://www.uwo.ca/fhs/tc/labs/07.Reliability.pdf</a></p>
+<p>Various kinds of reliability coefficients, with values ranging between 0.00 (much error) and 1.00 (no error), are usually used to indicate the amount of error in the scores." [2] For example, measurements of people’s height and weight are often extremely reliable. ____________________________________________________</p>
+<p><strong>Testing the model</strong></p>
+<p>fitMeasures(fitLV) [ c(“chisq,” “df,” pvalue“,”rmsea")]</p>
+<p>MI = if i liberate one parameter, then __ there would</p>
+<p>Model chi-square test. We test whether the fitted model is correct. HO: moment restrictions implied by the model hold. The fit is correct If &gt; 0.05 we cannot reject the model. I accept the model.</p>
+<p>Therefore, the chi-square test allows researchers to evaluate the fitness of a model by using the null hypothesis significance test approach.</p>
+<p>The Root Mean Square Error of Approximation (RMSEA) = fit index: how the covariance fit in the model. Difference between observed and the fitted.</p>
+<p>The RMSEA is widely used in Structural Equation Modeling to provide a mechanism for adjusting for sample size where chi-square statistics are used. Measures the discrepancy due to the approximation per degree of freedom.</p>
+<p>The objective is to have the RMSEA as low as possible.</p>
+<hr />
+<p><strong>MLM estimation</strong></p>
+<p>Raw data is needed.</p>
+<p>Independent variables have variances and covariances, unless the model specification puts them to zero.</p>
+<p>The square of the standardized loading is the reliability of the variable. For example, the reliability k of AM1 is .59**2 = 0.35 .</p>
+<p>Measurement equation = TSE =~ 1<em>SE1 + 1</em>SE2</p>
+<p>Regression equation PERF ~ TS + TSE + VERB</p>
+<p><img src="images/paste-8481FC40.png" /></p>
+<p>Degrees of freedom (df) = Number of observations available for model estimation - Number of observations used to estimate parameters</p>
+<p>df for empty model = ( k(k-1) ) / 2</p>
+<p>“Number of free parameters” refers to all of the things that this model estimated freely</p>
+<p>Parameter is a regression coefficient when standardized is called a beta coefficient.</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="simple-regressions.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["R-Summaries.pdf", "R-Summaries.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

@@ -1,7 +1,8 @@
 # Basics
 
-```{r}
+```{r, include=FALSE}
 variable <- 1:10
+value <- 5.50
 ```
 
 ```{r include=FALSE}
@@ -12,26 +13,25 @@ n <- 30
 
 **Mathematical values**
 
-$\mu$ = Population mean   
-$\sigma$ = Population sd   
-$\bar{x}$ = Sample mean   
-${e}$ = Standard error 
-$\pi$ = Pie 
-$\ge$ = Bigger than     
-$\le$ = Smaller than 
+$\mu$ = `$\mu$` = Population mean\
+$\sigma$ = `$\sigma$` = Population sd\
+$\bar{x}$ = `$\bar{x}` = Sample mean\
+${e}$ = `${e}$` = Standard error\
+$\pi$ = `$\pi$` = Pie $\ge$ = `$\ge$` = Bigger than\
+$\le$ = `$\le$` = Smaller than
 
 **Sample mean, standard deviation**
 
 ```{r}
-mean(variable)
-sd(variable)
+mean <- mean(variable)
+sd <- sd(variable)
 ```
 
 Removes values NA in a data set:
 
 ```{r}
-mean(variable, na.rm = TRUE)
-sd(variable, na.rm = TRUE)
+mean <- mean(variable, na.rm = TRUE)
+sd <- sd(variable, na.rm = TRUE)
 ```
 
 **Weighted mean & standard deviation**
@@ -48,7 +48,7 @@ weightedsd <- sqrt(wtd.var(x,y))/sqrt(n)
 var(variable)
 ```
 
-**Tables frames & Matrixes**
+### Tables, frames & Matrices\*\*
 
 As matrix =
 
@@ -58,7 +58,7 @@ matrix(c(1:8), nrow = 4, byrow = TRUE) #organized by row
 matrix(c(1:8), ncol = 4, byrow = FALSE) #organized by col
 ```
 
-As data frame = 
+As data frame =
 
 ```{r}
 data.frame(Column1 = c(1:5), Column2 = c(1:5))
@@ -82,31 +82,78 @@ table2 <- data.frame(Column1 = c(1:5), Column2 = c(1:5))
 as.data.table(table2)
 ```
 
-Binding and setting names = 
+Binding and setting names =
 
-rbind(table, newvariable)
-cbind(data, newvariable)
+rbind(table, newvariable) cbind(data, newvariable)
 
 ```{r}
 rownames(table1) <- c("One", "Two", "Three", "Four")
 colnames(table2) <- c("One", "Two")
 ```
 
-**Other:**
+```{r}
+head(cars) # first 6 rows of the data set
+tail(cars) # last 6 rows of the data set
+```
+
+### Removing infinite + NA values
+
+1.  Removing Infinite values
+2.  Removing NA values
+3.  Changing Infinite values to NA values
 
 ```{r}
-value <- 5.50
-round(value, 2) # two decimals
+variable[is.finite(variable)]
+variable[is.na(variable)]
+variable[is.infinite(variable)] <- NA
+```
+
+### Transforming variable types
+
+```{r}
 as.numeric(value)
-rep(5,5) #repeats 5, 5 times
-describe(variable)
-fivenum(variable)
-summary(variable)
-str(variable) #explains the variable
+as.character(value)
+as.factor(value)
 ```
 
 **Read excel**
 
-library(readxl)
-data <- read.xls("data.xlsx", stringsAsFactors = TRUE)
+library(readxl) data \<- read.xls("data.xlsx", stringsAsFactors = TRUE)
 
+### Setup rmarkdown:
+
++--------------------+-------------------------------------------------+
+| Call               | Description                                     |
++====================+=================================================+
+| Warning = FALSE    | Excluding warnings                              |
++--------------------+-------------------------------------------------+
+| Echo=TRUE          | Include r chunks                                |
++--------------------+-------------------------------------------------+
+|                    | Message = FALSE                                 |
++--------------------+-------------------------------------------------+
+|                    | Fig.width =                                     |
++--------------------+-------------------------------------------------+
+|                    | Fig.height =                                    |
++--------------------+-------------------------------------------------+
+|                    | Fig.path =                                      |
++--------------------+-------------------------------------------------+
+|                    | Error = TRUE                                    |
++--------------------+-------------------------------------------------+
+|                    | Cache = FALSE                                   |
++--------------------+-------------------------------------------------+
+|                    |                                                 |
++--------------------+-------------------------------------------------+
+|                    |                                                 |
++--------------------+-------------------------------------------------+
+
+### Miscellaneous:
+
+```{r}
+round(value, 2) # two decimals
+rep(5,5) #repeats 5, 5 times
+describe(variable)
+fivenum(variable)
+summary(variable)
+str(variable) # describing the variable
+dim(cars) # amount of rows and amount of columns
+```

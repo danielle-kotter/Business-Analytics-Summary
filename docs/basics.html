@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter - :1 Basics | Summary and examples of r-code</title>
+  <title>Chapter - 1 Basics | Summary and examples of r-code</title>
   <meta name="description" content="This is a summary of r code learned throughout several courses of my master in management." />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter - :1 Basics | Summary and examples of r-code" />
+  <meta property="og:title" content="Chapter - 1 Basics | Summary and examples of r-code" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter - :1 Basics | Summary and examples of r-code" />
+  <meta name="twitter:title" content="Chapter - 1 Basics | Summary and examples of r-code" />
   
   <meta name="twitter:description" content="This is a summary of r code learned throughout several courses of my master in management." />
   
@@ -196,114 +196,132 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
             <section class="normal" id="section-">
 <div id="basics" class="section level1" number="1">
-<h1><span class="header-section-number">Chapter - :1</span> Basics</h1>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb4-1"><a href="basics.html#cb4-1" aria-hidden="true" tabindex="-1"></a>variable <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span></span></code></pre></div>
+<h1><span class="header-section-number">Chapter - 1</span> Basics</h1>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="basics.html#cb1-1" aria-hidden="true" tabindex="-1"></a>variable <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span></span></code></pre></div>
 <p><strong>Mathematical values</strong></p>
-<p><span class="math inline">\(\mu\)</span> = Population mean<br />
-<span class="math inline">\(\sigma\)</span> = Population sd<br />
-<span class="math inline">\(\bar{x}\)</span> = Sample mean<br />
-<span class="math inline">\({e}\)</span> = Standard error
-<span class="math inline">\(\pi\)</span> = Pie
-<span class="math inline">\(\ge\)</span> = Bigger than<br />
-<span class="math inline">\(\le\)</span> = Smaller than</p>
+<p><span class="math inline">\(\mu\)</span> = <code>$\mu$</code> = Population mean<br />
+<span class="math inline">\(\sigma\)</span> = <code>$\sigma$</code> = Population sd<br />
+<span class="math inline">\(\bar{x}\)</span> = <code>$\bar{x}</code> = Sample mean<br />
+<span class="math inline">\({e}\)</span> = <code>${e}$</code> = Standard error
+<span class="math inline">\(\pi\)</span> = <code>$\pi$</code> = Pie
+<span class="math inline">\(\ge\)</span> = <code>$\ge$</code> = Bigger than<br />
+<span class="math inline">\(\le\)</span> = <code>$\le$</code> = Smaller than</p>
 <p><strong>Sample mean, standard deviation</strong></p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb5-1"><a href="basics.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(variable)</span></code></pre></div>
-<pre><code>[1] 5.5</code></pre>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb7-1"><a href="basics.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(variable)</span></code></pre></div>
-<pre><code>[1] 3.02765</code></pre>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="basics.html#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(variable)</span></code></pre></div>
+<pre><code>## [1] 5.5</code></pre>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="basics.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(variable)</span></code></pre></div>
+<pre><code>## [1] 3.02765</code></pre>
 <p>Removes values NA in a data set:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb9-1"><a href="basics.html#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(variable, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
-<pre><code>[1] 5.5</code></pre>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb11-1"><a href="basics.html#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(variable, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
-<pre><code>[1] 3.02765</code></pre>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="basics.html#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(variable, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<pre><code>## [1] 5.5</code></pre>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="basics.html#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(variable, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<pre><code>## [1] 3.02765</code></pre>
 <p><strong>Weighted mean &amp; standard deviation</strong></p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb13-1"><a href="basics.html#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(Hmisc)</span>
-<span id="cb13-2"><a href="basics.html#cb13-2" aria-hidden="true" tabindex="-1"></a>weightedmean <span class="ot">&lt;-</span> <span class="fu">wtd.mean</span>(x,y)</span>
-<span id="cb13-3"><a href="basics.html#cb13-3" aria-hidden="true" tabindex="-1"></a>weightedsd <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(<span class="fu">wtd.var</span>(x,y))<span class="sc">/</span><span class="fu">sqrt</span>(n)</span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="basics.html#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(Hmisc)</span></code></pre></div>
+<pre><code>## Loading required package: lattice</code></pre>
+<pre><code>## Loading required package: survival</code></pre>
+<pre><code>## Loading required package: Formula</code></pre>
+<pre><code>## Loading required package: ggplot2</code></pre>
+<pre><code>## 
+## Attaching package: &#39;Hmisc&#39;</code></pre>
+<pre><code>## The following objects are masked from &#39;package:base&#39;:
+## 
+##     format.pval, units</code></pre>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="basics.html#cb17-1" aria-hidden="true" tabindex="-1"></a>weightedmean <span class="ot">&lt;-</span> <span class="fu">wtd.mean</span>(x,y)</span>
+<span id="cb17-2"><a href="basics.html#cb17-2" aria-hidden="true" tabindex="-1"></a>weightedsd <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(<span class="fu">wtd.var</span>(x,y))<span class="sc">/</span><span class="fu">sqrt</span>(n)</span></code></pre></div>
 <p><strong>Variance</strong></p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb14-1"><a href="basics.html#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(variable)</span></code></pre></div>
-<pre><code>[1] 9.166667</code></pre>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="basics.html#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(variable)</span></code></pre></div>
+<pre><code>## [1] 9.166667</code></pre>
 <p><strong>Tables frames &amp; Matrixes</strong></p>
 <p>As matrix =</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb16-1"><a href="basics.html#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(data.table)</span>
-<span id="cb16-2"><a href="basics.html#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">8</span>), <span class="at">nrow =</span> <span class="dv">4</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>) <span class="co">#organized by row</span></span></code></pre></div>
-<pre><code>     [,1] [,2]
-[1,]    1    2
-[2,]    3    4
-[3,]    5    6
-[4,]    7    8</code></pre>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb18-1"><a href="basics.html#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">8</span>), <span class="at">ncol =</span> <span class="dv">4</span>, <span class="at">byrow =</span> <span class="cn">FALSE</span>) <span class="co">#organized by col</span></span></code></pre></div>
-<pre><code>     [,1] [,2] [,3] [,4]
-[1,]    1    3    5    7
-[2,]    2    4    6    8</code></pre>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="basics.html#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(data.table)</span>
+<span id="cb20-2"><a href="basics.html#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">8</span>), <span class="at">nrow =</span> <span class="dv">4</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>) <span class="co">#organized by row</span></span></code></pre></div>
+<pre><code>##      [,1] [,2]
+## [1,]    1    2
+## [2,]    3    4
+## [3,]    5    6
+## [4,]    7    8</code></pre>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="basics.html#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">8</span>), <span class="at">ncol =</span> <span class="dv">4</span>, <span class="at">byrow =</span> <span class="cn">FALSE</span>) <span class="co">#organized by col</span></span></code></pre></div>
+<pre><code>##      [,1] [,2] [,3] [,4]
+## [1,]    1    3    5    7
+## [2,]    2    4    6    8</code></pre>
 <p>As data frame =</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb20-1"><a href="basics.html#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data.frame</span>(<span class="at">Column1 =</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>), <span class="at">Column2 =</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>))</span></code></pre></div>
-<pre><code>  Column1 Column2
-1       1       1
-2       2       2
-3       3       3
-4       4       4
-5       5       5</code></pre>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb22-1"><a href="basics.html#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data.table</span>(<span class="at">Column1 =</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>), <span class="at">Column2 =</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>))</span></code></pre></div>
-<pre><code>   Column1 Column2
-1:       1       1
-2:       2       2
-3:       3       3
-4:       4       4
-5:       5       5</code></pre>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="basics.html#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data.frame</span>(<span class="at">Column1 =</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>), <span class="at">Column2 =</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>))</span></code></pre></div>
+<pre><code>##   Column1 Column2
+## 1       1       1
+## 2       2       2
+## 3       3       3
+## 4       4       4
+## 5       5       5</code></pre>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="basics.html#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data.table</span>(<span class="at">Column1 =</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>), <span class="at">Column2 =</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>))</span></code></pre></div>
+<pre><code>##    Column1 Column2
+## 1:       1       1
+## 2:       2       2
+## 3:       3       3
+## 4:       4       4
+## 5:       5       5</code></pre>
 <p>As data table =</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb24-1"><a href="basics.html#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data.table</span>(<span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">8</span>), <span class="at">nrow =</span> <span class="dv">4</span>)) <span class="co"># or</span></span></code></pre></div>
-<pre><code>   V1 V2
-1:  1  5
-2:  2  6
-3:  3  7
-4:  4  8</code></pre>
-<div class="sourceCode" id="cb26"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb26-1"><a href="basics.html#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data.table</span>(<span class="at">Variablex =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="at">Variabley =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>)</span></code></pre></div>
-<pre><code>   Variablex Variabley
-1:         1         1
-2:         2         2
-3:         3         3
-4:         4         4
-5:         5         5</code></pre>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="basics.html#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data.table</span>(<span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">8</span>), <span class="at">nrow =</span> <span class="dv">4</span>)) <span class="co"># or</span></span></code></pre></div>
+<pre><code>##    V1 V2
+## 1:  1  5
+## 2:  2  6
+## 3:  3  7
+## 4:  4  8</code></pre>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="basics.html#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data.table</span>(<span class="at">Variablex =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="at">Variabley =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>)</span></code></pre></div>
+<pre><code>##    Variablex Variabley
+## 1:         1         1
+## 2:         2         2
+## 3:         3         3
+## 4:         4         4
+## 5:         5         5</code></pre>
 <p>Transforming tables from to other formats =</p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb28-1"><a href="basics.html#cb28-1" aria-hidden="true" tabindex="-1"></a>table1 <span class="ot">&lt;-</span> <span class="fu">data.table</span>(<span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">8</span>), <span class="at">nrow =</span> <span class="dv">4</span>))</span>
-<span id="cb28-2"><a href="basics.html#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="fu">as.data.frame</span>(table1)</span></code></pre></div>
-<pre><code>  V1 V2
-1  1  5
-2  2  6
-3  3  7
-4  4  8</code></pre>
-<div class="sourceCode" id="cb30"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb30-1"><a href="basics.html#cb30-1" aria-hidden="true" tabindex="-1"></a>table2 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Column1 =</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>), <span class="at">Column2 =</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>))</span>
-<span id="cb30-2"><a href="basics.html#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="fu">as.data.table</span>(table2)</span></code></pre></div>
-<pre><code>   Column1 Column2
-1:       1       1
-2:       2       2
-3:       3       3
-4:       4       4
-5:       5       5</code></pre>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="basics.html#cb32-1" aria-hidden="true" tabindex="-1"></a>table1 <span class="ot">&lt;-</span> <span class="fu">data.table</span>(<span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">8</span>), <span class="at">nrow =</span> <span class="dv">4</span>))</span>
+<span id="cb32-2"><a href="basics.html#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="fu">as.data.frame</span>(table1)</span></code></pre></div>
+<pre><code>##   V1 V2
+## 1  1  5
+## 2  2  6
+## 3  3  7
+## 4  4  8</code></pre>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="basics.html#cb34-1" aria-hidden="true" tabindex="-1"></a>table2 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Column1 =</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>), <span class="at">Column2 =</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>))</span>
+<span id="cb34-2"><a href="basics.html#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="fu">as.data.table</span>(table2)</span></code></pre></div>
+<pre><code>##    Column1 Column2
+## 1:       1       1
+## 2:       2       2
+## 3:       3       3
+## 4:       4       4
+## 5:       5       5</code></pre>
 <p>Binding and setting names =</p>
 <p>rbind(table, newvariable)
 cbind(data, newvariable)</p>
-<div class="sourceCode" id="cb32"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb32-1"><a href="basics.html#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(table1) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;One&quot;</span>, <span class="st">&quot;Two&quot;</span>, <span class="st">&quot;Three&quot;</span>, <span class="st">&quot;Four&quot;</span>)</span>
-<span id="cb32-2"><a href="basics.html#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(table2) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;One&quot;</span>, <span class="st">&quot;Two&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="basics.html#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(table1) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;One&quot;</span>, <span class="st">&quot;Two&quot;</span>, <span class="st">&quot;Three&quot;</span>, <span class="st">&quot;Four&quot;</span>)</span>
+<span id="cb36-2"><a href="basics.html#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(table2) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;One&quot;</span>, <span class="st">&quot;Two&quot;</span>)</span></code></pre></div>
 <p><strong>Other:</strong></p>
-<div class="sourceCode" id="cb33"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb33-1"><a href="basics.html#cb33-1" aria-hidden="true" tabindex="-1"></a>value <span class="ot">&lt;-</span> <span class="fl">5.50</span></span>
-<span id="cb33-2"><a href="basics.html#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(value, <span class="dv">2</span>) <span class="co"># two decimals</span></span></code></pre></div>
-<pre><code>[1] 5.5</code></pre>
-<div class="sourceCode" id="cb35"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb35-1"><a href="basics.html#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.numeric</span>(value)</span></code></pre></div>
-<pre><code>[1] 5.5</code></pre>
-<div class="sourceCode" id="cb37"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb37-1"><a href="basics.html#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rep</span>(<span class="dv">5</span>,<span class="dv">5</span>) <span class="co">#repeats 5, 5 times</span></span></code></pre></div>
-<pre><code>[1] 5 5 5 5 5</code></pre>
-<div class="sourceCode" id="cb39"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb39-1"><a href="basics.html#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">describe</span>(variable)</span></code></pre></div>
-<pre><code>   vars  n mean   sd median trimmed  mad min max range skew kurtosis   se
-X1    1 10  5.5 3.03    5.5     5.5 3.71   1  10     9    0    -1.56 0.96</code></pre>
-<div class="sourceCode" id="cb41"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb41-1"><a href="basics.html#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fivenum</span>(variable)</span></code></pre></div>
-<pre><code>[1]  1.0  3.0  5.5  8.0 10.0</code></pre>
-<div class="sourceCode" id="cb43"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb43-1"><a href="basics.html#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(variable)</span></code></pre></div>
-<pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-   1.00    3.25    5.50    5.50    7.75   10.00 </code></pre>
-<div class="sourceCode" id="cb45"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb45-1"><a href="basics.html#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(variable) <span class="co">#explains the variable</span></span></code></pre></div>
-<pre><code> int [1:10] 1 2 3 4 5 6 7 8 9 10</code></pre>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="basics.html#cb37-1" aria-hidden="true" tabindex="-1"></a>value <span class="ot">&lt;-</span> <span class="fl">5.50</span></span>
+<span id="cb37-2"><a href="basics.html#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(value, <span class="dv">2</span>) <span class="co"># two decimals</span></span></code></pre></div>
+<pre><code>## [1] 5.5</code></pre>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="basics.html#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.numeric</span>(value)</span></code></pre></div>
+<pre><code>## [1] 5.5</code></pre>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="basics.html#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rep</span>(<span class="dv">5</span>,<span class="dv">5</span>) <span class="co">#repeats 5, 5 times</span></span></code></pre></div>
+<pre><code>## [1] 5 5 5 5 5</code></pre>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="basics.html#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="fu">describe</span>(variable)</span></code></pre></div>
+<pre><code>## variable 
+##        n  missing distinct     Info     Mean      Gmd      .05      .10 
+##       10        0       10        1      5.5    3.667     1.45     1.90 
+##      .25      .50      .75      .90      .95 
+##     3.25     5.50     7.75     9.10     9.55 
+## 
+## lowest :  1  2  3  4  5, highest:  6  7  8  9 10
+##                                                   
+## Value        1   2   3   4   5   6   7   8   9  10
+## Frequency    1   1   1   1   1   1   1   1   1   1
+## Proportion 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1</code></pre>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="basics.html#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fivenum</span>(variable)</span></code></pre></div>
+<pre><code>## [1]  1.0  3.0  5.5  8.0 10.0</code></pre>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="basics.html#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(variable)</span></code></pre></div>
+<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##    1.00    3.25    5.50    5.50    7.75   10.00</code></pre>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="basics.html#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(variable) <span class="co">#explains the variable</span></span></code></pre></div>
+<pre><code>##  int [1:10] 1 2 3 4 5 6 7 8 9 10</code></pre>
 <p><strong>Read excel</strong></p>
 <p>library(readxl)
 data &lt;- read.xls(“data.xlsx,” stringsAsFactors = TRUE)</p>
