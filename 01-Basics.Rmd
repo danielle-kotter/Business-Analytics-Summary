@@ -10,7 +10,7 @@ y <- 10
 n <- 30
 ```
 
-**Mathmatical values**
+**Mathematical values**
 
 $\mu$ = Population mean   
 $\sigma$ = Population sd   

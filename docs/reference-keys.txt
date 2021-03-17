@@ -1,6 +1,5 @@
 fig:nice-fig
 tab:nice-tab
-introduction
 basics
 charts-templates
 probability
