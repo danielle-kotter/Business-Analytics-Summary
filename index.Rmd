@@ -44,10 +44,10 @@ knitr::write_bib(c(
 
 ------------------------------------------------------------------------
 
-```{r, echo=FALSE, fig.align="center", fig.cap="Prepared by: Daniëlle Kotter"}
+```{r, echo=FALSE, fig.align='center', fig.cap="Prepared by: Daniëlle Kotter"}
 htmltools::img(
   src = knitr::image_uri(file.path("www/picture.png")), 
-  alt = 'photo', 
+  alt = 'logo', 
   style = 'position:absolute; padding:10px; width:200px'
 )
 ```

@@ -99,6 +99,7 @@ sub1 <- summary(lm(y~x, data=data["speed">=5,]))
 sub2 <- summary(lm(y~x, data=data["speed"<=5,]))
 ```
 
+
 ###Dummy variables, diff in means
 
 
@@ -207,16 +208,23 @@ im <- influence.measures(fit)
 
 ###Multicollinearity
 
-1. F-test
-2. Variance inflation factors greater than 10
+F-test
 
 ```{r}
 fit <- lm(y~x + d, data = data)
 
 anova(fit)
+```
 
+### Variance inflation factors
+
+The variance inflation factor (vif) is $1 / 1−R2$.
+A simple approach to identify collinearity among explanatory variables is the use of variance inflation factors (VIF). It is the ratio of variance in a model with multiple terms, divided by the variance of a model with one term alone. The higher the value, the higher the collinearity. A VIF for a single explanatory variable is obtained using the r-squared value of the regression of that variable against all other explanatory variables: A VIF is calculated for each explanatory variable and those with high values are removed. The definition of ‘high’ is somewhat arbitrary, but values in the range of 5-10 are commonly used for ‘high’. If VIF value exceeding 4.0, or by tolerance less than 0.2 then there is a problem with multicollinearity (Hair et al., 2010). However, it depends on the researcher’s criteria. The lower the vif the better, but you shouldn’t be too concerned as long as your VIF is not greater than 10.
+
+```{r}
 vif(fit)
 ```
+
 
 ### ANOVA
 
@@ -260,4 +268,13 @@ summary(aov(y ~ x + d, data=data))
 test_manova <- manova(cbind(y, d) ~ x, data = data)
 summary(test_manova)
 summary.aov(test_manova)
+
+
+### Linearizing variables
+
+```{r}
+logged <- log(iris$Sepal.Length) # non-linear
+quad <- cars$speed ^ 2 # quadratic
+```
+
 

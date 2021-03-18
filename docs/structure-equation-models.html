@@ -135,10 +135,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1" data-path="basics.html"><a href="basics.html"><i class="fa fa-check"></i><b>1</b> Basics</a>
 <ul>
 <li class="chapter" data-level="1.0.1" data-path="basics.html"><a href="basics.html#tables-frames-matrices"><i class="fa fa-check"></i><b>1.0.1</b> Tables, frames &amp; Matrices</a></li>
-<li class="chapter" data-level="1.0.2" data-path="basics.html"><a href="basics.html#removing-infinite-na-values"><i class="fa fa-check"></i><b>1.0.2</b> Removing infinite + NA values</a></li>
-<li class="chapter" data-level="1.0.3" data-path="basics.html"><a href="basics.html#transforming-variable-types"><i class="fa fa-check"></i><b>1.0.3</b> Transforming variable types</a></li>
-<li class="chapter" data-level="1.0.4" data-path="basics.html"><a href="basics.html#setup-rmarkdown"><i class="fa fa-check"></i><b>1.0.4</b> Setup rmarkdown</a></li>
-<li class="chapter" data-level="1.0.5" data-path="basics.html"><a href="basics.html#miscellaneous"><i class="fa fa-check"></i><b>1.0.5</b> Miscellaneous</a></li>
+<li class="chapter" data-level="1.1" data-path="basics.html"><a href="basics.html#data-sets"><i class="fa fa-check"></i><b>1.1</b> Data sets</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="basics.html"><a href="basics.html#removing-infinite-na-values"><i class="fa fa-check"></i><b>1.1.1</b> Removing infinite + NA values</a></li>
+<li class="chapter" data-level="1.1.2" data-path="basics.html"><a href="basics.html#transforming-variable-types"><i class="fa fa-check"></i><b>1.1.2</b> Transforming variable types</a></li>
+<li class="chapter" data-level="1.1.3" data-path="basics.html"><a href="basics.html#markdown"><i class="fa fa-check"></i><b>1.1.3</b> Markdown</a></li>
+<li class="chapter" data-level="1.1.4" data-path="basics.html"><a href="basics.html#setup-rmarkdown-code-chunks"><i class="fa fa-check"></i><b>1.1.4</b> Setup rmarkdown &amp; code chunks</a></li>
+<li class="chapter" data-level="1.1.5" data-path="basics.html"><a href="basics.html#miscellaneous"><i class="fa fa-check"></i><b>1.1.5</b> Miscellaneous</a></li>
+<li class="chapter" data-level="1.1.6" data-path="basics.html"><a href="basics.html#subsetting"><i class="fa fa-check"></i><b>1.1.6</b> Subsetting</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="charts-templates.html"><a href="charts-templates.html"><i class="fa fa-check"></i><b>2</b> Charts templates</a></li>
 <li class="chapter" data-level="3" data-path="probability.html"><a href="probability.html"><i class="fa fa-check"></i><b>3</b> Probability</a>
@@ -183,7 +188,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="5" data-path="structure-equation-models.html"><a href="structure-equation-models.html"><i class="fa fa-check"></i><b>5</b> Structure equation models</a>
 <ul>
-<li class="chapter" data-level="5.0.1" data-path="structure-equation-models.html"><a href="structure-equation-models.html#reliability"><i class="fa fa-check"></i><b>5.0.1</b> Reliability</a></li>
+<li class="chapter" data-level="5.1" data-path="structure-equation-models.html"><a href="structure-equation-models.html#coding-the-model"><i class="fa fa-check"></i><b>5.1</b> Coding the model</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="structure-equation-models.html"><a href="structure-equation-models.html#covariance"><i class="fa fa-check"></i><b>5.1.1</b> Covariance</a></li>
+<li class="chapter" data-level="5.1.2" data-path="structure-equation-models.html"><a href="structure-equation-models.html#reliability"><i class="fa fa-check"></i><b>5.1.2</b> Reliability</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="structure-equation-models.html"><a href="structure-equation-models.html#factor-model"><i class="fa fa-check"></i><b>5.2</b> Factor model</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
@@ -209,60 +219,173 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="structure-equation-models" class="section level1" number="5">
 <h1><span class="header-section-number">Chapter - 5</span> Structure equation models</h1>
 <p>Structural Equation Modeling (SEM): is an extremely broad and flexible framework for data analysis, perhaps better thought of as a family of related methods rather than as a single technique. Measuring latent constructs is challenging and we must also incorporate estimates of measurement error into our models. SEM excels at both of these tasks. SEM is especially suited for causal analysis.</p>
+<p><a href="https://www.kdnuggets.com/2017/03/structural-equation-modeling.html" class="uri">https://www.kdnuggets.com/2017/03/structural-equation-modeling.html</a></p>
 <p>Path analysis (structural equations)</p>
-<p>Path diagrams = Communicates the structure of our model. Useful for structural equation models.</p>
-<p>Rectangular = any variable that we can observe directly (observed variable), measured variables</p>
-<p>Circle / Ovals = Cannot be observed (Latent variable)</p>
-<p>Arrow = directed effect. One variable impacts the other. Hypothetical causal relationship.</p>
-<p>Numbers by the arrows = regression coefficient. Correlations coefficients.</p>
+<ul>
+<li><p>Path diagrams = Communicates the structure of our model. Useful for structural equation models.</p></li>
+<li><p>Rectangular = any variable that we can observe directly (observed variable), measured variables</p></li>
+<li><p>Circle / Ovals = Cannot be observed (Latent variable)</p></li>
+<li><p>Arrow = directed effect. One variable impacts the other. Hypothetical causal relationship.</p></li>
+<li><p>Numbers by the arrows = regression coefficient. Correlations coefficients.</p></li>
+</ul>
 <p><img src="images/paste-C79DE382.png" width="352" /></p>
-<p>Triangle is the constant in the Linear Model.</p>
+<ul>
+<li>Triangle is the constant in the Linear Model.</li>
+</ul>
 <p><img src="images/paste-948ED17C.png" width="81" /></p>
-<p>Double handed arrows = indicate covariances or correlations without a causal interpretation.</p>
-<p>SEM -&gt; style=“ram” to get circles around the measurement arrow</p>
-<p>Double handed arrow between two independent variables = they are correlated to each other. Covariance</p>
+<ul>
+<li><p>Double handed arrows = indicate co-variances or correlations without a causal interpretation.</p></li>
+<li><p>SEM -&gt; style=“ram” to get circles around the measurement arrow</p></li>
+<li><p>Double handed arrow between two independent variables = they are correlated to each other. Covariance</p></li>
+</ul>
 <p><img src="images/paste-D2D686C6.png" width="350" /></p>
-<p>Residual error term = measurement errors. We expect that the factor will not perfectly predict the observed variables.</p>
-<p>The bidirected arrows, the ones with two side arrows (in this representation, a connecting line with no arrows) represent covariances among variables.</p>
-<p>OLS = Ordinary least-squares (OLS) models assume that the analyst is fitting a model of a relationship between one or more explanatory variables and a continuous or at least interval outcome variable that minimizes the sum of square errors, where an error is the difference between the actual and the predicted value of the outcome variable. The most common analytic method that utilizes OLS models is linear regression (with a single or multiple predictor variables).</p>
-<p>OLS: b –&gt; beta * k</p>
+<ul>
+<li><p>Residual error term = measurement errors. We expect that the factor will not perfectly predict the observed variables.</p></li>
+<li><p>The bidirected arrows, the ones with two side arrows (in this representation, a connecting line with no arrows) represent covariances among variables.</p></li>
+</ul>
+<hr />
+<p>Ordinary least-squares (OLS): models assume that the analyst is fitting a model of a relationship between one or more explanatory variables and a continuous or at least interval outcome variable that minimizes the sum of square errors, where an error is the difference between the actual and the predicted value of the outcome variable. The most common analytic method that utilizes OLS models is linear regression (with a single or multiple predictor variables).</p>
+<p>OLS: $$b = beta * k$</p>
 <p>Latent variables = unobserved variables or unmeasured variables in SEM lingo. These are theoretical concepts which can be inferred but not directly measured.</p>
-<p>Linear regression model = Y = alpha + betaX + error</p>
+<p>Linear regression model = <span class="math inline">\(Y = alpha + betaX + error\)</span></p>
 <p>The model has to account for randomization. If there is a factor that that cannot be explained, it is included in the error. When this unmeasured factor that is in the error is correlated to another independent variable, there is endogeneity.</p>
 <p>Endogeneity variables = correlated with the error terms. Arises when the marginal distribution of the independent variable is not independent of the conditional distribution of the dependent variable given the independent.</p>
 <p>Exogenous variables = not driven by other factors (observable or observable)</p>
-<p>Sources of endogeneity =</p>
+<p><em>Sources of endogeneity =</em></p>
 <pre><code>1. Omitted variables: relevant variables left out of the model,  attributing to effect to those that were included. 
 2. Simultaneity: where x causes y and y causes x
 3. Selection bias: sampling bias</code></pre>
 <hr />
-<p>Multiple regression</p>
+<div id="coding-the-model" class="section level2" number="5.1">
+<h2><span class="header-section-number">5.1</span> Coding the model</h2>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="structure-equation-models.html#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(semPlot)</span>
+<span id="cb2-2"><a href="structure-equation-models.html#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lavaan)</span></code></pre></div>
+<p>Setting up the model and summarizing</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="structure-equation-models.html#cb3-1" aria-hidden="true" tabindex="-1"></a>fit <span class="ot">&lt;-</span> <span class="st">&#39;dist ~ speed&#39;</span></span>
+<span id="cb3-2"><a href="structure-equation-models.html#cb3-2" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">lavaan</span>(fit, <span class="at">data =</span> cars, <span class="at">estimator=</span><span class="st">&quot;MLM&quot;</span>, <span class="at">auto.var =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb3-3"><a href="structure-equation-models.html#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model)</span></code></pre></div>
+<pre><code>## lavaan 0.6-8 ended normally after 15 iterations
+## 
+##   Estimator                                         ML
+##   Optimization method                           NLMINB
+##   Number of model parameters                         2
+##                                                       
+##   Number of observations                            50
+##                                                       
+## Model Test User Model:
+##                                               Standard      Robust
+##   Test Statistic                                 0.000       0.000
+##   Degrees of freedom                                 0           0
+## 
+## Parameter Estimates:
+## 
+##   Standard errors                           Robust.sem
+##   Information                                 Expected
+##   Information saturated (h1) model          Structured
+## 
+## Regressions:
+##                    Estimate  Std.Err  z-value  P(&gt;|z|)
+##   dist ~                                              
+##     speed             3.932    0.399    9.864    0.000
+## 
+## Variances:
+##                    Estimate  Std.Err  z-value  P(&gt;|z|)
+##    .dist            227.070   54.619    4.157    0.000</code></pre>
+<p>Setting up the path diagram</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="structure-equation-models.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">semPaths</span>(model, <span class="st">&quot;std&quot;</span>, <span class="at">title =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb5-2"><a href="structure-equation-models.html#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="at">weighted =</span> <span class="cn">FALSE</span>, <span class="at">sizeInt =</span> <span class="dv">4</span>, <span class="at">sizeMan =</span> <span class="dv">5</span>,</span>
+<span id="cb5-3"><a href="structure-equation-models.html#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="at">edge.label.cex =</span> <span class="fl">1.3</span>, <span class="at">asize =</span> <span class="dv">2</span>)</span>
+<span id="cb5-4"><a href="structure-equation-models.html#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span>(<span class="st">&quot;SEM path&quot;</span>, <span class="at">line =</span> <span class="dv">3</span>)</span></code></pre></div>
+<p><img src="R-Summaries_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<p>With latent variable &amp; sem</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="structure-equation-models.html#cb6-1" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="st">&quot;</span></span>
+<span id="cb6-2"><a href="structure-equation-models.html#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="st"># regression</span></span>
+<span id="cb6-3"><a href="structure-equation-models.html#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="st">Petal =~ Petal.Width + Petal.Length</span></span>
+<span id="cb6-4"><a href="structure-equation-models.html#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="st">Sepal.Length ~ Sepal.Width  + Petal</span></span>
+<span id="cb6-5"><a href="structure-equation-models.html#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;</span></span>
+<span id="cb6-6"><a href="structure-equation-models.html#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-7"><a href="structure-equation-models.html#cb6-7" aria-hidden="true" tabindex="-1"></a>fit <span class="ot">&lt;-</span> <span class="fu">sem</span>(model, <span class="at">data =</span> iris, <span class="at">sample.cov =</span> S, <span class="at">sample.nobs =</span> <span class="dv">122</span>)</span>
+<span id="cb6-8"><a href="structure-equation-models.html#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="fu">semPaths</span>(fit, <span class="st">&quot;std&quot;</span>, <span class="at">sizeInt =</span> <span class="dv">4</span>, <span class="at">sizeMan =</span> <span class="dv">3</span>, <span class="at">edge.label.cex =</span> <span class="dv">1</span>, <span class="at">asize=</span><span class="dv">3</span>, <span class="at">weighted=</span><span class="cn">TRUE</span>, <span class="at">exoCov =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<p><img src="R-Summaries_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p><br />
+Testing the model</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="structure-equation-models.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fitMeasures</span>(fit)[ <span class="fu">c</span>(<span class="st">&quot;chisq&quot;</span>,<span class="st">&quot;df&quot;</span>, <span class="st">&quot;pvalue&quot;</span> ,<span class="st">&quot;rmsea&quot;</span>)]</span></code></pre></div>
+<pre><code>##        chisq           df       pvalue        rmsea 
+## 3.594876e+01 2.000000e+00 1.562525e-08 3.363964e-01</code></pre>
+<ol style="list-style-type: decimal">
+<li>Chisq is a chi-squared test statistic for. H0: moment restrictions implied by the model hold true</li>
+<li>The degrees of freedom</li>
+<li>P-value of the chi-square test</li>
+<li>Rmsea is a fit index, the root mean square of approximation. It should be small for a good fit of the model. Threshold of .05 is often applied to declare good fit.</li>
+</ol>
+<p><strong>Modification indices</strong></p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="structure-equation-models.html#cb9-1" aria-hidden="true" tabindex="-1"></a>modi <span class="ot">=</span> <span class="fu">modindices</span>(fit)</span>
+<span id="cb9-2"><a href="structure-equation-models.html#cb9-2" aria-hidden="true" tabindex="-1"></a>modi[<span class="fu">order</span>(modi[,<span class="dv">4</span>], <span class="at">decreasing=</span>T), ]</span></code></pre></div>
+<pre><code>##            lhs op          rhs     mi    epc sepc.lv sepc.all sepc.nox
+## 13 Sepal.Width  ~ Sepal.Length 30.061 -0.229  -0.229   -0.499   -0.499
+## 14 Sepal.Width  ~        Petal 30.061 -0.263  -0.189   -0.435   -0.435
+## 16       Petal  ~  Sepal.Width 30.061 -0.719  -1.002   -0.435   -1.002
+## 15       Petal  ~ Sepal.Length 30.061 -1.104  -1.539   -1.456   -1.456</code></pre>
+<p><strong>Parameters fit</strong></p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="structure-equation-models.html#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">parameterestimates</span>(fit, </span>
+<span id="cb11-2"><a href="structure-equation-models.html#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="at">standardized =</span> <span class="cn">TRUE</span>, <span class="at">rsquare=</span><span class="cn">TRUE</span>, <span class="at">ci=</span><span class="cn">FALSE</span>)[<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>,] <span class="co"># showing the top 4</span></span></code></pre></div>
+<pre><code>##            lhs op          rhs   est    se      z pvalue std.lv std.all std.nox
+## 1        Petal =~  Petal.Width 1.000 0.000     NA     NA  0.717   0.944   0.944
+## 2        Petal =~ Petal.Length 2.500 0.065 38.745      0  1.794   1.020   1.020
+## 3 Sepal.Length  ~  Sepal.Width 0.651 0.058 11.158      0  0.651   0.299   0.688
+## 4 Sepal.Length  ~        Petal 1.149 0.052 22.015      0  0.824   0.871   0.871</code></pre>
+<hr />
+<p><strong>Multiple regression</strong></p>
 <p>We can assume that the independent variables are correlated.</p>
 <p>The residual error in multiple regression analysis is actually an unobserved, latent variable. The residual error is 1, to achieve identification.</p>
 <p>Estimator = MLM in the model, protects for non-linearity, non-normality and elasticity of the raw data. Need the raw data, not only the covariance.</p>
-<p>Structural equation = y = beta*x + e; var(y)=cov(y,y)</p>
-<p>Beta^2* var(x) + var(e-) = y</p>
+<p>Structural equation = <span class="math inline">\(y = beta*x + e; var(y)=cov(y,y)\)</span></p>
+<p><span class="math inline">\(Beta^2* var(x) + var(e-) = y\)</span></p>
 <hr />
-<p>Divide true variance of the true / observed variance = reliability</p>
-<p>Cov(1,2) = sum (1- mean(1) * (2-mean(2) / n</p>
+<div id="covariance" class="section level3" number="5.1.1">
+<h3><span class="header-section-number">5.1.1</span> Covariance</h3>
 <p>Covariance is a measure of how much two random variables vary together. It’s similar to variance, but where variance tells you how a single variable varies, co variance tells you how two variables vary together.</p>
-<p>Difference between covariance and correlation.</p>
+<p>Cov(1,2) = <span class="math inline">\(sum (1- mean(1) * (2-mean(2) / n\)</span></p>
+<p><strong>Moment matrix:</strong></p>
+<p><img src="images/paste-0F03CE3C.png" width="261" /></p>
+<p><strong>Covariance matrix:</strong></p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="structure-equation-models.html#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cov</span>(cars)</span></code></pre></div>
+<pre><code>##           speed     dist
+## speed  27.95918 109.9469
+## dist  109.94694 664.0608</code></pre>
+<p><em>Difference between covariance and correlation.</em></p>
 <p><img src="images/paste-BCC7A4B7.png" width="353" /></p>
+<p>Creating the covariance matrix when only having the lower half:</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="structure-equation-models.html#cb15-1" aria-hidden="true" tabindex="-1"></a>lower <span class="ot">&lt;-</span> <span class="st">&quot;</span></span>
+<span id="cb15-2"><a href="structure-equation-models.html#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="st">0.03300863</span></span>
+<span id="cb15-3"><a href="structure-equation-models.html#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="st">0.15894229 5.0185561</span></span>
+<span id="cb15-4"><a href="structure-equation-models.html#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="st">0.15670560 0.9841531 1.2142232</span></span>
+<span id="cb15-5"><a href="structure-equation-models.html#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;</span></span>
+<span id="cb15-6"><a href="structure-equation-models.html#cb15-6" aria-hidden="true" tabindex="-1"></a>S <span class="ot">&lt;-</span> <span class="fu">getCov</span>(lower,</span>
+<span id="cb15-7"><a href="structure-equation-models.html#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="at">names =</span> <span class="fu">c</span>(<span class="st">&quot;variable1&quot;</span>, <span class="st">&quot;variable2&quot;</span>, <span class="st">&quot;variable3&quot;</span>))</span>
+<span id="cb15-8"><a href="structure-equation-models.html#cb15-8" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(S)</span></code></pre></div>
+<pre><code>##            variable1 variable2 variable3
+## variable1 0.03300863 0.1589423 0.1567056
+## variable2 0.15894229 5.0185561 0.9841531
+## variable3 0.15670560 0.9841531 1.2142232</code></pre>
 <hr />
-<div id="reliability" class="section level3" number="5.0.1">
-<h3><span class="header-section-number">5.0.1</span> Reliability</h3>
+</div>
+<div id="reliability" class="section level3" number="5.1.2">
+<h3><span class="header-section-number">5.1.2</span> Reliability</h3>
 <p>In statistics reliability is the consistency of a set of measurements or measuring instrument, often used to describe a test. This can either be whether the measurements of the same instrument give or are likely to give the same measurement (test-retest), or in the case of more subjective instruments, such as personality or trait inventories, whether two independent assessors give similar scores (inter-rater-reliability). Reliability is inversely related to random error.</p>
+<p>Divide true variance of the true / observed variance = reliability</p>
 <p><span class="math inline">\(X = T + e\)</span></p>
 <p><span class="math inline">\(Reliability of X = var(T) / var(T) + var(e)\)</span></p>
 <p><span class="math inline">\(var(Tintake) / var(Ointake) = 1 - var(error) / var(Ointake)\)</span></p>
 <p>In words, reliability is defined as a proportion of observed variance that is true variance. Reliability is interpreted as a proportion—reliability cannot be negative.</p>
 <p>Reliability = 1- Latent variable variance / variance variable 1</p>
 <p>K = variance(true)/variance(Observed(true+error))</p>
+<p><img src="images/paste-3355EB34.png" /></p>
 <pre><code>1- Measurement error variable 1 / measurement error variable 2 (latent varible)</code></pre>
 <p><a href="https://www.uwo.ca/fhs/tc/labs/07.Reliability.pdf" class="uri">https://www.uwo.ca/fhs/tc/labs/07.Reliability.pdf</a></p>
 <p>Various kinds of reliability coefficients, with values ranging between 0.00 (much error) and 1.00 (no error), are usually used to indicate the amount of error in the scores." [2] For example, measurements of people’s height and weight are often extremely reliable. ____________________________________________________</p>
 <p><strong>Testing the model</strong></p>
-<p>fitMeasures(fitLV) [ c(“chisq,” “df,” pvalue“,”rmsea")]</p>
+<p><code>fitMeasures(fit) [ c("chisq", "df", pvalue", "rmsea")]</code></p>
 <p>MI = if i liberate one parameter, then __ there would</p>
 <p>Model chi-square test. We test whether the fitted model is correct. HO: moment restrictions implied by the model hold. The fit is correct If &gt; 0.05 we cannot reject the model. I accept the model.</p>
 <p>Therefore, the chi-square test allows researchers to evaluate the fitness of a model by using the null hypothesis significance test approach.</p>
@@ -272,15 +395,48 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <hr />
 <p><strong>MLM estimation</strong></p>
 <p>Raw data is needed.</p>
-<p>Independent variables have variances and covariances, unless the model specification puts them to zero.</p>
+<p>Independent variables have variances and co-variances, unless the model specification puts them to zero.</p>
 <p>The square of the standardized loading is the reliability of the variable. For example, the reliability k of AM1 is .59**2 = 0.35 .</p>
 <p>Measurement equation = TSE =~ 1<em>SE1 + 1</em>SE2</p>
 <p>Regression equation PERF ~ TS + TSE + VERB</p>
-<p><img src="images/paste-8481FC40.png" /></p>
 <p>Degrees of freedom (df) = Number of observations available for model estimation - Number of observations used to estimate parameters</p>
 <p>df for empty model = ( k(k-1) ) / 2</p>
 <p>“Number of free parameters” refers to all of the things that this model estimated freely</p>
 <p>Parameter is a regression coefficient when standardized is called a beta coefficient.</p>
+<p><a href="https://fredclavel.org/2014/05/03/disentangling-degrees-of-freedom-for-sem/#:~:text=The%20degrees%20of%20freedom%20for,%3D%2015%20%E2%80%93%205%20%3D%2010" class="uri">https://fredclavel.org/2014/05/03/disentangling-degrees-of-freedom-for-sem/#:~:text=The%20degrees%20of%20freedom%20for,%3D%2015%20%E2%80%93%205%20%3D%2010</a></p>
+<hr />
+</div>
+</div>
+<div id="factor-model" class="section level2" number="5.2">
+<h2><span class="header-section-number">5.2</span> Factor model</h2>
+<p><strong>Factor analysis:</strong> is a statistical method used to describe variability among observed, correlated variable in terms of a potentially lower number of unobserved variables called factors. For example, it is possible that variations in six observed variables mainly reflect the variations in two unobserved (underlying) variables. Factor analysis searches for such joint variations in response to unobserved latent variables. The observed variables are modelled as linear combinations of the potential factors, plus “error” terms.</p>
+<p>Common return that has a impact to multiple variables. You can find how much variance is due to permanent and depended on variables.</p>
+<p>Factor model include means: Spearman model in 1903.</p>
+<p><img src="images/paste-746E3DB0.png" /></p>
+<p>Basic model - Y, X are centered Y = beta X + error</p>
+<p>Y, X NOT centered - including constant Y = alpha*1 + beta X + error</p>
+<p>Factor model Y = lambda*F + error1 Lamba = the weights F = common factor Error = Specific factors</p>
+<p>Instead of setting the alpha to 1, we add a weight for lambda</p>
+<p>When the data is standardized, beta becomes the standardized beta coefficient. Because y, x are centered, you do not need to constant.</p>
+<p>Next step is factor models with simultaneous equations –&gt; ML estimation of a general model. Linear structural relations</p>
+<p>You have to fix the variance of a variable that you do not observe. If you do not do this, the model is not identified. Meaning there is no minimum. Including latent variables two options:</p>
+<pre><code>A) Var(F) = 1, F Standardized (F typically has mean zero)
+B) Lambda_1 = 1</code></pre>
+<p>They are equivalent regarding degrees of freedom or model fit. When you put 1* variable1, you force the true beta to be 1.</p>
+<p>In r setting the model = Regression equation F = ~ NA<em>Ph Y ~~ 1</em>Y</p>
+<p>Default NA = not available. Asking R to calculate the beta instead of setting it to 1.</p>
+<p>Gives =</p>
+<p>Y = Lambda*F + Error</p>
+<p>When you bring more equation, the degrees of freedom increases. Y ~~ 1* Y = force that it is standardized</p>
+<p>0 degrees of freedom = you cannot test but you can fit. You cannot reject the model, but you can check the reliability.</p>
+<p>Reliability = variance of the factor / variance of the factor + variance of the variable</p>
+<p>How much variation is due to the permanent of the component.</p>
+<p>Modindices(fit). It tells you how you could improve your model</p>
+<p>Two explanatory variables giving possibility for correlation = X~~X</p>
+<p>Equality with error variances (multiple independent variables) X~~X A = setting a restriction. Variance is to be estimated. Imposing restrictions.</p>
+<p>When you include variances, you put a lot of tension on your model.</p>
+<p>Autoregressive, one variables keeps impacting the following. For example: 2011 impacts 2012 which impacts 2013 etc.</p>
+<p>Simplex model</p>
 
 </div>
 </div>

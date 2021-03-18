@@ -91,11 +91,6 @@ rownames(table1) <- c("One", "Two", "Three", "Four")
 colnames(table2) <- c("One", "Two")
 ```
 
-```{r}
-head(cars) # first 6 rows of the data set
-tail(cars) # last 6 rows of the data set
-```
-
 Changing the order of a frequency table and factor
 
 ```{r}
@@ -120,6 +115,37 @@ setorder(table, `value`)
 table
 ```
 
+**Frequencies**
+
+```{r}
+values <- c(1:10)
+table(values)
+prop.table(table(values))
+round(prop.table(table(values)) * 100, 2)
+```
+
+
+## Data sets
+
+Displaying head or tail of a data set:
+
+```{r}
+head(cars) # first 6 rows of the data set
+tail(cars) # last 6 rows of the data set
+```
+
+Reading excel
+
+`library(readxl)`
+`data <- read.xls("data.xlsx", stringsAsFactors = TRUE)`
+
+
+```{r}
+names(cars) # shows the column names of the data set
+attach(cars) # saves the names to be used as variables
+```
+
+
 
 ### Removing infinite + NA values
 
@@ -141,9 +167,6 @@ as.character(value)
 as.factor(value)
 ```
 
-**Read excel**
-
-library(readxl) data \<- read.xls("data.xlsx", stringsAsFactors = TRUE)
 
 ### Markdown
 

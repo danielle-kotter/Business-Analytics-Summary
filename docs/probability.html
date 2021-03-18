@@ -135,10 +135,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1" data-path="basics.html"><a href="basics.html"><i class="fa fa-check"></i><b>1</b> Basics</a>
 <ul>
 <li class="chapter" data-level="1.0.1" data-path="basics.html"><a href="basics.html#tables-frames-matrices"><i class="fa fa-check"></i><b>1.0.1</b> Tables, frames &amp; Matrices</a></li>
-<li class="chapter" data-level="1.0.2" data-path="basics.html"><a href="basics.html#removing-infinite-na-values"><i class="fa fa-check"></i><b>1.0.2</b> Removing infinite + NA values</a></li>
-<li class="chapter" data-level="1.0.3" data-path="basics.html"><a href="basics.html#transforming-variable-types"><i class="fa fa-check"></i><b>1.0.3</b> Transforming variable types</a></li>
-<li class="chapter" data-level="1.0.4" data-path="basics.html"><a href="basics.html#setup-rmarkdown"><i class="fa fa-check"></i><b>1.0.4</b> Setup rmarkdown</a></li>
-<li class="chapter" data-level="1.0.5" data-path="basics.html"><a href="basics.html#miscellaneous"><i class="fa fa-check"></i><b>1.0.5</b> Miscellaneous</a></li>
+<li class="chapter" data-level="1.1" data-path="basics.html"><a href="basics.html#data-sets"><i class="fa fa-check"></i><b>1.1</b> Data sets</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="basics.html"><a href="basics.html#removing-infinite-na-values"><i class="fa fa-check"></i><b>1.1.1</b> Removing infinite + NA values</a></li>
+<li class="chapter" data-level="1.1.2" data-path="basics.html"><a href="basics.html#transforming-variable-types"><i class="fa fa-check"></i><b>1.1.2</b> Transforming variable types</a></li>
+<li class="chapter" data-level="1.1.3" data-path="basics.html"><a href="basics.html#markdown"><i class="fa fa-check"></i><b>1.1.3</b> Markdown</a></li>
+<li class="chapter" data-level="1.1.4" data-path="basics.html"><a href="basics.html#setup-rmarkdown-code-chunks"><i class="fa fa-check"></i><b>1.1.4</b> Setup rmarkdown &amp; code chunks</a></li>
+<li class="chapter" data-level="1.1.5" data-path="basics.html"><a href="basics.html#miscellaneous"><i class="fa fa-check"></i><b>1.1.5</b> Miscellaneous</a></li>
+<li class="chapter" data-level="1.1.6" data-path="basics.html"><a href="basics.html#subsetting"><i class="fa fa-check"></i><b>1.1.6</b> Subsetting</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="charts-templates.html"><a href="charts-templates.html"><i class="fa fa-check"></i><b>2</b> Charts templates</a></li>
 <li class="chapter" data-level="3" data-path="probability.html"><a href="probability.html"><i class="fa fa-check"></i><b>3</b> Probability</a>
@@ -178,12 +183,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="4.3" data-path="simple-regressions.html"><a href="simple-regressions.html#data-problems"><i class="fa fa-check"></i><b>4.3</b> Data problems</a>
 <ul>
-<li class="chapter" data-level="4.3.1" data-path="simple-regressions.html"><a href="simple-regressions.html#anova"><i class="fa fa-check"></i><b>4.3.1</b> ANOVA</a></li>
+<li class="chapter" data-level="4.3.1" data-path="simple-regressions.html"><a href="simple-regressions.html#variance-inflation-factors"><i class="fa fa-check"></i><b>4.3.1</b> Variance inflation factors</a></li>
+<li class="chapter" data-level="4.3.2" data-path="simple-regressions.html"><a href="simple-regressions.html#anova"><i class="fa fa-check"></i><b>4.3.2</b> ANOVA</a></li>
+<li class="chapter" data-level="4.3.3" data-path="simple-regressions.html"><a href="simple-regressions.html#linearizing-variables"><i class="fa fa-check"></i><b>4.3.3</b> Linearizing variables</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="structure-equation-models.html"><a href="structure-equation-models.html"><i class="fa fa-check"></i><b>5</b> Structure equation models</a>
 <ul>
-<li class="chapter" data-level="5.0.1" data-path="structure-equation-models.html"><a href="structure-equation-models.html#reliability"><i class="fa fa-check"></i><b>5.0.1</b> Reliability</a></li>
+<li class="chapter" data-level="5.1" data-path="structure-equation-models.html"><a href="structure-equation-models.html#coding-the-model"><i class="fa fa-check"></i><b>5.1</b> Coding the model</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="structure-equation-models.html"><a href="structure-equation-models.html#covariance"><i class="fa fa-check"></i><b>5.1.1</b> Covariance</a></li>
+<li class="chapter" data-level="5.1.2" data-path="structure-equation-models.html"><a href="structure-equation-models.html#reliability"><i class="fa fa-check"></i><b>5.1.2</b> Reliability</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="structure-equation-models.html"><a href="structure-equation-models.html#factor-model"><i class="fa fa-check"></i><b>5.2</b> Factor model</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
@@ -208,53 +220,57 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="probability" class="section level1" number="3">
 <h1><span class="header-section-number">Chapter - 3</span> Probability</h1>
-<div class="sourceCode" id="cb64"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb64-1"><a href="probability.html#cb64-1" aria-hidden="true" tabindex="-1"></a>out <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Red&quot;</span>, <span class="st">&quot;White&quot;</span>, <span class="st">&quot;Black&quot;</span>, <span class="st">&quot;Blue&quot;</span>, <span class="st">&quot;Green&quot;</span>)</span>
-<span id="cb64-2"><a href="probability.html#cb64-2" aria-hidden="true" tabindex="-1"></a>freq <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>)</span>
-<span id="cb64-3"><a href="probability.html#cb64-3" aria-hidden="true" tabindex="-1"></a>s <span class="ot">&lt;-</span> <span class="fu">probspace</span>(out, <span class="at">probs =</span> freq)</span>
-<span id="cb64-4"><a href="probability.html#cb64-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(s)</span></code></pre></div>
-<pre><code>      x      probs
-1   Red 0.06666667
-2 White 0.13333333
-3 Black 0.20000000
-4  Blue 0.26666667
-5 Green 0.33333333</code></pre>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="probability.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(prob)</span>
+<span id="cb1-2"><a href="probability.html#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(LaplacesDemon) <span class="co"># Bayes Theorem</span></span>
+<span id="cb1-3"><a href="probability.html#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(BSDA) <span class="co">#tsumtest</span></span>
+<span id="cb1-4"><a href="probability.html#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(actuar) </span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="probability.html#cb2-1" aria-hidden="true" tabindex="-1"></a>out <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Red&quot;</span>, <span class="st">&quot;White&quot;</span>, <span class="st">&quot;Black&quot;</span>, <span class="st">&quot;Blue&quot;</span>, <span class="st">&quot;Green&quot;</span>)</span>
+<span id="cb2-2"><a href="probability.html#cb2-2" aria-hidden="true" tabindex="-1"></a>freq <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>)</span>
+<span id="cb2-3"><a href="probability.html#cb2-3" aria-hidden="true" tabindex="-1"></a>s <span class="ot">&lt;-</span> <span class="fu">probspace</span>(out, <span class="at">probs =</span> freq)</span>
+<span id="cb2-4"><a href="probability.html#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(s)</span></code></pre></div>
+<pre><code>##       x      probs
+## 1   Red 0.06666667
+## 2 White 0.13333333
+## 3 Black 0.20000000
+## 4  Blue 0.26666667
+## 5 Green 0.33333333</code></pre>
 <ol style="list-style-type: decimal">
 <li>If you toss two fair coins, what is the probability of two heads?</li>
 </ol>
-<div class="sourceCode" id="cb66"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb66-1"><a href="probability.html#cb66-1" aria-hidden="true" tabindex="-1"></a>space <span class="ot">&lt;-</span> <span class="fu">tosscoin</span>(<span class="dv">2</span>, <span class="at">makespace =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb66-2"><a href="probability.html#cb66-2" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">Prob</span>(space, toss1 <span class="sc">==</span> <span class="st">&quot;H&quot;</span> <span class="sc">&amp;</span> toss2 <span class="sc">==</span> <span class="st">&quot;H&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="probability.html#cb4-1" aria-hidden="true" tabindex="-1"></a>space <span class="ot">&lt;-</span> <span class="fu">tosscoin</span>(<span class="dv">2</span>, <span class="at">makespace =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb4-2"><a href="probability.html#cb4-2" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">Prob</span>(space, toss1 <span class="sc">==</span> <span class="st">&quot;H&quot;</span> <span class="sc">&amp;</span> toss2 <span class="sc">==</span> <span class="st">&quot;H&quot;</span>)</span></code></pre></div>
 <p><em>The probability is: 0.25</em></p>
 <ol start="2" style="list-style-type: decimal">
 <li>When two dice are thrown, what is the probability of a 3 followed by a 5?</li>
 </ol>
-<div class="sourceCode" id="cb67"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb67-1"><a href="probability.html#cb67-1" aria-hidden="true" tabindex="-1"></a>space <span class="ot">&lt;-</span> <span class="fu">rolldie</span>(<span class="dv">2</span>, <span class="at">makespace =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb67-2"><a href="probability.html#cb67-2" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">Prob</span>(space, X1 <span class="sc">==</span> <span class="dv">3</span> <span class="sc">&amp;</span> (X2 <span class="sc">==</span> <span class="dv">5</span>) )</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="probability.html#cb5-1" aria-hidden="true" tabindex="-1"></a>space <span class="ot">&lt;-</span> <span class="fu">rolldie</span>(<span class="dv">2</span>, <span class="at">makespace =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb5-2"><a href="probability.html#cb5-2" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">Prob</span>(space, X1 <span class="sc">==</span> <span class="dv">3</span> <span class="sc">&amp;</span> (X2 <span class="sc">==</span> <span class="dv">5</span>) )</span></code></pre></div>
 <p><em>The probability is: 0.03</em></p>
 <ol start="3" style="list-style-type: decimal">
 <li>Sampling from an urn with or without replacement. 3 balls and sample size of 2:</li>
 </ol>
-<div class="sourceCode" id="cb68"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb68-1"><a href="probability.html#cb68-1" aria-hidden="true" tabindex="-1"></a>sample1 <span class="ot">&lt;-</span> <span class="fu">urnsamples</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="at">size =</span> <span class="dv">2</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>, <span class="at">ordered =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb68-2"><a href="probability.html#cb68-2" aria-hidden="true" tabindex="-1"></a>sample2 <span class="ot">&lt;-</span> <span class="fu">urnsamples</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="at">size =</span> <span class="dv">2</span>, <span class="at">replace =</span> <span class="cn">FALSE</span>, <span class="at">ordered =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb68-3"><a href="probability.html#cb68-3" aria-hidden="true" tabindex="-1"></a>sample3 <span class="ot">&lt;-</span> <span class="fu">urnsamples</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="at">size =</span> <span class="dv">2</span>, <span class="at">replace =</span> <span class="cn">FALSE</span>, <span class="at">ordered =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb68-4"><a href="probability.html#cb68-4" aria-hidden="true" tabindex="-1"></a>sample4 <span class="ot">&lt;-</span> <span class="fu">urnsamples</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="at">size =</span> <span class="dv">2</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>, <span class="at">ordered =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="probability.html#cb6-1" aria-hidden="true" tabindex="-1"></a>sample1 <span class="ot">&lt;-</span> <span class="fu">urnsamples</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="at">size =</span> <span class="dv">2</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>, <span class="at">ordered =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb6-2"><a href="probability.html#cb6-2" aria-hidden="true" tabindex="-1"></a>sample2 <span class="ot">&lt;-</span> <span class="fu">urnsamples</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="at">size =</span> <span class="dv">2</span>, <span class="at">replace =</span> <span class="cn">FALSE</span>, <span class="at">ordered =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb6-3"><a href="probability.html#cb6-3" aria-hidden="true" tabindex="-1"></a>sample3 <span class="ot">&lt;-</span> <span class="fu">urnsamples</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="at">size =</span> <span class="dv">2</span>, <span class="at">replace =</span> <span class="cn">FALSE</span>, <span class="at">ordered =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb6-4"><a href="probability.html#cb6-4" aria-hidden="true" tabindex="-1"></a>sample4 <span class="ot">&lt;-</span> <span class="fu">urnsamples</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="at">size =</span> <span class="dv">2</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>, <span class="at">ordered =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
 <hr />
 <div id="bayes-theorem" class="section level2" number="3.1">
 <h2><span class="header-section-number">3.1</span> Bayes Theorem</h2>
 <p><strong>Unconditional probability:</strong></p>
 <p>P(S) and P(NS)
 Success or no success</p>
-<div class="sourceCode" id="cb69"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb69-1"><a href="probability.html#cb69-1" aria-hidden="true" tabindex="-1"></a>prS <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.4</span>, <span class="fl">0.6</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="probability.html#cb7-1" aria-hidden="true" tabindex="-1"></a>prS <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.4</span>, <span class="fl">0.6</span>)</span></code></pre></div>
 <p><strong>Conditional probability:</strong></p>
 <p>P(P | S ) and P( P | NS)
 Predicted given it is successful<br />
 Predicted given it is not successful</p>
-<div class="sourceCode" id="cb70"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb70-1"><a href="probability.html#cb70-1" aria-hidden="true" tabindex="-1"></a>prNS <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.6</span>, <span class="fl">0.2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="probability.html#cb8-1" aria-hidden="true" tabindex="-1"></a>prNS <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.6</span>, <span class="fl">0.2</span>)</span></code></pre></div>
 <p><strong>Bayes prob, posterior probabilities</strong><br />
 P(S | P) &amp; P(NS | P)</p>
-<div class="sourceCode" id="cb71"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb71-1"><a href="probability.html#cb71-1" aria-hidden="true" tabindex="-1"></a><span class="fu">BayesTheorem</span>(prS, prNS)</span></code></pre></div>
-<pre><code>[1] 0.6666667 0.3333333
-attr(,&quot;class&quot;)
-[1] &quot;bayestheorem&quot;</code></pre>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="probability.html#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">BayesTheorem</span>(prS, prNS)</span></code></pre></div>
+<pre><code>## [1] 0.6666667 0.3333333
+## attr(,&quot;class&quot;)
+## [1] &quot;bayestheorem&quot;</code></pre>
 <hr />
 </div>
 <div id="discrete-probablity" class="section level2" number="3.2">
@@ -277,10 +293,10 @@ attr(,&quot;class&quot;)
 <li>Binomial for a certain percentage of the sample. F.E. 25% of the sample has x value or less.</li>
 <li>Difference between two binomial values. F.E. Prob there are between 4 and 5 of the trials successful.</li>
 </ol>
-<div class="sourceCode" id="cb73"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb73-1"><a href="probability.html#cb73-1" aria-hidden="true" tabindex="-1"></a>one <span class="ot">&lt;-</span> <span class="fu">dbinom</span>(x, <span class="at">size =</span> n, <span class="at">prob =</span> y)    </span>
-<span id="cb73-2"><a href="probability.html#cb73-2" aria-hidden="true" tabindex="-1"></a>two <span class="ot">&lt;-</span> <span class="fu">pbinom</span>(x, <span class="at">size =</span> n, <span class="at">prob =</span> y)    </span>
-<span id="cb73-3"><a href="probability.html#cb73-3" aria-hidden="true" tabindex="-1"></a>three <span class="ot">&lt;-</span> <span class="fu">qbinom</span>(p, <span class="at">size =</span> n, <span class="at">prob =</span> y)  </span>
-<span id="cb73-4"><a href="probability.html#cb73-4" aria-hidden="true" tabindex="-1"></a>four <span class="ot">&lt;-</span> <span class="fu">diff</span>(<span class="fu">pbinom</span>(<span class="fu">c</span>(X,Y), <span class="at">size =</span> n, <span class="at">prob =</span> y))</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="probability.html#cb11-1" aria-hidden="true" tabindex="-1"></a>one <span class="ot">&lt;-</span> <span class="fu">dbinom</span>(x, <span class="at">size =</span> n, <span class="at">prob =</span> y)    </span>
+<span id="cb11-2"><a href="probability.html#cb11-2" aria-hidden="true" tabindex="-1"></a>two <span class="ot">&lt;-</span> <span class="fu">pbinom</span>(x, <span class="at">size =</span> n, <span class="at">prob =</span> y)    </span>
+<span id="cb11-3"><a href="probability.html#cb11-3" aria-hidden="true" tabindex="-1"></a>three <span class="ot">&lt;-</span> <span class="fu">qbinom</span>(p, <span class="at">size =</span> n, <span class="at">prob =</span> y)  </span>
+<span id="cb11-4"><a href="probability.html#cb11-4" aria-hidden="true" tabindex="-1"></a>four <span class="ot">&lt;-</span> <span class="fu">diff</span>(<span class="fu">pbinom</span>(<span class="fu">c</span>(X,Y), <span class="at">size =</span> n, <span class="at">prob =</span> y))</span></code></pre></div>
 <p><strong><em>Default = # or less (left area of the distribution). For # or more do: 1-probability of # or less</em></strong></p>
 </div>
 <div id="poisson-distribution" class="section level3" number="3.2.3">
@@ -291,9 +307,9 @@ attr(,&quot;class&quot;)
 <li>Poisson for a certain value distribution. F.E. Prob of having less than 5. More than 5? = 1- Ppois(4, lambda)</li>
 <li>Poisson for a certain probability to capture a certain value. F.E. Poisson value for 25%.</li>
 </ol>
-<div class="sourceCode" id="cb74"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb74-1"><a href="probability.html#cb74-1" aria-hidden="true" tabindex="-1"></a>one <span class="ot">&lt;-</span> <span class="fu">dpois</span>(x,lambda)</span>
-<span id="cb74-2"><a href="probability.html#cb74-2" aria-hidden="true" tabindex="-1"></a>two <span class="ot">&lt;-</span> <span class="fu">ppois</span>(x,lambda)  </span>
-<span id="cb74-3"><a href="probability.html#cb74-3" aria-hidden="true" tabindex="-1"></a>three <span class="ot">&lt;-</span> <span class="fu">qpois</span>(x,lambda)</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="probability.html#cb12-1" aria-hidden="true" tabindex="-1"></a>one <span class="ot">&lt;-</span> <span class="fu">dpois</span>(x,lambda)</span>
+<span id="cb12-2"><a href="probability.html#cb12-2" aria-hidden="true" tabindex="-1"></a>two <span class="ot">&lt;-</span> <span class="fu">ppois</span>(x,lambda)  </span>
+<span id="cb12-3"><a href="probability.html#cb12-3" aria-hidden="true" tabindex="-1"></a>three <span class="ot">&lt;-</span> <span class="fu">qpois</span>(x,lambda)</span></code></pre></div>
 <p><strong><em>Default = # or less (left area of the distribution). For # or more do: 1-probability of # or less</em></strong></p>
 </div>
 <div id="the-normal-distribution" class="section level3" number="3.2.4">
@@ -305,9 +321,9 @@ attr(,&quot;class&quot;)
 68% of observations are located between: -1 mu 1</p>
 <p><strong>Normal distribution</strong></p>
 <p><strong>Z-value</strong></p>
-<div class="sourceCode" id="cb75"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb75-1"><a href="probability.html#cb75-1" aria-hidden="true" tabindex="-1"></a><span class="co"># z &lt;- (x - mean) / sd. For example:</span></span>
-<span id="cb75-2"><a href="probability.html#cb75-2" aria-hidden="true" tabindex="-1"></a>(<span class="dv">11</span> <span class="sc">-</span> <span class="dv">10</span>) <span class="sc">/</span> <span class="dv">2</span></span></code></pre></div>
-<pre><code>[1] 0.5</code></pre>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="probability.html#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># z &lt;- (x - mean) / sd. For example:</span></span>
+<span id="cb13-2"><a href="probability.html#cb13-2" aria-hidden="true" tabindex="-1"></a>(<span class="dv">11</span> <span class="sc">-</span> <span class="dv">10</span>) <span class="sc">/</span> <span class="dv">2</span></span></code></pre></div>
+<pre><code>## [1] 0.5</code></pre>
 <ol style="list-style-type: decimal">
 <li>Normal distribution for a certain proportion. Pi = population proportion mean%.</li>
 <li>Normal distribution for a certain value distribution. F.E. Prob of value above 5. FALSE
@@ -315,10 +331,10 @@ Prob less than 9. TRUE</li>
 <li>Normal distribution for a certain probability to capture a certain value. F.E. Value that is given at 25% point.</li>
 <li>Difference between two values on the normal distribution. F.E. between 5 and 10.</li>
 </ol>
-<div class="sourceCode" id="cb77"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb77-1"><a href="probability.html#cb77-1" aria-hidden="true" tabindex="-1"></a>one <span class="ot">&lt;-</span> <span class="fu">pnorm</span>(X, pi, sd, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb77-2"><a href="probability.html#cb77-2" aria-hidden="true" tabindex="-1"></a>two <span class="ot">&lt;-</span> <span class="fu">pnorm</span>(X, mu, sd, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb77-3"><a href="probability.html#cb77-3" aria-hidden="true" tabindex="-1"></a>three <span class="ot">&lt;-</span> <span class="fu">qnorm</span>(p, mu, sd, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>) </span>
-<span id="cb77-4"><a href="probability.html#cb77-4" aria-hidden="true" tabindex="-1"></a>four <span class="ot">&lt;-</span> <span class="fu">diff</span>(<span class="fu">pnorm</span>(<span class="fu">c</span>(X,Y), mu, sd, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="probability.html#cb15-1" aria-hidden="true" tabindex="-1"></a>one <span class="ot">&lt;-</span> <span class="fu">pnorm</span>(X, pi, sd, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb15-2"><a href="probability.html#cb15-2" aria-hidden="true" tabindex="-1"></a>two <span class="ot">&lt;-</span> <span class="fu">pnorm</span>(X, mu, sd, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb15-3"><a href="probability.html#cb15-3" aria-hidden="true" tabindex="-1"></a>three <span class="ot">&lt;-</span> <span class="fu">qnorm</span>(p, mu, sd, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>) </span>
+<span id="cb15-4"><a href="probability.html#cb15-4" aria-hidden="true" tabindex="-1"></a>four <span class="ot">&lt;-</span> <span class="fu">diff</span>(<span class="fu">pnorm</span>(<span class="fu">c</span>(X,Y), mu, sd, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>))</span></code></pre></div>
 <p>lower.tail = TRUE: The area of the left side of the slope<br />
 lower.tail = FALSE: The area of the right side of the slope</p>
 <p><strong>Confidence interval for normal distribution</strong></p>
@@ -332,17 +348,17 @@ Limits: mean +/- 3 * standard deviation = 3*7 = 21
 Lower limit = 3 – 21 = -18<br />
 Upper limit = 3 + 21 = 24"</p>
 <p>Example:</p>
-<div class="sourceCode" id="cb78"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb78-1"><a href="probability.html#cb78-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">15</span>, <span class="dv">45</span>, <span class="at">length=</span><span class="dv">50</span>)</span>
-<span id="cb78-2"><a href="probability.html#cb78-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">dnorm</span>(x, <span class="dv">30</span>, <span class="dv">5</span>)</span>
-<span id="cb78-3"><a href="probability.html#cb78-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x,y,<span class="at">type=</span><span class="st">&quot;l&quot;</span>,<span class="at">lwd=</span><span class="dv">2</span>,<span class="at">col=</span><span class="st">&quot;black&quot;</span>)</span>
-<span id="cb78-4"><a href="probability.html#cb78-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-5"><a href="probability.html#cb78-5" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">15</span>,<span class="dv">35</span>, <span class="at">length=</span><span class="dv">100</span>)</span>
-<span id="cb78-6"><a href="probability.html#cb78-6" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">dnorm</span>(x, <span class="dv">30</span>,<span class="dv">5</span> )</span>
-<span id="cb78-7"><a href="probability.html#cb78-7" aria-hidden="true" tabindex="-1"></a><span class="fu">polygon</span>(<span class="fu">c</span>(<span class="dv">15</span>,x,<span class="dv">35</span>),<span class="fu">c</span>(<span class="dv">0</span>,y,<span class="dv">0</span>), <span class="at">density =</span> <span class="fu">c</span>(<span class="dv">15</span>, <span class="dv">35</span>), <span class="at">col =</span> <span class="st">&quot;black&quot;</span>)</span>
-<span id="cb78-8"><a href="probability.html#cb78-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-9"><a href="probability.html#cb78-9" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">pnorm</span>(<span class="dv">35</span>, <span class="at">mean =</span> <span class="dv">30</span>, <span class="at">sd =</span> <span class="dv">5</span>,<span class="at">lower.tail =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb78-10"><a href="probability.html#cb78-10" aria-hidden="true" tabindex="-1"></a><span class="fu">text</span>(<span class="dv">0</span>,<span class="fl">0.15</span>,<span class="st">&quot;68%&quot;</span>)</span></code></pre></div>
-<p><img src="R-Summaries_files/figure-html/unnamed-chunk-40-1.png" width="100%" /></p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="probability.html#cb16-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">15</span>, <span class="dv">45</span>, <span class="at">length=</span><span class="dv">50</span>)</span>
+<span id="cb16-2"><a href="probability.html#cb16-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">dnorm</span>(x, <span class="dv">30</span>, <span class="dv">5</span>)</span>
+<span id="cb16-3"><a href="probability.html#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x,y,<span class="at">type=</span><span class="st">&quot;l&quot;</span>,<span class="at">lwd=</span><span class="dv">2</span>,<span class="at">col=</span><span class="st">&quot;black&quot;</span>)</span>
+<span id="cb16-4"><a href="probability.html#cb16-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-5"><a href="probability.html#cb16-5" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">15</span>,<span class="dv">35</span>, <span class="at">length=</span><span class="dv">100</span>)</span>
+<span id="cb16-6"><a href="probability.html#cb16-6" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">dnorm</span>(x, <span class="dv">30</span>,<span class="dv">5</span> )</span>
+<span id="cb16-7"><a href="probability.html#cb16-7" aria-hidden="true" tabindex="-1"></a><span class="fu">polygon</span>(<span class="fu">c</span>(<span class="dv">15</span>,x,<span class="dv">35</span>),<span class="fu">c</span>(<span class="dv">0</span>,y,<span class="dv">0</span>), <span class="at">density =</span> <span class="fu">c</span>(<span class="dv">15</span>, <span class="dv">35</span>), <span class="at">col =</span> <span class="st">&quot;black&quot;</span>)</span>
+<span id="cb16-8"><a href="probability.html#cb16-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-9"><a href="probability.html#cb16-9" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">pnorm</span>(<span class="dv">35</span>, <span class="at">mean =</span> <span class="dv">30</span>, <span class="at">sd =</span> <span class="dv">5</span>,<span class="at">lower.tail =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb16-10"><a href="probability.html#cb16-10" aria-hidden="true" tabindex="-1"></a><span class="fu">text</span>(<span class="dv">0</span>,<span class="fl">0.15</span>,<span class="st">&quot;68%&quot;</span>)</span></code></pre></div>
+<p><img src="R-Summaries_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
 </div>
 <div id="binomial" class="section level4" number="3.2.4.2">
 <h4><span class="header-section-number">3.2.4.2</span> Binomial</h4>
@@ -353,10 +369,10 @@ Upper limit = 3 + 21 = 24"</p>
 <li>Difference between two binomial values</li>
 <li>Inverse cumulative density. For a certain prob.</li>
 </ol>
-<div class="sourceCode" id="cb79"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb79-1"><a href="probability.html#cb79-1" aria-hidden="true" tabindex="-1"></a>one <span class="ot">&lt;-</span> <span class="fu">dbinom</span>(x, mu, sd)</span>
-<span id="cb79-2"><a href="probability.html#cb79-2" aria-hidden="true" tabindex="-1"></a>two <span class="ot">&lt;-</span> <span class="fu">pbinom</span>(x, mu, sd, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb79-3"><a href="probability.html#cb79-3" aria-hidden="true" tabindex="-1"></a>three <span class="ot">&lt;-</span> <span class="fu">diff</span>(<span class="fu">pbinom</span>(<span class="fu">c</span>(X,Y), mu, sd, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>))</span>
-<span id="cb79-4"><a href="probability.html#cb79-4" aria-hidden="true" tabindex="-1"></a>four <span class="ot">&lt;-</span> <span class="fu">qbinom</span>(p, mu, sd, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="probability.html#cb17-1" aria-hidden="true" tabindex="-1"></a>one <span class="ot">&lt;-</span> <span class="fu">dbinom</span>(x, mu, sd)</span>
+<span id="cb17-2"><a href="probability.html#cb17-2" aria-hidden="true" tabindex="-1"></a>two <span class="ot">&lt;-</span> <span class="fu">pbinom</span>(x, mu, sd, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb17-3"><a href="probability.html#cb17-3" aria-hidden="true" tabindex="-1"></a>three <span class="ot">&lt;-</span> <span class="fu">diff</span>(<span class="fu">pbinom</span>(<span class="fu">c</span>(X,Y), mu, sd, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>))</span>
+<span id="cb17-4"><a href="probability.html#cb17-4" aria-hidden="true" tabindex="-1"></a>four <span class="ot">&lt;-</span> <span class="fu">qbinom</span>(p, mu, sd, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
 <hr />
 </div>
 </div>
@@ -364,19 +380,19 @@ Upper limit = 3 + 21 = 24"</p>
 <div id="samples-estimation-confidence-intervals" class="section level2" number="3.3">
 <h2><span class="header-section-number">3.3</span> Samples, estimation &amp; confidence intervals</h2>
 <p><strong>The standard error of the sampling distribution of the mean</strong></p>
-<div class="sourceCode" id="cb80"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb80-1"><a href="probability.html#cb80-1" aria-hidden="true" tabindex="-1"></a>se <span class="ot">&lt;-</span> sigma <span class="sc">/</span> <span class="fu">sqrt</span>(n)</span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="probability.html#cb18-1" aria-hidden="true" tabindex="-1"></a>se <span class="ot">&lt;-</span> sigma <span class="sc">/</span> <span class="fu">sqrt</span>(n)</span></code></pre></div>
 <p><strong>Probability sample</strong></p>
 <ol style="list-style-type: decimal">
 <li>To find the probability that X is larger than mu</li>
 <li>To find the probability that X is smaller than mu</li>
 </ol>
-<div class="sourceCode" id="cb81"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb81-1"><a href="probability.html#cb81-1" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">pnorm</span>(X, mu, se, <span class="at">lower.tail =</span> <span class="cn">TRUE</span>) </span>
-<span id="cb81-2"><a href="probability.html#cb81-2" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">pnorm</span>(X, mu, se, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="probability.html#cb19-1" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">pnorm</span>(X, mu, se, <span class="at">lower.tail =</span> <span class="cn">TRUE</span>) </span>
+<span id="cb19-2"><a href="probability.html#cb19-2" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">pnorm</span>(X, mu, se, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
 <p><strong>Probability proportions sample</strong></p>
-<div class="sourceCode" id="cb82"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb82-1"><a href="probability.html#cb82-1" aria-hidden="true" tabindex="-1"></a>sd <span class="ot">&lt;-</span> <span class="fu">sqrt</span>((pi<span class="sc">*</span>(n<span class="sc">-</span>pi))<span class="sc">/</span>n)</span>
-<span id="cb82-2"><a href="probability.html#cb82-2" aria-hidden="true" tabindex="-1"></a>z <span class="ot">&lt;-</span> (p <span class="sc">-</span> pi)<span class="sc">/</span>sd</span>
-<span id="cb82-3"><a href="probability.html#cb82-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb82-4"><a href="probability.html#cb82-4" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">pnorm</span>(X, pi, se, <span class="at">lower.tail =</span><span class="cn">FALSE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="probability.html#cb20-1" aria-hidden="true" tabindex="-1"></a>sd <span class="ot">&lt;-</span> <span class="fu">sqrt</span>((pi<span class="sc">*</span>(n<span class="sc">-</span>pi))<span class="sc">/</span>n)</span>
+<span id="cb20-2"><a href="probability.html#cb20-2" aria-hidden="true" tabindex="-1"></a>z <span class="ot">&lt;-</span> (p <span class="sc">-</span> pi)<span class="sc">/</span>sd</span>
+<span id="cb20-3"><a href="probability.html#cb20-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-4"><a href="probability.html#cb20-4" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">pnorm</span>(X, pi, se, <span class="at">lower.tail =</span><span class="cn">FALSE</span>)</span></code></pre></div>
 <p><strong>Sample size</strong></p>
 <p>Package = “samplingbook.”</p>
 <p>Provides the sample size needed to have a 95% confidence to estimate the population mean.
@@ -397,18 +413,18 @@ Level = confidence level. Se is required standard error.</p>
 <li>One-sided: Critical value, 1% significance level = 2.33</li>
 <li>One-sided: Critical value, 10% significance level = 1.28</li>
 </ol>
-<div class="sourceCode" id="cb83"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb83-1"><a href="probability.html#cb83-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qnorm</span>(<span class="fl">0.975</span>)</span></code></pre></div>
-<pre><code>[1] 1.959964</code></pre>
-<div class="sourceCode" id="cb85"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb85-1"><a href="probability.html#cb85-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qnorm</span>(<span class="fl">0.995</span>)</span></code></pre></div>
-<pre><code>[1] 2.575829</code></pre>
-<div class="sourceCode" id="cb87"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb87-1"><a href="probability.html#cb87-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qnorm</span>(<span class="fl">0.95</span>)</span></code></pre></div>
-<pre><code>[1] 1.644854</code></pre>
-<div class="sourceCode" id="cb89"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb89-1"><a href="probability.html#cb89-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qnorm</span>(<span class="fl">0.95</span>)</span></code></pre></div>
-<pre><code>[1] 1.644854</code></pre>
-<div class="sourceCode" id="cb91"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb91-1"><a href="probability.html#cb91-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qnorm</span>(<span class="fl">0.99</span>)</span></code></pre></div>
-<pre><code>[1] 2.326348</code></pre>
-<div class="sourceCode" id="cb93"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb93-1"><a href="probability.html#cb93-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qnorm</span>(<span class="fl">0.90</span>)</span></code></pre></div>
-<pre><code>[1] 1.281552</code></pre>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="probability.html#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qnorm</span>(<span class="fl">0.975</span>)</span></code></pre></div>
+<pre><code>## [1] 1.959964</code></pre>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="probability.html#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qnorm</span>(<span class="fl">0.995</span>)</span></code></pre></div>
+<pre><code>## [1] 2.575829</code></pre>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="probability.html#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qnorm</span>(<span class="fl">0.95</span>)</span></code></pre></div>
+<pre><code>## [1] 1.644854</code></pre>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="probability.html#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qnorm</span>(<span class="fl">0.95</span>)</span></code></pre></div>
+<pre><code>## [1] 1.644854</code></pre>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="probability.html#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qnorm</span>(<span class="fl">0.99</span>)</span></code></pre></div>
+<pre><code>## [1] 2.326348</code></pre>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="probability.html#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qnorm</span>(<span class="fl">0.90</span>)</span></code></pre></div>
+<pre><code>## [1] 1.281552</code></pre>
 <p><strong>Critical values t-distribution</strong></p>
 <ol style="list-style-type: decimal">
 <li>One-sided: critical value at a 5% significance level</li>
@@ -418,36 +434,36 @@ Level = confidence level. Se is required standard error.</p>
 <li>Two-sided: critical value at a 10% significance level</li>
 <li>Two-sided: critical value at a 1% significance level</li>
 </ol>
-<div class="sourceCode" id="cb95"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb95-1"><a href="probability.html#cb95-1" aria-hidden="true" tabindex="-1"></a>cv <span class="ot">&lt;-</span> <span class="fu">qt</span>(<span class="fl">0.95</span>, df) </span>
-<span id="cb95-2"><a href="probability.html#cb95-2" aria-hidden="true" tabindex="-1"></a>cv <span class="ot">&lt;-</span> <span class="fu">qt</span>(<span class="fl">0.90</span>, df) </span>
-<span id="cb95-3"><a href="probability.html#cb95-3" aria-hidden="true" tabindex="-1"></a>cv <span class="ot">&lt;-</span> <span class="fu">qt</span>(<span class="fl">0.99</span>, df)</span>
-<span id="cb95-4"><a href="probability.html#cb95-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb95-5"><a href="probability.html#cb95-5" aria-hidden="true" tabindex="-1"></a>cv <span class="ot">&lt;-</span> <span class="fu">qt</span>(<span class="fl">0.975</span>, df)</span>
-<span id="cb95-6"><a href="probability.html#cb95-6" aria-hidden="true" tabindex="-1"></a>cv <span class="ot">&lt;-</span> <span class="fu">qt</span>(<span class="fl">0.95</span>, df) </span>
-<span id="cb95-7"><a href="probability.html#cb95-7" aria-hidden="true" tabindex="-1"></a>cv <span class="ot">&lt;-</span> <span class="fu">qt</span>(<span class="fl">0.995</span>, df)</span></code></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="probability.html#cb33-1" aria-hidden="true" tabindex="-1"></a>cv <span class="ot">&lt;-</span> <span class="fu">qt</span>(<span class="fl">0.95</span>, df) </span>
+<span id="cb33-2"><a href="probability.html#cb33-2" aria-hidden="true" tabindex="-1"></a>cv <span class="ot">&lt;-</span> <span class="fu">qt</span>(<span class="fl">0.90</span>, df) </span>
+<span id="cb33-3"><a href="probability.html#cb33-3" aria-hidden="true" tabindex="-1"></a>cv <span class="ot">&lt;-</span> <span class="fu">qt</span>(<span class="fl">0.99</span>, df)</span>
+<span id="cb33-4"><a href="probability.html#cb33-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-5"><a href="probability.html#cb33-5" aria-hidden="true" tabindex="-1"></a>cv <span class="ot">&lt;-</span> <span class="fu">qt</span>(<span class="fl">0.975</span>, df)</span>
+<span id="cb33-6"><a href="probability.html#cb33-6" aria-hidden="true" tabindex="-1"></a>cv <span class="ot">&lt;-</span> <span class="fu">qt</span>(<span class="fl">0.95</span>, df) </span>
+<span id="cb33-7"><a href="probability.html#cb33-7" aria-hidden="true" tabindex="-1"></a>cv <span class="ot">&lt;-</span> <span class="fu">qt</span>(<span class="fl">0.995</span>, df)</span></code></pre></div>
 <p><strong>Confidence interval</strong></p>
-<div class="sourceCode" id="cb96"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb96-1"><a href="probability.html#cb96-1" aria-hidden="true" tabindex="-1"></a>cv <span class="ot">&lt;-</span> cv</span>
-<span id="cb96-2"><a href="probability.html#cb96-2" aria-hidden="true" tabindex="-1"></a>mu <span class="ot">&lt;-</span> mu</span>
-<span id="cb96-3"><a href="probability.html#cb96-3" aria-hidden="true" tabindex="-1"></a>sd <span class="ot">&lt;-</span> sd</span>
-<span id="cb96-4"><a href="probability.html#cb96-4" aria-hidden="true" tabindex="-1"></a>se <span class="ot">&lt;-</span> sd <span class="sc">/</span> (<span class="fu">sqrt</span>(n))</span>
-<span id="cb96-5"><a href="probability.html#cb96-5" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> n</span>
-<span id="cb96-6"><a href="probability.html#cb96-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb96-7"><a href="probability.html#cb96-7" aria-hidden="true" tabindex="-1"></a>conf_int95 <span class="ot">&lt;-</span> cv <span class="sc">*</span> sd <span class="sc">/</span> (<span class="fu">sqrt</span>(n))</span>
-<span id="cb96-8"><a href="probability.html#cb96-8" aria-hidden="true" tabindex="-1"></a>mu_plus <span class="ot">&lt;-</span> mu <span class="sc">+</span> conf_int95</span>
-<span id="cb96-9"><a href="probability.html#cb96-9" aria-hidden="true" tabindex="-1"></a>mu_min <span class="ot">&lt;-</span> mu <span class="sc">-</span> conf_int95</span></code></pre></div>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="probability.html#cb34-1" aria-hidden="true" tabindex="-1"></a>cv <span class="ot">&lt;-</span> cv</span>
+<span id="cb34-2"><a href="probability.html#cb34-2" aria-hidden="true" tabindex="-1"></a>mu <span class="ot">&lt;-</span> mu</span>
+<span id="cb34-3"><a href="probability.html#cb34-3" aria-hidden="true" tabindex="-1"></a>sd <span class="ot">&lt;-</span> sd</span>
+<span id="cb34-4"><a href="probability.html#cb34-4" aria-hidden="true" tabindex="-1"></a>se <span class="ot">&lt;-</span> sd <span class="sc">/</span> (<span class="fu">sqrt</span>(n))</span>
+<span id="cb34-5"><a href="probability.html#cb34-5" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> n</span>
+<span id="cb34-6"><a href="probability.html#cb34-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-7"><a href="probability.html#cb34-7" aria-hidden="true" tabindex="-1"></a>conf_int95 <span class="ot">&lt;-</span> cv <span class="sc">*</span> sd <span class="sc">/</span> (<span class="fu">sqrt</span>(n))</span>
+<span id="cb34-8"><a href="probability.html#cb34-8" aria-hidden="true" tabindex="-1"></a>mu_plus <span class="ot">&lt;-</span> mu <span class="sc">+</span> conf_int95</span>
+<span id="cb34-9"><a href="probability.html#cb34-9" aria-hidden="true" tabindex="-1"></a>mu_min <span class="ot">&lt;-</span> mu <span class="sc">-</span> conf_int95</span></code></pre></div>
 <p><strong>Large sample significance testing</strong></p>
 <ol style="list-style-type: decimal">
 <li>Two-sided</li>
 <li>One-sided: X is greater than the population mean</li>
 <li>One-sided: X is less than the population mean</li>
 </ol>
-<div class="sourceCode" id="cb97"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb97-1"><a href="probability.html#cb97-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(BSDA)</span>
-<span id="cb97-2"><a href="probability.html#cb97-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb97-3"><a href="probability.html#cb97-3" aria-hidden="true" tabindex="-1"></a>one <span class="ot">&lt;-</span> <span class="fu">tsum.test</span>(<span class="at">mean.x =</span> X, <span class="at">s.x =</span> sd, <span class="at">n.x =</span> n, <span class="at">mu =</span> mu, <span class="at">alternative =</span> <span class="st">&quot;two.sided&quot;</span>, <span class="at">var.equal =</span> <span class="cn">TRUE</span>) </span>
-<span id="cb97-4"><a href="probability.html#cb97-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb97-5"><a href="probability.html#cb97-5" aria-hidden="true" tabindex="-1"></a>two <span class="ot">&lt;-</span> <span class="fu">tsum.test</span>(<span class="at">mean.x =</span> X, <span class="at">s.x =</span> sd, <span class="at">n.x =</span> n, <span class="at">mu =</span> mu, <span class="at">alternative =</span> <span class="st">&quot;greater&quot;</span>, <span class="at">var.equal =</span> <span class="cn">TRUE</span>) </span>
-<span id="cb97-6"><a href="probability.html#cb97-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb97-7"><a href="probability.html#cb97-7" aria-hidden="true" tabindex="-1"></a>three <span class="ot">&lt;-</span> <span class="fu">tsum.test</span>(<span class="at">mean.x =</span> X, <span class="at">s.x =</span> sd, <span class="at">n.x =</span> n, <span class="at">mu =</span> mu, <span class="at">alternative =</span> <span class="st">&quot;less&quot;</span>, <span class="at">var.equal =</span> <span class="cn">TRUE</span>) </span></code></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="probability.html#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(BSDA)</span>
+<span id="cb35-2"><a href="probability.html#cb35-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-3"><a href="probability.html#cb35-3" aria-hidden="true" tabindex="-1"></a>one <span class="ot">&lt;-</span> <span class="fu">tsum.test</span>(<span class="at">mean.x =</span> X, <span class="at">s.x =</span> sd, <span class="at">n.x =</span> n, <span class="at">mu =</span> mu, <span class="at">alternative =</span> <span class="st">&quot;two.sided&quot;</span>, <span class="at">var.equal =</span> <span class="cn">TRUE</span>) </span>
+<span id="cb35-4"><a href="probability.html#cb35-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-5"><a href="probability.html#cb35-5" aria-hidden="true" tabindex="-1"></a>two <span class="ot">&lt;-</span> <span class="fu">tsum.test</span>(<span class="at">mean.x =</span> X, <span class="at">s.x =</span> sd, <span class="at">n.x =</span> n, <span class="at">mu =</span> mu, <span class="at">alternative =</span> <span class="st">&quot;greater&quot;</span>, <span class="at">var.equal =</span> <span class="cn">TRUE</span>) </span>
+<span id="cb35-6"><a href="probability.html#cb35-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-7"><a href="probability.html#cb35-7" aria-hidden="true" tabindex="-1"></a>three <span class="ot">&lt;-</span> <span class="fu">tsum.test</span>(<span class="at">mean.x =</span> X, <span class="at">s.x =</span> sd, <span class="at">n.x =</span> n, <span class="at">mu =</span> mu, <span class="at">alternative =</span> <span class="st">&quot;less&quot;</span>, <span class="at">var.equal =</span> <span class="cn">TRUE</span>) </span></code></pre></div>
 <p><strong>For proportions:</strong></p>
 <p>prop.test(x = X, n = n, p = p, correct = TRUE, alternative = “two.sided”)</p>
 <p>Same goes for above: two.sided, greater, less</p>
@@ -457,18 +473,18 @@ Level = confidence level. Se is required standard error.</p>
 <p>H_0 &lt;- <span class="math inline">\(\mu1 = \mu2\)</span> or <span class="math inline">\((\mu1 - \mu2) = 0\)</span><br />
 H_a &lt;- <span class="math inline">\(\mu1 \neq \mu2\)</span> or <span class="math inline">\(\mu1 - \mu2 \neq 0\)</span></p>
 <p>Difference in two means with a certain confidence level confidence interval. Default = 95%</p>
-<div class="sourceCode" id="cb98"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb98-1"><a href="probability.html#cb98-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tsum.test</span>(<span class="at">mean.x =</span> X, <span class="at">s.x =</span> sd, <span class="at">n.x =</span> n, <span class="at">mean.y =</span> X, <span class="at">s.y =</span> sd, <span class="at">n.y =</span> n, <span class="at">var.equal=</span><span class="cn">FALSE</span>)</span></code></pre></div>
-<pre><code>
-    Welch Modified Two-Sample t-Test
-
-data:  Summarized x and y
-t = 0, df = 58, p-value = 1
-alternative hypothesis: true difference in means is not equal to 0
-95 percent confidence interval:
- -0.8492568  0.8492568
-sample estimates:
-mean of x mean of y 
-       15        15 </code></pre>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="probability.html#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tsum.test</span>(<span class="at">mean.x =</span> X, <span class="at">s.x =</span> sd, <span class="at">n.x =</span> n, <span class="at">mean.y =</span> X, <span class="at">s.y =</span> sd, <span class="at">n.y =</span> n, <span class="at">var.equal=</span><span class="cn">FALSE</span>)</span></code></pre></div>
+<pre><code>## 
+##  Welch Modified Two-Sample t-Test
+## 
+## data:  Summarized x and y
+## t = 0, df = 58, p-value = 1
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##  -0.8492568  0.8492568
+## sample estimates:
+## mean of x mean of y 
+##        15        15</code></pre>
 <p>2-sample test for equality of proportions without continuity correction.</p>
 <p>prop.test(data, correct=FALSE, alternative=“greater”)</p>
 <hr />
@@ -479,10 +495,10 @@ mean of x mean of y
 <div id="contengency-table-frequencies" class="section level3" number="3.5.1">
 <h3><span class="header-section-number">3.5.1</span> Contengency table / frequencies</h3>
 <p>Obtain contingency table</p>
-<div class="sourceCode" id="cb100"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb100-1"><a href="probability.html#cb100-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(ToothGrowth<span class="sc">$</span>dose)</span></code></pre></div>
-<pre><code>
-0.5   1   2 
- 20  20  20 </code></pre>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="probability.html#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(ToothGrowth<span class="sc">$</span>dose)</span></code></pre></div>
+<pre><code>## 
+## 0.5   1   2 
+##  20  20  20</code></pre>
 </div>
 <div id="chi-square" class="section level3" number="3.5.2">
 <h3><span class="header-section-number">3.5.2</span> Chi-square</h3>
@@ -491,25 +507,25 @@ mean of x mean of y
 <li>Get the expected value</li>
 <li>Probability for chi-square</li>
 </ol>
-<div class="sourceCode" id="cb102"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb102-1"><a href="probability.html#cb102-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">27</span>,<span class="dv">373</span>,<span class="dv">33</span>,<span class="dv">567</span>),<span class="at">byrow=</span><span class="cn">TRUE</span>,<span class="at">nrow=</span><span class="dv">2</span>)</span>
-<span id="cb102-2"><a href="probability.html#cb102-2" aria-hidden="true" tabindex="-1"></a><span class="fu">chisq.test</span>(data,<span class="at">correct=</span><span class="cn">FALSE</span>)</span></code></pre></div>
-<pre><code>
-    Pearson&#39;s Chi-squared test
-
-data:  data
-X-squared = 0.66489, df = 1, p-value = 0.4148</code></pre>
-<div class="sourceCode" id="cb104"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb104-1"><a href="probability.html#cb104-1" aria-hidden="true" tabindex="-1"></a><span class="fu">chisq.test</span>(data,<span class="at">correct=</span><span class="cn">FALSE</span>)<span class="sc">$</span>expected</span></code></pre></div>
-<pre><code>     [,1] [,2]
-[1,]   24  376
-[2,]   36  564</code></pre>
-<div class="sourceCode" id="cb106"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb106-1"><a href="probability.html#cb106-1" aria-hidden="true" tabindex="-1"></a><span class="fu">prop.table</span>(<span class="fu">chisq.test</span>(data,<span class="at">correct=</span><span class="cn">FALSE</span>)<span class="sc">$</span>expected,<span class="dv">1</span>)</span></code></pre></div>
-<pre><code>     [,1] [,2]
-[1,] 0.06 0.94
-[2,] 0.06 0.94</code></pre>
-<div class="sourceCode" id="cb108"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb108-1"><a href="probability.html#cb108-1" aria-hidden="true" tabindex="-1"></a><span class="fu">prop.table</span>(<span class="fu">chisq.test</span>(data,<span class="at">correct=</span><span class="cn">FALSE</span>)<span class="sc">$</span>expected,<span class="dv">2</span>)</span></code></pre></div>
-<pre><code>     [,1] [,2]
-[1,]  0.4  0.4
-[2,]  0.6  0.6</code></pre>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="probability.html#cb40-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">27</span>,<span class="dv">373</span>,<span class="dv">33</span>,<span class="dv">567</span>),<span class="at">byrow=</span><span class="cn">TRUE</span>,<span class="at">nrow=</span><span class="dv">2</span>)</span>
+<span id="cb40-2"><a href="probability.html#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="fu">chisq.test</span>(data,<span class="at">correct=</span><span class="cn">FALSE</span>)</span></code></pre></div>
+<pre><code>## 
+##  Pearson&#39;s Chi-squared test
+## 
+## data:  data
+## X-squared = 0.66489, df = 1, p-value = 0.4148</code></pre>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="probability.html#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">chisq.test</span>(data,<span class="at">correct=</span><span class="cn">FALSE</span>)<span class="sc">$</span>expected</span></code></pre></div>
+<pre><code>##      [,1] [,2]
+## [1,]   24  376
+## [2,]   36  564</code></pre>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="probability.html#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">prop.table</span>(<span class="fu">chisq.test</span>(data,<span class="at">correct=</span><span class="cn">FALSE</span>)<span class="sc">$</span>expected,<span class="dv">1</span>)</span></code></pre></div>
+<pre><code>##      [,1] [,2]
+## [1,] 0.06 0.94
+## [2,] 0.06 0.94</code></pre>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="probability.html#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">prop.table</span>(<span class="fu">chisq.test</span>(data,<span class="at">correct=</span><span class="cn">FALSE</span>)<span class="sc">$</span>expected,<span class="dv">2</span>)</span></code></pre></div>
+<pre><code>##      [,1] [,2]
+## [1,]  0.4  0.4
+## [2,]  0.6  0.6</code></pre>
 <p>Degree of freedom = # of row - 1 * # of columns = fixed</p>
 <p><strong><em>All expected frequencies must be above five! If not, categories must be combined!</em></strong></p>
 </div>
@@ -517,79 +533,81 @@ X-squared = 0.66489, df = 1, p-value = 0.4148</code></pre>
 <h3><span class="header-section-number">3.5.3</span> Goodness of fit</h3>
 <p><strong>Uniform:</strong></p>
 <p>Degree of freedom = number of categories - number of parameters - 1.</p>
-<div class="sourceCode" id="cb110"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb110-1"><a href="probability.html#cb110-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>)</span>
-<span id="cb110-2"><a href="probability.html#cb110-2" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">5</span>, <span class="dv">5</span>)</span>
-<span id="cb110-3"><a href="probability.html#cb110-3" aria-hidden="true" tabindex="-1"></a><span class="fu">chisq.test</span>(x, <span class="at">p =</span> p)</span></code></pre></div>
-<pre><code>
-    Chi-squared test for given probabilities
-
-data:  x
-X-squared = 3.3333, df = 4, p-value = 0.5037</code></pre>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="probability.html#cb48-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>)</span>
+<span id="cb48-2"><a href="probability.html#cb48-2" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">5</span>, <span class="dv">5</span>)</span>
+<span id="cb48-3"><a href="probability.html#cb48-3" aria-hidden="true" tabindex="-1"></a><span class="fu">chisq.test</span>(x, <span class="at">p =</span> p)</span></code></pre></div>
+<pre><code>## Warning in chisq.test(x, p = p): Chi-squared approximation may be incorrect</code></pre>
+<pre><code>## 
+##  Chi-squared test for given probabilities
+## 
+## data:  x
+## X-squared = 3.3333, df = 4, p-value = 0.5037</code></pre>
 <p><strong><em>All expected frequencies must be above five! If not, categories must be combined!</em></strong></p>
 <p><strong>Binomial:</strong></p>
 <p>dbinom(x, size = n, prob = y)</p>
 <p>For example:</p>
-<div class="sourceCode" id="cb112"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb112-1"><a href="probability.html#cb112-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(actuar)</span>
-<span id="cb112-2"><a href="probability.html#cb112-2" aria-hidden="true" tabindex="-1"></a>cj <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="sc">-</span><span class="fl">0.5</span>, <span class="fl">0.5</span>, <span class="fl">1.5</span>, <span class="fl">2.5</span>, <span class="fl">3.5</span>, <span class="fl">4.5</span>, <span class="fl">5.5</span>)</span>
-<span id="cb112-3"><a href="probability.html#cb112-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb112-4"><a href="probability.html#cb112-4" aria-hidden="true" tabindex="-1"></a><span class="co">#or</span></span>
-<span id="cb112-5"><a href="probability.html#cb112-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb112-6"><a href="probability.html#cb112-6" aria-hidden="true" tabindex="-1"></a>cj <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="sc">-</span><span class="fl">0.5</span>, <span class="at">to=</span><span class="dv">5</span>, <span class="at">by=</span><span class="dv">1</span>)</span>
-<span id="cb112-7"><a href="probability.html#cb112-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb112-8"><a href="probability.html#cb112-8" aria-hidden="true" tabindex="-1"></a>nj <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">15</span>,<span class="dv">20</span>,<span class="dv">20</span>,<span class="dv">18</span>,<span class="dv">13</span>)</span>
-<span id="cb112-9"><a href="probability.html#cb112-9" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">grouped.data</span>(<span class="at">Group =</span> cj, <span class="at">Frequency =</span> nj)</span>
-<span id="cb112-10"><a href="probability.html#cb112-10" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">mean</span>(data)<span class="sc">/</span><span class="dv">5</span></span>
-<span id="cb112-11"><a href="probability.html#cb112-11" aria-hidden="true" tabindex="-1"></a>pr <span class="ot">&lt;-</span><span class="fu">c</span>(<span class="fu">dbinom</span>(<span class="dv">0</span>,<span class="dv">5</span>,p),<span class="fu">dbinom</span>(<span class="dv">1</span>,<span class="dv">5</span>,p),<span class="fu">dbinom</span>(<span class="dv">2</span>,<span class="dv">5</span>,p),<span class="fu">dbinom</span>(<span class="dv">3</span>,<span class="dv">5</span>,p),<span class="fu">dbinom</span>(<span class="dv">4</span>,<span class="dv">5</span>,p),<span class="fu">dbinom</span>(<span class="dv">5</span>,<span class="dv">5</span>,p))</span>
-<span id="cb112-12"><a href="probability.html#cb112-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb112-13"><a href="probability.html#cb112-13" aria-hidden="true" tabindex="-1"></a>nj2 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">35</span>,<span class="dv">20</span>,<span class="dv">18</span>,<span class="dv">23</span>)</span>
-<span id="cb112-14"><a href="probability.html#cb112-14" aria-hidden="true" tabindex="-1"></a>pr2 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">dbinom</span>(<span class="dv">0</span>,<span class="dv">5</span>,p)<span class="sc">+</span><span class="fu">dbinom</span>(<span class="dv">1</span>,<span class="dv">5</span>,p),<span class="fu">dbinom</span>(<span class="dv">2</span>,<span class="dv">5</span>,p),<span class="fu">dbinom</span>(<span class="dv">3</span>,<span class="dv">5</span>,p),<span class="fu">dbinom</span>(<span class="dv">4</span>,<span class="dv">5</span>,p)<span class="sc">+</span><span class="fu">dbinom</span>(<span class="dv">5</span>,<span class="dv">5</span>,p))</span>
-<span id="cb112-15"><a href="probability.html#cb112-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb112-16"><a href="probability.html#cb112-16" aria-hidden="true" tabindex="-1"></a><span class="fu">chisq.test</span>(nj2,<span class="at">p=</span>pr2)</span></code></pre></div>
-<pre><code>
-    Chi-squared test for given probabilities
-
-data:  nj2
-X-squared = 38.736, df = 3, p-value = 0.00000001975</code></pre>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="probability.html#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(actuar)</span>
+<span id="cb51-2"><a href="probability.html#cb51-2" aria-hidden="true" tabindex="-1"></a>cj <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="sc">-</span><span class="fl">0.5</span>, <span class="fl">0.5</span>, <span class="fl">1.5</span>, <span class="fl">2.5</span>, <span class="fl">3.5</span>, <span class="fl">4.5</span>, <span class="fl">5.5</span>)</span>
+<span id="cb51-3"><a href="probability.html#cb51-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-4"><a href="probability.html#cb51-4" aria-hidden="true" tabindex="-1"></a><span class="co">#or</span></span>
+<span id="cb51-5"><a href="probability.html#cb51-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-6"><a href="probability.html#cb51-6" aria-hidden="true" tabindex="-1"></a>cj <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="sc">-</span><span class="fl">0.5</span>, <span class="at">to=</span><span class="dv">5</span>, <span class="at">by=</span><span class="dv">1</span>)</span>
+<span id="cb51-7"><a href="probability.html#cb51-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-8"><a href="probability.html#cb51-8" aria-hidden="true" tabindex="-1"></a>nj <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">15</span>,<span class="dv">20</span>,<span class="dv">20</span>,<span class="dv">18</span>,<span class="dv">13</span>)</span>
+<span id="cb51-9"><a href="probability.html#cb51-9" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">grouped.data</span>(<span class="at">Group =</span> cj, <span class="at">Frequency =</span> nj)</span>
+<span id="cb51-10"><a href="probability.html#cb51-10" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">mean</span>(data)<span class="sc">/</span><span class="dv">5</span></span>
+<span id="cb51-11"><a href="probability.html#cb51-11" aria-hidden="true" tabindex="-1"></a>pr <span class="ot">&lt;-</span><span class="fu">c</span>(<span class="fu">dbinom</span>(<span class="dv">0</span>,<span class="dv">5</span>,p),<span class="fu">dbinom</span>(<span class="dv">1</span>,<span class="dv">5</span>,p),<span class="fu">dbinom</span>(<span class="dv">2</span>,<span class="dv">5</span>,p),<span class="fu">dbinom</span>(<span class="dv">3</span>,<span class="dv">5</span>,p),<span class="fu">dbinom</span>(<span class="dv">4</span>,<span class="dv">5</span>,p),<span class="fu">dbinom</span>(<span class="dv">5</span>,<span class="dv">5</span>,p))</span>
+<span id="cb51-12"><a href="probability.html#cb51-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-13"><a href="probability.html#cb51-13" aria-hidden="true" tabindex="-1"></a>nj2 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">35</span>,<span class="dv">20</span>,<span class="dv">18</span>,<span class="dv">23</span>)</span>
+<span id="cb51-14"><a href="probability.html#cb51-14" aria-hidden="true" tabindex="-1"></a>pr2 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">dbinom</span>(<span class="dv">0</span>,<span class="dv">5</span>,p)<span class="sc">+</span><span class="fu">dbinom</span>(<span class="dv">1</span>,<span class="dv">5</span>,p),<span class="fu">dbinom</span>(<span class="dv">2</span>,<span class="dv">5</span>,p),<span class="fu">dbinom</span>(<span class="dv">3</span>,<span class="dv">5</span>,p),<span class="fu">dbinom</span>(<span class="dv">4</span>,<span class="dv">5</span>,p)<span class="sc">+</span><span class="fu">dbinom</span>(<span class="dv">5</span>,<span class="dv">5</span>,p))</span>
+<span id="cb51-15"><a href="probability.html#cb51-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-16"><a href="probability.html#cb51-16" aria-hidden="true" tabindex="-1"></a><span class="fu">chisq.test</span>(nj2,<span class="at">p=</span>pr2)</span></code></pre></div>
+<pre><code>## 
+##  Chi-squared test for given probabilities
+## 
+## data:  nj2
+## X-squared = 38.736, df = 3, p-value = 1.975e-08</code></pre>
 <p><strong><em>All expected frequencies must be above five! If not, categories must be combined!</em></strong></p>
 <p><strong>Poisson</strong></p>
 <p>Degree of freedom = number of categories - number of parameters - 1.</p>
 <p>NOTE! Distribution goes to infinity. Counter for one value that is X or more. 1 - until X.</p>
 <p>Example:</p>
-<div class="sourceCode" id="cb114"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb114-1"><a href="probability.html#cb114-1" aria-hidden="true" tabindex="-1"></a>cj <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="sc">-</span><span class="fl">0.5</span>, <span class="fl">0.5</span>, <span class="fl">1.5</span>, <span class="fl">2.5</span>, <span class="fl">3.5</span>, <span class="fl">4.5</span>, <span class="fl">5.5</span>)</span>
-<span id="cb114-2"><a href="probability.html#cb114-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb114-3"><a href="probability.html#cb114-3" aria-hidden="true" tabindex="-1"></a><span class="co">#or</span></span>
-<span id="cb114-4"><a href="probability.html#cb114-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb114-5"><a href="probability.html#cb114-5" aria-hidden="true" tabindex="-1"></a>cj <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="sc">-</span><span class="fl">0.5</span>, <span class="at">to=</span><span class="dv">6</span>, <span class="at">by=</span><span class="dv">1</span>)</span>
-<span id="cb114-6"><a href="probability.html#cb114-6" aria-hidden="true" tabindex="-1"></a>nj <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">16</span>, <span class="dv">30</span>, <span class="dv">37</span>, <span class="dv">7</span>, <span class="dv">10</span>, <span class="dv">5</span>)</span>
-<span id="cb114-7"><a href="probability.html#cb114-7" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">grouped.data</span>(<span class="at">Group =</span> cj, <span class="at">Frequency =</span> nj)</span>
-<span id="cb114-8"><a href="probability.html#cb114-8" aria-hidden="true" tabindex="-1"></a>m <span class="ot">&lt;-</span> <span class="fu">mean</span>(data)</span>
-<span id="cb114-9"><a href="probability.html#cb114-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb114-10"><a href="probability.html#cb114-10" aria-hidden="true" tabindex="-1"></a>pr <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">dpois</span>(<span class="dv">0</span>, m),<span class="fu">dpois</span>(<span class="dv">1</span>,m),<span class="fu">dpois</span>(<span class="dv">2</span>, m), <span class="fu">dpois</span>(<span class="dv">3</span>, m), <span class="fu">dpois</span>(<span class="dv">4</span>, m), <span class="sc">+</span> (<span class="dv">1</span><span class="sc">-</span><span class="fu">ppois</span>(<span class="dv">4</span>,m)) )</span>
-<span id="cb114-11"><a href="probability.html#cb114-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb114-12"><a href="probability.html#cb114-12" aria-hidden="true" tabindex="-1"></a><span class="fu">chisq.test</span>(nj, <span class="at">p =</span> pr)</span></code></pre></div>
-<pre><code>
-    Chi-squared test for given probabilities
-
-data:  nj
-X-squared = 9.7845, df = 5, p-value = 0.08158</code></pre>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="probability.html#cb53-1" aria-hidden="true" tabindex="-1"></a>cj <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="sc">-</span><span class="fl">0.5</span>, <span class="fl">0.5</span>, <span class="fl">1.5</span>, <span class="fl">2.5</span>, <span class="fl">3.5</span>, <span class="fl">4.5</span>, <span class="fl">5.5</span>)</span>
+<span id="cb53-2"><a href="probability.html#cb53-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb53-3"><a href="probability.html#cb53-3" aria-hidden="true" tabindex="-1"></a><span class="co">#or</span></span>
+<span id="cb53-4"><a href="probability.html#cb53-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb53-5"><a href="probability.html#cb53-5" aria-hidden="true" tabindex="-1"></a>cj <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="sc">-</span><span class="fl">0.5</span>, <span class="at">to=</span><span class="dv">6</span>, <span class="at">by=</span><span class="dv">1</span>)</span>
+<span id="cb53-6"><a href="probability.html#cb53-6" aria-hidden="true" tabindex="-1"></a>nj <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">16</span>, <span class="dv">30</span>, <span class="dv">37</span>, <span class="dv">7</span>, <span class="dv">10</span>, <span class="dv">5</span>)</span>
+<span id="cb53-7"><a href="probability.html#cb53-7" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">grouped.data</span>(<span class="at">Group =</span> cj, <span class="at">Frequency =</span> nj)</span>
+<span id="cb53-8"><a href="probability.html#cb53-8" aria-hidden="true" tabindex="-1"></a>m <span class="ot">&lt;-</span> <span class="fu">mean</span>(data)</span>
+<span id="cb53-9"><a href="probability.html#cb53-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb53-10"><a href="probability.html#cb53-10" aria-hidden="true" tabindex="-1"></a>pr <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">dpois</span>(<span class="dv">0</span>, m),<span class="fu">dpois</span>(<span class="dv">1</span>,m),<span class="fu">dpois</span>(<span class="dv">2</span>, m), <span class="fu">dpois</span>(<span class="dv">3</span>, m), <span class="fu">dpois</span>(<span class="dv">4</span>, m), <span class="sc">+</span> (<span class="dv">1</span><span class="sc">-</span><span class="fu">ppois</span>(<span class="dv">4</span>,m)) )</span>
+<span id="cb53-11"><a href="probability.html#cb53-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb53-12"><a href="probability.html#cb53-12" aria-hidden="true" tabindex="-1"></a><span class="fu">chisq.test</span>(nj, <span class="at">p =</span> pr)</span></code></pre></div>
+<pre><code>## Warning in chisq.test(nj, p = pr): Chi-squared approximation may be incorrect</code></pre>
+<pre><code>## 
+##  Chi-squared test for given probabilities
+## 
+## data:  nj
+## X-squared = 9.7845, df = 5, p-value = 0.08158</code></pre>
 <p><strong>Normal distribution</strong></p>
 <p>Example:</p>
-<div class="sourceCode" id="cb116"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb116-1"><a href="probability.html#cb116-1" aria-hidden="true" tabindex="-1"></a>cv <span class="ot">&lt;-</span> <span class="fu">qchisq</span>(<span class="fl">0.90</span>, <span class="dv">2</span>)</span>
-<span id="cb116-2"><a href="probability.html#cb116-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb116-3"><a href="probability.html#cb116-3" aria-hidden="true" tabindex="-1"></a>cj <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">10</span>, <span class="dv">15</span>, <span class="dv">30</span>)</span>
-<span id="cb116-4"><a href="probability.html#cb116-4" aria-hidden="true" tabindex="-1"></a>nj <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">16</span>, <span class="dv">30</span>, <span class="dv">37</span>, <span class="dv">7</span>, <span class="dv">10</span>)</span>
-<span id="cb116-5"><a href="probability.html#cb116-5" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">grouped.data</span>(<span class="at">Group =</span> cj, <span class="at">Frequency =</span> nj) </span>
-<span id="cb116-6"><a href="probability.html#cb116-6" aria-hidden="true" tabindex="-1"></a>m <span class="ot">&lt;-</span> <span class="fu">mean</span>(data)</span>
-<span id="cb116-7"><a href="probability.html#cb116-7" aria-hidden="true" tabindex="-1"></a>s <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(<span class="fu">emm</span>(data,<span class="dv">2</span>))</span>
-<span id="cb116-8"><a href="probability.html#cb116-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb116-9"><a href="probability.html#cb116-9" aria-hidden="true" tabindex="-1"></a>pr <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">pnorm</span>(<span class="dv">1</span>,m,s), <span class="fu">diff</span>(<span class="fu">pnorm</span>(<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">3</span>),m,s)), <span class="fu">diff</span>(<span class="fu">pnorm</span>(<span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">10</span>),m,s)), <span class="fu">diff</span>(<span class="fu">pnorm</span>(<span class="fu">c</span>(<span class="dv">10</span>,<span class="dv">15</span>),m,s)), <span class="dv">1</span> <span class="sc">-</span> <span class="fu">pnorm</span>(<span class="fu">c</span>(<span class="dv">15</span>),m,s) )</span>
-<span id="cb116-10"><a href="probability.html#cb116-10" aria-hidden="true" tabindex="-1"></a>         </span>
-<span id="cb116-11"><a href="probability.html#cb116-11" aria-hidden="true" tabindex="-1"></a><span class="fu">chisq.test</span>(nj,<span class="at">p=</span>pr)</span></code></pre></div>
-<pre><code>
-    Chi-squared test for given probabilities
-
-data:  nj
-X-squared = 77.503, df = 4, p-value = 0.0000000000000005887</code></pre>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="probability.html#cb56-1" aria-hidden="true" tabindex="-1"></a>cv <span class="ot">&lt;-</span> <span class="fu">qchisq</span>(<span class="fl">0.90</span>, <span class="dv">2</span>)</span>
+<span id="cb56-2"><a href="probability.html#cb56-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-3"><a href="probability.html#cb56-3" aria-hidden="true" tabindex="-1"></a>cj <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">10</span>, <span class="dv">15</span>, <span class="dv">30</span>)</span>
+<span id="cb56-4"><a href="probability.html#cb56-4" aria-hidden="true" tabindex="-1"></a>nj <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">16</span>, <span class="dv">30</span>, <span class="dv">37</span>, <span class="dv">7</span>, <span class="dv">10</span>)</span>
+<span id="cb56-5"><a href="probability.html#cb56-5" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">grouped.data</span>(<span class="at">Group =</span> cj, <span class="at">Frequency =</span> nj) </span>
+<span id="cb56-6"><a href="probability.html#cb56-6" aria-hidden="true" tabindex="-1"></a>m <span class="ot">&lt;-</span> <span class="fu">mean</span>(data)</span>
+<span id="cb56-7"><a href="probability.html#cb56-7" aria-hidden="true" tabindex="-1"></a>s <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(<span class="fu">emm</span>(data,<span class="dv">2</span>))</span>
+<span id="cb56-8"><a href="probability.html#cb56-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-9"><a href="probability.html#cb56-9" aria-hidden="true" tabindex="-1"></a>pr <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">pnorm</span>(<span class="dv">1</span>,m,s), <span class="fu">diff</span>(<span class="fu">pnorm</span>(<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">3</span>),m,s)), <span class="fu">diff</span>(<span class="fu">pnorm</span>(<span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">10</span>),m,s)), <span class="fu">diff</span>(<span class="fu">pnorm</span>(<span class="fu">c</span>(<span class="dv">10</span>,<span class="dv">15</span>),m,s)), <span class="dv">1</span> <span class="sc">-</span> <span class="fu">pnorm</span>(<span class="fu">c</span>(<span class="dv">15</span>),m,s) )</span>
+<span id="cb56-10"><a href="probability.html#cb56-10" aria-hidden="true" tabindex="-1"></a>         </span>
+<span id="cb56-11"><a href="probability.html#cb56-11" aria-hidden="true" tabindex="-1"></a><span class="fu">chisq.test</span>(nj,<span class="at">p=</span>pr)</span></code></pre></div>
+<pre><code>## 
+##  Chi-squared test for given probabilities
+## 
+## data:  nj
+## X-squared = 77.503, df = 4, p-value = 5.887e-16</code></pre>
 <p>###Mann-whitney test</p>
 <p>N = Number of pairs - number of draws</p>
 <p><strong>For small tests</strong></p>
@@ -604,27 +622,22 @@ c2 values sample 2</p>
 - Predict direction –&gt; one sided</p>
 <p><em>wilcox.test(w1, w2, paired=TRUE,correct=FALSE)</em></p>
 <p>###Run test</p>
-<div class="sourceCode" id="cb118"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb118-1"><a href="probability.html#cb118-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(randtests)</span></code></pre></div>
-<pre><code>
-Attaching package: &#39;randtests&#39;</code></pre>
-<pre><code>The following object is masked from &#39;package:snpar&#39;:
-
-    runs.test</code></pre>
-<div class="sourceCode" id="cb121"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb121-1"><a href="probability.html#cb121-1" aria-hidden="true" tabindex="-1"></a>pers <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span>)</span>
-<span id="cb121-2"><a href="probability.html#cb121-2" aria-hidden="true" tabindex="-1"></a>pers.f <span class="ot">&lt;-</span> <span class="fu">factor</span>(pers,<span class="at">labels=</span><span class="fu">c</span>(<span class="st">&quot;Male&quot;</span>,<span class="st">&quot;Female&quot;</span>))</span>
-<span id="cb121-3"><a href="probability.html#cb121-3" aria-hidden="true" tabindex="-1"></a><span class="fu">runs.test</span>(pers)</span></code></pre></div>
-<pre><code>
-    Runs Test
-
-data:  pers
-statistic = NaN, runs = 1, n1 = 5, n2 = 0, n = 5, p-value = NA
-alternative hypothesis: nonrandomness</code></pre>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="probability.html#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(randtests)</span>
+<span id="cb58-2"><a href="probability.html#cb58-2" aria-hidden="true" tabindex="-1"></a>pers <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span>)</span>
+<span id="cb58-3"><a href="probability.html#cb58-3" aria-hidden="true" tabindex="-1"></a>pers.f <span class="ot">&lt;-</span> <span class="fu">factor</span>(pers,<span class="at">labels=</span><span class="fu">c</span>(<span class="st">&quot;Male&quot;</span>,<span class="st">&quot;Female&quot;</span>))</span>
+<span id="cb58-4"><a href="probability.html#cb58-4" aria-hidden="true" tabindex="-1"></a><span class="fu">runs.test</span>(pers)</span></code></pre></div>
+<pre><code>## 
+##  Runs Test
+## 
+## data:  pers
+## statistic = NaN, runs = 1, n1 = 5, n2 = 0, n = 5, p-value = NA
+## alternative hypothesis: nonrandomness</code></pre>
 </div>
 <div id="p-value" class="section level3" number="3.5.4">
 <h3><span class="header-section-number">3.5.4</span> P-value</h3>
 <p>Find p value: Probability of getting this test statistic or more:</p>
-<div class="sourceCode" id="cb123"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb123-1"><a href="probability.html#cb123-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pchisq</span>(ts, df, <span class="at">lower.tail=</span><span class="cn">FALSE</span>)</span></code></pre></div>
-<pre><code>[1] 0.5578254</code></pre>
+<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="probability.html#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pchisq</span>(ts, df, <span class="at">lower.tail=</span><span class="cn">FALSE</span>)</span></code></pre></div>
+<pre><code>## [1] 0.5578254</code></pre>
 
 </div>
 </div>

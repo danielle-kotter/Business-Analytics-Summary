@@ -79,7 +79,7 @@ ggplot(data=ToothGrowth, aes(x="", y=len, fill="")) +
 ```{r}
  ggplot(data= ToothGrowth, aes(y = len, x = dose)) +
   geom_point(size=2) +
-  geom_smooth(method="lm", fill = NA, color="#69b3a2", fullrange=TRUE, 
+  geom_smooth(method="lm", color="#69b3a2", fullrange=TRUE, 
         formula = y ~ x) +
    theme(plot.title = element_text(hjust = 0.5)) +
     	labs(title = "Title",
@@ -154,4 +154,27 @@ ggplot(data = ToothGrowth, aes(x = len, fill = supp)) +
     theme(plot.title = element_text(hjust = 0.5, face= "bold")) +
     xlab("")+
     ylab("Density")
+```
+
+**Correlation matrix - pairs panel**
+
+```{r, warning = FALSE, message = FALSE}
+library(psych)
+
+pairs.panels(iris,
+method = "pearson",
+hist.col = "#00AFBB",
+density = TRUE,
+ellipses = TRUE
+)
+```
+
+**Simple plots:**
+
+```{r, warning = FALSE, message = FALSE}
+model <- lm(dist ~ speed, data = cars)
+plot(model)
+plot(model, 4) # cook distance
+library(car)
+avPlots(model)
 ```
