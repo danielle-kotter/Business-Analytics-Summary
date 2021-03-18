@@ -96,6 +96,31 @@ head(cars) # first 6 rows of the data set
 tail(cars) # last 6 rows of the data set
 ```
 
+Changing the order of a frequency table and factor
+
+```{r}
+value <- c("one", "three", "five", "one", "two", "three", "four", "two", "three")
+table <- as.data.table(table(value))
+
+table
+
+table[,`value`:= factor(
+ `value`, 
+  levels = c(
+    "one",
+    "two",
+    "three",
+    "four",
+    "five"
+  )
+)]
+
+setorder(table, `value`)
+
+table
+```
+
+
 ### Removing infinite + NA values
 
 1.  Removing Infinite values
@@ -119,54 +144,6 @@ as.factor(value)
 **Read excel**
 
 library(readxl) data \<- read.xls("data.xlsx", stringsAsFactors = TRUE)
-
-### Setup rmarkdown & code chunks
-
-+----------------------+----------------------------------------------------------+
-| Call                 | Description                                              |
-+======================+==========================================================+
-| Warning = TRUE/FALSE | Include / exclude warnings                               |
-+----------------------+----------------------------------------------------------+
-| Echo = TRUE/FALSE    | Include / exclude r chunks but show output               |
-+----------------------+----------------------------------------------------------+
-| Include = TRUE/FALSE | Run code but do not include in the knitted document      |
-+----------------------+----------------------------------------------------------+
-| Comment = TRUE/FALSE | Include / exclude \#\# in output code chunks             |
-+----------------------+----------------------------------------------------------+
-| Message = TRUE/FALSE | Includes / excludes message from code                    |
-+----------------------+----------------------------------------------------------+
-| out.width='100%'     | Adjusts size of figure / chart                           |
-+----------------------+----------------------------------------------------------+
-| fig.width =          | Set specific size of figure / chart width                |
-+----------------------+----------------------------------------------------------+
-| fig.height =         | Set specific size of figure / chart height               |
-+----------------------+----------------------------------------------------------+
-| fig.cap=             | Adds a title to a figure                                 |
-+----------------------+----------------------------------------------------------+
-| fig.align=           | 'center', 'left', 'right', adjust figure / chart at page |
-+----------------------+----------------------------------------------------------+
-| fig.path =           |                                                          |
-+----------------------+----------------------------------------------------------+
-| Error = TRUE         |                                                          |
-+----------------------+----------------------------------------------------------+
-| Cache = FALSE        |                                                          |
-+----------------------+----------------------------------------------------------+
-|                      |                                                          |
-+----------------------+----------------------------------------------------------+
-|                      |                                                          |
-+----------------------+----------------------------------------------------------+
-
-### Miscellaneous
-
-```{r}
-round(value, 2) # two decimals
-rep(5,5) #repeats 5, 5 times
-describe(variable)
-fivenum(variable)
-summary(variable)
-str(variable) # describing the variable
-dim(cars) # amount of rows and amount of columns
-```
 
 ### Markdown
 
@@ -193,3 +170,71 @@ Show up like this: `here`
 ```
 
 Asks r to have inline code. We can see the results here: `r 4+4`.
+
+```{r}
+# \newpage
+```
+
+Will start a new page for example in a pdf document
+
+```{r}
+# > 
+# In here we can put a quote 
+# >
+```
+
+>
+In here we can put a quote
+>
+
+
+### Setup rmarkdown & code chunks
+
++----------------------+----------------------------------------------------------+
+| Call                 | Description                                              |
++======================+==========================================================+
+| Warning = TRUE/FALSE | Include / exclude warnings                               |
++----------------------+----------------------------------------------------------+
+| Echo = TRUE/FALSE    | Include / exclude r chunks but show output               |
++----------------------+----------------------------------------------------------+
+| Include = TRUE/FALSE | Run code but do not include in the knitted document      |
++----------------------+----------------------------------------------------------+
+| Comment = "" | Include / exclude \#\# in output code chunks             |
++----------------------+----------------------------------------------------------+
+| Message = TRUE/FALSE | Includes / excludes message from code                    |
++----------------------+----------------------------------------------------------+
+| out.width='100%'     | Adjusts size of figure / chart                           |
++----------------------+----------------------------------------------------------+
+| fig.width =          | Set specific size of figure / chart width                |
++----------------------+----------------------------------------------------------+
+| fig.height =         | Set specific size of figure / chart height               |
++----------------------+----------------------------------------------------------+
+| fig.cap=             | Adds a title to a figure                                 |
++----------------------+----------------------------------------------------------+
+| fig.align=           | 'center', 'left', 'right', adjust figure / chart at page |
++----------------------+----------------------------------------------------------+
+
+
+### Miscellaneous
+
+```{r}
+round(0.50, 2) # rounds a value with two decimals
+rep(5,5) #repeats the number 5, 5 times
+describe(variable)
+fivenum(variable)
+summary(variable)
+str(variable) # describing the variable
+dim(cars) # amount of rows and amount of columns
+```
+
+
+### Subsetting
+
+```{r}
+cars[,1] # subsets by columns
+cars[1,] # subsets by row
+cars[cars$speed == 4,] # subsets by specific value 
+cars[cars$speed > 4,] # subsets over specific value 
+cars[cars$speed < 5,] # subsets under specific value 
+```
+

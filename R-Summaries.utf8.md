@@ -15,7 +15,7 @@ description: This is a summary of r code learned throughout several courses of m
 
 # Preface {.unnumbered}
 
-The following document has been prepared to have a prompt link to the code learned and used throughout several projects in the last year. As a beginner in programming, it is useful to have input accessible to avoid having to look through all repositories.
+The following document has been prepared to have a prompt link to the code learned and used throughout several projects in the last year. As a beginner in programming, it is always useful to have input accessible to avoid having to look through numerous repositories.
 
 ![](MIT-Coding-Brain-01-press_0.jpeg){width="402"}
 
@@ -40,79 +40,2028 @@ To compile this example to PDF, you will need XeLaTeX. You are recommended to in
 
 <!--chapter:end:index.Rmd-->
 
-
 # Basics
 
-Placeholder
 
+
+
+
+**Mathematical values**
+
+$\mu$ = `$\mu$` = Population mean\
+$\sigma$ = `$\sigma$` = Population sd\
+$\bar{x}$ = `$\bar{x}` = Sample mean\
+${e}$ = `${e}$` = Standard error\
+$\pi$ = `$\pi$` = Pie $\ge$ = `$\ge$` = Bigger than\
+$\le$ = `$\le$` = Smaller than
+
+**Sample mean, standard deviation**
+
+
+```{.r .watch-out}
+mean <- mean(variable)
+sd <- sd(variable)
+```
+
+Removes values NA in a data set:
+
+
+```{.r .watch-out}
+mean <- mean(variable, na.rm = TRUE)
+sd <- sd(variable, na.rm = TRUE)
+```
+
+**Weighted mean & standard deviation**
+
+
+```{.r .watch-out}
+library(Hmisc)
+weightedmean <- wtd.mean(x,y)
+weightedsd <- sqrt(wtd.var(x,y))/sqrt(n)
+```
+
+**Variance**
+
+
+```{.r .watch-out}
+var(variable)
+```
+
+```
+[1] 9.166667
+```
 
 ### Tables, frames & Matrices
+
+As matrix =
+
+
+```{.r .watch-out}
+library(data.table)
+matrix(c(1:8), nrow = 4, byrow = TRUE) #organized by row
+```
+
+```
+     [,1] [,2]
+[1,]    1    2
+[2,]    3    4
+[3,]    5    6
+[4,]    7    8
+```
+
+```{.r .watch-out}
+matrix(c(1:8), ncol = 4, byrow = FALSE) #organized by col
+```
+
+```
+     [,1] [,2] [,3] [,4]
+[1,]    1    3    5    7
+[2,]    2    4    6    8
+```
+
+As data frame =
+
+
+```{.r .watch-out}
+data.frame(Column1 = c(1:5), Column2 = c(1:5))
+```
+
+```
+  Column1 Column2
+1       1       1
+2       2       2
+3       3       3
+4       4       4
+5       5       5
+```
+
+```{.r .watch-out}
+data.table(Column1 = c(1:5), Column2 = c(1:5))
+```
+
+```
+   Column1 Column2
+1:       1       1
+2:       2       2
+3:       3       3
+4:       4       4
+5:       5       5
+```
+
+As data table =
+
+
+```{.r .watch-out}
+data.table(matrix(c(1:8), nrow = 4)) # or
+```
+
+```
+   V1 V2
+1:  1  5
+2:  2  6
+3:  3  7
+4:  4  8
+```
+
+```{.r .watch-out}
+data.table(Variablex = 1:5, Variabley = 1:5)
+```
+
+```
+   Variablex Variabley
+1:         1         1
+2:         2         2
+3:         3         3
+4:         4         4
+5:         5         5
+```
+
+Transforming tables from to other formats =
+
+
+```{.r .watch-out}
+table1 <- data.table(matrix(c(1:8), nrow = 4))
+as.data.frame(table1)
+```
+
+```
+  V1 V2
+1  1  5
+2  2  6
+3  3  7
+4  4  8
+```
+
+```{.r .watch-out}
+table2 <- data.frame(Column1 = c(1:5), Column2 = c(1:5))
+as.data.table(table2)
+```
+
+```
+   Column1 Column2
+1:       1       1
+2:       2       2
+3:       3       3
+4:       4       4
+5:       5       5
+```
+
+Binding and setting names =
+
+rbind(table, newvariable) cbind(data, newvariable)
+
+
+```{.r .watch-out}
+rownames(table1) <- c("One", "Two", "Three", "Four")
+colnames(table2) <- c("One", "Two")
+```
+
+
+```{.r .watch-out}
+head(cars) # first 6 rows of the data set
+```
+
+```
+  speed dist
+1     4    2
+2     4   10
+3     7    4
+4     7   22
+5     8   16
+6     9   10
+```
+
+```{.r .watch-out}
+tail(cars) # last 6 rows of the data set
+```
+
+```
+   speed dist
+45    23   54
+46    24   70
+47    24   92
+48    24   93
+49    24  120
+50    25   85
+```
+
+Changing the order of a frequency table and factor
+
+
+```{.r .watch-out}
+value <- c("one", "three", "five", "one", "two", "three", "four", "two", "three")
+table <- as.data.table(table(value))
+
+table
+```
+
+```
+   value N
+1:  five 1
+2:  four 1
+3:   one 2
+4: three 3
+5:   two 2
+```
+
+```{.r .watch-out}
+table[,`value`:= factor(
+ `value`, 
+  levels = c(
+    "one",
+    "two",
+    "three",
+    "four",
+    "five"
+  )
+)]
+
+setorder(table, `value`)
+
+table
+```
+
+```
+   value N
+1:   one 2
+2:   two 2
+3: three 3
+4:  four 1
+5:  five 1
+```
+
+
 ### Removing infinite + NA values
+
+1.  Removing Infinite values
+2.  Removing NA values
+3.  Changing Infinite values to NA values
+
+
+```{.r .watch-out}
+variable[is.finite(variable)]
+```
+
+```
+ [1]  1  2  3  4  5  6  7  8  9 10
+```
+
+```{.r .watch-out}
+variable[is.na(variable)]
+```
+
+```
+integer(0)
+```
+
+```{.r .watch-out}
+variable[is.infinite(variable)] <- NA
+```
+
 ### Transforming variable types
-### Setup rmarkdown & code chunks
-### Miscellaneous
+
+
+```{.r .watch-out}
+as.numeric(value)
+```
+
+```
+[1] NA NA NA NA NA NA NA NA NA
+```
+
+```{.r .watch-out}
+as.character(value)
+```
+
+```
+[1] "one"   "three" "five"  "one"   "two"   "three" "four"  "two"   "three"
+```
+
+```{.r .watch-out}
+as.factor(value)
+```
+
+```
+[1] one   three five  one   two   three four  two   three
+Levels: five four one three two
+```
+
+**Read excel**
+
+library(readxl) data \<- read.xls("data.xlsx", stringsAsFactors = TRUE)
+
 ### Markdown
+
+
+```{.r .watch-out}
+# Putting words in bold: **Word**
+```
+
+**Result**
+
+
+```{.r .watch-out}
+# Putting words in italic: *Word*
+```
+
+*Result*
+
+
+```{.r .watch-out}
+# dashes like this `here`
+```
+
+Show up like this: `here`
+
+
+```{.r .watch-out}
+# dashes like this with the letter r:  `r 4+4`
+```
+
+Asks r to have inline code. We can see the results here: 8.
+
+
+```{.r .watch-out}
+# \newpage
+```
+
+Will start a new page for example in a pdf document
+
+
+```{.r .watch-out}
+# > 
+# In here we can put a quote 
+# >
+```
+
+>
+In here we can put a quote
+>
+
+
+### Setup rmarkdown & code chunks
+
++----------------------+----------------------------------------------------------+
+| Call                 | Description                                              |
++======================+==========================================================+
+| Warning = TRUE/FALSE | Include / exclude warnings                               |
++----------------------+----------------------------------------------------------+
+| Echo = TRUE/FALSE    | Include / exclude r chunks but show output               |
++----------------------+----------------------------------------------------------+
+| Include = TRUE/FALSE | Run code but do not include in the knitted document      |
++----------------------+----------------------------------------------------------+
+| Comment = "" | Include / exclude \#\# in output code chunks             |
++----------------------+----------------------------------------------------------+
+| Message = TRUE/FALSE | Includes / excludes message from code                    |
++----------------------+----------------------------------------------------------+
+| out.width='100%'     | Adjusts size of figure / chart                           |
++----------------------+----------------------------------------------------------+
+| fig.width =          | Set specific size of figure / chart width                |
++----------------------+----------------------------------------------------------+
+| fig.height =         | Set specific size of figure / chart height               |
++----------------------+----------------------------------------------------------+
+| fig.cap=             | Adds a title to a figure                                 |
++----------------------+----------------------------------------------------------+
+| fig.align=           | 'center', 'left', 'right', adjust figure / chart at page |
++----------------------+----------------------------------------------------------+
+
+
+### Miscellaneous
+
+
+```{.r .watch-out}
+round(0.50, 2) # rounds a value with two decimals
+```
+
+```
+[1] 0.5
+```
+
+```{.r .watch-out}
+rep(5,5) #repeats the number 5, 5 times
+```
+
+```
+[1] 5 5 5 5 5
+```
+
+```{.r .watch-out}
+describe(variable)
+```
+
+```
+   vars  n mean   sd median trimmed  mad min max range skew kurtosis   se
+X1    1 10  5.5 3.03    5.5     5.5 3.71   1  10     9    0    -1.56 0.96
+```
+
+```{.r .watch-out}
+fivenum(variable)
+```
+
+```
+[1]  1.0  3.0  5.5  8.0 10.0
+```
+
+```{.r .watch-out}
+summary(variable)
+```
+
+```
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   1.00    3.25    5.50    5.50    7.75   10.00 
+```
+
+```{.r .watch-out}
+str(variable) # describing the variable
+```
+
+```
+ int [1:10] 1 2 3 4 5 6 7 8 9 10
+```
+
+```{.r .watch-out}
+dim(cars) # amount of rows and amount of columns
+```
+
+```
+[1] 50  2
+```
+
+
+### Subsetting
+
+
+```{.r .watch-out}
+cars[,1] # subsets by columns
+```
+
+```
+ [1]  4  4  7  7  8  9 10 10 10 11 11 12 12 12 12 13 13 13 13 14 14 14 14 15 15
+[26] 15 16 16 17 17 17 18 18 18 18 19 19 19 20 20 20 20 20 22 23 24 24 24 24 25
+```
+
+```{.r .watch-out}
+cars[1,] # subsets by row
+```
+
+```
+  speed dist
+1     4    2
+```
+
+```{.r .watch-out}
+cars[cars$speed == 4,] # subsets by specific value 
+```
+
+```
+  speed dist
+1     4    2
+2     4   10
+```
+
+```{.r .watch-out}
+cars[cars$speed > 4,] # subsets over specific value 
+```
+
+```
+   speed dist
+3      7    4
+4      7   22
+5      8   16
+6      9   10
+7     10   18
+8     10   26
+9     10   34
+10    11   17
+11    11   28
+12    12   14
+13    12   20
+14    12   24
+15    12   28
+16    13   26
+17    13   34
+18    13   34
+19    13   46
+20    14   26
+21    14   36
+22    14   60
+23    14   80
+24    15   20
+25    15   26
+26    15   54
+27    16   32
+28    16   40
+29    17   32
+30    17   40
+31    17   50
+32    18   42
+33    18   56
+34    18   76
+35    18   84
+36    19   36
+37    19   46
+38    19   68
+39    20   32
+40    20   48
+41    20   52
+42    20   56
+43    20   64
+44    22   66
+45    23   54
+46    24   70
+47    24   92
+48    24   93
+49    24  120
+50    25   85
+```
+
+```{.r .watch-out}
+cars[cars$speed < 5,] # subsets under specific value 
+```
+
+```
+  speed dist
+1     4    2
+2     4   10
+```
+
 
 <!--chapter:end:01-Basics.Rmd-->
 
-
 # Charts templates
 
-Placeholder
+
+```{.r .watch-out}
+library(gridExtra)
+library(hrbrthemes)
+library(ggplot2)
+
+paletteDani <- c( "#ffa500", "#DAF7A6", "#5F7992", "#69b3a2", "#ffd561", "#ee5c42", "#C8A2C8", "#5c3170", "#990000", "#C70039", "#34495E", "#909497")
+```
+
+> **Several basic options:**
+
+**Pie chart**
 
 
+```{.r .watch-out}
+data <- ToothGrowth
+
+dani_theme <- 
+    theme(
+        axis.title.x = element_blank(),
+        axis.title.y = element_blank(),
+        panel.border = element_blank(),
+        panel.grid = element_blank(),
+        axis.ticks = element_blank(),
+        axis.text.x=element_blank(),
+        legend.title = element_text(face = "bold"),
+        plot.title = element_text(hjust = 0.5, size = 12, face = "bold")
+    )
+
+ggplot(data, aes(x="",y = dose, fill = supp)) +
+  geom_bar(width = 1, stat = "identity") +
+  coord_polar("y", start = 0) +
+  scale_fill_manual("Legendname:",
+                    values = paletteDani) +
+  dani_theme  +
+  labs(title = "Title",
+         x = "variablX",
+         y = "variableY"
+         )
+```
+
+<img src="R-Summaries_files/figure-html/unnamed-chunk-28-1.png" width="100%" />
+
+**Bar chart**
+
+
+```{.r .watch-out}
+ggplot(data, aes(x = dose, y = supp)) + 
+  geom_bar(stat = "identity", fill="#69b3a2", color="#e9ecef") +
+  theme(legend.position="none")
+```
+
+<img src="R-Summaries_files/figure-html/unnamed-chunk-29-1.png" width="100%" />
+
+**Histogram**
+
+
+```{.r .watch-out}
+ggplot(data = data, aes(len) ) + 
+    geom_histogram(fill="#69b3a2", color="#e9ecef", alpha=0.9) +
+    ggtitle("Title") +
+      xlab("variablex") +
+      ylab("variabley") +
+    theme(plot.title = element_text(size = 11))
+```
+
+```
+`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+```
+
+<img src="R-Summaries_files/figure-html/unnamed-chunk-30-1.png" width="100%" />
+
+**Boxplot**
+
+
+```{.r .watch-out}
+ggplot(data=ToothGrowth, aes(x="", y=len, fill="")) +
+    geom_boxplot(fill="#69b3a2", outlier.colour="red", outlier.shape=8, outlier.size=4) +
+    theme_ipsum() +
+    theme(
+      legend.position="none",
+      plot.title = element_text(size=12)
+      ) +
+    ggtitle("Title") +
+    theme(plot.title = element_text(hjust = 0.5)) +
+    	xlab("")+
+    	ylab("")
+```
+
+<img src="R-Summaries_files/figure-html/unnamed-chunk-31-1.png" width="100%" />
+
+**Scatter plot**
+
+
+```{.r .watch-out}
+ ggplot(data= ToothGrowth, aes(y = len, x = dose)) +
+  geom_point(size=2) +
+  geom_smooth(method="lm", fill = NA, color="#69b3a2", fullrange=TRUE, 
+        formula = y ~ x) +
+   theme(plot.title = element_text(hjust = 0.5)) +
+    	labs(title = "Title",
+         y = "yname",
+         x = "xname"
+         )
+```
+
+<img src="R-Summaries_files/figure-html/unnamed-chunk-32-1.png" width="100%" />
+
+**Scatter plot with dummies**
+
+
+```{.r .watch-out}
+ggplot(data = ToothGrowth, aes(y = len, x = supp, colour=factor(supp))) + 
+  geom_point(size=2) +
+  geom_smooth(method="lm", fill = NA, fullrange=TRUE,  formula = y ~ x) +
+    theme(plot.title = element_text(hjust = 0.5)) +
+    scale_colour_manual(name="Legendtitle", 
+    	labels=c("value1", "value2"),values = c("#69b3a2", "#F6726A"))+
+    labs(title = "Title",
+         y = "Yname",
+         x = "Xname"
+         )
+```
+
+<img src="R-Summaries_files/figure-html/unnamed-chunk-33-1.png" width="100%" />
+
+**Arrange charts next to each other on a page**
+
+
+```{.r .watch-out}
+chart1 <- ggplot(data=ToothGrowth, aes(x="", y=len, fill="")) +
+    geom_boxplot(fill="#69b3a2", outlier.colour="red", outlier.shape=8, outlier.size=4) +
+    theme_ipsum() +
+    theme(
+      legend.position="none",
+      plot.title = element_text(size=12)
+      ) +
+    ggtitle("Title") +
+    theme(plot.title = element_text(hjust = 0.5)) +
+    	xlab("")+
+    	ylab("")
+
+
+chart2 <- ggplot(data=ToothGrowth, aes(x="", y=len, fill="")) +
+    geom_boxplot(fill="#69b3a2", outlier.colour="red", outlier.shape=8, outlier.size=4) +
+    theme_ipsum() +
+    theme(
+      legend.position="none",
+      plot.title = element_text(size=12)
+      ) +
+    ggtitle("Title") +
+    theme(plot.title = element_text(hjust = 0.5)) +
+    	xlab("")+
+    	ylab("")
+
+
+grid.arrange(chart1, chart2, nrow=1, widths=c(0.9,1))
+```
+
+<img src="R-Summaries_files/figure-html/unnamed-chunk-34-1.png" width="100%" />
+
+**Shows the amounts of missing values (NA) in a data set**
+
+
+```{.r .watch-out}
+library(VIM)
+aggr(cars, numbers = TRUE, prop = c(TRUE, FALSE), cex.axis = 0.5)
+```
+
+<img src="R-Summaries_files/figure-html/unnamed-chunk-35-1.png" width="100%" />
+
+**Density plots with semi-transparent fill**
+
+
+```{.r .watch-out}
+ggplot(data = ToothGrowth, aes(x = len, fill = supp)) + 
+  geom_density(alpha=.3) +
+    theme(
+      plot.title = element_text(size=15)
+      ) +
+    ggtitle("Density plot") +
+    theme(plot.title = element_text(hjust = 0.5, face= "bold")) +
+    xlab("")+
+    ylab("Density")
+```
+
+<img src="R-Summaries_files/figure-html/unnamed-chunk-36-1.png" width="100%" />
 
 <!--chapter:end:02-Charts.Rmd-->
 
-
 # Probability
 
-Placeholder
 
+```{.r .watch-out}
+library(prob)
+library(LaplacesDemon) # Bayes Theorem
+library(BSDA) #tsumtest
+library(actuar) 
+```
+
+
+
+
+```{.r .watch-out}
+out <- c("Red", "White", "Black", "Blue", "Green")
+freq <- c(1,2,3,4,5)
+s <- probspace(out, probs = freq)
+print(s)
+```
+
+```
+      x      probs
+1   Red 0.06666667
+2 White 0.13333333
+3 Black 0.20000000
+4  Blue 0.26666667
+5 Green 0.33333333
+```
+
+1. If you toss two fair coins, what is the probability of two heads?
+
+
+```{.r .watch-out}
+space <- tosscoin(2, makespace = TRUE)
+p <- Prob(space, toss1 == "H" & toss2 == "H")
+```
+
+*The probability is: 0.25*
+
+2. When two dice are thrown, what is the probability of a 3 followed by a 5?
+
+
+```{.r .watch-out}
+space <- rolldie(2, makespace = TRUE)
+p <- Prob(space, X1 == 3 & (X2 == 5) )
+```
+
+*The probability is: 0.03*
+
+3. Sampling from an urn with or without replacement. 3 balls and sample size of 2:
+
+
+```{.r .watch-out}
+sample1 <- urnsamples(1:3, size = 2, replace = TRUE, ordered = TRUE)
+sample2 <- urnsamples(1:3, size = 2, replace = FALSE, ordered = TRUE)
+sample3 <- urnsamples(1:3, size = 2, replace = FALSE, ordered = FALSE)
+sample4 <- urnsamples(1:3, size = 2, replace = TRUE, ordered = FALSE)
+```
+
+------------------------------------------------------------------------
 
 ## Bayes Theorem
+
+**Unconditional probability:**
+
+P(S) and P(NS)
+Success or no success
+
+
+```{.r .watch-out}
+prS <- c(0.4, 0.6)
+```
+
+**Conditional probability:**
+
+P(P | S ) and P( P | NS)
+Predicted given it is successful  
+Predicted given it is not successful
+
+
+```{.r .watch-out}
+prNS <- c(0.6, 0.2)
+```
+
+**Bayes prob, posterior probabilities**  
+P(S | P) & P(NS | P)
+
+
+```{.r .watch-out}
+BayesTheorem(prS, prNS)
+```
+
+```
+[1] 0.6666667 0.3333333
+attr(,"class")
+[1] "bayestheorem"
+```
+
+------------------------------------------------------------------------
+
 ## Discrete Probablity
+
 ### Uniform discrete probability distribution
+
+1. Sample space with a set probability. Size = amount of tries
+2. Density function: Individual probability. F.E. Getting a 4
+3. Cumulative density: Uniform for a certain value distribution. F.E. 4 or less. 4 or more? 1-punif 3
+4. Inverse cumulative density: Uniform for a certain probability ( up until a certain value). F.E. up to 25% of the tries
+
+
+
+***Default = # or less. For # or more do: 1-probability of # or less*** 
+
 ### Binomial distribution
+
+1. Binomial for a specific value for a certain sample. F.E. 2 from the sample are successful.
+2. Binomial for a certain distribution of the sample. F.E. At most 2 in the sample are successful. Or 5 or more. 
+3. Binomial for a certain percentage of the  sample. F.E. 25% of the sample has x value or less. 
+4. Difference between two binomial values. F.E. Prob there are between 4 and 5 of the trials successful.
+
+
+```{.r .watch-out}
+one <- dbinom(x, size = n, prob = y)	
+two <- pbinom(x, size = n, prob = y)	
+three <- qbinom(p, size = n, prob = y)	
+four <- diff(pbinom(c(X,Y), size = n, prob = y))
+```
+
+***Default = # or less (left area of the distribution). For # or more do: 1-probability of # or less***
+
+
 ### Poisson distribution
+
+**Expected value =** $n * p = LAMDA$
+
+1. Poisson for a certain value. Lambda = n*p. F.E. Prob of having a 5
+2. Poisson for a certain value distribution. F.E. Prob of having less than 5. More than 5? = 1-	Ppois(4, lambda)
+3. Poisson for a certain probability to capture a certain value. F.E. Poisson value for 25%.
+
+
+```{.r .watch-out}
+one <- dpois(x,lambda)
+two <- ppois(x,lambda)	
+three <- qpois(x,lambda)
+```
+
+***Default = # or less (left area of the distribution). For # or more do: 1-probability of # or less*** 
+
+
 ### The normal distribution
+
+**Empirical rule**
+
+For all normal distributions: 68-95-99.7 rule
+
+99.7% of observations are located between: -3 mu and 3  
+95% of observations are located between: -2 mu 2  
+68% of observations are located between: -1 mu 1
+
+**Normal distribution**
+
+**Z-value**
+
+
+```{.r .watch-out}
+# z <- (x - mean) / sd. For example:
+(11 - 10) / 2
+```
+
+```
+[1] 0.5
+```
+
+1. Normal distribution for a certain proportion. Pi = population proportion mean%.
+2. Normal distribution for a certain value distribution. F.E. Prob of value above 5. FALSE
+	Prob less than 9. TRUE
+3. Normal distribution for a certain probability to capture a certain value. F.E. Value that is given at 25% point. 
+4. Difference between two values on the normal distribution. F.E. between 5 and 10. 
+
+
+```{.r .watch-out}
+one <- pnorm(X, pi, sd, lower.tail = FALSE)
+two <- pnorm(X, mu, sd, lower.tail = FALSE)
+three <- qnorm(p, mu, sd, lower.tail = FALSE) 
+four <- diff(pnorm(c(X,Y), mu, sd, lower.tail = FALSE))
+```
+
+lower.tail = TRUE: The area of the left side of the slope  
+lower.tail = FALSE: The area of the right side of the slope
+
+**Confidence interval for normal distribution**
+
+z.test(x, sd=sigma)
+binconf(x = x, n = n) <- proportions
+t.test(variable) <- t-distribution for conf.inv
+
 #### Plotting the normal distribution
+
+"With mean = 3 and standard deviation = 7  
+Limits: mean +/- 3 * standard deviation  = 3*7 = 21 
+Lower limit = 3 – 21 = -18  
+Upper limit = 3 + 21 = 24"  
+
+Example:
+
+
+```{.r .watch-out}
+x <- seq(15, 45, length=50)
+y <- dnorm(x, 30, 5)
+plot(x,y,type="l",lwd=2,col="black")
+
+x <- seq(15,35, length=100)
+y <- dnorm(x, 30,5 )
+polygon(c(15,x,35),c(0,y,0), density = c(15, 35), col = "black")
+
+p <- pnorm(35, mean = 30, sd = 5,lower.tail = TRUE)
+text(0,0.15,"68%")
+```
+
+<img src="R-Summaries_files/figure-html/unnamed-chunk-51-1.png" width="100%" />
+
 #### Binomial
+
+It will be possible to use the Normal distribution as an approximation to the Binomial if: n is large and p > 0.1 
+
+
+1. Density function (individual probability). 
+2. Cumulative density (between certain values). 
+3. Difference between two binomial values
+4. Inverse cumulative density. For a certain prob. 
+
+
+```{.r .watch-out}
+one <- dbinom(x, mu, sd)
+two <- pbinom(x, mu, sd, lower.tail = FALSE)
+three <- diff(pbinom(c(X,Y), mu, sd, lower.tail = FALSE))
+four <- qbinom(p, mu, sd, lower.tail = FALSE)
+```
+
+------------------------------------------------------------------------
+
 ## Samples, estimation & confidence intervals
+
+**The standard error of the sampling distribution of the mean**
+
+
+```{.r .watch-out}
+se <- sigma / sqrt(n)
+```
+
+**Probability sample**
+
+1. To find the probability that X is larger than mu
+2. To find the probability that X is smaller than mu
+
+
+```{.r .watch-out}
+p <- pnorm(X, mu, se, lower.tail = TRUE) 
+p <- pnorm(X, mu, se, lower.tail = FALSE)
+```
+
+**Probability proportions sample**
+
+
+```{.r .watch-out}
+sd <- sqrt((pi*(n-pi))/n)
+z <- (p - pi)/sd
+
+p <- pnorm(X, pi, se, lower.tail =FALSE)
+```
+
+
+**Sample size**
+
+Package = "samplingbook".
+
+Provides the sample size needed to have a 95% confidence to estimate the population mean. 
+Level = confidence level. Se is required standard error. 
+
+**sample.size.mean(se, sigma, level=0.95)**
+
+------------------------------------------------------------------------
+
 ## Significance level
+
 ### Critical values
+
+**Critical value for normal distribution, sample > 30**  
+
+1. Two-sided: Critical value, 5% significance level = 1.96
+2. Two-sided: Critical value, 1% significance level = 2.58
+3. Two-sided: Critical value, 10% significance level = 1.96
+4. One-sided: Critical value, 5% significance level = 1.64
+5. One-sided: Critical value, 1% significance level = 2.33
+6. One-sided: Critical value, 10% significance level = 1.28
+
+
+```{.r .watch-out}
+qnorm(0.975)
+```
+
+```
+[1] 1.959964
+```
+
+```{.r .watch-out}
+qnorm(0.995)
+```
+
+```
+[1] 2.575829
+```
+
+```{.r .watch-out}
+qnorm(0.95)
+```
+
+```
+[1] 1.644854
+```
+
+```{.r .watch-out}
+qnorm(0.95)
+```
+
+```
+[1] 1.644854
+```
+
+```{.r .watch-out}
+qnorm(0.99)
+```
+
+```
+[1] 2.326348
+```
+
+```{.r .watch-out}
+qnorm(0.90)
+```
+
+```
+[1] 1.281552
+```
+
+**Critical values t-distribution**
+
+1. One-sided: critical value at a 5% significance level
+2. One-sided: critical value at a 10% significance level
+3. One-sided: critical value at a 1% significance level
+4. Two-sided: critical value at a 5% significance level
+5. Two-sided: critical value at a 10% significance level
+6. Two-sided: critical value at a 1% significance level
+
+
+```{.r .watch-out}
+cv <- qt(0.95, df) 
+cv <- qt(0.90, df) 
+cv <- qt(0.99, df)
+
+cv <- qt(0.975, df)
+cv <- qt(0.95, df) 
+cv <- qt(0.995, df)
+```
+
+**Confidence interval**
+
+
+```{.r .watch-out}
+cv <- cv
+mu <- mu
+sd <- sd
+se <- sd / (sqrt(n))
+n <- n
+
+conf_int95 <- cv * sd / (sqrt(n))
+mu_plus <- mu + conf_int95
+mu_min <- mu - conf_int95
+```
+
+**Large sample significance testing**
+
+1. Two-sided
+2. One-sided: X is greater than the population mean
+3. One-sided: X is less than the population mean
+
+
+```{.r .watch-out}
+library(BSDA)
+
+one <- tsum.test(mean.x = X, s.x = sd, n.x = n, mu = mu, alternative = "two.sided", var.equal = TRUE) 
+
+two <- tsum.test(mean.x = X, s.x = sd, n.x = n, mu = mu, alternative = "greater", var.equal = TRUE) 
+
+three <- tsum.test(mean.x = X, s.x = sd, n.x = n, mu = mu, alternative = "less", var.equal = TRUE) 
+```
+
+**For proportions:**
+
+prop.test(x = X, n = n, p = p, correct = TRUE, alternative = "two.sided")
+
+Same goes for above: two.sided, greater, less
+
 ### Test of equality - two samples
+
+H_0 <- $\mu1 = \mu2$ or $(\mu1 - \mu2) = 0$  
+H_a <- $\mu1 \neq \mu2$ or $\mu1 - \mu2 \neq 0$
+
+
+Difference in two means with a certain confidence level confidence interval. Default = 95%
+
+
+```{.r .watch-out}
+tsum.test(mean.x = X, s.x = sd, n.x = n, mean.y = X, s.y = sd, n.y = n, var.equal=FALSE)
+```
+
+```
+
+	Welch Modified Two-Sample t-Test
+
+data:  Summarized x and y
+t = 0, df = 58, p-value = 1
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ -0.8492568  0.8492568
+sample estimates:
+mean of x mean of y 
+       15        15 
+```
+
+2-sample test for equality of proportions without continuity correction.
+
+prop.test(data, correct=FALSE, alternative="greater")
+
+------------------------------------------------------------------------
+
 ## Non-Parametric testing
+
 ### Contengency table / frequencies
+
+Obtain contingency table
+
+
+```{.r .watch-out}
+table(ToothGrowth$dose)
+```
+
+```
+
+0.5   1   2 
+ 20  20  20 
+```
+
 ### Chi-square
+
+1. Chi-square test
+2. Get the expected value
+3. Probability for chi-square 
+
+
+```{.r .watch-out}
+data <- matrix(c(27,373,33,567),byrow=TRUE,nrow=2)
+chisq.test(data,correct=FALSE)
+```
+
+```
+
+	Pearson's Chi-squared test
+
+data:  data
+X-squared = 0.66489, df = 1, p-value = 0.4148
+```
+
+```{.r .watch-out}
+chisq.test(data,correct=FALSE)$expected
+```
+
+```
+     [,1] [,2]
+[1,]   24  376
+[2,]   36  564
+```
+
+```{.r .watch-out}
+prop.table(chisq.test(data,correct=FALSE)$expected,1)
+```
+
+```
+     [,1] [,2]
+[1,] 0.06 0.94
+[2,] 0.06 0.94
+```
+
+```{.r .watch-out}
+prop.table(chisq.test(data,correct=FALSE)$expected,2)
+```
+
+```
+     [,1] [,2]
+[1,]  0.4  0.4
+[2,]  0.6  0.6
+```
+
+Degree of freedom = # of row - 1 * # of columns = fixed 
+
+***All expected frequencies must be above five! If not, categories must be combined!***
+
+
 ### Goodness of fit
+
+**Uniform:**
+
+Degree of freedom =  number of categories - number of parameters - 1.
+
+
+```{.r .watch-out}
+x <- c(1,2,3,4,5)
+p <- rep(1/5, 5)
+chisq.test(x, p = p)
+```
+
+```
+
+	Chi-squared test for given probabilities
+
+data:  x
+X-squared = 3.3333, df = 4, p-value = 0.5037
+```
+
+***All expected frequencies must be above five! If not, categories must be combined!***
+
+
+**Binomial:**
+
+dbinom(x, size = n, prob = y)	
+
+For example:
+
+
+```{.r .watch-out}
+library(actuar)
+cj <- c(-0.5, 0.5, 1.5, 2.5, 3.5, 4.5, 5.5)
+
+#or
+
+cj <- seq(from = -0.5, to=5, by=1)
+
+nj <- c(15,20,20,18,13)
+data <- grouped.data(Group = cj, Frequency = nj)
+p <- mean(data)/5
+pr <-c(dbinom(0,5,p),dbinom(1,5,p),dbinom(2,5,p),dbinom(3,5,p),dbinom(4,5,p),dbinom(5,5,p))
+
+nj2 <- c(35,20,18,23)
+pr2 <- c(dbinom(0,5,p)+dbinom(1,5,p),dbinom(2,5,p),dbinom(3,5,p),dbinom(4,5,p)+dbinom(5,5,p))
+
+chisq.test(nj2,p=pr2)
+```
+
+```
+
+	Chi-squared test for given probabilities
+
+data:  nj2
+X-squared = 38.736, df = 3, p-value = 0.00000001975
+```
+
+***All expected frequencies must be above five! If not, categories must be combined!***
+
+**Poisson**
+
+Degree of freedom = number of categories - number of parameters - 1.
+
+NOTE! Distribution goes to infinity. Counter for one value that is X or more. 1 - until X. 
+
+Example:
+
+
+```{.r .watch-out}
+cj <- c(-0.5, 0.5, 1.5, 2.5, 3.5, 4.5, 5.5)
+
+#or
+
+cj <- seq(from = -0.5, to=6, by=1)
+nj <- c(16, 30, 37, 7, 10, 5)
+data <- grouped.data(Group = cj, Frequency = nj)
+m <- mean(data)
+
+pr <- c(dpois(0, m),dpois(1,m),dpois(2, m), dpois(3, m), dpois(4, m), + (1-ppois(4,m)) )
+
+chisq.test(nj, p = pr)
+```
+
+```
+
+	Chi-squared test for given probabilities
+
+data:  nj
+X-squared = 9.7845, df = 5, p-value = 0.08158
+```
+
+**Normal distribution**
+
+Example:
+
+
+```{.r .watch-out}
+cv <- qchisq(0.90, 2)
+
+cj <- c(0, 1, 3, 10, 15, 30)
+nj <- c(16, 30, 37, 7, 10)
+data <- grouped.data(Group = cj, Frequency = nj) 
+m <- mean(data)
+s <- sqrt(emm(data,2))
+
+pr <- c(pnorm(1,m,s), diff(pnorm(c(1,3),m,s)), diff(pnorm(c(3,10),m,s)), diff(pnorm(c(10,15),m,s)), 1 - pnorm(c(15),m,s) )
+         
+chisq.test(nj,p=pr)
+```
+
+```
+
+	Chi-squared test for given probabilities
+
+data:  nj
+X-squared = 77.503, df = 4, p-value = 0.0000000000000005887
+```
+
+###Mann-whitney test
+
+N = Number of pairs - number of draws
+
+**For small tests**
+
+c1 values sample 1  
+c2 values sample 2  
+
+*wilcox.text(x, c2)*
+
+**Larger sample test > 10**
+
+You can use a approximation based on the normal distribution. Therefore critical values will be 1.96 for this two sided test.
+
+
+###Wilcoxon test
+
+Two options  
+	- Do not predict direction --> two sided  
+	- Predict direction --> one sided  
+	
+*wilcox.test(w1, w2, paired=TRUE,correct=FALSE)*
+
+
+###Run test
+
+
+```{.r .watch-out}
+library(randtests)
+pers <- c(0,1,1,0,0,0,0,1,1,0,1)
+pers.f <- factor(pers,labels=c("Male","Female"))
+runs.test(pers)
+```
+
+```
+
+	Runs Test
+
+data:  pers
+statistic = NaN, runs = 1, n1 = 5, n2 = 0, n = 5, p-value = NA
+alternative hypothesis: nonrandomness
+```
+
 ### P-value
+
+Find p value: Probability of getting this test statistic or more:
+
+
+```{.r .watch-out}
+pchisq(ts, df, lower.tail=FALSE)
+```
+
+```
+[1] 0.5578254
+```
+
 
 <!--chapter:end:03-Probability.Rmd-->
 
-
 # Simple regressions
 
-Placeholder
 
 
 ## Basics regressions
+
+Regressions, correlation and dummy's
+
+Y = Dependent  
+X = Explanatory
+
+**Correlation**
+
+
+```{.r .watch-out}
+cor(x, y)
+```
+
+```
+[1] 0.8068949
+```
+
+**Creating the regression:**
+
+1. To plot the regression model
+2. Evaluates the coefficient of the model
+3. Only the first colum estimattion 
+
+
+```{.r .watch-out}
+model <- lm(y~x, data = data)
+summary(model)$coef
+```
+
+```
+              Estimate Std. Error   t value             Pr(>|t|)
+(Intercept) -17.579095  6.7584402 -2.601058 0.012318816153809090
+x             3.932409  0.4155128  9.463990 0.000000000001489836
+```
+
+```{.r .watch-out}
+est <- summary(model)$coef[,1]
+```
+
+
 ### Summarizing regressions:
+
+1. Using stargazer package
+
+
+```{.r .watch-out}
+library(stargazer)
+
+stargazer(lm(y~x, data=data), type="text")
+```
+
+```
+
+===============================================
+                        Dependent variable:    
+                    ---------------------------
+                                 y             
+-----------------------------------------------
+x                            3.932***          
+                              (0.416)          
+                                               
+Constant                     -17.579**         
+                              (6.758)          
+                                               
+-----------------------------------------------
+Observations                    50             
+R2                             0.651           
+Adjusted R2                    0.644           
+Residual Std. Error      15.380 (df = 48)      
+F Statistic           89.567*** (df = 1; 48)   
+===============================================
+Note:               *p<0.1; **p<0.05; ***p<0.01
+```
+
+```{.r .watch-out}
+# Multiple models adjacent
+
+model1 <- lm(y~x, data=data)
+model2 <- lm(x~y, data=data)
+
+stargazer(model1, model2, type="text")
+```
+
+```
+
+==========================================================
+                                  Dependent variable:     
+                              ----------------------------
+                                    y              x      
+                                   (1)            (2)     
+----------------------------------------------------------
+x                                3.932***                 
+                                 (0.416)                  
+                                                          
+y                                              0.166***   
+                                                (0.017)   
+                                                          
+Constant                        -17.579**      8.284***   
+                                 (6.758)        (0.874)   
+                                                          
+----------------------------------------------------------
+Observations                        50            50      
+R2                                0.651          0.651    
+Adjusted R2                       0.644          0.644    
+Residual Std. Error (df = 48)     15.380         3.156    
+F Statistic (df = 1; 48)        89.567***      89.567***  
+==========================================================
+Note:                          *p<0.1; **p<0.05; ***p<0.01
+```
+
+2. Using summary function:
+
+
+```{.r .watch-out}
+summary(lm(y~x))
+```
+
+```
+
+Call:
+lm(formula = y ~ x)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-29.069  -9.525  -2.272   9.215  43.201 
+
+Coefficients:
+            Estimate Std. Error t value         Pr(>|t|)    
+(Intercept) -17.5791     6.7584  -2.601           0.0123 *  
+x             3.9324     0.4155   9.464 0.00000000000149 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 15.38 on 48 degrees of freedom
+Multiple R-squared:  0.6511,	Adjusted R-squared:  0.6438 
+F-statistic: 89.57 on 1 and 48 DF,  p-value: 0.00000000000149
+```
+
+Regressions
+
+**Plotting regression**
+
+
+```{.r .watch-out}
+plot(y~x,data=data, 
+     main="Title",
+     ylab="yname",
+     xlab="xname"
+     )
+```
+
+<img src="R-Summaries_files/figure-html/unnamed-chunk-74-1.png" width="100%" />
+
+**Including regression line:**
+
+
+```{.r .watch-out}
+plot(y~x,data=data, 
+     main="Title",
+     ylab="yname",
+     xlab="xname"
+     )
+abline(lm(y~x, data=data), col="blue")
+```
+
+<img src="R-Summaries_files/figure-html/unnamed-chunk-75-1.png" width="100%" />
+
+**Confidence interval around slope**
+
+
+```{.r .watch-out}
+confint(lm(y~x), level=0.95)
+```
+
+```
+                 2.5 %    97.5 %
+(Intercept) -31.167850 -3.990340
+x             3.096964  4.767853
+```
+
+**Sub-sampling regression**
+
+Specify dimensions [,]. 
+First is row. Column, second. 
+
+1. Selects the rows where age is larger than 5.
+2. Lower than 5.
+
+
+```{.r .watch-out}
+sub1 <- summary(lm(y~x, data=data["speed">=5,]))
+sub2 <- summary(lm(y~x, data=data["speed"<=5,]))
+```
+
+###Dummy variables, diff in means
+
+
 ### Regression + dummy
+
+Y = Constant0 + B0 * X - Diff in means + B1 * variable1*2
+
+
+**Omitting the intercept:**
+
+Shows the means separately and not the difference between means. Tests whether the expected counts are different from zero. 
+
+
+```{.r .watch-out}
+lm(y ~ x - 1, data = data)
+```
+
+```
+
+Call:
+lm(formula = y ~ x - 1, data = data)
+
+Coefficients:
+    x  
+2.909  
+```
+
+Reorders group, to specific value to be first.
+ 
+ variable2 <- relevel(variable, "C")
+
 ## Prediction  
+
+
+```{.r .watch-out}
+model <- lm(y~x)
+
+newdata <- data.frame(variablename = c(1:50))
+pred <- predict(model, newdata = newdata)
+```
+
+**Prediction confidence interval:**
+
+1. One value
+2. Multiple values from a existing data frame
+
+
+```{.r .watch-out}
+pred1 <- predict(model, data.frame(valuename = x), interval = "confidence", level=0.95)
+pred2 <- predict(model, newdata = newdata, interval = "confidence", level=0.95)
+```
+
+**Prediction interval**
+
+1. One value
+2. Multiple values from a existing data frame
+
+
+```{.r .watch-out}
+pred1 <- predict(model, data.frame(valuename = x), interval="predict",level=0.95)
+pred2 <- predict(model, newdata, interval="predict",level=0.95)
+```
+
+
 ### Confidence and prediction plotting
+
+Adds: observed values, fitted line, conf interval, predicted interval
+
+
+```{.r .watch-out}
+library(HH)
+fit <- lm(y~x, data = data)
+ci.plot(fit)
+```
+
+<img src="R-Summaries_files/figure-html/unnamed-chunk-82-1.png" width="100%" />
+
+###Prediction with dummy variables
+
+Prediction = 𝛼1+𝛼2Constant Dummy+𝛽1𝑆𝑖𝑧𝑒+𝛽2Slope Dummy
+
+###Prediction intervals examples
+
+**Prediction**
+
+
+```{.r .watch-out}
+fit <- lm(y ~ x + d + d, data = data)
+
+pred <- predict(fit, data.frame(VariableX = c(10), Dummy = c(1), Slopedummy = c(10)) )
+```
+ 
+**Confidence interval prediction**  
+
+
+```{.r .watch-out}
+fit <- lm(y ~ x + d + d, data = data)
+
+pred <- predict(fit, data.frame(VariableX = c(10), Dummy = c(1), Slopedummy = c(10), interval="confidence"))
+```
+
+**Prediction interval**
+
+
+```{.r .watch-out}
+fit <- lm(y ~ x + d + d, data = data)
+
+pred <- predict(fit, data.frame(VariableX = c(10), Dummy = c(1), Slopedummy = c(10), interval="predict"))
+```
+
+
 ## Data problems
+
+**Residual plot**
+
+
+```{.r .watch-out}
+# residual.plots(fitted(fit), resid(fit), sigma.hat(fit), main="Title")
+```
+
+**Influential measure test**
+
+
+```{.r .watch-out}
+im <- influence.measures(fit)
+```
+
+
+###Multicollinearity
+
+1. F-test
+2. Variance inflation factors greater than 10
+
+
+```{.r .watch-out}
+fit <- lm(y~x + d, data = data)
+
+anova(fit)
+```
+
+```
+Analysis of Variance Table
+
+Response: y
+          Df Sum Sq Mean Sq F value           Pr(>F)    
+x          1  21186 21185.5  89.567 0.00000000000149 ***
+Residuals 48  11354   236.5                             
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+```
+
+```{.r .watch-out}
+vif(fit)
+```
+
+```
+  x   d 
+  1 NaN 
+```
+
 ### ANOVA
+
+**One-way:** one value
+
+
+```{.r .watch-out}
+res.aov <- aov(y ~ x, data = data)
+summary(res.aov)
+```
+
+```
+            Df Sum Sq Mean Sq F value           Pr(>F)    
+x            1  21185   21185   89.57 0.00000000000149 ***
+Residuals   48  11354     237                             
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+```
+
+**Two-way:** more than two factors 
+
+
+```{.r .watch-out}
+res.aov <- aov(y ~ x + d, data = data)
+summary(res.aov)
+```
+
+```
+            Df Sum Sq Mean Sq F value           Pr(>F)    
+x            1  21185   21185   89.57 0.00000000000149 ***
+Residuals   48  11354     237                             
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+```
+
+With interaction
+
+
+```{.r .watch-out}
+res.aov <- aov(y ~ x * d, data = data)
+summary(res.aov)
+```
+
+```
+            Df Sum Sq Mean Sq F value           Pr(>F)    
+x            1  21185   21185   89.57 0.00000000000149 ***
+Residuals   48  11354     237                             
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+```
+
+**Three-way**
+
+1. Three way
+2. With interaction
+
+
+```{.r .watch-out}
+summary(aov(y ~ x + d, data=data))
+```
+
+```
+            Df Sum Sq Mean Sq F value           Pr(>F)    
+x            1  21185   21185   89.57 0.00000000000149 ***
+Residuals   48  11354     237                             
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+```
+
+```{.r .watch-out}
+summary(aov(y ~ x + d, data=data))
+```
+
+```
+            Df Sum Sq Mean Sq F value           Pr(>F)    
+x            1  21185   21185   89.57 0.00000000000149 ***
+Residuals   48  11354     237                             
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+```
+
+**MANOVA**: Multiple factors
+
+1. Test in difference
+2. Test separately
+
+
+test_manova <- manova(cbind(y, d) ~ x, data = data)
+summary(test_manova)
+summary.aov(test_manova)
+
 
 <!--chapter:end:04-Simpleregressions.Rmd-->
 
-
 # Structure equation models
 
-Placeholder
+Structural Equation Modeling (SEM): is an extremely broad and flexible framework for data analysis, perhaps better thought of as a family of related methods rather than as a single technique. Measuring latent constructs is challenging and we must also incorporate estimates of measurement error into our models. SEM excels at both of these tasks. SEM is especially suited for causal analysis.
 
+Path analysis (structural equations)
+
+Path diagrams = Communicates the structure of our model. Useful for structural equation models.
+
+Rectangular = any variable that we can observe directly (observed variable), measured variables
+
+Circle / Ovals = Cannot be observed (Latent variable)
+
+Arrow = directed effect. One variable impacts the other. Hypothetical causal relationship.
+
+Numbers by the arrows = regression coefficient. Correlations coefficients.
+
+![](images/paste-C79DE382.png){width="352"}
+
+Triangle is the constant in the Linear Model.
+
+![](images/paste-948ED17C.png){width="81"}
+
+Double handed arrows = indicate covariances or correlations without a causal interpretation.
+
+SEM -\> style="ram" to get circles around the measurement arrow
+
+Double handed arrow between two independent variables = they are correlated to each other. Covariance
+
+![](images/paste-D2D686C6.png){width="350"}
+
+Residual error term = measurement errors. We expect that the factor will not perfectly predict the observed variables.
+
+The bidirected arrows, the ones with two side arrows (in this representation, a connecting line with no arrows) represent covariances among variables.
+
+OLS = Ordinary least-squares (OLS) models assume that the analyst is fitting a model of a relationship between one or more explanatory variables and a continuous or at least interval outcome variable that minimizes the sum of square errors, where an error is the difference between the actual and the predicted value of the outcome variable. The most common analytic method that utilizes OLS models is linear regression (with a single or multiple predictor variables).
+
+OLS: b --\> beta \* k
+
+Latent variables = unobserved variables or unmeasured variables in SEM lingo. These are theoretical concepts which can be inferred but not directly measured.
+
+Linear regression model = Y = alpha + betaX + error
+
+The model has to account for randomization. If there is a factor that that cannot be explained, it is included in the error. When this unmeasured factor that is in the error is correlated to another independent variable, there is endogeneity.
+
+Endogeneity variables = correlated with the error terms. Arises when the marginal distribution of the independent variable is not independent of the conditional distribution of the dependent variable given the independent.
+
+Exogenous variables = not driven by other factors (observable or observable)
+
+Sources of endogeneity =
+
+    1. Omitted variables: relevant variables left out of the model,  attributing to effect to those that were included. 
+    2. Simultaneity: where x causes y and y causes x
+    3. Selection bias: sampling bias
+
+------------------------------------------------------------------------
+
+Multiple regression
+
+We can assume that the independent variables are correlated.
+
+The residual error in multiple regression analysis is actually an unobserved, latent variable. The residual error is 1, to achieve identification.
+
+Estimator = MLM in the model, protects for non-linearity, non-normality and elasticity of the raw data. Need the raw data, not only the covariance.
+
+Structural equation = y = beta\*x + e; var(y)=cov(y,y)
+
+Beta\^2\* var(x) + var(e-) = y
+
+------------------------------------------------------------------------
+
+Divide true variance of the true / observed variance = reliability
+
+Cov(1,2) = sum (1- mean(1) \* (2-mean(2) / n
+
+Covariance is a measure of how much two random variables vary together. It's similar to variance, but where variance tells you how a single variable varies, co variance tells you how two variables vary together.
+
+Difference between covariance and correlation.
+
+![](images/paste-BCC7A4B7.png){width="353"}
+
+------------------------------------------------------------------------
 
 ### Reliability
+
+In statistics reliability is the consistency of a set of measurements or measuring instrument, often used to describe a test. This can either be whether the measurements of the same instrument give or are likely to give the same measurement (test-retest), or in the case of more subjective instruments, such as personality or trait inventories, whether two independent assessors give similar scores (inter-rater-reliability). Reliability is inversely related to random error.
+
+$X = T + e$
+
+$Reliability of X = var(T)  / var(T) + var(e)$
+
+$var(Tintake) / var(Ointake) = 1 - var(error) / var(Ointake)$
+
+In words, reliability is defined as a proportion of observed variance that is true variance. Reliability is interpreted as a proportion---reliability cannot be negative.
+
+Reliability = 1- Latent variable variance / variance variable 1
+
+K = variance(true)/variance(Observed(true+error))
+
+    1- Measurement error variable 1 / measurement error variable 2 (latent varible)
+
+<https://www.uwo.ca/fhs/tc/labs/07.Reliability.pdf>
+
+Various kinds of reliability coefficients, with values ranging between 0.00 (much error) and 1.00 (no error), are usually used to indicate the amount of error in the scores." [2] For example, measurements of people's height and weight are often extremely reliable. \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+**Testing the model**
+
+fitMeasures(fitLV) [ c("chisq", "df", pvalue", "rmsea")]
+
+MI = if i liberate one parameter, then \_\_ there would
+
+Model chi-square test. We test whether the fitted model is correct. HO: moment restrictions implied by the model hold. The fit is correct If \> 0.05 we cannot reject the model. I accept the model.
+
+Therefore, the chi-square test allows researchers to evaluate the fitness of a model by using the null hypothesis significance test approach.
+
+The Root Mean Square Error of Approximation (RMSEA) = fit index: how the covariance fit in the model. Difference between observed and the fitted.
+
+The RMSEA is widely used in Structural Equation Modeling to provide a mechanism for adjusting for sample size where chi-square statistics are used. Measures the discrepancy due to the approximation per degree of freedom.
+
+The objective is to have the RMSEA as low as possible.
+
+------------------------------------------------------------------------
+
+**MLM estimation**
+
+Raw data is needed.
+
+Independent variables have variances and covariances, unless the model specification puts them to zero.
+
+The square of the standardized loading is the reliability of the variable. For example, the reliability k of AM1 is .59\*\*2 = 0.35 .
+
+Measurement equation = TSE =\~ 1*SE1 + 1*SE2
+
+Regression equation PERF \~ TS + TSE + VERB
+
+![](images/paste-8481FC40.png)
+
+Degrees of freedom (df) = Number of observations available for model estimation - Number of observations used to estimate parameters
+
+df for empty model = ( k(k-1) ) / 2
+
+"Number of free parameters" refers to all of the things that this model estimated freely
+
+Parameter is a regression coefficient when standardized is called a beta coefficient.
 
 <!--chapter:end:05-SEM.Rmd-->
 

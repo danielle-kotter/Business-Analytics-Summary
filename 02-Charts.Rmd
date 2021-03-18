@@ -8,31 +8,31 @@ library(ggplot2)
 paletteDani <- c( "#ffa500", "#DAF7A6", "#5F7992", "#69b3a2", "#ffd561", "#ee5c42", "#C8A2C8", "#5c3170", "#990000", "#C70039", "#34495E", "#909497")
 ```
 
-
-Several basic options:
+> **Several basic options:**
 
 **Pie chart**
 
 ```{r}
 data <- ToothGrowth
 
-blank_theme <- 
+dani_theme <- 
     theme(
         axis.title.x = element_blank(),
         axis.title.y = element_blank(),
         panel.border = element_blank(),
         panel.grid = element_blank(),
         axis.ticks = element_blank(),
-        plot.title = element_text(size = 10, face = "bold")
+        axis.text.x=element_blank(),
+        legend.title = element_text(face = "bold"),
+        plot.title = element_text(hjust = 0.5, size = 12, face = "bold")
     )
 
 ggplot(data, aes(x="",y = dose, fill = supp)) +
   geom_bar(width = 1, stat = "identity") +
   coord_polar("y", start = 0) +
   scale_fill_manual("Legendname:",
-                    values = paletteDani)+
-    blank_theme  +
-    theme(axis.text.x=element_blank())+
+                    values = paletteDani) +
+  dani_theme  +
   labs(title = "Title",
          x = "variablX",
          y = "variableY"
@@ -80,7 +80,7 @@ ggplot(data=ToothGrowth, aes(x="", y=len, fill="")) +
  ggplot(data= ToothGrowth, aes(y = len, x = dose)) +
   geom_point(size=2) +
   geom_smooth(method="lm", fill = NA, color="#69b3a2", fullrange=TRUE, 
-              formula = y ~ x) +
+        formula = y ~ x) +
    theme(plot.title = element_text(hjust = 0.5)) +
     	labs(title = "Title",
          y = "yname",
@@ -103,7 +103,7 @@ ggplot(data = ToothGrowth, aes(y = len, x = supp, colour=factor(supp))) +
          )
 ```
 
-**Arrange charts next to eachother on a page**
+**Arrange charts next to each other on a page**
 
 ```{r}
 chart1 <- ggplot(data=ToothGrowth, aes(x="", y=len, fill="")) +
@@ -133,4 +133,25 @@ chart2 <- ggplot(data=ToothGrowth, aes(x="", y=len, fill="")) +
 
 
 grid.arrange(chart1, chart2, nrow=1, widths=c(0.9,1))
+```
+
+**Shows the amounts of missing values (NA) in a data set**
+
+```{r warning=FALSE, message=FALSE}
+library(VIM)
+aggr(cars, numbers = TRUE, prop = c(TRUE, FALSE), cex.axis = 0.5)
+```
+
+**Density plots with semi-transparent fill**
+
+```{r}
+ggplot(data = ToothGrowth, aes(x = len, fill = supp)) + 
+  geom_density(alpha=.3) +
+    theme(
+      plot.title = element_text(size=15)
+      ) +
+    ggtitle("Density plot") +
+    theme(plot.title = element_text(hjust = 0.5, face= "bold")) +
+    xlab("")+
+    ylab("Density")
 ```
