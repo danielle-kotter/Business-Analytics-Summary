@@ -19,7 +19,7 @@ source("www/Table_Design.R")
 
 # Preface {.unnumbered}
 
-The following document has been prepared to have a prompt link to the code learned and used throughout several projects in the last year. As a beginner in programming, it is always useful to have input accessible to avoid having to look through numerous repositories.
+The following document has been prepared to have a prompt link to the code learned and used throughout several projects in the last year. As a beginner in programming, it is useful to have input accessible to avoid having to look through all repositories.
 
 ![](MIT-Coding-Brain-01-press_0.jpeg){width="402"}
 
@@ -51,3 +51,88 @@ htmltools::img(
   style = 'position:absolute; padding:10px; width:200px'
 )
 ```
+
+<!--chapter:end:index.Rmd-->
+
+
+# Basics
+
+Placeholder
+
+
+### Tables, frames & Matrices
+### Removing infinite + NA values
+### Transforming variable types
+### Setup rmarkdown & code chunks
+### Miscellaneous
+### Markdown
+
+<!--chapter:end:01-Basics.Rmd-->
+
+
+# Charts templates
+
+Placeholder
+
+
+
+<!--chapter:end:02-Charts.Rmd-->
+
+
+# Probability
+
+Placeholder
+
+
+## Bayes Theorem
+## Discrete Probablity
+### Uniform discrete probability distribution
+### Binomial distribution
+### Poisson distribution
+### The normal distribution
+#### Plotting the normal distribution
+#### Binomial
+## Samples, estimation & confidence intervals
+## Significance level
+### Critical values
+### Test of equality - two samples
+## Non-Parametric testing
+### Contengency table / frequencies
+### Chi-square
+### Goodness of fit
+### P-value
+
+<!--chapter:end:03-Probability.Rmd-->
+
+
+# Simple regressions
+
+Placeholder
+
+
+## Basics regressions
+### Summarizing regressions:
+### Regression + dummy
+## Prediction  
+### Confidence and prediction plotting
+## Data problems
+### ANOVA
+
+<!--chapter:end:04-Simpleregressions.Rmd-->
+
+
+# Structure equation models
+
+Placeholder
+
+
+### Reliability
+
+<!--chapter:end:05-SEM.Rmd-->
+
+`r if (knitr::is_html_output()) '
+# References {-}
+'`
+
+<!--chapter:end:07-references.Rmd-->
+

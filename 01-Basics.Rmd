@@ -36,7 +36,7 @@ sd <- sd(variable, na.rm = TRUE)
 
 **Weighted mean & standard deviation**
 
-```{r}
+```{r message=FALSE, warning=FALSE}
 library(Hmisc)
 weightedmean <- wtd.mean(x,y)
 weightedsd <- sqrt(wtd.var(x,y))/sqrt(n)
@@ -52,7 +52,7 @@ var(variable)
 
 As matrix =
 
-```{r}
+```{r message=FALSE, warning=FALSE}
 library(data.table)
 matrix(c(1:8), nrow = 4, byrow = TRUE) #organized by row
 matrix(c(1:8), ncol = 4, byrow = FALSE) #organized by col
@@ -120,31 +120,41 @@ as.factor(value)
 
 library(readxl) data \<- read.xls("data.xlsx", stringsAsFactors = TRUE)
 
-### Setup rmarkdown
+### Setup rmarkdown & code chunks
 
-+--------------------+-------------------------------------------------+
-| Call               | Description                                     |
-+====================+=================================================+
-| Warning = FALSE    | Excluding warnings                              |
-+--------------------+-------------------------------------------------+
-| Echo=TRUE          | Include r chunks                                |
-+--------------------+-------------------------------------------------+
-|                    | Message = FALSE                                 |
-+--------------------+-------------------------------------------------+
-|                    | Fig.width =                                     |
-+--------------------+-------------------------------------------------+
-|                    | Fig.height =                                    |
-+--------------------+-------------------------------------------------+
-|                    | Fig.path =                                      |
-+--------------------+-------------------------------------------------+
-|                    | Error = TRUE                                    |
-+--------------------+-------------------------------------------------+
-|                    | Cache = FALSE                                   |
-+--------------------+-------------------------------------------------+
-|                    |                                                 |
-+--------------------+-------------------------------------------------+
-|                    |                                                 |
-+--------------------+-------------------------------------------------+
++----------------------+----------------------------------------------------------+
+| Call                 | Description                                              |
++======================+==========================================================+
+| Warning = TRUE/FALSE | Include / exclude warnings                               |
++----------------------+----------------------------------------------------------+
+| Echo = TRUE/FALSE    | Include / exclude r chunks but show output               |
++----------------------+----------------------------------------------------------+
+| Include = TRUE/FALSE | Run code but do not include in the knitted document      |
++----------------------+----------------------------------------------------------+
+| Comment = TRUE/FALSE | Include / exclude \#\# in output code chunks             |
++----------------------+----------------------------------------------------------+
+| Message = TRUE/FALSE | Includes / excludes message from code                    |
++----------------------+----------------------------------------------------------+
+| out.width='100%'     | Adjusts size of figure / chart                           |
++----------------------+----------------------------------------------------------+
+| fig.width =          | Set specific size of figure / chart width                |
++----------------------+----------------------------------------------------------+
+| fig.height =         | Set specific size of figure / chart height               |
++----------------------+----------------------------------------------------------+
+| fig.cap=             | Adds a title to a figure                                 |
++----------------------+----------------------------------------------------------+
+| fig.align=           | 'center', 'left', 'right', adjust figure / chart at page |
++----------------------+----------------------------------------------------------+
+| fig.path =           |                                                          |
++----------------------+----------------------------------------------------------+
+| Error = TRUE         |                                                          |
++----------------------+----------------------------------------------------------+
+| Cache = FALSE        |                                                          |
++----------------------+----------------------------------------------------------+
+|                      |                                                          |
++----------------------+----------------------------------------------------------+
+|                      |                                                          |
++----------------------+----------------------------------------------------------+
 
 ### Miscellaneous
 
@@ -157,3 +167,29 @@ summary(variable)
 str(variable) # describing the variable
 dim(cars) # amount of rows and amount of columns
 ```
+
+### Markdown
+
+```{r}
+# Putting words in bold: **Word**
+```
+
+**Result**
+
+```{r}
+# Putting words in italic: *Word*
+```
+
+*Result*
+
+```{r}
+# dashes like this `here`
+```
+
+Show up like this: `here`
+
+```{r}
+# dashes like this with the letter r:  `r 4+4`
+```
+
+Asks r to have inline code. We can see the results here: `r 4+4`.

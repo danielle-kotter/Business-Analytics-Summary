@@ -1,6 +1,6 @@
 # Probability
 
-```{r, include=FALSE}
+```{r, message=FALSE, warning=FALSE}
 library(prob)
 library(LaplacesDemon) # Bayes Theorem
 library(BSDA) #tsumtest
@@ -327,7 +327,7 @@ mu_min <- mu - conf_int95
 2. One-sided: X is greater than the population mean
 3. One-sided: X is less than the population mean
 
-```{r}
+```{r message=FALSE, warning=FALSE}
 library(BSDA)
 
 one <- tsum.test(mean.x = X, s.x = sd, n.x = n, mu = mu, alternative = "two.sided", var.equal = TRUE) 
@@ -413,7 +413,7 @@ dbinom(x, size = n, prob = y)
 
 For example:
 
-```{r}
+```{r message=FALSE, warning=FALSE}
 library(actuar)
 cj <- c(-0.5, 0.5, 1.5, 2.5, 3.5, 4.5, 5.5)
 
@@ -502,7 +502,7 @@ Two options
 
 ###Run test
 
-```{r}
+```{r message=FALSE, warning=FALSE}
 library(randtests)
 pers <- c(0,1,1,0,0,0,0,1,1,0,1)
 pers.f <- factor(pers,labels=c("Male","Female"))

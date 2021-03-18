@@ -35,3 +35,5 @@ data-problems
 anova
 structure-equation-models
 reliability
+markdown
+setup-rmarkdown-code-chunks

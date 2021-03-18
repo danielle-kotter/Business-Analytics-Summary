@@ -1,6 +1,6 @@
 # Charts templates
 
-```{r}
+```{r message=FALSE, warning=FALSE}
 library(gridExtra)
 library(hrbrthemes)
 library(ggplot2)
