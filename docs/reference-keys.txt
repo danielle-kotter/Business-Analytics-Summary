@@ -33,11 +33,11 @@ regression-dummy
 prediction
 confidence-and-prediction-plotting
 data-problems
+variance-inflation-factors
 anova
+linearizing-variables
 structure-equation-models
 coding-the-model
 covariance
 reliability
 factor-model
-variance-inflation-factors
-linearizing-variables
