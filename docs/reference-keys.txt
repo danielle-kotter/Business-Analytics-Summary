@@ -41,7 +41,9 @@ variance-inflation-factors
 anova
 linearizing-variables
 structure-equation-models
+path-analysis-structural-equations
 coding-the-model
 covariance
 reliability
 factor-model
+setting-covariance-variances
