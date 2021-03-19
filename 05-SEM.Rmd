@@ -292,4 +292,5 @@ X \~\~ X = Gives two explanatory variables the possibility to covariance
 
 Equality with error variances (multiple independent variables) X\~\~X \*A = setting a restriction.
 
-**Auto regressive =** one variables keeps impacting the following. For example: 2011 impacts 2012 which impacts 2013 etc. In this case, the variables need to be set to allow for correlation
+**Auto regressive =** one variables keeps impacting the following. For example: 2011 impacts 2012 which impacts 2013 etc. In this case, the variables need to be set to allow for correlation.
+
