@@ -29,10 +29,14 @@ p-value
 simple-regressions
 basics-regressions
 summarizing-regressions
+dummy-variables-diff-in-means
 regression-dummy
 prediction
 confidence-and-prediction-plotting
+prediction-with-dummy-variables
+prediction-intervals-examples
 data-problems
+multicollinearity
 variance-inflation-factors
 anova
 linearizing-variables

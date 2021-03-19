@@ -100,7 +100,7 @@ sub2 <- summary(lm(y~x, data=data["speed"<=5,]))
 ```
 
 
-###Dummy variables, diff in means
+### Dummy variables, diff in means
 
 
 ### Regression + dummy
@@ -160,11 +160,11 @@ fit <- lm(y~x, data = data)
 ci.plot(fit)
 ```
 
-###Prediction with dummy variables
+### Prediction with dummy variables
 
 Prediction = 𝛼1+𝛼2Constant Dummy+𝛽1𝑆𝑖𝑧𝑒+𝛽2Slope Dummy
 
-###Prediction intervals examples
+### Prediction intervals examples
 
 **Prediction**
 
@@ -206,7 +206,7 @@ im <- influence.measures(fit)
 ```
 
 
-###Multicollinearity
+### Multicollinearity
 
 F-test
 

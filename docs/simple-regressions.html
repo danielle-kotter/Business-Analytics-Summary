@@ -175,17 +175,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.1" data-path="simple-regressions.html"><a href="simple-regressions.html#basics-regressions"><i class="fa fa-check"></i><b>4.1</b> Basics regressions</a>
 <ul>
 <li class="chapter" data-level="4.1.1" data-path="simple-regressions.html"><a href="simple-regressions.html#summarizing-regressions"><i class="fa fa-check"></i><b>4.1.1</b> Summarizing regressions:</a></li>
-<li class="chapter" data-level="4.1.2" data-path="simple-regressions.html"><a href="simple-regressions.html#regression-dummy"><i class="fa fa-check"></i><b>4.1.2</b> Regression + dummy</a></li>
+<li class="chapter" data-level="4.1.2" data-path="simple-regressions.html"><a href="simple-regressions.html#dummy-variables-diff-in-means"><i class="fa fa-check"></i><b>4.1.2</b> Dummy variables, diff in means</a></li>
+<li class="chapter" data-level="4.1.3" data-path="simple-regressions.html"><a href="simple-regressions.html#regression-dummy"><i class="fa fa-check"></i><b>4.1.3</b> Regression + dummy</a></li>
 </ul></li>
 <li class="chapter" data-level="4.2" data-path="simple-regressions.html"><a href="simple-regressions.html#prediction"><i class="fa fa-check"></i><b>4.2</b> Prediction</a>
 <ul>
 <li class="chapter" data-level="4.2.1" data-path="simple-regressions.html"><a href="simple-regressions.html#confidence-and-prediction-plotting"><i class="fa fa-check"></i><b>4.2.1</b> Confidence and prediction plotting</a></li>
+<li class="chapter" data-level="4.2.2" data-path="simple-regressions.html"><a href="simple-regressions.html#prediction-with-dummy-variables"><i class="fa fa-check"></i><b>4.2.2</b> Prediction with dummy variables</a></li>
+<li class="chapter" data-level="4.2.3" data-path="simple-regressions.html"><a href="simple-regressions.html#prediction-intervals-examples"><i class="fa fa-check"></i><b>4.2.3</b> Prediction intervals examples</a></li>
 </ul></li>
 <li class="chapter" data-level="4.3" data-path="simple-regressions.html"><a href="simple-regressions.html#data-problems"><i class="fa fa-check"></i><b>4.3</b> Data problems</a>
 <ul>
-<li class="chapter" data-level="4.3.1" data-path="simple-regressions.html"><a href="simple-regressions.html#variance-inflation-factors"><i class="fa fa-check"></i><b>4.3.1</b> Variance inflation factors</a></li>
-<li class="chapter" data-level="4.3.2" data-path="simple-regressions.html"><a href="simple-regressions.html#anova"><i class="fa fa-check"></i><b>4.3.2</b> ANOVA</a></li>
-<li class="chapter" data-level="4.3.3" data-path="simple-regressions.html"><a href="simple-regressions.html#linearizing-variables"><i class="fa fa-check"></i><b>4.3.3</b> Linearizing variables</a></li>
+<li class="chapter" data-level="4.3.1" data-path="simple-regressions.html"><a href="simple-regressions.html#multicollinearity"><i class="fa fa-check"></i><b>4.3.1</b> Multicollinearity</a></li>
+<li class="chapter" data-level="4.3.2" data-path="simple-regressions.html"><a href="simple-regressions.html#variance-inflation-factors"><i class="fa fa-check"></i><b>4.3.2</b> Variance inflation factors</a></li>
+<li class="chapter" data-level="4.3.3" data-path="simple-regressions.html"><a href="simple-regressions.html#anova"><i class="fa fa-check"></i><b>4.3.3</b> ANOVA</a></li>
+<li class="chapter" data-level="4.3.4" data-path="simple-regressions.html"><a href="simple-regressions.html#linearizing-variables"><i class="fa fa-check"></i><b>4.3.4</b> Linearizing variables</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="structure-equation-models.html"><a href="structure-equation-models.html"><i class="fa fa-check"></i><b>5</b> Structure equation models</a>
@@ -350,10 +354,12 @@ First is row. Column, second.</p>
 </ol>
 <div class="sourceCode" id="cb171"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb171-1"><a href="simple-regressions.html#cb171-1" aria-hidden="true" tabindex="-1"></a>sub1 <span class="ot">&lt;-</span> <span class="fu">summary</span>(<span class="fu">lm</span>(y<span class="sc">~</span>x, <span class="at">data=</span>data[<span class="st">&quot;speed&quot;</span><span class="sc">&gt;=</span><span class="dv">5</span>,]))</span>
 <span id="cb171-2"><a href="simple-regressions.html#cb171-2" aria-hidden="true" tabindex="-1"></a>sub2 <span class="ot">&lt;-</span> <span class="fu">summary</span>(<span class="fu">lm</span>(y<span class="sc">~</span>x, <span class="at">data=</span>data[<span class="st">&quot;speed&quot;</span><span class="sc">&lt;=</span><span class="dv">5</span>,]))</span></code></pre></div>
-<p>###Dummy variables, diff in means</p>
 </div>
-<div id="regression-dummy" class="section level3" number="4.1.2">
-<h3><span class="header-section-number">4.1.2</span> Regression + dummy</h3>
+<div id="dummy-variables-diff-in-means" class="section level3" number="4.1.2">
+<h3><span class="header-section-number">4.1.2</span> Dummy variables, diff in means</h3>
+</div>
+<div id="regression-dummy" class="section level3" number="4.1.3">
+<h3><span class="header-section-number">4.1.3</span> Regression + dummy</h3>
 <p>Y = Constant0 + B0 * X - Diff in means + B1 * variable1*2</p>
 <p><strong>Omitting the intercept:</strong></p>
 <p>Shows the means separately and not the difference between means. Tests whether the expected counts are different from zero.</p>
@@ -396,9 +402,13 @@ Coefficients:
 <span id="cb177-2"><a href="simple-regressions.html#cb177-2" aria-hidden="true" tabindex="-1"></a>fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(y<span class="sc">~</span>x, <span class="at">data =</span> data)</span>
 <span id="cb177-3"><a href="simple-regressions.html#cb177-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ci.plot</span>(fit)</span></code></pre></div>
 <p><img src="R-Summaries_files/figure-html/unnamed-chunk-85-1.png" width="100%" /></p>
-<p>###Prediction with dummy variables</p>
+</div>
+<div id="prediction-with-dummy-variables" class="section level3" number="4.2.2">
+<h3><span class="header-section-number">4.2.2</span> Prediction with dummy variables</h3>
 <p>Prediction = 𝛼1+𝛼2Constant Dummy+𝛽1𝑆𝑖𝑧𝑒+𝛽2Slope Dummy</p>
-<p>###Prediction intervals examples</p>
+</div>
+<div id="prediction-intervals-examples" class="section level3" number="4.2.3">
+<h3><span class="header-section-number">4.2.3</span> Prediction intervals examples</h3>
 <p><strong>Prediction</strong></p>
 <div class="sourceCode" id="cb178"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb178-1"><a href="simple-regressions.html#cb178-1" aria-hidden="true" tabindex="-1"></a>fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(y <span class="sc">~</span> x <span class="sc">+</span> d <span class="sc">+</span> d, <span class="at">data =</span> data)</span>
 <span id="cb178-2"><a href="simple-regressions.html#cb178-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -419,7 +429,8 @@ Coefficients:
 <div class="sourceCode" id="cb181"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb181-1"><a href="simple-regressions.html#cb181-1" aria-hidden="true" tabindex="-1"></a><span class="co"># residual.plots(fitted(fit), resid(fit), sigma.hat(fit), main=&quot;Title&quot;)</span></span></code></pre></div>
 <p><strong>Influential measure test</strong></p>
 <div class="sourceCode" id="cb182"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb182-1"><a href="simple-regressions.html#cb182-1" aria-hidden="true" tabindex="-1"></a>im <span class="ot">&lt;-</span> <span class="fu">influence.measures</span>(fit)</span></code></pre></div>
-<p>###Multicollinearity</p>
+<div id="multicollinearity" class="section level3" number="4.3.1">
+<h3><span class="header-section-number">4.3.1</span> Multicollinearity</h3>
 <p>F-test</p>
 <div class="sourceCode" id="cb183"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb183-1"><a href="simple-regressions.html#cb183-1" aria-hidden="true" tabindex="-1"></a>fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(y<span class="sc">~</span>x <span class="sc">+</span> d, <span class="at">data =</span> data)</span>
 <span id="cb183-2"><a href="simple-regressions.html#cb183-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -432,16 +443,17 @@ x          1  21186 21185.5  89.567 0.00000000000149 ***
 Residuals 48  11354   236.5                             
 ---
 Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
-<div id="variance-inflation-factors" class="section level3" number="4.3.1">
-<h3><span class="header-section-number">4.3.1</span> Variance inflation factors</h3>
+</div>
+<div id="variance-inflation-factors" class="section level3" number="4.3.2">
+<h3><span class="header-section-number">4.3.2</span> Variance inflation factors</h3>
 <p>The variance inflation factor (vif) is <span class="math inline">\(1 / 1−R2\)</span>.
 A simple approach to identify collinearity among explanatory variables is the use of variance inflation factors (VIF). It is the ratio of variance in a model with multiple terms, divided by the variance of a model with one term alone. The higher the value, the higher the collinearity. A VIF for a single explanatory variable is obtained using the r-squared value of the regression of that variable against all other explanatory variables: A VIF is calculated for each explanatory variable and those with high values are removed. The definition of ‘high’ is somewhat arbitrary, but values in the range of 5-10 are commonly used for ‘high.’ If VIF value exceeding 4.0, or by tolerance less than 0.2 then there is a problem with multicollinearity (Hair et al., 2010). However, it depends on the researcher’s criteria. The lower the vif the better, but you shouldn’t be too concerned as long as your VIF is not greater than 10.</p>
 <div class="sourceCode" id="cb185"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb185-1"><a href="simple-regressions.html#cb185-1" aria-hidden="true" tabindex="-1"></a><span class="fu">vif</span>(fit)</span></code></pre></div>
 <pre><code>  x   d 
   1 NaN </code></pre>
 </div>
-<div id="anova" class="section level3" number="4.3.2">
-<h3><span class="header-section-number">4.3.2</span> ANOVA</h3>
+<div id="anova" class="section level3" number="4.3.3">
+<h3><span class="header-section-number">4.3.3</span> ANOVA</h3>
 <p><strong>One-way:</strong> one value</p>
 <div class="sourceCode" id="cb187"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb187-1"><a href="simple-regressions.html#cb187-1" aria-hidden="true" tabindex="-1"></a>res.aov <span class="ot">&lt;-</span> <span class="fu">aov</span>(y <span class="sc">~</span> x, <span class="at">data =</span> data)</span>
 <span id="cb187-2"><a href="simple-regressions.html#cb187-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(res.aov)</span></code></pre></div>
@@ -492,8 +504,8 @@ Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&
 summary(test_manova)
 summary.aov(test_manova)</p>
 </div>
-<div id="linearizing-variables" class="section level3" number="4.3.3">
-<h3><span class="header-section-number">4.3.3</span> Linearizing variables</h3>
+<div id="linearizing-variables" class="section level3" number="4.3.4">
+<h3><span class="header-section-number">4.3.4</span> Linearizing variables</h3>
 <div class="sourceCode" id="cb197"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb197-1"><a href="simple-regressions.html#cb197-1" aria-hidden="true" tabindex="-1"></a>logged <span class="ot">&lt;-</span> <span class="fu">log</span>(iris<span class="sc">$</span>Sepal.Length) <span class="co"># non-linear</span></span>
 <span id="cb197-2"><a href="simple-regressions.html#cb197-2" aria-hidden="true" tabindex="-1"></a>quad <span class="ot">&lt;-</span> cars<span class="sc">$</span>speed <span class="sc">^</span> <span class="dv">2</span> <span class="co"># quadratic</span></span></code></pre></div>
 
