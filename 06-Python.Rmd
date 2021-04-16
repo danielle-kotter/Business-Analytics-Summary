@@ -48,7 +48,7 @@ print(Length)
 ```
 
 
-### Data set
+## Data set
 
 
 Loading the data set & viewing head + tails:
@@ -77,7 +77,7 @@ tips.info()
 tips.describe()
 ```
 
-### Matrixes
+## Matrixes
 
 Series:
 
@@ -117,7 +117,7 @@ Combined_serie["Tokyo":]
 ```
 
 
-### Creating our own functions:
+## Creating our own functions:
 
 Saying hello + name
 
@@ -137,7 +137,7 @@ def welcome(name, location):
 welcome("Danielle,", "class.")
 ```
 
-### Bar plot
+## Bar plot
 
 
 ```{python}

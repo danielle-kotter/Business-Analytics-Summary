@@ -1,4 +1,4 @@
-# Charts templates
+# Charts templates - R
 
 ```{r message=FALSE, warning=FALSE}
 library(gridExtra)

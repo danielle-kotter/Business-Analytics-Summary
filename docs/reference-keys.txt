@@ -1,4 +1,4 @@
-basics
+basics-r
 tables-frames-matrices
 data-sets
 removing-infinite-na-values
@@ -7,7 +7,7 @@ markdown
 setup-rmarkdown-code-chunks
 miscellaneous
 subsetting
-charts-templates
+charts-templates---r
 probability
 bayes-theorem
 discrete-probablity
