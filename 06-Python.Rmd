@@ -1,0 +1,155 @@
+---
+editor_options: 
+  markdown: 
+    wrap: 72
+---
+
+# Basics Python
+
+```{python, warning=FALSE, message=FALSE, comment=FALSE}
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+```
+
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+library(reticulate)
+os <- import("os")
+os$listdir(".")
+options(reticulate.repl.quiet = FALSE)
+```
+
+variable using instead of <-, equal sign =.
+
+```{r}
+y = 5 + 5
+y
+```
+
+Printing characters
+
+```{r}
+print('Hello, readers!')
+```
+
+Printing numbers
+
+```{r}
+print(15)
+```
+
+Printing length of a value
+
+```{python, warning=FALSE, message=FALSE}
+Length = len('Danielle')
+print(Length)
+```
+
+
+### Data set
+
+
+Loading the data set & viewing head + tails:
+
+```{python}
+sns.set_context('paper')
+
+tips = sns.load_dataset('tips')
+
+tips.head()
+tips.tail()
+```
+
+1. Length of the variable
+2. Shape: Number of rows and number of columns
+3. Type of variables + basic info
+3. Descriptive statistics variable
+
+```{python}
+len(tips)
+
+tips.shape
+
+tips.info()
+
+tips.describe()
+```
+
+### Matrixes
+
+Series:
+
+Panda series method:
+
+```{python}
+Serie1 = pd.Series(
+  [4200, 8000, 6500],
+  index=["Amsterdam", "Toronto", "Tokyo"]
+  )
+Serie1
+```
+
+Python dictionary method:
+
+```{python}
+Serie2 = pd.Series({"Amsterdam": 5, "Tokyo": 8})
+Serie2
+```
+
+
+Data frame:
+
+```{python}
+Combined_serie = pd.DataFrame({
+  "Revenue": Serie1,
+  "Employee_count": Serie2
+  })
+  
+Combined_serie
+```
+
+Sub-setting by row:
+
+```{python}
+Combined_serie["Tokyo":]
+```
+
+
+### Creating our own functions:
+
+Saying hello + name
+
+```{python, warning=FALSE, message=FALSE}
+def printing_name(name):
+  print('Good morning,', name)
+printing_name('Danielle')
+```
+
+Multiple arguments:
+
+Saying hello + name + location
+
+```{python, warning=FALSE, message=FALSE}
+def welcome(name, location):
+  print("Good morning", name, "Welcome to", location)
+welcome("Danielle,", "class.")
+```
+
+### Bar plot
+
+
+```{python}
+sns.set_context('paper')
+
+tips = sns.load_dataset('tips')
+tips.head()
+
+sns.barplot(x = 'day', y = 'total_bill', hue = 'sex', data = tips,
+            palette = 'Blues', edgecolor = 'w')
+tips.groupby(['day','sex']).mean()
+
+plt.show()
+```
+

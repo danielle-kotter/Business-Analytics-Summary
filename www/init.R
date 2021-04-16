@@ -30,7 +30,8 @@ packages = c(
   "lavaan",
   "hrbrthemes",
   "gridExtra",
-  "prob"
+  "prob",
+  "reticulate"
 )
 
 invisible(

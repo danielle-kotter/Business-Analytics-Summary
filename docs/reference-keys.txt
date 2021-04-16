@@ -47,3 +47,17 @@ covariance
 reliability
 factor-model
 setting-covariance-variances
+basics-python
+data-set
+matrixes
+creating-our-own-functions
+bar-plot
+practical-data-science
+machine-learning
+reinforcement-learning
+unsupervised-learning
+supervised-learning
+theory
+data-visualized
+finding-the-expected-value-of-the-error
+loss-function

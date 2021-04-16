@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter - 7 Practical data science | R-coding Cheatsheets &amp; Summary</title>
+  <meta name="description" content="This is a summary of r code learned throughout several courses of my master in management." />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter - 7 Practical data science | R-coding Cheatsheets &amp; Summary" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This is a summary of r code learned throughout several courses of my master in management." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter - 7 Practical data science | R-coding Cheatsheets &amp; Summary" />
+  
+  <meta name="twitter:description" content="This is a summary of r code learned throughout several courses of my master in management." />
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="basics-python.html"/>
+<link rel="next" href="references.html"/>
+<script src="libs/header-attrs-2.7/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">R-coding Cheatsheets & Summary</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="1" data-path="basics.html"><a href="basics.html"><i class="fa fa-check"></i><b>1</b> Basics</a>
+<ul>
+<li class="chapter" data-level="1.0.1" data-path="basics.html"><a href="basics.html#tables-frames-matrices"><i class="fa fa-check"></i><b>1.0.1</b> Tables, frames &amp; Matrices</a></li>
+<li class="chapter" data-level="1.1" data-path="basics.html"><a href="basics.html#data-sets"><i class="fa fa-check"></i><b>1.1</b> Data sets</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="basics.html"><a href="basics.html#removing-infinite-na-values"><i class="fa fa-check"></i><b>1.1.1</b> Removing infinite + NA values</a></li>
+<li class="chapter" data-level="1.1.2" data-path="basics.html"><a href="basics.html#transforming-variable-types"><i class="fa fa-check"></i><b>1.1.2</b> Transforming variable types</a></li>
+<li class="chapter" data-level="1.1.3" data-path="basics.html"><a href="basics.html#markdown"><i class="fa fa-check"></i><b>1.1.3</b> Markdown</a></li>
+<li class="chapter" data-level="1.1.4" data-path="basics.html"><a href="basics.html#setup-rmarkdown-code-chunks"><i class="fa fa-check"></i><b>1.1.4</b> Setup rmarkdown &amp; code chunks</a></li>
+<li class="chapter" data-level="1.1.5" data-path="basics.html"><a href="basics.html#miscellaneous"><i class="fa fa-check"></i><b>1.1.5</b> Miscellaneous</a></li>
+<li class="chapter" data-level="1.1.6" data-path="basics.html"><a href="basics.html#subsetting"><i class="fa fa-check"></i><b>1.1.6</b> Subsetting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="charts-templates.html"><a href="charts-templates.html"><i class="fa fa-check"></i><b>2</b> Charts templates</a></li>
+<li class="chapter" data-level="3" data-path="probability.html"><a href="probability.html"><i class="fa fa-check"></i><b>3</b> Probability</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="probability.html"><a href="probability.html#bayes-theorem"><i class="fa fa-check"></i><b>3.1</b> Bayes Theorem</a></li>
+<li class="chapter" data-level="3.2" data-path="probability.html"><a href="probability.html#discrete-probablity"><i class="fa fa-check"></i><b>3.2</b> Discrete Probablity</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="probability.html"><a href="probability.html#uniform-discrete-probability-distribution"><i class="fa fa-check"></i><b>3.2.1</b> Uniform discrete probability distribution</a></li>
+<li class="chapter" data-level="3.2.2" data-path="probability.html"><a href="probability.html#binomial-distribution"><i class="fa fa-check"></i><b>3.2.2</b> Binomial distribution</a></li>
+<li class="chapter" data-level="3.2.3" data-path="probability.html"><a href="probability.html#poisson-distribution"><i class="fa fa-check"></i><b>3.2.3</b> Poisson distribution</a></li>
+<li class="chapter" data-level="3.2.4" data-path="probability.html"><a href="probability.html#the-normal-distribution"><i class="fa fa-check"></i><b>3.2.4</b> The normal distribution</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="probability.html"><a href="probability.html#samples-estimation-confidence-intervals"><i class="fa fa-check"></i><b>3.3</b> Samples, estimation &amp; confidence intervals</a></li>
+<li class="chapter" data-level="3.4" data-path="probability.html"><a href="probability.html#significance-level"><i class="fa fa-check"></i><b>3.4</b> Significance level</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="probability.html"><a href="probability.html#critical-values"><i class="fa fa-check"></i><b>3.4.1</b> Critical values</a></li>
+<li class="chapter" data-level="3.4.2" data-path="probability.html"><a href="probability.html#test-of-equality---two-samples"><i class="fa fa-check"></i><b>3.4.2</b> Test of equality - two samples</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="probability.html"><a href="probability.html#non-parametric-testing"><i class="fa fa-check"></i><b>3.5</b> Non-Parametric testing</a>
+<ul>
+<li class="chapter" data-level="3.5.1" data-path="probability.html"><a href="probability.html#contengency-table-frequencies"><i class="fa fa-check"></i><b>3.5.1</b> Contengency table / frequencies</a></li>
+<li class="chapter" data-level="3.5.2" data-path="probability.html"><a href="probability.html#chi-square"><i class="fa fa-check"></i><b>3.5.2</b> Chi-square</a></li>
+<li class="chapter" data-level="3.5.3" data-path="probability.html"><a href="probability.html#goodness-of-fit"><i class="fa fa-check"></i><b>3.5.3</b> Goodness of fit</a></li>
+<li class="chapter" data-level="3.5.4" data-path="probability.html"><a href="probability.html#p-value"><i class="fa fa-check"></i><b>3.5.4</b> P-value</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="simple-regressions.html"><a href="simple-regressions.html"><i class="fa fa-check"></i><b>4</b> Simple regressions</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="simple-regressions.html"><a href="simple-regressions.html#basics-regressions"><i class="fa fa-check"></i><b>4.1</b> Basics regressions</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="simple-regressions.html"><a href="simple-regressions.html#summarizing-regressions"><i class="fa fa-check"></i><b>4.1.1</b> Summarizing regressions:</a></li>
+<li class="chapter" data-level="4.1.2" data-path="simple-regressions.html"><a href="simple-regressions.html#dummy-variables-diff-in-means"><i class="fa fa-check"></i><b>4.1.2</b> Dummy variables, diff in means</a></li>
+<li class="chapter" data-level="4.1.3" data-path="simple-regressions.html"><a href="simple-regressions.html#regression-dummy"><i class="fa fa-check"></i><b>4.1.3</b> Regression + dummy</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="simple-regressions.html"><a href="simple-regressions.html#prediction"><i class="fa fa-check"></i><b>4.2</b> Prediction</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="simple-regressions.html"><a href="simple-regressions.html#confidence-and-prediction-plotting"><i class="fa fa-check"></i><b>4.2.1</b> Confidence and prediction plotting</a></li>
+<li class="chapter" data-level="4.2.2" data-path="simple-regressions.html"><a href="simple-regressions.html#prediction-with-dummy-variables"><i class="fa fa-check"></i><b>4.2.2</b> Prediction with dummy variables</a></li>
+<li class="chapter" data-level="4.2.3" data-path="simple-regressions.html"><a href="simple-regressions.html#prediction-intervals-examples"><i class="fa fa-check"></i><b>4.2.3</b> Prediction intervals examples</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="simple-regressions.html"><a href="simple-regressions.html#data-problems"><i class="fa fa-check"></i><b>4.3</b> Data problems</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="simple-regressions.html"><a href="simple-regressions.html#multicollinearity"><i class="fa fa-check"></i><b>4.3.1</b> Multicollinearity</a></li>
+<li class="chapter" data-level="4.3.2" data-path="simple-regressions.html"><a href="simple-regressions.html#variance-inflation-factors"><i class="fa fa-check"></i><b>4.3.2</b> Variance inflation factors</a></li>
+<li class="chapter" data-level="4.3.3" data-path="simple-regressions.html"><a href="simple-regressions.html#anova"><i class="fa fa-check"></i><b>4.3.3</b> ANOVA</a></li>
+<li class="chapter" data-level="4.3.4" data-path="simple-regressions.html"><a href="simple-regressions.html#linearizing-variables"><i class="fa fa-check"></i><b>4.3.4</b> Linearizing variables</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="structure-equation-models.html"><a href="structure-equation-models.html"><i class="fa fa-check"></i><b>5</b> Structure equation models</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="structure-equation-models.html"><a href="structure-equation-models.html#path-analysis-structural-equations"><i class="fa fa-check"></i><b>5.1</b> Path analysis (structural equations)</a></li>
+<li class="chapter" data-level="5.2" data-path="structure-equation-models.html"><a href="structure-equation-models.html#coding-the-model"><i class="fa fa-check"></i><b>5.2</b> Coding the model</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="structure-equation-models.html"><a href="structure-equation-models.html#covariance"><i class="fa fa-check"></i><b>5.2.1</b> Covariance</a></li>
+<li class="chapter" data-level="5.2.2" data-path="structure-equation-models.html"><a href="structure-equation-models.html#reliability"><i class="fa fa-check"></i><b>5.2.2</b> Reliability</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="structure-equation-models.html"><a href="structure-equation-models.html#factor-model"><i class="fa fa-check"></i><b>5.3</b> Factor model</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="structure-equation-models.html"><a href="structure-equation-models.html#setting-covariance-variances"><i class="fa fa-check"></i><b>5.3.1</b> Setting covariance &amp; variances</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="basics-python.html"><a href="basics-python.html"><i class="fa fa-check"></i><b>6</b> Basics Python</a>
+<ul>
+<li class="chapter" data-level="6.0.1" data-path="basics-python.html"><a href="basics-python.html#data-set"><i class="fa fa-check"></i><b>6.0.1</b> Data set</a></li>
+<li class="chapter" data-level="6.0.2" data-path="basics-python.html"><a href="basics-python.html#matrixes"><i class="fa fa-check"></i><b>6.0.2</b> Matrixes</a></li>
+<li class="chapter" data-level="6.0.3" data-path="basics-python.html"><a href="basics-python.html#creating-our-own-functions"><i class="fa fa-check"></i><b>6.0.3</b> Creating our own functions:</a></li>
+<li class="chapter" data-level="6.0.4" data-path="basics-python.html"><a href="basics-python.html#bar-plot"><i class="fa fa-check"></i><b>6.0.4</b> Bar plot</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="practical-data-science.html"><a href="practical-data-science.html"><i class="fa fa-check"></i><b>7</b> Practical data science</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="practical-data-science.html"><a href="practical-data-science.html#machine-learning"><i class="fa fa-check"></i><b>7.1</b> Machine Learning</a>
+<ul>
+<li class="chapter" data-level="7.1.1" data-path="practical-data-science.html"><a href="practical-data-science.html#theory"><i class="fa fa-check"></i><b>7.1.1</b> Theory</a></li>
+<li class="chapter" data-level="7.1.2" data-path="practical-data-science.html"><a href="practical-data-science.html#finding-the-expected-value-of-the-error"><i class="fa fa-check"></i><b>7.1.2</b> Finding the expected value of the error</a></li>
+<li class="chapter" data-level="7.1.3" data-path="practical-data-science.html"><a href="practical-data-science.html#loss-function"><i class="fa fa-check"></i><b>7.1.3</b> Loss function</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">R-coding Cheatsheets &amp; Summary</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="practical-data-science" class="section level1" number="7">
+<h1><span class="header-section-number">Chapter - 7</span> Practical data science</h1>
+<div id="machine-learning" class="section level2" number="7.1">
+<h2><span class="header-section-number">7.1</span> Machine Learning</h2>
+<p>There are multiple types of machine learning:</p>
+<ul>
+<li><p>Supervised</p></li>
+<li><p>Unsupervised</p></li>
+<li><p>Reinforcement learning</p></li>
+</ul>
+<div id="reinforcement-learning" class="section level4" number="7.1.0.1">
+<h4><span class="header-section-number">7.1.0.1</span> <strong>Reinforcement learning:</strong></h4>
+<p>Alpha go. ML for chess. Trained by trial and error. First they are
+taught the simple rules and then asked to train by themselves and learn
+from their mistakes. The algorithms are asked to do something and either</p>
+<ul>
+<li><p>Get a rewards or</p></li>
+<li><p>A penalty</p></li>
+</ul>
+<p>As a result, they learn which moves are good and continue to try
+something else. Machine learning still does not understand casual
+relationships.</p>
+</div>
+<div id="unsupervised-learning" class="section level4" number="7.1.0.2">
+<h4><span class="header-section-number">7.1.0.2</span> <strong>Unsupervised learning:</strong></h4>
+<p>We do not have labels on the data. Can still observe patterns, it
+understands there are commonalities but not with a reason.</p>
+<p>You can combine labeled data, for example from the passed and look for
+patterns with the unlabeled data.</p>
+<p><img src="images/paste-0F7C76CE.png" width="656" /></p>
+</div>
+<div id="supervised-learning" class="section level4" number="7.1.0.3">
+<h4><span class="header-section-number">7.1.0.3</span> <strong>Supervised learning</strong></h4>
+<p>Supervised learning: Extracting patterns from data and making
+predictions based on passed behavior.</p>
+<p>An example is a picture of an animal and the algorithms predicts which
+animal it is.</p>
+<p>Hereby we use training data to train the algorithm. However, the data
+must be labeled: we already know the correct answer. This method does
+not include trial or error.</p>
+<p>For example, first showing examples of cats and then it can make
+predictions. Meaning, we show a new picture and it can predict whether
+it is a cat or not a cat.</p>
+<ul>
+<li><p>Regression tasks: label is a continuous number. Hereby what we want
+to predict is continuous, not necessarily the data given to predict.
+F.E. House prices</p></li>
+<li><p>Classification tasks: Label is one of discrete set of possible
+values. F.E. Is it a dog or a cat</p></li>
+</ul>
+</div>
+<div id="theory" class="section level3" number="7.1.1">
+<h3><span class="header-section-number">7.1.1</span> Theory</h3>
+<p>Supervised learning - Regression - Classification</p>
+<table style="width:97%;">
+<colgroup>
+<col width="16%" />
+<col width="80%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Symbol</th>
+<th>Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>y</td>
+<td>Real value</td>
+</tr>
+<tr class="even">
+<td><strong>ŷ</strong></td>
+<td>Prediction</td>
+</tr>
+<tr class="odd">
+<td><strong>y-ŷ</strong></td>
+<td>Absolute error</td>
+</tr>
+<tr class="even">
+<td><strong>(
+y-ŷ)^2</strong></td>
+<td>Squared error |</td>
+</tr>
+<tr class="odd">
+<td><strong>x</strong></td>
+<td><p>Generic input / Features. The things I use to predict
+y.</p>
+<p>The independent variable (statistics).</p></td>
+</tr>
+<tr class="even">
+<td><strong>y</strong></td>
+<td><p>Generic output. The label. (ML) The thing I want to
+predict.</p>
+<p>Dependent variable (statistics).</p></td>
+</tr>
+<tr class="odd">
+<td><strong>p</strong></td>
+<td><p>Number of features (machine learning).</p>
+<p>Number of independent variables I have (statistics).</p></td>
+</tr>
+<tr class="even">
+<td><strong>n</strong></td>
+<td>Size of the data set</td>
+</tr>
+</tbody>
+</table>
+<p>If I know the inputs, I could try to “predict” the output. This would
+state that in the real world the outputs (y) are a function of the
+inputs (x). In mathematical terms:</p>
+<p><span class="math inline">\(y = f(x)\)</span></p>
+<p>For example, if we know multiple features of a house, we could try to
+predict whether a person would like it. (based on f.e. Square meters,
+number of bedrooms etc.) However, realistically and economically we
+cannot always find all the possible features that would predict an
+output. It is always affected by some uncertainty. Therefore, y is a
+function of x but adding some noise. Which leads to:</p>
+<p>Deterministic function: <span class="math inline">\(y = f(x) + E\)</span></p>
+<p>E = (error) noise, a random variable which models some unpredictable
+events that happens in the real world that we do not have a
+corresponding input for to take into account.</p>
+<p>We assume that E obeys at least a couple of properties:</p>
+<ol style="list-style-type: decimal">
+<li>E is not correlated with any of the features</li>
+<li>Expected value of the random variable, E[E] = 0</li>
+</ol>
+<p>Assumption 1 can be F.E. that someone really wants to buy a house
+because there is a good place to put a dog bed. This cannot be predicted
+based on the other inputs (features) that are in my data set. They
+should not be correlated.</p>
+<p>Assumption 2 says that the <span class="math inline">\(e\)</span> doesn’t ALWAYS cause either a increase or
+a decrease in the output. It has to be truly random.</p>
+<hr />
+<p>The real world: <span class="math inline">\(y = f(x) + E\)</span>. We want to try to learn more about this
+function f.</p>
+<p>Estimator = <span class="math inline">\(\hat f\)</span>.</p>
+<p>If we do a good job, we are able to find a <span class="math inline">\(\hat f\)</span> that is similar to
+the true value of f. If I am able to find a <span class="math inline">\(\hat f\)</span>, I can plug in the
+input into the estimator and make a prediction. The estimator is the
+thing that I want to use to approximate as best as possible the real
+relationship between the inputs and outputs in the real world. In
+mathematical terms:</p>
+<p><span class="math inline">\(\hat f (x) = \hat y\)</span> = prediction</p>
+<p>If the model is <strong>accurate</strong> the prediction is <strong>accurate</strong> =</p>
+<p><span class="math inline">\(\hat f\)</span> is similar to <span class="math inline">\(f\)</span> and therefore <span class="math inline">\(\hat y\)</span> is similar to <span class="math inline">\(y\)</span> and
+therefore We have accurate predictions.</p>
+<p><em>What is key for the data scientist is: <strong>Out-Of-Sample Accuracy.</strong></em></p>
+<p>This means that your model is accurate with your sample but also with
+out-of-sample data.</p>
+<p>How can I measure how accurate <span class="math inline">\(\hat y\)</span> is compared to <span class="math inline">\(y\)</span>? We look at
+the error.</p>
+<p><strong>Squared error:</strong> Most classical error measure = <span class="math inline">\((y-\hat y)^2\)</span></p>
+<p>Multiple reasons on why squared errors are used:</p>
+<p>- Taking square means I forget about the sign of the error (negative vs
+positive)<br />
+- Taking square penalizes more ‘extreme’ errors</p>
+<p><img src="images/paste-B4EC7C48.png" /></p>
+<p>Alternative way of valuing the error is the <strong>absolute error:</strong>
+<span class="math inline">\(y-\hat y\)</span></p>
+<div id="data-visualized" class="section level4" number="7.1.1.1">
+<h4><span class="header-section-number">7.1.1.1</span> Data Visualized</h4>
+<p>Typically we will call our data: x &amp; y</p>
+<p>One data point looks like:</p>
+<p><span class="math inline">\((x1, x2, …., xp, y)\)</span></p>
+<p>Here X1 can be independent variable 1 for example square meters. X2 can
+be number of rooms and Xp the year it is build. Y is the price of the
+house.</p>
+<p><img src="images/paste-0140ACD4.png" width="535" /></p>
+</div>
+</div>
+<div id="finding-the-expected-value-of-the-error" class="section level3" number="7.1.2">
+<h3><span class="header-section-number">7.1.2</span> Finding the expected value of the error</h3>
+<p><strong>Random variable:</strong> is described informally as a variable whose values
+depend on outcomes of a random phenomenon.</p>
+<p>The error is a random variable. Therefore, y is also a random variable
+because some of its expression is: <span class="math inline">\(f(x) + ϵ = y\)</span>.</p>
+<p><span class="math inline">\(Eϵ[y-\hat y]^2\)</span> = expected value of the squared error</p>
+<p>Because we know that the formula for y is = <span class="math inline">\(f(x) + ϵ = y\)</span>, we can
+re-write this expression as:</p>
+<p><span class="math inline">\(Eϵ[(f(x)+ ϵ-\hat y]^2\)</span></p>
+<p>We continue to solve the equation. We can re-write <span class="math inline">\(\hat y\)</span> as
+<span class="math inline">\(\hat f(x)\)</span>:</p>
+<p><span class="math inline">\(Eϵ[(f(x)+ ϵ-\hat f(x)]^2\)</span></p>
+<p>We rearrange these terms:</p>
+<p><span class="math inline">\(Eϵ[(f(x)-\hat f(x)+ ϵ]^2\)</span></p>
+<p>For ease of notation, <span class="math inline">\(f(x)-\hat f(x)\)</span> becomes alpha</p>
+<p><span class="math inline">\(Eϵ[\alpha+ ϵ]^2\)</span></p>
+<p>We expand:</p>
+<p><span class="math inline">\(Eϵ[\alpha^2 + 2\alphaϵ + ϵ^2]\)</span></p>
+<p>Make use of it being linear:</p>
+<p><span class="math inline">\(Eϵ[\alpha^2] + 2Eϵ[\alphaϵ] + Eϵ[ϵ^2]\)</span></p>
+<p>Now we can see that alpha does not have the random element ϵ making it
+not a random variable and is deterministic term (constant). As it is
+constant and without error, it is already the expected value. We
+re-write again:</p>
+<p><span class="math inline">\(\alpha^2 + 2Eϵ[\alphaϵ] + Eϵ[ϵ^2]\)</span></p>
+<p>As previously explained in the theory, the expect value of the noise
+should be 0. This is the assumption made.</p>
+<p><span class="math inline">\(\alpha^2 + 0 + Eϵ[ϵ^2]\)</span></p>
+<p>The variance of a random variable is, for example variable z =</p>
+<p><span class="math inline">\(Var[z] = E[z^2] - (E[z])^2\)</span></p>
+<p>If we apply this definition to the above ϵ:</p>
+<p><span class="math inline">\(Var[ϵ] = E[ϵ^2] - (E[ϵ])^2\)</span></p>
+<p>As we said before, the expected value of ϵ is 0 and therefore the
+variance is:</p>
+<p><span class="math inline">\(Var[ϵ] = E[ϵ^2] - 0 = E[ϵ^2]\)</span></p>
+<p>To combine this with the previous equation:</p>
+<p><span class="math inline">\(\alpha^2 + Eϵ[ϵ^2] = [f(x) - \hat f(x)]^2 + Var[ϵ]\)</span></p>
+<p>This can be separated in two parts:</p>
+<table style="width:97%;">
+<colgroup>
+<col width="47%" />
+<col width="50%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\([f(x) - \hat f(x)]^2\)</span></td>
+<td><span class="math inline">\(Var[ϵ]\)</span></td>
+</tr>
+<tr class="even">
+<td><p>Reducible error:</p>
+<p>Real relation - estimator</p></td>
+<td><p>Irreducible error</p>
+<p>Intrinsic property of the error</p></td>
+</tr>
+</tbody>
+</table>
+<p>If the model is really good, the estimator is similar to the real
+relation and I can “reduce” the error. If the model is extremely
+precise, the estimator can even be exactly the real relation. It
+therefore depends on the accuracy of the estimator.</p>
+<p><span class="math inline">\(\hat f = f\)</span></p>
+<p>However, even when this happens, I still cannot affect the “irreducible”
+error because it is noise from the real world. It is intrinsic property
+/ characteristics of the data, not the estimator.</p>
+<p>To conclude, we can only affect the reducible error.</p>
+<hr />
+<p>Data set = <span class="math inline">\((x1, y1)….,(xn, yn)\)</span></p>
+<p>Data point i = <span class="math inline">\(Xi ϵR^p\)</span></p>
+<p>The estimator is a function that takes a p dimensional and produces a
+real values output.</p>
+<p><span class="math inline">\(\hat f:R^p –&gt; R\)</span></p>
+<p><span class="math inline">\(\hat y = \hat f (x)\)</span>= prediction or estimate</p>
+<p><span class="math inline">\(\hat f\)</span> = estimator</p>
+<p>If I have a concrete set of observations, I can estimate the expected
+value. For example, I can take the average height of a class to estimate
+the expected value of the height of the class.</p>
+<p>Mean squared error (MSE): The empirical average of the expected value of
+the error term. In mathematical terms:</p>
+<p><span class="math inline">\(MSE(\hat f) = \frac{1}{n} \sum_{i=1}^{n}(y_i-\hat y_i)^2\)</span></p>
+<p>Considering that <span class="math inline">\(\hat y_i\)</span> is nothing else than the prediction for the
+i input = <span class="math inline">\(\hat y_i = \hat f(x_i)\)</span>. Therefore, we can transform again:</p>
+<p><span class="math inline">\(MSE(\hat f) = \frac{1}{n} \sum_{i=1}^{n}(y_i-\hat f(x_i))^2\)</span></p>
+<p>I can apply <span class="math inline">\(\hat f\)</span> to one row, calculate the p features and look at
+the real label, to compute the MSE.</p>
+<p><img src="images/paste-DDB3C592.png" width="353" /></p>
+<p>Mean absolute error (MAE): Hereby the only difference is that it is not
+squared.</p>
+<p><span class="math inline">\(MAE(\hat f) = \frac{1}{n} \sum_{i=1}^{n}[y_i-\hat f(x_i)]\)</span></p>
+<hr />
+</div>
+<div id="loss-function" class="section level3" number="7.1.3">
+<h3><span class="header-section-number">7.1.3</span> Loss function</h3>
+<p>We can use a loss function which takes as input two numbers: the real
+and the predicted value and gives as output another real number. This is
+the formula:</p>
+<p><span class="math inline">\(L(y, \hat y): R^2 = R\)</span></p>
+<table>
+<thead>
+<tr class="header">
+<th>Squared error</th>
+<th>Absolute error</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(L(y, \hat y) = (y-\hat y)^2\)</span></td>
+<td><span class="math inline">\(L(y, \hat y) = (y-\hat y)\)</span></td>
+</tr>
+</tbody>
+</table>
+<p><br />
+<em>I want the loss function to obey two properties:</em></p>
+<ol style="list-style-type: decimal">
+<li><p>If I make a correct prediction <span class="math inline">\((\hat y = y)\)</span>, then I have 0 loss
+<span class="math inline">\(L(y, \hat y) = 0\)</span> if <span class="math inline">\((\hat y = y)\)</span>.</p></li>
+<li><p>For most loss function, I want <span class="math inline">\(L(y, \hat y)\)</span> to be large than the<br />
+“wronger” my prediction $$\hat y$ is. The loss function should
+not become smaller when the prediction becomes “wronger.” Wronger =
+the more different my prediction is than the true number.</p></li>
+</ol>
+<p>Loss function should be small when my prediction is close to the true
+value and it should be large when it is not.</p>
+<p>Estimating the error on existing data on which I know the label:</p>
+<p><span class="math inline">\(Error(\hat f) = \frac{1}{n} \sum_{i=1}^{n}L(y_i-\hat f(x_i))\)</span></p>
+<p>Now I am calculating how accurate my model is based on my data set.
+However, we want our model to work well on new previously unseen data
+that is out of my data set / sample. In other words: <strong>Out of sample
+accuracy.</strong></p>
+<p>We therefore, separate our data in two parts: the training set and the
+test set.</p>
+<p><img src="images/paste-ADE4509B.png" width="365" /></p>
+<p><strong>Training set:</strong> Data we show our model to have it learn a good
+estimator. <span class="math inline">\(\hat f = +/- f\)</span>. The training set will be used to derive to
+a estimator.</p>
+<p><strong>Test set:</strong> Data which we hide from our model. After the model has
+been trained, we will simulate it to the test data to evaluate the
+model’s performance. The test set will be sued to estimate the error fo
+the <span class="math inline">\(\hat f\)</span>.</p>
+<p>The training set is called: N = <span class="math inline">\((x_1,y_1)....,(x_n,y_n)\)</span></p>
+<p>The test set is called: M = <span class="math inline">\((x_1,y_1)....,(x_m,y_m)\)</span></p>
+<p>Therefore, to calculate the estimate of the error of the model:</p>
+<p><span class="math inline">\(Err(\hat f) = \frac{1}{n-m} \sum_{i=m+1}^{n}L(y_i-\hat f(x_i))\)</span></p>
+<p><br />
+To train a model = to find good values for its parameters. First I have
+to fix the shape of the model.</p>
+<ul>
+<li><p>Linear <span class="math inline">\(\hat f(x_1-,x_p) = \beta_0+\beta_1,.....+\beta_p X_p\)</span><br />
+Beta’s are the linear coefficients and the X1, Xp are the variables.
+The <span class="math inline">\(\beta\)</span> ’s are parameters. I can train a model to find a good
+estimator by finding good parameters</p></li>
+<li><p>Quadratic:
+<span class="math inline">\(\hat f(x_1-,x_p) = \beta_0+\beta_1,.....+\beta_p X_p + \beta_1X_1^2+....\beta_1pX_1p + etc.\)</span></p></li>
+</ul>
+<p>I do not know what model is the good model. So I train each model and
+then I pick the model that has the lowest error.</p>
+<p><img src="images/paste-90F835B4.png" /></p>
+<p><span class="math inline">\(x\)</span> = an input (p)</p>
+<p><span class="math inline">\(\beta\)</span> = a vector of parameters (k)</p>
+<p><span class="math inline">\(\beta^*\)</span> = optimal solution of the betas</p>
+<p>This is a optimization problem where I try to minimize the empirical
+error of the model on the training set. Once we solve the following
+model, I find the optimal values for the <span class="math inline">\(\beta\)</span>’s and this will find me
+the estimator. Once I have my estimator, I can take the test data and
+estimate an error for the model.</p>
+<p>Training error =<span class="math inline">\(\frac{1}{n} \sum_{i=1}^{n}L(y_i-\hat f(\beta_ix_i))\)</span></p>
+<p>Test error:
+<span class="math inline">\(Err(\hat f) = \frac{1}{n-m} \sum_{i=m+1}^{n}L(y_i-\hat f(\beta^*_i,x_i))\)</span></p>
+<hr />
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="basics-python.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["R-Summaries.pdf", "R-Summaries.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

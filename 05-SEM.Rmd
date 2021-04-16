@@ -211,6 +211,7 @@ Here the reliability of the variable distance (dst) = $0.35 ^ 2 = 0.12 = k$
 
 Therefore, the chi-square test allows researchers to evaluate the fitness of a model by using the null hypothesis significance test approach.
 
+
 **Degrees of freedom (df) =** Number of observations available for model estimation - Number of observations used to estimate parameters.
 
 "Number of free parameters" refers to all of the things that this model estimated freely. Parameter is a regression coefficient when standardized is called a beta coefficient.
