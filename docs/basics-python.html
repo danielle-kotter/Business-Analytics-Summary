@@ -244,175 +244,175 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="basics-python" class="section level1" number="6">
 <h1><span class="header-section-number">Chapter - 6</span> Basics Python</h1>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="basics-python.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb1-2"><a href="basics-python.html#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb1-3"><a href="basics-python.html#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb1-4"><a href="basics-python.html#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span></code></pre></div>
-<pre><code>##  [1] &quot;.Rhistory&quot;                        &quot;rsconnect&quot;                       
-##  [3] &quot;.DS_Store&quot;                        &quot;R-Summaries.Rproj&quot;               
-##  [5] &quot;01-Basics.Rmd&quot;                    &quot;preamble.tex&quot;                    
-##  [7] &quot;index.Rmd&quot;                        &quot;images&quot;                          
-##  [9] &quot;02-Charts.Rmd&quot;                    &quot;Summary_files&quot;                   
-## [11] &quot;08-references.Rmd&quot;                &quot;MIT-Coding-Brain-01-press_0.jpeg&quot;
-## [13] &quot;packages.bib&quot;                     &quot;03-Probability.Rmd&quot;              
-## [15] &quot;_output.yml&quot;                      &quot;docs&quot;                            
-## [17] &quot;R-Summaries.Rmd&quot;                  &quot;07-PracticalDataScience.Rmd&quot;     
-## [19] &quot;www&quot;                              &quot;04-Simpleregressions.Rmd&quot;        
-## [21] &quot;_bookdown_files&quot;                  &quot;README.md&quot;                       
-## [23] &quot;R-Summaries_files&quot;                &quot;05-SEM.Rmd&quot;                      
-## [25] &quot;_bookdown.yml&quot;                    &quot;06-Python.Rmd&quot;                   
-## [27] &quot;.gitignore&quot;                       &quot;.RData&quot;                          
-## [29] &quot;style.css&quot;                        &quot;_book&quot;                           
-## [31] &quot;book.bib&quot;                         &quot;.git&quot;                            
-## [33] &quot;.Rproj.user&quot;</code></pre>
+<div class="sourceCode" id="cb216"><pre class="sourceCode python watch-out"><code class="sourceCode python"><span id="cb216-1"><a href="basics-python.html#cb216-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb216-2"><a href="basics-python.html#cb216-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb216-3"><a href="basics-python.html#cb216-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb216-4"><a href="basics-python.html#cb216-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span></code></pre></div>
+<pre><code> [1] &quot;.Rhistory&quot;                        &quot;rsconnect&quot;                       
+ [3] &quot;.DS_Store&quot;                        &quot;R-Summaries.Rproj&quot;               
+ [5] &quot;01-Basics.Rmd&quot;                    &quot;preamble.tex&quot;                    
+ [7] &quot;index.Rmd&quot;                        &quot;images&quot;                          
+ [9] &quot;02-Charts.Rmd&quot;                    &quot;Summary_files&quot;                   
+[11] &quot;08-references.Rmd&quot;                &quot;MIT-Coding-Brain-01-press_0.jpeg&quot;
+[13] &quot;packages.bib&quot;                     &quot;03-Probability.Rmd&quot;              
+[15] &quot;_output.yml&quot;                      &quot;docs&quot;                            
+[17] &quot;R-Summaries.Rmd&quot;                  &quot;07-PracticalDataScience.Rmd&quot;     
+[19] &quot;www&quot;                              &quot;04-Simpleregressions.Rmd&quot;        
+[21] &quot;_bookdown_files&quot;                  &quot;README.md&quot;                       
+[23] &quot;R-Summaries_files&quot;                &quot;05-SEM.Rmd&quot;                      
+[25] &quot;_bookdown.yml&quot;                    &quot;06-Python.Rmd&quot;                   
+[27] &quot;.gitignore&quot;                       &quot;.RData&quot;                          
+[29] &quot;style.css&quot;                        &quot;_book&quot;                           
+[31] &quot;book.bib&quot;                         &quot;.git&quot;                            
+[33] &quot;.Rproj.user&quot;                     </code></pre>
 <p>variable using instead of &lt;-, equal sign =.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="basics-python.html#cb3-1" aria-hidden="true" tabindex="-1"></a>y <span class="ot">=</span> <span class="dv">5</span> <span class="sc">+</span> <span class="dv">5</span></span>
-<span id="cb3-2"><a href="basics-python.html#cb3-2" aria-hidden="true" tabindex="-1"></a>y</span></code></pre></div>
-<pre><code>## [1] 10</code></pre>
+<div class="sourceCode" id="cb218"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb218-1"><a href="basics-python.html#cb218-1" aria-hidden="true" tabindex="-1"></a>y <span class="ot">=</span> <span class="dv">5</span> <span class="sc">+</span> <span class="dv">5</span></span>
+<span id="cb218-2"><a href="basics-python.html#cb218-2" aria-hidden="true" tabindex="-1"></a>y</span></code></pre></div>
+<pre><code>[1] 10</code></pre>
 <p>Printing characters</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="basics-python.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">&#39;Hello, readers!&#39;</span>)</span></code></pre></div>
-<pre><code>## [1] &quot;Hello, readers!&quot;</code></pre>
+<div class="sourceCode" id="cb220"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb220-1"><a href="basics-python.html#cb220-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">&#39;Hello, readers!&#39;</span>)</span></code></pre></div>
+<pre><code>[1] &quot;Hello, readers!&quot;</code></pre>
 <p>Printing numbers</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="basics-python.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="dv">15</span>)</span></code></pre></div>
-<pre><code>## [1] 15</code></pre>
+<div class="sourceCode" id="cb222"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb222-1"><a href="basics-python.html#cb222-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="dv">15</span>)</span></code></pre></div>
+<pre><code>[1] 15</code></pre>
 <p>Printing length of a value</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb9-1"><a href="basics-python.html#cb9-1" aria-hidden="true" tabindex="-1"></a>Length <span class="op">=</span> <span class="bu">len</span>(<span class="st">&#39;Danielle&#39;</span>)</span>
-<span id="cb9-2"><a href="basics-python.html#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(Length)</span></code></pre></div>
-<pre><code>## 8</code></pre>
+<div class="sourceCode" id="cb224"><pre class="sourceCode python watch-out"><code class="sourceCode python"><span id="cb224-1"><a href="basics-python.html#cb224-1" aria-hidden="true" tabindex="-1"></a>Length <span class="op">=</span> <span class="bu">len</span>(<span class="st">&#39;Danielle&#39;</span>)</span>
+<span id="cb224-2"><a href="basics-python.html#cb224-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(Length)</span></code></pre></div>
+<pre><code>8</code></pre>
 <div id="data-set" class="section level3" number="6.0.1">
 <h3><span class="header-section-number">6.0.1</span> Data set</h3>
 <p>Loading the data set &amp; viewing head + tails:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb11-1"><a href="basics-python.html#cb11-1" aria-hidden="true" tabindex="-1"></a>sns.set_context(<span class="st">&#39;paper&#39;</span>)</span>
-<span id="cb11-2"><a href="basics-python.html#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-3"><a href="basics-python.html#cb11-3" aria-hidden="true" tabindex="-1"></a>tips <span class="op">=</span> sns.load_dataset(<span class="st">&#39;tips&#39;</span>)</span>
-<span id="cb11-4"><a href="basics-python.html#cb11-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-5"><a href="basics-python.html#cb11-5" aria-hidden="true" tabindex="-1"></a>tips.head()</span></code></pre></div>
-<pre><code>##    total_bill   tip     sex smoker  day    time  size
-## 0       16.99  1.01  Female     No  Sun  Dinner     2
-## 1       10.34  1.66    Male     No  Sun  Dinner     3
-## 2       21.01  3.50    Male     No  Sun  Dinner     3
-## 3       23.68  3.31    Male     No  Sun  Dinner     2
-## 4       24.59  3.61  Female     No  Sun  Dinner     4</code></pre>
-<div class="sourceCode" id="cb13"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb13-1"><a href="basics-python.html#cb13-1" aria-hidden="true" tabindex="-1"></a>tips.tail()</span></code></pre></div>
-<pre><code>##      total_bill   tip     sex smoker   day    time  size
-## 239       29.03  5.92    Male     No   Sat  Dinner     3
-## 240       27.18  2.00  Female    Yes   Sat  Dinner     2
-## 241       22.67  2.00    Male    Yes   Sat  Dinner     2
-## 242       17.82  1.75    Male     No   Sat  Dinner     2
-## 243       18.78  3.00  Female     No  Thur  Dinner     2</code></pre>
+<div class="sourceCode" id="cb226"><pre class="sourceCode python watch-out"><code class="sourceCode python"><span id="cb226-1"><a href="basics-python.html#cb226-1" aria-hidden="true" tabindex="-1"></a>sns.set_context(<span class="st">&#39;paper&#39;</span>)</span>
+<span id="cb226-2"><a href="basics-python.html#cb226-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb226-3"><a href="basics-python.html#cb226-3" aria-hidden="true" tabindex="-1"></a>tips <span class="op">=</span> sns.load_dataset(<span class="st">&#39;tips&#39;</span>)</span>
+<span id="cb226-4"><a href="basics-python.html#cb226-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb226-5"><a href="basics-python.html#cb226-5" aria-hidden="true" tabindex="-1"></a>tips.head()</span></code></pre></div>
+<pre><code>   total_bill   tip     sex smoker  day    time  size
+0       16.99  1.01  Female     No  Sun  Dinner     2
+1       10.34  1.66    Male     No  Sun  Dinner     3
+2       21.01  3.50    Male     No  Sun  Dinner     3
+3       23.68  3.31    Male     No  Sun  Dinner     2
+4       24.59  3.61  Female     No  Sun  Dinner     4</code></pre>
+<div class="sourceCode" id="cb228"><pre class="sourceCode python watch-out"><code class="sourceCode python"><span id="cb228-1"><a href="basics-python.html#cb228-1" aria-hidden="true" tabindex="-1"></a>tips.tail()</span></code></pre></div>
+<pre><code>     total_bill   tip     sex smoker   day    time  size
+239       29.03  5.92    Male     No   Sat  Dinner     3
+240       27.18  2.00  Female    Yes   Sat  Dinner     2
+241       22.67  2.00    Male    Yes   Sat  Dinner     2
+242       17.82  1.75    Male     No   Sat  Dinner     2
+243       18.78  3.00  Female     No  Thur  Dinner     2</code></pre>
 <ol style="list-style-type: decimal">
 <li>Length of the variable</li>
 <li>Shape: Number of rows and number of columns</li>
 <li>Type of variables + basic info</li>
 <li>Descriptive statistics variable</li>
 </ol>
-<div class="sourceCode" id="cb15"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb15-1"><a href="basics-python.html#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(tips)</span></code></pre></div>
-<pre><code>## 244</code></pre>
-<div class="sourceCode" id="cb17"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb17-1"><a href="basics-python.html#cb17-1" aria-hidden="true" tabindex="-1"></a>tips.shape</span></code></pre></div>
-<pre><code>## (244, 7)</code></pre>
-<div class="sourceCode" id="cb19"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb19-1"><a href="basics-python.html#cb19-1" aria-hidden="true" tabindex="-1"></a>tips.info()</span></code></pre></div>
-<pre><code>## &lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
-## RangeIndex: 244 entries, 0 to 243
-## Data columns (total 7 columns):
-##  #   Column      Non-Null Count  Dtype   
-## ---  ------      --------------  -----   
-##  0   total_bill  244 non-null    float64 
-##  1   tip         244 non-null    float64 
-##  2   sex         244 non-null    category
-##  3   smoker      244 non-null    category
-##  4   day         244 non-null    category
-##  5   time        244 non-null    category
-##  6   size        244 non-null    int64   
-## dtypes: category(4), float64(2), int64(1)
-## memory usage: 7.3 KB</code></pre>
-<div class="sourceCode" id="cb21"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb21-1"><a href="basics-python.html#cb21-1" aria-hidden="true" tabindex="-1"></a>tips.describe()</span></code></pre></div>
-<pre><code>##        total_bill         tip        size
-## count  244.000000  244.000000  244.000000
-## mean    19.785943    2.998279    2.569672
-## std      8.902412    1.383638    0.951100
-## min      3.070000    1.000000    1.000000
-## 25%     13.347500    2.000000    2.000000
-## 50%     17.795000    2.900000    2.000000
-## 75%     24.127500    3.562500    3.000000
-## max     50.810000   10.000000    6.000000</code></pre>
+<div class="sourceCode" id="cb230"><pre class="sourceCode python watch-out"><code class="sourceCode python"><span id="cb230-1"><a href="basics-python.html#cb230-1" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(tips)</span></code></pre></div>
+<pre><code>244</code></pre>
+<div class="sourceCode" id="cb232"><pre class="sourceCode python watch-out"><code class="sourceCode python"><span id="cb232-1"><a href="basics-python.html#cb232-1" aria-hidden="true" tabindex="-1"></a>tips.shape</span></code></pre></div>
+<pre><code>(244, 7)</code></pre>
+<div class="sourceCode" id="cb234"><pre class="sourceCode python watch-out"><code class="sourceCode python"><span id="cb234-1"><a href="basics-python.html#cb234-1" aria-hidden="true" tabindex="-1"></a>tips.info()</span></code></pre></div>
+<pre><code>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 244 entries, 0 to 243
+Data columns (total 7 columns):
+ #   Column      Non-Null Count  Dtype   
+---  ------      --------------  -----   
+ 0   total_bill  244 non-null    float64 
+ 1   tip         244 non-null    float64 
+ 2   sex         244 non-null    category
+ 3   smoker      244 non-null    category
+ 4   day         244 non-null    category
+ 5   time        244 non-null    category
+ 6   size        244 non-null    int64   
+dtypes: category(4), float64(2), int64(1)
+memory usage: 7.3 KB</code></pre>
+<div class="sourceCode" id="cb236"><pre class="sourceCode python watch-out"><code class="sourceCode python"><span id="cb236-1"><a href="basics-python.html#cb236-1" aria-hidden="true" tabindex="-1"></a>tips.describe()</span></code></pre></div>
+<pre><code>       total_bill         tip        size
+count  244.000000  244.000000  244.000000
+mean    19.785943    2.998279    2.569672
+std      8.902412    1.383638    0.951100
+min      3.070000    1.000000    1.000000
+25%     13.347500    2.000000    2.000000
+50%     17.795000    2.900000    2.000000
+75%     24.127500    3.562500    3.000000
+max     50.810000   10.000000    6.000000</code></pre>
 </div>
 <div id="matrixes" class="section level3" number="6.0.2">
 <h3><span class="header-section-number">6.0.2</span> Matrixes</h3>
 <p>Series:</p>
 <p>Panda series method:</p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb23-1"><a href="basics-python.html#cb23-1" aria-hidden="true" tabindex="-1"></a>Serie1 <span class="op">=</span> pd.Series(</span>
-<span id="cb23-2"><a href="basics-python.html#cb23-2" aria-hidden="true" tabindex="-1"></a>  [<span class="dv">4200</span>, <span class="dv">8000</span>, <span class="dv">6500</span>],</span>
-<span id="cb23-3"><a href="basics-python.html#cb23-3" aria-hidden="true" tabindex="-1"></a>  index<span class="op">=</span>[<span class="st">&quot;Amsterdam&quot;</span>, <span class="st">&quot;Toronto&quot;</span>, <span class="st">&quot;Tokyo&quot;</span>]</span>
-<span id="cb23-4"><a href="basics-python.html#cb23-4" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb23-5"><a href="basics-python.html#cb23-5" aria-hidden="true" tabindex="-1"></a>Serie1</span></code></pre></div>
-<pre><code>## Amsterdam    4200
-## Toronto      8000
-## Tokyo        6500
-## dtype: int64</code></pre>
+<div class="sourceCode" id="cb238"><pre class="sourceCode python watch-out"><code class="sourceCode python"><span id="cb238-1"><a href="basics-python.html#cb238-1" aria-hidden="true" tabindex="-1"></a>Serie1 <span class="op">=</span> pd.Series(</span>
+<span id="cb238-2"><a href="basics-python.html#cb238-2" aria-hidden="true" tabindex="-1"></a>  [<span class="dv">4200</span>, <span class="dv">8000</span>, <span class="dv">6500</span>],</span>
+<span id="cb238-3"><a href="basics-python.html#cb238-3" aria-hidden="true" tabindex="-1"></a>  index<span class="op">=</span>[<span class="st">&quot;Amsterdam&quot;</span>, <span class="st">&quot;Toronto&quot;</span>, <span class="st">&quot;Tokyo&quot;</span>]</span>
+<span id="cb238-4"><a href="basics-python.html#cb238-4" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb238-5"><a href="basics-python.html#cb238-5" aria-hidden="true" tabindex="-1"></a>Serie1</span></code></pre></div>
+<pre><code>Amsterdam    4200
+Toronto      8000
+Tokyo        6500
+dtype: int64</code></pre>
 <p>Python dictionary method:</p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb25-1"><a href="basics-python.html#cb25-1" aria-hidden="true" tabindex="-1"></a>Serie2 <span class="op">=</span> pd.Series({<span class="st">&quot;Amsterdam&quot;</span>: <span class="dv">5</span>, <span class="st">&quot;Tokyo&quot;</span>: <span class="dv">8</span>})</span>
-<span id="cb25-2"><a href="basics-python.html#cb25-2" aria-hidden="true" tabindex="-1"></a>Serie2</span></code></pre></div>
-<pre><code>## Amsterdam    5
-## Tokyo        8
-## dtype: int64</code></pre>
+<div class="sourceCode" id="cb240"><pre class="sourceCode python watch-out"><code class="sourceCode python"><span id="cb240-1"><a href="basics-python.html#cb240-1" aria-hidden="true" tabindex="-1"></a>Serie2 <span class="op">=</span> pd.Series({<span class="st">&quot;Amsterdam&quot;</span>: <span class="dv">5</span>, <span class="st">&quot;Tokyo&quot;</span>: <span class="dv">8</span>})</span>
+<span id="cb240-2"><a href="basics-python.html#cb240-2" aria-hidden="true" tabindex="-1"></a>Serie2</span></code></pre></div>
+<pre><code>Amsterdam    5
+Tokyo        8
+dtype: int64</code></pre>
 <p>Data frame:</p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb27-1"><a href="basics-python.html#cb27-1" aria-hidden="true" tabindex="-1"></a>Combined_serie <span class="op">=</span> pd.DataFrame({</span>
-<span id="cb27-2"><a href="basics-python.html#cb27-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;Revenue&quot;</span>: Serie1,</span>
-<span id="cb27-3"><a href="basics-python.html#cb27-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;Employee_count&quot;</span>: Serie2</span>
-<span id="cb27-4"><a href="basics-python.html#cb27-4" aria-hidden="true" tabindex="-1"></a>  })</span>
-<span id="cb27-5"><a href="basics-python.html#cb27-5" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb27-6"><a href="basics-python.html#cb27-6" aria-hidden="true" tabindex="-1"></a>Combined_serie</span></code></pre></div>
-<pre><code>##            Revenue  Employee_count
-## Amsterdam     4200             5.0
-## Tokyo         6500             8.0
-## Toronto       8000             NaN</code></pre>
+<div class="sourceCode" id="cb242"><pre class="sourceCode python watch-out"><code class="sourceCode python"><span id="cb242-1"><a href="basics-python.html#cb242-1" aria-hidden="true" tabindex="-1"></a>Combined_serie <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb242-2"><a href="basics-python.html#cb242-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;Revenue&quot;</span>: Serie1,</span>
+<span id="cb242-3"><a href="basics-python.html#cb242-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;Employee_count&quot;</span>: Serie2</span>
+<span id="cb242-4"><a href="basics-python.html#cb242-4" aria-hidden="true" tabindex="-1"></a>  })</span>
+<span id="cb242-5"><a href="basics-python.html#cb242-5" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb242-6"><a href="basics-python.html#cb242-6" aria-hidden="true" tabindex="-1"></a>Combined_serie</span></code></pre></div>
+<pre><code>           Revenue  Employee_count
+Amsterdam     4200             5.0
+Tokyo         6500             8.0
+Toronto       8000             NaN</code></pre>
 <p>Sub-setting by row:</p>
-<div class="sourceCode" id="cb29"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb29-1"><a href="basics-python.html#cb29-1" aria-hidden="true" tabindex="-1"></a>Combined_serie[<span class="st">&quot;Tokyo&quot;</span>:]</span></code></pre></div>
-<pre><code>##          Revenue  Employee_count
-## Tokyo       6500             8.0
-## Toronto     8000             NaN</code></pre>
+<div class="sourceCode" id="cb244"><pre class="sourceCode python watch-out"><code class="sourceCode python"><span id="cb244-1"><a href="basics-python.html#cb244-1" aria-hidden="true" tabindex="-1"></a>Combined_serie[<span class="st">&quot;Tokyo&quot;</span>:]</span></code></pre></div>
+<pre><code>         Revenue  Employee_count
+Tokyo       6500             8.0
+Toronto     8000             NaN</code></pre>
 </div>
 <div id="creating-our-own-functions" class="section level3" number="6.0.3">
 <h3><span class="header-section-number">6.0.3</span> Creating our own functions:</h3>
 <p>Saying hello + name</p>
-<div class="sourceCode" id="cb31"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb31-1"><a href="basics-python.html#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> printing_name(name):</span>
-<span id="cb31-2"><a href="basics-python.html#cb31-2" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(<span class="st">&#39;Good morning,&#39;</span>, name)</span>
-<span id="cb31-3"><a href="basics-python.html#cb31-3" aria-hidden="true" tabindex="-1"></a>printing_name(<span class="st">&#39;Danielle&#39;</span>)</span></code></pre></div>
-<pre><code>## Good morning, Danielle</code></pre>
+<div class="sourceCode" id="cb246"><pre class="sourceCode python watch-out"><code class="sourceCode python"><span id="cb246-1"><a href="basics-python.html#cb246-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> printing_name(name):</span>
+<span id="cb246-2"><a href="basics-python.html#cb246-2" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(<span class="st">&#39;Good morning,&#39;</span>, name)</span>
+<span id="cb246-3"><a href="basics-python.html#cb246-3" aria-hidden="true" tabindex="-1"></a>printing_name(<span class="st">&#39;Danielle&#39;</span>)</span></code></pre></div>
+<pre><code>Good morning, Danielle</code></pre>
 <p>Multiple arguments:</p>
 <p>Saying hello + name + location</p>
-<div class="sourceCode" id="cb33"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb33-1"><a href="basics-python.html#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> welcome(name, location):</span>
-<span id="cb33-2"><a href="basics-python.html#cb33-2" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(<span class="st">&quot;Good morning&quot;</span>, name, <span class="st">&quot;Welcome to&quot;</span>, location)</span>
-<span id="cb33-3"><a href="basics-python.html#cb33-3" aria-hidden="true" tabindex="-1"></a>welcome(<span class="st">&quot;Danielle,&quot;</span>, <span class="st">&quot;class.&quot;</span>)</span></code></pre></div>
-<pre><code>## Good morning Danielle, Welcome to class.</code></pre>
+<div class="sourceCode" id="cb248"><pre class="sourceCode python watch-out"><code class="sourceCode python"><span id="cb248-1"><a href="basics-python.html#cb248-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> welcome(name, location):</span>
+<span id="cb248-2"><a href="basics-python.html#cb248-2" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(<span class="st">&quot;Good morning&quot;</span>, name, <span class="st">&quot;Welcome to&quot;</span>, location)</span>
+<span id="cb248-3"><a href="basics-python.html#cb248-3" aria-hidden="true" tabindex="-1"></a>welcome(<span class="st">&quot;Danielle,&quot;</span>, <span class="st">&quot;class.&quot;</span>)</span></code></pre></div>
+<pre><code>Good morning Danielle, Welcome to class.</code></pre>
 </div>
 <div id="bar-plot" class="section level3" number="6.0.4">
 <h3><span class="header-section-number">6.0.4</span> Bar plot</h3>
-<div class="sourceCode" id="cb35"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb35-1"><a href="basics-python.html#cb35-1" aria-hidden="true" tabindex="-1"></a>sns.set_context(<span class="st">&#39;paper&#39;</span>)</span>
-<span id="cb35-2"><a href="basics-python.html#cb35-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-3"><a href="basics-python.html#cb35-3" aria-hidden="true" tabindex="-1"></a>tips <span class="op">=</span> sns.load_dataset(<span class="st">&#39;tips&#39;</span>)</span>
-<span id="cb35-4"><a href="basics-python.html#cb35-4" aria-hidden="true" tabindex="-1"></a>tips.head()</span></code></pre></div>
-<pre><code>##    total_bill   tip     sex smoker  day    time  size
-## 0       16.99  1.01  Female     No  Sun  Dinner     2
-## 1       10.34  1.66    Male     No  Sun  Dinner     3
-## 2       21.01  3.50    Male     No  Sun  Dinner     3
-## 3       23.68  3.31    Male     No  Sun  Dinner     2
-## 4       24.59  3.61  Female     No  Sun  Dinner     4</code></pre>
-<div class="sourceCode" id="cb37"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb37-1"><a href="basics-python.html#cb37-1" aria-hidden="true" tabindex="-1"></a>sns.barplot(x <span class="op">=</span> <span class="st">&#39;day&#39;</span>, y <span class="op">=</span> <span class="st">&#39;total_bill&#39;</span>, hue <span class="op">=</span> <span class="st">&#39;sex&#39;</span>, data <span class="op">=</span> tips,</span>
-<span id="cb37-2"><a href="basics-python.html#cb37-2" aria-hidden="true" tabindex="-1"></a>            palette <span class="op">=</span> <span class="st">&#39;Blues&#39;</span>, edgecolor <span class="op">=</span> <span class="st">&#39;w&#39;</span>)</span>
-<span id="cb37-3"><a href="basics-python.html#cb37-3" aria-hidden="true" tabindex="-1"></a>tips.groupby([<span class="st">&#39;day&#39;</span>,<span class="st">&#39;sex&#39;</span>]).mean()</span></code></pre></div>
-<pre><code>##              total_bill       tip      size
-## day  sex                                   
-## Thur Male     18.714667  2.980333  2.433333
-##      Female   16.715312  2.575625  2.468750
-## Fri  Male     19.857000  2.693000  2.100000
-##      Female   14.145556  2.781111  2.111111
-## Sat  Male     20.802542  3.083898  2.644068
-##      Female   19.680357  2.801786  2.250000
-## Sun  Male     21.887241  3.220345  2.810345
-##      Female   19.872222  3.367222  2.944444</code></pre>
-<div class="sourceCode" id="cb39"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb39-1"><a href="basics-python.html#cb39-1" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
-<p><img src="R-Summaries_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
+<div class="sourceCode" id="cb250"><pre class="sourceCode python watch-out"><code class="sourceCode python"><span id="cb250-1"><a href="basics-python.html#cb250-1" aria-hidden="true" tabindex="-1"></a>sns.set_context(<span class="st">&#39;paper&#39;</span>)</span>
+<span id="cb250-2"><a href="basics-python.html#cb250-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb250-3"><a href="basics-python.html#cb250-3" aria-hidden="true" tabindex="-1"></a>tips <span class="op">=</span> sns.load_dataset(<span class="st">&#39;tips&#39;</span>)</span>
+<span id="cb250-4"><a href="basics-python.html#cb250-4" aria-hidden="true" tabindex="-1"></a>tips.head()</span></code></pre></div>
+<pre><code>   total_bill   tip     sex smoker  day    time  size
+0       16.99  1.01  Female     No  Sun  Dinner     2
+1       10.34  1.66    Male     No  Sun  Dinner     3
+2       21.01  3.50    Male     No  Sun  Dinner     3
+3       23.68  3.31    Male     No  Sun  Dinner     2
+4       24.59  3.61  Female     No  Sun  Dinner     4</code></pre>
+<div class="sourceCode" id="cb252"><pre class="sourceCode python watch-out"><code class="sourceCode python"><span id="cb252-1"><a href="basics-python.html#cb252-1" aria-hidden="true" tabindex="-1"></a>sns.barplot(x <span class="op">=</span> <span class="st">&#39;day&#39;</span>, y <span class="op">=</span> <span class="st">&#39;total_bill&#39;</span>, hue <span class="op">=</span> <span class="st">&#39;sex&#39;</span>, data <span class="op">=</span> tips,</span>
+<span id="cb252-2"><a href="basics-python.html#cb252-2" aria-hidden="true" tabindex="-1"></a>            palette <span class="op">=</span> <span class="st">&#39;Blues&#39;</span>, edgecolor <span class="op">=</span> <span class="st">&#39;w&#39;</span>)</span>
+<span id="cb252-3"><a href="basics-python.html#cb252-3" aria-hidden="true" tabindex="-1"></a>tips.groupby([<span class="st">&#39;day&#39;</span>,<span class="st">&#39;sex&#39;</span>]).mean()</span></code></pre></div>
+<pre><code>             total_bill       tip      size
+day  sex                                   
+Thur Male     18.714667  2.980333  2.433333
+     Female   16.715312  2.575625  2.468750
+Fri  Male     19.857000  2.693000  2.100000
+     Female   14.145556  2.781111  2.111111
+Sat  Male     20.802542  3.083898  2.644068
+     Female   19.680357  2.801786  2.250000
+Sun  Male     21.887241  3.220345  2.810345
+     Female   19.872222  3.367222  2.944444</code></pre>
+<div class="sourceCode" id="cb254"><pre class="sourceCode python watch-out"><code class="sourceCode python"><span id="cb254-1"><a href="basics-python.html#cb254-1" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
+<p><img src="R-Summaries_files/figure-html/unnamed-chunk-123-1.png" width="100%" /></p>
 
 </div>
 </div>
@@ -472,6 +472,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>
