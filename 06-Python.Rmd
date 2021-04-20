@@ -4,24 +4,35 @@ editor_options:
     wrap: 72
 ---
 
-# Basics Python
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+library(knitr)  
+library(reticulate)
+os <- import("os")
+os$listdir(".")
+options(reticulate.repl.quiet = FALSE)
+use_python("/usr/local/bin/python")
+```
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, cache.lazy = FALSE)
+use_virtualenv("r-reticulate")
+```
+
+```{python}
+# This Python file uses the following encoding: utf-8
+import os, sys
+```
 
 ```{python, warning=FALSE, message=FALSE, comment=FALSE}
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
+from matplotlib.pyplot import figure
 import seaborn as sns
+import os
 ```
 
-
-```{r, echo=FALSE, warning=FALSE, message=FALSE}
-library(reticulate)
-os <- import("os")
-os$listdir(".")
-options(reticulate.repl.quiet = FALSE)
-```
-
-variable using instead of <-, equal sign =.
+# Basics Python
 
 ```{r}
 y = 5 + 5
@@ -47,9 +58,9 @@ Length = len('Danielle')
 print(Length)
 ```
 
+------------------------------------------------------------------------
 
 ## Data set
-
 
 Loading the data set & viewing head + tails:
 
@@ -62,10 +73,10 @@ tips.head()
 tips.tail()
 ```
 
-1. Length of the variable
-2. Shape: Number of rows and number of columns
-3. Type of variables + basic info
-3. Descriptive statistics variable
+1.  Length of the variable
+2.  Shape: Number of rows and number of columns
+3.  Type of variables + basic info
+4.  Descriptive statistics variable
 
 ```{python}
 len(tips)
@@ -76,6 +87,8 @@ tips.info()
 
 tips.describe()
 ```
+
+------------------------------------------------------------------------
 
 ## Matrixes
 
@@ -98,7 +111,6 @@ Serie2 = pd.Series({"Amsterdam": 5, "Tokyo": 8})
 Serie2
 ```
 
-
 Data frame:
 
 ```{python}
@@ -116,8 +128,7 @@ Sub-setting by row:
 Combined_serie["Tokyo":]
 ```
 
-
-## Creating our own functions:
+**Creating our own functions:**
 
 Saying hello + name
 
@@ -137,19 +148,226 @@ def welcome(name, location):
 welcome("Danielle,", "class.")
 ```
 
-## Bar plot
-
+**Bar plot**
 
 ```{python}
 sns.set_context('paper')
 
-tips = sns.load_dataset('tips')
+tips = sns.load_dataset("tips")
 tips.head()
 
-sns.barplot(x = 'day', y = 'total_bill', hue = 'sex', data = tips,
-            palette = 'Blues', edgecolor = 'w')
+sns.barplot(x = 'day', y = 'total_bill', hue = 'sex', data = tips, palette = 'Blues', edgecolor = 'w')
+
+plt.show()
+
 tips.groupby(['day','sex']).mean()
+```
+
+**1-hot-encoding:**
+
+Transforming categorical features to values from 0 or 1. F.e. You can be
+from origin: America or Europe. If the observation is from America it
+receives a 1 for America and a 0 for Europe.
+
+**Reading from a csv file with pandas:**
+
+```{python}
+import pandas as pd
+
+d = pd.read_csv('~/Documents/Pompeu Fabra BSM/Practical data science/auto-mpg.csv')
+```
+
+```{python}
+d.mpg.mean().round() # rounding by amount of decimals
+```
+
+```{python}
+d.dtypes # describes the type of variables
+pd.to_numeric(d.hp) # transforms to numerical
+```
+
+```{python}
+len(d) # amount of rows
+d.shape # amount of rows & columns
+d.columns # gives the names of the columns
+mpg = d.mpg # shows me only the values from one variable
+mpg = d['mpg'] # alternative way to show only one value
+d.head() # shows the first 5 observations of a data set
+d.tail() # shows the last 5 observations of a data set
+```
+
+**Basic statistics:**
+
+```{python}
+d.mpg.mean()
+d.mpg.median()
+d.mpg.max()
+d.mpg.min()
+d.mean() # mean for all columns
+d.describe().round(2).head() # statistics for the whole data set, rounded to two decimals
+```
+
+```{python}
+d[['year']] # defines a list of one variable
+d[['year', 'cylinders']] # defines a list of multiple variables
+d.year.unique() # gives me the unique values of that column, not the repetitions
+```
+
+------------------------------------------------------------------------
+
+## Filtering a data set
+
+```{python}
+d77 = d[d.year == 77] #filters the data set to all observations that are equal to a certain value of a variable 
+
+d77 = d[d.year != 77] #filters the data set to all observations that are NOT equal to a certain value of a variable 
+
+d77 = d[d.year <= 77] # filters those that are smaller than a value
+
+d77 = d[d.year >= 77] # filters those that are large than a value
+
+d77 = d[(d.year >= 77) & (d.year <= 90)] # in between certain values
+
+d77 = d[(d.year == 80) | (d.year == 90)] # those from one value OR another
+
+d77 = d[~(d.year == 70)] # excludes the values
+```
+
+**Aggregating**
+
+```{python}
+dm = d.groupby('year').mean()
+
+dm = d.groupby(['year', 'cylinders']).mean()
+
+dm = d.groupby(['year', 'cylinders']).median()
+
+dm = d.groupby(['year', 'cylinders']).mean()['mpg'] # for selected variables only
+```
+
+**Pivot table**
+
+```{python}
+d.pivot_table(index='year', columns='cylinders', values='mpg').round()
+
+d.pivot_table(index='year', columns='cylinders', values='mpg').round().fillna('')
+```
+
+**Creating new columns starting from existing columns**
+
+```{python}
+d['nam_of_new_column'] = d.mpg * 2
+```
+
+Through the package numpy:
+
+```{python}
+import numpy as np
+
+d['sqrt_of_mpg_2'] = np.sqrt(d.mpg)
+
+d['log(10)_of_mpg'] = np.log10(d.mpg)
+```
+
+**Dropping / deleting columns**
+
+```{python}
+d['double_mpg'] = d.mpg * 2
+
+del(d['double_mpg']) # deleting columns
+
+d.drop(columns=['sqrt_of_mpg_2', 'log(10)_of_mpg', 'nam_of_new_column']).head() # dropping columns
+```
+
+------------------------------------------------------------------------
+
+## Data imputation
+
+```{python}
+pd.to_numeric(d.hp, errors='coerce').head()
+
+d.hp = pd.to_numeric(d.hp, errors='coerce')
+
+d[d.hp.isna()] # transform values to NA
+
+d[-(d.hp.isna())] # delete missing values
+```
+
+------------------------------------------------------------------------
+
+## Data visualization
+
+Getting the correlation matrix
+
+**Correlation matrix**
+
+```{python}
+d.corr().round(decimals=2)
+```
+
+Pair plot
+
+```{python}
+#sns.pairplot(d);
+
+#sns.pairplot(d, hue='origin'); # with color
+```
+
+```{python}
+tips = sns.load_dataset("tips")
+sns.set_theme(style="whitegrid")
+
+sns.boxplot(data=tips, x='sex', y='tip')
 
 plt.show()
 ```
+
+```{python}
+sns.boxplot(data=tips, x='sex', y='tip', color='black', boxprops=dict(alpha=.6))
+
+plt.show()
+
+sns.boxplot(x="day", y="total_bill", hue="smoker",
+  data=tips, palette="Set3")
+  
+plt.show()
+```
+
+```{python}
+sns.displot(data=tips, x='tip');
+plt.show()
+
+sns.displot(data=tips, x='tip', kind='kde');
+plt.show()
+```
+
+```{python}
+sns.kdeplot(data=tips, x='tip', y='total_bill', shade=True, cbar=True);
+plt.show()
+```
+
+```{python}
+plt.rcParams['figure.figsize'] = (10,8)
+
+plt.show()
+```
+
+```{python}
+sns.histplot(d.mpg); # Histogram
+
+plt.show()
+```
+
+```{python}
+sns.histplot(d.mpg, bins=20); # with binwidth
+
+plt.show()
+
+sns.histplot(data=d, x='mpg', bins=20); 
+
+sns.histplot(data=d, x='mpg', bins=20, cumulative=True); # cumulative values
+```
+
+
+
 

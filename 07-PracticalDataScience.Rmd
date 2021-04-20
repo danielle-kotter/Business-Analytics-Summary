@@ -67,34 +67,34 @@ it is a cat or not a cat.
 
 Supervised learning - Regression - Classification
 
-+-----------+---------------------------------------------------------+
-| Symbol    | Explanation                                             |
-+===========+=========================================================+
-| y         | Real value                                              |
-+-----------+---------------------------------------------------------+
-| **ŷ**     | Prediction                                              |
-+-----------+---------------------------------------------------------+
-| **y-ŷ**   | Absolute error                                          |
-+-----------+---------------------------------------------------------+
-| **(       | Squared error \|                                        |
-| y-ŷ)\^2** |                                                         |
-+-----------+---------------------------------------------------------+
-| **x**     | Generic input / Features. The things I use to predict   |
-|           | y.                                                      |
-|           |                                                         |
-|           | The independent variable (statistics).                  |
-+-----------+---------------------------------------------------------+
-| **y**     | Generic output. The label. (ML) The thing I want to     |
-|           | predict.                                                |
-|           |                                                         |
-|           | Dependent variable (statistics).                        |
-+-----------+---------------------------------------------------------+
-| **p**     | Number of features (machine learning).                  |
-|           |                                                         |
-|           | Number of independent variables I have (statistics).    |
-+-----------+---------------------------------------------------------+
-| **n**     | Size of the data set                                    |
-+-----------+---------------------------------------------------------+
++---------------+-----------------------------------------------------+
+| Symbol        | Explanation                                         |
++===============+=====================================================+
+| y             | Real value                                          |
++---------------+-----------------------------------------------------+
+| **ŷ**         | Prediction                                          |
++---------------+-----------------------------------------------------+
+| **y-ŷ**       | Absolute error                                      |
++---------------+-----------------------------------------------------+
+| **( y-ŷ)\^2** | Squared error \|                                    |
++---------------+-----------------------------------------------------+
+| **x**         | Generic input / Features. The things I use to       |
+|               | predict y.                                          |
+|               |                                                     |
+|               | The independent variable (statistics).              |
++---------------+-----------------------------------------------------+
+| **y**         | Generic output. The label. (ML) The thing I want to |
+|               | predict.                                            |
+|               |                                                     |
+|               | Dependent variable (statistics).                    |
++---------------+-----------------------------------------------------+
+| **p**         | Number of features (machine learning).              |
+|               |                                                     |
+|               | Number of independent variables I have              |
+|               | (statistics).                                       |
++---------------+-----------------------------------------------------+
+| **n**         | Size of the data set                                |
++---------------+-----------------------------------------------------+
 
 If I know the inputs, I could try to "predict" the output. This would
 state that in the real world the outputs (y) are a function of the
@@ -251,13 +251,13 @@ $\alpha^2 + Eϵ[ϵ^2] = [f(x) - \hat f(x)]^2 + Var[ϵ]$
 
 This can be separated in two parts:
 
-+---------------------------------+-----------------------------------+
-| $[f(x) - \hat f(x)]^2$          | $Var[ϵ]$                          |
-+---------------------------------+-----------------------------------+
-| Reducible error:                | Irreducible error                 |
-|                                 |                                   |
-| Real relation - estimator       | Intrinsic property of the error   |
-+---------------------------------+-----------------------------------+
++---------------------------+---------------------------------+
+| $[f(x) - \hat f(x)]^2$    | $Var[ϵ]$                        |
++---------------------------+---------------------------------+
+| Reducible error:          | Irreducible error               |
+|                           |                                 |
+| Real relation - estimator | Intrinsic property of the error |
++---------------------------+---------------------------------+
 
 If the model is really good, the estimator is similar to the real
 relation and I can "reduce" the error. If the model is extremely

@@ -209,8 +209,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="6.1" data-path="basics-python.html"><a href="basics-python.html#data-set"><i class="fa fa-check"></i><b>6.1</b> Data set</a></li>
 <li class="chapter" data-level="6.2" data-path="basics-python.html"><a href="basics-python.html#matrixes"><i class="fa fa-check"></i><b>6.2</b> Matrixes</a></li>
-<li class="chapter" data-level="6.3" data-path="basics-python.html"><a href="basics-python.html#creating-our-own-functions"><i class="fa fa-check"></i><b>6.3</b> Creating our own functions:</a></li>
-<li class="chapter" data-level="6.4" data-path="basics-python.html"><a href="basics-python.html#bar-plot"><i class="fa fa-check"></i><b>6.4</b> Bar plot</a></li>
+<li class="chapter" data-level="6.3" data-path="basics-python.html"><a href="basics-python.html#filtering-a-data-set"><i class="fa fa-check"></i><b>6.3</b> Filtering a data set</a></li>
+<li class="chapter" data-level="6.4" data-path="basics-python.html"><a href="basics-python.html#data-imputation"><i class="fa fa-check"></i><b>6.4</b> Data imputation</a></li>
+<li class="chapter" data-level="6.5" data-path="basics-python.html"><a href="basics-python.html#data-visualization"><i class="fa fa-check"></i><b>6.5</b> Data visualization</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="practical-data-science.html"><a href="practical-data-science.html"><i class="fa fa-check"></i><b>7</b> Practical data science</a>
 <ul>
@@ -244,175 +245,444 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="basics-python" class="section level1" number="6">
 <h1><span class="header-section-number">Chapter - 6</span> Basics Python</h1>
-<div class="sourceCode" id="cb216"><pre class="sourceCode python watch-out"><code class="sourceCode python"><span id="cb216-1"><a href="basics-python.html#cb216-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb216-2"><a href="basics-python.html#cb216-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb216-3"><a href="basics-python.html#cb216-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb216-4"><a href="basics-python.html#cb216-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span></code></pre></div>
-<pre><code> [1] &quot;.Rhistory&quot;                        &quot;rsconnect&quot;                       
- [3] &quot;.DS_Store&quot;                        &quot;R-Summaries.Rproj&quot;               
- [5] &quot;01-Basics.Rmd&quot;                    &quot;preamble.tex&quot;                    
- [7] &quot;index.Rmd&quot;                        &quot;images&quot;                          
- [9] &quot;02-Charts.Rmd&quot;                    &quot;Summary_files&quot;                   
-[11] &quot;08-references.Rmd&quot;                &quot;MIT-Coding-Brain-01-press_0.jpeg&quot;
-[13] &quot;packages.bib&quot;                     &quot;03-Probability.Rmd&quot;              
-[15] &quot;_output.yml&quot;                      &quot;docs&quot;                            
-[17] &quot;R-Summaries.Rmd&quot;                  &quot;07-PracticalDataScience.Rmd&quot;     
-[19] &quot;www&quot;                              &quot;04-Simpleregressions.Rmd&quot;        
-[21] &quot;_bookdown_files&quot;                  &quot;README.md&quot;                       
-[23] &quot;R-Summaries_files&quot;                &quot;05-SEM.Rmd&quot;                      
-[25] &quot;_bookdown.yml&quot;                    &quot;06-Python.Rmd&quot;                   
-[27] &quot;.gitignore&quot;                       &quot;.RData&quot;                          
-[29] &quot;style.css&quot;                        &quot;_book&quot;                           
-[31] &quot;book.bib&quot;                         &quot;.git&quot;                            
-[33] &quot;.Rproj.user&quot;                     </code></pre>
-<p>variable using instead of &lt;-, equal sign =.</p>
-<div class="sourceCode" id="cb218"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb218-1"><a href="basics-python.html#cb218-1" aria-hidden="true" tabindex="-1"></a>y <span class="ot">=</span> <span class="dv">5</span> <span class="sc">+</span> <span class="dv">5</span></span>
-<span id="cb218-2"><a href="basics-python.html#cb218-2" aria-hidden="true" tabindex="-1"></a>y</span></code></pre></div>
-<pre><code>[1] 10</code></pre>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="basics-python.html#cb4-1" aria-hidden="true" tabindex="-1"></a>y <span class="ot">=</span> <span class="dv">5</span> <span class="sc">+</span> <span class="dv">5</span></span>
+<span id="cb4-2"><a href="basics-python.html#cb4-2" aria-hidden="true" tabindex="-1"></a>y</span></code></pre></div>
+<pre><code>## [1] 10</code></pre>
 <p>Printing characters</p>
-<div class="sourceCode" id="cb220"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb220-1"><a href="basics-python.html#cb220-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">&#39;Hello, readers!&#39;</span>)</span></code></pre></div>
-<pre><code>[1] &quot;Hello, readers!&quot;</code></pre>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="basics-python.html#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">&#39;Hello, readers!&#39;</span>)</span></code></pre></div>
+<pre><code>## [1] &quot;Hello, readers!&quot;</code></pre>
 <p>Printing numbers</p>
-<div class="sourceCode" id="cb222"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb222-1"><a href="basics-python.html#cb222-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="dv">15</span>)</span></code></pre></div>
-<pre><code>[1] 15</code></pre>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="basics-python.html#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="dv">15</span>)</span></code></pre></div>
+<pre><code>## [1] 15</code></pre>
 <p>Printing length of a value</p>
-<div class="sourceCode" id="cb224"><pre class="sourceCode python watch-out"><code class="sourceCode python"><span id="cb224-1"><a href="basics-python.html#cb224-1" aria-hidden="true" tabindex="-1"></a>Length <span class="op">=</span> <span class="bu">len</span>(<span class="st">&#39;Danielle&#39;</span>)</span>
-<span id="cb224-2"><a href="basics-python.html#cb224-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(Length)</span></code></pre></div>
-<pre><code>8</code></pre>
+<div class="sourceCode" id="cb10"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb10-1"><a href="basics-python.html#cb10-1" aria-hidden="true" tabindex="-1"></a>Length <span class="op">=</span> <span class="bu">len</span>(<span class="st">&#39;Danielle&#39;</span>)</span>
+<span id="cb10-2"><a href="basics-python.html#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(Length)</span></code></pre></div>
+<pre><code>## 8</code></pre>
+<hr />
 <div id="data-set" class="section level2" number="6.1">
 <h2><span class="header-section-number">6.1</span> Data set</h2>
 <p>Loading the data set &amp; viewing head + tails:</p>
-<div class="sourceCode" id="cb226"><pre class="sourceCode python watch-out"><code class="sourceCode python"><span id="cb226-1"><a href="basics-python.html#cb226-1" aria-hidden="true" tabindex="-1"></a>sns.set_context(<span class="st">&#39;paper&#39;</span>)</span>
-<span id="cb226-2"><a href="basics-python.html#cb226-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb226-3"><a href="basics-python.html#cb226-3" aria-hidden="true" tabindex="-1"></a>tips <span class="op">=</span> sns.load_dataset(<span class="st">&#39;tips&#39;</span>)</span>
-<span id="cb226-4"><a href="basics-python.html#cb226-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb226-5"><a href="basics-python.html#cb226-5" aria-hidden="true" tabindex="-1"></a>tips.head()</span></code></pre></div>
-<pre><code>   total_bill   tip     sex smoker  day    time  size
-0       16.99  1.01  Female     No  Sun  Dinner     2
-1       10.34  1.66    Male     No  Sun  Dinner     3
-2       21.01  3.50    Male     No  Sun  Dinner     3
-3       23.68  3.31    Male     No  Sun  Dinner     2
-4       24.59  3.61  Female     No  Sun  Dinner     4</code></pre>
-<div class="sourceCode" id="cb228"><pre class="sourceCode python watch-out"><code class="sourceCode python"><span id="cb228-1"><a href="basics-python.html#cb228-1" aria-hidden="true" tabindex="-1"></a>tips.tail()</span></code></pre></div>
-<pre><code>     total_bill   tip     sex smoker   day    time  size
-239       29.03  5.92    Male     No   Sat  Dinner     3
-240       27.18  2.00  Female    Yes   Sat  Dinner     2
-241       22.67  2.00    Male    Yes   Sat  Dinner     2
-242       17.82  1.75    Male     No   Sat  Dinner     2
-243       18.78  3.00  Female     No  Thur  Dinner     2</code></pre>
+<div class="sourceCode" id="cb12"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb12-1"><a href="basics-python.html#cb12-1" aria-hidden="true" tabindex="-1"></a>sns.set_context(<span class="st">&#39;paper&#39;</span>)</span>
+<span id="cb12-2"><a href="basics-python.html#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-3"><a href="basics-python.html#cb12-3" aria-hidden="true" tabindex="-1"></a>tips <span class="op">=</span> sns.load_dataset(<span class="st">&#39;tips&#39;</span>)</span>
+<span id="cb12-4"><a href="basics-python.html#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-5"><a href="basics-python.html#cb12-5" aria-hidden="true" tabindex="-1"></a>tips.head()</span></code></pre></div>
+<pre><code>##    total_bill   tip     sex smoker  day    time  size
+## 0       16.99  1.01  Female     No  Sun  Dinner     2
+## 1       10.34  1.66    Male     No  Sun  Dinner     3
+## 2       21.01  3.50    Male     No  Sun  Dinner     3
+## 3       23.68  3.31    Male     No  Sun  Dinner     2
+## 4       24.59  3.61  Female     No  Sun  Dinner     4</code></pre>
+<div class="sourceCode" id="cb14"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb14-1"><a href="basics-python.html#cb14-1" aria-hidden="true" tabindex="-1"></a>tips.tail()</span></code></pre></div>
+<pre><code>##      total_bill   tip     sex smoker   day    time  size
+## 239       29.03  5.92    Male     No   Sat  Dinner     3
+## 240       27.18  2.00  Female    Yes   Sat  Dinner     2
+## 241       22.67  2.00    Male    Yes   Sat  Dinner     2
+## 242       17.82  1.75    Male     No   Sat  Dinner     2
+## 243       18.78  3.00  Female     No  Thur  Dinner     2</code></pre>
 <ol style="list-style-type: decimal">
 <li>Length of the variable</li>
 <li>Shape: Number of rows and number of columns</li>
 <li>Type of variables + basic info</li>
 <li>Descriptive statistics variable</li>
 </ol>
-<div class="sourceCode" id="cb230"><pre class="sourceCode python watch-out"><code class="sourceCode python"><span id="cb230-1"><a href="basics-python.html#cb230-1" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(tips)</span></code></pre></div>
-<pre><code>244</code></pre>
-<div class="sourceCode" id="cb232"><pre class="sourceCode python watch-out"><code class="sourceCode python"><span id="cb232-1"><a href="basics-python.html#cb232-1" aria-hidden="true" tabindex="-1"></a>tips.shape</span></code></pre></div>
-<pre><code>(244, 7)</code></pre>
-<div class="sourceCode" id="cb234"><pre class="sourceCode python watch-out"><code class="sourceCode python"><span id="cb234-1"><a href="basics-python.html#cb234-1" aria-hidden="true" tabindex="-1"></a>tips.info()</span></code></pre></div>
-<pre><code>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
-RangeIndex: 244 entries, 0 to 243
-Data columns (total 7 columns):
- #   Column      Non-Null Count  Dtype   
----  ------      --------------  -----   
- 0   total_bill  244 non-null    float64 
- 1   tip         244 non-null    float64 
- 2   sex         244 non-null    category
- 3   smoker      244 non-null    category
- 4   day         244 non-null    category
- 5   time        244 non-null    category
- 6   size        244 non-null    int64   
-dtypes: category(4), float64(2), int64(1)
-memory usage: 7.3 KB</code></pre>
-<div class="sourceCode" id="cb236"><pre class="sourceCode python watch-out"><code class="sourceCode python"><span id="cb236-1"><a href="basics-python.html#cb236-1" aria-hidden="true" tabindex="-1"></a>tips.describe()</span></code></pre></div>
-<pre><code>       total_bill         tip        size
-count  244.000000  244.000000  244.000000
-mean    19.785943    2.998279    2.569672
-std      8.902412    1.383638    0.951100
-min      3.070000    1.000000    1.000000
-25%     13.347500    2.000000    2.000000
-50%     17.795000    2.900000    2.000000
-75%     24.127500    3.562500    3.000000
-max     50.810000   10.000000    6.000000</code></pre>
+<div class="sourceCode" id="cb16"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb16-1"><a href="basics-python.html#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(tips)</span></code></pre></div>
+<pre><code>## 244</code></pre>
+<div class="sourceCode" id="cb18"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb18-1"><a href="basics-python.html#cb18-1" aria-hidden="true" tabindex="-1"></a>tips.shape</span></code></pre></div>
+<pre><code>## (244, 7)</code></pre>
+<div class="sourceCode" id="cb20"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb20-1"><a href="basics-python.html#cb20-1" aria-hidden="true" tabindex="-1"></a>tips.info()</span></code></pre></div>
+<pre><code>## &lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+## RangeIndex: 244 entries, 0 to 243
+## Data columns (total 7 columns):
+##  #   Column      Non-Null Count  Dtype   
+## ---  ------      --------------  -----   
+##  0   total_bill  244 non-null    float64 
+##  1   tip         244 non-null    float64 
+##  2   sex         244 non-null    category
+##  3   smoker      244 non-null    category
+##  4   day         244 non-null    category
+##  5   time        244 non-null    category
+##  6   size        244 non-null    int64   
+## dtypes: category(4), float64(2), int64(1)
+## memory usage: 7.3 KB</code></pre>
+<div class="sourceCode" id="cb22"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb22-1"><a href="basics-python.html#cb22-1" aria-hidden="true" tabindex="-1"></a>tips.describe()</span></code></pre></div>
+<pre><code>##        total_bill         tip        size
+## count  244.000000  244.000000  244.000000
+## mean    19.785943    2.998279    2.569672
+## std      8.902412    1.383638    0.951100
+## min      3.070000    1.000000    1.000000
+## 25%     13.347500    2.000000    2.000000
+## 50%     17.795000    2.900000    2.000000
+## 75%     24.127500    3.562500    3.000000
+## max     50.810000   10.000000    6.000000</code></pre>
+<hr />
 </div>
 <div id="matrixes" class="section level2" number="6.2">
 <h2><span class="header-section-number">6.2</span> Matrixes</h2>
 <p>Series:</p>
 <p>Panda series method:</p>
-<div class="sourceCode" id="cb238"><pre class="sourceCode python watch-out"><code class="sourceCode python"><span id="cb238-1"><a href="basics-python.html#cb238-1" aria-hidden="true" tabindex="-1"></a>Serie1 <span class="op">=</span> pd.Series(</span>
-<span id="cb238-2"><a href="basics-python.html#cb238-2" aria-hidden="true" tabindex="-1"></a>  [<span class="dv">4200</span>, <span class="dv">8000</span>, <span class="dv">6500</span>],</span>
-<span id="cb238-3"><a href="basics-python.html#cb238-3" aria-hidden="true" tabindex="-1"></a>  index<span class="op">=</span>[<span class="st">&quot;Amsterdam&quot;</span>, <span class="st">&quot;Toronto&quot;</span>, <span class="st">&quot;Tokyo&quot;</span>]</span>
-<span id="cb238-4"><a href="basics-python.html#cb238-4" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb238-5"><a href="basics-python.html#cb238-5" aria-hidden="true" tabindex="-1"></a>Serie1</span></code></pre></div>
-<pre><code>Amsterdam    4200
-Toronto      8000
-Tokyo        6500
-dtype: int64</code></pre>
+<div class="sourceCode" id="cb24"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb24-1"><a href="basics-python.html#cb24-1" aria-hidden="true" tabindex="-1"></a>Serie1 <span class="op">=</span> pd.Series(</span>
+<span id="cb24-2"><a href="basics-python.html#cb24-2" aria-hidden="true" tabindex="-1"></a>  [<span class="dv">4200</span>, <span class="dv">8000</span>, <span class="dv">6500</span>],</span>
+<span id="cb24-3"><a href="basics-python.html#cb24-3" aria-hidden="true" tabindex="-1"></a>  index<span class="op">=</span>[<span class="st">&quot;Amsterdam&quot;</span>, <span class="st">&quot;Toronto&quot;</span>, <span class="st">&quot;Tokyo&quot;</span>]</span>
+<span id="cb24-4"><a href="basics-python.html#cb24-4" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb24-5"><a href="basics-python.html#cb24-5" aria-hidden="true" tabindex="-1"></a>Serie1</span></code></pre></div>
+<pre><code>## Amsterdam    4200
+## Toronto      8000
+## Tokyo        6500
+## dtype: int64</code></pre>
 <p>Python dictionary method:</p>
-<div class="sourceCode" id="cb240"><pre class="sourceCode python watch-out"><code class="sourceCode python"><span id="cb240-1"><a href="basics-python.html#cb240-1" aria-hidden="true" tabindex="-1"></a>Serie2 <span class="op">=</span> pd.Series({<span class="st">&quot;Amsterdam&quot;</span>: <span class="dv">5</span>, <span class="st">&quot;Tokyo&quot;</span>: <span class="dv">8</span>})</span>
-<span id="cb240-2"><a href="basics-python.html#cb240-2" aria-hidden="true" tabindex="-1"></a>Serie2</span></code></pre></div>
-<pre><code>Amsterdam    5
-Tokyo        8
-dtype: int64</code></pre>
+<div class="sourceCode" id="cb26"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb26-1"><a href="basics-python.html#cb26-1" aria-hidden="true" tabindex="-1"></a>Serie2 <span class="op">=</span> pd.Series({<span class="st">&quot;Amsterdam&quot;</span>: <span class="dv">5</span>, <span class="st">&quot;Tokyo&quot;</span>: <span class="dv">8</span>})</span>
+<span id="cb26-2"><a href="basics-python.html#cb26-2" aria-hidden="true" tabindex="-1"></a>Serie2</span></code></pre></div>
+<pre><code>## Amsterdam    5
+## Tokyo        8
+## dtype: int64</code></pre>
 <p>Data frame:</p>
-<div class="sourceCode" id="cb242"><pre class="sourceCode python watch-out"><code class="sourceCode python"><span id="cb242-1"><a href="basics-python.html#cb242-1" aria-hidden="true" tabindex="-1"></a>Combined_serie <span class="op">=</span> pd.DataFrame({</span>
-<span id="cb242-2"><a href="basics-python.html#cb242-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;Revenue&quot;</span>: Serie1,</span>
-<span id="cb242-3"><a href="basics-python.html#cb242-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;Employee_count&quot;</span>: Serie2</span>
-<span id="cb242-4"><a href="basics-python.html#cb242-4" aria-hidden="true" tabindex="-1"></a>  })</span>
-<span id="cb242-5"><a href="basics-python.html#cb242-5" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb242-6"><a href="basics-python.html#cb242-6" aria-hidden="true" tabindex="-1"></a>Combined_serie</span></code></pre></div>
-<pre><code>           Revenue  Employee_count
-Amsterdam     4200             5.0
-Tokyo         6500             8.0
-Toronto       8000             NaN</code></pre>
+<div class="sourceCode" id="cb28"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb28-1"><a href="basics-python.html#cb28-1" aria-hidden="true" tabindex="-1"></a>Combined_serie <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb28-2"><a href="basics-python.html#cb28-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;Revenue&quot;</span>: Serie1,</span>
+<span id="cb28-3"><a href="basics-python.html#cb28-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;Employee_count&quot;</span>: Serie2</span>
+<span id="cb28-4"><a href="basics-python.html#cb28-4" aria-hidden="true" tabindex="-1"></a>  })</span>
+<span id="cb28-5"><a href="basics-python.html#cb28-5" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb28-6"><a href="basics-python.html#cb28-6" aria-hidden="true" tabindex="-1"></a>Combined_serie</span></code></pre></div>
+<pre><code>##            Revenue  Employee_count
+## Amsterdam     4200             5.0
+## Tokyo         6500             8.0
+## Toronto       8000             NaN</code></pre>
 <p>Sub-setting by row:</p>
-<div class="sourceCode" id="cb244"><pre class="sourceCode python watch-out"><code class="sourceCode python"><span id="cb244-1"><a href="basics-python.html#cb244-1" aria-hidden="true" tabindex="-1"></a>Combined_serie[<span class="st">&quot;Tokyo&quot;</span>:]</span></code></pre></div>
-<pre><code>         Revenue  Employee_count
-Tokyo       6500             8.0
-Toronto     8000             NaN</code></pre>
-</div>
-<div id="creating-our-own-functions" class="section level2" number="6.3">
-<h2><span class="header-section-number">6.3</span> Creating our own functions:</h2>
+<div class="sourceCode" id="cb30"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb30-1"><a href="basics-python.html#cb30-1" aria-hidden="true" tabindex="-1"></a>Combined_serie[<span class="st">&quot;Tokyo&quot;</span>:]</span></code></pre></div>
+<pre><code>##          Revenue  Employee_count
+## Tokyo       6500             8.0
+## Toronto     8000             NaN</code></pre>
+<p><strong>Creating our own functions:</strong></p>
 <p>Saying hello + name</p>
-<div class="sourceCode" id="cb246"><pre class="sourceCode python watch-out"><code class="sourceCode python"><span id="cb246-1"><a href="basics-python.html#cb246-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> printing_name(name):</span>
-<span id="cb246-2"><a href="basics-python.html#cb246-2" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(<span class="st">&#39;Good morning,&#39;</span>, name)</span>
-<span id="cb246-3"><a href="basics-python.html#cb246-3" aria-hidden="true" tabindex="-1"></a>printing_name(<span class="st">&#39;Danielle&#39;</span>)</span></code></pre></div>
-<pre><code>Good morning, Danielle</code></pre>
+<div class="sourceCode" id="cb32"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb32-1"><a href="basics-python.html#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> printing_name(name):</span>
+<span id="cb32-2"><a href="basics-python.html#cb32-2" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(<span class="st">&#39;Good morning,&#39;</span>, name)</span>
+<span id="cb32-3"><a href="basics-python.html#cb32-3" aria-hidden="true" tabindex="-1"></a>printing_name(<span class="st">&#39;Danielle&#39;</span>)</span></code></pre></div>
+<pre><code>## Good morning, Danielle</code></pre>
 <p>Multiple arguments:</p>
 <p>Saying hello + name + location</p>
-<div class="sourceCode" id="cb248"><pre class="sourceCode python watch-out"><code class="sourceCode python"><span id="cb248-1"><a href="basics-python.html#cb248-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> welcome(name, location):</span>
-<span id="cb248-2"><a href="basics-python.html#cb248-2" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(<span class="st">&quot;Good morning&quot;</span>, name, <span class="st">&quot;Welcome to&quot;</span>, location)</span>
-<span id="cb248-3"><a href="basics-python.html#cb248-3" aria-hidden="true" tabindex="-1"></a>welcome(<span class="st">&quot;Danielle,&quot;</span>, <span class="st">&quot;class.&quot;</span>)</span></code></pre></div>
-<pre><code>Good morning Danielle, Welcome to class.</code></pre>
+<div class="sourceCode" id="cb34"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb34-1"><a href="basics-python.html#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> welcome(name, location):</span>
+<span id="cb34-2"><a href="basics-python.html#cb34-2" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(<span class="st">&quot;Good morning&quot;</span>, name, <span class="st">&quot;Welcome to&quot;</span>, location)</span>
+<span id="cb34-3"><a href="basics-python.html#cb34-3" aria-hidden="true" tabindex="-1"></a>welcome(<span class="st">&quot;Danielle,&quot;</span>, <span class="st">&quot;class.&quot;</span>)</span></code></pre></div>
+<pre><code>## Good morning Danielle, Welcome to class.</code></pre>
+<p><strong>Bar plot</strong></p>
+<div class="sourceCode" id="cb36"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb36-1"><a href="basics-python.html#cb36-1" aria-hidden="true" tabindex="-1"></a>sns.set_context(<span class="st">&#39;paper&#39;</span>)</span>
+<span id="cb36-2"><a href="basics-python.html#cb36-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-3"><a href="basics-python.html#cb36-3" aria-hidden="true" tabindex="-1"></a>tips <span class="op">=</span> sns.load_dataset(<span class="st">&quot;tips&quot;</span>)</span>
+<span id="cb36-4"><a href="basics-python.html#cb36-4" aria-hidden="true" tabindex="-1"></a>tips.head()</span></code></pre></div>
+<pre><code>##    total_bill   tip     sex smoker  day    time  size
+## 0       16.99  1.01  Female     No  Sun  Dinner     2
+## 1       10.34  1.66    Male     No  Sun  Dinner     3
+## 2       21.01  3.50    Male     No  Sun  Dinner     3
+## 3       23.68  3.31    Male     No  Sun  Dinner     2
+## 4       24.59  3.61  Female     No  Sun  Dinner     4</code></pre>
+<div class="sourceCode" id="cb38"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb38-1"><a href="basics-python.html#cb38-1" aria-hidden="true" tabindex="-1"></a>sns.barplot(x <span class="op">=</span> <span class="st">&#39;day&#39;</span>, y <span class="op">=</span> <span class="st">&#39;total_bill&#39;</span>, hue <span class="op">=</span> <span class="st">&#39;sex&#39;</span>, data <span class="op">=</span> tips, palette <span class="op">=</span> <span class="st">&#39;Blues&#39;</span>, edgecolor <span class="op">=</span> <span class="st">&#39;w&#39;</span>)</span>
+<span id="cb38-2"><a href="basics-python.html#cb38-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-3"><a href="basics-python.html#cb38-3" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
+<p><img src="R-Summaries_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
+<div class="sourceCode" id="cb39"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb39-1"><a href="basics-python.html#cb39-1" aria-hidden="true" tabindex="-1"></a>tips.groupby([<span class="st">&#39;day&#39;</span>,<span class="st">&#39;sex&#39;</span>]).mean()</span></code></pre></div>
+<pre><code>##              total_bill       tip      size
+## day  sex                                   
+## Thur Male     18.714667  2.980333  2.433333
+##      Female   16.715312  2.575625  2.468750
+## Fri  Male     19.857000  2.693000  2.100000
+##      Female   14.145556  2.781111  2.111111
+## Sat  Male     20.802542  3.083898  2.644068
+##      Female   19.680357  2.801786  2.250000
+## Sun  Male     21.887241  3.220345  2.810345
+##      Female   19.872222  3.367222  2.944444</code></pre>
+<p><strong>1-hot-encoding:</strong></p>
+<p>Transforming categorical features to values from 0 or 1. F.e. You can be
+from origin: America or Europe. If the observation is from America it
+receives a 1 for America and a 0 for Europe.</p>
+<p><strong>Reading from a csv file with pandas:</strong></p>
+<div class="sourceCode" id="cb41"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb41-1"><a href="basics-python.html#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb41-2"><a href="basics-python.html#cb41-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-3"><a href="basics-python.html#cb41-3" aria-hidden="true" tabindex="-1"></a>d <span class="op">=</span> pd.read_csv(<span class="st">&#39;~/Documents/Pompeu Fabra BSM/Practical data science/auto-mpg.csv&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb42"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb42-1"><a href="basics-python.html#cb42-1" aria-hidden="true" tabindex="-1"></a>d.mpg.mean().<span class="bu">round</span>() <span class="co"># rounding by amount of decimals</span></span></code></pre></div>
+<pre><code>## 23.0</code></pre>
+<div class="sourceCode" id="cb44"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb44-1"><a href="basics-python.html#cb44-1" aria-hidden="true" tabindex="-1"></a>d.dtypes <span class="co"># describes the type of variables</span></span></code></pre></div>
+<pre><code>## mpg             float64
+## cylinders         int64
+## displacement    float64
+## hp              float64
+## weight          float64
+## acceleration    float64
+## year              int64
+## origin            int64
+## dtype: object</code></pre>
+<div class="sourceCode" id="cb46"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb46-1"><a href="basics-python.html#cb46-1" aria-hidden="true" tabindex="-1"></a>pd.to_numeric(d.hp) <span class="co"># transforms to numerical</span></span></code></pre></div>
+<pre><code>## 0      130.0
+## 1      165.0
+## 2      150.0
+## 3      150.0
+## 4      140.0
+##        ...  
+## 387     86.0
+## 388     52.0
+## 389     84.0
+## 390     79.0
+## 391     82.0
+## Name: hp, Length: 392, dtype: float64</code></pre>
+<div class="sourceCode" id="cb48"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb48-1"><a href="basics-python.html#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(d) <span class="co"># amount of rows</span></span></code></pre></div>
+<pre><code>## 392</code></pre>
+<div class="sourceCode" id="cb50"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb50-1"><a href="basics-python.html#cb50-1" aria-hidden="true" tabindex="-1"></a>d.shape <span class="co"># amount of rows &amp; columns</span></span></code></pre></div>
+<pre><code>## (392, 8)</code></pre>
+<div class="sourceCode" id="cb52"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb52-1"><a href="basics-python.html#cb52-1" aria-hidden="true" tabindex="-1"></a>d.columns <span class="co"># gives the names of the columns</span></span></code></pre></div>
+<pre><code>## Index([&#39;mpg&#39;, &#39;cylinders&#39;, &#39;displacement&#39;, &#39;hp&#39;, &#39;weight&#39;, &#39;acceleration&#39;,
+##        &#39;year&#39;, &#39;origin&#39;],
+##       dtype=&#39;object&#39;)</code></pre>
+<div class="sourceCode" id="cb54"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb54-1"><a href="basics-python.html#cb54-1" aria-hidden="true" tabindex="-1"></a>mpg <span class="op">=</span> d.mpg <span class="co"># shows me only the values from one variable</span></span>
+<span id="cb54-2"><a href="basics-python.html#cb54-2" aria-hidden="true" tabindex="-1"></a>mpg <span class="op">=</span> d[<span class="st">&#39;mpg&#39;</span>] <span class="co"># alternative way to show only one value</span></span>
+<span id="cb54-3"><a href="basics-python.html#cb54-3" aria-hidden="true" tabindex="-1"></a>d.head() <span class="co"># shows the first 5 observations of a data set</span></span></code></pre></div>
+<pre><code>##     mpg  cylinders  displacement     hp  weight  acceleration  year  origin
+## 0  18.0          8         307.0  130.0  3504.0          12.0    70       1
+## 1  15.0          8         350.0  165.0  3693.0          11.5    70       1
+## 2  18.0          8         318.0  150.0  3436.0          11.0    70       1
+## 3  16.0          8         304.0  150.0  3433.0          12.0    70       1
+## 4  17.0          8         302.0  140.0  3449.0          10.5    70       1</code></pre>
+<div class="sourceCode" id="cb56"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb56-1"><a href="basics-python.html#cb56-1" aria-hidden="true" tabindex="-1"></a>d.tail() <span class="co"># shows the last 5 observations of a data set</span></span></code></pre></div>
+<pre><code>##       mpg  cylinders  displacement    hp  weight  acceleration  year  origin
+## 387  27.0          4         140.0  86.0  2790.0          15.6    82       1
+## 388  44.0          4          97.0  52.0  2130.0          24.6    82       2
+## 389  32.0          4         135.0  84.0  2295.0          11.6    82       1
+## 390  28.0          4         120.0  79.0  2625.0          18.6    82       1
+## 391  31.0          4         119.0  82.0  2720.0          19.4    82       1</code></pre>
+<p><strong>Basic statistics:</strong></p>
+<div class="sourceCode" id="cb58"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb58-1"><a href="basics-python.html#cb58-1" aria-hidden="true" tabindex="-1"></a>d.mpg.mean()</span></code></pre></div>
+<pre><code>## 23.445918367346938</code></pre>
+<div class="sourceCode" id="cb60"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb60-1"><a href="basics-python.html#cb60-1" aria-hidden="true" tabindex="-1"></a>d.mpg.median()</span></code></pre></div>
+<pre><code>## 22.75</code></pre>
+<div class="sourceCode" id="cb62"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb62-1"><a href="basics-python.html#cb62-1" aria-hidden="true" tabindex="-1"></a>d.mpg.<span class="bu">max</span>()</span></code></pre></div>
+<pre><code>## 46.6</code></pre>
+<div class="sourceCode" id="cb64"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb64-1"><a href="basics-python.html#cb64-1" aria-hidden="true" tabindex="-1"></a>d.mpg.<span class="bu">min</span>()</span></code></pre></div>
+<pre><code>## 9.0</code></pre>
+<div class="sourceCode" id="cb66"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb66-1"><a href="basics-python.html#cb66-1" aria-hidden="true" tabindex="-1"></a>d.mean() <span class="co"># mean for all columns</span></span></code></pre></div>
+<pre><code>## mpg               23.445918
+## cylinders          5.471939
+## displacement     194.411990
+## hp               104.469388
+## weight          2977.584184
+## acceleration      15.541327
+## year              75.979592
+## origin             1.576531
+## dtype: float64</code></pre>
+<div class="sourceCode" id="cb68"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb68-1"><a href="basics-python.html#cb68-1" aria-hidden="true" tabindex="-1"></a>d.describe().<span class="bu">round</span>(<span class="dv">2</span>).head() <span class="co"># statistics for the whole data set, rounded to two decimals</span></span></code></pre></div>
+<pre><code>##           mpg  cylinders  displacement  ...  acceleration    year  origin
+## count  392.00     392.00        392.00  ...        392.00  392.00  392.00
+## mean    23.45       5.47        194.41  ...         15.54   75.98    1.58
+## std      7.81       1.71        104.64  ...          2.76    3.68    0.81
+## min      9.00       3.00         68.00  ...          8.00   70.00    1.00
+## 25%     17.00       4.00        105.00  ...         13.78   73.00    1.00
+## 
+## [5 rows x 8 columns]</code></pre>
+<div class="sourceCode" id="cb70"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb70-1"><a href="basics-python.html#cb70-1" aria-hidden="true" tabindex="-1"></a>d[[<span class="st">&#39;year&#39;</span>]] <span class="co"># defines a list of one variable</span></span></code></pre></div>
+<pre><code>##      year
+## 0      70
+## 1      70
+## 2      70
+## 3      70
+## 4      70
+## ..    ...
+## 387    82
+## 388    82
+## 389    82
+## 390    82
+## 391    82
+## 
+## [392 rows x 1 columns]</code></pre>
+<div class="sourceCode" id="cb72"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb72-1"><a href="basics-python.html#cb72-1" aria-hidden="true" tabindex="-1"></a>d[[<span class="st">&#39;year&#39;</span>, <span class="st">&#39;cylinders&#39;</span>]] <span class="co"># defines a list of multiple variables</span></span></code></pre></div>
+<pre><code>##      year  cylinders
+## 0      70          8
+## 1      70          8
+## 2      70          8
+## 3      70          8
+## 4      70          8
+## ..    ...        ...
+## 387    82          4
+## 388    82          4
+## 389    82          4
+## 390    82          4
+## 391    82          4
+## 
+## [392 rows x 2 columns]</code></pre>
+<div class="sourceCode" id="cb74"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb74-1"><a href="basics-python.html#cb74-1" aria-hidden="true" tabindex="-1"></a>d.year.unique() <span class="co"># gives me the unique values of that column, not the repetitions</span></span></code></pre></div>
+<pre><code>## array([70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82])</code></pre>
+<hr />
 </div>
-<div id="bar-plot" class="section level2" number="6.4">
-<h2><span class="header-section-number">6.4</span> Bar plot</h2>
-<div class="sourceCode" id="cb250"><pre class="sourceCode python watch-out"><code class="sourceCode python"><span id="cb250-1"><a href="basics-python.html#cb250-1" aria-hidden="true" tabindex="-1"></a>sns.set_context(<span class="st">&#39;paper&#39;</span>)</span>
-<span id="cb250-2"><a href="basics-python.html#cb250-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb250-3"><a href="basics-python.html#cb250-3" aria-hidden="true" tabindex="-1"></a>tips <span class="op">=</span> sns.load_dataset(<span class="st">&#39;tips&#39;</span>)</span>
-<span id="cb250-4"><a href="basics-python.html#cb250-4" aria-hidden="true" tabindex="-1"></a>tips.head()</span></code></pre></div>
-<pre><code>   total_bill   tip     sex smoker  day    time  size
-0       16.99  1.01  Female     No  Sun  Dinner     2
-1       10.34  1.66    Male     No  Sun  Dinner     3
-2       21.01  3.50    Male     No  Sun  Dinner     3
-3       23.68  3.31    Male     No  Sun  Dinner     2
-4       24.59  3.61  Female     No  Sun  Dinner     4</code></pre>
-<div class="sourceCode" id="cb252"><pre class="sourceCode python watch-out"><code class="sourceCode python"><span id="cb252-1"><a href="basics-python.html#cb252-1" aria-hidden="true" tabindex="-1"></a>sns.barplot(x <span class="op">=</span> <span class="st">&#39;day&#39;</span>, y <span class="op">=</span> <span class="st">&#39;total_bill&#39;</span>, hue <span class="op">=</span> <span class="st">&#39;sex&#39;</span>, data <span class="op">=</span> tips,</span>
-<span id="cb252-2"><a href="basics-python.html#cb252-2" aria-hidden="true" tabindex="-1"></a>            palette <span class="op">=</span> <span class="st">&#39;Blues&#39;</span>, edgecolor <span class="op">=</span> <span class="st">&#39;w&#39;</span>)</span>
-<span id="cb252-3"><a href="basics-python.html#cb252-3" aria-hidden="true" tabindex="-1"></a>tips.groupby([<span class="st">&#39;day&#39;</span>,<span class="st">&#39;sex&#39;</span>]).mean()</span></code></pre></div>
-<pre><code>             total_bill       tip      size
-day  sex                                   
-Thur Male     18.714667  2.980333  2.433333
-     Female   16.715312  2.575625  2.468750
-Fri  Male     19.857000  2.693000  2.100000
-     Female   14.145556  2.781111  2.111111
-Sat  Male     20.802542  3.083898  2.644068
-     Female   19.680357  2.801786  2.250000
-Sun  Male     21.887241  3.220345  2.810345
-     Female   19.872222  3.367222  2.944444</code></pre>
-<div class="sourceCode" id="cb254"><pre class="sourceCode python watch-out"><code class="sourceCode python"><span id="cb254-1"><a href="basics-python.html#cb254-1" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
-<p><img src="R-Summaries_files/figure-html/unnamed-chunk-123-1.png" width="100%" /></p>
+<div id="filtering-a-data-set" class="section level2" number="6.3">
+<h2><span class="header-section-number">6.3</span> Filtering a data set</h2>
+<div class="sourceCode" id="cb76"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb76-1"><a href="basics-python.html#cb76-1" aria-hidden="true" tabindex="-1"></a>d77 <span class="op">=</span> d[d.year <span class="op">==</span> <span class="dv">77</span>] <span class="co">#filters the data set to all observations that are equal to a certain value of a variable </span></span>
+<span id="cb76-2"><a href="basics-python.html#cb76-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-3"><a href="basics-python.html#cb76-3" aria-hidden="true" tabindex="-1"></a>d77 <span class="op">=</span> d[d.year <span class="op">!=</span> <span class="dv">77</span>] <span class="co">#filters the data set to all observations that are NOT equal to a certain value of a variable </span></span>
+<span id="cb76-4"><a href="basics-python.html#cb76-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-5"><a href="basics-python.html#cb76-5" aria-hidden="true" tabindex="-1"></a>d77 <span class="op">=</span> d[d.year <span class="op">&lt;=</span> <span class="dv">77</span>] <span class="co"># filters those that are smaller than a value</span></span>
+<span id="cb76-6"><a href="basics-python.html#cb76-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-7"><a href="basics-python.html#cb76-7" aria-hidden="true" tabindex="-1"></a>d77 <span class="op">=</span> d[d.year <span class="op">&gt;=</span> <span class="dv">77</span>] <span class="co"># filters those that are large than a value</span></span>
+<span id="cb76-8"><a href="basics-python.html#cb76-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-9"><a href="basics-python.html#cb76-9" aria-hidden="true" tabindex="-1"></a>d77 <span class="op">=</span> d[(d.year <span class="op">&gt;=</span> <span class="dv">77</span>) <span class="op">&amp;</span> (d.year <span class="op">&lt;=</span> <span class="dv">90</span>)] <span class="co"># in between certain values</span></span>
+<span id="cb76-10"><a href="basics-python.html#cb76-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-11"><a href="basics-python.html#cb76-11" aria-hidden="true" tabindex="-1"></a>d77 <span class="op">=</span> d[(d.year <span class="op">==</span> <span class="dv">80</span>) <span class="op">|</span> (d.year <span class="op">==</span> <span class="dv">90</span>)] <span class="co"># those from one value OR another</span></span>
+<span id="cb76-12"><a href="basics-python.html#cb76-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-13"><a href="basics-python.html#cb76-13" aria-hidden="true" tabindex="-1"></a>d77 <span class="op">=</span> d[<span class="op">~</span>(d.year <span class="op">==</span> <span class="dv">70</span>)] <span class="co"># excludes the values</span></span></code></pre></div>
+<p><strong>Aggregating</strong></p>
+<div class="sourceCode" id="cb77"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb77-1"><a href="basics-python.html#cb77-1" aria-hidden="true" tabindex="-1"></a>dm <span class="op">=</span> d.groupby(<span class="st">&#39;year&#39;</span>).mean()</span>
+<span id="cb77-2"><a href="basics-python.html#cb77-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb77-3"><a href="basics-python.html#cb77-3" aria-hidden="true" tabindex="-1"></a>dm <span class="op">=</span> d.groupby([<span class="st">&#39;year&#39;</span>, <span class="st">&#39;cylinders&#39;</span>]).mean()</span>
+<span id="cb77-4"><a href="basics-python.html#cb77-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb77-5"><a href="basics-python.html#cb77-5" aria-hidden="true" tabindex="-1"></a>dm <span class="op">=</span> d.groupby([<span class="st">&#39;year&#39;</span>, <span class="st">&#39;cylinders&#39;</span>]).median()</span>
+<span id="cb77-6"><a href="basics-python.html#cb77-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb77-7"><a href="basics-python.html#cb77-7" aria-hidden="true" tabindex="-1"></a>dm <span class="op">=</span> d.groupby([<span class="st">&#39;year&#39;</span>, <span class="st">&#39;cylinders&#39;</span>]).mean()[<span class="st">&#39;mpg&#39;</span>] <span class="co"># for selected variables only</span></span></code></pre></div>
+<p><strong>Pivot table</strong></p>
+<div class="sourceCode" id="cb78"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb78-1"><a href="basics-python.html#cb78-1" aria-hidden="true" tabindex="-1"></a>d.pivot_table(index<span class="op">=</span><span class="st">&#39;year&#39;</span>, columns<span class="op">=</span><span class="st">&#39;cylinders&#39;</span>, values<span class="op">=</span><span class="st">&#39;mpg&#39;</span>).<span class="bu">round</span>()</span></code></pre></div>
+<pre><code>## cylinders     3     4     5     6     8
+## year                                   
+## 70          NaN  25.0   NaN  20.0  14.0
+## 71          NaN  28.0   NaN  18.0  13.0
+## 72         19.0  23.0   NaN   NaN  14.0
+## 73         18.0  23.0   NaN  19.0  13.0
+## 74          NaN  28.0   NaN  17.0  14.0
+## 75          NaN  25.0   NaN  18.0  16.0
+## 76          NaN  27.0   NaN  20.0  15.0
+## 77         22.0  29.0   NaN  20.0  16.0
+## 78          NaN  30.0  20.0  19.0  19.0
+## 79          NaN  32.0  25.0  23.0  19.0
+## 80         24.0  35.0  36.0  26.0   NaN
+## 81          NaN  33.0   NaN  23.0  27.0
+## 82          NaN  32.0   NaN  28.0   NaN</code></pre>
+<div class="sourceCode" id="cb80"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb80-1"><a href="basics-python.html#cb80-1" aria-hidden="true" tabindex="-1"></a>d.pivot_table(index<span class="op">=</span><span class="st">&#39;year&#39;</span>, columns<span class="op">=</span><span class="st">&#39;cylinders&#39;</span>, values<span class="op">=</span><span class="st">&#39;mpg&#39;</span>).<span class="bu">round</span>().fillna(<span class="st">&#39;&#39;</span>)</span></code></pre></div>
+<pre><code>## cylinders   3     4   5   6   8
+## year                           
+## 70             25.0      20  14
+## 71             28.0      18  13
+## 72         19  23.0          14
+## 73         18  23.0      19  13
+## 74             28.0      17  14
+## 75             25.0      18  16
+## 76             27.0      20  15
+## 77         22  29.0      20  16
+## 78             30.0  20  19  19
+## 79             32.0  25  23  19
+## 80         24  35.0  36  26    
+## 81             33.0      23  27
+## 82             32.0      28</code></pre>
+<p><strong>Creating new columns starting from existing columns</strong></p>
+<div class="sourceCode" id="cb82"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb82-1"><a href="basics-python.html#cb82-1" aria-hidden="true" tabindex="-1"></a>d[<span class="st">&#39;nam_of_new_column&#39;</span>] <span class="op">=</span> d.mpg <span class="op">*</span> <span class="dv">2</span></span></code></pre></div>
+<p>Through the package numpy:</p>
+<div class="sourceCode" id="cb83"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb83-1"><a href="basics-python.html#cb83-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb83-2"><a href="basics-python.html#cb83-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb83-3"><a href="basics-python.html#cb83-3" aria-hidden="true" tabindex="-1"></a>d[<span class="st">&#39;sqrt_of_mpg_2&#39;</span>] <span class="op">=</span> np.sqrt(d.mpg)</span>
+<span id="cb83-4"><a href="basics-python.html#cb83-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb83-5"><a href="basics-python.html#cb83-5" aria-hidden="true" tabindex="-1"></a>d[<span class="st">&#39;log(10)_of_mpg&#39;</span>] <span class="op">=</span> np.log10(d.mpg)</span></code></pre></div>
+<p><strong>Dropping / deleting columns</strong></p>
+<div class="sourceCode" id="cb84"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb84-1"><a href="basics-python.html#cb84-1" aria-hidden="true" tabindex="-1"></a>d[<span class="st">&#39;double_mpg&#39;</span>] <span class="op">=</span> d.mpg <span class="op">*</span> <span class="dv">2</span></span>
+<span id="cb84-2"><a href="basics-python.html#cb84-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb84-3"><a href="basics-python.html#cb84-3" aria-hidden="true" tabindex="-1"></a><span class="kw">del</span>(d[<span class="st">&#39;double_mpg&#39;</span>]) <span class="co"># deleting columns</span></span>
+<span id="cb84-4"><a href="basics-python.html#cb84-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb84-5"><a href="basics-python.html#cb84-5" aria-hidden="true" tabindex="-1"></a>d.drop(columns<span class="op">=</span>[<span class="st">&#39;sqrt_of_mpg_2&#39;</span>, <span class="st">&#39;log(10)_of_mpg&#39;</span>, <span class="st">&#39;nam_of_new_column&#39;</span>]).head() <span class="co"># dropping columns</span></span></code></pre></div>
+<pre><code>##     mpg  cylinders  displacement     hp  weight  acceleration  year  origin
+## 0  18.0          8         307.0  130.0  3504.0          12.0    70       1
+## 1  15.0          8         350.0  165.0  3693.0          11.5    70       1
+## 2  18.0          8         318.0  150.0  3436.0          11.0    70       1
+## 3  16.0          8         304.0  150.0  3433.0          12.0    70       1
+## 4  17.0          8         302.0  140.0  3449.0          10.5    70       1</code></pre>
+<hr />
+</div>
+<div id="data-imputation" class="section level2" number="6.4">
+<h2><span class="header-section-number">6.4</span> Data imputation</h2>
+<div class="sourceCode" id="cb86"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb86-1"><a href="basics-python.html#cb86-1" aria-hidden="true" tabindex="-1"></a>pd.to_numeric(d.hp, errors<span class="op">=</span><span class="st">&#39;coerce&#39;</span>).head()</span></code></pre></div>
+<pre><code>## 0    130.0
+## 1    165.0
+## 2    150.0
+## 3    150.0
+## 4    140.0
+## Name: hp, dtype: float64</code></pre>
+<div class="sourceCode" id="cb88"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb88-1"><a href="basics-python.html#cb88-1" aria-hidden="true" tabindex="-1"></a>d.hp <span class="op">=</span> pd.to_numeric(d.hp, errors<span class="op">=</span><span class="st">&#39;coerce&#39;</span>)</span>
+<span id="cb88-2"><a href="basics-python.html#cb88-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb88-3"><a href="basics-python.html#cb88-3" aria-hidden="true" tabindex="-1"></a>d[d.hp.isna()] <span class="co"># transform values to NA</span></span></code></pre></div>
+<pre><code>## Empty DataFrame
+## Columns: [mpg, cylinders, displacement, hp, weight, acceleration, year, origin, nam_of_new_column, sqrt_of_mpg_2, log(10)_of_mpg]
+## Index: []</code></pre>
+<div class="sourceCode" id="cb90"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb90-1"><a href="basics-python.html#cb90-1" aria-hidden="true" tabindex="-1"></a>d[<span class="op">-</span>(d.hp.isna())] <span class="co"># delete missing values</span></span></code></pre></div>
+<pre><code>##       mpg  cylinders  ...  sqrt_of_mpg_2  log(10)_of_mpg
+## 0    18.0          8  ...       4.242641        1.255273
+## 1    15.0          8  ...       3.872983        1.176091
+## 2    18.0          8  ...       4.242641        1.255273
+## 3    16.0          8  ...       4.000000        1.204120
+## 4    17.0          8  ...       4.123106        1.230449
+## ..    ...        ...  ...            ...             ...
+## 387  27.0          4  ...       5.196152        1.431364
+## 388  44.0          4  ...       6.633250        1.643453
+## 389  32.0          4  ...       5.656854        1.505150
+## 390  28.0          4  ...       5.291503        1.447158
+## 391  31.0          4  ...       5.567764        1.491362
+## 
+## [392 rows x 11 columns]</code></pre>
+<hr />
+</div>
+<div id="data-visualization" class="section level2" number="6.5">
+<h2><span class="header-section-number">6.5</span> Data visualization</h2>
+<p>Getting the correlation matrix</p>
+<p><strong>Correlation matrix</strong></p>
+<div class="sourceCode" id="cb92"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb92-1"><a href="basics-python.html#cb92-1" aria-hidden="true" tabindex="-1"></a>d.corr().<span class="bu">round</span>(decimals<span class="op">=</span><span class="dv">2</span>)</span></code></pre></div>
+<pre><code>##                     mpg  cylinders  ...  sqrt_of_mpg_2  log(10)_of_mpg
+## mpg                1.00      -0.78  ...           1.00            0.98
+## cylinders         -0.78       1.00  ...          -0.81           -0.83
+## displacement      -0.81       0.95  ...          -0.83           -0.85
+## hp                -0.78       0.84  ...          -0.81           -0.83
+## weight            -0.83       0.90  ...          -0.86           -0.88
+## acceleration       0.42      -0.50  ...           0.44            0.45
+## year               0.58      -0.35  ...           0.58            0.58
+## origin             0.57      -0.57  ...           0.57            0.56
+## nam_of_new_column  1.00      -0.78  ...           1.00            0.98
+## sqrt_of_mpg_2      1.00      -0.81  ...           1.00            1.00
+## log(10)_of_mpg     0.98      -0.83  ...           1.00            1.00
+## 
+## [11 rows x 11 columns]</code></pre>
+<p>Pair plot</p>
+<div class="sourceCode" id="cb94"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb94-1"><a href="basics-python.html#cb94-1" aria-hidden="true" tabindex="-1"></a><span class="co">#sns.pairplot(d);</span></span>
+<span id="cb94-2"><a href="basics-python.html#cb94-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb94-3"><a href="basics-python.html#cb94-3" aria-hidden="true" tabindex="-1"></a><span class="co">#sns.pairplot(d, hue=&#39;origin&#39;); # with color</span></span></code></pre></div>
+<div class="sourceCode" id="cb95"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb95-1"><a href="basics-python.html#cb95-1" aria-hidden="true" tabindex="-1"></a>tips <span class="op">=</span> sns.load_dataset(<span class="st">&quot;tips&quot;</span>)</span>
+<span id="cb95-2"><a href="basics-python.html#cb95-2" aria-hidden="true" tabindex="-1"></a>sns.set_theme(style<span class="op">=</span><span class="st">&quot;whitegrid&quot;</span>)</span>
+<span id="cb95-3"><a href="basics-python.html#cb95-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb95-4"><a href="basics-python.html#cb95-4" aria-hidden="true" tabindex="-1"></a>sns.boxplot(data<span class="op">=</span>tips, x<span class="op">=</span><span class="st">&#39;sex&#39;</span>, y<span class="op">=</span><span class="st">&#39;tip&#39;</span>)</span>
+<span id="cb95-5"><a href="basics-python.html#cb95-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb95-6"><a href="basics-python.html#cb95-6" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
+<p><img src="R-Summaries_files/figure-html/unnamed-chunk-32-1.png" width="672" /></p>
+<div class="sourceCode" id="cb96"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb96-1"><a href="basics-python.html#cb96-1" aria-hidden="true" tabindex="-1"></a>sns.boxplot(data<span class="op">=</span>tips, x<span class="op">=</span><span class="st">&#39;sex&#39;</span>, y<span class="op">=</span><span class="st">&#39;tip&#39;</span>, color<span class="op">=</span><span class="st">&#39;black&#39;</span>, boxprops<span class="op">=</span><span class="bu">dict</span>(alpha<span class="op">=</span><span class="fl">.6</span>))</span>
+<span id="cb96-2"><a href="basics-python.html#cb96-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb96-3"><a href="basics-python.html#cb96-3" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
+<p><img src="R-Summaries_files/figure-html/unnamed-chunk-33-1.png" width="672" /></p>
+<div class="sourceCode" id="cb97"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb97-1"><a href="basics-python.html#cb97-1" aria-hidden="true" tabindex="-1"></a>sns.boxplot(x<span class="op">=</span><span class="st">&quot;day&quot;</span>, y<span class="op">=</span><span class="st">&quot;total_bill&quot;</span>, hue<span class="op">=</span><span class="st">&quot;smoker&quot;</span>,</span>
+<span id="cb97-2"><a href="basics-python.html#cb97-2" aria-hidden="true" tabindex="-1"></a>  data<span class="op">=</span>tips, palette<span class="op">=</span><span class="st">&quot;Set3&quot;</span>)</span>
+<span id="cb97-3"><a href="basics-python.html#cb97-3" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb97-4"><a href="basics-python.html#cb97-4" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
+<p><img src="R-Summaries_files/figure-html/unnamed-chunk-33-2.png" width="672" /></p>
+<div class="sourceCode" id="cb98"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb98-1"><a href="basics-python.html#cb98-1" aria-hidden="true" tabindex="-1"></a>sns.displot(data<span class="op">=</span>tips, x<span class="op">=</span><span class="st">&#39;tip&#39;</span>)<span class="op">;</span></span>
+<span id="cb98-2"><a href="basics-python.html#cb98-2" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
+<p><img src="R-Summaries_files/figure-html/unnamed-chunk-34-1.png" width="480" /></p>
+<div class="sourceCode" id="cb99"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb99-1"><a href="basics-python.html#cb99-1" aria-hidden="true" tabindex="-1"></a>sns.displot(data<span class="op">=</span>tips, x<span class="op">=</span><span class="st">&#39;tip&#39;</span>, kind<span class="op">=</span><span class="st">&#39;kde&#39;</span>)<span class="op">;</span></span>
+<span id="cb99-2"><a href="basics-python.html#cb99-2" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
+<p><img src="R-Summaries_files/figure-html/unnamed-chunk-34-2.png" width="480" /></p>
+<div class="sourceCode" id="cb100"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb100-1"><a href="basics-python.html#cb100-1" aria-hidden="true" tabindex="-1"></a>sns.kdeplot(data<span class="op">=</span>tips, x<span class="op">=</span><span class="st">&#39;tip&#39;</span>, y<span class="op">=</span><span class="st">&#39;total_bill&#39;</span>, shade<span class="op">=</span><span class="va">True</span>, cbar<span class="op">=</span><span class="va">True</span>)<span class="op">;</span></span>
+<span id="cb100-2"><a href="basics-python.html#cb100-2" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
+<p><img src="R-Summaries_files/figure-html/unnamed-chunk-35-1.png" width="480" /></p>
+<div class="sourceCode" id="cb101"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb101-1"><a href="basics-python.html#cb101-1" aria-hidden="true" tabindex="-1"></a>plt.rcParams[<span class="st">&#39;figure.figsize&#39;</span>] <span class="op">=</span> (<span class="dv">10</span>,<span class="dv">8</span>)</span>
+<span id="cb101-2"><a href="basics-python.html#cb101-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb101-3"><a href="basics-python.html#cb101-3" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
+<p><img src="R-Summaries_files/figure-html/unnamed-chunk-36-1.png" width="480" /></p>
+<div class="sourceCode" id="cb102"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb102-1"><a href="basics-python.html#cb102-1" aria-hidden="true" tabindex="-1"></a>sns.histplot(d.mpg)<span class="op">;</span> <span class="co"># Histogram</span></span>
+<span id="cb102-2"><a href="basics-python.html#cb102-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb102-3"><a href="basics-python.html#cb102-3" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
+<p><img src="R-Summaries_files/figure-html/unnamed-chunk-37-1.png" width="480" /></p>
+<div class="sourceCode" id="cb103"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb103-1"><a href="basics-python.html#cb103-1" aria-hidden="true" tabindex="-1"></a>sns.histplot(d.mpg, bins<span class="op">=</span><span class="dv">20</span>)<span class="op">;</span> <span class="co"># with binwidth</span></span>
+<span id="cb103-2"><a href="basics-python.html#cb103-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-3"><a href="basics-python.html#cb103-3" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
+<p><img src="R-Summaries_files/figure-html/unnamed-chunk-38-1.png" width="480" /></p>
+<div class="sourceCode" id="cb104"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb104-1"><a href="basics-python.html#cb104-1" aria-hidden="true" tabindex="-1"></a>sns.histplot(data<span class="op">=</span>d, x<span class="op">=</span><span class="st">&#39;mpg&#39;</span>, bins<span class="op">=</span><span class="dv">20</span>)<span class="op">;</span> </span>
+<span id="cb104-2"><a href="basics-python.html#cb104-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb104-3"><a href="basics-python.html#cb104-3" aria-hidden="true" tabindex="-1"></a>sns.histplot(data<span class="op">=</span>d, x<span class="op">=</span><span class="st">&#39;mpg&#39;</span>, bins<span class="op">=</span><span class="dv">20</span>, cumulative<span class="op">=</span><span class="va">True</span>)<span class="op">;</span> <span class="co"># cumulative values</span></span></code></pre></div>
+<p><img src="R-Summaries_files/figure-html/unnamed-chunk-38-2.png" width="480" /></p>
 
 </div>
 </div>
@@ -472,20 +742,6 @@ gitbook.start({
 });
 </script>
 
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
-  (function () {
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:")
-      if (/^https?:/.test(src))
-        src = src.replace(/^https?:/, '');
-    script.src = src;
-    document.getElementsByTagName("head")[0].appendChild(script);
-  })();
-</script>
 </body>
 
 </html>
