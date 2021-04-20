@@ -378,7 +378,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb38"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb38-1"><a href="basics-python.html#cb38-1" aria-hidden="true" tabindex="-1"></a>sns.barplot(x <span class="op">=</span> <span class="st">&#39;day&#39;</span>, y <span class="op">=</span> <span class="st">&#39;total_bill&#39;</span>, hue <span class="op">=</span> <span class="st">&#39;sex&#39;</span>, data <span class="op">=</span> tips, palette <span class="op">=</span> <span class="st">&#39;Blues&#39;</span>, edgecolor <span class="op">=</span> <span class="st">&#39;w&#39;</span>)</span>
 <span id="cb38-2"><a href="basics-python.html#cb38-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb38-3"><a href="basics-python.html#cb38-3" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
-<p><img src="R-Summaries_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
+<p><img src="R-Summaries_files/figure-html/unnamed-chunk-17-1.png" width="672" /></p>
 <div class="sourceCode" id="cb39"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb39-1"><a href="basics-python.html#cb39-1" aria-hidden="true" tabindex="-1"></a>tips.groupby([<span class="st">&#39;day&#39;</span>,<span class="st">&#39;sex&#39;</span>]).mean()</span></code></pre></div>
 <pre><code>##              total_bill       tip      size
 ## day  sex                                   
@@ -648,41 +648,41 @@ receives a 1 for America and a 0 for Europe.</p>
 <span id="cb95-4"><a href="basics-python.html#cb95-4" aria-hidden="true" tabindex="-1"></a>sns.boxplot(data<span class="op">=</span>tips, x<span class="op">=</span><span class="st">&#39;sex&#39;</span>, y<span class="op">=</span><span class="st">&#39;tip&#39;</span>)</span>
 <span id="cb95-5"><a href="basics-python.html#cb95-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb95-6"><a href="basics-python.html#cb95-6" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
-<p><img src="R-Summaries_files/figure-html/unnamed-chunk-32-1.png" width="672" /></p>
+<p><img src="R-Summaries_files/figure-html/unnamed-chunk-33-1.png" width="672" /></p>
 <div class="sourceCode" id="cb96"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb96-1"><a href="basics-python.html#cb96-1" aria-hidden="true" tabindex="-1"></a>sns.boxplot(data<span class="op">=</span>tips, x<span class="op">=</span><span class="st">&#39;sex&#39;</span>, y<span class="op">=</span><span class="st">&#39;tip&#39;</span>, color<span class="op">=</span><span class="st">&#39;black&#39;</span>, boxprops<span class="op">=</span><span class="bu">dict</span>(alpha<span class="op">=</span><span class="fl">.6</span>))</span>
 <span id="cb96-2"><a href="basics-python.html#cb96-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb96-3"><a href="basics-python.html#cb96-3" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
-<p><img src="R-Summaries_files/figure-html/unnamed-chunk-33-1.png" width="672" /></p>
+<p><img src="R-Summaries_files/figure-html/unnamed-chunk-34-1.png" width="672" /></p>
 <div class="sourceCode" id="cb97"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb97-1"><a href="basics-python.html#cb97-1" aria-hidden="true" tabindex="-1"></a>sns.boxplot(x<span class="op">=</span><span class="st">&quot;day&quot;</span>, y<span class="op">=</span><span class="st">&quot;total_bill&quot;</span>, hue<span class="op">=</span><span class="st">&quot;smoker&quot;</span>,</span>
 <span id="cb97-2"><a href="basics-python.html#cb97-2" aria-hidden="true" tabindex="-1"></a>  data<span class="op">=</span>tips, palette<span class="op">=</span><span class="st">&quot;Set3&quot;</span>)</span>
 <span id="cb97-3"><a href="basics-python.html#cb97-3" aria-hidden="true" tabindex="-1"></a>  </span>
 <span id="cb97-4"><a href="basics-python.html#cb97-4" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
-<p><img src="R-Summaries_files/figure-html/unnamed-chunk-33-2.png" width="672" /></p>
+<p><img src="R-Summaries_files/figure-html/unnamed-chunk-34-2.png" width="672" /></p>
 <div class="sourceCode" id="cb98"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb98-1"><a href="basics-python.html#cb98-1" aria-hidden="true" tabindex="-1"></a>sns.displot(data<span class="op">=</span>tips, x<span class="op">=</span><span class="st">&#39;tip&#39;</span>)<span class="op">;</span></span>
 <span id="cb98-2"><a href="basics-python.html#cb98-2" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
-<p><img src="R-Summaries_files/figure-html/unnamed-chunk-34-1.png" width="480" /></p>
+<p><img src="R-Summaries_files/figure-html/unnamed-chunk-35-1.png" width="480" /></p>
 <div class="sourceCode" id="cb99"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb99-1"><a href="basics-python.html#cb99-1" aria-hidden="true" tabindex="-1"></a>sns.displot(data<span class="op">=</span>tips, x<span class="op">=</span><span class="st">&#39;tip&#39;</span>, kind<span class="op">=</span><span class="st">&#39;kde&#39;</span>)<span class="op">;</span></span>
 <span id="cb99-2"><a href="basics-python.html#cb99-2" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
-<p><img src="R-Summaries_files/figure-html/unnamed-chunk-34-2.png" width="480" /></p>
+<p><img src="R-Summaries_files/figure-html/unnamed-chunk-35-2.png" width="480" /></p>
 <div class="sourceCode" id="cb100"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb100-1"><a href="basics-python.html#cb100-1" aria-hidden="true" tabindex="-1"></a>sns.kdeplot(data<span class="op">=</span>tips, x<span class="op">=</span><span class="st">&#39;tip&#39;</span>, y<span class="op">=</span><span class="st">&#39;total_bill&#39;</span>, shade<span class="op">=</span><span class="va">True</span>, cbar<span class="op">=</span><span class="va">True</span>)<span class="op">;</span></span>
 <span id="cb100-2"><a href="basics-python.html#cb100-2" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
-<p><img src="R-Summaries_files/figure-html/unnamed-chunk-35-1.png" width="480" /></p>
+<p><img src="R-Summaries_files/figure-html/unnamed-chunk-36-1.png" width="480" /></p>
 <div class="sourceCode" id="cb101"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb101-1"><a href="basics-python.html#cb101-1" aria-hidden="true" tabindex="-1"></a>plt.rcParams[<span class="st">&#39;figure.figsize&#39;</span>] <span class="op">=</span> (<span class="dv">10</span>,<span class="dv">8</span>)</span>
 <span id="cb101-2"><a href="basics-python.html#cb101-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb101-3"><a href="basics-python.html#cb101-3" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
-<p><img src="R-Summaries_files/figure-html/unnamed-chunk-36-1.png" width="480" /></p>
+<p><img src="R-Summaries_files/figure-html/unnamed-chunk-37-1.png" width="480" /></p>
 <div class="sourceCode" id="cb102"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb102-1"><a href="basics-python.html#cb102-1" aria-hidden="true" tabindex="-1"></a>sns.histplot(d.mpg)<span class="op">;</span> <span class="co"># Histogram</span></span>
 <span id="cb102-2"><a href="basics-python.html#cb102-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb102-3"><a href="basics-python.html#cb102-3" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
-<p><img src="R-Summaries_files/figure-html/unnamed-chunk-37-1.png" width="480" /></p>
+<p><img src="R-Summaries_files/figure-html/unnamed-chunk-38-1.png" width="480" /></p>
 <div class="sourceCode" id="cb103"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb103-1"><a href="basics-python.html#cb103-1" aria-hidden="true" tabindex="-1"></a>sns.histplot(d.mpg, bins<span class="op">=</span><span class="dv">20</span>)<span class="op">;</span> <span class="co"># with binwidth</span></span>
 <span id="cb103-2"><a href="basics-python.html#cb103-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb103-3"><a href="basics-python.html#cb103-3" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
-<p><img src="R-Summaries_files/figure-html/unnamed-chunk-38-1.png" width="480" /></p>
+<p><img src="R-Summaries_files/figure-html/unnamed-chunk-39-1.png" width="480" /></p>
 <div class="sourceCode" id="cb104"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb104-1"><a href="basics-python.html#cb104-1" aria-hidden="true" tabindex="-1"></a>sns.histplot(data<span class="op">=</span>d, x<span class="op">=</span><span class="st">&#39;mpg&#39;</span>, bins<span class="op">=</span><span class="dv">20</span>)<span class="op">;</span> </span>
 <span id="cb104-2"><a href="basics-python.html#cb104-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb104-3"><a href="basics-python.html#cb104-3" aria-hidden="true" tabindex="-1"></a>sns.histplot(data<span class="op">=</span>d, x<span class="op">=</span><span class="st">&#39;mpg&#39;</span>, bins<span class="op">=</span><span class="dv">20</span>, cumulative<span class="op">=</span><span class="va">True</span>)<span class="op">;</span> <span class="co"># cumulative values</span></span></code></pre></div>
-<p><img src="R-Summaries_files/figure-html/unnamed-chunk-38-2.png" width="480" /></p>
+<p><img src="R-Summaries_files/figure-html/unnamed-chunk-39-2.png" width="480" /></p>
 
 </div>
 </div>

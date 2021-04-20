@@ -13,7 +13,7 @@ options(reticulate.repl.quiet = FALSE)
 use_python("/usr/local/bin/python")
 ```
 
-```{r setup, include=FALSE}
+```{r, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, warning = FALSE, cache.lazy = FALSE)
 use_virtualenv("r-reticulate")
 ```
