@@ -209,8 +209,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="6.1" data-path="basics-python.html"><a href="basics-python.html#data-set"><i class="fa fa-check"></i><b>6.1</b> Data set</a></li>
 <li class="chapter" data-level="6.2" data-path="basics-python.html"><a href="basics-python.html#matrixes"><i class="fa fa-check"></i><b>6.2</b> Matrixes</a></li>
-<li class="chapter" data-level="6.3" data-path="basics-python.html"><a href="basics-python.html#creating-our-own-functions"><i class="fa fa-check"></i><b>6.3</b> Creating our own functions:</a></li>
-<li class="chapter" data-level="6.4" data-path="basics-python.html"><a href="basics-python.html#bar-plot"><i class="fa fa-check"></i><b>6.4</b> Bar plot</a></li>
+<li class="chapter" data-level="6.3" data-path="basics-python.html"><a href="basics-python.html#filtering-a-data-set"><i class="fa fa-check"></i><b>6.3</b> Filtering a data set</a></li>
+<li class="chapter" data-level="6.4" data-path="basics-python.html"><a href="basics-python.html#data-imputation"><i class="fa fa-check"></i><b>6.4</b> Data imputation</a></li>
+<li class="chapter" data-level="6.5" data-path="basics-python.html"><a href="basics-python.html#data-visualization"><i class="fa fa-check"></i><b>6.5</b> Data visualization</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="practical-data-science.html"><a href="practical-data-science.html"><i class="fa fa-check"></i><b>7</b> Practical data science</a>
 <ul>
@@ -466,6 +467,31 @@ B) Lambda_1 = 1</code></pre>
 <p>Equality with error variances (multiple independent variables) X~~X *A = setting a restriction.</p>
 <p><strong>Auto regressive =</strong> one variables keeps impacting the following. For example: 2011 impacts 2012 which impacts 2013 etc. In this case, the variables need to be set to allow for correlation.</p>
 
+<pre><code> [1] &quot;.Rhistory&quot;                        &quot;rsconnect&quot;                       
+ [3] &quot;.DS_Store&quot;                        &quot;R-Summaries.Rproj&quot;               
+ [5] &quot;01-Basics.Rmd&quot;                    &quot;preamble.tex&quot;                    
+ [7] &quot;index.Rmd&quot;                        &quot;images&quot;                          
+ [9] &quot;02-Charts.Rmd&quot;                    &quot;Summary_files&quot;                   
+[11] &quot;08-references.Rmd&quot;                &quot;MIT-Coding-Brain-01-press_0.jpeg&quot;
+[13] &quot;packages.bib&quot;                     &quot;03-Probability.Rmd&quot;              
+[15] &quot;_output.yml&quot;                      &quot;docs&quot;                            
+[17] &quot;R-Summaries.Rmd&quot;                  &quot;07-PracticalDataScience.Rmd&quot;     
+[19] &quot;www&quot;                              &quot;04-Simpleregressions.Rmd&quot;        
+[21] &quot;_bookdown_files&quot;                  &quot;README.md&quot;                       
+[23] &quot;R-Summaries_files&quot;                &quot;05-SEM.Rmd&quot;                      
+[25] &quot;_bookdown.yml&quot;                    &quot;06-Python.Rmd&quot;                   
+[27] &quot;.gitignore&quot;                       &quot;.RData&quot;                          
+[29] &quot;style.css&quot;                        &quot;_book&quot;                           
+[31] &quot;book.bib&quot;                         &quot;.git&quot;                            
+[33] &quot;.Rproj.user&quot;                     </code></pre>
+<div class="sourceCode" id="cb217"><pre class="sourceCode python watch-out"><code class="sourceCode python"><span id="cb217-1"><a href="structure-equation-models.html#cb217-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This Python file uses the following encoding: utf-8</span></span>
+<span id="cb217-2"><a href="structure-equation-models.html#cb217-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os, sys</span></code></pre></div>
+<div class="sourceCode" id="cb218"><pre class="sourceCode python watch-out"><code class="sourceCode python"><span id="cb218-1"><a href="structure-equation-models.html#cb218-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb218-2"><a href="structure-equation-models.html#cb218-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb218-3"><a href="structure-equation-models.html#cb218-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb218-4"><a href="structure-equation-models.html#cb218-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> matplotlib.pyplot <span class="im">import</span> figure</span>
+<span id="cb218-5"><a href="structure-equation-models.html#cb218-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb218-6"><a href="structure-equation-models.html#cb218-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span></code></pre></div>
 </div>
 </div>
 </div>

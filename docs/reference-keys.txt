@@ -62,3 +62,5 @@ theory
 data-visualized
 finding-the-expected-value-of-the-error
 loss-function
+other-categorical-plots
+bias-variance-trade-off

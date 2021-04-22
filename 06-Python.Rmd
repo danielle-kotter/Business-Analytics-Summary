@@ -157,7 +157,6 @@ tips = sns.load_dataset("tips")
 tips.head()
 
 sns.barplot(x = 'day', y = 'total_bill', hue = 'sex', data = tips, palette = 'Blues', edgecolor = 'w')
-
 plt.show()
 
 tips.groupby(['day','sex']).mean()
@@ -313,25 +312,77 @@ Pair plot
 #sns.pairplot(d, hue='origin'); # with color
 ```
 
+
 ```{python}
 tips = sns.load_dataset("tips")
 sns.set_theme(style="whitegrid")
 
 sns.boxplot(data=tips, x='sex', y='tip')
-
 plt.show()
 ```
 
+
 ```{python}
 sns.boxplot(data=tips, x='sex', y='tip', color='black', boxprops=dict(alpha=.6))
-
 plt.show()
 
 sns.boxplot(x="day", y="total_bill", hue="smoker",
   data=tips, palette="Set3")
-  
 plt.show()
 ```
+
+```{python}
+tips['weekend'] = tips.day.isin(['Sat', 'Sun'])
+
+sns.boxplot(data=tips, x='day', y='tip', hue='weekend', dodge=False)
+plt.show()
+```
+
+
+```{python}
+sns.catplot(data=tips, x='smoker', y='tip', hue='sex', col='time', kind='box');
+plt.show()
+```
+
+### Other categorical plots
+
+```{python}
+sns.stripplot(data=tips, x='sex', y='tip');
+plt.show()
+```
+
+```{python}
+sns.swarmplot(data=tips, x='sex', y='tip');
+plt.show()
+
+sns.swarmplot(data=tips, x='sex', y='tip', hue='smoker');
+plt.show()
+
+sns.swarmplot(data=tips, x='sex', y='tip', hue='smoker', dodge=True);
+plt.show()
+```
+
+
+```{python}
+sns.boxplot(data=tips, x='sex', y='tip', fliersize=8)
+sns.swarmplot(data=tips, x='sex', y='tip', color='black', alpha=0.6);
+plt.show()
+```
+
+
+```{python}
+sns.boxenplot(data=tips, x='sex', y='tip');
+plt.show()
+
+sns.boxenplot(data=tips, x='sex', y='tip', hue='smoker');
+plt.show()
+```
+
+
+
+
+
+***
 
 ```{python}
 sns.displot(data=tips, x='tip');
@@ -341,32 +392,56 @@ sns.displot(data=tips, x='tip', kind='kde');
 plt.show()
 ```
 
+**Multiple plots**
+
 ```{python}
+fig, axes = plt.subplots(nrows=1, ncols=2, figsize=(12,6))
+sns.boxenplot(data=tips, x='sex', y='tip', ax=axes.flat[0]);
+sns.violinplot(data=tips, x='sex', y='tip', ax=axes.flat[1]);
+plt.show()
+```
+
+
+**Multidimensional KDE for numeric variables**
+
+```{python}
+plt.rcParams['figure.figsize'] = (10,8)
 sns.kdeplot(data=tips, x='tip', y='total_bill', shade=True, cbar=True);
 plt.show()
 ```
 
 ```{python}
-plt.rcParams['figure.figsize'] = (10,8)
-
-plt.show()
-```
-
-```{python}
 sns.histplot(d.mpg); # Histogram
-
 plt.show()
 ```
 
 ```{python}
 sns.histplot(d.mpg, bins=20); # with binwidth
-
 plt.show()
 
 sns.histplot(data=d, x='mpg', bins=20); 
 
 sns.histplot(data=d, x='mpg', bins=20, cumulative=True); # cumulative values
 ```
+
+```{python}
+#d.origin = pd.Categorical(d.origin.replace({1: 'america', 2:'europe' 3: 'japan'}))
+
+sns.relplot(data=d, x='hp', y='mpg', hue='origin', palette='tab10')
+plt.show()
+```
+
+```{python}
+corr = d.corr()
+sns.heatmap(corr) # simple
+plt.show()
+
+sns.heatmap(corr, cmap=plt.cm.RdYlGn, annot=True, linewidths=1, square=True, vmin=-1, vmax=1) # designed
+plt.show()
+```
+
+
+
 
 
 

@@ -348,8 +348,8 @@ However, we want our model to work well on new previously unseen data
 that is out of my data set / sample. In other words: **Out of sample
 accuracy.**
 
-We therefore, separate our data in two parts: the training set and the
-test set.
+We therefore, separate our data **randomly** in two parts: the training
+set and the test set.
 
 ![](images/paste-ADE4509B.png){width="365"}
 
@@ -406,3 +406,105 @@ estimate an error for the model.
 $Err(\hat f) = \frac{1}{n-m} \sum_{i=m+1}^{n}L(y_i-\hat f(\beta^*_i,x_i))$
 
 ------------------------------------------------------------------------
+
+## Bias variance trade off
+
+\
+Train/test split = Random variable
+
+Therefore, if I do this twice, I will most likely get different results.
+As we now have a different training set, I will find a different optimal
+value for $B*$ and therefore the estimator. Subsequently, the estimate
+of the error will be different also.
+
+There is a second source of randomness.
+
+Bias-variance trade-off =
+
+$E_{Traintestsplit} [(y-\hat y)^2] = Var[\hat y] + (Bias[\hat y])^2 + Var [ϵ]$
+
+# How much does the estimator (random variable) defer from the real values
+
+$Bias[\hat y] = E[\hat y]-f(x)$ =$Bias^2[\hat y] = (E[\hat y] -f(x))^2$
+
+Recalling:
+
+Variance = $Var[Z] = E[Z^2] - (E[Z])^2$
+
+Rewrite $E[(Z - E[Z])^2$
+
+$\mu = E[Z]$
+
+$E[(Z-\mu)^2]$
+
+The expected value of a random variable is a constant. Therefore, I can
+transform:
+
+$E[E[Z]] = E[Z]$
+
+Training test split = the expected value in the following scenario.
+
+$E[(y-\hat y)^2] = E[(y-f(x) + f(x) - \hat y)^2]$
+
+Next we can solve this equation:
+
+$E[(y-f(x))^2] + 2E[(y-f(x))(f(x)-\hat y)] + E[(f(x)-\hat y)^2]$
+
+Definition of $y = f(x)+ ϵ$
+
+$E[ϵ^2] + 2E[yf(x)-(f(x))^2 - y\hat y + \hat yf(x)] + E[(f(x)- \hat y )^2]$
+
+We know that $E[ϵ^2]$ is $var[ϵ]$
+
+![](images/paste-7FBD2164.png){width="387"}
+
+We want the error of the model to be as low as possible. We cannot
+change the noise. Therefore, we want the variance and the trade off to
+be as low as possible. The best we can do is that they are both 0.
+
+If you reduce the variance, naturally there will be at least some biased
+introduced and vice versa.
+
+![](images/paste-607116A0.png){width="449"}
+
+The variance of $\hat y$ = How much would the prediction $\hat y$ vary
+when we change the training set.
+
+My objective is that the predictor is similar to the real function =
+$\hat f \approx f$. If I have a predictor that varies a lot based on the
+training data, it cannot really be similar to the real function.
+Naturally, I want the variance of $\hat y$ to be lower.
+
+**Model with high variance** = Overfitted model (too complex). A small
+change in the training set --\> large change in the predictions. This
+has a low bias.
+
+If my model learns the noise of the training set, it can make perfect
+predictions. However, when you apply the model to a different data set,
+it will give bad predictions. Having too many parameters allows the
+model to learn the noise.
+
+**Model with high bias** = Underfitted model (too simple). Large error
+even in the training set. This typically has a low variance. It is
+stable but it will give bad predictions and not accurate.
+
+We can visualize this by plotting a linear regression model. We have
+made a small change in the training set (one point has moved) and there
+has been a small variance in the regression line.
+
+![](images/paste-B7BAF89D.png)
+
+\
+So we can conclude that there is a low variance in the model.
+
+\
+Now we will look at a polynomial model where there is 0 bias. Therefore,
+the model must intercept perfectly all the points in the training set.
+
+![](images/paste-E57B9766.png)
+
+If I want to intercept 4 points in $R^2$, what is the smallest degree of
+a polynomial that 1 need? --\> N-1
+
+The green model has a high variance, but the bias - 0. This is a
+overfitted model.
