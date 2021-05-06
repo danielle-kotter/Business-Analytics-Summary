@@ -53,6 +53,7 @@ matrixes
 filtering-a-data-set
 data-imputation
 data-visualization
+other-categorical-plots
 practical-data-science
 machine-learning
 reinforcement-learning
@@ -62,5 +63,8 @@ theory
 data-visualized
 finding-the-expected-value-of-the-error
 loss-function
-other-categorical-plots
 bias-variance-trade-off
+how-much-does-the-estimator-random-variable-defer-from-the-real-values
+traing-set-split
+training-fitting-a-model
+gradient-descent

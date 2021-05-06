@@ -13,9 +13,13 @@ options(reticulate.repl.quiet = FALSE)
 use_python("/usr/local/bin/python")
 ```
 
-```{r, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE, warning = FALSE, cache.lazy = FALSE)
-use_virtualenv("r-reticulate")
+```{r, echo=FALSE}
+knitr::opts_chunk$set(
+  echo = TRUE, 
+  warning = FALSE, 
+  cache.lazy = FALSE, 
+  message=FALSE
+)
 ```
 
 ```{python}
@@ -440,9 +444,178 @@ sns.heatmap(corr, cmap=plt.cm.RdYlGn, annot=True, linewidths=1, square=True, vmi
 plt.show()
 ```
 
+### Preparing the data
+
+```{r, echo=FALSE}
+library(tidyverse)
+py_install("scikit-learn")
+```
+
+```{python}
+from sklearn.model_selection import train_test_split
+```
+
+
+Creates the input points and the output columns
+
+```{python}
+label = 'mpg'
+features = [column for column in d.columns if column != label]
+```
+
+Setting the train / test split
+
+```{python}
+X = d[features]
+y = d[label]
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.25)
+
+len(X) # Size of the dataset
+len(X_train) # Size of the training set
+len(X_test) # Size of the test set (In this case 25% of the dataset)
+```
+
+There is also a way to avoid the randomness of the test selection:
+
+```{python}
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.25, random_state=0) # We fix the random state to a certain value. 
+```
+
+
+### Creating the models
+
+- Linear regression (no hyperparameters)
+- Quadratic regression (no hyperparameters)
+- Quadratic regression with LASSO (1 hyperparameter)
+
+```{python}
+from sklearn.linear_model import LinearRegression, Lasso
+```
+
+
+```{python}
+from sklearn.preprocessing import StandardScaler, PolynomialFeatures # automatically takes into account standardization
+
+from sklearn.model_selection import GridSearchCV, ShuffleSplit
+
+from sklearn.pipeline import make_pipeline
+
+from sklearn.metrics import mean_squared_error
+```
+
+**Pipeline**
+
+A pipeline is a sequence of steps applied to the data. f.e. the first step is scaling the data and is training the model on the training data.
+
+Due to the package sklearn (StandardScaler), the training data is first standardized and then this is used for the training data and test data.
+
+```{python}
+# Linear regression
+linreg = make_pipeline(StandardScaler(), LinearRegression() 
+)
+
+# Quadratic regression
+quadreg = make_pipeline(StandardScaler(), PolynomialFeatures(degree=2), 
+LinearRegression() 
+)
+
+# Quadratic regression with LASSO
+quadlasso_empty = make_pipeline(StandardScaler(), PolynomialFeatures(degree=2), 
+Lasso(max_iter=10000)
+)
+```
 
 
 
+**Training (+HP tuning)**
+
+```{python}
+linreg.fit(X_train, y_train) # fitting linear regression
+
+quadreg.fit(X_train, y_train) # fitting the quadratic regression
+```
+
+Logarithmic scale:
+Standard scale but raise to the power of e. 
+
+```{python}
+# Creating the grid, and deciding which hyper parameters to try
+np.linspace(-3, 0, 4) # Linearly spaced
+np.logspace(-3, 0, 4) # Logarithm scale
+
+quadlasso_empty.get_params() # tells us all the parameters that we have
+```
+
+We want to use lasso__alpha as the name. 
+
+```{python}
+grid = {'lasso__alpha': np.logspace(-3, 0, 20)}
+# Log space tells it how many parameters to try. The first number: lowest value, second number: highest value, third number how many we want to generate
+
+holdout = ShuffleSplit(test_size=.25, n_splits=1, random_state=0) # validation method holdout
+```
+
+Grid search object:
+
+```{python}
+quadlasso = GridSearchCV(estimator =   quadlasso_empty, 
+param_grid = grid, 
+cv = holdout, 
+scoring = 'neg_mean_squared_error' # negative to understand which is the best value
+)
+
+quadlasso.fit(X_train, y_train) #automatically refits
+```
+
+
+## Model selection
+
+**Mean Squared Error Method**
+
+```{python}
+mean_squared_error(y_test, linreg.predict(X_test))
+
+mean_squared_error(y_test, quadreg.predict(X_test))
+
+mean_squared_error(y_test, quadlasso.predict(X_test))
+```
+
+'We choose the model with the lowest error. In this example, it is the last model.' 
+
+**IMPORTANT**
+It is important to note that before using the model in production, I must retrain it on the entire data set. 
+
+We use the model on the entire data set:
+
+```{python}
+winner = quadlasso.best_estimator_ # selects the best hyper parameter
+
+winner.fit(X, y)
+```
+
+As an example, below a car has been included which was not part of our data set. We can test the model on the prediction accuracy. 
+
+```{python}
+seat_marbella = [4, 899 * 0.061, 41, 680 * 2.2, 19.2, 83, 2] # features loaded to compare
+
+y_marbella = (100 * 3.78) / (1.61 * 5.1) # labels loaded
+```
+
+Now we ask the model to predict the full efficiency of the car:
+
+```{python}
+prediction = winner.predict([seat_marbella])
+prediction[0]
+```
+
+The real value is:
+
+```{r}
+y_marbella
+```
+
+We can compare the accuracy of the prediction and the real value. 
 
 
 

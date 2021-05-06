@@ -30,7 +30,7 @@
   
   
 <link rel="prev" href="basics-python.html"/>
-<link rel="next" href="references.html"/>
+<link rel="next" href="how-much-does-the-estimator-random-variable-defer-from-the-real-values.html"/>
 <script src="libs/header-attrs-2.7/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -211,7 +211,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.2" data-path="basics-python.html"><a href="basics-python.html#matrixes"><i class="fa fa-check"></i><b>6.2</b> Matrixes</a></li>
 <li class="chapter" data-level="6.3" data-path="basics-python.html"><a href="basics-python.html#filtering-a-data-set"><i class="fa fa-check"></i><b>6.3</b> Filtering a data set</a></li>
 <li class="chapter" data-level="6.4" data-path="basics-python.html"><a href="basics-python.html#data-imputation"><i class="fa fa-check"></i><b>6.4</b> Data imputation</a></li>
-<li class="chapter" data-level="6.5" data-path="basics-python.html"><a href="basics-python.html#data-visualization"><i class="fa fa-check"></i><b>6.5</b> Data visualization</a></li>
+<li class="chapter" data-level="6.5" data-path="basics-python.html"><a href="basics-python.html#data-visualization"><i class="fa fa-check"></i><b>6.5</b> Data visualization</a>
+<ul>
+<li class="chapter" data-level="6.5.1" data-path="basics-python.html"><a href="basics-python.html#other-categorical-plots"><i class="fa fa-check"></i><b>6.5.1</b> Other categorical plots</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="practical-data-science.html"><a href="practical-data-science.html"><i class="fa fa-check"></i><b>7</b> Practical data science</a>
 <ul>
@@ -221,7 +224,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.1.2" data-path="practical-data-science.html"><a href="practical-data-science.html#finding-the-expected-value-of-the-error"><i class="fa fa-check"></i><b>7.1.2</b> Finding the expected value of the error</a></li>
 <li class="chapter" data-level="7.1.3" data-path="practical-data-science.html"><a href="practical-data-science.html#loss-function"><i class="fa fa-check"></i><b>7.1.3</b> Loss function</a></li>
 </ul></li>
+<li class="chapter" data-level="7.2" data-path="practical-data-science.html"><a href="practical-data-science.html#bias-variance-trade-off"><i class="fa fa-check"></i><b>7.2</b> Bias variance trade off</a></li>
 </ul></li>
+<li class="chapter" data-level="8" data-path="how-much-does-the-estimator-random-variable-defer-from-the-real-values.html"><a href="how-much-does-the-estimator-random-variable-defer-from-the-real-values.html"><i class="fa fa-check"></i><b>8</b> How much does the estimator (random variable) defer from the real values</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -541,8 +546,8 @@ value and it should be large when it is not.</p>
 However, we want our model to work well on new previously unseen data
 that is out of my data set / sample. In other words: <strong>Out of sample
 accuracy.</strong></p>
-<p>We therefore, separate our data in two parts: the training set and the
-test set.</p>
+<p>We therefore, separate our data <strong>randomly</strong> in two parts: the training
+set and the test set.</p>
 <p><img src="images/paste-ADE4509B.png" width="365" /></p>
 <p><strong>Training set:</strong> Data we show our model to have it learn a good
 estimator. <span class="math inline">\(\hat f = +/- f\)</span>. The training set will be used to derive to
@@ -582,8 +587,19 @@ estimate an error for the model.</p>
 <p><strong>Test error =</strong>
 <span class="math inline">\(Err(\hat f) = \frac{1}{n-m} \sum_{i=m+1}^{n}L(y_i-\hat f(\beta^*_i,x_i))\)</span></p>
 <hr />
-
 </div>
+</div>
+<div id="bias-variance-trade-off" class="section level2" number="7.2">
+<h2><span class="header-section-number">7.2</span> Bias variance trade off</h2>
+<p><br />
+Train/test split = Random variable</p>
+<p>Therefore, if I do this twice, I will most likely get different results.
+As we now have a different training set, I will find a different optimal
+value for <span class="math inline">\(B*\)</span> and therefore the estimator. Subsequently, the estimate
+of the error will be different also.</p>
+<p>There is a second source of randomness.</p>
+<p>Bias-variance trade-off =</p>
+<p><span class="math inline">\(E_{Traintestsplit} [(y-\hat y)^2] = Var[\hat y] + (Bias[\hat y])^2 + Var [ϵ]\)</span></p>
 </div>
 </div>
             </section>
@@ -592,7 +608,7 @@ estimate an error for the model.</p>
         </div>
       </div>
 <a href="basics-python.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="how-much-does-the-estimator-random-variable-defer-from-the-real-values.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

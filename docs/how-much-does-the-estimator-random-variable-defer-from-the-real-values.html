@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter - 8 How much does the estimator (random variable) defer from the real values | R-coding Cheatsheets &amp; Summary</title>
+  <meta name="description" content="This is a summary of r code learned throughout several courses of my master in management." />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter - 8 How much does the estimator (random variable) defer from the real values | R-coding Cheatsheets &amp; Summary" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This is a summary of r code learned throughout several courses of my master in management." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter - 8 How much does the estimator (random variable) defer from the real values | R-coding Cheatsheets &amp; Summary" />
+  
+  <meta name="twitter:description" content="This is a summary of r code learned throughout several courses of my master in management." />
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="practical-data-science.html"/>
+<link rel="next" href="references.html"/>
+<script src="libs/header-attrs-2.7/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">R-coding Cheatsheets & Summary</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="1" data-path="basics-r.html"><a href="basics-r.html"><i class="fa fa-check"></i><b>1</b> Basics R</a>
+<ul>
+<li class="chapter" data-level="1.0.1" data-path="basics-r.html"><a href="basics-r.html#tables-frames-matrices"><i class="fa fa-check"></i><b>1.0.1</b> Tables, frames &amp; Matrices</a></li>
+<li class="chapter" data-level="1.1" data-path="basics-r.html"><a href="basics-r.html#data-sets"><i class="fa fa-check"></i><b>1.1</b> Data sets</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="basics-r.html"><a href="basics-r.html#removing-infinite-na-values"><i class="fa fa-check"></i><b>1.1.1</b> Removing infinite + NA values</a></li>
+<li class="chapter" data-level="1.1.2" data-path="basics-r.html"><a href="basics-r.html#transforming-variable-types"><i class="fa fa-check"></i><b>1.1.2</b> Transforming variable types</a></li>
+<li class="chapter" data-level="1.1.3" data-path="basics-r.html"><a href="basics-r.html#markdown"><i class="fa fa-check"></i><b>1.1.3</b> Markdown</a></li>
+<li class="chapter" data-level="1.1.4" data-path="basics-r.html"><a href="basics-r.html#setup-rmarkdown-code-chunks"><i class="fa fa-check"></i><b>1.1.4</b> Setup rmarkdown &amp; code chunks</a></li>
+<li class="chapter" data-level="1.1.5" data-path="basics-r.html"><a href="basics-r.html#miscellaneous"><i class="fa fa-check"></i><b>1.1.5</b> Miscellaneous</a></li>
+<li class="chapter" data-level="1.1.6" data-path="basics-r.html"><a href="basics-r.html#subsetting"><i class="fa fa-check"></i><b>1.1.6</b> Subsetting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="charts-templates-r.html"><a href="charts-templates-r.html"><i class="fa fa-check"></i><b>2</b> Charts templates - R</a></li>
+<li class="chapter" data-level="3" data-path="probability.html"><a href="probability.html"><i class="fa fa-check"></i><b>3</b> Probability</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="probability.html"><a href="probability.html#bayes-theorem"><i class="fa fa-check"></i><b>3.1</b> Bayes Theorem</a></li>
+<li class="chapter" data-level="3.2" data-path="probability.html"><a href="probability.html#discrete-probablity"><i class="fa fa-check"></i><b>3.2</b> Discrete Probablity</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="probability.html"><a href="probability.html#uniform-discrete-probability-distribution"><i class="fa fa-check"></i><b>3.2.1</b> Uniform discrete probability distribution</a></li>
+<li class="chapter" data-level="3.2.2" data-path="probability.html"><a href="probability.html#binomial-distribution"><i class="fa fa-check"></i><b>3.2.2</b> Binomial distribution</a></li>
+<li class="chapter" data-level="3.2.3" data-path="probability.html"><a href="probability.html#poisson-distribution"><i class="fa fa-check"></i><b>3.2.3</b> Poisson distribution</a></li>
+<li class="chapter" data-level="3.2.4" data-path="probability.html"><a href="probability.html#the-normal-distribution"><i class="fa fa-check"></i><b>3.2.4</b> The normal distribution</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="probability.html"><a href="probability.html#samples-estimation-confidence-intervals"><i class="fa fa-check"></i><b>3.3</b> Samples, estimation &amp; confidence intervals</a></li>
+<li class="chapter" data-level="3.4" data-path="probability.html"><a href="probability.html#significance-level"><i class="fa fa-check"></i><b>3.4</b> Significance level</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="probability.html"><a href="probability.html#critical-values"><i class="fa fa-check"></i><b>3.4.1</b> Critical values</a></li>
+<li class="chapter" data-level="3.4.2" data-path="probability.html"><a href="probability.html#test-of-equality---two-samples"><i class="fa fa-check"></i><b>3.4.2</b> Test of equality - two samples</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="probability.html"><a href="probability.html#non-parametric-testing"><i class="fa fa-check"></i><b>3.5</b> Non-Parametric testing</a>
+<ul>
+<li class="chapter" data-level="3.5.1" data-path="probability.html"><a href="probability.html#contengency-table-frequencies"><i class="fa fa-check"></i><b>3.5.1</b> Contengency table / frequencies</a></li>
+<li class="chapter" data-level="3.5.2" data-path="probability.html"><a href="probability.html#chi-square"><i class="fa fa-check"></i><b>3.5.2</b> Chi-square</a></li>
+<li class="chapter" data-level="3.5.3" data-path="probability.html"><a href="probability.html#goodness-of-fit"><i class="fa fa-check"></i><b>3.5.3</b> Goodness of fit</a></li>
+<li class="chapter" data-level="3.5.4" data-path="probability.html"><a href="probability.html#p-value"><i class="fa fa-check"></i><b>3.5.4</b> P-value</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="simple-regressions.html"><a href="simple-regressions.html"><i class="fa fa-check"></i><b>4</b> Simple regressions</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="simple-regressions.html"><a href="simple-regressions.html#basics-regressions"><i class="fa fa-check"></i><b>4.1</b> Basics regressions</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="simple-regressions.html"><a href="simple-regressions.html#summarizing-regressions"><i class="fa fa-check"></i><b>4.1.1</b> Summarizing regressions:</a></li>
+<li class="chapter" data-level="4.1.2" data-path="simple-regressions.html"><a href="simple-regressions.html#dummy-variables-diff-in-means"><i class="fa fa-check"></i><b>4.1.2</b> Dummy variables, diff in means</a></li>
+<li class="chapter" data-level="4.1.3" data-path="simple-regressions.html"><a href="simple-regressions.html#regression-dummy"><i class="fa fa-check"></i><b>4.1.3</b> Regression + dummy</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="simple-regressions.html"><a href="simple-regressions.html#prediction"><i class="fa fa-check"></i><b>4.2</b> Prediction</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="simple-regressions.html"><a href="simple-regressions.html#confidence-and-prediction-plotting"><i class="fa fa-check"></i><b>4.2.1</b> Confidence and prediction plotting</a></li>
+<li class="chapter" data-level="4.2.2" data-path="simple-regressions.html"><a href="simple-regressions.html#prediction-with-dummy-variables"><i class="fa fa-check"></i><b>4.2.2</b> Prediction with dummy variables</a></li>
+<li class="chapter" data-level="4.2.3" data-path="simple-regressions.html"><a href="simple-regressions.html#prediction-intervals-examples"><i class="fa fa-check"></i><b>4.2.3</b> Prediction intervals examples</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="simple-regressions.html"><a href="simple-regressions.html#data-problems"><i class="fa fa-check"></i><b>4.3</b> Data problems</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="simple-regressions.html"><a href="simple-regressions.html#multicollinearity"><i class="fa fa-check"></i><b>4.3.1</b> Multicollinearity</a></li>
+<li class="chapter" data-level="4.3.2" data-path="simple-regressions.html"><a href="simple-regressions.html#variance-inflation-factors"><i class="fa fa-check"></i><b>4.3.2</b> Variance inflation factors</a></li>
+<li class="chapter" data-level="4.3.3" data-path="simple-regressions.html"><a href="simple-regressions.html#anova"><i class="fa fa-check"></i><b>4.3.3</b> ANOVA</a></li>
+<li class="chapter" data-level="4.3.4" data-path="simple-regressions.html"><a href="simple-regressions.html#linearizing-variables"><i class="fa fa-check"></i><b>4.3.4</b> Linearizing variables</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="structure-equation-models.html"><a href="structure-equation-models.html"><i class="fa fa-check"></i><b>5</b> Structure equation models</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="structure-equation-models.html"><a href="structure-equation-models.html#path-analysis-structural-equations"><i class="fa fa-check"></i><b>5.1</b> Path analysis (structural equations)</a></li>
+<li class="chapter" data-level="5.2" data-path="structure-equation-models.html"><a href="structure-equation-models.html#coding-the-model"><i class="fa fa-check"></i><b>5.2</b> Coding the model</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="structure-equation-models.html"><a href="structure-equation-models.html#covariance"><i class="fa fa-check"></i><b>5.2.1</b> Covariance</a></li>
+<li class="chapter" data-level="5.2.2" data-path="structure-equation-models.html"><a href="structure-equation-models.html#reliability"><i class="fa fa-check"></i><b>5.2.2</b> Reliability</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="structure-equation-models.html"><a href="structure-equation-models.html#factor-model"><i class="fa fa-check"></i><b>5.3</b> Factor model</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="structure-equation-models.html"><a href="structure-equation-models.html#setting-covariance-variances"><i class="fa fa-check"></i><b>5.3.1</b> Setting covariance &amp; variances</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="basics-python.html"><a href="basics-python.html"><i class="fa fa-check"></i><b>6</b> Basics Python</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="basics-python.html"><a href="basics-python.html#data-set"><i class="fa fa-check"></i><b>6.1</b> Data set</a></li>
+<li class="chapter" data-level="6.2" data-path="basics-python.html"><a href="basics-python.html#matrixes"><i class="fa fa-check"></i><b>6.2</b> Matrixes</a></li>
+<li class="chapter" data-level="6.3" data-path="basics-python.html"><a href="basics-python.html#filtering-a-data-set"><i class="fa fa-check"></i><b>6.3</b> Filtering a data set</a></li>
+<li class="chapter" data-level="6.4" data-path="basics-python.html"><a href="basics-python.html#data-imputation"><i class="fa fa-check"></i><b>6.4</b> Data imputation</a></li>
+<li class="chapter" data-level="6.5" data-path="basics-python.html"><a href="basics-python.html#data-visualization"><i class="fa fa-check"></i><b>6.5</b> Data visualization</a>
+<ul>
+<li class="chapter" data-level="6.5.1" data-path="basics-python.html"><a href="basics-python.html#other-categorical-plots"><i class="fa fa-check"></i><b>6.5.1</b> Other categorical plots</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="practical-data-science.html"><a href="practical-data-science.html"><i class="fa fa-check"></i><b>7</b> Practical data science</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="practical-data-science.html"><a href="practical-data-science.html#machine-learning"><i class="fa fa-check"></i><b>7.1</b> Machine Learning</a>
+<ul>
+<li class="chapter" data-level="7.1.1" data-path="practical-data-science.html"><a href="practical-data-science.html#theory"><i class="fa fa-check"></i><b>7.1.1</b> Theory</a></li>
+<li class="chapter" data-level="7.1.2" data-path="practical-data-science.html"><a href="practical-data-science.html#finding-the-expected-value-of-the-error"><i class="fa fa-check"></i><b>7.1.2</b> Finding the expected value of the error</a></li>
+<li class="chapter" data-level="7.1.3" data-path="practical-data-science.html"><a href="practical-data-science.html#loss-function"><i class="fa fa-check"></i><b>7.1.3</b> Loss function</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="practical-data-science.html"><a href="practical-data-science.html#bias-variance-trade-off"><i class="fa fa-check"></i><b>7.2</b> Bias variance trade off</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="how-much-does-the-estimator-random-variable-defer-from-the-real-values.html"><a href="how-much-does-the-estimator-random-variable-defer-from-the-real-values.html"><i class="fa fa-check"></i><b>8</b> How much does the estimator (random variable) defer from the real values</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">R-coding Cheatsheets &amp; Summary</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="how-much-does-the-estimator-random-variable-defer-from-the-real-values" class="section level1" number="8">
+<h1><span class="header-section-number">Chapter - 8</span> How much does the estimator (random variable) defer from the real values</h1>
+<p><span class="math inline">\(Bias[\hat y] = E[\hat y]-f(x)\)</span> =<span class="math inline">\(Bias^2[\hat y] = (E[\hat y] -f(x))^2\)</span></p>
+<p>Recalling:</p>
+<p>Variance = <span class="math inline">\(Var[Z] = E[Z^2] - (E[Z])^2\)</span></p>
+<p>Rewrite <span class="math inline">\(E[(Z - E[Z])^2\)</span></p>
+<p><span class="math inline">\(\mu = E[Z]\)</span></p>
+<p><span class="math inline">\(E[(Z-\mu)^2]\)</span></p>
+<p>The expected value of a random variable is a constant. Therefore, I can
+transform:</p>
+<p><span class="math inline">\(E[E[Z]] = E[Z]\)</span></p>
+<p>Training test split = the expected value in the following scenario.</p>
+<p><span class="math inline">\(E[(y-\hat y)^2] = E[(y-f(x) + f(x) - \hat y)^2]\)</span></p>
+<p>Next we can solve this equation:</p>
+<p><span class="math inline">\(E[(y-f(x))^2] + 2E[(y-f(x))(f(x)-\hat y)] + E[(f(x)-\hat y)^2]\)</span></p>
+<p>Definition of <span class="math inline">\(y = f(x)+ ϵ\)</span></p>
+<p><span class="math inline">\(E[ϵ^2] + 2E[yf(x)-(f(x))^2 - y\hat y + \hat yf(x)] + E[(f(x)- \hat y )^2]\)</span></p>
+<p>We know that <span class="math inline">\(E[ϵ^2]\)</span> is <span class="math inline">\(var[ϵ]\)</span></p>
+<p><img src="images/paste-7FBD2164.png" width="387" /></p>
+<p>We want the error of the model to be as low as possible. We cannot
+change the noise. Therefore, we want the variance and the trade off to
+be as low as possible. The best we can do is that they are both 0.</p>
+<p>If you reduce the variance, naturally there will be at least some biased
+introduced and vice versa.</p>
+<p><img src="images/paste-607116A0.png" width="449" /></p>
+<p>The variance of <span class="math inline">\(\hat y\)</span> = How much would the prediction <span class="math inline">\(\hat y\)</span> vary
+when we change the training set.</p>
+<p>My objective is that the predictor is similar to the real function =
+<span class="math inline">\(\hat f \approx f\)</span>. If I have a predictor that varies a lot based on the
+training data, it cannot really be similar to the real function.
+Naturally, I want the variance of <span class="math inline">\(\hat y\)</span> to be lower.</p>
+<p><strong>Model with high variance</strong> = Overfitted model (too complex). A small
+change in the training set –&gt; large change in the predictions. This
+has a low bias.</p>
+<p>If my model learns the noise of the training set, it can make perfect
+predictions. However, when you apply the model to a different data set,
+it will give bad predictions. Having too many parameters allows the
+model to learn the noise.</p>
+<p><strong>Model with high bias</strong> = Underfitted model (too simple). Large error
+even in the training set. This typically has a low variance. It is
+stable but it will give bad predictions and not accurate.</p>
+<p>We can visualize this by plotting a linear regression model. We have
+made a small change in the training set (one point has moved) and there
+has been a small variance in the regression line.</p>
+<p><img src="images/paste-B7BAF89D.png" /></p>
+<p><br />
+So we can conclude that there is a low variance in the model.</p>
+<p><br />
+Now we will look at a polynomial model where there is 0 bias. Therefore,
+the model must intercept perfectly all the points in the training set.</p>
+<p><img src="images/paste-E57B9766.png" /></p>
+<p>If I want to intercept 4 points in <span class="math inline">\(R^2\)</span>, what is the smallest degree of
+a polynomial that 1 need? –&gt; N-1</p>
+<p>The green model has a high variance, but the bias - 0. This is a
+overfitted model.</p>
+
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="practical-data-science.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["R-Summaries.pdf", "R-Summaries.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
