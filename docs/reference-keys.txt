@@ -54,6 +54,9 @@ filtering-a-data-set
 data-imputation
 data-visualization
 other-categorical-plots
+preparing-the-data
+creating-the-models
+model-selection
 practical-data-science
 machine-learning
 reinforcement-learning
@@ -65,6 +68,7 @@ finding-the-expected-value-of-the-error
 loss-function
 bias-variance-trade-off
 how-much-does-the-estimator-random-variable-defer-from-the-real-values
-traing-set-split
 training-fitting-a-model
 gradient-descent
+sarcastic-gradient-descent
+model-selection-1

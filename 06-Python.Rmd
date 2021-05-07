@@ -605,14 +605,14 @@ y_marbella = (100 * 3.78) / (1.61 * 5.1) # labels loaded
 Now we ask the model to predict the full efficiency of the car:
 
 ```{python}
-prediction = winner.predict([seat_marbella])
-prediction[0]
+#prediction = winner.predict([seat_marbella])
+#prediction[0]
 ```
 
 The real value is:
 
 ```{r}
-y_marbella
+#y_marbella
 ```
 
 We can compare the accuracy of the prediction and the real value. 

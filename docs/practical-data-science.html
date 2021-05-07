@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter - 7 Practical data science | R-coding Cheatsheets &amp; Summary</title>
+  <title>Chapter - 7 Practical data science | Business Analytics - Cheatsheets &amp; Summary</title>
   <meta name="description" content="This is a summary of r code learned throughout several courses of my master in management." />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter - 7 Practical data science | R-coding Cheatsheets &amp; Summary" />
+  <meta property="og:title" content="Chapter - 7 Practical data science | Business Analytics - Cheatsheets &amp; Summary" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter - 7 Practical data science | R-coding Cheatsheets &amp; Summary" />
+  <meta name="twitter:title" content="Chapter - 7 Practical data science | Business Analytics - Cheatsheets &amp; Summary" />
   
   <meta name="twitter:description" content="This is a summary of r code learned throughout several courses of my master in management." />
   
@@ -51,69 +51,6 @@
 
 
 
-<style type="text/css">
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -214,7 +151,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.5" data-path="basics-python.html"><a href="basics-python.html#data-visualization"><i class="fa fa-check"></i><b>6.5</b> Data visualization</a>
 <ul>
 <li class="chapter" data-level="6.5.1" data-path="basics-python.html"><a href="basics-python.html#other-categorical-plots"><i class="fa fa-check"></i><b>6.5.1</b> Other categorical plots</a></li>
+<li class="chapter" data-level="6.5.2" data-path="basics-python.html"><a href="basics-python.html#preparing-the-data"><i class="fa fa-check"></i><b>6.5.2</b> Preparing the data</a></li>
+<li class="chapter" data-level="6.5.3" data-path="basics-python.html"><a href="basics-python.html#creating-the-models"><i class="fa fa-check"></i><b>6.5.3</b> Creating the models</a></li>
 </ul></li>
+<li class="chapter" data-level="6.6" data-path="basics-python.html"><a href="basics-python.html#model-selection"><i class="fa fa-check"></i><b>6.6</b> Model selection</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="practical-data-science.html"><a href="practical-data-science.html"><i class="fa fa-check"></i><b>7</b> Practical data science</a>
 <ul>
@@ -224,9 +164,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.1.2" data-path="practical-data-science.html"><a href="practical-data-science.html#finding-the-expected-value-of-the-error"><i class="fa fa-check"></i><b>7.1.2</b> Finding the expected value of the error</a></li>
 <li class="chapter" data-level="7.1.3" data-path="practical-data-science.html"><a href="practical-data-science.html#loss-function"><i class="fa fa-check"></i><b>7.1.3</b> Loss function</a></li>
 </ul></li>
-<li class="chapter" data-level="7.2" data-path="practical-data-science.html"><a href="practical-data-science.html#bias-variance-trade-off"><i class="fa fa-check"></i><b>7.2</b> Bias variance trade off</a></li>
+<li class="chapter" data-level="7.2" data-path="practical-data-science.html"><a href="practical-data-science.html#bias-variance-trade-off"><i class="fa fa-check"></i><b>7.2</b> Bias-variance trade off</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="how-much-does-the-estimator-random-variable-defer-from-the-real-values.html"><a href="how-much-does-the-estimator-random-variable-defer-from-the-real-values.html"><i class="fa fa-check"></i><b>8</b> How much does the estimator (random variable) defer from the real values</a></li>
+<li class="chapter" data-level="8" data-path="how-much-does-the-estimator-random-variable-defer-from-the-real-values.html"><a href="how-much-does-the-estimator-random-variable-defer-from-the-real-values.html"><i class="fa fa-check"></i><b>8</b> How much does the estimator (random variable) defer from the real values</a>
+<ul>
+<li class="chapter" data-level="8.0.1" data-path="how-much-does-the-estimator-random-variable-defer-from-the-real-values.html"><a href="how-much-does-the-estimator-random-variable-defer-from-the-real-values.html#training-fitting-a-model"><i class="fa fa-check"></i><b>8.0.1</b> <strong>Training (fitting) a model</strong></a></li>
+<li class="chapter" data-level="8.1" data-path="how-much-does-the-estimator-random-variable-defer-from-the-real-values.html"><a href="how-much-does-the-estimator-random-variable-defer-from-the-real-values.html#gradient-descent"><i class="fa fa-check"></i><b>8.1</b> Gradient descent</a>
+<ul>
+<li class="chapter" data-level="8.1.1" data-path="how-much-does-the-estimator-random-variable-defer-from-the-real-values.html"><a href="how-much-does-the-estimator-random-variable-defer-from-the-real-values.html#sarcastic-gradient-descent"><i class="fa fa-check"></i><b>8.1.1</b> Sarcastic gradient descent</a></li>
+<li class="chapter" data-level="8.1.2" data-path="how-much-does-the-estimator-random-variable-defer-from-the-real-values.html"><a href="how-much-does-the-estimator-random-variable-defer-from-the-real-values.html#model-selection-1"><i class="fa fa-check"></i><b>8.1.2</b> Model Selection</a></li>
+</ul></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -240,7 +188,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">R-coding Cheatsheets &amp; Summary</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Business Analytics - Cheatsheets &amp; Summary</a>
           </h1>
         </div>
 
@@ -302,9 +250,9 @@ values. F.E. Is it a dog or a cat</p></li>
 <div id="theory" class="section level3" number="7.1.1">
 <h3><span class="header-section-number">7.1.1</span> Theory</h3>
 <p>Supervised learning - Regression - Classification</p>
-<table style="width:97%;">
+<table style="width:96%;">
 <colgroup>
-<col width="22%" />
+<col width="20%" />
 <col width="75%" />
 </colgroup>
 <thead>
@@ -327,7 +275,8 @@ values. F.E. Is it a dog or a cat</p></li>
 <td>Absolute error</td>
 </tr>
 <tr class="even">
-<td><strong>( y-ŷ)^2</strong></td>
+<td><strong>(
+y-ŷ)^2</strong></td>
 <td>Squared error |</td>
 </tr>
 <tr class="odd">
@@ -456,10 +405,10 @@ variance is:</p>
 <p>To combine this with the previous equation:</p>
 <p><span class="math inline">\(\alpha^2 + Eϵ[ϵ^2] = [f(x) - \hat f(x)]^2 + Var[ϵ]\)</span></p>
 <p>This can be separated in two parts:</p>
-<table style="width:86%;">
+<table style="width:85%;">
 <colgroup>
 <col width="38%" />
-<col width="47%" />
+<col width="45%" />
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -470,7 +419,8 @@ variance is:</p>
 <td><p>Reducible error:</p>
 <p>Real relation - estimator</p></td>
 <td><p>Irreducible error</p>
-<p>Intrinsic property of the error</p></td>
+<p>Intrinsic property of the
+error</p></td>
 </tr>
 </tbody>
 </table>
@@ -550,8 +500,8 @@ accuracy.</strong></p>
 set and the test set.</p>
 <p><img src="images/paste-ADE4509B.png" width="365" /></p>
 <p><strong>Training set:</strong> Data we show our model to have it learn a good
-estimator. <span class="math inline">\(\hat f = +/- f\)</span>. The training set will be used to derive to
-a estimator.</p>
+estimator. <span class="math inline">\(\hat f \approx f\)</span>. The training set will be used to derive
+to a estimator.</p>
 <p><strong>Test set:</strong> Data which we hide from our model. After the model has
 been trained, we will simulate it to the test data to evaluate the
 model’s performance. The test set will be sued to estimate the error fo
@@ -590,7 +540,7 @@ estimate an error for the model.</p>
 </div>
 </div>
 <div id="bias-variance-trade-off" class="section level2" number="7.2">
-<h2><span class="header-section-number">7.2</span> Bias variance trade off</h2>
+<h2><span class="header-section-number">7.2</span> Bias-variance trade off</h2>
 <p><br />
 Train/test split = Random variable</p>
 <p>Therefore, if I do this twice, I will most likely get different results.
