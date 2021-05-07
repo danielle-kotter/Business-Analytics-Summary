@@ -67,7 +67,6 @@ data-visualized
 finding-the-expected-value-of-the-error
 loss-function
 bias-variance-trade-off
-how-much-does-the-estimator-random-variable-defer-from-the-real-values
 training-fitting-a-model
 gradient-descent
 sarcastic-gradient-descent
