@@ -16,7 +16,7 @@ There are multiple types of machine learning:
 
 -   Reinforcement learning
 
-#### **Reinforcement learning:**
+#### Reinforcement learning:
 
 Alpha go. ML for chess. Trained by trial and error. First they are
 taught the simple rules and then asked to train by themselves and learn
@@ -30,7 +30,7 @@ As a result, they learn which moves are good and continue to try
 something else. Machine learning still does not understand casual
 relationships.
 
-#### **Unsupervised learning:**
+#### Unsupervised learning:
 
 We do not have labels on the data. Can still observe patterns, it
 understands there are commonalities but not with a reason.
@@ -40,7 +40,7 @@ patterns with the unlabeled data.
 
 ![](images/paste-0F7C76CE.png){width="656"}
 
-#### **Supervised learning**
+#### Supervised learning
 
 Supervised learning: Extracting patterns from data and making
 predictions based on passed behavior.
@@ -425,7 +425,7 @@ Bias-variance trade-off =
 
 $E_{Traintestsplit} [(y-\hat y)^2] = Var[\hat y] + (Bias[\hat y])^2 + Var [ϵ]$
 
-# How much does the estimator (random variable) defer from the real values
+How much does the estimator (random variable) defer from the real values
 
 $Bias[\hat y] = E[\hat y]-f(x)$ =$Bias^2[\hat y] = (E[\hat y] -f(x))^2$
 
@@ -516,7 +516,7 @@ overfitted model.
 
 ------------------------------------------------------------------------
 
-### **Training (fitting) a model**
+### Training (fitting) a model
 
 **Training a model:** Finding the parameters (of a parametric model)
 which minimize the loss function over the training set.
@@ -750,7 +750,7 @@ iteration. 1 epoch has passed per iteration.
 
 ------------------------------------------------------------------------
 
-### Model Selection
+## Model Selection
 
 Model selection = choosing the "best" model out of a set of possible
 models that we are trying to consider. The "best" is considering the
