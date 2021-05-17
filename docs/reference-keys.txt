@@ -71,3 +71,17 @@ training-fitting-a-model
 gradient-descent
 sarcastic-gradient-descent
 model-selection-1
+latex
+reducing-bias
+advanced-statistical-methods
+clustering
+hierachical-clustering
+complete-linkage
+average-linkage
+ward-linkage
+non-hierachical-clustering
+multi-dimensional-scaling
+principal-component-analysis
+biplots
+correspondence-analysis
+text-analytics

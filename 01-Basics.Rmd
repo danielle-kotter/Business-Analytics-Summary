@@ -11,15 +11,6 @@ y <- 10
 n <- 30
 ```
 
-**Mathematical values**
-
-$\mu$ = `$\mu$` = Population mean\
-$\sigma$ = `$\sigma$` = Population sd\
-$\bar{x}$ = `$\bar{x}` = Sample mean\
-${e}$ = `${e}$` = Standard error\
-$\pi$ = `$\pi$` = Pie $\ge$ = `$\ge$` = Bigger than\
-$\le$ = `$\le$` = Smaller than
-
 **Sample mean, standard deviation**
 
 ```{r}
@@ -124,7 +115,6 @@ prop.table(table(values))
 round(prop.table(table(values)) * 100, 2)
 ```
 
-
 ## Data sets
 
 Displaying head or tail of a data set:
@@ -136,16 +126,12 @@ tail(cars) # last 6 rows of the data set
 
 Reading excel
 
-`library(readxl)`
-`data <- read.xls("data.xlsx", stringsAsFactors = TRUE)`
-
+`library(readxl)` `data <- read.xls("data.xlsx", stringsAsFactors = TRUE)`
 
 ```{r}
 names(cars) # shows the column names of the data set
 attach(cars) # saves the names to be used as variables
 ```
-
-
 
 ### Removing infinite + NA values
 
@@ -166,7 +152,6 @@ as.numeric(value)
 as.character(value)
 as.factor(value)
 ```
-
 
 ### Markdown
 
@@ -206,36 +191,73 @@ Will start a new page for example in a pdf document
 # >
 ```
 
->
-In here we can put a quote
->
-
+> In here we can put a quote
 
 ### Setup rmarkdown & code chunks
 
-+----------------------+----------------------------------------------------------+
-| Call                 | Description                                              |
-+======================+==========================================================+
-| Warning = TRUE/FALSE | Include / exclude warnings                               |
-+----------------------+----------------------------------------------------------+
-| Echo = TRUE/FALSE    | Include / exclude r chunks but show output               |
-+----------------------+----------------------------------------------------------+
-| Include = TRUE/FALSE | Run code but do not include in the knitted document      |
-+----------------------+----------------------------------------------------------+
-| Comment = "" | Include / exclude \#\# in output code chunks             |
-+----------------------+----------------------------------------------------------+
-| Message = TRUE/FALSE | Includes / excludes message from code                    |
-+----------------------+----------------------------------------------------------+
-| out.width='100%'     | Adjusts size of figure / chart                           |
-+----------------------+----------------------------------------------------------+
-| fig.width =          | Set specific size of figure / chart width                |
-+----------------------+----------------------------------------------------------+
-| fig.height =         | Set specific size of figure / chart height               |
-+----------------------+----------------------------------------------------------+
-| fig.cap=             | Adds a title to a figure                                 |
-+----------------------+----------------------------------------------------------+
-| fig.align=           | 'center', 'left', 'right', adjust figure / chart at page |
-+----------------------+----------------------------------------------------------+
++-------------------------+----------------------------------------------------------+
+| Call                    | Description                                              |
++=========================+==========================================================+
+| Warning = TRUE/FALSE    | Include / exclude warnings                               |
++-------------------------+----------------------------------------------------------+
+| Echo = TRUE/FALSE       | Include / exclude r chunks but show output               |
++-------------------------+----------------------------------------------------------+
+| Include = TRUE/FALSE    | Run code but do not include in the knitted document      |
++-------------------------+----------------------------------------------------------+
+| Comment = "" \| Include | / exclude \#\# in output code chunks                     |
++-------------------------+----------------------------------------------------------+
+| Message = TRUE/FALSE    | Includes / excludes message from code                    |
++-------------------------+----------------------------------------------------------+
+| out.width='100%'        | Adjusts size of figure / chart                           |
++-------------------------+----------------------------------------------------------+
+| fig.width =             | Set specific size of figure / chart width                |
++-------------------------+----------------------------------------------------------+
+| fig.height =            | Set specific size of figure / chart height               |
++-------------------------+----------------------------------------------------------+
+| fig.cap=                | Adds a title to a figure                                 |
++-------------------------+----------------------------------------------------------+
+| fig.align=              | 'center', 'left', 'right', adjust figure / chart at page |
++-------------------------+----------------------------------------------------------+
+
+### Latex
+
++--------------------+--------------------+-------------------------------+
+| Symbol             | Writing            | Description                   |
++:==================:+:==================:+:=============================:+
+| $\mu$              | `$\mu$`            | Population mean               |
++--------------------+--------------------+-------------------------------+
+| $\sigma$           | `$\sigma$`         | Population standard deviation |
++--------------------+--------------------+-------------------------------+
+| $\bar{x}$          | `$\bar{x}`         | Sample mean                   |
++--------------------+--------------------+-------------------------------+
+| ${e}$              | `${e}$`            | Standard error                |
++--------------------+--------------------+-------------------------------+
+| $\ge$              | `$\ge$`            | Bigger than                   |
++--------------------+--------------------+-------------------------------+
+| $\le$              | `$\le$`            | Smaller than                  |
++--------------------+--------------------+-------------------------------+
+| $\pi$              | `$\pi$`            | Pie                           |
++--------------------+--------------------+-------------------------------+
+| $\hat f$           | `$\hat f$`         | Estimator                     |
++--------------------+--------------------+-------------------------------+
+| $\frac{1}{2}$      | `$\frac{1}{2}$`    | Fraction                      |
++--------------------+--------------------+-------------------------------+
+| $\sum$             | `$\sum$`           | Sum                           |
++--------------------+--------------------+-------------------------------+
+| $\sum_{i=1}^{n}$   | `$\sum_{i=1}^{n}$` | Sequence                      |
++--------------------+--------------------+-------------------------------+
+| $\nabla $          | `$\nabla$`         | Gradient, Nabla               |
++--------------------+--------------------+-------------------------------+
+| $\partial$         | `$\partial$`       | Partial                       |
++--------------------+--------------------+-------------------------------+
+| $\beta $           | `$\beta$`          | Beta                          |
++--------------------+--------------------+-------------------------------+
+| $\beta^1$          | `$\beta^1$`        | Beta 1                        |
++--------------------+--------------------+-------------------------------+
+| $\alpha$           | `$\alpha$`         | Alpha                         |
++--------------------+--------------------+-------------------------------+
+| $\approx$          | `$\approx$`        | Similar to                    |
++--------------------+--------------------+-------------------------------+
 
 
 ### Miscellaneous
@@ -250,7 +272,6 @@ str(variable) # describing the variable
 dim(cars) # amount of rows and amount of columns
 ```
 
-
 ### Subsetting
 
 ```{r}
@@ -260,4 +281,3 @@ cars[cars$speed == 4,] # subsets by specific value
 cars[cars$speed > 4,] # subsets over specific value 
 cars[cars$speed < 5,] # subsets under specific value 
 ```
-

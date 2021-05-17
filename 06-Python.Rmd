@@ -617,5 +617,59 @@ The real value is:
 
 We can compare the accuracy of the prediction and the real value. 
 
+**Leave-One-Out Cross validation (LOOCV):**
 
+```{python}
+from sklearn.model_selection import LeaveOneOut, cross_val_score
+
+d = pd.read_csv('~/Documents/Pompeu Fabra BSM/Practical data science/auto-mpg.csv')
+label = 'mpg'
+features = [col for col in d.columns if col != label]
+X = d[features]
+y = d[label]
+```
+
+```{python}
+linreg = make_pipeline(StandardScaler(), LinearRegression() 
+)
+
+quadreg = make_pipeline(StandardScaler(), PolynomialFeatures(degree=2), 
+LinearRegression() 
+)
+
+quadlasso_empty = make_pipeline(StandardScaler(), PolynomialFeatures(degree=2), 
+Lasso(max_iter=10000)
+)
+```
+
+Creating a function: a set of instructions that we combine to provide some inputs to retrieve some outputs. This functions computers the $\hat {ERR}_{\hat f}$ and will take as its input the model $\hat f$:
+
+```{python}
+def get_mse(model):
+  mses = cross_val_score(estimator=model,
+  X=X, 
+  y=y, 
+  cv=LeaveOneOut(),
+  scoring='neg_mean_squared_error'
+  )
+  return np.average(-mses) # takes the average of the mean square errors
+```
+
+Calculating the mean squared error through the leave one out method:
+
+```{python}
+get_mse(linreg)
+get_mse(quadreg)
+```
+
+```{python}
+grid = {'lasso__alpha': np.logspace(-3, 0, 4)}
+quadlasso = GridSearchCV(estimator=quadlasso_empty, 
+param_grid=grid, 
+cv=LeaveOneOut(), scoring='neg_mean_squared_error',
+n_jobs=4 
+)
+
+get_mse(quadlasso)
+```
 

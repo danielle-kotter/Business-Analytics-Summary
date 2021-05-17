@@ -67,35 +67,34 @@ it is a cat or not a cat.
 
 Supervised learning - Regression - Classification
 
-+--------------+-----------------------------------------------------+
-| Symbol       | Explanation                                         |
-+==============+=====================================================+
-| y            | Real value                                          |
-+--------------+-----------------------------------------------------+
-| **ŷ**        | Prediction                                          |
-+--------------+-----------------------------------------------------+
-| **y-ŷ**      | Absolute error                                      |
-+--------------+-----------------------------------------------------+
-| **(          | Squared error \|                                    |
-| y-ŷ)\^2**    |                                                     |
-+--------------+-----------------------------------------------------+
-| **x**        | Generic input / Features. The things I use to       |
-|              | predict y.                                          |
-|              |                                                     |
-|              | The independent variable (statistics).              |
-+--------------+-----------------------------------------------------+
-| **y**        | Generic output. The label. (ML) The thing I want to |
-|              | predict.                                            |
-|              |                                                     |
-|              | Dependent variable (statistics).                    |
-+--------------+-----------------------------------------------------+
-| **p**        | Number of features (machine learning).              |
-|              |                                                     |
-|              | Number of independent variables I have              |
-|              | (statistics).                                       |
-+--------------+-----------------------------------------------------+
-| **n**        | Size of the data set                                |
-+--------------+-----------------------------------------------------+
++---------------+-----------------------------------------------------+
+| Symbol        | Explanation                                         |
++===============+=====================================================+
+| y             | Real value                                          |
++---------------+-----------------------------------------------------+
+| **ŷ**         | Prediction                                          |
++---------------+-----------------------------------------------------+
+| **y-ŷ**       | Absolute error                                      |
++---------------+-----------------------------------------------------+
+| **( y-ŷ)\^2** | Squared error \|                                    |
++---------------+-----------------------------------------------------+
+| **x**         | Generic input / Features. The things I use to       |
+|               | predict y.                                          |
+|               |                                                     |
+|               | The independent variable (statistics).              |
++---------------+-----------------------------------------------------+
+| **y**         | Generic output. The label. (ML) The thing I want to |
+|               | predict.                                            |
+|               |                                                     |
+|               | Dependent variable (statistics).                    |
++---------------+-----------------------------------------------------+
+| **p**         | Number of features (machine learning).              |
+|               |                                                     |
+|               | Number of independent variables I have              |
+|               | (statistics).                                       |
++---------------+-----------------------------------------------------+
+| **n**         | Size of the data set                                |
++---------------+-----------------------------------------------------+
 
 If I know the inputs, I could try to "predict" the output. This would
 state that in the real world the outputs (y) are a function of the
@@ -252,14 +251,13 @@ $\alpha^2 + Eϵ[ϵ^2] = [f(x) - \hat f(x)]^2 + Var[ϵ]$
 
 This can be separated in two parts:
 
-+---------------------------+--------------------------------+
-| $[f(x) - \hat f(x)]^2$    | $Var[ϵ]$                       |
-+---------------------------+--------------------------------+
-| Reducible error:          | Irreducible error              |
-|                           |                                |
-| Real relation - estimator | Intrinsic property of the      |
-|                           | error                          |
-+---------------------------+--------------------------------+
++---------------------------+---------------------------------+
+| $[f(x) - \hat f(x)]^2$    | $Var[ϵ]$                        |
++---------------------------+---------------------------------+
+| Reducible error:          | Irreducible error               |
+|                           |                                 |
+| Real relation - estimator | Intrinsic property of the error |
++---------------------------+---------------------------------+
 
 If the model is really good, the estimator is similar to the real
 relation and I can "reduce" the error. If the model is extremely
@@ -910,5 +908,50 @@ Therefore, $\hat {ERR}$ is likely going to be larger than the $ERR$.
 $\hat {ERR}$ will be an overestimation of the $ERR$. For an error to be
 worse, it implies it is larger than the actual error.
 
-Bias is due to the overestimation of the true error. How can we reduce
-the bias?
+Bias is due to the overestimation of the true error.
+
+#### Reducing bias
+
+**Training set selection probabilities**
+
+![](images/paste-AABFAA7B.png)
+
+$\frac{1}{n} =$ Probability that a point is chosen for the training set
+during 1 draw
+
+$1-\frac{1}{n} =$ Probability that a point is **NOT** chosen for the
+training set during 1 draw
+
+$(1-\frac{1}{n})^n =$ The probability that a point is **NOT** chosen
+during all the n draws
+
+Limitation n -\> infinite -\>
+$(1-\frac{1}{n})^n = e^{-1} \approx 0.3678$
+
+Subsequently, 36.78% of the points are never chosen. 100-36.78% = 63.2%
+go into the training set. These are the only values that are unique.
+
+The larger the data set, the better the model as the estimate of the
+error is less bias. However, the estimate of the error is affected by
+the size of the test set. Therefore, we want to balance the
+test-training proportions.
+
+*The trick to reduce the variance is to average observations.*
+
+**Leave-One-Out Cross-validation method (LOOCV):**
+
+We leave one out of the training set and find an estimator. Then we
+average the estimations:
+
+$\frac{1}{m} \sum_{i=1}^{m}\hat {ERR}^{(i)}$
+
+**Disadvantages LOOCV:**
+
+-   Crazy amount of computing power. Extremely time consuming. If n is
+    huge, it will take too much time. In HPT, we train each model n(n-1)
+    \*. This takes even longer. Does not scale with: big data + complex
+    model
+
+-   There is still typically high variance compared with estimates
+    obtained with other validation methods. This depends on the data &
+    models used.
