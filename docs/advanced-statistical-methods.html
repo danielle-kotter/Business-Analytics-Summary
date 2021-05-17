@@ -774,7 +774,7 @@ USA
 <div class="sourceCode" id="cb2"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb2-1"><a href="advanced-statistical-methods.html#cb2-1" aria-hidden="true" tabindex="-1"></a>DK.clust <span class="ot">&lt;-</span> <span class="fu">hclust</span>(<span class="fu">as.dist</span>(table))</span>
 <span id="cb2-2"><a href="advanced-statistical-methods.html#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(DK.clust) <span class="sc">+</span></span>
 <span id="cb2-3"><a href="advanced-statistical-methods.html#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> <span class="dv">6</span>, <span class="at">col=</span><span class="st">&quot;red&quot;</span>) </span></code></pre></div>
-<p><img src="R-Summaries_files/figure-html/unnamed-chunk-3-1.png" width="100%" /></p>
+<p><img src="R-Summaries_files/figure-html/unnamed-chunk-4-1.png" width="100%" /></p>
 <pre><code>integer(0)</code></pre>
 <hr />
 </div>
@@ -782,7 +782,7 @@ USA
 <h4><span class="header-section-number">8.1.1.2</span> Average linkage</h4>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb4-1"><a href="advanced-statistical-methods.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">hclust</span>(<span class="fu">as.dist</span>(table), <span class="at">method=</span><span class="st">&quot;average&quot;</span>), <span class="at">main=</span><span class="st">&quot;Average linkage&quot;</span>) <span class="sc">+</span></span>
 <span id="cb4-2"><a href="advanced-statistical-methods.html#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> <span class="dv">5</span>, <span class="at">col=</span><span class="st">&quot;red&quot;</span>) </span></code></pre></div>
-<p><img src="R-Summaries_files/figure-html/unnamed-chunk-4-1.png" width="100%" /></p>
+<p><img src="R-Summaries_files/figure-html/unnamed-chunk-5-1.png" width="100%" /></p>
 <pre><code>integer(0)</code></pre>
 <p><strong>Significance clustering</strong></p>
 <p>Total sum of squares (total variance):  </p>
@@ -805,7 +805,7 @@ observations are grouped.</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb6-1"><a href="advanced-statistical-methods.html#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">hclust</span>(<span class="fu">as.dist</span>(table), <span class="at">method=</span><span class="st">&quot;ward.D2&quot;</span>), <span class="at">main=</span><span class="st">&quot;Ward linkage&quot;</span>, </span>
 <span id="cb6-2"><a href="advanced-statistical-methods.html#cb6-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab=</span><span class="st">&quot;Countries&quot;</span>, <span class="at">hang=</span><span class="sc">-</span><span class="dv">1</span>) <span class="sc">+</span></span>
 <span id="cb6-3"><a href="advanced-statistical-methods.html#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">abline</span>(<span class="at">h =</span> <span class="dv">8</span>, <span class="at">col=</span><span class="st">&quot;red&quot;</span>) </span></code></pre></div>
-<p><img src="R-Summaries_files/figure-html/unnamed-chunk-5-1.png" width="100%" /></p>
+<p><img src="R-Summaries_files/figure-html/unnamed-chunk-6-1.png" width="100%" /></p>
 <pre><code>integer(0)</code></pre>
 <p>Ward clustering:</p>
 <p><img src="images/paste-6EC08FDE.png" width="487" /></p>
@@ -859,7 +859,7 @@ there is a range between 0-1. This is classed range-standardized data.</p>
 <li><p>Non-metric MDS</p></li>
 </ul></li>
 </ul>
-<p><img src="R-Summaries_files/figure-html/unnamed-chunk-6-1.png" width="100%" /></p>
+<p><img src="R-Summaries_files/figure-html/unnamed-chunk-7-1.png" width="100%" /></p>
 <pre><code>[1] 0.7181458 0.7909089</code></pre>
 <pre><code>[1] 0.09199945</code></pre>
 </div>
@@ -894,11 +894,11 @@ Attaching package: &#39;ellipse&#39;</code></pre>
 <pre><code>The following object is masked from &#39;package:graphics&#39;:
 
     pairs</code></pre>
-<p><img src="R-Summaries_files/figure-html/unnamed-chunk-11-1.png" width="100%" style="display: block; margin: auto;" /></p>
 <p><img src="R-Summaries_files/figure-html/unnamed-chunk-12-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<p><img src="R-Summaries_files/figure-html/unnamed-chunk-13-1.png" width="100%" style="display: block; margin: auto;" /></p>
 <div class="sourceCode" id="cb23"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb23-1"><a href="advanced-statistical-methods.html#cb23-1" aria-hidden="true" tabindex="-1"></a>DK.PCA <span class="ot">&lt;-</span> <span class="fu">PCA</span>(<span class="fu">as.matrix</span>(data), <span class="at">weight=</span><span class="cn">FALSE</span>)</span>
 <span id="cb23-2"><a href="advanced-statistical-methods.html#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="fu">PLOT.PCA</span>(DK.PCA, <span class="at">map=</span><span class="st">&quot;asymmetric&quot;</span>, <span class="at">rescale=</span><span class="fl">0.5</span>, <span class="at">axes.inv=</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>), <span class="at">dim=</span><span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">3</span>))</span></code></pre></div>
-<p><img src="R-Summaries_files/figure-html/unnamed-chunk-13-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<p><img src="R-Summaries_files/figure-html/unnamed-chunk-14-1.png" width="100%" style="display: block; margin: auto;" /></p>
 </div>
 </div>
 <div id="correspondence-analysis" class="section level2" number="8.4">
@@ -1072,7 +1072,7 @@ SD
 </table>
 <div class="sourceCode" id="cb25"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb25-1"><a href="advanced-statistical-methods.html#cb25-1" aria-hidden="true" tabindex="-1"></a>my.ca <span class="ot">&lt;-</span> <span class="fu">ca</span>(age.V18.US)</span>
 <span id="cb25-2"><a href="advanced-statistical-methods.html#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(my.ca, <span class="at">main=</span><span class="st">&quot;One parent can bring up a child as well as two parents together&quot;</span>, <span class="at">mass=</span><span class="fu">c</span>(<span class="cn">TRUE</span>,<span class="cn">TRUE</span>))</span></code></pre></div>
-<p><img src="R-Summaries_files/figure-html/unnamed-chunk-17-1.png" width="100%" /></p>
+<p><img src="R-Summaries_files/figure-html/unnamed-chunk-18-1.png" width="100%" /></p>
 <div class="sourceCode" id="cb26"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb26-1"><a href="advanced-statistical-methods.html#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(my.ca)</span></code></pre></div>
 <pre><code>
 Principal inertias (eigenvalues):

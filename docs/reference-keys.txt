@@ -5,6 +5,7 @@ removing-infinite-na-values
 transforming-variable-types
 markdown
 setup-rmarkdown-code-chunks
+latex
 miscellaneous
 subsetting
 charts-templates---r
@@ -71,7 +72,6 @@ training-fitting-a-model
 gradient-descent
 sarcastic-gradient-descent
 model-selection-1
-latex
 reducing-bias
 advanced-statistical-methods
 clustering
