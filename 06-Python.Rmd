@@ -673,3 +673,36 @@ n_jobs=4
 get_mse(quadlasso)
 ```
 
+
+**K-Fold Cross validation**
+
+K = 5 folds. The model used is the same as above. 
+
+```{python}
+from sklearn.model_selection import KFold
+kfold = KFold(n_splits=5, shuffle=True, random_state=1)
+
+def get_mse(model):
+  mses = cross_val_score(estimator=model, X=X, y=y, cv=kfold, scoring='neg_mean_squared_error')
+  return np.average(-mses)
+get_mse(linreg)
+get_mse(quadreg)
+```
+
+
+```{python}
+grid = {'lasso_alpha': np.logspace(-3,0,4)}
+quadlasso = GridSearchCV(estimator=quadlasso_empty, param_grid=grid, cv=kfold, scoring='neg_mean_squared_error')
+
+get_mse(quadlasso)
+```
+
+```{python}
+
+```
+
+
+
+
+
+

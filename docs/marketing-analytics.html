@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter - 9 Marketing Analytics | Business Analytics - Cheatsheets &amp; Summary</title>
+  <meta name="description" content="This is a summary of r code learned throughout several courses of my master in management." />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter - 9 Marketing Analytics | Business Analytics - Cheatsheets &amp; Summary" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This is a summary of r code learned throughout several courses of my master in management." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter - 9 Marketing Analytics | Business Analytics - Cheatsheets &amp; Summary" />
+  
+  <meta name="twitter:description" content="This is a summary of r code learned throughout several courses of my master in management." />
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="advanced-statistical-methods.html"/>
+<link rel="next" href="references.html"/>
+<script src="libs/header-attrs-2.7/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">R-coding Cheatsheets & Summary</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="1" data-path="basics-r.html"><a href="basics-r.html"><i class="fa fa-check"></i><b>1</b> Basics R</a>
+<ul>
+<li class="chapter" data-level="1.0.1" data-path="basics-r.html"><a href="basics-r.html#tables-frames-matrices"><i class="fa fa-check"></i><b>1.0.1</b> Tables, frames &amp; Matrices</a></li>
+<li class="chapter" data-level="1.1" data-path="basics-r.html"><a href="basics-r.html#data-sets"><i class="fa fa-check"></i><b>1.1</b> Data sets</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="basics-r.html"><a href="basics-r.html#removing-infinite-na-values"><i class="fa fa-check"></i><b>1.1.1</b> Removing infinite + NA values</a></li>
+<li class="chapter" data-level="1.1.2" data-path="basics-r.html"><a href="basics-r.html#transforming-variable-types"><i class="fa fa-check"></i><b>1.1.2</b> Transforming variable types</a></li>
+<li class="chapter" data-level="1.1.3" data-path="basics-r.html"><a href="basics-r.html#markdown"><i class="fa fa-check"></i><b>1.1.3</b> Markdown</a></li>
+<li class="chapter" data-level="1.1.4" data-path="basics-r.html"><a href="basics-r.html#setup-rmarkdown-code-chunks"><i class="fa fa-check"></i><b>1.1.4</b> Setup rmarkdown &amp; code chunks</a></li>
+<li class="chapter" data-level="1.1.5" data-path="basics-r.html"><a href="basics-r.html#latex"><i class="fa fa-check"></i><b>1.1.5</b> Latex</a></li>
+<li class="chapter" data-level="1.1.6" data-path="basics-r.html"><a href="basics-r.html#miscellaneous"><i class="fa fa-check"></i><b>1.1.6</b> Miscellaneous</a></li>
+<li class="chapter" data-level="1.1.7" data-path="basics-r.html"><a href="basics-r.html#subsetting"><i class="fa fa-check"></i><b>1.1.7</b> Subsetting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="charts-templates-r.html"><a href="charts-templates-r.html"><i class="fa fa-check"></i><b>2</b> Charts templates - R</a></li>
+<li class="chapter" data-level="3" data-path="probability.html"><a href="probability.html"><i class="fa fa-check"></i><b>3</b> Probability</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="probability.html"><a href="probability.html#bayes-theorem"><i class="fa fa-check"></i><b>3.1</b> Bayes Theorem</a></li>
+<li class="chapter" data-level="3.2" data-path="probability.html"><a href="probability.html#discrete-probablity"><i class="fa fa-check"></i><b>3.2</b> Discrete Probablity</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="probability.html"><a href="probability.html#uniform-discrete-probability-distribution"><i class="fa fa-check"></i><b>3.2.1</b> Uniform discrete probability distribution</a></li>
+<li class="chapter" data-level="3.2.2" data-path="probability.html"><a href="probability.html#binomial-distribution"><i class="fa fa-check"></i><b>3.2.2</b> Binomial distribution</a></li>
+<li class="chapter" data-level="3.2.3" data-path="probability.html"><a href="probability.html#poisson-distribution"><i class="fa fa-check"></i><b>3.2.3</b> Poisson distribution</a></li>
+<li class="chapter" data-level="3.2.4" data-path="probability.html"><a href="probability.html#the-normal-distribution"><i class="fa fa-check"></i><b>3.2.4</b> The normal distribution</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="probability.html"><a href="probability.html#samples-estimation-confidence-intervals"><i class="fa fa-check"></i><b>3.3</b> Samples, estimation &amp; confidence intervals</a></li>
+<li class="chapter" data-level="3.4" data-path="probability.html"><a href="probability.html#significance-level"><i class="fa fa-check"></i><b>3.4</b> Significance level</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="probability.html"><a href="probability.html#critical-values"><i class="fa fa-check"></i><b>3.4.1</b> Critical values</a></li>
+<li class="chapter" data-level="3.4.2" data-path="probability.html"><a href="probability.html#test-of-equality---two-samples"><i class="fa fa-check"></i><b>3.4.2</b> Test of equality - two samples</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="probability.html"><a href="probability.html#non-parametric-testing"><i class="fa fa-check"></i><b>3.5</b> Non-Parametric testing</a>
+<ul>
+<li class="chapter" data-level="3.5.1" data-path="probability.html"><a href="probability.html#contengency-table-frequencies"><i class="fa fa-check"></i><b>3.5.1</b> Contengency table / frequencies</a></li>
+<li class="chapter" data-level="3.5.2" data-path="probability.html"><a href="probability.html#chi-square"><i class="fa fa-check"></i><b>3.5.2</b> Chi-square</a></li>
+<li class="chapter" data-level="3.5.3" data-path="probability.html"><a href="probability.html#goodness-of-fit"><i class="fa fa-check"></i><b>3.5.3</b> Goodness of fit</a></li>
+<li class="chapter" data-level="3.5.4" data-path="probability.html"><a href="probability.html#p-value"><i class="fa fa-check"></i><b>3.5.4</b> P-value</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="simple-regressions.html"><a href="simple-regressions.html"><i class="fa fa-check"></i><b>4</b> Simple regressions</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="simple-regressions.html"><a href="simple-regressions.html#basics-regressions"><i class="fa fa-check"></i><b>4.1</b> Basics regressions</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="simple-regressions.html"><a href="simple-regressions.html#summarizing-regressions"><i class="fa fa-check"></i><b>4.1.1</b> Summarizing regressions:</a></li>
+<li class="chapter" data-level="4.1.2" data-path="simple-regressions.html"><a href="simple-regressions.html#dummy-variables-diff-in-means"><i class="fa fa-check"></i><b>4.1.2</b> Dummy variables, diff in means</a></li>
+<li class="chapter" data-level="4.1.3" data-path="simple-regressions.html"><a href="simple-regressions.html#regression-dummy"><i class="fa fa-check"></i><b>4.1.3</b> Regression + dummy</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="simple-regressions.html"><a href="simple-regressions.html#prediction"><i class="fa fa-check"></i><b>4.2</b> Prediction</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="simple-regressions.html"><a href="simple-regressions.html#confidence-and-prediction-plotting"><i class="fa fa-check"></i><b>4.2.1</b> Confidence and prediction plotting</a></li>
+<li class="chapter" data-level="4.2.2" data-path="simple-regressions.html"><a href="simple-regressions.html#prediction-with-dummy-variables"><i class="fa fa-check"></i><b>4.2.2</b> Prediction with dummy variables</a></li>
+<li class="chapter" data-level="4.2.3" data-path="simple-regressions.html"><a href="simple-regressions.html#prediction-intervals-examples"><i class="fa fa-check"></i><b>4.2.3</b> Prediction intervals examples</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="simple-regressions.html"><a href="simple-regressions.html#data-problems"><i class="fa fa-check"></i><b>4.3</b> Data problems</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="simple-regressions.html"><a href="simple-regressions.html#multicollinearity"><i class="fa fa-check"></i><b>4.3.1</b> Multicollinearity</a></li>
+<li class="chapter" data-level="4.3.2" data-path="simple-regressions.html"><a href="simple-regressions.html#variance-inflation-factors"><i class="fa fa-check"></i><b>4.3.2</b> Variance inflation factors</a></li>
+<li class="chapter" data-level="4.3.3" data-path="simple-regressions.html"><a href="simple-regressions.html#anova"><i class="fa fa-check"></i><b>4.3.3</b> ANOVA</a></li>
+<li class="chapter" data-level="4.3.4" data-path="simple-regressions.html"><a href="simple-regressions.html#linearizing-variables"><i class="fa fa-check"></i><b>4.3.4</b> Linearizing variables</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="structure-equation-models.html"><a href="structure-equation-models.html"><i class="fa fa-check"></i><b>5</b> Structure equation models</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="structure-equation-models.html"><a href="structure-equation-models.html#path-analysis-structural-equations"><i class="fa fa-check"></i><b>5.1</b> Path analysis (structural equations)</a></li>
+<li class="chapter" data-level="5.2" data-path="structure-equation-models.html"><a href="structure-equation-models.html#coding-the-model"><i class="fa fa-check"></i><b>5.2</b> Coding the model</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="structure-equation-models.html"><a href="structure-equation-models.html#covariance"><i class="fa fa-check"></i><b>5.2.1</b> Covariance</a></li>
+<li class="chapter" data-level="5.2.2" data-path="structure-equation-models.html"><a href="structure-equation-models.html#reliability"><i class="fa fa-check"></i><b>5.2.2</b> Reliability</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="structure-equation-models.html"><a href="structure-equation-models.html#factor-model"><i class="fa fa-check"></i><b>5.3</b> Factor model</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="structure-equation-models.html"><a href="structure-equation-models.html#setting-covariance-variances"><i class="fa fa-check"></i><b>5.3.1</b> Setting covariance &amp; variances</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="basics-python.html"><a href="basics-python.html"><i class="fa fa-check"></i><b>6</b> Basics Python</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="basics-python.html"><a href="basics-python.html#data-set"><i class="fa fa-check"></i><b>6.1</b> Data set</a></li>
+<li class="chapter" data-level="6.2" data-path="basics-python.html"><a href="basics-python.html#matrixes"><i class="fa fa-check"></i><b>6.2</b> Matrixes</a></li>
+<li class="chapter" data-level="6.3" data-path="basics-python.html"><a href="basics-python.html#filtering-a-data-set"><i class="fa fa-check"></i><b>6.3</b> Filtering a data set</a></li>
+<li class="chapter" data-level="6.4" data-path="basics-python.html"><a href="basics-python.html#data-imputation"><i class="fa fa-check"></i><b>6.4</b> Data imputation</a></li>
+<li class="chapter" data-level="6.5" data-path="basics-python.html"><a href="basics-python.html#data-visualization"><i class="fa fa-check"></i><b>6.5</b> Data visualization</a>
+<ul>
+<li class="chapter" data-level="6.5.1" data-path="basics-python.html"><a href="basics-python.html#other-categorical-plots"><i class="fa fa-check"></i><b>6.5.1</b> Other categorical plots</a></li>
+<li class="chapter" data-level="6.5.2" data-path="basics-python.html"><a href="basics-python.html#preparing-the-data"><i class="fa fa-check"></i><b>6.5.2</b> Preparing the data</a></li>
+<li class="chapter" data-level="6.5.3" data-path="basics-python.html"><a href="basics-python.html#creating-the-models"><i class="fa fa-check"></i><b>6.5.3</b> Creating the models</a></li>
+</ul></li>
+<li class="chapter" data-level="6.6" data-path="basics-python.html"><a href="basics-python.html#model-selection"><i class="fa fa-check"></i><b>6.6</b> Model selection</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="practical-data-science.html"><a href="practical-data-science.html"><i class="fa fa-check"></i><b>7</b> Practical data science</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="practical-data-science.html"><a href="practical-data-science.html#machine-learning"><i class="fa fa-check"></i><b>7.1</b> Machine Learning</a>
+<ul>
+<li class="chapter" data-level="7.1.1" data-path="practical-data-science.html"><a href="practical-data-science.html#theory"><i class="fa fa-check"></i><b>7.1.1</b> Theory</a></li>
+<li class="chapter" data-level="7.1.2" data-path="practical-data-science.html"><a href="practical-data-science.html#finding-the-expected-value-of-the-error"><i class="fa fa-check"></i><b>7.1.2</b> Finding the expected value of the error</a></li>
+<li class="chapter" data-level="7.1.3" data-path="practical-data-science.html"><a href="practical-data-science.html#loss-function"><i class="fa fa-check"></i><b>7.1.3</b> Loss function</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="practical-data-science.html"><a href="practical-data-science.html#bias-variance-trade-off"><i class="fa fa-check"></i><b>7.2</b> Bias-variance trade off</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="practical-data-science.html"><a href="practical-data-science.html#training-fitting-a-model"><i class="fa fa-check"></i><b>7.2.1</b> Training (fitting) a model</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="practical-data-science.html"><a href="practical-data-science.html#gradient-descent"><i class="fa fa-check"></i><b>7.3</b> Gradient descent</a>
+<ul>
+<li class="chapter" data-level="7.3.1" data-path="practical-data-science.html"><a href="practical-data-science.html#sarcastic-gradient-descent"><i class="fa fa-check"></i><b>7.3.1</b> Sarcastic gradient descent</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="practical-data-science.html"><a href="practical-data-science.html#model-selection-1"><i class="fa fa-check"></i><b>7.4</b> Model Selection</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="advanced-statistical-methods.html"><a href="advanced-statistical-methods.html"><i class="fa fa-check"></i><b>8</b> Advanced Statistical Methods</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="advanced-statistical-methods.html"><a href="advanced-statistical-methods.html#clustering"><i class="fa fa-check"></i><b>8.1</b> Clustering</a>
+<ul>
+<li class="chapter" data-level="8.1.1" data-path="advanced-statistical-methods.html"><a href="advanced-statistical-methods.html#hierachical-clustering"><i class="fa fa-check"></i><b>8.1.1</b> Hierachical clustering</a></li>
+<li class="chapter" data-level="8.1.2" data-path="advanced-statistical-methods.html"><a href="advanced-statistical-methods.html#non-hierachical-clustering"><i class="fa fa-check"></i><b>8.1.2</b> Non-Hierachical clustering</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="advanced-statistical-methods.html"><a href="advanced-statistical-methods.html#multi-dimensional-scaling"><i class="fa fa-check"></i><b>8.2</b> Multi-Dimensional Scaling</a></li>
+<li class="chapter" data-level="8.3" data-path="advanced-statistical-methods.html"><a href="advanced-statistical-methods.html#principal-component-analysis"><i class="fa fa-check"></i><b>8.3</b> Principal component analysis</a>
+<ul>
+<li class="chapter" data-level="8.3.1" data-path="advanced-statistical-methods.html"><a href="advanced-statistical-methods.html#biplots"><i class="fa fa-check"></i><b>8.3.1</b> Biplots</a></li>
+</ul></li>
+<li class="chapter" data-level="8.4" data-path="advanced-statistical-methods.html"><a href="advanced-statistical-methods.html#correspondence-analysis"><i class="fa fa-check"></i><b>8.4</b> Correspondence analysis</a></li>
+<li class="chapter" data-level="8.5" data-path="advanced-statistical-methods.html"><a href="advanced-statistical-methods.html#text-analytics"><i class="fa fa-check"></i><b>8.5</b> Text analytics</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="marketing-analytics.html"><a href="marketing-analytics.html"><i class="fa fa-check"></i><b>9</b> Marketing Analytics</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="marketing-analytics.html"><a href="marketing-analytics.html#logistic-regressions"><i class="fa fa-check"></i><b>9.1</b> Logistic regressions</a>
+<ul>
+<li class="chapter" data-level="9.1.1" data-path="marketing-analytics.html"><a href="marketing-analytics.html#sensitivity-vs-specificity"><i class="fa fa-check"></i><b>9.1.1</b> Sensitivity vs Specificity</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Business Analytics - Cheatsheets &amp; Summary</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="marketing-analytics" class="section level1" number="9">
+<h1><span class="header-section-number">Chapter - 9</span> Marketing Analytics</h1>
+<div id="logistic-regressions" class="section level2" number="9.1">
+<h2><span class="header-section-number">9.1</span> Logistic regressions</h2>
+<p><strong>Logistic regression:</strong> a specialized form of regression that is formulated to predict and explain a binary (two-group) categorical variable rather than a metric dependent measure. May be described as estimating the relationship between a single-non-metric binary dependent variable and a set of metric or non-metric independent variables:</p>
+<p><img src="images/paste-FA6A529F.png" width="359" /></p>
+<p><strong>Classification matrix:</strong> means of assessing the predictive ability of the logistic regression model. Created by cross-tabulating actual values with predicted values. Shows incorrect and correct classifications.</p>
+<p><strong>Cross-validation:</strong> Procedure of dividing the data
+in two parts. Avoids over fitting.</p>
+<ul>
+<li><p><em>Analysis sample:</em> Used in estimating the logistic regression model</p></li>
+<li><p><em>Holdout sample</em> (validation sample): Used to validate the results</p></li>
+</ul>
+<p><strong>Hit ratio:</strong> Percentage of objects correctly
+classified by the model.</p>
+<ul>
+<li><p>TP + TN / N</p></li>
+<li><p>True Positive + True Negative / Number of observations</p></li>
+</ul>
+<p><em>Two types of the logistics coefficient:</em></p>
+<p><img src="images/paste-A073256A.png" width="369" /></p>
+<p><strong>Logistic coefficient: (original).</strong> A positive relationship means that an increase in independent variable is associated with an increase in the predicted probability.</p>
+<ul>
+<li><p>A negative value implies a decrease in the predicted probability</p></li>
+<li><p>A positive values implies a increase of the predicted probability</p></li>
+<li><p>Value 0.0 means a probability of 50%.</p></li>
+</ul>
+<p><strong>Exponentiated logistic regression:</strong> stated in terms of odds. There won’t be negative values.</p>
+<ul>
+<li><p>Coefficient -1.0 = percentage change in the odds</p></li>
+<li><p>F.e. Coefficient of 0.20 = a negative 80 percent change in the odds –&gt; 0.20-1.0 = -0.80 for each unit change in the independent variable</p></li>
+<li><p>A value of 1.0 means there is no change in the odds. The odds are 50% to predict either group. There is a relationship with no direction.</p></li>
+<li><p>A value above 1.0 means a positive increase in the predicted odds</p></li>
+</ul>
+<hr />
+<p><strong>Assessing magnitude of change:</strong></p>
+<p><strong>Percentage change in odds =</strong> (Exponentiated coefficient - 1.0) * 100</p>
+<p><img src="images/paste-C42DB784.png" width="533" /></p>
+<p><strong>Logistic curve:</strong> represent the probability of an event.</p>
+<p><img src="images/paste-B3A0D003.png" width="427" /></p>
+<p><strong>Logit transformation:</strong> transforms values into a discrete binary dependent variable –&gt; probability of an event. This probability is transformed into the odds ratio which acts as the depend variable.</p>
+<p><strong>Maximum chance criteria (MCC) =</strong> Measure of predictive accuracy that is calculated as the percentage of respondents in the largest group.</p>
+<pre><code>- N largest group / total number of observation. 
+- If your hit rate is larger than this, you are having some value.</code></pre>
+<p><strong>Odds:</strong> the ratio of the probability of an event occurring to the probability of the event not happening. Used as the dependent variable.</p>
+<p><strong>Model estimation fit:</strong></p>
+<p><strong>Likelihood value:</strong> the lower the -2LL, the better for of the model. Perfect fit is 0.</p>
+<p>Pseudo R^2 measures: values from 0.0-1.0. Cox &amp; Snell R^2 = the higher value, a greater model fit. The amount of variation accounted for by the model. 1.0 is a perfect fit model.</p>
+<div id="sensitivity-vs-specificity" class="section level3" number="9.1.1">
+<h3><span class="header-section-number">9.1.1</span> Sensitivity vs Specificity</h3>
+<p>Sensitivity = TP / TP + FN, second number<br />
+Specificity = TN / FP + TN<br />
+Hit rate = TP + TN / N<br />
+True positive rate = TP / TP + FN<br />
+Actual negative = TN / TN + FP</p>
+<p><img src="images/paste-9446CC8B.png" width="365" /></p>
+<p><strong>Validation of the results:</strong></p>
+<p>Establishing external validity is done through assessment of hit ratios through a separate holdout sample. It is supported when the hit ratio of the selected approach exceeds the comparison standards that represent the predictive accuracy expected by chance.</p>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="advanced-statistical-methods.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["R-Summaries.pdf", "R-Summaries.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
