@@ -49,6 +49,8 @@
 
 
 
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 
 
 <style type="text/css">
@@ -237,6 +239,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.3.1" data-path="practical-data-science.html"><a href="practical-data-science.html#sarcastic-gradient-descent"><i class="fa fa-check"></i><b>7.3.1</b> Sarcastic gradient descent</a></li>
 </ul></li>
 <li class="chapter" data-level="7.4" data-path="practical-data-science.html"><a href="practical-data-science.html#model-selection-1"><i class="fa fa-check"></i><b>7.4</b> Model Selection</a></li>
+<li class="chapter" data-level="7.5" data-path="practical-data-science.html"><a href="practical-data-science.html#classification-problems"><i class="fa fa-check"></i><b>7.5</b> Classification Problems</a>
+<ul>
+<li class="chapter" data-level="7.5.1" data-path="practical-data-science.html"><a href="practical-data-science.html#evaluating-model-quality"><i class="fa fa-check"></i><b>7.5.1</b> Evaluating model quality</a></li>
+<li class="chapter" data-level="7.5.2" data-path="practical-data-science.html"><a href="practical-data-science.html#multi-class-classification"><i class="fa fa-check"></i><b>7.5.2</b> Multi-class classification</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="advanced-statistical-methods.html"><a href="advanced-statistical-methods.html"><i class="fa fa-check"></i><b>8</b> Advanced Statistical Methods</a>
 <ul>
@@ -250,8 +257,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="8.3.1" data-path="advanced-statistical-methods.html"><a href="advanced-statistical-methods.html#biplots"><i class="fa fa-check"></i><b>8.3.1</b> Biplots</a></li>
 </ul></li>
-<li class="chapter" data-level="8.4" data-path="advanced-statistical-methods.html"><a href="advanced-statistical-methods.html#correspondence-analysis"><i class="fa fa-check"></i><b>8.4</b> Correspondence analysis</a></li>
-<li class="chapter" data-level="8.5" data-path="advanced-statistical-methods.html"><a href="advanced-statistical-methods.html#text-analytics"><i class="fa fa-check"></i><b>8.5</b> Text analytics</a></li>
+<li class="chapter" data-level="8.4" data-path="advanced-statistical-methods.html"><a href="advanced-statistical-methods.html#correspondence-analysis"><i class="fa fa-check"></i><b>8.4</b> Correspondence analysis</a>
+<ul>
+<li class="chapter" data-level="8.4.1" data-path="advanced-statistical-methods.html"><a href="advanced-statistical-methods.html#multiple-correspondence-analysis"><i class="fa fa-check"></i><b>8.4.1</b> Multiple Correspondence Analysis</a></li>
+</ul></li>
+<li class="chapter" data-level="8.5" data-path="advanced-statistical-methods.html"><a href="advanced-statistical-methods.html#multiple-linear-regression-classification-trees"><i class="fa fa-check"></i><b>8.5</b> Multiple linear regression &amp; classification trees</a></li>
+<li class="chapter" data-level="8.6" data-path="advanced-statistical-methods.html"><a href="advanced-statistical-methods.html#text-analytics"><i class="fa fa-check"></i><b>8.6</b> Text analytics</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="marketing-analytics.html"><a href="marketing-analytics.html"><i class="fa fa-check"></i><b>9</b> Marketing Analytics</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="marketing-analytics.html"><a href="marketing-analytics.html#logistic-regressions"><i class="fa fa-check"></i><b>9.1</b> Logistic regressions</a>
+<ul>
+<li class="chapter" data-level="9.1.1" data-path="marketing-analytics.html"><a href="marketing-analytics.html#sensitivity-vs-specificity"><i class="fa fa-check"></i><b>9.1.1</b> Sensitivity vs Specificity</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
@@ -276,7 +294,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="header">
 <h1 class="title">Business Analytics - Cheatsheets &amp; Summary</h1>
-<p class="date"><em>17 May, 2021</em></p>
+<p class="date"><em>27 May, 2021</em></p>
 </div>
 <div id="preface" class="section level1 unnumbered">
 <h1>Preface</h1>
@@ -348,6 +366,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>
