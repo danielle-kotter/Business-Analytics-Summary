@@ -251,13 +251,14 @@ $\alpha^2 + Eϵ[ϵ^2] = [f(x) - \hat f(x)]^2 + Var[ϵ]$
 
 This can be separated in two parts:
 
-+---------------------------+---------------------------------+
-| $[f(x) - \hat f(x)]^2$    | $Var[ϵ]$                        |
-+---------------------------+---------------------------------+
-| Reducible error:          | Irreducible error               |
-|                           |                                 |
-| Real relation - estimator | Intrinsic property of the error |
-+---------------------------+---------------------------------+
++---------------------------+--------------------------------+
+| $[f(x) - \hat f(x)]^2$    | $Var[ϵ]$                       |
++---------------------------+--------------------------------+
+| Reducible error:          | Irreducible error              |
+|                           |                                |
+| Real relation - estimator | Intrinsic property of the      |
+|                           | error                          |
++---------------------------+--------------------------------+
 
 If the model is really good, the estimator is similar to the real
 relation and I can "reduce" the error. If the model is extremely
@@ -1074,8 +1075,9 @@ model and perform model selection, the table below can be used:
     $\frac {y+and\hat y+}{\hat y+}$
 -   False negative rate (FNR). Miss rate
 
-The perfect prediction is recall = 1 & precision = 1. The bad prediction
-is recall = 0 & precision = 0.
+The perfect prediction is recall = 1 & precision = 1.
+
+The bad prediction is recall = 0 & precision = 0.
 
 ![](images/paste-C83C7277.png){width="427"}
 
