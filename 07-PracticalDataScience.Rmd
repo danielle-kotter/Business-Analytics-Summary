@@ -251,14 +251,13 @@ $\alpha^2 + Eϵ[ϵ^2] = [f(x) - \hat f(x)]^2 + Var[ϵ]$
 
 This can be separated in two parts:
 
-+---------------------------+--------------------------------+
-| $[f(x) - \hat f(x)]^2$    | $Var[ϵ]$                       |
-+---------------------------+--------------------------------+
-| Reducible error:          | Irreducible error              |
-|                           |                                |
-| Real relation - estimator | Intrinsic property of the      |
-|                           | error                          |
-+---------------------------+--------------------------------+
++---------------------------+---------------------------------+
+| $[f(x) - \hat f(x)]^2$    | $Var[ϵ]$                        |
++---------------------------+---------------------------------+
+| Reducible error:          | Irreducible error               |
+|                           |                                 |
+| Real relation - estimator | Intrinsic property of the error |
++---------------------------+---------------------------------+
 
 If the model is really good, the estimator is similar to the real
 relation and I can "reduce" the error. If the model is extremely
@@ -991,7 +990,7 @@ results. This is typically used.
 If the model has hyper parameters, the k-fold can be applied for the
 model selection and the k-fold hyper parameter tuning. Therefore it will
 be $k^2$ folds. It might be that this is not computationally feasible.
-It can also be that holdout validation is used for the models election
+It can also be that holdout validation is used for the models selection
 and k-fold cv for hyper parameter tuning.
 
 **Comparing methods:**
@@ -1158,3 +1157,96 @@ classification. As each model here can be trained on the entire data
 set.
 
 ![](images/paste-B6B55442.png)
+
+### Maximal Margin Classifier
+
+An easiest model is when there is only one feature with two classes. A
+linear classifier can split these classes into two and classify the two
+groups perfectly. However, typically there is some overlap where the
+variables are not linearly classifiable. Below are examples from both
+options:
+
+![](images/paste-29E76712.png)
+
+On a two dimensional spaces this looks like:
+
+![](images/paste-26391CB2.png)
+
+$R^p = H: B_0+B_1X_1+B_2X_2.....B_pX_p=0$
+
+Robustness maximize the "distance" from the 2 classes.
+
+------------------------------------------------------------------------
+
+### Support vector classifier
+
+It is also possible that there is non-linearity where you cannot draw a
+hyper plane and draw a line to separate the classes.
+
+If the objection is to still make this separation in a hyper plane,
+there has to be some miss-classifications.
+
+For example, the below it might be better to classify the one "outlier"
+wrong and keep the linear separator as it might prove better
+out-of-sample accuracy. We want to pick up the true plus difference
+instead of the noise in the data. therefore, we could use a maximum
+margin classified which allows for a few miss-classification. This could
+be within a "budget".
+
+![](images/paste-CFF70EEB.png)
+
+Points that are correct classified on the hyper plane, are additionally
+further away than the margin and therefore with confidence classified.
+
+#### ![Tutorial) Support Vector Machines (SVM) in Scikit-learn - DataCamp](http://res.cloudinary.com/dyd911kmh/image/upload/f_auto,q_auto:best/v1526288453/index3_souoaz.png)
+
+We want to associate with a certain variable, $ϵ_1$. Somewhat like a
+penalty of miss-classifying objects.
+
+1.  Outside of the margin -\> Well-classified = $ϵ_1=0$ =
+    $y_i(….)> M(1-ϵ_i)=M$
+2.  Correctly classified but within margin -\> Small penalty =
+    $ϵ_1=[0,1]$ = $y_i(….)> M(1-ϵ_i)[0,1][0,M]$
+3.  Miss-classified -\> Large penalty = $ϵ_1=1>$ =
+    $y_i(….)> M(1-ϵ_i)[<0]$
+
+The goal is to maximize the margin. Now we calculate:
+
+$y_i(\beta_0+\beta_1X_i+....\beta_pX_i> M(1-ϵ_i)$
+
+*Type 1:*
+
+If ϵ is 0, the quantity will be larger or equal to M. So if y is larger
+than M, it is correctly classified because the distance between y and
+the hyper plane is larger than the margin.
+
+*Type 2:*
+
+If ϵ is between 0-1, the margin will also be between 0-1. now we cannot
+guarantee that the distance between the hyper plane is larger than 1.
+Only that it is between 0 and M.
+
+*Type 3:*
+
+If ϵ is larger than 1, the M becomes negative. This means that y is a
+negative number and cannot be classified correctly. As for example the
+real class was positive but the predicted class was negative or vice
+verse.
+
+However, we only want to allow for a few of the observations to be
+miss-classified to maximize the model.
+
+$ϵ_i=0> u_i(....)>M$
+
+Therefore, there will be "budget" Where the sum of the ϵ cannot go above
+a certain value. This will be the hyper parameter C.
+
+$ϵ_1 +ϵ_2+....+ϵ_m<C$
+
+If C=0, we do not allow for any miss-classification (maximum margin
+classifier). If C=small bias will be low but the variance could be
+small. The outlier could change the model a lot. If C=large, the bias is
+large and variance small. There will be many miss-classification.
+
+Therefore, C is a trade-off of bias and variance. We can use again the
+grid search to find the hyper parameter.

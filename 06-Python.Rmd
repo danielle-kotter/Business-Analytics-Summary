@@ -699,6 +699,11 @@ def get_mse(model):
 
 
 
+### SVC
+
+```{python}
+
+```
 
 
 

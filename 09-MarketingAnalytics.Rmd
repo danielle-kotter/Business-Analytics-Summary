@@ -153,9 +153,8 @@ Now it is possible to learn from the relative importance of attributes.
     the effects of individual features on the customers perception of
     product value
 
-```{=html}
 <!-- -->
-```
+
 3.  Result: an increment "perceived value" for each of a products
     features
 
@@ -269,8 +268,8 @@ $C = [i,j]$, the respondent will choose $i$ if $U_i > U_j$.
 
 The utility can be decomposed into two main components
 
--   A deterministic part that explains the
-    contribution of different observable attributes to the choices
+-   A deterministic part that explains the contribution of different
+    observable attributes to the choices
 
 -   A random component that simply is the difference between the "true"
     utility of the profile for the individual and the deterministic part
@@ -291,8 +290,7 @@ on the distribution of the random component.
 **Choice models**
 
 **Probit model =** A conventional assumption on the random term in the
-above model is to
-assume that $e_i$ and $e_j$ are distributed normally.
+above model is to assume that $e_i$ and $e_j$ are distributed normally.
 
 **Logit model =** Can be derived by assuming Extreme Value of Type I
 (EV) distribution on ε, and by assuming that the random components are
