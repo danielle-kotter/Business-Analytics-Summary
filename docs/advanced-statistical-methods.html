@@ -220,7 +220,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.5.2" data-path="basics-python.html"><a href="basics-python.html#preparing-the-data"><i class="fa fa-check"></i><b>6.5.2</b> Preparing the data</a></li>
 <li class="chapter" data-level="6.5.3" data-path="basics-python.html"><a href="basics-python.html#creating-the-models"><i class="fa fa-check"></i><b>6.5.3</b> Creating the models</a></li>
 </ul></li>
-<li class="chapter" data-level="6.6" data-path="basics-python.html"><a href="basics-python.html#model-selection"><i class="fa fa-check"></i><b>6.6</b> Model selection</a></li>
+<li class="chapter" data-level="6.6" data-path="basics-python.html"><a href="basics-python.html#model-selection"><i class="fa fa-check"></i><b>6.6</b> Model selection</a>
+<ul>
+<li class="chapter" data-level="6.6.1" data-path="basics-python.html"><a href="basics-python.html#svc"><i class="fa fa-check"></i><b>6.6.1</b> SVC</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="practical-data-science.html"><a href="practical-data-science.html"><i class="fa fa-check"></i><b>7</b> Practical data science</a>
 <ul>
@@ -243,6 +246,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="7.5.1" data-path="practical-data-science.html"><a href="practical-data-science.html#evaluating-model-quality"><i class="fa fa-check"></i><b>7.5.1</b> Evaluating model quality</a></li>
 <li class="chapter" data-level="7.5.2" data-path="practical-data-science.html"><a href="practical-data-science.html#multi-class-classification"><i class="fa fa-check"></i><b>7.5.2</b> Multi-class classification</a></li>
+<li class="chapter" data-level="7.5.3" data-path="practical-data-science.html"><a href="practical-data-science.html#maximal-margin-classifier"><i class="fa fa-check"></i><b>7.5.3</b> Maximal Margin Classifier</a></li>
+<li class="chapter" data-level="7.5.4" data-path="practical-data-science.html"><a href="practical-data-science.html#support-vector-classifier"><i class="fa fa-check"></i><b>7.5.4</b> Support vector classifier</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="advanced-statistical-methods.html"><a href="advanced-statistical-methods.html"><i class="fa fa-check"></i><b>8</b> Advanced Statistical Methods</a>
@@ -269,6 +274,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.1" data-path="marketing-analytics.html"><a href="marketing-analytics.html#logistic-regressions"><i class="fa fa-check"></i><b>9.1</b> Logistic regressions</a>
 <ul>
 <li class="chapter" data-level="9.1.1" data-path="marketing-analytics.html"><a href="marketing-analytics.html#sensitivity-vs-specificity"><i class="fa fa-check"></i><b>9.1.1</b> Sensitivity vs Specificity</a></li>
+</ul></li>
+<li class="chapter" data-level="9.2" data-path="marketing-analytics.html"><a href="marketing-analytics.html#conjoint-analytics"><i class="fa fa-check"></i><b>9.2</b> Conjoint Analytics</a>
+<ul>
+<li class="chapter" data-level="9.2.1" data-path="marketing-analytics.html"><a href="marketing-analytics.html#random-utility-model"><i class="fa fa-check"></i><b>9.2.1</b> Random utility model</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
@@ -790,7 +799,7 @@ USA
 <div class="sourceCode" id="cb378"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb378-1"><a href="advanced-statistical-methods.html#cb378-1" aria-hidden="true" tabindex="-1"></a>DK.clust <span class="ot">&lt;-</span> <span class="fu">hclust</span>(<span class="fu">as.dist</span>(table))</span>
 <span id="cb378-2"><a href="advanced-statistical-methods.html#cb378-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(DK.clust) <span class="sc">+</span></span>
 <span id="cb378-3"><a href="advanced-statistical-methods.html#cb378-3" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> <span class="dv">6</span>, <span class="at">col=</span><span class="st">&quot;red&quot;</span>) </span></code></pre></div>
-<p><img src="R-Summaries_files/figure-html/unnamed-chunk-183-1.png" width="100%" /></p>
+<p><img src="R-Summaries_files/figure-html/unnamed-chunk-184-1.png" width="100%" /></p>
 <pre><code>integer(0)</code></pre>
 <hr />
 </div>
@@ -798,7 +807,7 @@ USA
 <h4><span class="header-section-number">8.1.1.2</span> Average linkage</h4>
 <div class="sourceCode" id="cb380"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb380-1"><a href="advanced-statistical-methods.html#cb380-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">hclust</span>(<span class="fu">as.dist</span>(table), <span class="at">method=</span><span class="st">&quot;average&quot;</span>), <span class="at">main=</span><span class="st">&quot;Average linkage&quot;</span>) <span class="sc">+</span></span>
 <span id="cb380-2"><a href="advanced-statistical-methods.html#cb380-2" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> <span class="dv">5</span>, <span class="at">col=</span><span class="st">&quot;red&quot;</span>) </span></code></pre></div>
-<p><img src="R-Summaries_files/figure-html/unnamed-chunk-184-1.png" width="100%" /></p>
+<p><img src="R-Summaries_files/figure-html/unnamed-chunk-185-1.png" width="100%" /></p>
 <pre><code>integer(0)</code></pre>
 <p><strong>Significance clustering</strong></p>
 <p>Total sum of squares (total variance):  </p>
@@ -821,7 +830,7 @@ observations are grouped.</p>
 <div class="sourceCode" id="cb382"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb382-1"><a href="advanced-statistical-methods.html#cb382-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">hclust</span>(<span class="fu">as.dist</span>(table), <span class="at">method=</span><span class="st">&quot;ward.D2&quot;</span>), <span class="at">main=</span><span class="st">&quot;Ward linkage&quot;</span>, </span>
 <span id="cb382-2"><a href="advanced-statistical-methods.html#cb382-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab=</span><span class="st">&quot;Countries&quot;</span>, <span class="at">hang=</span><span class="sc">-</span><span class="dv">1</span>) <span class="sc">+</span></span>
 <span id="cb382-3"><a href="advanced-statistical-methods.html#cb382-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">abline</span>(<span class="at">h =</span> <span class="dv">8</span>, <span class="at">col=</span><span class="st">&quot;red&quot;</span>) </span></code></pre></div>
-<p><img src="R-Summaries_files/figure-html/unnamed-chunk-185-1.png" width="100%" /></p>
+<p><img src="R-Summaries_files/figure-html/unnamed-chunk-186-1.png" width="100%" /></p>
 <pre><code>integer(0)</code></pre>
 <p>Ward clustering:</p>
 <p><img src="images/paste-6EC08FDE.png" width="487" /></p>
@@ -875,7 +884,7 @@ there is a range between 0-1. This is classed range-standardized data.</p>
 <li><p>Non-metric MDS</p></li>
 </ul></li>
 </ul>
-<p><img src="R-Summaries_files/figure-html/unnamed-chunk-186-1.png" width="100%" /></p>
+<p><img src="R-Summaries_files/figure-html/unnamed-chunk-187-1.png" width="100%" /></p>
 <pre><code>[1] 0.7181458 0.7909089</code></pre>
 <pre><code>[1] 0.09199945</code></pre>
 </div>
@@ -890,11 +899,11 @@ there is a range between 0-1. This is classed range-standardized data.</p>
 <span id="cb387-2"><a href="advanced-statistical-methods.html#cb387-2" aria-hidden="true" tabindex="-1"></a>DK.data <span class="ot">&lt;-</span> <span class="fu">cmdscale</span>(DK.diss, <span class="at">eig=</span><span class="cn">TRUE</span>)</span></code></pre></div>
 <div id="biplots" class="section level3" number="8.3.1">
 <h3><span class="header-section-number">8.3.1</span> Biplots</h3>
-<p><img src="R-Summaries_files/figure-html/unnamed-chunk-191-1.png" width="100%" style="display: block; margin: auto;" /></p>
 <p><img src="R-Summaries_files/figure-html/unnamed-chunk-192-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<p><img src="R-Summaries_files/figure-html/unnamed-chunk-193-1.png" width="100%" style="display: block; margin: auto;" /></p>
 <div class="sourceCode" id="cb388"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb388-1"><a href="advanced-statistical-methods.html#cb388-1" aria-hidden="true" tabindex="-1"></a>DK.PCA <span class="ot">&lt;-</span> <span class="fu">PCA</span>(<span class="fu">as.matrix</span>(data), <span class="at">weight=</span><span class="cn">FALSE</span>)</span>
 <span id="cb388-2"><a href="advanced-statistical-methods.html#cb388-2" aria-hidden="true" tabindex="-1"></a><span class="fu">PLOT.PCA</span>(DK.PCA, <span class="at">map=</span><span class="st">&quot;asymmetric&quot;</span>, <span class="at">rescale=</span><span class="fl">0.5</span>, <span class="at">axes.inv=</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>), <span class="at">dim=</span><span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">3</span>))</span></code></pre></div>
-<p><img src="R-Summaries_files/figure-html/unnamed-chunk-193-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<p><img src="R-Summaries_files/figure-html/unnamed-chunk-194-1.png" width="100%" style="display: block; margin: auto;" /></p>
 </div>
 </div>
 <div id="correspondence-analysis" class="section level2" number="8.4">
@@ -1098,7 +1107,7 @@ does not provide a interaction.</p>
 these row profiles lie.</p>
 <div class="sourceCode" id="cb390"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb390-1"><a href="advanced-statistical-methods.html#cb390-1" aria-hidden="true" tabindex="-1"></a>my.ca <span class="ot">&lt;-</span> <span class="fu">ca</span>(age.V18.US)</span>
 <span id="cb390-2"><a href="advanced-statistical-methods.html#cb390-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(my.ca, <span class="at">main=</span><span class="st">&quot;One parent can bring up a child as well as two parents together&quot;</span>, <span class="at">mass=</span><span class="fu">c</span>(<span class="cn">TRUE</span>,<span class="cn">TRUE</span>))</span></code></pre></div>
-<p><img src="R-Summaries_files/figure-html/unnamed-chunk-197-1.png" width="100%" /></p>
+<p><img src="R-Summaries_files/figure-html/unnamed-chunk-198-1.png" width="100%" /></p>
 <p>The <strong>inertia</strong> measures the amount of variance in the table or how much
 association between the columns and the rows variables.’</p>
 <p>Inertia = <span class="math inline">\(x^2/n=0\)</span></p>

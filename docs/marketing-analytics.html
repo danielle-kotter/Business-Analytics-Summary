@@ -220,7 +220,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.5.2" data-path="basics-python.html"><a href="basics-python.html#preparing-the-data"><i class="fa fa-check"></i><b>6.5.2</b> Preparing the data</a></li>
 <li class="chapter" data-level="6.5.3" data-path="basics-python.html"><a href="basics-python.html#creating-the-models"><i class="fa fa-check"></i><b>6.5.3</b> Creating the models</a></li>
 </ul></li>
-<li class="chapter" data-level="6.6" data-path="basics-python.html"><a href="basics-python.html#model-selection"><i class="fa fa-check"></i><b>6.6</b> Model selection</a></li>
+<li class="chapter" data-level="6.6" data-path="basics-python.html"><a href="basics-python.html#model-selection"><i class="fa fa-check"></i><b>6.6</b> Model selection</a>
+<ul>
+<li class="chapter" data-level="6.6.1" data-path="basics-python.html"><a href="basics-python.html#svc"><i class="fa fa-check"></i><b>6.6.1</b> SVC</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="practical-data-science.html"><a href="practical-data-science.html"><i class="fa fa-check"></i><b>7</b> Practical data science</a>
 <ul>
@@ -243,6 +246,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="7.5.1" data-path="practical-data-science.html"><a href="practical-data-science.html#evaluating-model-quality"><i class="fa fa-check"></i><b>7.5.1</b> Evaluating model quality</a></li>
 <li class="chapter" data-level="7.5.2" data-path="practical-data-science.html"><a href="practical-data-science.html#multi-class-classification"><i class="fa fa-check"></i><b>7.5.2</b> Multi-class classification</a></li>
+<li class="chapter" data-level="7.5.3" data-path="practical-data-science.html"><a href="practical-data-science.html#maximal-margin-classifier"><i class="fa fa-check"></i><b>7.5.3</b> Maximal Margin Classifier</a></li>
+<li class="chapter" data-level="7.5.4" data-path="practical-data-science.html"><a href="practical-data-science.html#support-vector-classifier"><i class="fa fa-check"></i><b>7.5.4</b> Support vector classifier</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="advanced-statistical-methods.html"><a href="advanced-statistical-methods.html"><i class="fa fa-check"></i><b>8</b> Advanced Statistical Methods</a>
@@ -270,6 +275,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="9.1.1" data-path="marketing-analytics.html"><a href="marketing-analytics.html#sensitivity-vs-specificity"><i class="fa fa-check"></i><b>9.1.1</b> Sensitivity vs Specificity</a></li>
 </ul></li>
+<li class="chapter" data-level="9.2" data-path="marketing-analytics.html"><a href="marketing-analytics.html#conjoint-analytics"><i class="fa fa-check"></i><b>9.2</b> Conjoint Analytics</a>
+<ul>
+<li class="chapter" data-level="9.2.1" data-path="marketing-analytics.html"><a href="marketing-analytics.html#random-utility-model"><i class="fa fa-check"></i><b>9.2.1</b> Random utility model</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
@@ -296,34 +305,46 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="header-section-number">Chapter - 9</span> Marketing Analytics</h1>
 <div id="logistic-regressions" class="section level2" number="9.1">
 <h2><span class="header-section-number">9.1</span> Logistic regressions</h2>
-<p><strong>Logistic regression:</strong> a specialized form of regression that is formulated to predict and explain a binary (two-group) categorical variable rather than a metric dependent measure. May be described as estimating the relationship between a single-non-metric binary dependent variable and a set of metric or non-metric independent variables:</p>
+<p><strong>Logistic regression:</strong> a specialized form of regression that is
+formulated to predict and explain a binary (two-group) categorical
+variable rather than a metric dependent measure. May be described as
+estimating the relationship between a single-non-metric binary dependent
+variable and a set of metric or non-metric independent variables:</p>
 <p><img src="images/paste-FA6A529F.png" width="359" /></p>
-<p><strong>Classification matrix:</strong> means of assessing the predictive ability of the logistic regression model. Created by cross-tabulating actual values with predicted values. Shows incorrect and correct classifications.</p>
-<p><strong>Cross-validation:</strong> Procedure of dividing the data
-in two parts. Avoids over fitting.</p>
+<p><strong>Classification matrix:</strong> means of assessing the predictive ability of
+the logistic regression model. Created by cross-tabulating actual values
+with predicted values. Shows incorrect and correct classifications.</p>
+<p><strong>Cross-validation:</strong> Procedure of dividing the data in two parts.
+Avoids over fitting.</p>
 <ul>
 <li><p><em>Analysis sample:</em> Used in estimating the logistic regression model</p></li>
 <li><p><em>Holdout sample</em> (validation sample): Used to validate the results</p></li>
 </ul>
-<p><strong>Hit ratio:</strong> Percentage of objects correctly
-classified by the model.</p>
+<p><strong>Hit ratio:</strong> Percentage of objects correctly classified by the model.</p>
 <ul>
 <li><p>TP + TN / N</p></li>
 <li><p>True Positive + True Negative / Number of observations</p></li>
 </ul>
 <p><em>Two types of the logistics coefficient:</em></p>
 <p><img src="images/paste-A073256A.png" width="369" /></p>
-<p><strong>Logistic coefficient: (original).</strong> A positive relationship means that an increase in independent variable is associated with an increase in the predicted probability.</p>
+<p><strong>Logistic coefficient: (original).</strong> A positive relationship means that
+an increase in independent variable is associated with an increase in
+the predicted probability.</p>
 <ul>
 <li><p>A negative value implies a decrease in the predicted probability</p></li>
 <li><p>A positive values implies a increase of the predicted probability</p></li>
 <li><p>Value 0.0 means a probability of 50%.</p></li>
 </ul>
-<p><strong>Exponentiated logistic regression:</strong> stated in terms of odds. There won’t be negative values.</p>
+<p><strong>Exponentiated logistic regression:</strong> stated in terms of odds. There
+won’t be negative values.</p>
 <ul>
 <li><p>Coefficient -1.0 = percentage change in the odds</p></li>
-<li><p>F.e. Coefficient of 0.20 = a negative 80 percent change in the odds –&gt; 0.20-1.0 = -0.80 for each unit change in the independent variable</p></li>
-<li><p>A value of 1.0 means there is no change in the odds. The odds are 50% to predict either group. There is a relationship with no direction.</p></li>
+<li><p>F.e. Coefficient of 0.20 = a negative 80 percent change in the odds
+–&gt; 0.20-1.0 = -0.80 for each unit change in the independent
+variable</p></li>
+<li><p>A value of 1.0 means there is no change in the odds. The odds are
+50% to predict either group. There is a relationship with no
+direction.</p></li>
 <li><p>A value above 1.0 means a positive increase in the predicted odds</p></li>
 </ul>
 <hr />
@@ -332,14 +353,21 @@ classified by the model.</p>
 <p><img src="images/paste-C42DB784.png" width="533" /></p>
 <p><strong>Logistic curve:</strong> represent the probability of an event.</p>
 <p><img src="images/paste-B3A0D003.png" width="427" /></p>
-<p><strong>Logit transformation:</strong> transforms values into a discrete binary dependent variable –&gt; probability of an event. This probability is transformed into the odds ratio which acts as the depend variable.</p>
-<p><strong>Maximum chance criteria (MCC) =</strong> Measure of predictive accuracy that is calculated as the percentage of respondents in the largest group.</p>
+<p><strong>Logit transformation:</strong> transforms values into a discrete binary
+dependent variable –&gt; probability of an event. This probability is
+transformed into the odds ratio which acts as the depend variable.</p>
+<p><strong>Maximum chance criteria (MCC) =</strong> Measure of predictive accuracy that
+is calculated as the percentage of respondents in the largest group.</p>
 <pre><code>- N largest group / total number of observation. 
 - If your hit rate is larger than this, you are having some value.</code></pre>
-<p><strong>Odds:</strong> the ratio of the probability of an event occurring to the probability of the event not happening. Used as the dependent variable.</p>
+<p><strong>Odds:</strong> the ratio of the probability of an event occurring to the
+probability of the event not happening. Used as the dependent variable.</p>
 <p><strong>Model estimation fit:</strong></p>
-<p><strong>Likelihood value:</strong> the lower the -2LL, the better for of the model. Perfect fit is 0.</p>
-<p>Pseudo R^2 measures: values from 0.0-1.0. Cox &amp; Snell R^2 = the higher value, a greater model fit. The amount of variation accounted for by the model. 1.0 is a perfect fit model.</p>
+<p><strong>Likelihood value:</strong> the lower the -2LL, the better for of the model.
+Perfect fit is 0.</p>
+<p>Pseudo R^2 measures: values from 0.0-1.0. Cox &amp; Snell R^2 = the higher
+value, a greater model fit. The amount of variation accounted for by the
+model. 1.0 is a perfect fit model.</p>
 <div id="sensitivity-vs-specificity" class="section level3" number="9.1.1">
 <h3><span class="header-section-number">9.1.1</span> Sensitivity vs Specificity</h3>
 <p>Sensitivity = TP / TP + FN, second number<br />
@@ -349,7 +377,163 @@ True positive rate = TP / TP + FN<br />
 Actual negative = TN / TN + FP</p>
 <p><img src="images/paste-9446CC8B.png" width="365" /></p>
 <p><strong>Validation of the results:</strong></p>
-<p>Establishing external validity is done through assessment of hit ratios through a separate holdout sample. It is supported when the hit ratio of the selected approach exceeds the comparison standards that represent the predictive accuracy expected by chance.</p>
+<p>Establishing external validity is done through assessment of hit ratios
+through a separate holdout sample. It is supported when the hit ratio of
+the selected approach exceeds the comparison standards that represent
+the predictive accuracy expected by chance.</p>
+<hr />
+</div>
+</div>
+<div id="conjoint-analytics" class="section level2" number="9.2">
+<h2><span class="header-section-number">9.2</span> Conjoint Analytics</h2>
+<p><em>Quick summary</em></p>
+<p>**‘Conjoint Analytics** enables us to understand, describe, and predict
+consumers’ choices in the contexts where the items/products/services
+that they have to choose among could be described based on a collection
+of attributes; and that individuals make a trade-off among these
+attributes to choose the most appealing offering.’</p>
+<p>Products are composed of multiple attributes or features. Purchasing
+decisions involve complex and subtle trade-offs between different
+features. It is difficult to articulate the value that attribute to a
+particular feature in isolation.</p>
+<p>Conjoint analytics can give a good indication of how customers
+perception of value is built up. It is possible to have an idea
+regarding the <strong>“value premium”</strong> that consumers derive from a feature.
+This can be applied to decision making such as which features to include
+to increase market share.</p>
+<p>Customers make trade-offs in selecting a particular product
+configuration if:</p>
+<ul>
+<li>Different combinations of products are provided</li>
+<li>Customers are asked to choose</li>
+</ul>
+<p>Now it is possible to learn from the relative importance of attributes.</p>
+<p><strong>Steps of Conjoint Analytics</strong></p>
+<ol style="list-style-type: decimal">
+<li>Showing customers various hypothetical product configurations and
+price points and asking them to evaluate them (or choose between
+them)</li>
+<li>Regression analytics is then applied to their responses to isolate
+the effects of individual features on the customers perception of
+product value</li>
+</ol>
+<!-- -->
+<ol start="3" style="list-style-type: decimal">
+<li>Result: an increment “perceived value” for each of a products
+features</li>
+</ol>
+<p><strong>Assessing functional value</strong></p>
+<ul>
+<li><p><strong>Measure</strong> customers’ overall preferences for a selected number of
+product configurations</p></li>
+<li><p><strong>Decompose</strong> these overall preferences into the values that
+customers attach to each level of each attribute</p></li>
+</ul>
+<p>This can be performed through regression analytics.</p>
+<hr />
+<p><strong>Elicitation process</strong></p>
+<ol style="list-style-type: decimal">
+<li>Identifying the set of relevant attributes</li>
+<li>Assign levels to the attributes</li>
+<li>Combine levels to generate profiles</li>
+<li>Generate questions &amp; collect data</li>
+</ol>
+<p>A product configuration is composed of one specific level for each of
+the attribute in the bundle where. Attributes must be relevant to the
+consumers choices and be easy to measure.</p>
+<p>Profile is a combinations of levels.</p>
+<p>As an example we take a pizza where:</p>
+<ul>
+<li><p>Attributes –&gt; cheese, crust, toppings</p></li>
+<li><p>Levels -&gt; Topping = tuna, mushroom, salami. Crust = thick or thin
+etc.</p></li>
+<li><p>Profile -&gt; Pizza with mozzarella cheese, tuna and a thick crust</p></li>
+</ul>
+<p>The amounts of profiles possible are the configurations.</p>
+<p>Each categorical variable is transformed into dummy variables where 0
+indicates not chosen while 1 indicates chosen. This leads to a
+regression model for consumer preferences. Applying to the example of a
+pizza:</p>
+<p>Score: <span class="math inline">\(U = b_0 + b_1MOZ+b_2THIN+b_3TUN+b_4SALAM\)</span></p>
+<hr />
+<p>Conjoint analytics works when consumers choice decision process is a
+<strong>compensatory process</strong> where a highly valued option on one attribute
+can compensate for an unattractive option on another attribute.</p>
+<p>After calculating the betas for the regression model, we can evaluate
+what attributes are more important to the individual respondent. This
+can then be used to crate <strong>benefit segments</strong> to group individuals on
+the basis of the utilities they attach to different product attributes.
+Hereby cluster analytics is used to create the benefit segments using
+the attribute importance.</p>
+<p>The last step is to use this information to:</p>
+<ul>
+<li><p>Estimate the most cost-efficient way to deliver a desired set of
+features</p></li>
+<li><p>Identify the “sweet spots” where margin is maximized</p></li>
+<li><p>Obtain the optimal configuration of functionalities to best compete
+in a target segment</p></li>
+<li><p>Apply to product re-featuring, product line extension</p></li>
+</ul>
+<hr />
+<p><strong>Setting up the survey</strong></p>
+<p>In the full factorial design, all possible combinations of attributes
+and levels are asked to the consumer. However, there might be too many
+profiles to question and retrieve relative answers. It should be under
+20 combinations.</p>
+<p>A method to subset these profiles is:</p>
+<ul>
+<li><p>Fractional factorial design: Ratings are only asked on a
+scientifically selected fraction of combinations</p></li>
+<li><p>Orthogonal design</p></li>
+<li><p>Adaptive design</p></li>
+</ul>
+<p>Different method of asking how to value the profiles such as:</p>
+<ul>
+<li>Ranking</li>
+<li>Metric conjoint: Ratings</li>
+<li>Choice-based conjoint (CBC)</li>
+</ul>
+<p><em>You should include the option of no choice in the choice method.</em></p>
+<p><em>The amount of choice tasks should not exceed 20 and be ideally less
+than 15 if possible.</em></p>
+<p>The consumer choses the product based on the highest utility.</p>
+<div id="random-utility-model" class="section level3" number="9.2.1">
+<h3><span class="header-section-number">9.2.1</span> Random utility model</h3>
+<p>The choice behavior of individuals is based on the random utility model
+(RUM). Each alternative generates a utility for the individual.</p>
+<p>Let us denote by <span class="math inline">\(U_i\)</span> that utility that the profile <span class="math inline">\(i\)</span> generates to
+the individual. In this case, in a choice task with the choice set:
+<span class="math inline">\(C = [i,j]\)</span>, the respondent will choose <span class="math inline">\(i\)</span> if <span class="math inline">\(U_i &gt; U_j\)</span>.</p>
+<p>The utility can be decomposed into two main components</p>
+<ul>
+<li><p>A deterministic part that explains the contribution of different
+observable attributes to the choices</p></li>
+<li><p>A random component that simply is the difference between the “true”
+utility of the profile for the individual and the deterministic part</p></li>
+</ul>
+<p>This leads to: <span class="math inline">\(U_i = V_i + e_i\)</span></p>
+<p>The random component is due to additional factors that influence choices
+that are not observable to the analyst. Therefore, the preferences are
+based on <em>choice probabilities.</em></p>
+<p><span class="math inline">\(Pr(i|i,j) = Pr(U_i &gt; U_j) = Pr(V_i+e_i&gt;V_j+e_j) = Pr(e_j-e_i&lt;V_i-V_j)\)</span></p>
+<p>Different choice models will be derived by making different assumptions
+on the distribution of the random component.</p>
+<hr />
+<p><strong>Choice models</strong></p>
+<p><strong>Probit model =</strong> A conventional assumption on the random term in the
+above model is to assume that <span class="math inline">\(e_i\)</span> and <span class="math inline">\(e_j\)</span> are distributed normally.</p>
+<p><strong>Logit model =</strong> Can be derived by assuming Extreme Value of Type I
+(EV) distribution on ε, and by assuming that the random components are
+independent from each other.</p>
+<p>Example using the logit model for a hotel:</p>
+<p><span class="math inline">\(U = 12 + 15*Gym + 10*SwimmingPool - 20*Price150\)</span></p>
+<p>Here the baseline for price 100. Therefore, the difference going from a
+price 100 to price 150 (50 euros increase) is a decrease in utilities of
+20 units. Moreover, the equivalent of having a gym is 15 unites of
+utility.</p>
+<p>The monetary equivalence of having a gym is therefore = <span class="math inline">\((15*50)/20=€35\)</span></p>
+<p>In other words, by including a gym in the offer, the hotel can charge
+€35 more.</p>
 
 </div>
 </div>

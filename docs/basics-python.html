@@ -220,7 +220,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.5.2" data-path="basics-python.html"><a href="basics-python.html#preparing-the-data"><i class="fa fa-check"></i><b>6.5.2</b> Preparing the data</a></li>
 <li class="chapter" data-level="6.5.3" data-path="basics-python.html"><a href="basics-python.html#creating-the-models"><i class="fa fa-check"></i><b>6.5.3</b> Creating the models</a></li>
 </ul></li>
-<li class="chapter" data-level="6.6" data-path="basics-python.html"><a href="basics-python.html#model-selection"><i class="fa fa-check"></i><b>6.6</b> Model selection</a></li>
+<li class="chapter" data-level="6.6" data-path="basics-python.html"><a href="basics-python.html#model-selection"><i class="fa fa-check"></i><b>6.6</b> Model selection</a>
+<ul>
+<li class="chapter" data-level="6.6.1" data-path="basics-python.html"><a href="basics-python.html#svc"><i class="fa fa-check"></i><b>6.6.1</b> SVC</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="practical-data-science.html"><a href="practical-data-science.html"><i class="fa fa-check"></i><b>7</b> Practical data science</a>
 <ul>
@@ -243,6 +246,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="7.5.1" data-path="practical-data-science.html"><a href="practical-data-science.html#evaluating-model-quality"><i class="fa fa-check"></i><b>7.5.1</b> Evaluating model quality</a></li>
 <li class="chapter" data-level="7.5.2" data-path="practical-data-science.html"><a href="practical-data-science.html#multi-class-classification"><i class="fa fa-check"></i><b>7.5.2</b> Multi-class classification</a></li>
+<li class="chapter" data-level="7.5.3" data-path="practical-data-science.html"><a href="practical-data-science.html#maximal-margin-classifier"><i class="fa fa-check"></i><b>7.5.3</b> Maximal Margin Classifier</a></li>
+<li class="chapter" data-level="7.5.4" data-path="practical-data-science.html"><a href="practical-data-science.html#support-vector-classifier"><i class="fa fa-check"></i><b>7.5.4</b> Support vector classifier</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="advanced-statistical-methods.html"><a href="advanced-statistical-methods.html"><i class="fa fa-check"></i><b>8</b> Advanced Statistical Methods</a>
@@ -269,6 +274,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.1" data-path="marketing-analytics.html"><a href="marketing-analytics.html#logistic-regressions"><i class="fa fa-check"></i><b>9.1</b> Logistic regressions</a>
 <ul>
 <li class="chapter" data-level="9.1.1" data-path="marketing-analytics.html"><a href="marketing-analytics.html#sensitivity-vs-specificity"><i class="fa fa-check"></i><b>9.1.1</b> Sensitivity vs Specificity</a></li>
+</ul></li>
+<li class="chapter" data-level="9.2" data-path="marketing-analytics.html"><a href="marketing-analytics.html#conjoint-analytics"><i class="fa fa-check"></i><b>9.2</b> Conjoint Analytics</a>
+<ul>
+<li class="chapter" data-level="9.2.1" data-path="marketing-analytics.html"><a href="marketing-analytics.html#random-utility-model"><i class="fa fa-check"></i><b>9.2.1</b> Random utility model</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
@@ -766,7 +775,7 @@ log(10)_of_mpg     0.98      -0.83  ...           1.00            1.00
 <div class="sourceCode" id="cb329"><pre class="sourceCode python watch-out"><code class="sourceCode python"><span id="cb329-1"><a href="basics-python.html#cb329-1" aria-hidden="true" tabindex="-1"></a><span class="co">#d.origin = pd.Categorical(d.origin.replace({1: &#39;america&#39;, 2:&#39;europe&#39; 3: &#39;japan&#39;}))</span></span>
 <span id="cb329-2"><a href="basics-python.html#cb329-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb329-3"><a href="basics-python.html#cb329-3" aria-hidden="true" tabindex="-1"></a>sns.relplot(data<span class="op">=</span>d, x<span class="op">=</span><span class="st">&#39;hp&#39;</span>, y<span class="op">=</span><span class="st">&#39;mpg&#39;</span>, hue<span class="op">=</span><span class="st">&#39;origin&#39;</span>, palette<span class="op">=</span><span class="st">&#39;tab10&#39;</span>)</span></code></pre></div>
-<pre><code>&lt;seaborn.axisgrid.FacetGrid object at 0x7ffdb28e1518&gt;</code></pre>
+<pre><code>&lt;seaborn.axisgrid.FacetGrid object at 0x7fc5867cbe80&gt;</code></pre>
 <div class="sourceCode" id="cb331"><pre class="sourceCode python watch-out"><code class="sourceCode python"><span id="cb331-1"><a href="basics-python.html#cb331-1" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
 <p><img src="R-Summaries_files/figure-html/unnamed-chunk-154-1.png" width="100%" /></p>
 <div class="sourceCode" id="cb332"><pre class="sourceCode python watch-out"><code class="sourceCode python"><span id="cb332-1"><a href="basics-python.html#cb332-1" aria-hidden="true" tabindex="-1"></a>corr <span class="op">=</span> d.corr()</span>
@@ -934,7 +943,10 @@ It is important to note that before using the model in production, I must retrai
 <pre><code>7.97288701609446</code></pre>
 <p><strong>K-Fold Cross validation</strong></p>
 <p>K = 5 folds. The model used is the same as above.</p>
+<div id="svc" class="section level3" number="6.6.1">
+<h3><span class="header-section-number">6.6.1</span> SVC</h3>
 
+</div>
 </div>
 </div>
             </section>

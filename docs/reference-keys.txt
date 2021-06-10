@@ -58,6 +58,7 @@ other-categorical-plots
 preparing-the-data
 creating-the-models
 model-selection
+svc
 practical-data-science
 machine-learning
 reinforcement-learning
@@ -76,6 +77,9 @@ reducing-bias
 classification-problems
 evaluating-model-quality
 multi-class-classification
+maximal-margin-classifier
+support-vector-classifier
+tutorial-support-vector-machines-svm-in-scikit-learn---datacamp
 advanced-statistical-methods
 clustering
 hierachical-clustering
@@ -97,9 +101,5 @@ text-analytics
 marketing-analytics
 logistic-regressions
 sensitivity-vs-specificity
-svc
-maximal-margin-classifier
-support-vector-classifier
-tutorial-support-vector-machines-svm-in-scikit-learn---datacamp
 conjoint-analytics
 random-utility-model
