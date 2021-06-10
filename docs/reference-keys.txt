@@ -97,3 +97,9 @@ text-analytics
 marketing-analytics
 logistic-regressions
 sensitivity-vs-specificity
+svc
+maximal-margin-classifier
+support-vector-classifier
+tutorial-support-vector-machines-svm-in-scikit-learn---datacamp
+conjoint-analytics
+random-utility-model

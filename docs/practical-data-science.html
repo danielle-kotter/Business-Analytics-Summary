@@ -49,73 +49,8 @@
 
 
 
-<script src="libs/kePrint-0.0.1/kePrint.js"></script>
-<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 
 
-<style type="text/css">
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -220,7 +155,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.5.2" data-path="basics-python.html"><a href="basics-python.html#preparing-the-data"><i class="fa fa-check"></i><b>6.5.2</b> Preparing the data</a></li>
 <li class="chapter" data-level="6.5.3" data-path="basics-python.html"><a href="basics-python.html#creating-the-models"><i class="fa fa-check"></i><b>6.5.3</b> Creating the models</a></li>
 </ul></li>
-<li class="chapter" data-level="6.6" data-path="basics-python.html"><a href="basics-python.html#model-selection"><i class="fa fa-check"></i><b>6.6</b> Model selection</a></li>
+<li class="chapter" data-level="6.6" data-path="basics-python.html"><a href="basics-python.html#model-selection"><i class="fa fa-check"></i><b>6.6</b> Model selection</a>
+<ul>
+<li class="chapter" data-level="6.6.1" data-path="basics-python.html"><a href="basics-python.html#svc"><i class="fa fa-check"></i><b>6.6.1</b> SVC</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="practical-data-science.html"><a href="practical-data-science.html"><i class="fa fa-check"></i><b>7</b> Practical data science</a>
 <ul>
@@ -243,6 +181,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="7.5.1" data-path="practical-data-science.html"><a href="practical-data-science.html#evaluating-model-quality"><i class="fa fa-check"></i><b>7.5.1</b> Evaluating model quality</a></li>
 <li class="chapter" data-level="7.5.2" data-path="practical-data-science.html"><a href="practical-data-science.html#multi-class-classification"><i class="fa fa-check"></i><b>7.5.2</b> Multi-class classification</a></li>
+<li class="chapter" data-level="7.5.3" data-path="practical-data-science.html"><a href="practical-data-science.html#maximal-margin-classifier"><i class="fa fa-check"></i><b>7.5.3</b> Maximal Margin Classifier</a></li>
+<li class="chapter" data-level="7.5.4" data-path="practical-data-science.html"><a href="practical-data-science.html#support-vector-classifier"><i class="fa fa-check"></i><b>7.5.4</b> Support vector classifier</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="advanced-statistical-methods.html"><a href="advanced-statistical-methods.html"><i class="fa fa-check"></i><b>8</b> Advanced Statistical Methods</a>
@@ -269,6 +209,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.1" data-path="marketing-analytics.html"><a href="marketing-analytics.html#logistic-regressions"><i class="fa fa-check"></i><b>9.1</b> Logistic regressions</a>
 <ul>
 <li class="chapter" data-level="9.1.1" data-path="marketing-analytics.html"><a href="marketing-analytics.html#sensitivity-vs-specificity"><i class="fa fa-check"></i><b>9.1.1</b> Sensitivity vs Specificity</a></li>
+</ul></li>
+<li class="chapter" data-level="9.2" data-path="marketing-analytics.html"><a href="marketing-analytics.html#conjoint-analytics"><i class="fa fa-check"></i><b>9.2</b> Conjoint Analytics</a>
+<ul>
+<li class="chapter" data-level="9.2.1" data-path="marketing-analytics.html"><a href="marketing-analytics.html#random-utility-model"><i class="fa fa-check"></i><b>9.2.1</b> Random utility model</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
@@ -1055,7 +999,7 @@ results. This is typically used.</p>
 <p>If the model has hyper parameters, the k-fold can be applied for the
 model selection and the k-fold hyper parameter tuning. Therefore it will
 be <span class="math inline">\(k^2\)</span> folds. It might be that this is not computationally feasible.
-It can also be that holdout validation is used for the models election
+It can also be that holdout validation is used for the models selection
 and k-fold cv for hyper parameter tuning.</p>
 <p><strong>Comparing methods:</strong></p>
 <table>
@@ -1177,8 +1121,8 @@ model and perform model selection, the table below can be used:</p>
 <span class="math inline">\(\frac {y+and\hat y+}{\hat y+}\)</span></li>
 <li>False negative rate (FNR). Miss rate</li>
 </ul>
-<p>The perfect prediction is recall = 1 &amp; precision = 1. The bad prediction
-is recall = 0 &amp; precision = 0.</p>
+<p>The perfect prediction is recall = 1 &amp; precision = 1.</p>
+<p>The bad prediction is recall = 0 &amp; precision = 0.</p>
 <p><img src="images/paste-C83C7277.png" width="427" /></p>
 <p><img src="images/paste-46CFCBC5.png" /></p>
 <p>Accuracy = # times the model is correct / number of predictions</p>
@@ -1238,7 +1182,77 @@ approach that the estimators are more precise to the 1-vs-1
 classification. As each model here can be trained on the entire data
 set.</p>
 <p><img src="images/paste-B6B55442.png" /></p>
+</div>
+<div id="maximal-margin-classifier" class="section level3" number="7.5.3">
+<h3><span class="header-section-number">7.5.3</span> Maximal Margin Classifier</h3>
+<p>An easiest model is when there is only one feature with two classes. A
+linear classifier can split these classes into two and classify the two
+groups perfectly. However, typically there is some overlap where the
+variables are not linearly classifiable. Below are examples from both
+options:</p>
+<p><img src="images/paste-29E76712.png" /></p>
+<p>On a two dimensional spaces this looks like:</p>
+<p><img src="images/paste-26391CB2.png" /></p>
+<p><span class="math inline">\(R^p = H: B_0+B_1X_1+B_2X_2.....B_pX_p=0\)</span></p>
+<p>Robustness maximize the “distance” from the 2 classes.</p>
+<hr />
+</div>
+<div id="support-vector-classifier" class="section level3" number="7.5.4">
+<h3><span class="header-section-number">7.5.4</span> Support vector classifier</h3>
+<p>It is also possible that there is non-linearity where you cannot draw a
+hyper plane and draw a line to separate the classes.</p>
+<p>If the objection is to still make this separation in a hyper plane,
+there has to be some miss-classifications.</p>
+<p>For example, the below it might be better to classify the one “outlier”
+wrong and keep the linear separator as it might prove better
+out-of-sample accuracy. We want to pick up the true plus difference
+instead of the noise in the data. therefore, we could use a maximum
+margin classified which allows for a few miss-classification. This could
+be within a “budget.”</p>
+<p><img src="images/paste-CFF70EEB.png" /></p>
+<p>Points that are correct classified on the hyper plane, are additionally
+further away than the margin and therefore with confidence classified.</p>
+<div id="tutorial-support-vector-machines-svm-in-scikit-learn---datacamp" class="section level4" number="7.5.4.1">
+<h4><span class="header-section-number">7.5.4.1</span> <img src="http://res.cloudinary.com/dyd911kmh/image/upload/f_auto,q_auto:best/v1526288453/index3_souoaz.png" alt="Tutorial) Support Vector Machines (SVM) in Scikit-learn - DataCamp" /></h4>
+<p>We want to associate with a certain variable, <span class="math inline">\(ϵ_1\)</span>. Somewhat like a
+penalty of miss-classifying objects.</p>
+<ol style="list-style-type: decimal">
+<li>Outside of the margin -&gt; Well-classified = <span class="math inline">\(ϵ_1=0\)</span> =
+<span class="math inline">\(y_i(….)&gt; M(1-ϵ_i)=M\)</span></li>
+<li>Correctly classified but within margin -&gt; Small penalty =
+<span class="math inline">\(ϵ_1=[0,1]\)</span> = <span class="math inline">\(y_i(….)&gt; M(1-ϵ_i)[0,1][0,M]\)</span></li>
+<li>Miss-classified -&gt; Large penalty = <span class="math inline">\(ϵ_1=1&gt;\)</span> =
+<span class="math inline">\(y_i(….)&gt; M(1-ϵ_i)[&lt;0]\)</span></li>
+</ol>
+<p>The goal is to maximize the margin. Now we calculate:</p>
+<p><span class="math inline">\(y_i(\beta_0+\beta_1X_i+....\beta_pX_i&gt; M(1-ϵ_i)\)</span></p>
+<p><em>Type 1:</em></p>
+<p>If ϵ is 0, the quantity will be larger or equal to M. So if y is larger
+than M, it is correctly classified because the distance between y and
+the hyper plane is larger than the margin.</p>
+<p><em>Type 2:</em></p>
+<p>If ϵ is between 0-1, the margin will also be between 0-1. now we cannot
+guarantee that the distance between the hyper plane is larger than 1.
+Only that it is between 0 and M.</p>
+<p><em>Type 3:</em></p>
+<p>If ϵ is larger than 1, the M becomes negative. This means that y is a
+negative number and cannot be classified correctly. As for example the
+real class was positive but the predicted class was negative or vice
+verse.</p>
+<p>However, we only want to allow for a few of the observations to be
+miss-classified to maximize the model.</p>
+<p><span class="math inline">\(ϵ_i=0&gt; u_i(....)&gt;M\)</span></p>
+<p>Therefore, there will be “budget” Where the sum of the ϵ cannot go above
+a certain value. This will be the hyper parameter C.</p>
+<p><span class="math inline">\(ϵ_1 +ϵ_2+....+ϵ_m&lt;C\)</span></p>
+<p>If C=0, we do not allow for any miss-classification (maximum margin
+classifier). If C=small bias will be low but the variance could be
+small. The outlier could change the model a lot. If C=large, the bias is
+large and variance small. There will be many miss-classification.</p>
+<p>Therefore, C is a trade-off of bias and variance. We can use again the
+grid search to find the hyper parameter.</p>
 
+</div>
 </div>
 </div>
 </div>
