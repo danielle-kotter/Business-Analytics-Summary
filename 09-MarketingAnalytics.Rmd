@@ -6,6 +6,8 @@ editor_options:
 
 # Marketing Analytics
 
+*Class given by: Mohammad Ghaderi*
+
 ## Logistic regressions
 
 **Logistic regression:** a specialized form of regression that is

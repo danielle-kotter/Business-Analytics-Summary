@@ -1,5 +1,7 @@
 # Structure equation models
 
+*Class given by: Albert Satorra*
+
 **Structural Equation Modeling (SEM):** is an extremely broad and flexible framework for data analysis, perhaps better thought of as a family of related methods rather than as a single technique. Measuring latent constructs is challenging and we must also incorporate estimates of measurement error into our models. SEM excels at both of these tasks. SEM is especially suited for causal analysis.[@kdnuggets2017]
 
 VS

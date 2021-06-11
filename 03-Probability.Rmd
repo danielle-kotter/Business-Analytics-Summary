@@ -1,5 +1,7 @@
 # Probability
 
+*Class given by: Walter Garcia-Fontes*
+
 ```{r, message=FALSE, warning=FALSE}
 library(prob)
 library(LaplacesDemon) # Bayes Theorem

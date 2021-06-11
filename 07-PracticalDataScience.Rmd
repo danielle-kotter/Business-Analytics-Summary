@@ -6,6 +6,8 @@ editor_options:
 
 # Practical data science
 
+*Class given by: Alberto Santini*
+
 ## Machine Learning
 
 There are multiple types of machine learning:
@@ -1006,17 +1008,17 @@ The label is not numeric but it is a member of a discrete set.
 
 *Examples:*
 
-+----------------------+------------------------------+
-| Classification       | Label                        |
-+======================+==============================+
-| y {Spam, Not Spam}   | Binary Classification        |
-+----------------------+------------------------------+
-| y {0, 1]             | Binary with one-hot encoding |
-|                      |                              |
-| Negative vs Positive |                              |
-+----------------------+------------------------------+
-| y {Dog, Cat, Rabbit} | Multi-class classification   |
-+----------------------+------------------------------+
++----------------------+-----------------------------+
+| Classification       | Label                       |
++======================+=============================+
+| y {Spam, Not Spam}   | Binary Classification       |
++----------------------+-----------------------------+
+| y {0, 1]             | Binary with one-hot         |
+|                      | encoding                    |
+| Negative vs Positive |                             |
++----------------------+-----------------------------+
+| y {Dog, Cat, Rabbit} | Multi-class classification  |
++----------------------+-----------------------------+
 
 |                     | Real class | -1             | +1             |
 |---------------------|------------|----------------|----------------|

@@ -38,6 +38,8 @@ import os
 
 # Basics Python
 
+*Class given by: Alberto Santini*
+
 ```{r}
 y = 5 + 5
 y

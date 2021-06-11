@@ -1,5 +1,7 @@
 # Simple regressions
 
+*Class given by: Walter Garcia-Fontes*
+
 ```{r include=FALSE}
 data <- cars
 x <- cars$speed
