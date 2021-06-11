@@ -776,7 +776,7 @@ log(10)_of_mpg     0.98      -0.83  ...           1.00            1.00
 <div class="sourceCode" id="cb329"><pre class="sourceCode python watch-out"><code class="sourceCode python"><span id="cb329-1"><a href="basics-python.html#cb329-1" aria-hidden="true" tabindex="-1"></a><span class="co">#d.origin = pd.Categorical(d.origin.replace({1: &#39;america&#39;, 2:&#39;europe&#39; 3: &#39;japan&#39;}))</span></span>
 <span id="cb329-2"><a href="basics-python.html#cb329-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb329-3"><a href="basics-python.html#cb329-3" aria-hidden="true" tabindex="-1"></a>sns.relplot(data<span class="op">=</span>d, x<span class="op">=</span><span class="st">&#39;hp&#39;</span>, y<span class="op">=</span><span class="st">&#39;mpg&#39;</span>, hue<span class="op">=</span><span class="st">&#39;origin&#39;</span>, palette<span class="op">=</span><span class="st">&#39;tab10&#39;</span>)</span></code></pre></div>
-<pre><code>&lt;seaborn.axisgrid.FacetGrid object at 0x7f82ac7b9978&gt;</code></pre>
+<pre><code>&lt;seaborn.axisgrid.FacetGrid object at 0x7fafb635b8d0&gt;</code></pre>
 <div class="sourceCode" id="cb331"><pre class="sourceCode python watch-out"><code class="sourceCode python"><span id="cb331-1"><a href="basics-python.html#cb331-1" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
 <p><img src="R-Summaries_files/figure-html/unnamed-chunk-154-1.png" width="100%" /></p>
 <div class="sourceCode" id="cb332"><pre class="sourceCode python watch-out"><code class="sourceCode python"><span id="cb332-1"><a href="basics-python.html#cb332-1" aria-hidden="true" tabindex="-1"></a>corr <span class="op">=</span> d.corr()</span>
