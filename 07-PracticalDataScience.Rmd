@@ -1299,8 +1299,7 @@ We use Regularization for models that are complex with many parameters
 because they extend to exhibit high variance. We will see it in the
 context of regression mainly (polynomial normally).
 
-Regularization term = $\alpha R(\beta)$ where \$\\alpha \$ =
-hyperparameter.
+Regularization term = $\alpha R(\beta)$ where $\alpha$ = hyperparameter.
 
 RIDGE REGULARIZATION (Here I am penalizing a minimization problem, but I
 am adding a not negative cost and what I am penalizing is the square, so
