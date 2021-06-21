@@ -103,3 +103,16 @@ logistic-regressions
 sensitivity-vs-specificity
 conjoint-analytics
 random-utility-model
+data-set-1
+finding-the-error
+training-vs-test-set
+stochastic-gradient-descent
+validations-methods
+hold-out-validation-method
+grid-search
+standardization
+leave-one-out-cross-validation-method-loocv
+k-fold-cross-validation
+receiver-operating-characteristics-roc
+regularization
+section

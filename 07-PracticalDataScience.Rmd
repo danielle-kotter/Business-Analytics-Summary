@@ -18,77 +18,88 @@ There are multiple types of machine learning:
 
 -   Reinforcement learning
 
-#### Reinforcement learning:
+**Reinforcement learning:**
 
-Alpha go. ML for chess. Trained by trial and error. First they are
-taught the simple rules and then asked to train by themselves and learn
-from their mistakes. The algorithms are asked to do something and either
+**Reinforcement learning** (RL) is an area of **machine learning**
+concerned with how intelligent agents ought to take actions in an
+environment in order to maximize the notion of cumulative reward. An
+example of application is by playing chess where through trial and
+error, the algorithm was eventually able to beat any player. First they
+are taught the simple rules and then asked to train by themselves and
+learn from their mistakes. The algorithms are asked to make a move and
+either receive:
 
--   Get a rewards or
+-   A reward or
 
 -   A penalty
 
 As a result, they learn which moves are good and continue to try
-something else. Machine learning still does not understand casual
-relationships.
+something else. However, machine learning still does not understand
+casual relationships.
 
-#### Unsupervised learning:
+**Unsupervised learning:**
 
-We do not have labels on the data. Can still observe patterns, it
-understands there are commonalities but not with a reason.
+Unsupervised learning is a type of algorithm that learns patterns from
+unlabeled data. The hope is that, through mimicry, the machine is forced
+to build a compact internal representation of its world and then
+generate imaginative content. While there are no labels available, the
+algorithm can still observe patterns and understand that there are
+commonalities. Again, it won't be able to understand causality.
 
-You can combine labeled data, for example from the passed and look for
-patterns with the unlabeled data.
+It is possible to combine labeled data, for example from the passed and
+look for patterns with the unlabeled data.
 
 ![](images/paste-0F7C76CE.png){width="656"}
 
-#### Supervised learning
+**Supervised learning**
 
-Supervised learning: Extracting patterns from data and making
-predictions based on passed behavior.
+**Supervised learning** is an approach to creating **artificial
+intelligence** (**AI**), where a computer algorithm is trained on input
+data that has been labeled for a particular output. Therefore, it is
+extracting patterns from data and making predictions based on passed
+behavior.
 
 An example is a picture of an animal and the algorithms predicts which
-animal it is.
-
-Hereby we use training data to train the algorithm. However, the data
-must be labeled: we already know the correct answer. This method does
-not include trial or error.
+animal it is. Hereby we use training data to train the algorithm.
+However, the data must be labeled meaning we already know the correct
+answer. This method does not include trial or error.
 
 For example, first showing examples of cats and then it can make
-predictions. Meaning, we show a new picture and it can predict whether
-it is a cat or not a cat.
+predictions. Then we show a new picture and it can predict whether it is
+a cat or not a cat. There are also multiple types of models than can be
+applied for supervised learning such as:
 
 -   Regression tasks: label is a continuous number. Hereby what we want
     to predict is continuous, not necessarily the data given to predict.
     F.E. House prices
 
 -   Classification tasks: Label is one of discrete set of possible
-    values. F.E. Is it a dog or a cat
+    values. F.E. Is it a dog or a cat. Or it is a score from 1 to 5,
+    integer.
 
 ### Theory
 
-Supervised learning - Regression - Classification
+Throughout this chapter, only supervised learning is explored in the two
+methods: regression and classification.
 
 +---------------+-----------------------------------------------------+
 | Symbol        | Explanation                                         |
 +===============+=====================================================+
-| y             | Real value                                          |
+| y             | The real value. Generic output. The label. (ML) The |
+|               | thing I want to predict.                            |
+|               |                                                     |
+|               | Dependent variable (statistics).                    |
 +---------------+-----------------------------------------------------+
 | **ŷ**         | Prediction                                          |
 +---------------+-----------------------------------------------------+
 | **y-ŷ**       | Absolute error                                      |
 +---------------+-----------------------------------------------------+
-| **( y-ŷ)\^2** | Squared error \|                                    |
+| **( y-ŷ)\^2** | Squared error                                       |
 +---------------+-----------------------------------------------------+
 | **x**         | Generic input / Features. The things I use to       |
 |               | predict y.                                          |
 |               |                                                     |
 |               | The independent variable (statistics).              |
-+---------------+-----------------------------------------------------+
-| **y**         | Generic output. The label. (ML) The thing I want to |
-|               | predict.                                            |
-|               |                                                     |
-|               | Dependent variable (statistics).                    |
 +---------------+-----------------------------------------------------+
 | **p**         | Number of features (machine learning).              |
 |               |                                                     |
@@ -99,28 +110,28 @@ Supervised learning - Regression - Classification
 +---------------+-----------------------------------------------------+
 
 If I know the inputs, I could try to "predict" the output. This would
-state that in the real world the outputs (y) are a function of the
+state that in the real world, the outputs (y) are a function of the
 inputs (x). In mathematical terms:
 
 $y = f(x)$
 
 For example, if we know multiple features of a house, we could try to
-predict whether a person would like it. (based on f.e. Square meters,
+predict whether a person would like it. (based on f.e. square meters,
 number of bedrooms etc.) However, realistically and economically we
 cannot always find all the possible features that would predict an
 output. It is always affected by some uncertainty. Therefore, y is a
 function of x but adding some noise. Which leads to:
 
-Deterministic function: $y = f(x) + E$
+Deterministic function: $y = f(x) + ϵ$
 
-E = (error) noise, a random variable which models some unpredictable
-events that happens in the real world that we do not have a
-corresponding input for to take into account.
+**ϵ** = (error) noise --\> a random variable which models some
+unpredictable events that happens in the real world, that we do not have
+a corresponding input for to take into account.
 
-We assume that E obeys at least a couple of properties:
+We assume that ϵ obeys at least a couple of properties:
 
-1.  E is not correlated with any of the features
-2.  Expected value of the random variable, E[E] = 0
+1.  ϵ is not correlated with any of the features
+2.  Expected value of the random variable, ϵ[ϵ] = 0
 
 Assumption 1 can be F.E. that someone really wants to buy a house
 because there is a good place to put a dog bed. This cannot be predicted
@@ -132,32 +143,30 @@ a decrease in the output. It has to be truly random.
 
 ------------------------------------------------------------------------
 
-The real world: $y = f(x) + E$. We want to try to learn more about this
-function f.
+In the real word we have the following: $y = f(x) + E$. Next we want to
+try to learn more about this function f. In order to be able to do so,
+we have to find an estimator. The estimator is the thing that I want to
+use to approximate as best as possible the real relationship between the
+inputs and outputs in the real world.
 
-Estimator = $\hat f$.
+Estimator = $\hat f$
 
 If we do a good job, we are able to find a $\hat f$ that is similar to
 the true value of f. If I am able to find a $\hat f$, I can plug in the
-input into the estimator and make a prediction. The estimator is the
-thing that I want to use to approximate as best as possible the real
-relationship between the inputs and outputs in the real world. In
-mathematical terms:
+input into the estimator and make a prediction. In mathematical terms:
 
 $\hat f (x) = \hat y$ = prediction
 
 If the model is **accurate** the prediction is **accurate** =
 
-$\hat f$ is similar to $f$ and therefore $\hat y$ is similar to $y$ and
-therefore We have accurate predictions.
+$\hat f$ is similar to $f$ and therefore $\hat y$ is similar to $y$ --\>
+We have accurate predictions.
 
-*What is key for the data scientist is: **Out-Of-Sample Accuracy.***
+> What is key for the data scientist -\> **Out-Of-Sample Accuracy.**
 
 This means that your model is accurate with your sample but also with
-out-of-sample data.
-
-How can I measure how accurate $\hat y$ is compared to $y$? We look at
-the error.
+out-of-sample data. How can I measure how accurate $\hat y$ is compared
+to $y$? We can have a look at the error.
 
 **Squared error:** Most classical error measure = $(y-\hat y)^2$
 
@@ -172,24 +181,27 @@ positive)\
 Alternative way of valuing the error is the **absolute error:**
 $y-\hat y$
 
-#### Data Visualized
+### Data set
 
-Typically we will call our data: x & y
-
-One data point looks like:
+Typically we will call our data: x & y. One data point looks like:
 
 $(x1, x2, …., xp, y)$
 
-Here X1 can be independent variable 1 for example square meters. X2 can
-be number of rooms and Xp the year it is build. Y is the price of the
-house.
+Taken the example of predicting house prices, the X1 can be independent
+variable 1 for example square meters. X2 can be number of rooms and XP
+the year it is build. Y is the price of the house.
 
 ![](images/paste-0140ACD4.png){width="535"}
 
+------------------------------------------------------------------------
+
 ### Finding the expected value of the error
 
-**Random variable:** is described informally as a variable whose values
-depend on outcomes of a random phenomenon.
+A **random variable** is a **variable** whose value is unknown or a
+function that assigns values to each of an experiment's outcomes. A
+**random variable** can be either discrete (having specific values) or
+continuous (any value in a continuous range). It is described informally
+as a variable whose values depend on outcomes of a random phenomenon.
 
 The error is a random variable. Therefore, y is also a random variable
 because some of its expression is: $f(x) + ϵ = y$.
@@ -223,7 +235,7 @@ Make use of it being linear:
 $Eϵ[\alpha^2] + 2Eϵ[\alphaϵ] + Eϵ[ϵ^2]$
 
 Now we can see that alpha does not have the random element ϵ making it
-not a random variable and is deterministic term (constant). As it is
+not a random variable and is **deterministic term** (constant). As it is
 constant and without error, it is already the expected value. We
 re-write again:
 
@@ -251,12 +263,12 @@ To combine this with the previous equation:
 
 $\alpha^2 + Eϵ[ϵ^2] = [f(x) - \hat f(x)]^2 + Var[ϵ]$
 
-This can be separated in two parts:
+This final expression can be separated in two parts:
 
 +---------------------------+---------------------------------+
 | $[f(x) - \hat f(x)]^2$    | $Var[ϵ]$                        |
 +---------------------------+---------------------------------+
-| Reducible error:          | Irreducible error               |
+| **Reducible error:**      | **Irreducible error**           |
 |                           |                                 |
 | Real relation - estimator | Intrinsic property of the error |
 +---------------------------+---------------------------------+
@@ -272,11 +284,9 @@ However, even when this happens, I still cannot affect the "irreducible"
 error because it is noise from the real world. It is intrinsic property
 / characteristics of the data, not the estimator.
 
-To conclude, we can only affect the reducible error.
+> To reiterate, we can only affect the reducible error.
 
-------------------------------------------------------------------------
-
-Data set = $(x1, y1)….,(xn, yn)$
+### Finding the error
 
 Data point i = $Xi ϵR^p$
 
@@ -285,31 +295,28 @@ real values output.
 
 $\hat f:R^p –> R$
 
-$\hat y = \hat f (x)$= prediction or estimate
-
-$\hat f$ = estimator
-
 If I have a concrete set of observations, I can estimate the expected
 value. For example, I can take the average height of a class to estimate
 the expected value of the height of the class.
 
-Mean squared error (MSE): The empirical average of the expected value of
-the error term. In mathematical terms:
+**Mean squared error (MSE):** The empirical average of the expected
+value of the error term. The average squared difference between the
+estimated values and the actual value. In mathematical terms:
 
 $MSE(\hat f) = \frac{1}{n} \sum_{i=1}^{n}(y_i-\hat y_i)^2$
 
 Considering that $\hat y_i$ is nothing else than the prediction for the
-i input = $\hat y_i = \hat f(x_i)$. Therefore, we can transform again:
+i input = $\hat y_i = \hat f(x_i)$, it can be transformed again:
 
 $MSE(\hat f) = \frac{1}{n} \sum_{i=1}^{n}(y_i-\hat f(x_i))^2$
 
 I can apply $\hat f$ to one row, calculate the p features and look at
 the real label, to compute the MSE.
 
-![](images/paste-DDB3C592.png){width="353"}
+![](images/paste-DDB3C592.png){width="626"}
 
-Mean absolute error (MAE): Hereby the only difference is that it is not
-squared.
+**Mean absolute error (MAE):** Here the only difference is that it is
+not squared.
 
 $MAE(\hat f) = \frac{1}{n} \sum_{i=1}^{n}[y_i-\hat f(x_i)]$
 
@@ -318,8 +325,8 @@ $MAE(\hat f) = \frac{1}{n} \sum_{i=1}^{n}[y_i-\hat f(x_i)]$
 ### Loss function
 
 We can use a loss function which takes as input two numbers: the real
-and the predicted value and gives as output another real number. This is
-the formula:
+and the predicted value and gives as an output another real number. This
+is the formula:
 
 $L(y, \hat y): R^2 = R$
 
@@ -333,36 +340,37 @@ $L(y, \hat y): R^2 = R$
 1)  If I make a correct prediction $(\hat y = y)$, then I have 0 loss
     $L(y, \hat y) = 0$ if $(\hat y = y)$.
 
-2)  For most loss function, I want $L(y, \hat y)$ to be large than the\
-    "wronger" my prediction \$\$\\hat y\$ is. The loss function should
-    not become smaller when the prediction becomes "wronger". Wronger =
-    the more different my prediction is than the true number.
+2)  For most loss function, I want $L(y, \hat y)$ to be large than the
+    "wronger" my prediction . The loss function should not become
+    smaller when the prediction becomes "wronger". Wronger = the more
+    different my prediction is than the true number.
 
-Loss function should be small when my prediction is close to the true
-value and it should be large when it is not.
-
-Estimating the error on existing data on which I know the label:
+The loss function should be small when my prediction is close to the
+true value and it should be large when it is not. Estimating the error
+on existing data on which I know the label:
 
 $Error(\hat f) = \frac{1}{n} \sum_{i=1}^{n}L(y_i-\hat f(x_i))$
 
-Now I am calculating how accurate my model is based on my data set.
-However, we want our model to work well on new previously unseen data
-that is out of my data set / sample. In other words: **Out of sample
-accuracy.**
+### Training vs test set
 
-We therefore, separate our data **randomly** in two parts: the training
+Now it is being calculated how accurate the model is based on the
+available data set. However, we want the model to work well on new
+previously unseen data that is out of the data set / sample. In other
+words: **Out of sample accuracy.**
+
+Therefore, the data is separated **randomly** in two parts: the training
 set and the test set.
 
-![](images/paste-ADE4509B.png){width="365"}
+![](images/paste-ADE4509B.png){width="686"}
 
-**Training set:** Data we show our model to have it learn a good
-estimator. $\hat f \approx f$. The training set will be used to derive
-to a estimator.
-
-**Test set:** Data which we hide from our model. After the model has
-been trained, we will simulate it to the test data to evaluate the
-model's performance. The test set will be sued to estimate the error fo
-the $\hat f$.
+> **Training set:** A subset to train a model. Data we show our model to
+> have it learn a good estimator. $\hat f \approx f$. The training set
+> will be used to derive to a estimator.
+>
+> **Test set:** A subset to test the trained model​. Data which we hide
+> from our model. After the model has been trained, we will simulate it
+> to the test data to evaluate the model's performance. The test set
+> will be used to estimate the error of the $\hat f$.
 
 The training set is called: N = $(x_1,y_1)....,(x_n,y_n)$
 
@@ -373,19 +381,22 @@ Therefore, to calculate the estimate of the error of the model:
 $Err(\hat f) = \frac{1}{n-m} \sum_{i=m+1}^{n}L(y_i-\hat f(x_i))$
 
 \
-To train a model = to find good values for its parameters. First I have
-to fix the shape of the model.
+To train a model means to find good values for its parameters. First the
+shape of the model has to be fixed. As previously stated, there are
+several options. The below offers some of the options for regression
+problems:
 
 -   **Linear:** $\hat f(x_1-,x_p) = \beta_0+\beta_1,.....+\beta_p X_p$\
-    Beta's are the linear coefficients and the X1, Xp are the variables.
+    Beta's are the linear coefficients and the X1, XP are the variables.
     The $\beta$ 's are parameters. I can train a model to find a good
-    estimator by finding good parameters
+    estimator by finding good parameters.
 
 -   **Quadratic:**
     $\hat f(x_1-,x_p) = \beta_0+\beta_1,.....+\beta_p X_p + \beta_1X_1^2+....\beta_1pX_1p + etc.$
 
-I do not know what model is the good model. So I train each model and
-then I pick the model that has the lowest error.
+Prior to analysis, it isn't always clear what model will perform better.
+Subsequently, the data is trained on multiple models and the final
+selection is based on the lowest error.
 
 ![](images/paste-90F835B4.png)
 
@@ -395,11 +406,12 @@ $\beta$ = a vector of parameters (k)
 
 $\beta^*$ = optimal solution of the betas
 
-This is a optimization problem where I try to minimize the empirical
-error of the model on the training set. Once we solve the following
-model, I find the optimal values for the $\beta$'s and this will find me
-the estimator. Once I have my estimator, I can take the test data and
-estimate an error for the model.
+This is a optimization problem the goal is to minimize the empirical
+error of the model on the training set. Once the model is fitted to the
+data, the optimal values for the $\beta$'s are found which will
+therefore be the estimator. Once the estimator is found, it is applied
+to the test data and an error for the model estimated. In mathematical
+terms:
 
 **Training error
 =**$\frac{1}{n} \sum_{i=1}^{n}L(y_i-\hat f(\beta_ix_i))$
@@ -411,15 +423,12 @@ $Err(\hat f) = \frac{1}{n-m} \sum_{i=m+1}^{n}L(y_i-\hat f(\beta^*_i,x_i))$
 
 ## Bias-variance trade off
 
-\
-Train/test split = Random variable
-
-Therefore, if I do this twice, I will most likely get different results.
-As we now have a different training set, I will find a different optimal
-value for $B*$ and therefore the estimator. Subsequently, the estimate
-of the error will be different also.
-
-There is a second source of randomness.
+Splitting the test and training set is performed in a random manner.
+Thus, if the split is made twice, it will most likely get different
+results. As there are now different training sets with different data
+points, an different optimal value for $B*$ is found leading to
+additionally a different estimator and estimate of the error.
+Nevertheless, there is a second source of randomness.
 
 Bias-variance trade-off =
 
@@ -458,60 +467,58 @@ $E[ϵ^2] + 2E[yf(x)-(f(x))^2 - y\hat y + \hat yf(x)] + E[(f(x)- \hat y )^2]$
 
 We know that $E[ϵ^2]$ is $var[ϵ]$
 
-![](images/paste-7FBD2164.png){width="387"}
+![](images/paste-7FBD2164.png){width="684"}
 
-We want the error of the model to be as low as possible. We cannot
-change the noise. Therefore, we want the variance and the trade off to
-be as low as possible. The best we can do is that they are both 0.
+The aim is to make the error of the model as low as possible. Naturally,
+the noise cannot be affected. Therefore, the variance and the trade off
+needs to be as low as possible. The best scenario is that they are both
+0.
 
-If you reduce the variance, naturally there will be at least some biased
-introduced and vice versa.
+Unfortunately if the variance is reduced, naturally there will be at
+least some biased introduced and vice verse.
 
-![](images/paste-607116A0.png){width="449"}
+![](images/paste-607116A0.png){width="684"}
 
-The variance of $\hat y$ = How much would the prediction $\hat y$ vary
-when we change the training set.
+The variance of $\hat y$ = How much the prediction $\hat y$ varies when
+the training set is changed.
 
-My objective is that the predictor is similar to the real function =
-$\hat f \approx f$. If I have a predictor that varies a lot based on the
-training data, it cannot really be similar to the real function.
-Naturally, I want the variance of $\hat y$ to be lower.
+Remember that the ultimate goal is that the predictor is similar to the
+real function = $\hat f \approx f$. If the predictor varies a lot based
+on the training data, it cannot really be similar to the real function.
+Hence, I want the variance of $\hat y$ to be low.
 
-**Model with high variance** = Overfitted model (too complex). A small
-change in the training set --\> large change in the predictions. This
-has a low bias.
+> **Model with high variance** = Overfitted model (too complex). A small
+> change in the training set leads to a large change in the predictions.
+> This has a low bias.
 
-If my model learns the noise of the training set, it can make perfect
-predictions. However, when you apply the model to a different data set,
-it will give bad predictions. Having too many parameters allows the
-model to learn the noise.
+If the model learns the noise of the training set, it can make perfect
+predictions. Although in this instance, when the model is applied to a
+different data set, it will give bad predictions. Having too many
+parameters allows the model to learn the noise. If a model is very
+complicated, it is more likely to be overfitted (high variance, low
+bias).
 
-If a model is very complicated, it is more likely to be overfitted (high
-variance, low bias).
+> **Model with high bias** = Underfitted model (too simple). Large error
+> even in the training set. This typically has a low variance. It is
+> stable but it will give bad predictions and wont be accurate.
 
-**Model with high bias** = Underfitted model (too simple). Large error
-even in the training set. This typically has a low variance. It is
-stable but it will give bad predictions and not accurate.
-
-We can visualize this by plotting a linear regression model. We have
-made a small change in the training set (one point has moved) and there
-has been a small variance in the regression line.
+It can be visualized by plotting a linear regression model. We have made
+a small change in the training set (one point has moved) and there has
+been a small variance in the regression line.
 
 ![](images/paste-B7BAF89D.png)
 
 \
-So we can conclude that there is a low variance in the model.
-
-\
-Now we will look at a polynomial model where there is 0 bias. Therefore,
-the model must intercept perfectly all the points in the training set.
+So we can conclude that there is a low variance in this model. Now we
+will look at a polynomial model where there is 0 bias. Therefore, the
+model must intercept perfectly all the points in the training set.
 
 ![](images/paste-E57B9766.png)
 
 If I want to intercept 4 points in $R^2$, what is the smallest degree of
-a polynomial that 1 need? --\> N-1
+a polynomial that 1s need? --\> N-1
 
-The green model has a high variance, but the bias - 0. This is a
+The green model has a high variance, but the bias = 0. This is a
 overfitted model.
 
 ------------------------------------------------------------------------
@@ -519,7 +526,9 @@ overfitted model.
 ### Training (fitting) a model
 
 **Training a model:** Finding the parameters (of a parametric model)
-which minimize the loss function over the training set.
+which minimize the loss function over the training set. Training a model
+simply means learning (determining) good values for all the weights and
+the bias from labeled examples.
 
 Training set has N points --\> $(X_1,Y_1),....,(X_n,Y_n)$.
 
@@ -527,7 +536,7 @@ Training set has N points --\> $(X_1,Y_1),....,(X_n,Y_n)$.
 
 $\beta :=(\beta_1....,\beta_k)$ = The K parameters of my model.
 
-I want to minimize the training error:
+The goal is to minimize the error -\>
 $\frac{1}{n} \sum_{i=1}^{n}L(y_i-\hat f(\beta_ix_i))$
 
 k = p+1. These are all the parameters plus the intercept in the example
@@ -536,65 +545,72 @@ of a regression model.
 Renamed function of betas: $g(\beta)$
 
 Not all functions are born equal. There are some functions that are
-easier to deal with. Fe. if they are continuous. In the case if I am in
-luck there is a good chance that I can find the minimize. If these
-conditions don't hold it will be very difficult. There is a chance that
-a algorithm finds not necessarily the **global minimum** but it does
-find the **local minimum.** This can be visualized below:
+easier to deal with. F.E. if they are continuous. In the case if I am in
+luck there is a good chance that I can find the minimum. If these
+conditions don't hold, it will be very difficult. There is a chance that
+a algorithm finds not necessarily the global minimum but it does find
+the local minimum. This can be visualized below:
 
-![](images/paste-600DC796.png)
+![](images/paste-600DC796.png){width="700"}
 
-**A convex function:** a continuous **function** whose value at the
-midpoint of every interval in its domain does not exceed the arithmetic
-mean of its values at the ends of the interval.mo
+> **A convex function:** a continuous function whose value at the
+> midpoint of every interval in its domain does not exceed the
+> arithmetic mean of its values at the ends of the interval. Hereby, the
+> global minimum is automatically also the local minimum as there is
+> only one.
 
-Hereby, the global minimum is automatically also the local minimum as
-there is only one.
-
-![](images/paste-AAF7E2B1.png){width="240"}
+![](images/paste-AAF7E2B1.png){width="418"}
 
 **Convex vs concave:**
 
 ![](images/paste-85CC3A24.png)
 
-If I want to find a minimum of a function, I need to find a point where
-the first derivative vanishes. Multiple things could happen:
+Whilst trying to find a minimum for a function, a point must be found
+where the first derivative vanishes. Multiple things could happen:
 
--   You find a local min (might be global)
+-   Finding a local min (might be global)
 
--   You find a local max (might be global)
+-   Finding a local max (might be global)
 
 -   You find a saddle point
+
+------------------------------------------------------------------------
 
 ## Gradient descent
 
 Instead, we present an algorithm that tries to find the local minimum
-using the first derivative. It is a multivariate function as:
+using the first derivative. A vector that has all the partial
+derivatives at that point. It is a multivariate function as:
 
 $g:R^k -> R^+_0$ = $\nabla g$
 
 $\nabla g(\beta_1,....,\beta_k)$ =
 $(\frac{\partial g}{\partial\beta_1}(\beta_1,...,\beta_k),....,\frac{\partial g}{\partial\beta_1}(\beta_1,...,\beta_k))$
 
-a vector that has all the partial derivatives at that point.
-
 **Gradient =** a measure of how steep a slope is
 
-**Derivative =** of a function of a real variable measures the
-sensitivity to change of the function value (output value) with respect
-to a change in its argument (input value).
+**Derivative =** a function of a real variable measures the sensitivity
+to change of the function value (output value) with respect to a change
+in its argument (input value).
 
 **Function =** something that will take a input and will produce a given
 output.
 
 \
-We want to go against the gradient (-) to find the minimum. We want to
-follow the blue steps to arrive at the minimum (pink).
+We want to go against the gradient (-) to find the minimum by following
+the blue steps to arrive at the minimum (pink).
 
 ![](images/paste-962EC0DD.png)
 
-**Newton's Algorithm / Gradient Descent Algorithm =** only uses one
-parameter = alpha ($\alpha$), can be any positive number.
+**Newton's Algorithm / Gradient Descent Algorithm =** Gradient descent
+is a first-order iterative optimization algorithm for finding a local
+minimum of a differentiable function. The idea is to take repeated steps
+in the opposite direction of the gradient (or approximate gradient) of
+the function at the current point, because this is the direction of
+steepest descent. Only uses one parameter -\> alpha ($\alpha$), can be
+any positive number. Below are the steps to find the solution:
+
+$\alpha$ **= The step size / learning rate.**
 
 1.  Fix an arbitrary $\beta_0R_k$ to start from.
 
@@ -602,16 +618,14 @@ parameter = alpha ($\alpha$), can be any positive number.
     from $\beta_1 - \beta_2$). The equation is:
 
     $\beta^{t+1} = \beta^t-\alpha\nabla g(\beta^t)$\
-    If the $\nabla g(\beta^{t+1})=0$ then break (You have found the
-    global minimum if the function in convex)
+    If the $\nabla g(\beta^{t+1})=0$ then a break. The global minimum
+    was found if the function is convex.
 
 3.  Return the last $\beta^t$ available.
 
-$\alpha$ **= The step size / learning rate.**
-
 If our function looks like below:
 
-![](images/paste-341F8419.png){width="318"}
+![](images/paste-341F8419.png){width="554"}
 
 We will find a local minimum and will be stuck in the equation as the
 gradient is 0.
@@ -632,7 +646,7 @@ experiencing **"jumping"**:
 *How to choose* $\alpha$*?* Trying different values and finding the best
 solution. "Typically" $\alpha = 10^{-3} = 0.01$.
 
-Each iteration of the gradient descent algorithm we do:
+At each iteration of the gradient descent algorithm we do:
 
 $\beta^{t+1} = \beta^t-\alpha\nabla g(\beta^t)$
 
@@ -642,16 +656,15 @@ Rewrite:
 
 $\nabla g(\beta^t) = \frac{1}{n} \sum_{i=1}^{n}\nabla g_i(\beta^t)$
 
-To compute $\nabla g$ I used N gradients. These are one for each point
-in the training set. This must happen at each iteration.
+To compute $\nabla g$ there occur N gradients. These are one for each
+point in the training set. This must happen at each iteration. In big
+data settings, it is not unlikely that we have a training set that has
+millions of data points. This would require too many gradients (too
+slow).
 
-In big data settings, it is not unlikely that we have a training set
-that have millions of data points. This would require too many gradients
-(too slow).
+## Stochastic gradient descent
 
-### Sarcastic gradient descent
-
-In the previous computation we had to computes **n** gradients =\
+In the previous computation we had to compute **n** gradients =\
 $\nabla g(\beta^t) = \frac{1}{n} \sum_{i=1}^{n}\nabla g_i(\beta^t)$
 
 However, we can replace this with something that only needs to compute 1
@@ -675,7 +688,7 @@ $\beta^{t+1}= \beta^t - \alpha * \frac{1}{n} \sum_{i=1}^{n}\nabla g_i(\beta^t)$
 
 vs
 
-**Sarcastic gradient descent** =
+**Stochastic gradient descent** =
 $\beta^{t+1}= \beta^t - \alpha \nabla g_j(\beta^t)$
 
 Where J is taken uniformly at random = j\~$U({1,....,m})$
@@ -693,7 +706,7 @@ next $\beta^1=(\beta^1_0, \beta^1_1)$
 In linear regression the:
 $g(\beta) = \frac{1}{n} \sum_{i=1}^{n}y_i-(\beta^0+\beta^1x_i))^2 = MSE(\beta)$
 
-In sarcastic gradient descent:
+In stochastic gradient descent:
 
 $g_j(\beta) = y_j-(\beta^0+\beta_1x_j))^2 = SE_j(\beta)$
 
@@ -726,7 +739,7 @@ squared error of all the points.
 
 -   Even if you have a convex differential function, you have less
     guarantee. GD with any alpha in 0,1 is guaranteed to converge to the
-    optimum (global minimum). Sarcastic gradient descent you only
+    optimum (global minimum). Stochastic gradient descent you only
     guarantee that you will arrive at a ball around the global minimum.
     But inside this ball there is no guarantee anymore.
 
@@ -759,8 +772,7 @@ used for training = test set.
 
 While doing predictions, we want to come up with appropriate estimators
 ($\hat f$) which are similar to our real word function ($f$), that links
-our features to our label. This is expressed in, we want that:
-$\hat f \approx f$.
+our features to our label. Again it is repeated = $\hat f \approx f$.
 
 Typically there are many models that can be used. Therefore, we need to
 find out which model is the closest to the real value $f$. Some models
@@ -769,8 +781,8 @@ more different models.
 
 In machine learning, a **hyper parameter** is a parameter whose value is
 used to control the learning process. By contrast, the values of other
-parameters (typically node weights) are derived via training. These are
-either not trainable through gradient descent or it would not be
+parameters (typically node weights) are derived theough training. These
+are either not trainable through gradient descent or it would not be
 effective as it would defeat their purpose.
 
 If we include the hyper parameter through gradient descent, it would be
@@ -785,35 +797,41 @@ gradient descent --\> Hyper parameter tuning procedure.
 
 In the models that include hyper parameters, the are a infinite number
 of models for each possible value of $\alpha > 0$ . This complicates the
-model selection as we have to decide the best value of \$\\alpha\$.
+model selection as we have to decide the best value of $\alpha$ .
 
 In order to avoid this, we could choose a model that has 0 hyper
 parameters and afterwards add a layer of complexity.
 
 ------------------------------------------------------------------------
 
-**Hold-Out validation method**
+## Validations methods
 
--   "simple" if no hyper parameters (training + test)
+### **Hold-Out validation method**
 
--   "nested" if there are hyper parameters (training + validation +
+-   "Simple" if no hyper parameters (training + test)
+
+-   "Nested" if there are hyper parameters (training + validation +
     test)
 
 Average error of the test set = An estimate of the real error which the
 model will exhibit on new unseen data. It is an substitute of the
 infinitely many data points that my model will classify when I will use
-it for real / in production.
-
-We compare this estimate of the error of the test set ($ERR_1$) with the
-multiple models and choose the lowest value by definition.
+it for real / in production. We compare this estimate of the error of
+the test set ($ERR_1$) with the multiple models and choose the lowest
+value by definition.
 
 ![](images/paste-21B7F2B9.png)
 
 We can additionally do model selection with hyper parameter tuning
 recursively.
 
-**Grid Search:** specifying a set of parameters which I believe are
-reasonable and try all in sequence.
+#### **Grid Search:** 
+
+The traditional way of performing hyperparameter optimization has been
+grid search (Parameter sweep), which is simply an exhaustive searching
+through a manually specified subset of the hyperparameter space for a
+learning algorithm. The first step is specifying a set of parameters
+which I believe are reasonable and try all in sequence.
 
 I believe (intuition or proof of concept) any value large than 1 is
 unlikely to be a good value for alpha because it would overemphasize the
@@ -822,7 +840,10 @@ for the reduction of the variance.\
 
 ![](images/paste-38135339.png)
 
-**Hyper parameter tuning =** Holdout validations + Grid search
+**Hyper parameter tuning =** Hyperparameter tuning is choosing a set of
+optimal hyperparameters for a learning algorithm. A hyperparameter is a
+model argument whose value is set before the learning process begins.
+This entails holdout validations + Grid search.
 
 **Nested procedure:**
 
@@ -832,16 +853,15 @@ for the reduction of the variance.\
 
 1.  Train the model with the $\alpha$ on the training set
 2.  Estimate the error on the validation set
-3.  I choose the hyper parameter $\alpha$ which gives the lowest error
-    estimate on the validation set.
+3.  Choose the hyper parameter $\alpha$ which gives the lowest error
+    estimate on the validation set
 
 Therefore, the chosen $\alpha$ is going to be the hyper parameter
 configuration that I am going to use. With this value, I will evaluate
-the quality model on the test set.
-
-However, a model that is trained by more data typically performs better
-than with little data. By splitting again, the training set becomes
-smaller leading to a *scarcity* of data.
+the quality model on the test set. However, a model that is trained by
+more data typically performs better than with little data. By splitting
+again, the training set becomes smaller leading to a ***scarcity***of
+data.
 
 **(ii)** Before passing to the next phase, with the fixed parameter,
 there is an intermediate step. We retrain $\hat f_{\alpha*}$ on the
@@ -851,18 +871,18 @@ entire training + validation set.
 
 ------------------------------------------------------------------------
 
-**Standardization**
+### **Standardization**
 
-1.  We do not want our model to see the test data during training --\>
-    We do not want any information about the test data to be accessible
-    by the model during training.
+1.  We do not want our model to see the test data during training as we
+    do not want any information about the test data to be accessible by
+    the model during training.
 2.  Standardize my data set before starting. Still in the data
     exploration phase.
 
 If we standardize the data in the beginning before splitting the data
 into training/test, the mean and scaling will be on the entire data.
 Therefore there is some information of the test set that would flow to
-the model. = **Information leakage**
+the model --\> **Information leakage**
 
 *Alternatively:*
 
@@ -874,7 +894,7 @@ the model. = **Information leakage**
 
 ------------------------------------------------------------------------
 
-The "real" error of my estimator: In the limit when I use and infinite
+The "real" error of my estimator: In the limit when I use an infinite
 long data set. Considering we do not have this data set, we find the
 empirical estimated error of my estimator using the data in the test
 set.
@@ -882,7 +902,7 @@ set.
 Here 1 is the real error and the 2's are the estimates. The first has
 higher variance than the second.
 
-![](images/paste-CE33D3FC.png){width="357"}
+![](images/paste-CE33D3FC.png){width="406"}
 
 1.  What is the variance of the estimated error $\hat {ERR}$? A standard
     trick to reduce the variance, is to increase the sample size and
@@ -891,7 +911,7 @@ higher variance than the second.
 2.  What is the bias of estimated error $\hat {ERR}$? We can try a
     larger training set.
 
-    ![](images/paste-C4165CF2.png){width="270" height="100"}
+    ![](images/paste-C4165CF2.png){width="384" height="125"}
 
 3.  Is my $\hat {ERR}$ consistently an *overestimation*,
     *underestimation* of $ERR$.
@@ -901,16 +921,13 @@ entire data set. We use it to compute the $\hat {ERR}$(on the test set).
 The $\hat f$ trained on the training set is worse than the $\hat f$ on
 the entire data-set. The $\hat {ERR}$ obtained using the $\hat f$
 training on the training set is worse than the $ERR$ (the error made by
-$\hat f$ trained on the entire data set, in the limit).
-
-When I will use $\hat f$ in production, I will re-train it on the entire
-data-set.
+$\hat f$ trained on the entire data set, in the limit). When I will use
+$\hat f$ in production, I will re-train it on the entire data-set.
 
 Therefore, $\hat {ERR}$ is likely going to be larger than the $ERR$.
 $\hat {ERR}$ will be an overestimation of the $ERR$. For an error to be
-worse, it implies it is larger than the actual error.
-
-Bias is due to the overestimation of the true error.
+worse, it implies it is larger than the actual error. Bias is due to the
+overestimation of the true error.
 
 #### Reducing bias
 
@@ -938,9 +955,15 @@ error is less bias. However, the estimate of the error is affected by
 the size of the test set. Therefore, we want to balance the
 test-training proportions.
 
-*The trick to reduce the variance is to average observations.*
+> *The trick to reduce the variance is to average observations.*
 
-**Leave-One-Out Cross-validation method (LOOCV):**
+There are several methods to reduce the variance such applying different
+validation methods. Below K-fold and leave on out methods are further
+explained.
+
+------------------------------------------------------------------------
+
+### **Leave-One-Out Cross-validation method (LOOCV):**
 
 We leave one out of the training set n times and find an estimator. Then
 we average the estimations:
@@ -958,18 +981,20 @@ $\frac{1}{m} \sum_{i=1}^{m}\hat {ERR}^{(i)}$
     obtained with other validation methods. This depends on the data &
     models used.
 
-**K-Fold Cross Validation**
+------------------------------------------------------------------------
+
+### **K-Fold Cross Validation**
 
 The model will be trained k times. K = between 2 and N. Primarily the
 data set is split k times into what is called **"folds"**, that are
 roughly the sames size. In each iteration we take a different fold as
 the test set and the rest as the training set.
 
-![](https://upload.wikimedia.org/wikipedia/commons/b/b5/K-fold_cross_validation_EN.svg)
+![](https://upload.wikimedia.org/wikipedia/commons/b/b5/K-fold_cross_validation_EN.svg){width="733"}
 
 At every iteration we receive an $\hat {ERR}$ and the final used is the
 average of k iterations. These are estimated on the test fold (fold \#1)
-when \$\\hat f\$ is trained on all other folds (\#2...\#k). This method
+when $\hat f$ is trained on all other folds (\#2...\#k). This method
 trades off the computing power vs bias.
 
 -   If K = small:
@@ -977,8 +1002,6 @@ trades off the computing power vs bias.
     -   Smaller training set -\> more bias
 
     -   Fewer iterations -\> less computing power
-
-<!-- -->
 
 -   If K = large:
 
@@ -993,40 +1016,46 @@ If the model has hyper parameters, the k-fold can be applied for the
 model selection and the k-fold hyper parameter tuning. Therefore it will
 be $k^2$ folds. It might be that this is not computationally feasible.
 It can also be that holdout validation is used for the models selection
-and k-fold cv for hyper parameter tuning.
+and k-fold for hyper parameter tuning.
 
 **Comparing methods:**
 
-| Holdout Validation          | LOOCV                        | K-Fold Cross validation |
-|-----------------------------|------------------------------|-------------------------|
-| High bias                   | Low bias                     | Depends on K            |
-| Reasonable computation time | Crazy computation time (low) | Depends on K            |
+| Holdout Validation          | LOOCV                         | K-Fold Cross validation |
+|-----------------------------|-------------------------------|-------------------------|
+| High bias                   | Low bias                      | Depends on K            |
+| Reasonable computation time | Crazy computation time (high) | Depends on K            |
+
+------------------------------------------------------------------------
 
 ## Classification Problems
 
-The label is not numeric but it is a member of a discrete set.
+A classification model attempts to draw some conclusion from observed
+values. Given one or more inputs a classification model will try to
+predict the value of one or more outcomes. Outcomes are labels that can
+be applied to a data set. It is applied when the label is not continuous
+but it is a member of a discrete set.
 
 *Examples:*
 
-+----------------------+-----------------------------+
-| Classification       | Label                       |
-+======================+=============================+
-| y {Spam, Not Spam}   | Binary Classification       |
-+----------------------+-----------------------------+
-| y {0, 1]             | Binary with one-hot         |
-|                      | encoding                    |
-| Negative vs Positive |                             |
-+----------------------+-----------------------------+
-| y {Dog, Cat, Rabbit} | Multi-class classification  |
-+----------------------+-----------------------------+
++----------------------+------------------------------+
+| Classification       | Label                        |
++======================+==============================+
+| y {Spam, Not Spam}   | Binary Classification        |
++----------------------+------------------------------+
+| y {0, 1]             | Binary with one-hot encoding |
+|                      |                              |
+|                      | Negative vs Positive         |
++----------------------+------------------------------+
+| y {Dog, Cat, Rabbit} | Multi-class classification   |
++----------------------+------------------------------+
 
 |                     | Real class | -1             | +1             |
 |---------------------|------------|----------------|----------------|
 | **Predicted class** | -1         | True Negative  | False Negative |
 |                     | +1         | False Positive | True Positive  |
 
-The features are: $XϵR^p$ . The feature that is categorical is converted
-to numerical values through one-hot-encoding.
+The features are: $XϵR^p$ . If the feature is categorical, it is
+converted to numerical values by one-hot-encoding.
 
 We have to define appropriate loss functions. We ask to output the
 probability that the observation is either -1 or +1.
@@ -1035,7 +1064,7 @@ probability that the observation is either -1 or +1.
 2.  Classifier $\hat f:R^p$ -\> [0,1]. $\hat y = P[y=+1]$
 
 At which threshold do we want to consider the observation to be 0 or 1
-depends on the confidence of the results. This could be done through:
+depends on the confidence of the results. The most typical manner:
 
 -   If $\hat y > 0.5$ -\> 1
 
@@ -1064,10 +1093,10 @@ training the model.
 
 ### Evaluating model quality
 
-To see which measures are commonly used to evaluate the quality of the
-model and perform model selection, the table below can be used:
+To see which measures are commonly applied to evaluate the quality of
+the model and perform model selection, the table below can be used:
 
-![](images/paste-D2149627.png){width="584"}
+![](images/paste-D2149627.png){width="844"}
 
 -   Recall = True positive rate (TPR). Probability of prediction.
     $\frac {y+and\hat y+}{y+}$
@@ -1080,18 +1109,17 @@ The perfect prediction is recall = 1 & precision = 1.
 
 The bad prediction is recall = 0 & precision = 0.
 
-![](images/paste-C83C7277.png){width="427"}
+![](images/paste-C83C7277.png){width="697"}
 
 ![](images/paste-46CFCBC5.png)
 
-Accuracy = \# times the model is correct / number of predictions
-
+Accuracy = \# times the model is correct / number of predictions -\>
 $\frac {(correct \hat y)}{predictions}$ or $TP/TN$
 
-We have to be careful with a unbalanced data set. This means that the
-amount of 0 are much more than the amounts of 1's or vice versa. If we
-are only concerned about the accuracy, it might be that there is a very
-low discriminate power.
+We have to be careful with a **unbalanced data set**. This means that
+the amount of 0 are much more than the amounts of 1's or vice verse. If
+we are only concerned about the accuracy, it might be that there is a
+very low discriminate power.
 
 *F.e.* if a data set has 99 positives and 1 negative, the model could
 adopt always classify as positive and it would be accurate 99% of the
@@ -1108,7 +1136,10 @@ only prediction negative, where TPR = 0, FPR = 0
 TPR = \# true positives / \# positive obs FPR = \# false positives / \#
 negatives obs
 
-Receiver Operating Characteristics (ROC)
+### Receiver Operating Characteristics (ROC)
+
+ROC is a graphical plot that illustrates the diagnostic ability of a
+binary classifier system as its discrimination threshold is varied.
 
 ![](images/paste-46894C12.png)
 
@@ -1120,12 +1151,14 @@ select this model.
 
 AUC = area under the curve
 
+------------------------------------------------------------------------
+
 ### Multi-class classification
 
 Most models only support binary classification. Some models natively
 support multiple classification such as neural networks. However, there
 are ways to transforms models to support multi-class classifiers. There
-are two ways:
+are two methods proposed below:
 
 **1 vs 1 method:** $y{A,B,C}$
 
@@ -1252,3 +1285,143 @@ large and variance small. There will be many miss-classification.
 
 Therefore, C is a trade-off of bias and variance. We can use again the
 grid search to find the hyper parameter.
+
+## **Regularization**
+
+When a model has very high variance and we want to reduce it at the
+expense of increasing the bias a little bit (Bias trade off). We want to
+do this to have a higher **out of sample accuracy** *(also for
+interpretation we will see it later).* The two of the components of the
+accuracy of the model: bias square and the variance. Two components we
+can have an effect on.
+
+We use Regularization for models that are complex with many parameters
+because they extend to exhibit high variance. We will see it in the
+context of regression mainly (polynomial normally).
+
+Regularization term = $\alpha R(\beta)$ where \$\\alpha \$ =
+hyperparameter.
+
+RIDGE REGULARIZATION (Here I am penalizing a minimization problem, but I
+am adding a not negative cost and what I am penalizing is the square, so
+if beta is small not penalizing much but if it big, we are penalizing a
+lot). This works better if the data is penalized. Doing this, I am
+trying to reduce the variance of the parameters and the model.
+
+![](images/paste-77192149.png)
+
+VARIANCE DECREASE BUT THE BIAS INCREASE (because with the regularization
+term I am finding other parameters than those minimizing the loss
+function I am also penalizing large parameters → large penalty). So this
+will not perform as good as the other, so there is a trade-off between
+variance and bias (alpha can go to extremes, so a good parameter will
+stay somewhere in the middle)
+
+Hyperparameter Alpha
+
+-   Green line: Variance of the model
+
+-   Black Line: Bias square of the model
+
+-   Pink line: Mean square error (the total: sum of the other two)
+
+![](images/paste-4624A73A.png)
+
+*Using logarithm scale*
+
+[What happens to the parameters in the model:]{.ul}
+
+the possible values for the alpha (-2,5 and use 50 values) then we
+create a list of the parameters of my model for each possible value of
+alpha. So I have a polynomial model (scale also as logarithmic).
+
+Each line corresponding to a parameter of my model is a polynomial so we
+have the linear and the quadratic terms. Here when I increase the
+hyperparameter alpha we can see that the parameters are squeezed towards
+0. An interesting thing is to count the number of parameters that are
+equal to 0 or non 0. How to do that (the number of nonzero)
+
+All will be different from 0. That is why we obtained a flat line for
+ridge regularization. So why is this the case and why do we care about
+the non zero coefficients?
+
+I want that my models are accurate (that is why we introduced
+regularization)) but also due to interpretability. This is a human
+factor.
+
+If I find a 0, the feature is not needed to predict good predictions and
+vice versa. So we can infer that the feature is not correlated with the
+label.
+
+### 
+
+Interpretability
+
+Is a key feature to help machine learning models in real life.
+Interpretability is required in real life and not just having a high
+accuracy. We need to know why. Besides, if we select the good features,
+it will probably be better. (the features had signal and not notice).
+This is called variable selection.
+
+Best subset of variables is a very old problem. Used to obtain the
+lowest out of sample loss, → the highest accuracy. F is considering some
+features.
+
+If I have p larger than n it will be very difficult to know the noise.
+Reducing the number can help despite the ones that we drop are
+correlated.
+
+Naive approach: try all subset of possible features.
+
+1.  Forward Heuristic: (Consider the empty set), then the sets with one
+    feature. Assume that feature 3 is better. So these features will be
+    fixed for all the procedures, this means that will never get out of
+    my set F. The same with 2 features and always with 3.  If any of the
+    values is better, we are going to fix it with the next iteration. At
+    some point you don't obtain something better so you stop.
+
+2.  Backwards stepwise heuristic selection: Which feature to remove. For
+    example, 3. So if I remove 1 and 3. And when I can't improve anymore
+    I take the last combination.
+
+[**Lasso Regularization**]{.ul}
+
+We can consider using Lasso regularization. It is a bridge between
+regularization and feature selection. Set some parameters in the model
+equal to 0. Implicitly it helps in interpretability and indirectly to
+variable selection.
+
+I have p + 1 parameters. We penalize the large parameters (positive or
+negative) and squeeze them equal to 0.
+
+Using the same as in for ridge, this time when we plot the non zero is
+not a straight line as before. There is a point, that increase probably
+is because it didn't find the global optimum. Empirically it's true that
+many parameters are equal to 0. Why does this happen?
+
+**RIDGE AND LASSO REGULARIZATION**
+
+(Unconstrained minimization problems as betas can take any values.
+Remember large betas are penalized and squeezed to 0)
+
+There is an equivalent problem that is constrained (minimization
+problem) as we can see below in the image above.
+
+Ridge: All the points inside the blue circle are valid points and
+outside not valid as violates the constraint. The Beta \* test a good
+training MSE = 2 but i cannot accept it. So let's see 2.1. (light blue
+beta\*).
+
+Lasso: All the points inside valid and outside not valid. This once has
+spiky regios and for that reason, the probability to intersect in one of
+the spikes first is very probable. These points have some of the betas=
+0. Lasso is more likely to produce optimal parameters where beta is
+equal to 0.  
+
+**Finally: ISL book:**
+
+In general neither of them will dominate the other (ridge and lasso) We
+will have to do first **model selection**. In general, we expect lasso
+to perform better for low predictors, on the other hand perform better
+when there are many predictors. However, the number of predictors is
+never known a priori.

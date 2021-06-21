@@ -5,12 +5,10 @@ editor_options:
 ---
 
 ```{r, include=FALSE}
-
 knitr::opts_chunk$set(echo = TRUE, class.source = "watch-out", options(scipen=999), out.width = "100%", comment = "", warning=FALSE, reticulate.repl.quiet = FALSE) 
 
 source("www/init.R")
 source("www/Table_Design.R")
-
 ```
 
 # Advanced Statistical Methods
