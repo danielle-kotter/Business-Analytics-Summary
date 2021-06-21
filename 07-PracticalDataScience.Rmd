@@ -1286,6 +1286,8 @@ large and variance small. There will be many miss-classification.
 Therefore, C is a trade-off of bias and variance. We can use again the
 grid search to find the hyper parameter.
 
+------------------------------------------------------------------------
+
 ## Regularization
 
 When a model has very high variance and we want to reduce it at the
