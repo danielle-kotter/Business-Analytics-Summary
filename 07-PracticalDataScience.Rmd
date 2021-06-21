@@ -662,7 +662,7 @@ data settings, it is not unlikely that we have a training set that has
 millions of data points. This would require too many gradients (too
 slow).
 
-## Stochastic gradient descent
+### Stochastic gradient descent
 
 In the previous computation we had to compute **n** gradients =\
 $\nabla g(\beta^t) = \frac{1}{n} \sum_{i=1}^{n}\nabla g_i(\beta^t)$
@@ -1286,7 +1286,7 @@ large and variance small. There will be many miss-classification.
 Therefore, C is a trade-off of bias and variance. We can use again the
 grid search to find the hyper parameter.
 
-## **Regularization**
+## Regularization
 
 When a model has very high variance and we want to reduce it at the
 expense of increasing the bias a little bit (Bias trade off). We want to
@@ -1353,9 +1353,7 @@ If I find a 0, the feature is not needed to predict good predictions and
 vice versa. So we can infer that the feature is not correlated with the
 label.
 
-### 
-
-Interpretability
+### Interpretability
 
 Is a key feature to help machine learning models in real life.
 Interpretability is required in real life and not just having a high
