@@ -691,7 +691,6 @@ def get_mse(model):
 #get_mse(quadreg)
 ```
 
-
 ```{python, include=FALSE}
 #grid = {'lasso_alpha': np.logspace(-3,0,4)}
 #quadlasso = GridSearchCV(estimator=quadlasso_empty, param_grid=grid, cv=kfold, #scoring='neg_mean_squared_error')
@@ -703,13 +702,8 @@ def get_mse(model):
 
 ### SVC
 
-```{python}
-import 
-```
-
 Make list to create the model
 
-```{python}
 svc = make_pipeline(
   transformer,
   GridSearchCV(
@@ -721,6 +715,9 @@ svc = make_pipeline(
     n_jobs=4
   )
 )
+
+```{python}
+
 ```
 
 The default of scoring = the estimator's score method, the accuracy
@@ -729,32 +726,35 @@ The default of scoring = the estimator's score method, the accuracy
 Fit model
 
 ```{python}
-svc.fit(X_tv, y_tv)
+#svc.fit(X_tv, y_tv)
 ```
 
 Gives us the best estimator:
 
 ```{python}
-svc[1].best_estimator_
+#svc[1].best_estimator_
 ```
 
 If it is at the edge of the grid, make another grid closer to the extremes. 
 
 ```{python}
-pred = svc.predict(X_test)
+#pred = svc.predict(X_test)
 ```
 
 ```{python}
 from sklearn.metrics import accuracy_score
 from sklearn.metrics import recall_score
 
-accuracy_score(y_test, pred)
-recall_score(y_test, pred)
+#accuracy_score(y_test, pred)
+#recall_score(y_test, pred)
 ```
 
 For parameter tuning, we ask scoring to be: 
 
 ```{python}
+
+```
+
 svc = make_pipeline(
   transformer,
   GridSearchCV(
@@ -775,11 +775,13 @@ svc[1].best_estimator_
 pred = svc.predict(X_test)
 accuracy_score(y_test, pred)
 recall_score(y_test, pred)
-```
 
 RBF Kernel = 
 
 ```{python}
+
+```
+
 svc_rbf = make_pipeline(
   transformer,
   GridSearchCV(
@@ -801,11 +803,13 @@ svc_rbf[1].best_estimator_
 pred = svc_rbf.predict(X_test)
 accuracy_score(y_test, pred)
 recall_score(y_test, pred)
-```
 
 Polynomial Kernel = 
 
 ```{python}
+
+```
+
 svc_poly = make_pipeline(
   transformer,
   GridSearchCV(
@@ -828,4 +832,3 @@ svc_poly[1].best_estimator_
 pred = svc_poly.predict(X_test)
 accuracy_score(y_test, pred)
 recall_score(y_test, pred)
-```
