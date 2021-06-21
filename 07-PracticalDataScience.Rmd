@@ -4,7 +4,7 @@ editor_options:
     wrap: 72
 ---
 
-# Practical data science
+# Practical Data Science
 
 *Class given by: Alberto Santini*
 
@@ -1423,4 +1423,4 @@ In general neither of them will dominate the other (ridge and lasso) We
 will have to do first **model selection**. In general, we expect lasso
 to perform better for low predictors, on the other hand perform better
 when there are many predictors. However, the number of predictors is
-never known a priori.
+never known a priority.
