@@ -1,4 +1,4 @@
-book_filename: "R-Summaries"
+book_filename: "Basic-Analytics-Summary"
 delete_merged_file: true
 output_dir: "docs"
 language:
