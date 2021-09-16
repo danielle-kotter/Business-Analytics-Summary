@@ -10,7 +10,8 @@ latex
 miscellaneous
 removing-infinite-na-values
 transforming-variable-types
-charts-templates---r
+basic-charts
+applied-statistics
 probability
 bayes-theorem
 discrete-probablity
@@ -113,5 +114,3 @@ logistic-regressions
 sensitivity-vs-specificity
 conjoint-analytics
 random-utility-model
-basic-charts
-applied-statistics
