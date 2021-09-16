@@ -1,4 +1,6 @@
-# Probability
+# Applied Statistics
+
+## Probability
 
 *Class given by: Walter Garcia-Fontes*
 

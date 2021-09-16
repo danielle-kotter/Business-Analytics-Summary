@@ -278,5 +278,3 @@ summary.aov(test_manova)
 logged <- log(iris$Sepal.Length) # non-linear
 quad <- cars$speed ^ 2 # quadratic
 ```
-
-

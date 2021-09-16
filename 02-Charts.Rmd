@@ -1,4 +1,4 @@
-# Charts templates - R
+# Basic Charts
 
 ```{r message=FALSE, warning=FALSE}
 library(gridExtra)
@@ -8,7 +8,9 @@ library(ggplot2)
 paletteDani <- c( "#ffa500", "#DAF7A6", "#5F7992", "#69b3a2", "#ffd561", "#ee5c42", "#C8A2C8", "#5c3170", "#990000", "#C70039", "#34495E", "#909497")
 ```
 
-> **Several basic options:**
+> 
+**Several basic options:**
+>
 
 **Pie chart**
 
@@ -51,7 +53,7 @@ ggplot(data, aes(x = dose, y = supp)) +
 
 ```{r}
 ggplot(data = data, aes(len) ) + 
-    geom_histogram(fill="#69b3a2", color="#e9ecef", alpha=0.9) +
+    geom_histogram(fill="#69b3a2", color="#e9ecef", alpha=0.9, binwidth = 5) +
     ggtitle("Title") +
       xlab("variablex") +
       ylab("variabley") +
@@ -130,7 +132,6 @@ chart2 <- ggplot(data=ToothGrowth, aes(x="", y=len, fill="")) +
     theme(plot.title = element_text(hjust = 0.5)) +
     	xlab("")+
     	ylab("")
-
 
 grid.arrange(chart1, chart2, nrow=1, widths=c(0.9,1))
 ```

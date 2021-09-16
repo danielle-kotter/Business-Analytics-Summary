@@ -1,9 +1,10 @@
 basics-r
 simple-statistics
 tables-frames-matrices
+combining-sets-and-setting-names
 data-sets
 subsetting
-rmarkdown
+r-markdown
 setup-rmarkdown-code-chunks
 latex
 miscellaneous
@@ -112,5 +113,5 @@ logistic-regressions
 sensitivity-vs-specificity
 conjoint-analytics
 random-utility-model
-combining-sets-and-setting-names
-r-markdown
+basic-charts
+applied-statistics
