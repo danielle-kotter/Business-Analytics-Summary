@@ -5,9 +5,8 @@ account: daniellesophie_kotter
 server: bookdown.org
 hostUrl: https://bookdown.org/__api__
 appId: 6927
-bundleId: 37466
+bundleId: 55155
 url: https://bookdown.org/daniellesophie_kotter/r-summaries7/
-when: 1615996248.12775
+when: 1631804648.67418
 asMultiple: FALSE
 asStatic: FALSE
-ignoredFiles: 07-references.Rmd

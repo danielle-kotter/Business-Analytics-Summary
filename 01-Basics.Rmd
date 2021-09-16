@@ -43,29 +43,34 @@ var(variable)
 
 ## Tables, Frames & Matrices
 
-As matrix =
+>
+As matrix
+>
 
 ```{r message=FALSE, warning=FALSE}
-library(data.table)
 matrix(c(1:8), nrow = 4, byrow = TRUE) #organized by row
 matrix(c(1:8), ncol = 4, byrow = FALSE) #organized by col
 ```
 
-As data frame =
+>
+As data frame
+>
 
 ```{r}
 data.frame(Column1 = c(1:5), Column2 = c(1:5))
-data.table(Column1 = c(1:5), Column2 = c(1:5))
 ```
 
-As data table =
+>
+As data table
+>
 
 ```{r}
+library(data.table)
+data.table(Column1 = c(1:5), Column2 = c(1:5)) # or
 data.table(matrix(c(1:8), nrow = 4)) # or
-data.table(Variablex = 1:5, Variabley = 1:5)
 ```
 
-Transforming tables from to other formats =
+Transforming tables to other formats =
 
 ```{r}
 table1 <- data.table(matrix(c(1:8), nrow = 4))
@@ -75,9 +80,20 @@ table2 <- data.frame(Column1 = c(1:5), Column2 = c(1:5))
 as.data.table(table2)
 ```
 
-Binding and setting names =
+### Combining sets and setting names:
 
-rbind(table, newvariable) cbind(data, newvariable)
+Beginning:
+
+```{r}
+table <- data.table(Column1 = 0:5, Column2 = 0:5)
+newC <- 0:5
+```
+
+**Binding:**
+
+```{r}
+cbind(table, newC)
+```
 
 ```{r}
 rownames(table1) <- c("One", "Two", "Three", "Four")
@@ -108,10 +124,10 @@ setorder(table, `value`)
 table
 ```
 
-**Frequencies**
+**Frequencies & Probabilities**
 
 ```{r}
-values <- c(1:10)
+values <- c(1:5)
 table(values)
 prop.table(table(values))
 round(prop.table(table(values)) * 100, 2)
@@ -128,7 +144,8 @@ tail(cars) # last 6 rows of the data set
 
 Reading excel
 
-`library(readxl)` `data <- read.xls("data.xlsx", stringsAsFactors = TRUE)`
+`library(readxl)`  /
+`data <- read.xls("data.xlsx", stringsAsFactors = TRUE)`
 
 ```{r}
 names(cars) # shows the column names of the data set
@@ -141,11 +158,12 @@ attach(cars) # saves the names to be used as variables
 cars[,1] # subsets by columns
 cars[1,] # subsets by row
 cars[cars$speed == 4,] # subsets by specific value 
+cars[cars$speed != 4,] # subsets excluding specific value 
 cars[cars$speed > 4,] # subsets over specific value 
 cars[cars$speed < 5,] # subsets under specific value 
 ```
 
-## RMarkdown
+## R Markdown
 
 ```{r}
 # Putting words in bold: **Word**
@@ -190,15 +208,15 @@ Will start a new page for example in a pdf document
 +-------------------------+----------------------------------------------------------+
 | Call                    | Description                                              |
 +=========================+==========================================================+
-| Warning = TRUE/FALSE    | Include / exclude warnings                               |
+| Warning = T/F    | Include / exclude warnings                               |
 +-------------------------+----------------------------------------------------------+
-| Echo = TRUE/FALSE       | Include / exclude r chunks but show output               |
+| Echo = T/F       | Include / exclude r chunks but show output               |
 +-------------------------+----------------------------------------------------------+
-| Include = TRUE/FALSE    | Run code but do not include in the knitted document      |
+| Include = T/F   | Run code but do not include in the knitted document      |
 +-------------------------+----------------------------------------------------------+
 | Comment = "" \| Include | / exclude \#\# in output code chunks                     |
 +-------------------------+----------------------------------------------------------+
-| Message = TRUE/FALSE    | Includes / excludes message from code                    |
+| Message = T/F    | Includes / excludes message from code                    |
 +-------------------------+----------------------------------------------------------+
 | out.width='100%'        | Adjusts size of figure / chart                           |
 +-------------------------+----------------------------------------------------------+
@@ -220,7 +238,7 @@ Will start a new page for example in a pdf document
 +--------------------+--------------------+-------------------------------+
 | $\sigma$           | `$\sigma$`         | Population standard deviation |
 +--------------------+--------------------+-------------------------------+
-| $\bar{x}$          | `$\bar{x}`         | Sample mean                   |
+| $\bar{x}$          | `$\bar{x}$`        | Sample mean                   |
 +--------------------+--------------------+-------------------------------+
 | ${e}$              | `${e}$`            | Standard error                |
 +--------------------+--------------------+-------------------------------+
@@ -238,11 +256,11 @@ Will start a new page for example in a pdf document
 +--------------------+--------------------+-------------------------------+
 | $\sum_{i=1}^{n}$   | `$\sum_{i=1}^{n}$` | Sequence                      |
 +--------------------+--------------------+-------------------------------+
-| $\nabla$          | `$\nabla$`         | Gradient, Nabla               |
+| $\nabla$           | `$\nabla$`         | Gradient, Nabla                |
 +--------------------+--------------------+-------------------------------+
 | $\partial$         | `$\partial$`       | Partial                       |
 +--------------------+--------------------+-------------------------------+
-| $\beta$           | `$\beta$`          | Beta                          |
+| $\beta$            | `$\beta$`          | Beta                          |
 +--------------------+--------------------+-------------------------------+
 | $\beta^1$          | `$\beta^1$`        | Beta 1                        |
 +--------------------+--------------------+-------------------------------+
@@ -255,20 +273,20 @@ Will start a new page for example in a pdf document
 ## Miscellaneous
 
 ```{r}
-round(0.50, 2) # rounds a value with two decimals
+round(0.50, 2) # rounds a value to one decimals
 rep(5,5) #repeats the number 5, 5 times
-describe(variable)
-fivenum(variable)
-summary(variable)
+describe(variable) # basic information
+fivenum(variable) # gives interquartile range & range
+summary(variable) # basic statistics
 str(variable) # describing the variable
 dim(cars) # amount of rows and amount of columns
 ```
 
 ### Removing infinite + NA values
 
-1.  Removing Infinite values
+1.  Removing infinite values
 2.  Removing NA values
-3.  Changing Infinite values to NA values
+3.  Changing infinite values to NA values
 
 ```{r}
 variable[is.finite(variable)]

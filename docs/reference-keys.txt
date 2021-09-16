@@ -112,3 +112,5 @@ logistic-regressions
 sensitivity-vs-specificity
 conjoint-analytics
 random-utility-model
+combining-sets-and-setting-names
+r-markdown
