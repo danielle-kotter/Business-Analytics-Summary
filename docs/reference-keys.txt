@@ -1,13 +1,14 @@
 basics-r
+simple-statistics
 tables-frames-matrices
 data-sets
-removing-infinite-na-values
-transforming-variable-types
-markdown
+subsetting
+rmarkdown
 setup-rmarkdown-code-chunks
 latex
 miscellaneous
-subsetting
+removing-infinite-na-values
+transforming-variable-types
 charts-templates---r
 probability
 bayes-theorem
@@ -111,8 +112,6 @@ logistic-regressions
 sensitivity-vs-specificity
 conjoint-analytics
 random-utility-model
-simple-statistics
-rmarkdown
 simple-statistics-1
 tables-frames-matrices-1
 data-sets-1
