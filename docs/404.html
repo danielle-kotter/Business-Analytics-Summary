@@ -51,6 +51,8 @@
 
 <link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 
 
 <style type="text/css">
@@ -117,6 +119,28 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -302,435 +326,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
-<li class="chapter" data-level="" data-path="preface-1.html"><a href="preface-1.html"><i class="fa fa-check"></i>Preface</a>
-<ul>
-<li class="chapter" data-level="9.3" data-path="preface-1.html"><a href="preface-1.html#simple-statistics-1"><i class="fa fa-check"></i><b>9.3</b> Simple statistics</a></li>
-<li class="chapter" data-level="9.4" data-path="preface-1.html"><a href="preface-1.html#tables-frames-matrices-1"><i class="fa fa-check"></i><b>9.4</b> Tables, Frames &amp; Matrices</a></li>
-<li class="chapter" data-level="9.5" data-path="preface-1.html"><a href="preface-1.html#data-sets-1"><i class="fa fa-check"></i><b>9.5</b> Data sets</a>
-<ul>
-<li class="chapter" data-level="9.5.1" data-path="preface-1.html"><a href="preface-1.html#subsetting-1"><i class="fa fa-check"></i><b>9.5.1</b> Subsetting</a></li>
-</ul></li>
-<li class="chapter" data-level="9.6" data-path="preface-1.html"><a href="preface-1.html#rmarkdown-1"><i class="fa fa-check"></i><b>9.6</b> RMarkdown</a>
-<ul>
-<li class="chapter" data-level="9.6.1" data-path="preface-1.html"><a href="preface-1.html#setup-rmarkdown-code-chunks-1"><i class="fa fa-check"></i><b>9.6.1</b> Setup rmarkdown &amp; code chunks</a></li>
-<li class="chapter" data-level="9.6.2" data-path="preface-1.html"><a href="preface-1.html#latex-1"><i class="fa fa-check"></i><b>9.6.2</b> Latex</a></li>
-</ul></li>
-<li class="chapter" data-level="9.7" data-path="preface-1.html"><a href="preface-1.html#miscellaneous-1"><i class="fa fa-check"></i><b>9.7</b> Miscellaneous</a>
-<ul>
-<li class="chapter" data-level="9.7.1" data-path="preface-1.html"><a href="preface-1.html#removing-infinite-na-values-1"><i class="fa fa-check"></i><b>9.7.1</b> Removing infinite + NA values</a></li>
-<li class="chapter" data-level="9.7.2" data-path="preface-1.html"><a href="preface-1.html#transforming-variable-types-1"><i class="fa fa-check"></i><b>9.7.2</b> Transforming variable types</a></li>
-</ul></li>
-<li class="chapter" data-level="9.8" data-path="preface-1.html"><a href="preface-1.html#bayes-theorem-1"><i class="fa fa-check"></i><b>9.8</b> Bayes Theorem</a></li>
-<li class="chapter" data-level="9.9" data-path="preface-1.html"><a href="preface-1.html#discrete-probablity-1"><i class="fa fa-check"></i><b>9.9</b> Discrete Probablity</a>
-<ul>
-<li class="chapter" data-level="9.9.1" data-path="preface-1.html"><a href="preface-1.html#uniform-discrete-probability-distribution-1"><i class="fa fa-check"></i><b>9.9.1</b> Uniform discrete probability distribution</a></li>
-<li class="chapter" data-level="9.9.2" data-path="preface-1.html"><a href="preface-1.html#binomial-distribution-1"><i class="fa fa-check"></i><b>9.9.2</b> Binomial distribution</a></li>
-<li class="chapter" data-level="9.9.3" data-path="preface-1.html"><a href="preface-1.html#poisson-distribution-1"><i class="fa fa-check"></i><b>9.9.3</b> Poisson distribution</a></li>
-<li class="chapter" data-level="9.9.4" data-path="preface-1.html"><a href="preface-1.html#the-normal-distribution-1"><i class="fa fa-check"></i><b>9.9.4</b> The normal distribution</a></li>
-</ul></li>
-<li class="chapter" data-level="9.10" data-path="preface-1.html"><a href="preface-1.html#samples-estimation-confidence-intervals-1"><i class="fa fa-check"></i><b>9.10</b> Samples, estimation &amp; confidence intervals</a></li>
-<li class="chapter" data-level="9.11" data-path="preface-1.html"><a href="preface-1.html#significance-level-1"><i class="fa fa-check"></i><b>9.11</b> Significance level</a>
-<ul>
-<li class="chapter" data-level="9.11.1" data-path="preface-1.html"><a href="preface-1.html#critical-values-1"><i class="fa fa-check"></i><b>9.11.1</b> Critical values</a></li>
-<li class="chapter" data-level="9.11.2" data-path="preface-1.html"><a href="preface-1.html#test-of-equality---two-samples-1"><i class="fa fa-check"></i><b>9.11.2</b> Test of equality - two samples</a></li>
-</ul></li>
-<li class="chapter" data-level="9.12" data-path="preface-1.html"><a href="preface-1.html#non-parametric-testing-1"><i class="fa fa-check"></i><b>9.12</b> Non-Parametric testing</a>
-<ul>
-<li class="chapter" data-level="9.12.1" data-path="preface-1.html"><a href="preface-1.html#contengency-table-frequencies-1"><i class="fa fa-check"></i><b>9.12.1</b> Contengency table / frequencies</a></li>
-<li class="chapter" data-level="9.12.2" data-path="preface-1.html"><a href="preface-1.html#chi-square-1"><i class="fa fa-check"></i><b>9.12.2</b> Chi-square</a></li>
-<li class="chapter" data-level="9.12.3" data-path="preface-1.html"><a href="preface-1.html#goodness-of-fit-1"><i class="fa fa-check"></i><b>9.12.3</b> Goodness of fit</a></li>
-<li class="chapter" data-level="9.12.4" data-path="preface-1.html"><a href="preface-1.html#p-value-1"><i class="fa fa-check"></i><b>9.12.4</b> P-value</a></li>
-</ul></li>
-<li class="chapter" data-level="9.13" data-path="preface-1.html"><a href="preface-1.html#basics-regressions-1"><i class="fa fa-check"></i><b>9.13</b> Basics regressions</a>
-<ul>
-<li class="chapter" data-level="9.13.1" data-path="preface-1.html"><a href="preface-1.html#summarizing-regressions-1"><i class="fa fa-check"></i><b>9.13.1</b> Summarizing regressions:</a></li>
-<li class="chapter" data-level="9.13.2" data-path="preface-1.html"><a href="preface-1.html#dummy-variables-diff-in-means-1"><i class="fa fa-check"></i><b>9.13.2</b> Dummy variables, diff in means</a></li>
-<li class="chapter" data-level="9.13.3" data-path="preface-1.html"><a href="preface-1.html#regression-dummy-1"><i class="fa fa-check"></i><b>9.13.3</b> Regression + dummy</a></li>
-</ul></li>
-<li class="chapter" data-level="9.14" data-path="preface-1.html"><a href="preface-1.html#prediction-1"><i class="fa fa-check"></i><b>9.14</b> Prediction</a>
-<ul>
-<li class="chapter" data-level="9.14.1" data-path="preface-1.html"><a href="preface-1.html#confidence-and-prediction-plotting-1"><i class="fa fa-check"></i><b>9.14.1</b> Confidence and prediction plotting</a></li>
-<li class="chapter" data-level="9.14.2" data-path="preface-1.html"><a href="preface-1.html#prediction-with-dummy-variables-1"><i class="fa fa-check"></i><b>9.14.2</b> Prediction with dummy variables</a></li>
-<li class="chapter" data-level="9.14.3" data-path="preface-1.html"><a href="preface-1.html#prediction-intervals-examples-1"><i class="fa fa-check"></i><b>9.14.3</b> Prediction intervals examples</a></li>
-</ul></li>
-<li class="chapter" data-level="9.15" data-path="preface-1.html"><a href="preface-1.html#data-problems-1"><i class="fa fa-check"></i><b>9.15</b> Data problems</a>
-<ul>
-<li class="chapter" data-level="9.15.1" data-path="preface-1.html"><a href="preface-1.html#multicollinearity-1"><i class="fa fa-check"></i><b>9.15.1</b> Multicollinearity</a></li>
-<li class="chapter" data-level="9.15.2" data-path="preface-1.html"><a href="preface-1.html#variance-inflation-factors-1"><i class="fa fa-check"></i><b>9.15.2</b> Variance inflation factors</a></li>
-<li class="chapter" data-level="9.15.3" data-path="preface-1.html"><a href="preface-1.html#anova-1"><i class="fa fa-check"></i><b>9.15.3</b> ANOVA</a></li>
-<li class="chapter" data-level="9.15.4" data-path="preface-1.html"><a href="preface-1.html#linearizing-variables-1"><i class="fa fa-check"></i><b>9.15.4</b> Linearizing variables</a></li>
-</ul></li>
-<li class="chapter" data-level="9.16" data-path="preface-1.html"><a href="preface-1.html#path-analysis-structural-equations-1"><i class="fa fa-check"></i><b>9.16</b> Path analysis (structural equations)</a></li>
-<li class="chapter" data-level="9.17" data-path="preface-1.html"><a href="preface-1.html#coding-the-model-1"><i class="fa fa-check"></i><b>9.17</b> Coding the model</a>
-<ul>
-<li class="chapter" data-level="9.17.1" data-path="preface-1.html"><a href="preface-1.html#covariance-1"><i class="fa fa-check"></i><b>9.17.1</b> Covariance</a></li>
-<li class="chapter" data-level="9.17.2" data-path="preface-1.html"><a href="preface-1.html#reliability-1"><i class="fa fa-check"></i><b>9.17.2</b> Reliability</a></li>
-</ul></li>
-<li class="chapter" data-level="9.18" data-path="preface-1.html"><a href="preface-1.html#factor-model-1"><i class="fa fa-check"></i><b>9.18</b> Factor model</a>
-<ul>
-<li class="chapter" data-level="9.18.1" data-path="preface-1.html"><a href="preface-1.html#setting-covariance-variances-1"><i class="fa fa-check"></i><b>9.18.1</b> Setting covariance &amp; variances</a></li>
-</ul></li>
-<li class="chapter" data-level="9.19" data-path="preface-1.html"><a href="preface-1.html#data-set-2"><i class="fa fa-check"></i><b>9.19</b> Data set</a></li>
-<li class="chapter" data-level="9.20" data-path="preface-1.html"><a href="preface-1.html#matrixes-1"><i class="fa fa-check"></i><b>9.20</b> Matrixes</a></li>
-<li class="chapter" data-level="9.21" data-path="preface-1.html"><a href="preface-1.html#filtering-a-data-set-1"><i class="fa fa-check"></i><b>9.21</b> Filtering a data set</a></li>
-<li class="chapter" data-level="9.22" data-path="preface-1.html"><a href="preface-1.html#data-imputation-1"><i class="fa fa-check"></i><b>9.22</b> Data imputation</a></li>
-<li class="chapter" data-level="9.23" data-path="preface-1.html"><a href="preface-1.html#data-visualization-1"><i class="fa fa-check"></i><b>9.23</b> Data visualization</a>
-<ul>
-<li class="chapter" data-level="9.23.1" data-path="preface-1.html"><a href="preface-1.html#other-categorical-plots-1"><i class="fa fa-check"></i><b>9.23.1</b> Other categorical plots</a></li>
-<li class="chapter" data-level="9.23.2" data-path="preface-1.html"><a href="preface-1.html#preparing-the-data-1"><i class="fa fa-check"></i><b>9.23.2</b> Preparing the data</a></li>
-<li class="chapter" data-level="9.23.3" data-path="preface-1.html"><a href="preface-1.html#creating-the-models-1"><i class="fa fa-check"></i><b>9.23.3</b> Creating the models</a></li>
-</ul></li>
-<li class="chapter" data-level="9.24" data-path="preface-1.html"><a href="preface-1.html#model-selection-2"><i class="fa fa-check"></i><b>9.24</b> Model selection</a>
-<ul>
-<li class="chapter" data-level="9.24.1" data-path="preface-1.html"><a href="preface-1.html#svc-1"><i class="fa fa-check"></i><b>9.24.1</b> SVC</a></li>
-</ul></li>
-<li class="chapter" data-level="9.25" data-path="preface-1.html"><a href="preface-1.html#machine-learning-1"><i class="fa fa-check"></i><b>9.25</b> Machine Learning</a>
-<ul>
-<li class="chapter" data-level="9.25.1" data-path="preface-1.html"><a href="preface-1.html#theory-1"><i class="fa fa-check"></i><b>9.25.1</b> Theory</a></li>
-<li class="chapter" data-level="9.25.2" data-path="preface-1.html"><a href="preface-1.html#data-set-3"><i class="fa fa-check"></i><b>9.25.2</b> Data set</a></li>
-<li class="chapter" data-level="9.25.3" data-path="preface-1.html"><a href="preface-1.html#finding-the-expected-value-of-the-error-1"><i class="fa fa-check"></i><b>9.25.3</b> Finding the expected value of the error</a></li>
-<li class="chapter" data-level="9.25.4" data-path="preface-1.html"><a href="preface-1.html#finding-the-error-1"><i class="fa fa-check"></i><b>9.25.4</b> Finding the error</a></li>
-<li class="chapter" data-level="9.25.5" data-path="preface-1.html"><a href="preface-1.html#loss-function-1"><i class="fa fa-check"></i><b>9.25.5</b> Loss function</a></li>
-<li class="chapter" data-level="9.25.6" data-path="preface-1.html"><a href="preface-1.html#training-vs-test-set-1"><i class="fa fa-check"></i><b>9.25.6</b> Training vs test set</a></li>
-</ul></li>
-<li class="chapter" data-level="9.26" data-path="preface-1.html"><a href="preface-1.html#bias-variance-trade-off-1"><i class="fa fa-check"></i><b>9.26</b> Bias-variance trade off</a>
-<ul>
-<li class="chapter" data-level="9.26.1" data-path="preface-1.html"><a href="preface-1.html#training-fitting-a-model-1"><i class="fa fa-check"></i><b>9.26.1</b> Training (fitting) a model</a></li>
-</ul></li>
-<li class="chapter" data-level="9.27" data-path="preface-1.html"><a href="preface-1.html#gradient-descent-1"><i class="fa fa-check"></i><b>9.27</b> Gradient descent</a>
-<ul>
-<li class="chapter" data-level="9.27.1" data-path="preface-1.html"><a href="preface-1.html#stochastic-gradient-descent-1"><i class="fa fa-check"></i><b>9.27.1</b> Stochastic gradient descent</a></li>
-</ul></li>
-<li class="chapter" data-level="9.28" data-path="preface-1.html"><a href="preface-1.html#model-selection-3"><i class="fa fa-check"></i><b>9.28</b> Model Selection</a></li>
-<li class="chapter" data-level="9.29" data-path="preface-1.html"><a href="preface-1.html#validations-methods-1"><i class="fa fa-check"></i><b>9.29</b> Validations methods</a>
-<ul>
-<li class="chapter" data-level="9.29.1" data-path="preface-1.html"><a href="preface-1.html#hold-out-validation-method-1"><i class="fa fa-check"></i><b>9.29.1</b> Hold-Out validation method</a></li>
-<li class="chapter" data-level="9.29.2" data-path="preface-1.html"><a href="preface-1.html#standardization-1"><i class="fa fa-check"></i><b>9.29.2</b> Standardization</a></li>
-<li class="chapter" data-level="9.29.3" data-path="preface-1.html"><a href="preface-1.html#leave-one-out-cross-validation-method-loocv-1"><i class="fa fa-check"></i><b>9.29.3</b> Leave-One-Out Cross-validation method (LOOCV):</a></li>
-<li class="chapter" data-level="9.29.4" data-path="preface-1.html"><a href="preface-1.html#k-fold-cross-validation-1"><i class="fa fa-check"></i><b>9.29.4</b> K-Fold Cross Validation</a></li>
-</ul></li>
-<li class="chapter" data-level="9.30" data-path="preface-1.html"><a href="preface-1.html#classification-problems-1"><i class="fa fa-check"></i><b>9.30</b> Classification Problems</a>
-<ul>
-<li class="chapter" data-level="9.30.1" data-path="preface-1.html"><a href="preface-1.html#evaluating-model-quality-1"><i class="fa fa-check"></i><b>9.30.1</b> Evaluating model quality</a></li>
-<li class="chapter" data-level="9.30.2" data-path="preface-1.html"><a href="preface-1.html#receiver-operating-characteristics-roc-1"><i class="fa fa-check"></i><b>9.30.2</b> Receiver Operating Characteristics (ROC)</a></li>
-<li class="chapter" data-level="9.30.3" data-path="preface-1.html"><a href="preface-1.html#multi-class-classification-1"><i class="fa fa-check"></i><b>9.30.3</b> Multi-class classification</a></li>
-<li class="chapter" data-level="9.30.4" data-path="preface-1.html"><a href="preface-1.html#maximal-margin-classifier-1"><i class="fa fa-check"></i><b>9.30.4</b> Maximal Margin Classifier</a></li>
-<li class="chapter" data-level="9.30.5" data-path="preface-1.html"><a href="preface-1.html#support-vector-classifier-1"><i class="fa fa-check"></i><b>9.30.5</b> Support vector classifier</a></li>
-</ul></li>
-<li class="chapter" data-level="9.31" data-path="preface-1.html"><a href="preface-1.html#regularization-1"><i class="fa fa-check"></i><b>9.31</b> Regularization</a>
-<ul>
-<li class="chapter" data-level="9.31.1" data-path="preface-1.html"><a href="preface-1.html#interpretability-1"><i class="fa fa-check"></i><b>9.31.1</b> Interpretability</a></li>
-</ul></li>
-<li class="chapter" data-level="9.32" data-path="preface-1.html"><a href="preface-1.html#clustering-1"><i class="fa fa-check"></i><b>9.32</b> Clustering</a>
-<ul>
-<li class="chapter" data-level="9.32.1" data-path="preface-1.html"><a href="preface-1.html#hierachical-clustering-1"><i class="fa fa-check"></i><b>9.32.1</b> Hierachical clustering</a></li>
-<li class="chapter" data-level="9.32.2" data-path="preface-1.html"><a href="preface-1.html#non-hierachical-clustering-1"><i class="fa fa-check"></i><b>9.32.2</b> Non-Hierachical clustering</a></li>
-</ul></li>
-<li class="chapter" data-level="9.33" data-path="preface-1.html"><a href="preface-1.html#multi-dimensional-scaling-1"><i class="fa fa-check"></i><b>9.33</b> Multi-Dimensional Scaling</a></li>
-<li class="chapter" data-level="9.34" data-path="preface-1.html"><a href="preface-1.html#principal-component-analysis-1"><i class="fa fa-check"></i><b>9.34</b> Principal component analysis</a>
-<ul>
-<li class="chapter" data-level="9.34.1" data-path="preface-1.html"><a href="preface-1.html#biplots-1"><i class="fa fa-check"></i><b>9.34.1</b> Biplots</a></li>
-</ul></li>
-<li class="chapter" data-level="9.35" data-path="preface-1.html"><a href="preface-1.html#correspondence-analysis-1"><i class="fa fa-check"></i><b>9.35</b> Correspondence analysis</a>
-<ul>
-<li class="chapter" data-level="9.35.1" data-path="preface-1.html"><a href="preface-1.html#multiple-correspondence-analysis-1"><i class="fa fa-check"></i><b>9.35.1</b> Multiple Correspondence Analysis</a></li>
-</ul></li>
-<li class="chapter" data-level="9.36" data-path="preface-1.html"><a href="preface-1.html#multiple-linear-regression-classification-trees-1"><i class="fa fa-check"></i><b>9.36</b> Multiple linear regression &amp; classification trees</a></li>
-<li class="chapter" data-level="9.37" data-path="preface-1.html"><a href="preface-1.html#text-analytics-1"><i class="fa fa-check"></i><b>9.37</b> Text analytics</a></li>
-<li class="chapter" data-level="9.38" data-path="preface-1.html"><a href="preface-1.html#logistic-regressions-1"><i class="fa fa-check"></i><b>9.38</b> Logistic regressions</a>
-<ul>
-<li class="chapter" data-level="9.38.1" data-path="preface-1.html"><a href="preface-1.html#sensitivity-vs-specificity-1"><i class="fa fa-check"></i><b>9.38.1</b> Sensitivity vs Specificity</a></li>
-</ul></li>
-<li class="chapter" data-level="9.39" data-path="preface-1.html"><a href="preface-1.html#conjoint-analytics-1"><i class="fa fa-check"></i><b>9.39</b> Conjoint Analytics</a>
-<ul>
-<li class="chapter" data-level="9.39.1" data-path="preface-1.html"><a href="preface-1.html#random-utility-model-1"><i class="fa fa-check"></i><b>9.39.1</b> Random utility model</a></li>
-</ul></li>
-<li class="chapter" data-level="9.40" data-path="preface-1.html"><a href="preface-1.html#simple-statistics-2"><i class="fa fa-check"></i><b>9.40</b> Simple statistics</a></li>
-<li class="chapter" data-level="9.41" data-path="preface-1.html"><a href="preface-1.html#tables-frames-matrices-2"><i class="fa fa-check"></i><b>9.41</b> Tables, Frames &amp; Matrices</a></li>
-<li class="chapter" data-level="9.42" data-path="preface-1.html"><a href="preface-1.html#data-sets-2"><i class="fa fa-check"></i><b>9.42</b> Data sets</a>
-<ul>
-<li class="chapter" data-level="9.42.1" data-path="preface-1.html"><a href="preface-1.html#subsetting-2"><i class="fa fa-check"></i><b>9.42.1</b> Subsetting</a></li>
-</ul></li>
-<li class="chapter" data-level="9.43" data-path="preface-1.html"><a href="preface-1.html#rmarkdown-2"><i class="fa fa-check"></i><b>9.43</b> RMarkdown</a>
-<ul>
-<li class="chapter" data-level="9.43.1" data-path="preface-1.html"><a href="preface-1.html#setup-rmarkdown-code-chunks-2"><i class="fa fa-check"></i><b>9.43.1</b> Setup rmarkdown &amp; code chunks</a></li>
-<li class="chapter" data-level="9.43.2" data-path="preface-1.html"><a href="preface-1.html#latex-2"><i class="fa fa-check"></i><b>9.43.2</b> Latex</a></li>
-</ul></li>
-<li class="chapter" data-level="9.44" data-path="preface-1.html"><a href="preface-1.html#miscellaneous-2"><i class="fa fa-check"></i><b>9.44</b> Miscellaneous</a>
-<ul>
-<li class="chapter" data-level="9.44.1" data-path="preface-1.html"><a href="preface-1.html#removing-infinite-na-values-2"><i class="fa fa-check"></i><b>9.44.1</b> Removing infinite + NA values</a></li>
-<li class="chapter" data-level="9.44.2" data-path="preface-1.html"><a href="preface-1.html#transforming-variable-types-2"><i class="fa fa-check"></i><b>9.44.2</b> Transforming variable types</a></li>
-</ul></li>
-<li class="chapter" data-level="9.45" data-path="preface-1.html"><a href="preface-1.html#bayes-theorem-2"><i class="fa fa-check"></i><b>9.45</b> Bayes Theorem</a></li>
-<li class="chapter" data-level="9.46" data-path="preface-1.html"><a href="preface-1.html#discrete-probablity-2"><i class="fa fa-check"></i><b>9.46</b> Discrete Probablity</a>
-<ul>
-<li class="chapter" data-level="9.46.1" data-path="preface-1.html"><a href="preface-1.html#uniform-discrete-probability-distribution-2"><i class="fa fa-check"></i><b>9.46.1</b> Uniform discrete probability distribution</a></li>
-<li class="chapter" data-level="9.46.2" data-path="preface-1.html"><a href="preface-1.html#binomial-distribution-2"><i class="fa fa-check"></i><b>9.46.2</b> Binomial distribution</a></li>
-<li class="chapter" data-level="9.46.3" data-path="preface-1.html"><a href="preface-1.html#poisson-distribution-2"><i class="fa fa-check"></i><b>9.46.3</b> Poisson distribution</a></li>
-<li class="chapter" data-level="9.46.4" data-path="preface-1.html"><a href="preface-1.html#the-normal-distribution-2"><i class="fa fa-check"></i><b>9.46.4</b> The normal distribution</a></li>
-</ul></li>
-<li class="chapter" data-level="9.47" data-path="preface-1.html"><a href="preface-1.html#samples-estimation-confidence-intervals-2"><i class="fa fa-check"></i><b>9.47</b> Samples, estimation &amp; confidence intervals</a></li>
-<li class="chapter" data-level="9.48" data-path="preface-1.html"><a href="preface-1.html#significance-level-2"><i class="fa fa-check"></i><b>9.48</b> Significance level</a>
-<ul>
-<li class="chapter" data-level="9.48.1" data-path="preface-1.html"><a href="preface-1.html#critical-values-2"><i class="fa fa-check"></i><b>9.48.1</b> Critical values</a></li>
-<li class="chapter" data-level="9.48.2" data-path="preface-1.html"><a href="preface-1.html#test-of-equality---two-samples-2"><i class="fa fa-check"></i><b>9.48.2</b> Test of equality - two samples</a></li>
-</ul></li>
-<li class="chapter" data-level="9.49" data-path="preface-1.html"><a href="preface-1.html#non-parametric-testing-2"><i class="fa fa-check"></i><b>9.49</b> Non-Parametric testing</a>
-<ul>
-<li class="chapter" data-level="9.49.1" data-path="preface-1.html"><a href="preface-1.html#contengency-table-frequencies-2"><i class="fa fa-check"></i><b>9.49.1</b> Contengency table / frequencies</a></li>
-<li class="chapter" data-level="9.49.2" data-path="preface-1.html"><a href="preface-1.html#chi-square-2"><i class="fa fa-check"></i><b>9.49.2</b> Chi-square</a></li>
-<li class="chapter" data-level="9.49.3" data-path="preface-1.html"><a href="preface-1.html#goodness-of-fit-2"><i class="fa fa-check"></i><b>9.49.3</b> Goodness of fit</a></li>
-<li class="chapter" data-level="9.49.4" data-path="preface-1.html"><a href="preface-1.html#p-value-2"><i class="fa fa-check"></i><b>9.49.4</b> P-value</a></li>
-</ul></li>
-<li class="chapter" data-level="9.50" data-path="preface-1.html"><a href="preface-1.html#basics-regressions-2"><i class="fa fa-check"></i><b>9.50</b> Basics regressions</a>
-<ul>
-<li class="chapter" data-level="9.50.1" data-path="preface-1.html"><a href="preface-1.html#summarizing-regressions-2"><i class="fa fa-check"></i><b>9.50.1</b> Summarizing regressions:</a></li>
-<li class="chapter" data-level="9.50.2" data-path="preface-1.html"><a href="preface-1.html#dummy-variables-diff-in-means-2"><i class="fa fa-check"></i><b>9.50.2</b> Dummy variables, diff in means</a></li>
-<li class="chapter" data-level="9.50.3" data-path="preface-1.html"><a href="preface-1.html#regression-dummy-2"><i class="fa fa-check"></i><b>9.50.3</b> Regression + dummy</a></li>
-</ul></li>
-<li class="chapter" data-level="9.51" data-path="preface-1.html"><a href="preface-1.html#prediction-2"><i class="fa fa-check"></i><b>9.51</b> Prediction</a>
-<ul>
-<li class="chapter" data-level="9.51.1" data-path="preface-1.html"><a href="preface-1.html#confidence-and-prediction-plotting-2"><i class="fa fa-check"></i><b>9.51.1</b> Confidence and prediction plotting</a></li>
-<li class="chapter" data-level="9.51.2" data-path="preface-1.html"><a href="preface-1.html#prediction-with-dummy-variables-2"><i class="fa fa-check"></i><b>9.51.2</b> Prediction with dummy variables</a></li>
-<li class="chapter" data-level="9.51.3" data-path="preface-1.html"><a href="preface-1.html#prediction-intervals-examples-2"><i class="fa fa-check"></i><b>9.51.3</b> Prediction intervals examples</a></li>
-</ul></li>
-<li class="chapter" data-level="9.52" data-path="preface-1.html"><a href="preface-1.html#data-problems-2"><i class="fa fa-check"></i><b>9.52</b> Data problems</a>
-<ul>
-<li class="chapter" data-level="9.52.1" data-path="preface-1.html"><a href="preface-1.html#multicollinearity-2"><i class="fa fa-check"></i><b>9.52.1</b> Multicollinearity</a></li>
-<li class="chapter" data-level="9.52.2" data-path="preface-1.html"><a href="preface-1.html#variance-inflation-factors-2"><i class="fa fa-check"></i><b>9.52.2</b> Variance inflation factors</a></li>
-<li class="chapter" data-level="9.52.3" data-path="preface-1.html"><a href="preface-1.html#anova-2"><i class="fa fa-check"></i><b>9.52.3</b> ANOVA</a></li>
-<li class="chapter" data-level="9.52.4" data-path="preface-1.html"><a href="preface-1.html#linearizing-variables-2"><i class="fa fa-check"></i><b>9.52.4</b> Linearizing variables</a></li>
-</ul></li>
-<li class="chapter" data-level="9.53" data-path="preface-1.html"><a href="preface-1.html#path-analysis-structural-equations-2"><i class="fa fa-check"></i><b>9.53</b> Path analysis (structural equations)</a></li>
-<li class="chapter" data-level="9.54" data-path="preface-1.html"><a href="preface-1.html#coding-the-model-2"><i class="fa fa-check"></i><b>9.54</b> Coding the model</a>
-<ul>
-<li class="chapter" data-level="9.54.1" data-path="preface-1.html"><a href="preface-1.html#covariance-2"><i class="fa fa-check"></i><b>9.54.1</b> Covariance</a></li>
-<li class="chapter" data-level="9.54.2" data-path="preface-1.html"><a href="preface-1.html#reliability-2"><i class="fa fa-check"></i><b>9.54.2</b> Reliability</a></li>
-</ul></li>
-<li class="chapter" data-level="9.55" data-path="preface-1.html"><a href="preface-1.html#factor-model-2"><i class="fa fa-check"></i><b>9.55</b> Factor model</a>
-<ul>
-<li class="chapter" data-level="9.55.1" data-path="preface-1.html"><a href="preface-1.html#setting-covariance-variances-2"><i class="fa fa-check"></i><b>9.55.1</b> Setting covariance &amp; variances</a></li>
-</ul></li>
-<li class="chapter" data-level="9.56" data-path="preface-1.html"><a href="preface-1.html#data-set-4"><i class="fa fa-check"></i><b>9.56</b> Data set</a></li>
-<li class="chapter" data-level="9.57" data-path="preface-1.html"><a href="preface-1.html#matrixes-2"><i class="fa fa-check"></i><b>9.57</b> Matrixes</a></li>
-<li class="chapter" data-level="9.58" data-path="preface-1.html"><a href="preface-1.html#filtering-a-data-set-2"><i class="fa fa-check"></i><b>9.58</b> Filtering a data set</a></li>
-<li class="chapter" data-level="9.59" data-path="preface-1.html"><a href="preface-1.html#data-imputation-2"><i class="fa fa-check"></i><b>9.59</b> Data imputation</a></li>
-<li class="chapter" data-level="9.60" data-path="preface-1.html"><a href="preface-1.html#data-visualization-2"><i class="fa fa-check"></i><b>9.60</b> Data visualization</a>
-<ul>
-<li class="chapter" data-level="9.60.1" data-path="preface-1.html"><a href="preface-1.html#other-categorical-plots-2"><i class="fa fa-check"></i><b>9.60.1</b> Other categorical plots</a></li>
-<li class="chapter" data-level="9.60.2" data-path="preface-1.html"><a href="preface-1.html#preparing-the-data-2"><i class="fa fa-check"></i><b>9.60.2</b> Preparing the data</a></li>
-<li class="chapter" data-level="9.60.3" data-path="preface-1.html"><a href="preface-1.html#creating-the-models-2"><i class="fa fa-check"></i><b>9.60.3</b> Creating the models</a></li>
-</ul></li>
-<li class="chapter" data-level="9.61" data-path="preface-1.html"><a href="preface-1.html#model-selection-4"><i class="fa fa-check"></i><b>9.61</b> Model selection</a>
-<ul>
-<li class="chapter" data-level="9.61.1" data-path="preface-1.html"><a href="preface-1.html#svc-2"><i class="fa fa-check"></i><b>9.61.1</b> SVC</a></li>
-</ul></li>
-<li class="chapter" data-level="9.62" data-path="preface-1.html"><a href="preface-1.html#machine-learning-2"><i class="fa fa-check"></i><b>9.62</b> Machine Learning</a>
-<ul>
-<li class="chapter" data-level="9.62.1" data-path="preface-1.html"><a href="preface-1.html#theory-2"><i class="fa fa-check"></i><b>9.62.1</b> Theory</a></li>
-<li class="chapter" data-level="9.62.2" data-path="preface-1.html"><a href="preface-1.html#data-set-5"><i class="fa fa-check"></i><b>9.62.2</b> Data set</a></li>
-<li class="chapter" data-level="9.62.3" data-path="preface-1.html"><a href="preface-1.html#finding-the-expected-value-of-the-error-2"><i class="fa fa-check"></i><b>9.62.3</b> Finding the expected value of the error</a></li>
-<li class="chapter" data-level="9.62.4" data-path="preface-1.html"><a href="preface-1.html#finding-the-error-2"><i class="fa fa-check"></i><b>9.62.4</b> Finding the error</a></li>
-<li class="chapter" data-level="9.62.5" data-path="preface-1.html"><a href="preface-1.html#loss-function-2"><i class="fa fa-check"></i><b>9.62.5</b> Loss function</a></li>
-<li class="chapter" data-level="9.62.6" data-path="preface-1.html"><a href="preface-1.html#training-vs-test-set-2"><i class="fa fa-check"></i><b>9.62.6</b> Training vs test set</a></li>
-</ul></li>
-<li class="chapter" data-level="9.63" data-path="preface-1.html"><a href="preface-1.html#bias-variance-trade-off-2"><i class="fa fa-check"></i><b>9.63</b> Bias-variance trade off</a>
-<ul>
-<li class="chapter" data-level="9.63.1" data-path="preface-1.html"><a href="preface-1.html#training-fitting-a-model-2"><i class="fa fa-check"></i><b>9.63.1</b> Training (fitting) a model</a></li>
-</ul></li>
-<li class="chapter" data-level="9.64" data-path="preface-1.html"><a href="preface-1.html#gradient-descent-2"><i class="fa fa-check"></i><b>9.64</b> Gradient descent</a>
-<ul>
-<li class="chapter" data-level="9.64.1" data-path="preface-1.html"><a href="preface-1.html#stochastic-gradient-descent-2"><i class="fa fa-check"></i><b>9.64.1</b> Stochastic gradient descent</a></li>
-</ul></li>
-<li class="chapter" data-level="9.65" data-path="preface-1.html"><a href="preface-1.html#model-selection-5"><i class="fa fa-check"></i><b>9.65</b> Model Selection</a></li>
-<li class="chapter" data-level="9.66" data-path="preface-1.html"><a href="preface-1.html#validations-methods-2"><i class="fa fa-check"></i><b>9.66</b> Validations methods</a>
-<ul>
-<li class="chapter" data-level="9.66.1" data-path="preface-1.html"><a href="preface-1.html#hold-out-validation-method-2"><i class="fa fa-check"></i><b>9.66.1</b> Hold-Out validation method</a></li>
-<li class="chapter" data-level="9.66.2" data-path="preface-1.html"><a href="preface-1.html#standardization-2"><i class="fa fa-check"></i><b>9.66.2</b> Standardization</a></li>
-<li class="chapter" data-level="9.66.3" data-path="preface-1.html"><a href="preface-1.html#leave-one-out-cross-validation-method-loocv-2"><i class="fa fa-check"></i><b>9.66.3</b> Leave-One-Out Cross-validation method (LOOCV):</a></li>
-<li class="chapter" data-level="9.66.4" data-path="preface-1.html"><a href="preface-1.html#k-fold-cross-validation-2"><i class="fa fa-check"></i><b>9.66.4</b> K-Fold Cross Validation</a></li>
-</ul></li>
-<li class="chapter" data-level="9.67" data-path="preface-1.html"><a href="preface-1.html#classification-problems-2"><i class="fa fa-check"></i><b>9.67</b> Classification Problems</a>
-<ul>
-<li class="chapter" data-level="9.67.1" data-path="preface-1.html"><a href="preface-1.html#evaluating-model-quality-2"><i class="fa fa-check"></i><b>9.67.1</b> Evaluating model quality</a></li>
-<li class="chapter" data-level="9.67.2" data-path="preface-1.html"><a href="preface-1.html#receiver-operating-characteristics-roc-2"><i class="fa fa-check"></i><b>9.67.2</b> Receiver Operating Characteristics (ROC)</a></li>
-<li class="chapter" data-level="9.67.3" data-path="preface-1.html"><a href="preface-1.html#multi-class-classification-2"><i class="fa fa-check"></i><b>9.67.3</b> Multi-class classification</a></li>
-<li class="chapter" data-level="9.67.4" data-path="preface-1.html"><a href="preface-1.html#maximal-margin-classifier-2"><i class="fa fa-check"></i><b>9.67.4</b> Maximal Margin Classifier</a></li>
-<li class="chapter" data-level="9.67.5" data-path="preface-1.html"><a href="preface-1.html#support-vector-classifier-2"><i class="fa fa-check"></i><b>9.67.5</b> Support vector classifier</a></li>
-</ul></li>
-<li class="chapter" data-level="9.68" data-path="preface-1.html"><a href="preface-1.html#regularization-2"><i class="fa fa-check"></i><b>9.68</b> Regularization</a>
-<ul>
-<li class="chapter" data-level="9.68.1" data-path="preface-1.html"><a href="preface-1.html#interpretability-2"><i class="fa fa-check"></i><b>9.68.1</b> Interpretability</a></li>
-</ul></li>
-<li class="chapter" data-level="9.69" data-path="preface-1.html"><a href="preface-1.html#clustering-2"><i class="fa fa-check"></i><b>9.69</b> Clustering</a>
-<ul>
-<li class="chapter" data-level="9.69.1" data-path="preface-1.html"><a href="preface-1.html#hierachical-clustering-2"><i class="fa fa-check"></i><b>9.69.1</b> Hierachical clustering</a></li>
-<li class="chapter" data-level="9.69.2" data-path="preface-1.html"><a href="preface-1.html#non-hierachical-clustering-2"><i class="fa fa-check"></i><b>9.69.2</b> Non-Hierachical clustering</a></li>
-</ul></li>
-<li class="chapter" data-level="9.70" data-path="preface-1.html"><a href="preface-1.html#multi-dimensional-scaling-2"><i class="fa fa-check"></i><b>9.70</b> Multi-Dimensional Scaling</a></li>
-<li class="chapter" data-level="9.71" data-path="preface-1.html"><a href="preface-1.html#principal-component-analysis-2"><i class="fa fa-check"></i><b>9.71</b> Principal component analysis</a>
-<ul>
-<li class="chapter" data-level="9.71.1" data-path="preface-1.html"><a href="preface-1.html#biplots-2"><i class="fa fa-check"></i><b>9.71.1</b> Biplots</a></li>
-</ul></li>
-<li class="chapter" data-level="9.72" data-path="preface-1.html"><a href="preface-1.html#correspondence-analysis-2"><i class="fa fa-check"></i><b>9.72</b> Correspondence analysis</a>
-<ul>
-<li class="chapter" data-level="9.72.1" data-path="preface-1.html"><a href="preface-1.html#multiple-correspondence-analysis-2"><i class="fa fa-check"></i><b>9.72.1</b> Multiple Correspondence Analysis</a></li>
-</ul></li>
-<li class="chapter" data-level="9.73" data-path="preface-1.html"><a href="preface-1.html#multiple-linear-regression-classification-trees-2"><i class="fa fa-check"></i><b>9.73</b> Multiple linear regression &amp; classification trees</a></li>
-<li class="chapter" data-level="9.74" data-path="preface-1.html"><a href="preface-1.html#text-analytics-2"><i class="fa fa-check"></i><b>9.74</b> Text analytics</a></li>
-<li class="chapter" data-level="9.75" data-path="preface-1.html"><a href="preface-1.html#logistic-regressions-2"><i class="fa fa-check"></i><b>9.75</b> Logistic regressions</a>
-<ul>
-<li class="chapter" data-level="9.75.1" data-path="preface-1.html"><a href="preface-1.html#sensitivity-vs-specificity-2"><i class="fa fa-check"></i><b>9.75.1</b> Sensitivity vs Specificity</a></li>
-</ul></li>
-<li class="chapter" data-level="9.76" data-path="preface-1.html"><a href="preface-1.html#conjoint-analytics-2"><i class="fa fa-check"></i><b>9.76</b> Conjoint Analytics</a>
-<ul>
-<li class="chapter" data-level="9.76.1" data-path="preface-1.html"><a href="preface-1.html#random-utility-model-2"><i class="fa fa-check"></i><b>9.76.1</b> Random utility model</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="preface-2.html"><a href="preface-2.html"><i class="fa fa-check"></i>Preface</a>
-<ul>
-<li class="chapter" data-level="9.77" data-path="preface-2.html"><a href="preface-2.html#simple-statistics-3"><i class="fa fa-check"></i><b>9.77</b> Simple statistics</a></li>
-<li class="chapter" data-level="9.78" data-path="preface-2.html"><a href="preface-2.html#tables-frames-matrices-3"><i class="fa fa-check"></i><b>9.78</b> Tables, Frames &amp; Matrices</a></li>
-<li class="chapter" data-level="9.79" data-path="preface-2.html"><a href="preface-2.html#data-sets-3"><i class="fa fa-check"></i><b>9.79</b> Data sets</a>
-<ul>
-<li class="chapter" data-level="9.79.1" data-path="preface-2.html"><a href="preface-2.html#subsetting-3"><i class="fa fa-check"></i><b>9.79.1</b> Subsetting</a></li>
-</ul></li>
-<li class="chapter" data-level="9.80" data-path="preface-2.html"><a href="preface-2.html#rmarkdown-3"><i class="fa fa-check"></i><b>9.80</b> RMarkdown</a>
-<ul>
-<li class="chapter" data-level="9.80.1" data-path="preface-2.html"><a href="preface-2.html#setup-rmarkdown-code-chunks-3"><i class="fa fa-check"></i><b>9.80.1</b> Setup rmarkdown &amp; code chunks</a></li>
-<li class="chapter" data-level="9.80.2" data-path="preface-2.html"><a href="preface-2.html#latex-3"><i class="fa fa-check"></i><b>9.80.2</b> Latex</a></li>
-</ul></li>
-<li class="chapter" data-level="9.81" data-path="preface-2.html"><a href="preface-2.html#miscellaneous-3"><i class="fa fa-check"></i><b>9.81</b> Miscellaneous</a>
-<ul>
-<li class="chapter" data-level="9.81.1" data-path="preface-2.html"><a href="preface-2.html#removing-infinite-na-values-3"><i class="fa fa-check"></i><b>9.81.1</b> Removing infinite + NA values</a></li>
-<li class="chapter" data-level="9.81.2" data-path="preface-2.html"><a href="preface-2.html#transforming-variable-types-3"><i class="fa fa-check"></i><b>9.81.2</b> Transforming variable types</a></li>
-</ul></li>
-<li class="chapter" data-level="9.82" data-path="preface-2.html"><a href="preface-2.html#bayes-theorem-3"><i class="fa fa-check"></i><b>9.82</b> Bayes Theorem</a></li>
-<li class="chapter" data-level="9.83" data-path="preface-2.html"><a href="preface-2.html#discrete-probablity-3"><i class="fa fa-check"></i><b>9.83</b> Discrete Probablity</a>
-<ul>
-<li class="chapter" data-level="9.83.1" data-path="preface-2.html"><a href="preface-2.html#uniform-discrete-probability-distribution-3"><i class="fa fa-check"></i><b>9.83.1</b> Uniform discrete probability distribution</a></li>
-<li class="chapter" data-level="9.83.2" data-path="preface-2.html"><a href="preface-2.html#binomial-distribution-3"><i class="fa fa-check"></i><b>9.83.2</b> Binomial distribution</a></li>
-<li class="chapter" data-level="9.83.3" data-path="preface-2.html"><a href="preface-2.html#poisson-distribution-3"><i class="fa fa-check"></i><b>9.83.3</b> Poisson distribution</a></li>
-<li class="chapter" data-level="9.83.4" data-path="preface-2.html"><a href="preface-2.html#the-normal-distribution-3"><i class="fa fa-check"></i><b>9.83.4</b> The normal distribution</a></li>
-</ul></li>
-<li class="chapter" data-level="9.84" data-path="preface-2.html"><a href="preface-2.html#samples-estimation-confidence-intervals-3"><i class="fa fa-check"></i><b>9.84</b> Samples, estimation &amp; confidence intervals</a></li>
-<li class="chapter" data-level="9.85" data-path="preface-2.html"><a href="preface-2.html#significance-level-3"><i class="fa fa-check"></i><b>9.85</b> Significance level</a>
-<ul>
-<li class="chapter" data-level="9.85.1" data-path="preface-2.html"><a href="preface-2.html#critical-values-3"><i class="fa fa-check"></i><b>9.85.1</b> Critical values</a></li>
-<li class="chapter" data-level="9.85.2" data-path="preface-2.html"><a href="preface-2.html#test-of-equality---two-samples-3"><i class="fa fa-check"></i><b>9.85.2</b> Test of equality - two samples</a></li>
-</ul></li>
-<li class="chapter" data-level="9.86" data-path="preface-2.html"><a href="preface-2.html#non-parametric-testing-3"><i class="fa fa-check"></i><b>9.86</b> Non-Parametric testing</a>
-<ul>
-<li class="chapter" data-level="9.86.1" data-path="preface-2.html"><a href="preface-2.html#contengency-table-frequencies-3"><i class="fa fa-check"></i><b>9.86.1</b> Contengency table / frequencies</a></li>
-<li class="chapter" data-level="9.86.2" data-path="preface-2.html"><a href="preface-2.html#chi-square-3"><i class="fa fa-check"></i><b>9.86.2</b> Chi-square</a></li>
-<li class="chapter" data-level="9.86.3" data-path="preface-2.html"><a href="preface-2.html#goodness-of-fit-3"><i class="fa fa-check"></i><b>9.86.3</b> Goodness of fit</a></li>
-<li class="chapter" data-level="9.86.4" data-path="preface-2.html"><a href="preface-2.html#p-value-3"><i class="fa fa-check"></i><b>9.86.4</b> P-value</a></li>
-</ul></li>
-<li class="chapter" data-level="9.87" data-path="preface-2.html"><a href="preface-2.html#basics-regressions-3"><i class="fa fa-check"></i><b>9.87</b> Basics regressions</a>
-<ul>
-<li class="chapter" data-level="9.87.1" data-path="preface-2.html"><a href="preface-2.html#summarizing-regressions-3"><i class="fa fa-check"></i><b>9.87.1</b> Summarizing regressions:</a></li>
-<li class="chapter" data-level="9.87.2" data-path="preface-2.html"><a href="preface-2.html#dummy-variables-diff-in-means-3"><i class="fa fa-check"></i><b>9.87.2</b> Dummy variables, diff in means</a></li>
-<li class="chapter" data-level="9.87.3" data-path="preface-2.html"><a href="preface-2.html#regression-dummy-3"><i class="fa fa-check"></i><b>9.87.3</b> Regression + dummy</a></li>
-</ul></li>
-<li class="chapter" data-level="9.88" data-path="preface-2.html"><a href="preface-2.html#prediction-3"><i class="fa fa-check"></i><b>9.88</b> Prediction</a>
-<ul>
-<li class="chapter" data-level="9.88.1" data-path="preface-2.html"><a href="preface-2.html#confidence-and-prediction-plotting-3"><i class="fa fa-check"></i><b>9.88.1</b> Confidence and prediction plotting</a></li>
-<li class="chapter" data-level="9.88.2" data-path="preface-2.html"><a href="preface-2.html#prediction-with-dummy-variables-3"><i class="fa fa-check"></i><b>9.88.2</b> Prediction with dummy variables</a></li>
-<li class="chapter" data-level="9.88.3" data-path="preface-2.html"><a href="preface-2.html#prediction-intervals-examples-3"><i class="fa fa-check"></i><b>9.88.3</b> Prediction intervals examples</a></li>
-</ul></li>
-<li class="chapter" data-level="9.89" data-path="preface-2.html"><a href="preface-2.html#data-problems-3"><i class="fa fa-check"></i><b>9.89</b> Data problems</a>
-<ul>
-<li class="chapter" data-level="9.89.1" data-path="preface-2.html"><a href="preface-2.html#multicollinearity-3"><i class="fa fa-check"></i><b>9.89.1</b> Multicollinearity</a></li>
-<li class="chapter" data-level="9.89.2" data-path="preface-2.html"><a href="preface-2.html#variance-inflation-factors-3"><i class="fa fa-check"></i><b>9.89.2</b> Variance inflation factors</a></li>
-<li class="chapter" data-level="9.89.3" data-path="preface-2.html"><a href="preface-2.html#anova-3"><i class="fa fa-check"></i><b>9.89.3</b> ANOVA</a></li>
-<li class="chapter" data-level="9.89.4" data-path="preface-2.html"><a href="preface-2.html#linearizing-variables-3"><i class="fa fa-check"></i><b>9.89.4</b> Linearizing variables</a></li>
-</ul></li>
-<li class="chapter" data-level="9.90" data-path="preface-2.html"><a href="preface-2.html#path-analysis-structural-equations-3"><i class="fa fa-check"></i><b>9.90</b> Path analysis (structural equations)</a></li>
-<li class="chapter" data-level="9.91" data-path="preface-2.html"><a href="preface-2.html#coding-the-model-3"><i class="fa fa-check"></i><b>9.91</b> Coding the model</a>
-<ul>
-<li class="chapter" data-level="9.91.1" data-path="preface-2.html"><a href="preface-2.html#covariance-3"><i class="fa fa-check"></i><b>9.91.1</b> Covariance</a></li>
-<li class="chapter" data-level="9.91.2" data-path="preface-2.html"><a href="preface-2.html#reliability-3"><i class="fa fa-check"></i><b>9.91.2</b> Reliability</a></li>
-</ul></li>
-<li class="chapter" data-level="9.92" data-path="preface-2.html"><a href="preface-2.html#factor-model-3"><i class="fa fa-check"></i><b>9.92</b> Factor model</a>
-<ul>
-<li class="chapter" data-level="9.92.1" data-path="preface-2.html"><a href="preface-2.html#setting-covariance-variances-3"><i class="fa fa-check"></i><b>9.92.1</b> Setting covariance &amp; variances</a></li>
-</ul></li>
-<li class="chapter" data-level="9.93" data-path="preface-2.html"><a href="preface-2.html#data-set-6"><i class="fa fa-check"></i><b>9.93</b> Data set</a></li>
-<li class="chapter" data-level="9.94" data-path="preface-2.html"><a href="preface-2.html#matrixes-3"><i class="fa fa-check"></i><b>9.94</b> Matrixes</a></li>
-<li class="chapter" data-level="9.95" data-path="preface-2.html"><a href="preface-2.html#filtering-a-data-set-3"><i class="fa fa-check"></i><b>9.95</b> Filtering a data set</a></li>
-<li class="chapter" data-level="9.96" data-path="preface-2.html"><a href="preface-2.html#data-imputation-3"><i class="fa fa-check"></i><b>9.96</b> Data imputation</a></li>
-<li class="chapter" data-level="9.97" data-path="preface-2.html"><a href="preface-2.html#data-visualization-3"><i class="fa fa-check"></i><b>9.97</b> Data visualization</a>
-<ul>
-<li class="chapter" data-level="9.97.1" data-path="preface-2.html"><a href="preface-2.html#other-categorical-plots-3"><i class="fa fa-check"></i><b>9.97.1</b> Other categorical plots</a></li>
-<li class="chapter" data-level="9.97.2" data-path="preface-2.html"><a href="preface-2.html#preparing-the-data-3"><i class="fa fa-check"></i><b>9.97.2</b> Preparing the data</a></li>
-<li class="chapter" data-level="9.97.3" data-path="preface-2.html"><a href="preface-2.html#creating-the-models-3"><i class="fa fa-check"></i><b>9.97.3</b> Creating the models</a></li>
-</ul></li>
-<li class="chapter" data-level="9.98" data-path="preface-2.html"><a href="preface-2.html#model-selection-6"><i class="fa fa-check"></i><b>9.98</b> Model selection</a>
-<ul>
-<li class="chapter" data-level="9.98.1" data-path="preface-2.html"><a href="preface-2.html#svc-3"><i class="fa fa-check"></i><b>9.98.1</b> SVC</a></li>
-</ul></li>
-<li class="chapter" data-level="9.99" data-path="preface-2.html"><a href="preface-2.html#machine-learning-3"><i class="fa fa-check"></i><b>9.99</b> Machine Learning</a>
-<ul>
-<li class="chapter" data-level="9.99.1" data-path="preface-2.html"><a href="preface-2.html#theory-3"><i class="fa fa-check"></i><b>9.99.1</b> Theory</a></li>
-<li class="chapter" data-level="9.99.2" data-path="preface-2.html"><a href="preface-2.html#data-set-7"><i class="fa fa-check"></i><b>9.99.2</b> Data set</a></li>
-<li class="chapter" data-level="9.99.3" data-path="preface-2.html"><a href="preface-2.html#finding-the-expected-value-of-the-error-3"><i class="fa fa-check"></i><b>9.99.3</b> Finding the expected value of the error</a></li>
-<li class="chapter" data-level="9.99.4" data-path="preface-2.html"><a href="preface-2.html#finding-the-error-3"><i class="fa fa-check"></i><b>9.99.4</b> Finding the error</a></li>
-<li class="chapter" data-level="9.99.5" data-path="preface-2.html"><a href="preface-2.html#loss-function-3"><i class="fa fa-check"></i><b>9.99.5</b> Loss function</a></li>
-<li class="chapter" data-level="9.99.6" data-path="preface-2.html"><a href="preface-2.html#training-vs-test-set-3"><i class="fa fa-check"></i><b>9.99.6</b> Training vs test set</a></li>
-</ul></li>
-<li class="chapter" data-level="9.100" data-path="preface-2.html"><a href="preface-2.html#bias-variance-trade-off-3"><i class="fa fa-check"></i><b>9.100</b> Bias-variance trade off</a>
-<ul>
-<li class="chapter" data-level="9.100.1" data-path="preface-2.html"><a href="preface-2.html#training-fitting-a-model-3"><i class="fa fa-check"></i><b>9.100.1</b> Training (fitting) a model</a></li>
-</ul></li>
-<li class="chapter" data-level="9.101" data-path="preface-2.html"><a href="preface-2.html#gradient-descent-3"><i class="fa fa-check"></i><b>9.101</b> Gradient descent</a>
-<ul>
-<li class="chapter" data-level="9.101.1" data-path="preface-2.html"><a href="preface-2.html#stochastic-gradient-descent-3"><i class="fa fa-check"></i><b>9.101.1</b> Stochastic gradient descent</a></li>
-</ul></li>
-<li class="chapter" data-level="9.102" data-path="preface-2.html"><a href="preface-2.html#model-selection-7"><i class="fa fa-check"></i><b>9.102</b> Model Selection</a></li>
-<li class="chapter" data-level="9.103" data-path="preface-2.html"><a href="preface-2.html#validations-methods-3"><i class="fa fa-check"></i><b>9.103</b> Validations methods</a>
-<ul>
-<li class="chapter" data-level="9.103.1" data-path="preface-2.html"><a href="preface-2.html#hold-out-validation-method-3"><i class="fa fa-check"></i><b>9.103.1</b> Hold-Out validation method</a></li>
-<li class="chapter" data-level="9.103.2" data-path="preface-2.html"><a href="preface-2.html#standardization-3"><i class="fa fa-check"></i><b>9.103.2</b> Standardization</a></li>
-<li class="chapter" data-level="9.103.3" data-path="preface-2.html"><a href="preface-2.html#leave-one-out-cross-validation-method-loocv-3"><i class="fa fa-check"></i><b>9.103.3</b> Leave-One-Out Cross-validation method (LOOCV):</a></li>
-<li class="chapter" data-level="9.103.4" data-path="preface-2.html"><a href="preface-2.html#k-fold-cross-validation-3"><i class="fa fa-check"></i><b>9.103.4</b> K-Fold Cross Validation</a></li>
-</ul></li>
-<li class="chapter" data-level="9.104" data-path="preface-2.html"><a href="preface-2.html#classification-problems-3"><i class="fa fa-check"></i><b>9.104</b> Classification Problems</a>
-<ul>
-<li class="chapter" data-level="9.104.1" data-path="preface-2.html"><a href="preface-2.html#evaluating-model-quality-3"><i class="fa fa-check"></i><b>9.104.1</b> Evaluating model quality</a></li>
-<li class="chapter" data-level="9.104.2" data-path="preface-2.html"><a href="preface-2.html#receiver-operating-characteristics-roc-3"><i class="fa fa-check"></i><b>9.104.2</b> Receiver Operating Characteristics (ROC)</a></li>
-<li class="chapter" data-level="9.104.3" data-path="preface-2.html"><a href="preface-2.html#multi-class-classification-3"><i class="fa fa-check"></i><b>9.104.3</b> Multi-class classification</a></li>
-<li class="chapter" data-level="9.104.4" data-path="preface-2.html"><a href="preface-2.html#maximal-margin-classifier-3"><i class="fa fa-check"></i><b>9.104.4</b> Maximal Margin Classifier</a></li>
-<li class="chapter" data-level="9.104.5" data-path="preface-2.html"><a href="preface-2.html#support-vector-classifier-3"><i class="fa fa-check"></i><b>9.104.5</b> Support vector classifier</a></li>
-</ul></li>
-<li class="chapter" data-level="9.105" data-path="preface-2.html"><a href="preface-2.html#regularization-3"><i class="fa fa-check"></i><b>9.105</b> Regularization</a>
-<ul>
-<li class="chapter" data-level="9.105.1" data-path="preface-2.html"><a href="preface-2.html#interpretability-3"><i class="fa fa-check"></i><b>9.105.1</b> Interpretability</a></li>
-</ul></li>
-<li class="chapter" data-level="9.106" data-path="preface-2.html"><a href="preface-2.html#clustering-3"><i class="fa fa-check"></i><b>9.106</b> Clustering</a>
-<ul>
-<li class="chapter" data-level="9.106.1" data-path="preface-2.html"><a href="preface-2.html#hierachical-clustering-3"><i class="fa fa-check"></i><b>9.106.1</b> Hierachical clustering</a></li>
-<li class="chapter" data-level="9.106.2" data-path="preface-2.html"><a href="preface-2.html#non-hierachical-clustering-3"><i class="fa fa-check"></i><b>9.106.2</b> Non-Hierachical clustering</a></li>
-</ul></li>
-<li class="chapter" data-level="9.107" data-path="preface-2.html"><a href="preface-2.html#multi-dimensional-scaling-3"><i class="fa fa-check"></i><b>9.107</b> Multi-Dimensional Scaling</a></li>
-<li class="chapter" data-level="9.108" data-path="preface-2.html"><a href="preface-2.html#principal-component-analysis-3"><i class="fa fa-check"></i><b>9.108</b> Principal component analysis</a>
-<ul>
-<li class="chapter" data-level="9.108.1" data-path="preface-2.html"><a href="preface-2.html#biplots-3"><i class="fa fa-check"></i><b>9.108.1</b> Biplots</a></li>
-</ul></li>
-<li class="chapter" data-level="9.109" data-path="preface-2.html"><a href="preface-2.html#correspondence-analysis-3"><i class="fa fa-check"></i><b>9.109</b> Correspondence analysis</a>
-<ul>
-<li class="chapter" data-level="9.109.1" data-path="preface-2.html"><a href="preface-2.html#multiple-correspondence-analysis-3"><i class="fa fa-check"></i><b>9.109.1</b> Multiple Correspondence Analysis</a></li>
-</ul></li>
-<li class="chapter" data-level="9.110" data-path="preface-2.html"><a href="preface-2.html#multiple-linear-regression-classification-trees-3"><i class="fa fa-check"></i><b>9.110</b> Multiple linear regression &amp; classification trees</a></li>
-<li class="chapter" data-level="9.111" data-path="preface-2.html"><a href="preface-2.html#text-analytics-3"><i class="fa fa-check"></i><b>9.111</b> Text analytics</a></li>
-<li class="chapter" data-level="9.112" data-path="preface-2.html"><a href="preface-2.html#logistic-regressions-3"><i class="fa fa-check"></i><b>9.112</b> Logistic regressions</a>
-<ul>
-<li class="chapter" data-level="9.112.1" data-path="preface-2.html"><a href="preface-2.html#sensitivity-vs-specificity-3"><i class="fa fa-check"></i><b>9.112.1</b> Sensitivity vs Specificity</a></li>
-</ul></li>
-<li class="chapter" data-level="9.113" data-path="preface-2.html"><a href="preface-2.html#conjoint-analytics-3"><i class="fa fa-check"></i><b>9.113</b> Conjoint Analytics</a>
-<ul>
-<li class="chapter" data-level="9.113.1" data-path="preface-2.html"><a href="preface-2.html#random-utility-model-3"><i class="fa fa-check"></i><b>9.113.1</b> Random utility model</a></li>
-</ul></li>
-</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -817,6 +412,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>

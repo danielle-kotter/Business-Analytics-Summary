@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter - 7 Practical Data Science | Business Analytics - Cheatsheets &amp; Summary</title>
   <meta name="description" content="This is a summary of r code learned throughout several courses of my master in management." />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter - 7 Practical Data Science | Business Analytics - Cheatsheets &amp; Summary" />
   <meta property="og:type" content="book" />
@@ -31,8 +31,9 @@
   
 <link rel="prev" href="basics-python.html"/>
 <link rel="next" href="advanced-statistical-methods.html"/>
-<script src="libs/header-attrs-2.7/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.5.1/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -48,7 +49,8 @@
 
 
 
-
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 
@@ -117,6 +119,29 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
 
@@ -136,19 +161,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
 <li class="chapter" data-level="1" data-path="basics-r.html"><a href="basics-r.html"><i class="fa fa-check"></i><b>1</b> Basics R</a>
 <ul>
-<li class="chapter" data-level="1.0.1" data-path="basics-r.html"><a href="basics-r.html#tables-frames-matrices"><i class="fa fa-check"></i><b>1.0.1</b> Tables, frames &amp; Matrices</a></li>
-<li class="chapter" data-level="1.1" data-path="basics-r.html"><a href="basics-r.html#data-sets"><i class="fa fa-check"></i><b>1.1</b> Data sets</a>
+<li class="chapter" data-level="1.1" data-path="basics-r.html"><a href="basics-r.html#simple-statistics"><i class="fa fa-check"></i><b>1.1</b> Simple statistics</a></li>
+<li class="chapter" data-level="1.2" data-path="basics-r.html"><a href="basics-r.html#tables-frames-matrices"><i class="fa fa-check"></i><b>1.2</b> Tables, Frames &amp; Matrices</a></li>
+<li class="chapter" data-level="1.3" data-path="basics-r.html"><a href="basics-r.html#data-sets"><i class="fa fa-check"></i><b>1.3</b> Data sets</a>
 <ul>
-<li class="chapter" data-level="1.1.1" data-path="basics-r.html"><a href="basics-r.html#removing-infinite-na-values"><i class="fa fa-check"></i><b>1.1.1</b> Removing infinite + NA values</a></li>
-<li class="chapter" data-level="1.1.2" data-path="basics-r.html"><a href="basics-r.html#transforming-variable-types"><i class="fa fa-check"></i><b>1.1.2</b> Transforming variable types</a></li>
-<li class="chapter" data-level="1.1.3" data-path="basics-r.html"><a href="basics-r.html#markdown"><i class="fa fa-check"></i><b>1.1.3</b> Markdown</a></li>
-<li class="chapter" data-level="1.1.4" data-path="basics-r.html"><a href="basics-r.html#setup-rmarkdown-code-chunks"><i class="fa fa-check"></i><b>1.1.4</b> Setup rmarkdown &amp; code chunks</a></li>
-<li class="chapter" data-level="1.1.5" data-path="basics-r.html"><a href="basics-r.html#latex"><i class="fa fa-check"></i><b>1.1.5</b> Latex</a></li>
-<li class="chapter" data-level="1.1.6" data-path="basics-r.html"><a href="basics-r.html#miscellaneous"><i class="fa fa-check"></i><b>1.1.6</b> Miscellaneous</a></li>
-<li class="chapter" data-level="1.1.7" data-path="basics-r.html"><a href="basics-r.html#subsetting"><i class="fa fa-check"></i><b>1.1.7</b> Subsetting</a></li>
+<li class="chapter" data-level="1.3.1" data-path="basics-r.html"><a href="basics-r.html#subsetting"><i class="fa fa-check"></i><b>1.3.1</b> Subsetting</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="basics-r.html"><a href="basics-r.html#rmarkdown"><i class="fa fa-check"></i><b>1.4</b> RMarkdown</a>
+<ul>
+<li class="chapter" data-level="1.4.1" data-path="basics-r.html"><a href="basics-r.html#setup-rmarkdown-code-chunks"><i class="fa fa-check"></i><b>1.4.1</b> Setup rmarkdown &amp; code chunks</a></li>
+<li class="chapter" data-level="1.4.2" data-path="basics-r.html"><a href="basics-r.html#latex"><i class="fa fa-check"></i><b>1.4.2</b> Latex</a></li>
+</ul></li>
+<li class="chapter" data-level="1.5" data-path="basics-r.html"><a href="basics-r.html#miscellaneous"><i class="fa fa-check"></i><b>1.5</b> Miscellaneous</a>
+<ul>
+<li class="chapter" data-level="1.5.1" data-path="basics-r.html"><a href="basics-r.html#removing-infinite-na-values"><i class="fa fa-check"></i><b>1.5.1</b> Removing infinite + NA values</a></li>
+<li class="chapter" data-level="1.5.2" data-path="basics-r.html"><a href="basics-r.html#transforming-variable-types"><i class="fa fa-check"></i><b>1.5.2</b> Transforming variable types</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="charts-templates-r.html"><a href="charts-templates-r.html"><i class="fa fa-check"></i><b>2</b> Charts templates - R</a></li>
+<li class="chapter" data-level="2" data-path="charts-templates---r.html"><a href="charts-templates---r.html"><i class="fa fa-check"></i><b>2</b> Charts templates - R</a></li>
 <li class="chapter" data-level="3" data-path="probability.html"><a href="probability.html"><i class="fa fa-check"></i><b>3</b> Probability</a>
 <ul>
 <li class="chapter" data-level="3.1" data-path="probability.html"><a href="probability.html#bayes-theorem"><i class="fa fa-check"></i><b>3.1</b> Bayes Theorem</a></li>
@@ -1520,7 +1550,6 @@ never known a priority.</p>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -1539,6 +1568,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
@@ -1558,7 +1588,11 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["R-Summaries.pdf", "R-Summaries.epub"],
+"download": ["Business-Analytics-Summary.pdf", "Business-Analytics-Summary.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "subsection"
 }

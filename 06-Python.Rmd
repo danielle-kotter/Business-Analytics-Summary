@@ -179,7 +179,7 @@ receives a 1 for America and a 0 for Europe.
 ```{python}
 import pandas as pd
 
-d = pd.read_csv('~/Documents/Pompeu Fabra BSM/Practical data science/auto-mpg.csv')
+d = pd.read_csv('~/Documents/Pompeu Fabra BSM/Semester 3/Practical data science/auto-mpg.csv')
 ```
 
 ```{python}
@@ -623,7 +623,7 @@ We can compare the accuracy of the prediction and the real value.
 ```{python}
 from sklearn.model_selection import LeaveOneOut, cross_val_score
 
-d = pd.read_csv('~/Documents/Pompeu Fabra BSM/Practical data science/auto-mpg.csv')
+d = pd.read_csv('~/Documents/Pompeu Fabra BSM/Semester 3/Practical data science/auto-mpg.csv')
 label = 'mpg'
 features = [col for col in d.columns if col != label]
 X = d[features]
