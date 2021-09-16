@@ -20,7 +20,7 @@ mean <- mean(variable)
 sd <- sd(variable)
 ```
 
-Removes values NA in a data set:
+**Removes values NA in a data set:**
 
 ```{r}
 mean <- mean(variable, na.rm = TRUE)
