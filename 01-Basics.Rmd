@@ -1,5 +1,7 @@
 # Basics R
 
+## Simple statistics
+
 ```{r, include=FALSE}
 variable <- 1:10
 value <- 5.50
@@ -39,7 +41,7 @@ weightedsd <- sqrt(wtd.var(x,y))/sqrt(n)
 var(variable)
 ```
 
-### Tables, frames & Matrices
+## Tables, Frames & Matrices
 
 As matrix =
 
@@ -133,27 +135,17 @@ names(cars) # shows the column names of the data set
 attach(cars) # saves the names to be used as variables
 ```
 
-### Removing infinite + NA values
-
-1.  Removing Infinite values
-2.  Removing NA values
-3.  Changing Infinite values to NA values
+### Subsetting
 
 ```{r}
-variable[is.finite(variable)]
-variable[is.na(variable)]
-variable[is.infinite(variable)] <- NA
+cars[,1] # subsets by columns
+cars[1,] # subsets by row
+cars[cars$speed == 4,] # subsets by specific value 
+cars[cars$speed > 4,] # subsets over specific value 
+cars[cars$speed < 5,] # subsets under specific value 
 ```
 
-### Transforming variable types
-
-```{r}
-as.numeric(value)
-as.character(value)
-as.factor(value)
-```
-
-### Markdown
+## RMarkdown
 
 ```{r}
 # Putting words in bold: **Word**
@@ -260,7 +252,7 @@ Will start a new page for example in a pdf document
 +--------------------+--------------------+-------------------------------+
 
 
-### Miscellaneous
+## Miscellaneous
 
 ```{r}
 round(0.50, 2) # rounds a value with two decimals
@@ -272,12 +264,22 @@ str(variable) # describing the variable
 dim(cars) # amount of rows and amount of columns
 ```
 
-### Subsetting
+### Removing infinite + NA values
+
+1.  Removing Infinite values
+2.  Removing NA values
+3.  Changing Infinite values to NA values
 
 ```{r}
-cars[,1] # subsets by columns
-cars[1,] # subsets by row
-cars[cars$speed == 4,] # subsets by specific value 
-cars[cars$speed > 4,] # subsets over specific value 
-cars[cars$speed < 5,] # subsets under specific value 
+variable[is.finite(variable)]
+variable[is.na(variable)]
+variable[is.infinite(variable)] <- NA
+```
+
+### Transforming variable types
+
+```{r}
+as.numeric(value)
+as.character(value)
+as.factor(value)
 ```

@@ -529,7 +529,6 @@ Lasso(max_iter=10000)
 ```
 
 
-
 **Training (+HP tuning)**
 
 ```{python}

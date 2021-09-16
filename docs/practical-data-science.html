@@ -247,10 +247,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.4" data-path="practical-data-science.html"><a href="practical-data-science.html#model-selection-1"><i class="fa fa-check"></i><b>7.4</b> Model Selection</a></li>
 <li class="chapter" data-level="7.5" data-path="practical-data-science.html"><a href="practical-data-science.html#validations-methods"><i class="fa fa-check"></i><b>7.5</b> Validations methods</a>
 <ul>
-<li class="chapter" data-level="7.5.1" data-path="practical-data-science.html"><a href="practical-data-science.html#hold-out-validation-method"><i class="fa fa-check"></i><b>7.5.1</b> <strong>Hold-Out validation method</strong></a></li>
-<li class="chapter" data-level="7.5.2" data-path="practical-data-science.html"><a href="practical-data-science.html#standardization"><i class="fa fa-check"></i><b>7.5.2</b> <strong>Standardization</strong></a></li>
-<li class="chapter" data-level="7.5.3" data-path="practical-data-science.html"><a href="practical-data-science.html#leave-one-out-cross-validation-method-loocv"><i class="fa fa-check"></i><b>7.5.3</b> <strong>Leave-One-Out Cross-validation method (LOOCV):</strong></a></li>
-<li class="chapter" data-level="7.5.4" data-path="practical-data-science.html"><a href="practical-data-science.html#k-fold-cross-validation"><i class="fa fa-check"></i><b>7.5.4</b> <strong>K-Fold Cross Validation</strong></a></li>
+<li class="chapter" data-level="7.5.1" data-path="practical-data-science.html"><a href="practical-data-science.html#hold-out-validation-method"><i class="fa fa-check"></i><b>7.5.1</b> Hold-Out validation method</a></li>
+<li class="chapter" data-level="7.5.2" data-path="practical-data-science.html"><a href="practical-data-science.html#standardization"><i class="fa fa-check"></i><b>7.5.2</b> Standardization</a></li>
+<li class="chapter" data-level="7.5.3" data-path="practical-data-science.html"><a href="practical-data-science.html#leave-one-out-cross-validation-method-loocv"><i class="fa fa-check"></i><b>7.5.3</b> Leave-One-Out Cross-validation method (LOOCV):</a></li>
+<li class="chapter" data-level="7.5.4" data-path="practical-data-science.html"><a href="practical-data-science.html#k-fold-cross-validation"><i class="fa fa-check"></i><b>7.5.4</b> K-Fold Cross Validation</a></li>
 </ul></li>
 <li class="chapter" data-level="7.6" data-path="practical-data-science.html"><a href="practical-data-science.html#classification-problems"><i class="fa fa-check"></i><b>7.6</b> Classification Problems</a>
 <ul>
@@ -959,7 +959,7 @@ parameters and afterwards add a layer of complexity.</p>
 <div id="validations-methods" class="section level2" number="7.5">
 <h2><span class="header-section-number">7.5</span> Validations methods</h2>
 <div id="hold-out-validation-method" class="section level3" number="7.5.1">
-<h3><span class="header-section-number">7.5.1</span> <strong>Hold-Out validation method</strong></h3>
+<h3><span class="header-section-number">7.5.1</span> Hold-Out validation method</h3>
 <ul>
 <li><p>“Simple” if no hyper parameters (training + test)</p></li>
 <li><p>“Nested” if there are hyper parameters (training + validation +
@@ -975,7 +975,7 @@ value by definition.</p>
 <p>We can additionally do model selection with hyper parameter tuning
 recursively.</p>
 <div id="grid-search" class="section level4" number="7.5.1.1">
-<h4><span class="header-section-number">7.5.1.1</span> <strong>Grid Search:</strong></h4>
+<h4><span class="header-section-number">7.5.1.1</span> Grid Search:</h4>
 <p>The traditional way of performing hyperparameter optimization has been
 grid search (Parameter sweep), which is simply an exhaustive searching
 through a manually specified subset of the hyperparameter space for a
@@ -1014,7 +1014,7 @@ entire training + validation set.</p>
 </div>
 </div>
 <div id="standardization" class="section level3" number="7.5.2">
-<h3><span class="header-section-number">7.5.2</span> <strong>Standardization</strong></h3>
+<h3><span class="header-section-number">7.5.2</span> Standardization</h3>
 <ol style="list-style-type: decimal">
 <li>We do not want our model to see the test data during training as we
 do not want any information about the test data to be accessible by
@@ -1090,7 +1090,7 @@ explained.</p>
 </div>
 </div>
 <div id="leave-one-out-cross-validation-method-loocv" class="section level3" number="7.5.3">
-<h3><span class="header-section-number">7.5.3</span> <strong>Leave-One-Out Cross-validation method (LOOCV):</strong></h3>
+<h3><span class="header-section-number">7.5.3</span> Leave-One-Out Cross-validation method (LOOCV):</h3>
 <p>We leave one out of the training set n times and find an estimator. Then
 we average the estimations:</p>
 <p><span class="math inline">\(\frac{1}{m} \sum_{i=1}^{m}\hat {ERR}^{(i)}\)</span></p>
@@ -1107,7 +1107,7 @@ models used.</p></li>
 <hr />
 </div>
 <div id="k-fold-cross-validation" class="section level3" number="7.5.4">
-<h3><span class="header-section-number">7.5.4</span> <strong>K-Fold Cross Validation</strong></h3>
+<h3><span class="header-section-number">7.5.4</span> K-Fold Cross Validation</h3>
 <p>The model will be trained k times. K = between 2 and N. Primarily the
 data set is split k times into what is called <strong>“folds”</strong>, that are
 roughly the sames size. In each iteration we take a different fold as

@@ -247,10 +247,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.4" data-path="practical-data-science.html"><a href="practical-data-science.html#model-selection-1"><i class="fa fa-check"></i><b>7.4</b> Model Selection</a></li>
 <li class="chapter" data-level="7.5" data-path="practical-data-science.html"><a href="practical-data-science.html#validations-methods"><i class="fa fa-check"></i><b>7.5</b> Validations methods</a>
 <ul>
-<li class="chapter" data-level="7.5.1" data-path="practical-data-science.html"><a href="practical-data-science.html#hold-out-validation-method"><i class="fa fa-check"></i><b>7.5.1</b> <strong>Hold-Out validation method</strong></a></li>
-<li class="chapter" data-level="7.5.2" data-path="practical-data-science.html"><a href="practical-data-science.html#standardization"><i class="fa fa-check"></i><b>7.5.2</b> <strong>Standardization</strong></a></li>
-<li class="chapter" data-level="7.5.3" data-path="practical-data-science.html"><a href="practical-data-science.html#leave-one-out-cross-validation-method-loocv"><i class="fa fa-check"></i><b>7.5.3</b> <strong>Leave-One-Out Cross-validation method (LOOCV):</strong></a></li>
-<li class="chapter" data-level="7.5.4" data-path="practical-data-science.html"><a href="practical-data-science.html#k-fold-cross-validation"><i class="fa fa-check"></i><b>7.5.4</b> <strong>K-Fold Cross Validation</strong></a></li>
+<li class="chapter" data-level="7.5.1" data-path="practical-data-science.html"><a href="practical-data-science.html#hold-out-validation-method"><i class="fa fa-check"></i><b>7.5.1</b> Hold-Out validation method</a></li>
+<li class="chapter" data-level="7.5.2" data-path="practical-data-science.html"><a href="practical-data-science.html#standardization"><i class="fa fa-check"></i><b>7.5.2</b> Standardization</a></li>
+<li class="chapter" data-level="7.5.3" data-path="practical-data-science.html"><a href="practical-data-science.html#leave-one-out-cross-validation-method-loocv"><i class="fa fa-check"></i><b>7.5.3</b> Leave-One-Out Cross-validation method (LOOCV):</a></li>
+<li class="chapter" data-level="7.5.4" data-path="practical-data-science.html"><a href="practical-data-science.html#k-fold-cross-validation"><i class="fa fa-check"></i><b>7.5.4</b> K-Fold Cross Validation</a></li>
 </ul></li>
 <li class="chapter" data-level="7.6" data-path="practical-data-science.html"><a href="practical-data-science.html#classification-problems"><i class="fa fa-check"></i><b>7.6</b> Classification Problems</a>
 <ul>
@@ -791,7 +791,7 @@ log(10)_of_mpg     0.98      -0.83  ...           1.00            1.00
 <div class="sourceCode" id="cb329"><pre class="sourceCode python watch-out"><code class="sourceCode python"><span id="cb329-1"><a href="basics-python.html#cb329-1" aria-hidden="true" tabindex="-1"></a><span class="co">#d.origin = pd.Categorical(d.origin.replace({1: &#39;america&#39;, 2:&#39;europe&#39; 3: &#39;japan&#39;}))</span></span>
 <span id="cb329-2"><a href="basics-python.html#cb329-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb329-3"><a href="basics-python.html#cb329-3" aria-hidden="true" tabindex="-1"></a>sns.relplot(data<span class="op">=</span>d, x<span class="op">=</span><span class="st">&#39;hp&#39;</span>, y<span class="op">=</span><span class="st">&#39;mpg&#39;</span>, hue<span class="op">=</span><span class="st">&#39;origin&#39;</span>, palette<span class="op">=</span><span class="st">&#39;tab10&#39;</span>)</span></code></pre></div>
-<pre><code>&lt;seaborn.axisgrid.FacetGrid object at 0x7fe50c532a90&gt;</code></pre>
+<pre><code>&lt;seaborn.axisgrid.FacetGrid object at 0x7fc378fd2f98&gt;</code></pre>
 <div class="sourceCode" id="cb331"><pre class="sourceCode python watch-out"><code class="sourceCode python"><span id="cb331-1"><a href="basics-python.html#cb331-1" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
 <p><img src="R-Summaries_files/figure-html/unnamed-chunk-154-1.png" width="100%" /></p>
 <div class="sourceCode" id="cb332"><pre class="sourceCode python watch-out"><code class="sourceCode python"><span id="cb332-1"><a href="basics-python.html#cb332-1" aria-hidden="true" tabindex="-1"></a>corr <span class="op">=</span> d.corr()</span>

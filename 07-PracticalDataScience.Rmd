@@ -806,7 +806,7 @@ parameters and afterwards add a layer of complexity.
 
 ## Validations methods
 
-### **Hold-Out validation method**
+### Hold-Out validation method
 
 -   "Simple" if no hyper parameters (training + test)
 
@@ -825,7 +825,7 @@ value by definition.
 We can additionally do model selection with hyper parameter tuning
 recursively.
 
-#### **Grid Search:** 
+#### Grid Search:
 
 The traditional way of performing hyperparameter optimization has been
 grid search (Parameter sweep), which is simply an exhaustive searching
@@ -871,7 +871,7 @@ entire training + validation set.
 
 ------------------------------------------------------------------------
 
-### **Standardization**
+### Standardization
 
 1.  We do not want our model to see the test data during training as we
     do not want any information about the test data to be accessible by
@@ -963,7 +963,7 @@ explained.
 
 ------------------------------------------------------------------------
 
-### **Leave-One-Out Cross-validation method (LOOCV):**
+### Leave-One-Out Cross-validation method (LOOCV):
 
 We leave one out of the training set n times and find an estimator. Then
 we average the estimations:
@@ -983,7 +983,7 @@ $\frac{1}{m} \sum_{i=1}^{m}\hat {ERR}^{(i)}$
 
 ------------------------------------------------------------------------
 
-### **K-Fold Cross Validation**
+### K-Fold Cross Validation
 
 The model will be trained k times. K = between 2 and N. Primarily the
 data set is split k times into what is called **"folds"**, that are
