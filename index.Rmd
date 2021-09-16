@@ -8,7 +8,7 @@ bibliography:
 - packages.bib
 biblio-style: apalike
 link-citations: yes
-description: This is a summary of r code learned throughout several courses of my master in management.
+description: This is a summary of code learned throughout several courses of my MSc in management with a specialization in Business Analytics.
 ---
 
 ```{r setup1, include=FALSE}
