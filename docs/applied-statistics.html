@@ -117,6 +117,28 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -138,7 +160,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1" data-path="basics-r.html"><a href="basics-r.html"><i class="fa fa-check"></i><b>1</b> Basics R</a>
 <ul>
 <li class="chapter" data-level="1.1" data-path="basics-r.html"><a href="basics-r.html#simple-statistics"><i class="fa fa-check"></i><b>1.1</b> Simple statistics</a></li>
-<li class="chapter" data-level="1.2" data-path="basics-r.html"><a href="basics-r.html#tables-frames-matrices"><i class="fa fa-check"></i><b>1.2</b> Tables, Frames &amp; Matrices</a>
+<li class="chapter" data-level="1.2" data-path="basics-r.html"><a href="basics-r.html#tables-frames-matrices"><i class="fa fa-check"></i><b>1.2</b> Tables, frames &amp; matrices</a>
 <ul>
 <li class="chapter" data-level="1.2.1" data-path="basics-r.html"><a href="basics-r.html#combining-sets-and-setting-names"><i class="fa fa-check"></i><b>1.2.1</b> Combining sets and setting names:</a></li>
 </ul></li>
@@ -161,8 +183,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3" data-path="applied-statistics.html"><a href="applied-statistics.html"><i class="fa fa-check"></i><b>3</b> Applied Statistics</a>
 <ul>
 <li class="chapter" data-level="3.1" data-path="applied-statistics.html"><a href="applied-statistics.html#probability"><i class="fa fa-check"></i><b>3.1</b> Probability</a></li>
-<li class="chapter" data-level="3.2" data-path="applied-statistics.html"><a href="applied-statistics.html#bayes-theorem"><i class="fa fa-check"></i><b>3.2</b> Bayes Theorem</a></li>
-<li class="chapter" data-level="3.3" data-path="applied-statistics.html"><a href="applied-statistics.html#discrete-probablity"><i class="fa fa-check"></i><b>3.3</b> Discrete Probablity</a>
+<li class="chapter" data-level="3.2" data-path="applied-statistics.html"><a href="applied-statistics.html#bayes-theorem"><i class="fa fa-check"></i><b>3.2</b> Bayes theorem</a></li>
+<li class="chapter" data-level="3.3" data-path="applied-statistics.html"><a href="applied-statistics.html#discrete-probablity"><i class="fa fa-check"></i><b>3.3</b> Discrete probablity</a>
 <ul>
 <li class="chapter" data-level="3.3.1" data-path="applied-statistics.html"><a href="applied-statistics.html#uniform-discrete-probability-distribution"><i class="fa fa-check"></i><b>3.3.1</b> Uniform discrete probability distribution</a></li>
 <li class="chapter" data-level="3.3.2" data-path="applied-statistics.html"><a href="applied-statistics.html#binomial-distribution"><i class="fa fa-check"></i><b>3.3.2</b> Binomial distribution</a></li>
@@ -334,7 +356,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="applied-statistics" class="section level1" number="3">
 <h1><span class="header-section-number">Chapter - 3</span> Applied Statistics</h1>
-<p><em>Class given by: Walter Garcia-Fontes</em></p>
+<p><em>Class given by: Walter Garcia-Fontes</em> <span class="citation">(<a href="#ref-JCurwin2013" role="doc-biblioref">Jon Curwin and Eadson 2013</a>)</span></p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="applied-statistics.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(prob)</span>
 <span id="cb1-2"><a href="applied-statistics.html#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(LaplacesDemon) <span class="co"># Bayes Theorem</span></span>
 <span id="cb1-3"><a href="applied-statistics.html#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(BSDA) <span class="co">#tsumtest</span></span>
@@ -379,7 +401,7 @@ replacement.</p>
 <hr />
 </div>
 <div id="bayes-theorem" class="section level2" number="3.2">
-<h2><span class="header-section-number">3.2</span> Bayes Theorem</h2>
+<h2><span class="header-section-number">3.2</span> Bayes theorem</h2>
 <p><strong>Unconditional probability:</strong></p>
 <p>P(S) and P(NS) = Probability of success vs probability of no success</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="applied-statistics.html#cb7-1" aria-hidden="true" tabindex="-1"></a>prS <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.4</span>, <span class="fl">0.6</span>)</span></code></pre></div>
@@ -397,7 +419,7 @@ it is vs. Probability it is predicted to NOT be successful and it isn’t.</p>
 <hr />
 </div>
 <div id="discrete-probablity" class="section level2" number="3.3">
-<h2><span class="header-section-number">3.3</span> Discrete Probablity</h2>
+<h2><span class="header-section-number">3.3</span> Discrete probablity</h2>
 <div id="uniform-discrete-probability-distribution" class="section level3" number="3.3.1">
 <h3><span class="header-section-number">3.3.1</span> Uniform discrete probability distribution</h3>
 <ol style="list-style-type: decimal">
@@ -798,6 +820,12 @@ critical values will be 1.96 for this two sided test.</p>
 <pre><code>## [1] 0.5578254</code></pre>
 
 </div>
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-JCurwin2013" class="csl-entry">
+Jon Curwin, Roger Slater, and David Eadson. 2013. <em>Quantitative Methods for Business Decisions</em>. 7th ed. Cengage Learning. <a href="https://www.cengage.co.uk">www.cengage.co.uk</a>.
 </div>
 </div>
             </section>

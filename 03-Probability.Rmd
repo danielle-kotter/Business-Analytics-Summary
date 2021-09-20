@@ -6,7 +6,8 @@ editor_options:
 
 # Applied Statistics
 
-*Class given by: Walter Garcia-Fontes*
+*Class given by: Walter Garcia-Fontes* 
+*Literature used: [@JCurwin2013]*
 
 ```{r, message=FALSE, warning=FALSE}
 library(prob)

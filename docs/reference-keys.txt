@@ -22,13 +22,17 @@ the-normal-distribution
 plotting-the-normal-distribution
 binomial
 samples-estimation-confidence-intervals
+sample-size
 significance-level
 critical-values
 test-of-equality---two-samples
 non-parametric-testing
-contengency-table-frequencies
+contingency-table-frequencies
 chi-square
 goodness-of-fit
+mann-whitney-test
+wilcoxon-test
+run-test
 p-value
 simple-regressions
 basics-regressions
@@ -114,8 +118,3 @@ logistic-regressions
 sensitivity-vs-specificity
 conjoint-analytics
 random-utility-model
-sample-size
-contingency-table-frequencies
-mann-whitney-test
-wilcoxon-test
-run-test

@@ -33,7 +33,7 @@ install.packages("bookdown")
 # devtools::install_github("rstudio/bookdown")
 ```
 
-To compile this example to PDF, you will need XeLaTeX. You are recommended to install TinyTeX (which includes XeLaTeX): <https://yihui.org/tinytex/>.
+To compile this example to PDF, you will need XeLaTeX. You are recommended to install TinyTeX (which includes XeLaTeX): <https://yihui.org/tinytex/>. [@xie2015]
 
 ```{r include=FALSE}
 # automatically create a bib database for R packages

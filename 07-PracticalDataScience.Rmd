@@ -8,6 +8,8 @@ editor_options:
 
 *Class given by: Alberto Santini*
 
+*Literature used: [@GJames2013], [@THastie2017]*
+
 ## Machine Learning
 
 There are multiple types of machine learning:

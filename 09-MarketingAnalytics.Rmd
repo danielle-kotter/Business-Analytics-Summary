@@ -6,7 +6,8 @@ editor_options:
 
 # Marketing Analytics
 
-*Class given by: Mohammad Ghaderi*
+*Class given by: Mohammad Ghaderi \
+Literature used: [@JHair2013]*
 
 ## Logistic regressions
 
