@@ -114,3 +114,8 @@ logistic-regressions
 sensitivity-vs-specificity
 conjoint-analytics
 random-utility-model
+sample-size
+contingency-table-frequencies
+mann-whitney-test
+wilcoxon-test
+run-test
