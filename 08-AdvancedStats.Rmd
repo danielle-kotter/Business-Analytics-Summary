@@ -443,8 +443,6 @@ variable.
 
 ![](images/paste-32619A7B.png)
 
-## Text analytics
-
 
 
 
