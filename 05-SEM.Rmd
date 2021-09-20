@@ -1,4 +1,4 @@
-# Structure equation models
+# Structural equation models
 
 *Class given by: Albert Satorra*
 *Literature used: [@kdnuggets2017]*

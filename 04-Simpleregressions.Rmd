@@ -1,6 +1,7 @@
 # Simple regressions
 
 *Class given by: Walter Garcia-Fontes*
+*Literature used: [@JCurwin2013]*
 
 ```{r include=FALSE}
 data <- cars
