@@ -51,6 +51,8 @@
 
 <link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 
 
 <style type="text/css">
@@ -233,17 +235,17 @@ div.csl-indent {
 <li class="chapter" data-level="4.3.4" data-path="simple-regressions.html"><a href="simple-regressions.html#linearizing-variables"><i class="fa fa-check"></i><b>4.3.4</b> Linearizing variables</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="structure-equation-models.html"><a href="structure-equation-models.html"><i class="fa fa-check"></i><b>5</b> Structure equation models</a>
+<li class="chapter" data-level="5" data-path="structural-equation-models.html"><a href="structural-equation-models.html"><i class="fa fa-check"></i><b>5</b> Structural equation models</a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="structure-equation-models.html"><a href="structure-equation-models.html#path-analysis-structural-equations"><i class="fa fa-check"></i><b>5.1</b> Path analysis (structural equations)</a></li>
-<li class="chapter" data-level="5.2" data-path="structure-equation-models.html"><a href="structure-equation-models.html#coding-the-model"><i class="fa fa-check"></i><b>5.2</b> Coding the model</a>
+<li class="chapter" data-level="5.1" data-path="structural-equation-models.html"><a href="structural-equation-models.html#path-analysis-structural-equations"><i class="fa fa-check"></i><b>5.1</b> Path analysis (structural equations)</a></li>
+<li class="chapter" data-level="5.2" data-path="structural-equation-models.html"><a href="structural-equation-models.html#coding-the-model"><i class="fa fa-check"></i><b>5.2</b> Coding the model</a>
 <ul>
-<li class="chapter" data-level="5.2.1" data-path="structure-equation-models.html"><a href="structure-equation-models.html#covariance"><i class="fa fa-check"></i><b>5.2.1</b> Covariance</a></li>
-<li class="chapter" data-level="5.2.2" data-path="structure-equation-models.html"><a href="structure-equation-models.html#reliability"><i class="fa fa-check"></i><b>5.2.2</b> Reliability</a></li>
+<li class="chapter" data-level="5.2.1" data-path="structural-equation-models.html"><a href="structural-equation-models.html#covariance"><i class="fa fa-check"></i><b>5.2.1</b> Covariance</a></li>
+<li class="chapter" data-level="5.2.2" data-path="structural-equation-models.html"><a href="structural-equation-models.html#reliability"><i class="fa fa-check"></i><b>5.2.2</b> Reliability</a></li>
 </ul></li>
-<li class="chapter" data-level="5.3" data-path="structure-equation-models.html"><a href="structure-equation-models.html#factor-model"><i class="fa fa-check"></i><b>5.3</b> Factor model</a>
+<li class="chapter" data-level="5.3" data-path="structural-equation-models.html"><a href="structural-equation-models.html#factor-model"><i class="fa fa-check"></i><b>5.3</b> Factor model</a>
 <ul>
-<li class="chapter" data-level="5.3.1" data-path="structure-equation-models.html"><a href="structure-equation-models.html#setting-covariance-variances"><i class="fa fa-check"></i><b>5.3.1</b> Setting covariance &amp; variances</a></li>
+<li class="chapter" data-level="5.3.1" data-path="structural-equation-models.html"><a href="structural-equation-models.html#setting-covariance-variances"><i class="fa fa-check"></i><b>5.3.1</b> Setting covariance &amp; variances</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="basics-python.html"><a href="basics-python.html"><i class="fa fa-check"></i><b>6</b> Basics Python</a>
@@ -358,43 +360,43 @@ div.csl-indent {
 <h1><span class="header-section-number">Chapter - 3</span> Applied Statistics</h1>
 <p><em>Class given by: Walter Garcia-Fontes</em>
 <em>Literature used: <span class="citation">(<a href="#ref-JCurwin2013" role="doc-biblioref">Jon Curwin and Eadson 2013</a>)</span></em></p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="applied-statistics.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(prob)</span>
-<span id="cb1-2"><a href="applied-statistics.html#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(LaplacesDemon) <span class="co"># Bayes Theorem</span></span>
-<span id="cb1-3"><a href="applied-statistics.html#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(BSDA) <span class="co">#tsumtest</span></span>
-<span id="cb1-4"><a href="applied-statistics.html#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(actuar) </span></code></pre></div>
+<div class="sourceCode" id="cb99"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb99-1"><a href="applied-statistics.html#cb99-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(prob)</span>
+<span id="cb99-2"><a href="applied-statistics.html#cb99-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(LaplacesDemon) <span class="co"># Bayes Theorem</span></span>
+<span id="cb99-3"><a href="applied-statistics.html#cb99-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(BSDA) <span class="co">#tsumtest</span></span>
+<span id="cb99-4"><a href="applied-statistics.html#cb99-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(actuar) </span></code></pre></div>
 <div id="probability" class="section level2" number="3.1">
 <h2><span class="header-section-number">3.1</span> Probability</h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="applied-statistics.html#cb2-1" aria-hidden="true" tabindex="-1"></a>out <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Red&quot;</span>, <span class="st">&quot;White&quot;</span>, <span class="st">&quot;Black&quot;</span>, <span class="st">&quot;Blue&quot;</span>, <span class="st">&quot;Green&quot;</span>)</span>
-<span id="cb2-2"><a href="applied-statistics.html#cb2-2" aria-hidden="true" tabindex="-1"></a>freq <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>)</span>
-<span id="cb2-3"><a href="applied-statistics.html#cb2-3" aria-hidden="true" tabindex="-1"></a>s <span class="ot">&lt;-</span> <span class="fu">probspace</span>(out, <span class="at">probs =</span> freq)</span>
-<span id="cb2-4"><a href="applied-statistics.html#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(s)</span></code></pre></div>
-<pre><code>##       x probs
-## 1   Red   0.2
-## 2 White   0.2
-## 3 Black   0.2
-## 4  Blue   0.2
-## 5 Green   0.2</code></pre>
+<div class="sourceCode" id="cb100"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb100-1"><a href="applied-statistics.html#cb100-1" aria-hidden="true" tabindex="-1"></a>out <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Red&quot;</span>, <span class="st">&quot;White&quot;</span>, <span class="st">&quot;Black&quot;</span>, <span class="st">&quot;Blue&quot;</span>, <span class="st">&quot;Green&quot;</span>)</span>
+<span id="cb100-2"><a href="applied-statistics.html#cb100-2" aria-hidden="true" tabindex="-1"></a>freq <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>)</span>
+<span id="cb100-3"><a href="applied-statistics.html#cb100-3" aria-hidden="true" tabindex="-1"></a>s <span class="ot">&lt;-</span> <span class="fu">probspace</span>(out, <span class="at">probs =</span> freq)</span>
+<span id="cb100-4"><a href="applied-statistics.html#cb100-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(s)</span></code></pre></div>
+<pre><code>      x probs
+1   Red   0.2
+2 White   0.2
+3 Black   0.2
+4  Blue   0.2
+5 Green   0.2</code></pre>
 <ol style="list-style-type: decimal">
 <li>If you toss two fair coins, what is the probability of two heads?</li>
 </ol>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="applied-statistics.html#cb4-1" aria-hidden="true" tabindex="-1"></a>space <span class="ot">&lt;-</span> <span class="fu">tosscoin</span>(<span class="dv">2</span>, <span class="at">makespace =</span> <span class="cn">TRUE</span>) <span class="co"># make space TRUE if all outcomes have equally likely probability</span></span>
-<span id="cb4-2"><a href="applied-statistics.html#cb4-2" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">Prob</span>(space, toss1 <span class="sc">==</span> <span class="st">&quot;H&quot;</span> <span class="sc">&amp;</span> toss2 <span class="sc">==</span> <span class="st">&quot;H&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb102"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb102-1"><a href="applied-statistics.html#cb102-1" aria-hidden="true" tabindex="-1"></a>space <span class="ot">&lt;-</span> <span class="fu">tosscoin</span>(<span class="dv">2</span>, <span class="at">makespace =</span> <span class="cn">TRUE</span>) <span class="co"># make space TRUE if all outcomes have equally likely probability</span></span>
+<span id="cb102-2"><a href="applied-statistics.html#cb102-2" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">Prob</span>(space, toss1 <span class="sc">==</span> <span class="st">&quot;H&quot;</span> <span class="sc">&amp;</span> toss2 <span class="sc">==</span> <span class="st">&quot;H&quot;</span>)</span></code></pre></div>
 <p><em>The probability is: 0.25</em></p>
 <ol start="2" style="list-style-type: decimal">
 <li>When two dice are thrown, what is the probability of a 3 followed by
 a 5?</li>
 </ol>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="applied-statistics.html#cb5-1" aria-hidden="true" tabindex="-1"></a>space <span class="ot">&lt;-</span> <span class="fu">rolldie</span>(<span class="dv">2</span>, <span class="at">makespace =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb5-2"><a href="applied-statistics.html#cb5-2" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">Prob</span>(space, X1 <span class="sc">==</span> <span class="dv">3</span> <span class="sc">&amp;</span> (X2 <span class="sc">==</span> <span class="dv">5</span>) )</span></code></pre></div>
+<div class="sourceCode" id="cb103"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb103-1"><a href="applied-statistics.html#cb103-1" aria-hidden="true" tabindex="-1"></a>space <span class="ot">&lt;-</span> <span class="fu">rolldie</span>(<span class="dv">2</span>, <span class="at">makespace =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb103-2"><a href="applied-statistics.html#cb103-2" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">Prob</span>(space, X1 <span class="sc">==</span> <span class="dv">3</span> <span class="sc">&amp;</span> (X2 <span class="sc">==</span> <span class="dv">5</span>) )</span></code></pre></div>
 <p><em>The probability is: 0.03</em></p>
 <ol start="3" style="list-style-type: decimal">
 <li>Sampling from an urn with or without replacement. 3 balls and sample
 size of 2:</li>
 </ol>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="applied-statistics.html#cb6-1" aria-hidden="true" tabindex="-1"></a>sample1 <span class="ot">&lt;-</span> <span class="fu">urnsamples</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="at">size =</span> <span class="dv">2</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>, <span class="at">ordered =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb6-2"><a href="applied-statistics.html#cb6-2" aria-hidden="true" tabindex="-1"></a>sample2 <span class="ot">&lt;-</span> <span class="fu">urnsamples</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="at">size =</span> <span class="dv">2</span>, <span class="at">replace =</span> <span class="cn">FALSE</span>, <span class="at">ordered =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb6-3"><a href="applied-statistics.html#cb6-3" aria-hidden="true" tabindex="-1"></a>sample3 <span class="ot">&lt;-</span> <span class="fu">urnsamples</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="at">size =</span> <span class="dv">2</span>, <span class="at">replace =</span> <span class="cn">FALSE</span>, <span class="at">ordered =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb6-4"><a href="applied-statistics.html#cb6-4" aria-hidden="true" tabindex="-1"></a>sample4 <span class="ot">&lt;-</span> <span class="fu">urnsamples</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="at">size =</span> <span class="dv">2</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>, <span class="at">ordered =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb104"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb104-1"><a href="applied-statistics.html#cb104-1" aria-hidden="true" tabindex="-1"></a>sample1 <span class="ot">&lt;-</span> <span class="fu">urnsamples</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="at">size =</span> <span class="dv">2</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>, <span class="at">ordered =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb104-2"><a href="applied-statistics.html#cb104-2" aria-hidden="true" tabindex="-1"></a>sample2 <span class="ot">&lt;-</span> <span class="fu">urnsamples</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="at">size =</span> <span class="dv">2</span>, <span class="at">replace =</span> <span class="cn">FALSE</span>, <span class="at">ordered =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb104-3"><a href="applied-statistics.html#cb104-3" aria-hidden="true" tabindex="-1"></a>sample3 <span class="ot">&lt;-</span> <span class="fu">urnsamples</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="at">size =</span> <span class="dv">2</span>, <span class="at">replace =</span> <span class="cn">FALSE</span>, <span class="at">ordered =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb104-4"><a href="applied-statistics.html#cb104-4" aria-hidden="true" tabindex="-1"></a>sample4 <span class="ot">&lt;-</span> <span class="fu">urnsamples</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="at">size =</span> <span class="dv">2</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>, <span class="at">ordered =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
 <p><strong>Ordered:</strong> logical indicating whether order among samples is
 important.</p>
 <p><strong>Replace:</strong> logical indicating whether sampling should be done with
@@ -405,18 +407,18 @@ replacement.</p>
 <h2><span class="header-section-number">3.2</span> Bayes theorem</h2>
 <p><strong>Unconditional probability:</strong></p>
 <p>P(S) and P(NS) = Probability of success vs probability of no success</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="applied-statistics.html#cb7-1" aria-hidden="true" tabindex="-1"></a>prS <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.4</span>, <span class="fl">0.6</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb105"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb105-1"><a href="applied-statistics.html#cb105-1" aria-hidden="true" tabindex="-1"></a>prS <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.4</span>, <span class="fl">0.6</span>)</span></code></pre></div>
 <p><strong>Conditional probability:</strong></p>
 <p>P(P | S ) and P( P | NS) Predicted given it is successful vs Predicted
 given it is not successful</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="applied-statistics.html#cb8-1" aria-hidden="true" tabindex="-1"></a>prNS <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.6</span>, <span class="fl">0.2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb106"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb106-1"><a href="applied-statistics.html#cb106-1" aria-hidden="true" tabindex="-1"></a>prNS <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.6</span>, <span class="fl">0.2</span>)</span></code></pre></div>
 <p><strong>Bayes prob, posterior probabilities</strong><br />
 P(S | P) &amp; P(NS | P) Probability it is predicted to be successful and
 it is vs. Probability it is predicted to NOT be successful and it isn’t.</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="applied-statistics.html#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">BayesTheorem</span>(prS, prNS)</span></code></pre></div>
-<pre><code>## [1] 0.6666667 0.3333333
-## attr(,&quot;class&quot;)
-## [1] &quot;bayestheorem&quot;</code></pre>
+<div class="sourceCode" id="cb107"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb107-1"><a href="applied-statistics.html#cb107-1" aria-hidden="true" tabindex="-1"></a><span class="fu">BayesTheorem</span>(prS, prNS)</span></code></pre></div>
+<pre><code>[1] 0.6666667 0.3333333
+attr(,&quot;class&quot;)
+[1] &quot;bayestheorem&quot;</code></pre>
 <hr />
 </div>
 <div id="discrete-probablity" class="section level2" number="3.3">
@@ -446,10 +448,10 @@ sample has x value or less.</li>
 <li>Difference between two binomial values. F.E. Prob there are between
 4 and 5 of the trials successful.</li>
 </ol>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="applied-statistics.html#cb11-1" aria-hidden="true" tabindex="-1"></a>one <span class="ot">&lt;-</span> <span class="fu">dbinom</span>(x, <span class="at">size =</span> n, <span class="at">prob =</span> y)    </span>
-<span id="cb11-2"><a href="applied-statistics.html#cb11-2" aria-hidden="true" tabindex="-1"></a>two <span class="ot">&lt;-</span> <span class="fu">pbinom</span>(x, <span class="at">size =</span> n, <span class="at">prob =</span> y)    </span>
-<span id="cb11-3"><a href="applied-statistics.html#cb11-3" aria-hidden="true" tabindex="-1"></a>three <span class="ot">&lt;-</span> <span class="fu">qbinom</span>(p, <span class="at">size =</span> n, <span class="at">prob =</span> y)  </span>
-<span id="cb11-4"><a href="applied-statistics.html#cb11-4" aria-hidden="true" tabindex="-1"></a>four <span class="ot">&lt;-</span> <span class="fu">diff</span>(<span class="fu">pbinom</span>(<span class="fu">c</span>(X,Y), <span class="at">size =</span> n, <span class="at">prob =</span> y))</span></code></pre></div>
+<div class="sourceCode" id="cb109"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb109-1"><a href="applied-statistics.html#cb109-1" aria-hidden="true" tabindex="-1"></a>one <span class="ot">&lt;-</span> <span class="fu">dbinom</span>(x, <span class="at">size =</span> n, <span class="at">prob =</span> y)    </span>
+<span id="cb109-2"><a href="applied-statistics.html#cb109-2" aria-hidden="true" tabindex="-1"></a>two <span class="ot">&lt;-</span> <span class="fu">pbinom</span>(x, <span class="at">size =</span> n, <span class="at">prob =</span> y)    </span>
+<span id="cb109-3"><a href="applied-statistics.html#cb109-3" aria-hidden="true" tabindex="-1"></a>three <span class="ot">&lt;-</span> <span class="fu">qbinom</span>(p, <span class="at">size =</span> n, <span class="at">prob =</span> y)  </span>
+<span id="cb109-4"><a href="applied-statistics.html#cb109-4" aria-hidden="true" tabindex="-1"></a>four <span class="ot">&lt;-</span> <span class="fu">diff</span>(<span class="fu">pbinom</span>(<span class="fu">c</span>(X,Y), <span class="at">size =</span> n, <span class="at">prob =</span> y))</span></code></pre></div>
 <p><strong><em>Default = # or less (left area of the distribution). For # or more
 do: 1-probability of # or less</em></strong></p>
 </div>
@@ -463,9 +465,9 @@ than 5. More than 5? = 1- Ppois(4, lambda)</li>
 <li>Poisson for a certain probability to capture a certain value. F.E.
 Poisson value for 25%.</li>
 </ol>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="applied-statistics.html#cb12-1" aria-hidden="true" tabindex="-1"></a>one <span class="ot">&lt;-</span> <span class="fu">dpois</span>(x,lambda)</span>
-<span id="cb12-2"><a href="applied-statistics.html#cb12-2" aria-hidden="true" tabindex="-1"></a>two <span class="ot">&lt;-</span> <span class="fu">ppois</span>(x,lambda)  </span>
-<span id="cb12-3"><a href="applied-statistics.html#cb12-3" aria-hidden="true" tabindex="-1"></a>three <span class="ot">&lt;-</span> <span class="fu">qpois</span>(x,lambda)</span></code></pre></div>
+<div class="sourceCode" id="cb110"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb110-1"><a href="applied-statistics.html#cb110-1" aria-hidden="true" tabindex="-1"></a>one <span class="ot">&lt;-</span> <span class="fu">dpois</span>(x,lambda)</span>
+<span id="cb110-2"><a href="applied-statistics.html#cb110-2" aria-hidden="true" tabindex="-1"></a>two <span class="ot">&lt;-</span> <span class="fu">ppois</span>(x,lambda)  </span>
+<span id="cb110-3"><a href="applied-statistics.html#cb110-3" aria-hidden="true" tabindex="-1"></a>three <span class="ot">&lt;-</span> <span class="fu">qpois</span>(x,lambda)</span></code></pre></div>
 <p><strong><em>Default = # or less (left area of the distribution). For # or more
 do: 1-probability of # or less</em></strong></p>
 </div>
@@ -478,9 +480,9 @@ do: 1-probability of # or less</em></strong></p>
 68% of observations are located between: -1 mu 1</p>
 <p><strong>Normal distribution</strong></p>
 <p><strong>Z-value</strong></p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="applied-statistics.html#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># z &lt;- (x - mean) / sd. For example:</span></span>
-<span id="cb13-2"><a href="applied-statistics.html#cb13-2" aria-hidden="true" tabindex="-1"></a>(<span class="dv">11</span> <span class="sc">-</span> <span class="dv">10</span>) <span class="sc">/</span> <span class="dv">2</span></span></code></pre></div>
-<pre><code>## [1] 0.5</code></pre>
+<div class="sourceCode" id="cb111"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb111-1"><a href="applied-statistics.html#cb111-1" aria-hidden="true" tabindex="-1"></a><span class="co"># z &lt;- (x - mean) / sd. For example:</span></span>
+<span id="cb111-2"><a href="applied-statistics.html#cb111-2" aria-hidden="true" tabindex="-1"></a>(<span class="dv">11</span> <span class="sc">-</span> <span class="dv">10</span>) <span class="sc">/</span> <span class="dv">2</span></span></code></pre></div>
+<pre><code>[1] 0.5</code></pre>
 <ol style="list-style-type: decimal">
 <li>Normal distribution for a certain proportion. Pi = population
 proportion mean%.</li>
@@ -491,10 +493,10 @@ value. F.E. Value that is given at 25% point.</li>
 <li>Difference between two values on the normal distribution. F.E.
 between 5 and 10.</li>
 </ol>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="applied-statistics.html#cb15-1" aria-hidden="true" tabindex="-1"></a>one <span class="ot">&lt;-</span> <span class="fu">pnorm</span>(X, pi, sd, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb15-2"><a href="applied-statistics.html#cb15-2" aria-hidden="true" tabindex="-1"></a>two <span class="ot">&lt;-</span> <span class="fu">pnorm</span>(X, mu, sd, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb15-3"><a href="applied-statistics.html#cb15-3" aria-hidden="true" tabindex="-1"></a>three <span class="ot">&lt;-</span> <span class="fu">qnorm</span>(p, mu, sd, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>) </span>
-<span id="cb15-4"><a href="applied-statistics.html#cb15-4" aria-hidden="true" tabindex="-1"></a>four <span class="ot">&lt;-</span> <span class="fu">diff</span>(<span class="fu">pnorm</span>(<span class="fu">c</span>(X,Y), mu, sd, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb113"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb113-1"><a href="applied-statistics.html#cb113-1" aria-hidden="true" tabindex="-1"></a>one <span class="ot">&lt;-</span> <span class="fu">pnorm</span>(X, pi, sd, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb113-2"><a href="applied-statistics.html#cb113-2" aria-hidden="true" tabindex="-1"></a>two <span class="ot">&lt;-</span> <span class="fu">pnorm</span>(X, mu, sd, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb113-3"><a href="applied-statistics.html#cb113-3" aria-hidden="true" tabindex="-1"></a>three <span class="ot">&lt;-</span> <span class="fu">qnorm</span>(p, mu, sd, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>) </span>
+<span id="cb113-4"><a href="applied-statistics.html#cb113-4" aria-hidden="true" tabindex="-1"></a>four <span class="ot">&lt;-</span> <span class="fu">diff</span>(<span class="fu">pnorm</span>(<span class="fu">c</span>(X,Y), mu, sd, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>))</span></code></pre></div>
 <p>lower.tail = TRUE: The area of the left side of the slope<br />
 lower.tail = FALSE: The area of the right side of the slope</p>
 <p><strong>Confidence interval for normal distribution</strong></p>
@@ -508,17 +510,17 @@ Limits: mean +/- 3 * standard deviation = 3*7 = 21<br />
 Lower limit = 3 – 21 = -18<br />
 Upper limit = 3 + 21 = 24"</p>
 <p>Example:</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="applied-statistics.html#cb16-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">15</span>, <span class="dv">45</span>, <span class="at">length=</span><span class="dv">50</span>)</span>
-<span id="cb16-2"><a href="applied-statistics.html#cb16-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">dnorm</span>(x, <span class="dv">30</span>, <span class="dv">5</span>)</span>
-<span id="cb16-3"><a href="applied-statistics.html#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x,y,<span class="at">type=</span><span class="st">&quot;l&quot;</span>,<span class="at">lwd=</span><span class="dv">2</span>,<span class="at">col=</span><span class="st">&quot;black&quot;</span>)</span>
-<span id="cb16-4"><a href="applied-statistics.html#cb16-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-5"><a href="applied-statistics.html#cb16-5" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">15</span>,<span class="dv">35</span>, <span class="at">length=</span><span class="dv">100</span>)</span>
-<span id="cb16-6"><a href="applied-statistics.html#cb16-6" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">dnorm</span>(x, <span class="dv">30</span>,<span class="dv">5</span> )</span>
-<span id="cb16-7"><a href="applied-statistics.html#cb16-7" aria-hidden="true" tabindex="-1"></a><span class="fu">polygon</span>(<span class="fu">c</span>(<span class="dv">15</span>,x,<span class="dv">35</span>),<span class="fu">c</span>(<span class="dv">0</span>,y,<span class="dv">0</span>), <span class="at">density =</span> <span class="fu">c</span>(<span class="dv">15</span>, <span class="dv">35</span>), <span class="at">col =</span> <span class="st">&quot;black&quot;</span>)</span>
-<span id="cb16-8"><a href="applied-statistics.html#cb16-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-9"><a href="applied-statistics.html#cb16-9" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">pnorm</span>(<span class="dv">35</span>, <span class="at">mean =</span> <span class="dv">30</span>, <span class="at">sd =</span> <span class="dv">5</span>,<span class="at">lower.tail =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb16-10"><a href="applied-statistics.html#cb16-10" aria-hidden="true" tabindex="-1"></a><span class="fu">text</span>(<span class="dv">0</span>,<span class="fl">0.15</span>,<span class="st">&quot;68%&quot;</span>)</span></code></pre></div>
-<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
+<div class="sourceCode" id="cb114"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb114-1"><a href="applied-statistics.html#cb114-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">15</span>, <span class="dv">45</span>, <span class="at">length=</span><span class="dv">50</span>)</span>
+<span id="cb114-2"><a href="applied-statistics.html#cb114-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">dnorm</span>(x, <span class="dv">30</span>, <span class="dv">5</span>)</span>
+<span id="cb114-3"><a href="applied-statistics.html#cb114-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x,y,<span class="at">type=</span><span class="st">&quot;l&quot;</span>,<span class="at">lwd=</span><span class="dv">2</span>,<span class="at">col=</span><span class="st">&quot;black&quot;</span>)</span>
+<span id="cb114-4"><a href="applied-statistics.html#cb114-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb114-5"><a href="applied-statistics.html#cb114-5" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">15</span>,<span class="dv">35</span>, <span class="at">length=</span><span class="dv">100</span>)</span>
+<span id="cb114-6"><a href="applied-statistics.html#cb114-6" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">dnorm</span>(x, <span class="dv">30</span>,<span class="dv">5</span> )</span>
+<span id="cb114-7"><a href="applied-statistics.html#cb114-7" aria-hidden="true" tabindex="-1"></a><span class="fu">polygon</span>(<span class="fu">c</span>(<span class="dv">15</span>,x,<span class="dv">35</span>),<span class="fu">c</span>(<span class="dv">0</span>,y,<span class="dv">0</span>), <span class="at">density =</span> <span class="fu">c</span>(<span class="dv">15</span>, <span class="dv">35</span>), <span class="at">col =</span> <span class="st">&quot;black&quot;</span>)</span>
+<span id="cb114-8"><a href="applied-statistics.html#cb114-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb114-9"><a href="applied-statistics.html#cb114-9" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">pnorm</span>(<span class="dv">35</span>, <span class="at">mean =</span> <span class="dv">30</span>, <span class="at">sd =</span> <span class="dv">5</span>,<span class="at">lower.tail =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb114-10"><a href="applied-statistics.html#cb114-10" aria-hidden="true" tabindex="-1"></a><span class="fu">text</span>(<span class="dv">0</span>,<span class="fl">0.15</span>,<span class="st">&quot;68%&quot;</span>)</span></code></pre></div>
+<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-56-1.png" width="100%" /></p>
 </div>
 <div id="binomial" class="section level4" number="3.3.4.2">
 <h4><span class="header-section-number">3.3.4.2</span> Binomial</h4>
@@ -530,10 +532,10 @@ to the binomial if: n is large and p &gt; 0.1.</p>
 <li>Difference between two binomial values.</li>
 <li>Inverse cumulative density. For a certain prob.</li>
 </ol>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="applied-statistics.html#cb17-1" aria-hidden="true" tabindex="-1"></a>one <span class="ot">&lt;-</span> <span class="fu">dbinom</span>(x, mu, sd)</span>
-<span id="cb17-2"><a href="applied-statistics.html#cb17-2" aria-hidden="true" tabindex="-1"></a>two <span class="ot">&lt;-</span> <span class="fu">pbinom</span>(x, mu, sd, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb17-3"><a href="applied-statistics.html#cb17-3" aria-hidden="true" tabindex="-1"></a>three <span class="ot">&lt;-</span> <span class="fu">diff</span>(<span class="fu">pbinom</span>(<span class="fu">c</span>(X,Y), mu, sd, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>))</span>
-<span id="cb17-4"><a href="applied-statistics.html#cb17-4" aria-hidden="true" tabindex="-1"></a>four <span class="ot">&lt;-</span> <span class="fu">qbinom</span>(p, mu, sd, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb115"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb115-1"><a href="applied-statistics.html#cb115-1" aria-hidden="true" tabindex="-1"></a>one <span class="ot">&lt;-</span> <span class="fu">dbinom</span>(x, mu, sd)</span>
+<span id="cb115-2"><a href="applied-statistics.html#cb115-2" aria-hidden="true" tabindex="-1"></a>two <span class="ot">&lt;-</span> <span class="fu">pbinom</span>(x, mu, sd, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb115-3"><a href="applied-statistics.html#cb115-3" aria-hidden="true" tabindex="-1"></a>three <span class="ot">&lt;-</span> <span class="fu">diff</span>(<span class="fu">pbinom</span>(<span class="fu">c</span>(X,Y), mu, sd, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>))</span>
+<span id="cb115-4"><a href="applied-statistics.html#cb115-4" aria-hidden="true" tabindex="-1"></a>four <span class="ot">&lt;-</span> <span class="fu">qbinom</span>(p, mu, sd, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
 <hr />
 </div>
 </div>
@@ -541,31 +543,31 @@ to the binomial if: n is large and p &gt; 0.1.</p>
 <div id="samples-estimation-confidence-intervals" class="section level2" number="3.4">
 <h2><span class="header-section-number">3.4</span> Samples, estimation &amp; confidence intervals</h2>
 <p><strong>The standard error of the sampling distribution of the mean</strong></p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="applied-statistics.html#cb18-1" aria-hidden="true" tabindex="-1"></a>se <span class="ot">&lt;-</span> sigma <span class="sc">/</span> <span class="fu">sqrt</span>(n)</span></code></pre></div>
+<div class="sourceCode" id="cb116"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb116-1"><a href="applied-statistics.html#cb116-1" aria-hidden="true" tabindex="-1"></a>se <span class="ot">&lt;-</span> sigma <span class="sc">/</span> <span class="fu">sqrt</span>(n)</span></code></pre></div>
 <p><strong>Probability sample</strong></p>
 <ol style="list-style-type: decimal">
 <li>To find the probability that X is larger than mu</li>
 <li>To find the probability that X is smaller than mu</li>
 </ol>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="applied-statistics.html#cb19-1" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">pnorm</span>(X, mu, se, <span class="at">lower.tail =</span> <span class="cn">TRUE</span>) </span>
-<span id="cb19-2"><a href="applied-statistics.html#cb19-2" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">pnorm</span>(X, mu, se, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb117"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb117-1"><a href="applied-statistics.html#cb117-1" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">pnorm</span>(X, mu, se, <span class="at">lower.tail =</span> <span class="cn">TRUE</span>) </span>
+<span id="cb117-2"><a href="applied-statistics.html#cb117-2" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">pnorm</span>(X, mu, se, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
 <p><strong>Probability proportions sample</strong></p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="applied-statistics.html#cb20-1" aria-hidden="true" tabindex="-1"></a>sd <span class="ot">&lt;-</span> <span class="fu">sqrt</span>((pi<span class="sc">*</span>(n<span class="sc">-</span>pi))<span class="sc">/</span>n)</span>
-<span id="cb20-2"><a href="applied-statistics.html#cb20-2" aria-hidden="true" tabindex="-1"></a>z <span class="ot">&lt;-</span> (p <span class="sc">-</span> pi)<span class="sc">/</span>sd</span>
-<span id="cb20-3"><a href="applied-statistics.html#cb20-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-4"><a href="applied-statistics.html#cb20-4" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">pnorm</span>(X, pi, se, <span class="at">lower.tail =</span><span class="cn">FALSE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb118"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb118-1"><a href="applied-statistics.html#cb118-1" aria-hidden="true" tabindex="-1"></a>sd <span class="ot">&lt;-</span> <span class="fu">sqrt</span>((pi<span class="sc">*</span>(n<span class="sc">-</span>pi))<span class="sc">/</span>n)</span>
+<span id="cb118-2"><a href="applied-statistics.html#cb118-2" aria-hidden="true" tabindex="-1"></a>z <span class="ot">&lt;-</span> (p <span class="sc">-</span> pi)<span class="sc">/</span>sd</span>
+<span id="cb118-3"><a href="applied-statistics.html#cb118-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb118-4"><a href="applied-statistics.html#cb118-4" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">pnorm</span>(X, pi, se, <span class="at">lower.tail =</span><span class="cn">FALSE</span>)</span></code></pre></div>
 <div id="sample-size" class="section level3" number="3.4.1">
 <h3><span class="header-section-number">3.4.1</span> Sample size</h3>
 <p>Provides the sample size needed to have a 95% confidence to estimate the
 population mean. Level = confidence level. SE is required standard
 error.</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="applied-statistics.html#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(samplingbook)</span>
-<span id="cb21-2"><a href="applied-statistics.html#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sample.size.mean</span>(se, sigma, <span class="at">level=</span><span class="fl">0.95</span>)</span></code></pre></div>
-<pre><code>## 
-## sample.size.mean object: Sample size for mean estimate
-## Without finite population correction: N=Inf, precision e=0.7302967 and standard deviation S=4
-## 
-## Sample size needed: 116</code></pre>
+<div class="sourceCode" id="cb119"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb119-1"><a href="applied-statistics.html#cb119-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(samplingbook)</span>
+<span id="cb119-2"><a href="applied-statistics.html#cb119-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sample.size.mean</span>(se, sigma, <span class="at">level=</span><span class="fl">0.95</span>)</span></code></pre></div>
+<pre><code>
+sample.size.mean object: Sample size for mean estimate
+Without finite population correction: N=Inf, precision e=0.7302967 and standard deviation S=4
+
+Sample size needed: 116</code></pre>
 <hr />
 </div>
 </div>
@@ -582,18 +584,18 @@ error.</p>
 <li><p>One-sided: Critical value, 1% significance level = 2.33</p></li>
 <li><p>One-sided: Critical value, 10% significance level = 1.28</p></li>
 </ol>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="applied-statistics.html#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qnorm</span>(<span class="fl">0.975</span>)</span></code></pre></div>
-<pre><code>## [1] 1.959964</code></pre>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="applied-statistics.html#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qnorm</span>(<span class="fl">0.995</span>)</span></code></pre></div>
-<pre><code>## [1] 2.575829</code></pre>
-<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="applied-statistics.html#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qnorm</span>(<span class="fl">0.95</span>)</span></code></pre></div>
-<pre><code>## [1] 1.644854</code></pre>
-<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="applied-statistics.html#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qnorm</span>(<span class="fl">0.95</span>)</span></code></pre></div>
-<pre><code>## [1] 1.644854</code></pre>
-<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="applied-statistics.html#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qnorm</span>(<span class="fl">0.99</span>)</span></code></pre></div>
-<pre><code>## [1] 2.326348</code></pre>
-<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="applied-statistics.html#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qnorm</span>(<span class="fl">0.90</span>)</span></code></pre></div>
-<pre><code>## [1] 1.281552</code></pre>
+<div class="sourceCode" id="cb121"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb121-1"><a href="applied-statistics.html#cb121-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qnorm</span>(<span class="fl">0.975</span>)</span></code></pre></div>
+<pre><code>[1] 1.959964</code></pre>
+<div class="sourceCode" id="cb123"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb123-1"><a href="applied-statistics.html#cb123-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qnorm</span>(<span class="fl">0.995</span>)</span></code></pre></div>
+<pre><code>[1] 2.575829</code></pre>
+<div class="sourceCode" id="cb125"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb125-1"><a href="applied-statistics.html#cb125-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qnorm</span>(<span class="fl">0.95</span>)</span></code></pre></div>
+<pre><code>[1] 1.644854</code></pre>
+<div class="sourceCode" id="cb127"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb127-1"><a href="applied-statistics.html#cb127-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qnorm</span>(<span class="fl">0.95</span>)</span></code></pre></div>
+<pre><code>[1] 1.644854</code></pre>
+<div class="sourceCode" id="cb129"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb129-1"><a href="applied-statistics.html#cb129-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qnorm</span>(<span class="fl">0.99</span>)</span></code></pre></div>
+<pre><code>[1] 2.326348</code></pre>
+<div class="sourceCode" id="cb131"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb131-1"><a href="applied-statistics.html#cb131-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qnorm</span>(<span class="fl">0.90</span>)</span></code></pre></div>
+<pre><code>[1] 1.281552</code></pre>
 <p><strong>Critical values t-distribution (sample &gt; 30)</strong></p>
 <ol style="list-style-type: decimal">
 <li><p>One-sided: critical value at a 5% significance level</p></li>
@@ -603,36 +605,36 @@ error.</p>
 <li><p>Two-sided: critical value at a 10% significance level</p></li>
 <li><p>Two-sided: critical value at a 1% significance level</p></li>
 </ol>
-<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="applied-statistics.html#cb35-1" aria-hidden="true" tabindex="-1"></a>cv <span class="ot">&lt;-</span> <span class="fu">qt</span>(<span class="fl">0.95</span>, df) </span>
-<span id="cb35-2"><a href="applied-statistics.html#cb35-2" aria-hidden="true" tabindex="-1"></a>cv <span class="ot">&lt;-</span> <span class="fu">qt</span>(<span class="fl">0.90</span>, df) </span>
-<span id="cb35-3"><a href="applied-statistics.html#cb35-3" aria-hidden="true" tabindex="-1"></a>cv <span class="ot">&lt;-</span> <span class="fu">qt</span>(<span class="fl">0.99</span>, df)</span>
-<span id="cb35-4"><a href="applied-statistics.html#cb35-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-5"><a href="applied-statistics.html#cb35-5" aria-hidden="true" tabindex="-1"></a>cv <span class="ot">&lt;-</span> <span class="fu">qt</span>(<span class="fl">0.975</span>, df)</span>
-<span id="cb35-6"><a href="applied-statistics.html#cb35-6" aria-hidden="true" tabindex="-1"></a>cv <span class="ot">&lt;-</span> <span class="fu">qt</span>(<span class="fl">0.95</span>, df) </span>
-<span id="cb35-7"><a href="applied-statistics.html#cb35-7" aria-hidden="true" tabindex="-1"></a>cv <span class="ot">&lt;-</span> <span class="fu">qt</span>(<span class="fl">0.995</span>, df)</span></code></pre></div>
+<div class="sourceCode" id="cb133"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb133-1"><a href="applied-statistics.html#cb133-1" aria-hidden="true" tabindex="-1"></a>cv <span class="ot">&lt;-</span> <span class="fu">qt</span>(<span class="fl">0.95</span>, df) </span>
+<span id="cb133-2"><a href="applied-statistics.html#cb133-2" aria-hidden="true" tabindex="-1"></a>cv <span class="ot">&lt;-</span> <span class="fu">qt</span>(<span class="fl">0.90</span>, df) </span>
+<span id="cb133-3"><a href="applied-statistics.html#cb133-3" aria-hidden="true" tabindex="-1"></a>cv <span class="ot">&lt;-</span> <span class="fu">qt</span>(<span class="fl">0.99</span>, df)</span>
+<span id="cb133-4"><a href="applied-statistics.html#cb133-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb133-5"><a href="applied-statistics.html#cb133-5" aria-hidden="true" tabindex="-1"></a>cv <span class="ot">&lt;-</span> <span class="fu">qt</span>(<span class="fl">0.975</span>, df)</span>
+<span id="cb133-6"><a href="applied-statistics.html#cb133-6" aria-hidden="true" tabindex="-1"></a>cv <span class="ot">&lt;-</span> <span class="fu">qt</span>(<span class="fl">0.95</span>, df) </span>
+<span id="cb133-7"><a href="applied-statistics.html#cb133-7" aria-hidden="true" tabindex="-1"></a>cv <span class="ot">&lt;-</span> <span class="fu">qt</span>(<span class="fl">0.995</span>, df)</span></code></pre></div>
 <p><strong>Confidence interval</strong></p>
-<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="applied-statistics.html#cb36-1" aria-hidden="true" tabindex="-1"></a>cv <span class="ot">&lt;-</span> cv</span>
-<span id="cb36-2"><a href="applied-statistics.html#cb36-2" aria-hidden="true" tabindex="-1"></a>mu <span class="ot">&lt;-</span> mu</span>
-<span id="cb36-3"><a href="applied-statistics.html#cb36-3" aria-hidden="true" tabindex="-1"></a>sd <span class="ot">&lt;-</span> sd</span>
-<span id="cb36-4"><a href="applied-statistics.html#cb36-4" aria-hidden="true" tabindex="-1"></a>se <span class="ot">&lt;-</span> sd <span class="sc">/</span> (<span class="fu">sqrt</span>(n))</span>
-<span id="cb36-5"><a href="applied-statistics.html#cb36-5" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> n</span>
-<span id="cb36-6"><a href="applied-statistics.html#cb36-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb36-7"><a href="applied-statistics.html#cb36-7" aria-hidden="true" tabindex="-1"></a>conf_int95 <span class="ot">&lt;-</span> cv <span class="sc">*</span> sd <span class="sc">/</span> (<span class="fu">sqrt</span>(n))</span>
-<span id="cb36-8"><a href="applied-statistics.html#cb36-8" aria-hidden="true" tabindex="-1"></a>mu_plus <span class="ot">&lt;-</span> mu <span class="sc">+</span> conf_int95</span>
-<span id="cb36-9"><a href="applied-statistics.html#cb36-9" aria-hidden="true" tabindex="-1"></a>mu_min <span class="ot">&lt;-</span> mu <span class="sc">-</span> conf_int95</span></code></pre></div>
+<div class="sourceCode" id="cb134"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb134-1"><a href="applied-statistics.html#cb134-1" aria-hidden="true" tabindex="-1"></a>cv <span class="ot">&lt;-</span> cv</span>
+<span id="cb134-2"><a href="applied-statistics.html#cb134-2" aria-hidden="true" tabindex="-1"></a>mu <span class="ot">&lt;-</span> mu</span>
+<span id="cb134-3"><a href="applied-statistics.html#cb134-3" aria-hidden="true" tabindex="-1"></a>sd <span class="ot">&lt;-</span> sd</span>
+<span id="cb134-4"><a href="applied-statistics.html#cb134-4" aria-hidden="true" tabindex="-1"></a>se <span class="ot">&lt;-</span> sd <span class="sc">/</span> (<span class="fu">sqrt</span>(n))</span>
+<span id="cb134-5"><a href="applied-statistics.html#cb134-5" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> n</span>
+<span id="cb134-6"><a href="applied-statistics.html#cb134-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb134-7"><a href="applied-statistics.html#cb134-7" aria-hidden="true" tabindex="-1"></a>conf_int95 <span class="ot">&lt;-</span> cv <span class="sc">*</span> sd <span class="sc">/</span> (<span class="fu">sqrt</span>(n))</span>
+<span id="cb134-8"><a href="applied-statistics.html#cb134-8" aria-hidden="true" tabindex="-1"></a>mu_plus <span class="ot">&lt;-</span> mu <span class="sc">+</span> conf_int95</span>
+<span id="cb134-9"><a href="applied-statistics.html#cb134-9" aria-hidden="true" tabindex="-1"></a>mu_min <span class="ot">&lt;-</span> mu <span class="sc">-</span> conf_int95</span></code></pre></div>
 <p><strong>Large sample significance testing</strong></p>
 <ol style="list-style-type: decimal">
 <li>Two-sided</li>
 <li>One-sided: X is greater than the population mean</li>
 <li>One-sided: X is less than the population mean</li>
 </ol>
-<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="applied-statistics.html#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(BSDA)</span>
-<span id="cb37-2"><a href="applied-statistics.html#cb37-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb37-3"><a href="applied-statistics.html#cb37-3" aria-hidden="true" tabindex="-1"></a>one <span class="ot">&lt;-</span> <span class="fu">tsum.test</span>(<span class="at">mean.x =</span> X, <span class="at">s.x =</span> sd, <span class="at">n.x =</span> n, <span class="at">mu =</span> mu, <span class="at">alternative =</span> <span class="st">&quot;two.sided&quot;</span>, <span class="at">var.equal =</span> <span class="cn">TRUE</span>) </span>
-<span id="cb37-4"><a href="applied-statistics.html#cb37-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb37-5"><a href="applied-statistics.html#cb37-5" aria-hidden="true" tabindex="-1"></a>two <span class="ot">&lt;-</span> <span class="fu">tsum.test</span>(<span class="at">mean.x =</span> X, <span class="at">s.x =</span> sd, <span class="at">n.x =</span> n, <span class="at">mu =</span> mu, <span class="at">alternative =</span> <span class="st">&quot;greater&quot;</span>, <span class="at">var.equal =</span> <span class="cn">TRUE</span>) </span>
-<span id="cb37-6"><a href="applied-statistics.html#cb37-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb37-7"><a href="applied-statistics.html#cb37-7" aria-hidden="true" tabindex="-1"></a>three <span class="ot">&lt;-</span> <span class="fu">tsum.test</span>(<span class="at">mean.x =</span> X, <span class="at">s.x =</span> sd, <span class="at">n.x =</span> n, <span class="at">mu =</span> mu, <span class="at">alternative =</span> <span class="st">&quot;less&quot;</span>, <span class="at">var.equal =</span> <span class="cn">TRUE</span>) </span></code></pre></div>
+<div class="sourceCode" id="cb135"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb135-1"><a href="applied-statistics.html#cb135-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(BSDA)</span>
+<span id="cb135-2"><a href="applied-statistics.html#cb135-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb135-3"><a href="applied-statistics.html#cb135-3" aria-hidden="true" tabindex="-1"></a>one <span class="ot">&lt;-</span> <span class="fu">tsum.test</span>(<span class="at">mean.x =</span> X, <span class="at">s.x =</span> sd, <span class="at">n.x =</span> n, <span class="at">mu =</span> mu, <span class="at">alternative =</span> <span class="st">&quot;two.sided&quot;</span>, <span class="at">var.equal =</span> <span class="cn">TRUE</span>) </span>
+<span id="cb135-4"><a href="applied-statistics.html#cb135-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb135-5"><a href="applied-statistics.html#cb135-5" aria-hidden="true" tabindex="-1"></a>two <span class="ot">&lt;-</span> <span class="fu">tsum.test</span>(<span class="at">mean.x =</span> X, <span class="at">s.x =</span> sd, <span class="at">n.x =</span> n, <span class="at">mu =</span> mu, <span class="at">alternative =</span> <span class="st">&quot;greater&quot;</span>, <span class="at">var.equal =</span> <span class="cn">TRUE</span>) </span>
+<span id="cb135-6"><a href="applied-statistics.html#cb135-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb135-7"><a href="applied-statistics.html#cb135-7" aria-hidden="true" tabindex="-1"></a>three <span class="ot">&lt;-</span> <span class="fu">tsum.test</span>(<span class="at">mean.x =</span> X, <span class="at">s.x =</span> sd, <span class="at">n.x =</span> n, <span class="at">mu =</span> mu, <span class="at">alternative =</span> <span class="st">&quot;less&quot;</span>, <span class="at">var.equal =</span> <span class="cn">TRUE</span>) </span></code></pre></div>
 <p><strong>For proportions:</strong></p>
 <p>prop.test(x = X, n = n, p = p, correct = TRUE, alternative =
 “two.sided”)</p>
@@ -644,18 +646,18 @@ error.</p>
 Alternative hypothesis (H_a) &lt;- <span class="math inline">\(\mu1 \neq \mu2\)</span> or
 <span class="math inline">\(\mu1 - \mu2 \neq 0\)</span></p>
 <p>Difference in two means with a certain confidence levelc. Default = 95%</p>
-<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="applied-statistics.html#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tsum.test</span>(<span class="at">mean.x =</span> X, <span class="at">s.x =</span> sd, <span class="at">n.x =</span> n, <span class="at">mean.y =</span> X, <span class="at">s.y =</span> sd, <span class="at">n.y =</span> n, <span class="at">var.equal=</span><span class="cn">FALSE</span>)</span></code></pre></div>
-<pre><code>## 
-##  Welch Modified Two-Sample t-Test
-## 
-## data:  Summarized x and y
-## t = 0, df = 58, p-value = 1
-## alternative hypothesis: true difference in means is not equal to 0
-## 95 percent confidence interval:
-##  -0.8492568  0.8492568
-## sample estimates:
-## mean of x mean of y 
-##        15        15</code></pre>
+<div class="sourceCode" id="cb136"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb136-1"><a href="applied-statistics.html#cb136-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tsum.test</span>(<span class="at">mean.x =</span> X, <span class="at">s.x =</span> sd, <span class="at">n.x =</span> n, <span class="at">mean.y =</span> X, <span class="at">s.y =</span> sd, <span class="at">n.y =</span> n, <span class="at">var.equal=</span><span class="cn">FALSE</span>)</span></code></pre></div>
+<pre><code>
+    Welch Modified Two-Sample t-Test
+
+data:  Summarized x and y
+t = 0, df = 58, p-value = 1
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ -0.8492568  0.8492568
+sample estimates:
+mean of x mean of y 
+       15        15 </code></pre>
 <hr />
 </div>
 </div>
@@ -664,10 +666,10 @@ Alternative hypothesis (H_a) &lt;- <span class="math inline">\(\mu1 \neq \mu2\)<
 <div id="contingency-table-frequencies" class="section level3" number="3.6.1">
 <h3><span class="header-section-number">3.6.1</span> Contingency table / frequencies</h3>
 <p>Obtain contingency table</p>
-<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="applied-statistics.html#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(ToothGrowth<span class="sc">$</span>dose)</span></code></pre></div>
-<pre><code>## 
-## 0.5   1   2 
-##  20  20  20</code></pre>
+<div class="sourceCode" id="cb138"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb138-1"><a href="applied-statistics.html#cb138-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(ToothGrowth<span class="sc">$</span>dose)</span></code></pre></div>
+<pre><code>
+0.5   1   2 
+ 20  20  20 </code></pre>
 </div>
 <div id="chi-square" class="section level3" number="3.6.2">
 <h3><span class="header-section-number">3.6.2</span> Chi-square</h3>
@@ -676,25 +678,25 @@ Alternative hypothesis (H_a) &lt;- <span class="math inline">\(\mu1 \neq \mu2\)<
 <li>Get the expected value</li>
 <li>Probability for chi-square</li>
 </ol>
-<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="applied-statistics.html#cb42-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">27</span>,<span class="dv">373</span>,<span class="dv">33</span>,<span class="dv">567</span>),<span class="at">byrow=</span><span class="cn">TRUE</span>,<span class="at">nrow=</span><span class="dv">2</span>)</span>
-<span id="cb42-2"><a href="applied-statistics.html#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="fu">chisq.test</span>(data,<span class="at">correct=</span><span class="cn">FALSE</span>)</span></code></pre></div>
-<pre><code>## 
-##  Pearson&#39;s Chi-squared test
-## 
-## data:  data
-## X-squared = 0.66489, df = 1, p-value = 0.4148</code></pre>
-<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="applied-statistics.html#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">chisq.test</span>(data,<span class="at">correct=</span><span class="cn">FALSE</span>)<span class="sc">$</span>expected</span></code></pre></div>
-<pre><code>##      [,1] [,2]
-## [1,]   24  376
-## [2,]   36  564</code></pre>
-<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="applied-statistics.html#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">prop.table</span>(<span class="fu">chisq.test</span>(data,<span class="at">correct=</span><span class="cn">FALSE</span>)<span class="sc">$</span>expected,<span class="dv">1</span>)</span></code></pre></div>
-<pre><code>##      [,1] [,2]
-## [1,] 0.06 0.94
-## [2,] 0.06 0.94</code></pre>
-<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="applied-statistics.html#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="fu">prop.table</span>(<span class="fu">chisq.test</span>(data,<span class="at">correct=</span><span class="cn">FALSE</span>)<span class="sc">$</span>expected,<span class="dv">2</span>)</span></code></pre></div>
-<pre><code>##      [,1] [,2]
-## [1,]  0.4  0.4
-## [2,]  0.6  0.6</code></pre>
+<div class="sourceCode" id="cb140"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb140-1"><a href="applied-statistics.html#cb140-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">27</span>,<span class="dv">373</span>,<span class="dv">33</span>,<span class="dv">567</span>),<span class="at">byrow=</span><span class="cn">TRUE</span>,<span class="at">nrow=</span><span class="dv">2</span>)</span>
+<span id="cb140-2"><a href="applied-statistics.html#cb140-2" aria-hidden="true" tabindex="-1"></a><span class="fu">chisq.test</span>(data,<span class="at">correct=</span><span class="cn">FALSE</span>)</span></code></pre></div>
+<pre><code>
+    Pearson&#39;s Chi-squared test
+
+data:  data
+X-squared = 0.66489, df = 1, p-value = 0.4148</code></pre>
+<div class="sourceCode" id="cb142"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb142-1"><a href="applied-statistics.html#cb142-1" aria-hidden="true" tabindex="-1"></a><span class="fu">chisq.test</span>(data,<span class="at">correct=</span><span class="cn">FALSE</span>)<span class="sc">$</span>expected</span></code></pre></div>
+<pre><code>     [,1] [,2]
+[1,]   24  376
+[2,]   36  564</code></pre>
+<div class="sourceCode" id="cb144"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb144-1"><a href="applied-statistics.html#cb144-1" aria-hidden="true" tabindex="-1"></a><span class="fu">prop.table</span>(<span class="fu">chisq.test</span>(data,<span class="at">correct=</span><span class="cn">FALSE</span>)<span class="sc">$</span>expected,<span class="dv">1</span>)</span></code></pre></div>
+<pre><code>     [,1] [,2]
+[1,] 0.06 0.94
+[2,] 0.06 0.94</code></pre>
+<div class="sourceCode" id="cb146"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb146-1"><a href="applied-statistics.html#cb146-1" aria-hidden="true" tabindex="-1"></a><span class="fu">prop.table</span>(<span class="fu">chisq.test</span>(data,<span class="at">correct=</span><span class="cn">FALSE</span>)<span class="sc">$</span>expected,<span class="dv">2</span>)</span></code></pre></div>
+<pre><code>     [,1] [,2]
+[1,]  0.4  0.4
+[2,]  0.6  0.6</code></pre>
 <p>Degree of freedom = # of row - 1 * # of columns = fixed</p>
 <p><strong><em>All expected frequencies must be above five! If not, categories must
 be combined!</em></strong></p>
@@ -703,41 +705,40 @@ be combined!</em></strong></p>
 <h3><span class="header-section-number">3.6.3</span> Goodness of fit</h3>
 <p><strong>Uniform:</strong></p>
 <p>Degree of freedom = number of categories - number of parameters - 1.</p>
-<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="applied-statistics.html#cb50-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>)</span>
-<span id="cb50-2"><a href="applied-statistics.html#cb50-2" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">5</span>, <span class="dv">5</span>)</span>
-<span id="cb50-3"><a href="applied-statistics.html#cb50-3" aria-hidden="true" tabindex="-1"></a><span class="fu">chisq.test</span>(x, <span class="at">p =</span> p)</span></code></pre></div>
-<pre><code>## Warning in chisq.test(x, p = p): Chi-squared approximation may be incorrect</code></pre>
-<pre><code>## 
-##  Chi-squared test for given probabilities
-## 
-## data:  x
-## X-squared = 3.3333, df = 4, p-value = 0.5037</code></pre>
+<div class="sourceCode" id="cb148"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb148-1"><a href="applied-statistics.html#cb148-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>)</span>
+<span id="cb148-2"><a href="applied-statistics.html#cb148-2" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">5</span>, <span class="dv">5</span>)</span>
+<span id="cb148-3"><a href="applied-statistics.html#cb148-3" aria-hidden="true" tabindex="-1"></a><span class="fu">chisq.test</span>(x, <span class="at">p =</span> p)</span></code></pre></div>
+<pre><code>
+    Chi-squared test for given probabilities
+
+data:  x
+X-squared = 3.3333, df = 4, p-value = 0.5037</code></pre>
 <p><strong><em>All expected frequencies must be above five! If not, categories must
 be combined!</em></strong></p>
 <p><strong>Binomial:</strong></p>
 <p>dbinom(x, size = n, prob = y)</p>
 <p>For example:</p>
-<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="applied-statistics.html#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(actuar)</span>
-<span id="cb53-2"><a href="applied-statistics.html#cb53-2" aria-hidden="true" tabindex="-1"></a>cj <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="sc">-</span><span class="fl">0.5</span>, <span class="fl">0.5</span>, <span class="fl">1.5</span>, <span class="fl">2.5</span>, <span class="fl">3.5</span>, <span class="fl">4.5</span>, <span class="fl">5.5</span>)</span>
-<span id="cb53-3"><a href="applied-statistics.html#cb53-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb53-4"><a href="applied-statistics.html#cb53-4" aria-hidden="true" tabindex="-1"></a><span class="co">#or</span></span>
-<span id="cb53-5"><a href="applied-statistics.html#cb53-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb53-6"><a href="applied-statistics.html#cb53-6" aria-hidden="true" tabindex="-1"></a>cj <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="sc">-</span><span class="fl">0.5</span>, <span class="at">to=</span><span class="dv">5</span>, <span class="at">by=</span><span class="dv">1</span>)</span>
-<span id="cb53-7"><a href="applied-statistics.html#cb53-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb53-8"><a href="applied-statistics.html#cb53-8" aria-hidden="true" tabindex="-1"></a>nj <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">15</span>,<span class="dv">20</span>,<span class="dv">20</span>,<span class="dv">18</span>,<span class="dv">13</span>)</span>
-<span id="cb53-9"><a href="applied-statistics.html#cb53-9" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">grouped.data</span>(<span class="at">Group =</span> cj, <span class="at">Frequency =</span> nj)</span>
-<span id="cb53-10"><a href="applied-statistics.html#cb53-10" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">mean</span>(data)<span class="sc">/</span><span class="dv">5</span></span>
-<span id="cb53-11"><a href="applied-statistics.html#cb53-11" aria-hidden="true" tabindex="-1"></a>pr <span class="ot">&lt;-</span><span class="fu">c</span>(<span class="fu">dbinom</span>(<span class="dv">0</span>,<span class="dv">5</span>,p),<span class="fu">dbinom</span>(<span class="dv">1</span>,<span class="dv">5</span>,p),<span class="fu">dbinom</span>(<span class="dv">2</span>,<span class="dv">5</span>,p),<span class="fu">dbinom</span>(<span class="dv">3</span>,<span class="dv">5</span>,p),<span class="fu">dbinom</span>(<span class="dv">4</span>,<span class="dv">5</span>,p),<span class="fu">dbinom</span>(<span class="dv">5</span>,<span class="dv">5</span>,p))</span>
-<span id="cb53-12"><a href="applied-statistics.html#cb53-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb53-13"><a href="applied-statistics.html#cb53-13" aria-hidden="true" tabindex="-1"></a>nj2 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">35</span>,<span class="dv">20</span>,<span class="dv">18</span>,<span class="dv">23</span>)</span>
-<span id="cb53-14"><a href="applied-statistics.html#cb53-14" aria-hidden="true" tabindex="-1"></a>pr2 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">dbinom</span>(<span class="dv">0</span>,<span class="dv">5</span>,p)<span class="sc">+</span><span class="fu">dbinom</span>(<span class="dv">1</span>,<span class="dv">5</span>,p),<span class="fu">dbinom</span>(<span class="dv">2</span>,<span class="dv">5</span>,p),<span class="fu">dbinom</span>(<span class="dv">3</span>,<span class="dv">5</span>,p),<span class="fu">dbinom</span>(<span class="dv">4</span>,<span class="dv">5</span>,p)<span class="sc">+</span><span class="fu">dbinom</span>(<span class="dv">5</span>,<span class="dv">5</span>,p))</span>
-<span id="cb53-15"><a href="applied-statistics.html#cb53-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb53-16"><a href="applied-statistics.html#cb53-16" aria-hidden="true" tabindex="-1"></a><span class="fu">chisq.test</span>(nj2,<span class="at">p=</span>pr2)</span></code></pre></div>
-<pre><code>## 
-##  Chi-squared test for given probabilities
-## 
-## data:  nj2
-## X-squared = 38.736, df = 3, p-value = 1.975e-08</code></pre>
+<div class="sourceCode" id="cb150"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb150-1"><a href="applied-statistics.html#cb150-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(actuar)</span>
+<span id="cb150-2"><a href="applied-statistics.html#cb150-2" aria-hidden="true" tabindex="-1"></a>cj <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="sc">-</span><span class="fl">0.5</span>, <span class="fl">0.5</span>, <span class="fl">1.5</span>, <span class="fl">2.5</span>, <span class="fl">3.5</span>, <span class="fl">4.5</span>, <span class="fl">5.5</span>)</span>
+<span id="cb150-3"><a href="applied-statistics.html#cb150-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb150-4"><a href="applied-statistics.html#cb150-4" aria-hidden="true" tabindex="-1"></a><span class="co">#or</span></span>
+<span id="cb150-5"><a href="applied-statistics.html#cb150-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb150-6"><a href="applied-statistics.html#cb150-6" aria-hidden="true" tabindex="-1"></a>cj <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="sc">-</span><span class="fl">0.5</span>, <span class="at">to=</span><span class="dv">5</span>, <span class="at">by=</span><span class="dv">1</span>)</span>
+<span id="cb150-7"><a href="applied-statistics.html#cb150-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb150-8"><a href="applied-statistics.html#cb150-8" aria-hidden="true" tabindex="-1"></a>nj <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">15</span>,<span class="dv">20</span>,<span class="dv">20</span>,<span class="dv">18</span>,<span class="dv">13</span>)</span>
+<span id="cb150-9"><a href="applied-statistics.html#cb150-9" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">grouped.data</span>(<span class="at">Group =</span> cj, <span class="at">Frequency =</span> nj)</span>
+<span id="cb150-10"><a href="applied-statistics.html#cb150-10" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">mean</span>(data)<span class="sc">/</span><span class="dv">5</span></span>
+<span id="cb150-11"><a href="applied-statistics.html#cb150-11" aria-hidden="true" tabindex="-1"></a>pr <span class="ot">&lt;-</span><span class="fu">c</span>(<span class="fu">dbinom</span>(<span class="dv">0</span>,<span class="dv">5</span>,p),<span class="fu">dbinom</span>(<span class="dv">1</span>,<span class="dv">5</span>,p),<span class="fu">dbinom</span>(<span class="dv">2</span>,<span class="dv">5</span>,p),<span class="fu">dbinom</span>(<span class="dv">3</span>,<span class="dv">5</span>,p),<span class="fu">dbinom</span>(<span class="dv">4</span>,<span class="dv">5</span>,p),<span class="fu">dbinom</span>(<span class="dv">5</span>,<span class="dv">5</span>,p))</span>
+<span id="cb150-12"><a href="applied-statistics.html#cb150-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb150-13"><a href="applied-statistics.html#cb150-13" aria-hidden="true" tabindex="-1"></a>nj2 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">35</span>,<span class="dv">20</span>,<span class="dv">18</span>,<span class="dv">23</span>)</span>
+<span id="cb150-14"><a href="applied-statistics.html#cb150-14" aria-hidden="true" tabindex="-1"></a>pr2 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">dbinom</span>(<span class="dv">0</span>,<span class="dv">5</span>,p)<span class="sc">+</span><span class="fu">dbinom</span>(<span class="dv">1</span>,<span class="dv">5</span>,p),<span class="fu">dbinom</span>(<span class="dv">2</span>,<span class="dv">5</span>,p),<span class="fu">dbinom</span>(<span class="dv">3</span>,<span class="dv">5</span>,p),<span class="fu">dbinom</span>(<span class="dv">4</span>,<span class="dv">5</span>,p)<span class="sc">+</span><span class="fu">dbinom</span>(<span class="dv">5</span>,<span class="dv">5</span>,p))</span>
+<span id="cb150-15"><a href="applied-statistics.html#cb150-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb150-16"><a href="applied-statistics.html#cb150-16" aria-hidden="true" tabindex="-1"></a><span class="fu">chisq.test</span>(nj2,<span class="at">p=</span>pr2)</span></code></pre></div>
+<pre><code>
+    Chi-squared test for given probabilities
+
+data:  nj2
+X-squared = 38.736, df = 3, p-value = 0.00000001975</code></pre>
 <p><strong><em>All expected frequencies must be above five! If not, categories must
 be combined!</em></strong></p>
 <p><strong>Poisson</strong></p>
@@ -746,42 +747,41 @@ be combined!</em></strong></p>
 <p>NOTE! Distribution goes to infinity. Counter for one value that is X or more. 1 - until X.</p>
 </blockquote>
 <p>Example:</p>
-<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="applied-statistics.html#cb55-1" aria-hidden="true" tabindex="-1"></a>cj <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="sc">-</span><span class="fl">0.5</span>, <span class="fl">0.5</span>, <span class="fl">1.5</span>, <span class="fl">2.5</span>, <span class="fl">3.5</span>, <span class="fl">4.5</span>, <span class="fl">5.5</span>)</span>
-<span id="cb55-2"><a href="applied-statistics.html#cb55-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb55-3"><a href="applied-statistics.html#cb55-3" aria-hidden="true" tabindex="-1"></a><span class="co">#or</span></span>
-<span id="cb55-4"><a href="applied-statistics.html#cb55-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb55-5"><a href="applied-statistics.html#cb55-5" aria-hidden="true" tabindex="-1"></a>cj <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="sc">-</span><span class="fl">0.5</span>, <span class="at">to=</span><span class="dv">6</span>, <span class="at">by=</span><span class="dv">1</span>)</span>
-<span id="cb55-6"><a href="applied-statistics.html#cb55-6" aria-hidden="true" tabindex="-1"></a>nj <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">16</span>, <span class="dv">30</span>, <span class="dv">37</span>, <span class="dv">7</span>, <span class="dv">10</span>, <span class="dv">5</span>)</span>
-<span id="cb55-7"><a href="applied-statistics.html#cb55-7" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">grouped.data</span>(<span class="at">Group =</span> cj, <span class="at">Frequency =</span> nj)</span>
-<span id="cb55-8"><a href="applied-statistics.html#cb55-8" aria-hidden="true" tabindex="-1"></a>m <span class="ot">&lt;-</span> <span class="fu">mean</span>(data)</span>
-<span id="cb55-9"><a href="applied-statistics.html#cb55-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb55-10"><a href="applied-statistics.html#cb55-10" aria-hidden="true" tabindex="-1"></a>pr <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">dpois</span>(<span class="dv">0</span>, m),<span class="fu">dpois</span>(<span class="dv">1</span>,m),<span class="fu">dpois</span>(<span class="dv">2</span>, m), <span class="fu">dpois</span>(<span class="dv">3</span>, m), <span class="fu">dpois</span>(<span class="dv">4</span>, m), <span class="sc">+</span> (<span class="dv">1</span><span class="sc">-</span><span class="fu">ppois</span>(<span class="dv">4</span>,m)) )</span>
-<span id="cb55-11"><a href="applied-statistics.html#cb55-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb55-12"><a href="applied-statistics.html#cb55-12" aria-hidden="true" tabindex="-1"></a><span class="fu">chisq.test</span>(nj, <span class="at">p =</span> pr)</span></code></pre></div>
-<pre><code>## Warning in chisq.test(nj, p = pr): Chi-squared approximation may be incorrect</code></pre>
-<pre><code>## 
-##  Chi-squared test for given probabilities
-## 
-## data:  nj
-## X-squared = 9.7845, df = 5, p-value = 0.08158</code></pre>
+<div class="sourceCode" id="cb152"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb152-1"><a href="applied-statistics.html#cb152-1" aria-hidden="true" tabindex="-1"></a>cj <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="sc">-</span><span class="fl">0.5</span>, <span class="fl">0.5</span>, <span class="fl">1.5</span>, <span class="fl">2.5</span>, <span class="fl">3.5</span>, <span class="fl">4.5</span>, <span class="fl">5.5</span>)</span>
+<span id="cb152-2"><a href="applied-statistics.html#cb152-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb152-3"><a href="applied-statistics.html#cb152-3" aria-hidden="true" tabindex="-1"></a><span class="co">#or</span></span>
+<span id="cb152-4"><a href="applied-statistics.html#cb152-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb152-5"><a href="applied-statistics.html#cb152-5" aria-hidden="true" tabindex="-1"></a>cj <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="sc">-</span><span class="fl">0.5</span>, <span class="at">to=</span><span class="dv">6</span>, <span class="at">by=</span><span class="dv">1</span>)</span>
+<span id="cb152-6"><a href="applied-statistics.html#cb152-6" aria-hidden="true" tabindex="-1"></a>nj <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">16</span>, <span class="dv">30</span>, <span class="dv">37</span>, <span class="dv">7</span>, <span class="dv">10</span>, <span class="dv">5</span>)</span>
+<span id="cb152-7"><a href="applied-statistics.html#cb152-7" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">grouped.data</span>(<span class="at">Group =</span> cj, <span class="at">Frequency =</span> nj)</span>
+<span id="cb152-8"><a href="applied-statistics.html#cb152-8" aria-hidden="true" tabindex="-1"></a>m <span class="ot">&lt;-</span> <span class="fu">mean</span>(data)</span>
+<span id="cb152-9"><a href="applied-statistics.html#cb152-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb152-10"><a href="applied-statistics.html#cb152-10" aria-hidden="true" tabindex="-1"></a>pr <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">dpois</span>(<span class="dv">0</span>, m),<span class="fu">dpois</span>(<span class="dv">1</span>,m),<span class="fu">dpois</span>(<span class="dv">2</span>, m), <span class="fu">dpois</span>(<span class="dv">3</span>, m), <span class="fu">dpois</span>(<span class="dv">4</span>, m), <span class="sc">+</span> (<span class="dv">1</span><span class="sc">-</span><span class="fu">ppois</span>(<span class="dv">4</span>,m)) )</span>
+<span id="cb152-11"><a href="applied-statistics.html#cb152-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb152-12"><a href="applied-statistics.html#cb152-12" aria-hidden="true" tabindex="-1"></a><span class="fu">chisq.test</span>(nj, <span class="at">p =</span> pr)</span></code></pre></div>
+<pre><code>
+    Chi-squared test for given probabilities
+
+data:  nj
+X-squared = 9.7845, df = 5, p-value = 0.08158</code></pre>
 <p><strong>Normal distribution</strong></p>
 <p>Example:</p>
-<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="applied-statistics.html#cb58-1" aria-hidden="true" tabindex="-1"></a>cv <span class="ot">&lt;-</span> <span class="fu">qchisq</span>(<span class="fl">0.90</span>, <span class="dv">2</span>)</span>
-<span id="cb58-2"><a href="applied-statistics.html#cb58-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-3"><a href="applied-statistics.html#cb58-3" aria-hidden="true" tabindex="-1"></a>cj <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">10</span>, <span class="dv">15</span>, <span class="dv">30</span>)</span>
-<span id="cb58-4"><a href="applied-statistics.html#cb58-4" aria-hidden="true" tabindex="-1"></a>nj <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">16</span>, <span class="dv">30</span>, <span class="dv">37</span>, <span class="dv">7</span>, <span class="dv">10</span>)</span>
-<span id="cb58-5"><a href="applied-statistics.html#cb58-5" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">grouped.data</span>(<span class="at">Group =</span> cj, <span class="at">Frequency =</span> nj) </span>
-<span id="cb58-6"><a href="applied-statistics.html#cb58-6" aria-hidden="true" tabindex="-1"></a>m <span class="ot">&lt;-</span> <span class="fu">mean</span>(data)</span>
-<span id="cb58-7"><a href="applied-statistics.html#cb58-7" aria-hidden="true" tabindex="-1"></a>s <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(<span class="fu">emm</span>(data,<span class="dv">2</span>))</span>
-<span id="cb58-8"><a href="applied-statistics.html#cb58-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-9"><a href="applied-statistics.html#cb58-9" aria-hidden="true" tabindex="-1"></a>pr <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">pnorm</span>(<span class="dv">1</span>,m,s), <span class="fu">diff</span>(<span class="fu">pnorm</span>(<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">3</span>),m,s)), <span class="fu">diff</span>(<span class="fu">pnorm</span>(<span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">10</span>),m,s)), <span class="fu">diff</span>(<span class="fu">pnorm</span>(<span class="fu">c</span>(<span class="dv">10</span>,<span class="dv">15</span>),m,s)), <span class="dv">1</span> <span class="sc">-</span> <span class="fu">pnorm</span>(<span class="fu">c</span>(<span class="dv">15</span>),m,s) )</span>
-<span id="cb58-10"><a href="applied-statistics.html#cb58-10" aria-hidden="true" tabindex="-1"></a>         </span>
-<span id="cb58-11"><a href="applied-statistics.html#cb58-11" aria-hidden="true" tabindex="-1"></a><span class="fu">chisq.test</span>(nj,<span class="at">p=</span>pr)</span></code></pre></div>
-<pre><code>## 
-##  Chi-squared test for given probabilities
-## 
-## data:  nj
-## X-squared = 77.503, df = 4, p-value = 5.887e-16</code></pre>
+<div class="sourceCode" id="cb154"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb154-1"><a href="applied-statistics.html#cb154-1" aria-hidden="true" tabindex="-1"></a>cv <span class="ot">&lt;-</span> <span class="fu">qchisq</span>(<span class="fl">0.90</span>, <span class="dv">2</span>)</span>
+<span id="cb154-2"><a href="applied-statistics.html#cb154-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb154-3"><a href="applied-statistics.html#cb154-3" aria-hidden="true" tabindex="-1"></a>cj <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">10</span>, <span class="dv">15</span>, <span class="dv">30</span>)</span>
+<span id="cb154-4"><a href="applied-statistics.html#cb154-4" aria-hidden="true" tabindex="-1"></a>nj <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">16</span>, <span class="dv">30</span>, <span class="dv">37</span>, <span class="dv">7</span>, <span class="dv">10</span>)</span>
+<span id="cb154-5"><a href="applied-statistics.html#cb154-5" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">grouped.data</span>(<span class="at">Group =</span> cj, <span class="at">Frequency =</span> nj) </span>
+<span id="cb154-6"><a href="applied-statistics.html#cb154-6" aria-hidden="true" tabindex="-1"></a>m <span class="ot">&lt;-</span> <span class="fu">mean</span>(data)</span>
+<span id="cb154-7"><a href="applied-statistics.html#cb154-7" aria-hidden="true" tabindex="-1"></a>s <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(<span class="fu">emm</span>(data,<span class="dv">2</span>))</span>
+<span id="cb154-8"><a href="applied-statistics.html#cb154-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb154-9"><a href="applied-statistics.html#cb154-9" aria-hidden="true" tabindex="-1"></a>pr <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">pnorm</span>(<span class="dv">1</span>,m,s), <span class="fu">diff</span>(<span class="fu">pnorm</span>(<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">3</span>),m,s)), <span class="fu">diff</span>(<span class="fu">pnorm</span>(<span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">10</span>),m,s)), <span class="fu">diff</span>(<span class="fu">pnorm</span>(<span class="fu">c</span>(<span class="dv">10</span>,<span class="dv">15</span>),m,s)), <span class="dv">1</span> <span class="sc">-</span> <span class="fu">pnorm</span>(<span class="fu">c</span>(<span class="dv">15</span>),m,s) )</span>
+<span id="cb154-10"><a href="applied-statistics.html#cb154-10" aria-hidden="true" tabindex="-1"></a>         </span>
+<span id="cb154-11"><a href="applied-statistics.html#cb154-11" aria-hidden="true" tabindex="-1"></a><span class="fu">chisq.test</span>(nj,<span class="at">p=</span>pr)</span></code></pre></div>
+<pre><code>
+    Chi-squared test for given probabilities
+
+data:  nj
+X-squared = 77.503, df = 4, p-value = 0.0000000000000005887</code></pre>
 </div>
 <div id="mann-whitney-test" class="section level3" number="3.6.4">
 <h3><span class="header-section-number">3.6.4</span> Mann-whitney test</h3>
@@ -803,22 +803,22 @@ critical values will be 1.96 for this two sided test.</p>
 </div>
 <div id="run-test" class="section level3" number="3.6.6">
 <h3><span class="header-section-number">3.6.6</span> Run test</h3>
-<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="applied-statistics.html#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(randtests)</span>
-<span id="cb60-2"><a href="applied-statistics.html#cb60-2" aria-hidden="true" tabindex="-1"></a>pers <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span>)</span>
-<span id="cb60-3"><a href="applied-statistics.html#cb60-3" aria-hidden="true" tabindex="-1"></a>pers.f <span class="ot">&lt;-</span> <span class="fu">factor</span>(pers,<span class="at">labels=</span><span class="fu">c</span>(<span class="st">&quot;Male&quot;</span>,<span class="st">&quot;Female&quot;</span>))</span>
-<span id="cb60-4"><a href="applied-statistics.html#cb60-4" aria-hidden="true" tabindex="-1"></a><span class="fu">runs.test</span>(pers)</span></code></pre></div>
-<pre><code>## 
-##  Runs Test
-## 
-## data:  pers
-## statistic = NaN, runs = 1, n1 = 5, n2 = 0, n = 5, p-value = NA
-## alternative hypothesis: nonrandomness</code></pre>
+<div class="sourceCode" id="cb156"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb156-1"><a href="applied-statistics.html#cb156-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(randtests)</span>
+<span id="cb156-2"><a href="applied-statistics.html#cb156-2" aria-hidden="true" tabindex="-1"></a>pers <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span>)</span>
+<span id="cb156-3"><a href="applied-statistics.html#cb156-3" aria-hidden="true" tabindex="-1"></a>pers.f <span class="ot">&lt;-</span> <span class="fu">factor</span>(pers,<span class="at">labels=</span><span class="fu">c</span>(<span class="st">&quot;Male&quot;</span>,<span class="st">&quot;Female&quot;</span>))</span>
+<span id="cb156-4"><a href="applied-statistics.html#cb156-4" aria-hidden="true" tabindex="-1"></a><span class="fu">runs.test</span>(pers)</span></code></pre></div>
+<pre><code>
+    Runs Test
+
+data:  pers
+statistic = NaN, runs = 1, n1 = 5, n2 = 0, n = 5, p-value = NA
+alternative hypothesis: nonrandomness</code></pre>
 </div>
 <div id="p-value" class="section level3" number="3.6.7">
 <h3><span class="header-section-number">3.6.7</span> P-value</h3>
 <p>Find p value: Probability of getting this test statistic or more:</p>
-<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="applied-statistics.html#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pchisq</span>(ts, df, <span class="at">lower.tail=</span><span class="cn">FALSE</span>)</span></code></pre></div>
-<pre><code>## [1] 0.5578254</code></pre>
+<div class="sourceCode" id="cb158"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb158-1"><a href="applied-statistics.html#cb158-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pchisq</span>(ts, df, <span class="at">lower.tail=</span><span class="cn">FALSE</span>)</span></code></pre></div>
+<pre><code>[1] 0.5578254</code></pre>
 
 </div>
 </div>

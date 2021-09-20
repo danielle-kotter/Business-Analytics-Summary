@@ -51,6 +51,8 @@
 
 <link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 
 
 <style type="text/css">
@@ -233,17 +235,17 @@ div.csl-indent {
 <li class="chapter" data-level="4.3.4" data-path="simple-regressions.html"><a href="simple-regressions.html#linearizing-variables"><i class="fa fa-check"></i><b>4.3.4</b> Linearizing variables</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="structure-equation-models.html"><a href="structure-equation-models.html"><i class="fa fa-check"></i><b>5</b> Structure equation models</a>
+<li class="chapter" data-level="5" data-path="structural-equation-models.html"><a href="structural-equation-models.html"><i class="fa fa-check"></i><b>5</b> Structural equation models</a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="structure-equation-models.html"><a href="structure-equation-models.html#path-analysis-structural-equations"><i class="fa fa-check"></i><b>5.1</b> Path analysis (structural equations)</a></li>
-<li class="chapter" data-level="5.2" data-path="structure-equation-models.html"><a href="structure-equation-models.html#coding-the-model"><i class="fa fa-check"></i><b>5.2</b> Coding the model</a>
+<li class="chapter" data-level="5.1" data-path="structural-equation-models.html"><a href="structural-equation-models.html#path-analysis-structural-equations"><i class="fa fa-check"></i><b>5.1</b> Path analysis (structural equations)</a></li>
+<li class="chapter" data-level="5.2" data-path="structural-equation-models.html"><a href="structural-equation-models.html#coding-the-model"><i class="fa fa-check"></i><b>5.2</b> Coding the model</a>
 <ul>
-<li class="chapter" data-level="5.2.1" data-path="structure-equation-models.html"><a href="structure-equation-models.html#covariance"><i class="fa fa-check"></i><b>5.2.1</b> Covariance</a></li>
-<li class="chapter" data-level="5.2.2" data-path="structure-equation-models.html"><a href="structure-equation-models.html#reliability"><i class="fa fa-check"></i><b>5.2.2</b> Reliability</a></li>
+<li class="chapter" data-level="5.2.1" data-path="structural-equation-models.html"><a href="structural-equation-models.html#covariance"><i class="fa fa-check"></i><b>5.2.1</b> Covariance</a></li>
+<li class="chapter" data-level="5.2.2" data-path="structural-equation-models.html"><a href="structural-equation-models.html#reliability"><i class="fa fa-check"></i><b>5.2.2</b> Reliability</a></li>
 </ul></li>
-<li class="chapter" data-level="5.3" data-path="structure-equation-models.html"><a href="structure-equation-models.html#factor-model"><i class="fa fa-check"></i><b>5.3</b> Factor model</a>
+<li class="chapter" data-level="5.3" data-path="structural-equation-models.html"><a href="structural-equation-models.html#factor-model"><i class="fa fa-check"></i><b>5.3</b> Factor model</a>
 <ul>
-<li class="chapter" data-level="5.3.1" data-path="structure-equation-models.html"><a href="structure-equation-models.html#setting-covariance-variances"><i class="fa fa-check"></i><b>5.3.1</b> Setting covariance &amp; variances</a></li>
+<li class="chapter" data-level="5.3.1" data-path="structural-equation-models.html"><a href="structural-equation-models.html#setting-covariance-variances"><i class="fa fa-check"></i><b>5.3.1</b> Setting covariance &amp; variances</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="basics-python.html"><a href="basics-python.html"><i class="fa fa-check"></i><b>6</b> Basics Python</a>
@@ -438,6 +440,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>

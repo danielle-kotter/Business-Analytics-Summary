@@ -6,7 +6,7 @@ editor_options:
 
 # Practical Data Science
 
-*Class given by: Alberto Santini*
+*Class given by: Alberto Santini* \
 
 *Literature used: [@GJames2013], [@THastie2017]*
 
@@ -126,7 +126,7 @@ function of x but adding some noise. Which leads to:
 
 Deterministic function: $y = f(x) + ϵ$
 
-**ϵ** = (error) noise --\> a random variable which models some
+**ϵ** = (error) noise --> a random variable which models some
 unpredictable events that happens in the real world, that we do not have
 a corresponding input for to take into account.
 

@@ -119,6 +119,28 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -337,10 +359,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="advanced-statistical-methods" class="section level1" number="8">
 <h1><span class="header-section-number">Chapter - 8</span> Advanced Statistical Methods</h1>
 <p><em>Class given by: Michael Greenacre</em></p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb1-1"><a href="advanced-statistical-methods.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lavaan)</span>
-<span id="cb1-2"><a href="advanced-statistical-methods.html#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(formattable)</span>
-<span id="cb1-3"><a href="advanced-statistical-methods.html#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(kableExtra)</span>
-<span id="cb1-4"><a href="advanced-statistical-methods.html#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span></code></pre></div>
+<div class="sourceCode" id="cb385"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb385-1"><a href="advanced-statistical-methods.html#cb385-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lavaan)</span>
+<span id="cb385-2"><a href="advanced-statistical-methods.html#cb385-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(formattable)</span>
+<span id="cb385-3"><a href="advanced-statistical-methods.html#cb385-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(kableExtra)</span>
+<span id="cb385-4"><a href="advanced-statistical-methods.html#cb385-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span></code></pre></div>
 <div id="clustering" class="section level2" number="8.1">
 <h2><span class="header-section-number">8.1</span> Clustering</h2>
 <p><strong>Clustering</strong> has the aim to classify similar objects (cases, people,
@@ -830,18 +852,18 @@ USA
 <hr />
 <div id="complete-linkage" class="section level4" number="8.1.1.1">
 <h4><span class="header-section-number">8.1.1.1</span> Complete Linkage</h4>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb2-1"><a href="advanced-statistical-methods.html#cb2-1" aria-hidden="true" tabindex="-1"></a>DK.clust <span class="ot">&lt;-</span> <span class="fu">hclust</span>(<span class="fu">as.dist</span>(table))</span>
-<span id="cb2-2"><a href="advanced-statistical-methods.html#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(DK.clust) <span class="sc">+</span></span>
-<span id="cb2-3"><a href="advanced-statistical-methods.html#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> <span class="dv">6</span>, <span class="at">col=</span><span class="st">&quot;red&quot;</span>) </span></code></pre></div>
-<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-4-1.png" width="100%" /></p>
+<div class="sourceCode" id="cb386"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb386-1"><a href="advanced-statistical-methods.html#cb386-1" aria-hidden="true" tabindex="-1"></a>DK.clust <span class="ot">&lt;-</span> <span class="fu">hclust</span>(<span class="fu">as.dist</span>(table))</span>
+<span id="cb386-2"><a href="advanced-statistical-methods.html#cb386-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(DK.clust) <span class="sc">+</span></span>
+<span id="cb386-3"><a href="advanced-statistical-methods.html#cb386-3" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> <span class="dv">6</span>, <span class="at">col=</span><span class="st">&quot;red&quot;</span>) </span></code></pre></div>
+<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-194-1.png" width="100%" /></p>
 <pre><code>integer(0)</code></pre>
 <hr />
 </div>
 <div id="average-linkage" class="section level4" number="8.1.1.2">
 <h4><span class="header-section-number">8.1.1.2</span> Average linkage</h4>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb4-1"><a href="advanced-statistical-methods.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">hclust</span>(<span class="fu">as.dist</span>(table), <span class="at">method=</span><span class="st">&quot;average&quot;</span>), <span class="at">main=</span><span class="st">&quot;Average linkage&quot;</span>) <span class="sc">+</span></span>
-<span id="cb4-2"><a href="advanced-statistical-methods.html#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> <span class="dv">5</span>, <span class="at">col=</span><span class="st">&quot;red&quot;</span>) </span></code></pre></div>
-<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-5-1.png" width="100%" /></p>
+<div class="sourceCode" id="cb388"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb388-1"><a href="advanced-statistical-methods.html#cb388-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">hclust</span>(<span class="fu">as.dist</span>(table), <span class="at">method=</span><span class="st">&quot;average&quot;</span>), <span class="at">main=</span><span class="st">&quot;Average linkage&quot;</span>) <span class="sc">+</span></span>
+<span id="cb388-2"><a href="advanced-statistical-methods.html#cb388-2" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> <span class="dv">5</span>, <span class="at">col=</span><span class="st">&quot;red&quot;</span>) </span></code></pre></div>
+<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-195-1.png" width="100%" /></p>
 <pre><code>integer(0)</code></pre>
 <p><strong>Significance clustering</strong></p>
 <p>Total sum of squares (total variance):  </p>
@@ -861,10 +883,10 @@ decomposed the total variance of the points in space into parts:
 <p>The idea can be illustrated by analysis-of-variance (ANOVA) for one
 variable (SS= sum[or average] of squared deviations from the mean), when
 observations are grouped.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb6-1"><a href="advanced-statistical-methods.html#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">hclust</span>(<span class="fu">as.dist</span>(table), <span class="at">method=</span><span class="st">&quot;ward.D2&quot;</span>), <span class="at">main=</span><span class="st">&quot;Ward linkage&quot;</span>, </span>
-<span id="cb6-2"><a href="advanced-statistical-methods.html#cb6-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab=</span><span class="st">&quot;Countries&quot;</span>, <span class="at">hang=</span><span class="sc">-</span><span class="dv">1</span>) <span class="sc">+</span></span>
-<span id="cb6-3"><a href="advanced-statistical-methods.html#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">abline</span>(<span class="at">h =</span> <span class="dv">8</span>, <span class="at">col=</span><span class="st">&quot;red&quot;</span>) </span></code></pre></div>
-<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-6-1.png" width="100%" /></p>
+<div class="sourceCode" id="cb390"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb390-1"><a href="advanced-statistical-methods.html#cb390-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">hclust</span>(<span class="fu">as.dist</span>(table), <span class="at">method=</span><span class="st">&quot;ward.D2&quot;</span>), <span class="at">main=</span><span class="st">&quot;Ward linkage&quot;</span>, </span>
+<span id="cb390-2"><a href="advanced-statistical-methods.html#cb390-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab=</span><span class="st">&quot;Countries&quot;</span>, <span class="at">hang=</span><span class="sc">-</span><span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb390-3"><a href="advanced-statistical-methods.html#cb390-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">abline</span>(<span class="at">h =</span> <span class="dv">8</span>, <span class="at">col=</span><span class="st">&quot;red&quot;</span>) </span></code></pre></div>
+<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-196-1.png" width="100%" /></p>
 <pre><code>integer(0)</code></pre>
 <p>Ward clustering:</p>
 <p><img src="images/paste-6EC08FDE.png" width="487" /></p>
@@ -918,46 +940,26 @@ there is a range between 0-1. This is classed range-standardized data.</p>
 <li><p>Non-metric MDS</p></li>
 </ul></li>
 </ul>
-<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-7-1.png" width="100%" /></p>
+<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-197-1.png" width="100%" /></p>
 <pre><code>[1] 0.7181458 0.7909089</code></pre>
 <pre><code>[1] 0.09199945</code></pre>
 </div>
 <div id="principal-component-analysis" class="section level2" number="8.3">
 <h2><span class="header-section-number">8.3</span> Principal component analysis</h2>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb10-1"><a href="advanced-statistical-methods.html#cb10-1" aria-hidden="true" tabindex="-1"></a>satis <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;www/satisfaction.csv&quot;</span>, <span class="at">header =</span> <span class="cn">TRUE</span>, <span class="at">sep =</span> <span class="st">&quot;,&quot;</span>, <span class="at">dec =</span></span>
-<span id="cb10-2"><a href="advanced-statistical-methods.html#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;.&quot;</span>)</span>
-<span id="cb10-3"><a href="advanced-statistical-methods.html#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="fu">attach</span>(satis)</span>
-<span id="cb10-4"><a href="advanced-statistical-methods.html#cb10-4" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> satis[,<span class="fu">c</span>(<span class="dv">4</span><span class="sc">:</span><span class="dv">12</span>)]</span>
-<span id="cb10-5"><a href="advanced-statistical-methods.html#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="fu">row.names</span>(data) <span class="ot">&lt;-</span> satis[,<span class="dv">2</span>]</span></code></pre></div>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb11-1"><a href="advanced-statistical-methods.html#cb11-1" aria-hidden="true" tabindex="-1"></a>DK.diss <span class="ot">&lt;-</span> <span class="fu">dist</span>(data)</span>
-<span id="cb11-2"><a href="advanced-statistical-methods.html#cb11-2" aria-hidden="true" tabindex="-1"></a>DK.data <span class="ot">&lt;-</span> <span class="fu">cmdscale</span>(DK.diss, <span class="at">eig=</span><span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb394"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb394-1"><a href="advanced-statistical-methods.html#cb394-1" aria-hidden="true" tabindex="-1"></a>satis <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;www/satisfaction.csv&quot;</span>, <span class="at">header =</span> <span class="cn">TRUE</span>, <span class="at">sep =</span> <span class="st">&quot;,&quot;</span>, <span class="at">dec =</span></span>
+<span id="cb394-2"><a href="advanced-statistical-methods.html#cb394-2" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;.&quot;</span>)</span>
+<span id="cb394-3"><a href="advanced-statistical-methods.html#cb394-3" aria-hidden="true" tabindex="-1"></a><span class="fu">attach</span>(satis)</span>
+<span id="cb394-4"><a href="advanced-statistical-methods.html#cb394-4" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> satis[,<span class="fu">c</span>(<span class="dv">4</span><span class="sc">:</span><span class="dv">12</span>)]</span>
+<span id="cb394-5"><a href="advanced-statistical-methods.html#cb394-5" aria-hidden="true" tabindex="-1"></a><span class="fu">row.names</span>(data) <span class="ot">&lt;-</span> satis[,<span class="dv">2</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb395"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb395-1"><a href="advanced-statistical-methods.html#cb395-1" aria-hidden="true" tabindex="-1"></a>DK.diss <span class="ot">&lt;-</span> <span class="fu">dist</span>(data)</span>
+<span id="cb395-2"><a href="advanced-statistical-methods.html#cb395-2" aria-hidden="true" tabindex="-1"></a>DK.data <span class="ot">&lt;-</span> <span class="fu">cmdscale</span>(DK.diss, <span class="at">eig=</span><span class="cn">TRUE</span>)</span></code></pre></div>
 <div id="biplots" class="section level3" number="8.3.1">
 <h3><span class="header-section-number">8.3.1</span> Biplots</h3>
-<pre><code>Loading required package: ca</code></pre>
-<pre><code>Loading required package: vegan</code></pre>
-<pre><code>Loading required package: permute</code></pre>
-<pre><code>
-Attaching package: &#39;permute&#39;</code></pre>
-<pre><code>The following object is masked from &#39;package:LaplacesDemon&#39;:
-
-    Blocks</code></pre>
-<pre><code>This is vegan 2.5-7</code></pre>
-<pre><code>
-Attaching package: &#39;vegan&#39;</code></pre>
-<pre><code>The following object is masked from &#39;package:survey&#39;:
-
-    calibrate</code></pre>
-<pre><code>Loading required package: ellipse</code></pre>
-<pre><code>
-Attaching package: &#39;ellipse&#39;</code></pre>
-<pre><code>The following object is masked from &#39;package:graphics&#39;:
-
-    pairs</code></pre>
-<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-12-1.png" width="100%" style="display: block; margin: auto;" /></p>
-<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-13-1.png" width="100%" style="display: block; margin: auto;" /></p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb23-1"><a href="advanced-statistical-methods.html#cb23-1" aria-hidden="true" tabindex="-1"></a>DK.PCA <span class="ot">&lt;-</span> <span class="fu">PCA</span>(<span class="fu">as.matrix</span>(data), <span class="at">weight=</span><span class="cn">FALSE</span>)</span>
-<span id="cb23-2"><a href="advanced-statistical-methods.html#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="fu">PLOT.PCA</span>(DK.PCA, <span class="at">map=</span><span class="st">&quot;asymmetric&quot;</span>, <span class="at">rescale=</span><span class="fl">0.5</span>, <span class="at">axes.inv=</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>), <span class="at">dim=</span><span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">3</span>))</span></code></pre></div>
-<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-14-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-202-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-203-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb396"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb396-1"><a href="advanced-statistical-methods.html#cb396-1" aria-hidden="true" tabindex="-1"></a>DK.PCA <span class="ot">&lt;-</span> <span class="fu">PCA</span>(<span class="fu">as.matrix</span>(data), <span class="at">weight=</span><span class="cn">FALSE</span>)</span>
+<span id="cb396-2"><a href="advanced-statistical-methods.html#cb396-2" aria-hidden="true" tabindex="-1"></a><span class="fu">PLOT.PCA</span>(DK.PCA, <span class="at">map=</span><span class="st">&quot;asymmetric&quot;</span>, <span class="at">rescale=</span><span class="fl">0.5</span>, <span class="at">axes.inv=</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>), <span class="at">dim=</span><span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">3</span>))</span></code></pre></div>
+<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-204-1.png" width="100%" style="display: block; margin: auto;" /></p>
 </div>
 </div>
 <div id="correspondence-analysis" class="section level2" number="8.4">
@@ -993,7 +995,7 @@ respective questions on first CA axis.</p>
 (eigenvalue). Higher correlation achieved by opposing those with strong
 opinions against those with moderate ones.</p>
 <p><strong>Creating cross-tabulation in r:</strong></p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb24-1"><a href="advanced-statistical-methods.html#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">my_table</span>(<span class="fu">head</span>(age.V18.US))</span></code></pre></div>
+<div class="sourceCode" id="cb397"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb397-1"><a href="advanced-statistical-methods.html#cb397-1" aria-hidden="true" tabindex="-1"></a><span class="fu">my_table</span>(<span class="fu">head</span>(age.V18.US))</span></code></pre></div>
 <table class="table" style="width: auto !important; ">
 <thead>
 <tr>
@@ -1159,9 +1161,9 @@ does not provide a interaction.</p>
 <h4><span class="header-section-number">8.4.0.2</span> Plot</h4>
 <p>The red points are the vertices of a simplex in the full space in which
 these row profiles lie.</p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb25-1"><a href="advanced-statistical-methods.html#cb25-1" aria-hidden="true" tabindex="-1"></a>my.ca <span class="ot">&lt;-</span> <span class="fu">ca</span>(age.V18.US)</span>
-<span id="cb25-2"><a href="advanced-statistical-methods.html#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(my.ca, <span class="at">main=</span><span class="st">&quot;One parent can bring up a child as well as two parents together&quot;</span>, <span class="at">mass=</span><span class="fu">c</span>(<span class="cn">TRUE</span>,<span class="cn">TRUE</span>))</span></code></pre></div>
-<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-18-1.png" width="100%" /></p>
+<div class="sourceCode" id="cb398"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb398-1"><a href="advanced-statistical-methods.html#cb398-1" aria-hidden="true" tabindex="-1"></a>my.ca <span class="ot">&lt;-</span> <span class="fu">ca</span>(age.V18.US)</span>
+<span id="cb398-2"><a href="advanced-statistical-methods.html#cb398-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(my.ca, <span class="at">main=</span><span class="st">&quot;One parent can bring up a child as well as two parents together&quot;</span>, <span class="at">mass=</span><span class="fu">c</span>(<span class="cn">TRUE</span>,<span class="cn">TRUE</span>))</span></code></pre></div>
+<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-208-1.png" width="100%" /></p>
 <p>The <strong>inertia</strong> measures the amount of variance in the table or how much
 association between the columns and the rows variables.’</p>
 <p>Inertia = <span class="math inline">\(x^2/n=0\)</span></p>
@@ -1203,7 +1205,7 @@ between 0-1 = <span class="math inline">\(C_{max} = \sqrt{\frac{K}{1+K}}\)</span
 </tr>
 </tbody>
 </table>
-<div class="sourceCode" id="cb26"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb26-1"><a href="advanced-statistical-methods.html#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(my.ca)</span></code></pre></div>
+<div class="sourceCode" id="cb399"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb399-1"><a href="advanced-statistical-methods.html#cb399-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(my.ca)</span></code></pre></div>
 <pre><code>
 Principal inertias (eigenvalues):
 

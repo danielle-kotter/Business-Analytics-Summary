@@ -48,7 +48,7 @@ multicollinearity
 variance-inflation-factors
 anova
 linearizing-variables
-structure-equation-models
+structural-equation-models
 path-analysis-structural-equations
 coding-the-model
 covariance
@@ -118,4 +118,3 @@ logistic-regressions
 sensitivity-vs-specificity
 conjoint-analytics
 random-utility-model
-structural-equation-models
