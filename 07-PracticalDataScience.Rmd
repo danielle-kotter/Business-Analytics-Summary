@@ -6,7 +6,7 @@ editor_options:
 
 # Practical Data Science
 
-*Class given by: Alberto Santini* \
+*Class given by: Alberto Santini* \ 
 
 *Literature used: [@GJames2013], [@THastie2017]*
 

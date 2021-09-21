@@ -1,6 +1,7 @@
 # Simple regressions
 
-*Class given by: Walter Garcia-Fontes* \
+*Class given by: Walter Garcia-Fontes*
+
 *Literature used: [@JCurwin2013]*
 
 ```{r include=FALSE}
@@ -12,9 +13,9 @@ d <- rep(0,50)
 
 ## Basics regressions
 
-Regressions, correlation and dummy's
+> Regressions, correlation and dummy's
 
-Y = Dependent  
+Y = Dependent\
 X = Explanatory
 
 **Correlation**
@@ -25,20 +26,19 @@ cor(x, y)
 
 **Creating the regression:**
 
-1. To plot the regression model
-2. Evaluates the coefficient of the model
-3. Only the first colum estimattion 
+1.  To plot the regression model
+2.  Evaluates the coefficient of the model
+3.  Only the first column estimation
 
 ```{r}
-model <- lm(y~x, data = data)
+lm(y ~ x, data = data)
 summary(model)$coef
-est <- summary(model)$coef[,1]
+summary(model)$coef[,1]
 ```
-
 
 ### Summarizing regressions:
 
-1. Using stargazer package
+1.  Using stargazer package
 
 ```{r message=FALSE, warning=FALSE}
 library(stargazer)
@@ -54,13 +54,31 @@ stargazer(model1, model2, type="text")
 
 ```
 
-2. Using summary function:
+2.  Using summary function:
 
 ```{r}
 summary(lm(y~x))
 ```
 
-Regressions
+**Confidence interval around slope**
+
+```{r}
+confint(lm(y~x), level=0.95)
+```
+
+**Sub-sampling regression**
+
+Specify dimensions [,]. First is row. Column, second.
+
+1.  Selects the rows where age is larger than 5.
+2.  Lower than 5.
+
+```{r}
+sub1 <- summary(lm(y~x, data=data["speed">=5,]))
+sub2 <- summary(lm(y~x, data=data["speed"<=5,]))
+```
+
+### Visualizing model
 
 **Plotting regression**
 
@@ -83,49 +101,21 @@ plot(y~x,data=data,
 abline(lm(y~x, data=data), col="blue")
 ```
 
-**Confidence interval around slope**
+#### Regression + dummy
 
-```{r}
-confint(lm(y~x), level=0.95)
-```
-
-**Sub-sampling regression**
-
-Specify dimensions [,]. 
-First is row. Column, second. 
-
-1. Selects the rows where age is larger than 5.
-2. Lower than 5.
-
-```{r}
-sub1 <- summary(lm(y~x, data=data["speed">=5,]))
-sub2 <- summary(lm(y~x, data=data["speed"<=5,]))
-```
-
-
-### Dummy variables, diff in means
-
-
-### Regression + dummy
-
-Y = Constant0 + B0 * X - Diff in means + B1 * variable1*2
-
+Y = Constant0 + B0 \* X - Diff in means + B1 \* variable1\*2
 
 **Omitting the intercept:**
 
-Shows the means separately and not the difference between means. Tests whether the expected counts are different from zero. 
+Shows the means separately and not the difference between means. Tests whether the expected counts are different from zero.
 
 ```{r}
 lm(y ~ x - 1, data = data)
 ```
 
-Reorders group, to specific value to be first.
- 
- variable2 <- relevel(variable, "C")
+## Prediction
 
-## Prediction  
-
-``` {r}
+```{r}
 model <- lm(y~x)
 
 newdata <- data.frame(variablename = c(1:50))
@@ -134,8 +124,8 @@ pred <- predict(model, newdata = newdata)
 
 **Prediction confidence interval:**
 
-1. One value
-2. Multiple values from a existing data frame
+1.  One value
+2.  Multiple values from a existing data frame
 
 ```{r}
 pred1 <- predict(model, data.frame(valuename = x), interval = "confidence", level=0.95)
@@ -144,18 +134,17 @@ pred2 <- predict(model, newdata = newdata, interval = "confidence", level=0.95)
 
 **Prediction interval**
 
-1. One value
-2. Multiple values from a existing data frame
+1.  One value
+2.  Multiple values from a existing data frame
 
 ```{r}
 pred1 <- predict(model, data.frame(valuename = x), interval="predict",level=0.95)
 pred2 <- predict(model, newdata, interval="predict",level=0.95)
 ```
 
-
 ### Confidence and prediction plotting
 
-Adds: observed values, fitted line, conf interval, predicted interval
+Adds: observed values, fitted line, confidence interval & predicted interval.
 
 ```{r message=FALSE, warning=FALSE}
 library(HH)
@@ -176,14 +165,14 @@ fit <- lm(y ~ x + d + d, data = data)
 
 pred <- predict(fit, data.frame(VariableX = c(10), Dummy = c(1), Slopedummy = c(10)) )
 ```
- 
-**Confidence interval prediction**  
+
+**Confidence interval prediction**
 
 ```{r}
 fit <- lm(y ~ x + d + d, data = data)
 
 pred <- predict(fit, data.frame(VariableX = c(10), Dummy = c(1), Slopedummy = c(10), interval="confidence"))
-```  
+```
 
 **Prediction interval**
 
@@ -193,13 +182,12 @@ fit <- lm(y ~ x + d + d, data = data)
 pred <- predict(fit, data.frame(VariableX = c(10), Dummy = c(1), Slopedummy = c(10), interval="predict"))
 ```
 
-
 ## Data problems
 
-**Residual plot**
+**Residual plots**
 
 ```{r}
-# residual.plots(fitted(fit), resid(fit), sigma.hat(fit), main="Title")
+plot(fit)
 ```
 
 **Influential measure test**
@@ -207,7 +195,6 @@ pred <- predict(fit, data.frame(VariableX = c(10), Dummy = c(1), Slopedummy = c(
 ```{r}
 im <- influence.measures(fit)
 ```
-
 
 ### Multicollinearity
 
@@ -221,13 +208,15 @@ anova(fit)
 
 ### Variance inflation factors
 
-The variance inflation factor (vif) is $1 / 1−R2$.
-A simple approach to identify collinearity among explanatory variables is the use of variance inflation factors (VIF). It is the ratio of variance in a model with multiple terms, divided by the variance of a model with one term alone. The higher the value, the higher the collinearity. A VIF for a single explanatory variable is obtained using the r-squared value of the regression of that variable against all other explanatory variables: A VIF is calculated for each explanatory variable and those with high values are removed. The definition of ‘high’ is somewhat arbitrary, but values in the range of 5-10 are commonly used for ‘high’. If VIF value exceeding 4.0, or by tolerance less than 0.2 then there is a problem with multicollinearity (Hair et al., 2010). However, it depends on the researcher’s criteria. The lower the vif the better, but you shouldn’t be too concerned as long as your VIF is not greater than 10.
+The variance inflation factor (VIF) is $1 / 1−R2$.
+
+>
+A simple approach to identify collinearity among explanatory variables is the use of variance inflation factors (VIF). It is the ratio of variance in a model with multiple terms, divided by the variance of a model with one term alone. The higher the value, the higher the collinearity. A VIF for a single explanatory variable is obtained using the r-squared value of the regression of that variable against all other explanatory variables: A VIF is calculated for each explanatory variable and those with high values are removed. The definition of 'high' is somewhat arbitrary, but values in the range of 5-10 are commonly used for 'high'. If VIF value exceeding 4.0, or by tolerance less than 0.2 then there is a problem with multicollinearity [\@JHair2013]. However, it depends on the researcher's criteria. The lower the VIF the better, but you shouldn't be too concerned as long as your VIF is not greater than 10.
+>
 
 ```{r}
 vif(fit)
 ```
-
 
 ### ANOVA
 
@@ -238,7 +227,7 @@ res.aov <- aov(y ~ x, data = data)
 summary(res.aov)
 ```
 
-**Two-way:** more than two factors 
+**Two-way:** more than two factors
 
 ```{r}
 res.aov <- aov(y ~ x + d, data = data)
@@ -254,24 +243,13 @@ summary(res.aov)
 
 **Three-way**
 
-1. Three way
-2. With interaction
+1.  Three way
+2.  With interaction
 
 ```{r}
 summary(aov(y ~ x + d, data=data))
 summary(aov(y ~ x + d, data=data))
 ```
-
-**MANOVA**: Multiple factors
-
-1. Test in difference
-2. Test separately
-
-
-test_manova <- manova(cbind(y, d) ~ x, data = data)
-summary(test_manova)
-summary.aov(test_manova)
-
 
 ### Linearizing variables
 

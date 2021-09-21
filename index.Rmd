@@ -8,7 +8,7 @@ bibliography:
 - packages.bib
 biblio-style: apalike
 link-citations: yes
-description: This is a summary of code learned throughout several courses of my MSc in management with a specialization in Business Analytics.
+description: This is a summary of code & theory studied throughout several courses of my MSc in management with a specialization in Business Analytics.
 ---
 
 ```{r setup1, include=FALSE}
@@ -19,7 +19,7 @@ source("www/Table_Design.R")
 
 # Preface {.unnumbered}
 
-The following document has been prepared to have a prompt link to the code learned and used throughout several projects in the last year. As a beginner in programming, it is always useful to have input accessible to avoid having to look through numerous repositories.
+The following document has been prepared to have a prompt link to the code & theory studied and applied throughout several projects in the MSc in management with a specialization in Business Analytics. As a beginner in programming, it is always useful to have input accessible to avoid having to look through numerous repositories.
 
 ![](MIT-Coding-Brain-01-press_0.jpeg){width="402"}
 

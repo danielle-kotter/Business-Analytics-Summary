@@ -118,3 +118,5 @@ logistic-regressions
 sensitivity-vs-specificity
 conjoint-analytics
 random-utility-model
+r-data-visualization
+visualizing-model
