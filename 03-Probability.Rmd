@@ -10,7 +10,7 @@ editor_options:
 knitr::opts_chunk$set(echo = TRUE, class.source = "watch-out", options(scipen=999), out.width = "100%", comment = "", warning=FALSE, reticulate.repl.quiet = FALSE) 
 ```
 
-*Class given by: Walter Garcia-Fontes* \ 
+*Class given by: Walter Garcia-Fontes* \  
 *Literature used: [@JCurwin2013]*
 
 ```{r, message=FALSE, warning=FALSE}
@@ -213,10 +213,6 @@ four <- diff(pnorm(c(X,Y), mu, sd, lower.tail = FALSE))
 lower.tail = TRUE: The area of the left side of the slope\
 lower.tail = FALSE: The area of the right side of the slope
 
-**Confidence interval for normal distribution**
-
-z.test(x, sd=sigma) binconf(x = x, n = n) \<- proportions
-t.test(variable) \<- t-distribution for conf.inv
 
 #### Plotting the normal distribution
 
