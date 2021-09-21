@@ -10,7 +10,7 @@ latex
 miscellaneous
 removing-infinite-na-values
 transforming-variable-types
-basic-charts
+r-data-visualization
 applied-statistics
 probability
 bayes-theorem
@@ -37,7 +37,7 @@ p-value
 simple-regressions
 basics-regressions
 summarizing-regressions
-dummy-variables-diff-in-means
+visualizing-model
 regression-dummy
 prediction
 confidence-and-prediction-plotting
@@ -112,11 +112,8 @@ multiple-correspondence-analysis
 subset-analysis-ca
 multiple-linear-regression-classification-trees
 regression-tree
-text-analytics
 marketing-analytics
 logistic-regressions
 sensitivity-vs-specificity
 conjoint-analytics
 random-utility-model
-r-data-visualization
-visualizing-model
