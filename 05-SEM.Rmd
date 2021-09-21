@@ -48,7 +48,6 @@ In the structural equation model we can effectively avoid endogeneity.
 ![](images/paste-948ED17C.png){width="81"}
 
 -   Double handed arrows = indicate co-variances or correlations without a causal interpretation.
-
 -   Double handed arrow between two independent variables = they are correlated to each other.
 
 ![](images/paste-D2D686C6.png){width="350"}
@@ -297,4 +296,3 @@ X \~\~ X = Gives two explanatory variables the possibility to covariance
 Equality with error variances (multiple independent variables) X\~\~X \*A = setting a restriction.
 
 **Auto regressive =** one variables keeps impacting the following. For example: 2011 impacts 2012 which impacts 2013 etc. In this case, the variables need to be set to allow for correlation.
-
