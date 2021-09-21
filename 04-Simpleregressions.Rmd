@@ -1,6 +1,6 @@
 # Simple regressions
 
-*Class given by: Walter Garcia-Fontes*
+*Class given by: Walter Garcia-Fontes* \ 
 
 *Literature used: [@JCurwin2013]*
 
@@ -31,7 +31,7 @@ cor(x, y)
 3.  Only the first column estimation
 
 ```{r}
-lm(y ~ x, data = data)
+model <- lm(y ~ x, data = data)
 summary(model)$coef
 summary(model)$coef[,1]
 ```
