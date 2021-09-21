@@ -13,6 +13,10 @@ source("www/Table_Design.R")
 
 # Advanced Statistical Methods
 
+```{r, echo=FALSE}
+knitr::opts_chunk$set(echo = TRUE, class.source = "watch-out", options(scipen=999), out.width = "100%", comment = "", warning=FALSE, reticulate.repl.quiet = FALSE) 
+```
+
 *Class given by: Michael Greenacre*
 
 ```{r, warning=FALSE, comment=""}
