@@ -489,7 +489,7 @@ Toronto     8000             NaN</code></pre>
 4       24.59  3.61  Female     No  Sun  Dinner     4</code></pre>
 <div class="sourceCode" id="cb258"><pre class="sourceCode python watch-out"><code class="sourceCode python"><span id="cb258-1"><a href="basics-python.html#cb258-1" aria-hidden="true" tabindex="-1"></a>sns.barplot(x <span class="op">=</span> <span class="st">&#39;day&#39;</span>, y <span class="op">=</span> <span class="st">&#39;total_bill&#39;</span>, hue <span class="op">=</span> <span class="st">&#39;sex&#39;</span>, data <span class="op">=</span> tips, palette <span class="op">=</span> <span class="st">&#39;Blues&#39;</span>, edgecolor <span class="op">=</span> <span class="st">&#39;w&#39;</span>)</span>
 <span id="cb258-2"><a href="basics-python.html#cb258-2" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
-<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-128-1.png" width="100%" /></p>
+<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-132-1.png" width="100%" /></p>
 <div class="sourceCode" id="cb259"><pre class="sourceCode python watch-out"><code class="sourceCode python"><span id="cb259-1"><a href="basics-python.html#cb259-1" aria-hidden="true" tabindex="-1"></a>tips.groupby([<span class="st">&#39;day&#39;</span>,<span class="st">&#39;sex&#39;</span>]).mean()</span></code></pre></div>
 <pre><code>             total_bill       tip      size
 day  sex                                   
@@ -758,87 +758,87 @@ log(10)_of_mpg     0.98      -0.83  ...           1.00            1.00
 <span id="cb315-3"><a href="basics-python.html#cb315-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb315-4"><a href="basics-python.html#cb315-4" aria-hidden="true" tabindex="-1"></a>sns.boxplot(data<span class="op">=</span>tips, x<span class="op">=</span><span class="st">&#39;sex&#39;</span>, y<span class="op">=</span><span class="st">&#39;tip&#39;</span>)</span>
 <span id="cb315-5"><a href="basics-python.html#cb315-5" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
-<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-144-1.png" width="100%" /></p>
+<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-148-1.png" width="100%" /></p>
 <div class="sourceCode" id="cb316"><pre class="sourceCode python watch-out"><code class="sourceCode python"><span id="cb316-1"><a href="basics-python.html#cb316-1" aria-hidden="true" tabindex="-1"></a>sns.boxplot(data<span class="op">=</span>tips, x<span class="op">=</span><span class="st">&#39;sex&#39;</span>, y<span class="op">=</span><span class="st">&#39;tip&#39;</span>, color<span class="op">=</span><span class="st">&#39;black&#39;</span>, boxprops<span class="op">=</span><span class="bu">dict</span>(alpha<span class="op">=</span><span class="fl">.6</span>))</span>
 <span id="cb316-2"><a href="basics-python.html#cb316-2" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
-<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-145-1.png" width="100%" /></p>
+<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-149-1.png" width="100%" /></p>
 <div class="sourceCode" id="cb317"><pre class="sourceCode python watch-out"><code class="sourceCode python"><span id="cb317-1"><a href="basics-python.html#cb317-1" aria-hidden="true" tabindex="-1"></a>sns.boxplot(x<span class="op">=</span><span class="st">&quot;day&quot;</span>, y<span class="op">=</span><span class="st">&quot;total_bill&quot;</span>, hue<span class="op">=</span><span class="st">&quot;smoker&quot;</span>,</span>
 <span id="cb317-2"><a href="basics-python.html#cb317-2" aria-hidden="true" tabindex="-1"></a>  data<span class="op">=</span>tips, palette<span class="op">=</span><span class="st">&quot;Set3&quot;</span>)</span>
 <span id="cb317-3"><a href="basics-python.html#cb317-3" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
-<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-145-2.png" width="100%" /></p>
+<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-149-2.png" width="100%" /></p>
 <div class="sourceCode" id="cb318"><pre class="sourceCode python watch-out"><code class="sourceCode python"><span id="cb318-1"><a href="basics-python.html#cb318-1" aria-hidden="true" tabindex="-1"></a>tips[<span class="st">&#39;weekend&#39;</span>] <span class="op">=</span> tips.day.isin([<span class="st">&#39;Sat&#39;</span>, <span class="st">&#39;Sun&#39;</span>])</span>
 <span id="cb318-2"><a href="basics-python.html#cb318-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb318-3"><a href="basics-python.html#cb318-3" aria-hidden="true" tabindex="-1"></a>sns.boxplot(data<span class="op">=</span>tips, x<span class="op">=</span><span class="st">&#39;day&#39;</span>, y<span class="op">=</span><span class="st">&#39;tip&#39;</span>, hue<span class="op">=</span><span class="st">&#39;weekend&#39;</span>, dodge<span class="op">=</span><span class="va">False</span>)</span>
 <span id="cb318-4"><a href="basics-python.html#cb318-4" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
-<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-146-1.png" width="100%" /></p>
+<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-150-1.png" width="100%" /></p>
 <div class="sourceCode" id="cb319"><pre class="sourceCode python watch-out"><code class="sourceCode python"><span id="cb319-1"><a href="basics-python.html#cb319-1" aria-hidden="true" tabindex="-1"></a>sns.catplot(data<span class="op">=</span>tips, x<span class="op">=</span><span class="st">&#39;smoker&#39;</span>, y<span class="op">=</span><span class="st">&#39;tip&#39;</span>, hue<span class="op">=</span><span class="st">&#39;sex&#39;</span>, col<span class="op">=</span><span class="st">&#39;time&#39;</span>, kind<span class="op">=</span><span class="st">&#39;box&#39;</span>)<span class="op">;</span></span>
 <span id="cb319-2"><a href="basics-python.html#cb319-2" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
-<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-147-1.png" width="100%" /></p>
+<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-151-1.png" width="100%" /></p>
 <div id="other-categorical-plots" class="section level3" number="6.5.1">
 <h3><span class="header-section-number">6.5.1</span> Other categorical plots</h3>
 <div class="sourceCode" id="cb320"><pre class="sourceCode python watch-out"><code class="sourceCode python"><span id="cb320-1"><a href="basics-python.html#cb320-1" aria-hidden="true" tabindex="-1"></a>sns.stripplot(data<span class="op">=</span>tips, x<span class="op">=</span><span class="st">&#39;sex&#39;</span>, y<span class="op">=</span><span class="st">&#39;tip&#39;</span>)<span class="op">;</span></span>
 <span id="cb320-2"><a href="basics-python.html#cb320-2" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
-<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-148-1.png" width="100%" /></p>
+<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-152-1.png" width="100%" /></p>
 <div class="sourceCode" id="cb321"><pre class="sourceCode python watch-out"><code class="sourceCode python"><span id="cb321-1"><a href="basics-python.html#cb321-1" aria-hidden="true" tabindex="-1"></a>sns.swarmplot(data<span class="op">=</span>tips, x<span class="op">=</span><span class="st">&#39;sex&#39;</span>, y<span class="op">=</span><span class="st">&#39;tip&#39;</span>)<span class="op">;</span></span>
 <span id="cb321-2"><a href="basics-python.html#cb321-2" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
-<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-149-1.png" width="100%" /></p>
+<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-153-1.png" width="100%" /></p>
 <div class="sourceCode" id="cb322"><pre class="sourceCode python watch-out"><code class="sourceCode python"><span id="cb322-1"><a href="basics-python.html#cb322-1" aria-hidden="true" tabindex="-1"></a>sns.swarmplot(data<span class="op">=</span>tips, x<span class="op">=</span><span class="st">&#39;sex&#39;</span>, y<span class="op">=</span><span class="st">&#39;tip&#39;</span>, hue<span class="op">=</span><span class="st">&#39;smoker&#39;</span>)<span class="op">;</span></span>
 <span id="cb322-2"><a href="basics-python.html#cb322-2" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
-<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-149-2.png" width="100%" /></p>
+<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-153-2.png" width="100%" /></p>
 <div class="sourceCode" id="cb323"><pre class="sourceCode python watch-out"><code class="sourceCode python"><span id="cb323-1"><a href="basics-python.html#cb323-1" aria-hidden="true" tabindex="-1"></a>sns.swarmplot(data<span class="op">=</span>tips, x<span class="op">=</span><span class="st">&#39;sex&#39;</span>, y<span class="op">=</span><span class="st">&#39;tip&#39;</span>, hue<span class="op">=</span><span class="st">&#39;smoker&#39;</span>, dodge<span class="op">=</span><span class="va">True</span>)<span class="op">;</span></span>
 <span id="cb323-2"><a href="basics-python.html#cb323-2" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
-<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-149-3.png" width="100%" /></p>
+<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-153-3.png" width="100%" /></p>
 <div class="sourceCode" id="cb324"><pre class="sourceCode python watch-out"><code class="sourceCode python"><span id="cb324-1"><a href="basics-python.html#cb324-1" aria-hidden="true" tabindex="-1"></a>sns.boxplot(data<span class="op">=</span>tips, x<span class="op">=</span><span class="st">&#39;sex&#39;</span>, y<span class="op">=</span><span class="st">&#39;tip&#39;</span>, fliersize<span class="op">=</span><span class="dv">8</span>)</span>
 <span id="cb324-2"><a href="basics-python.html#cb324-2" aria-hidden="true" tabindex="-1"></a>sns.swarmplot(data<span class="op">=</span>tips, x<span class="op">=</span><span class="st">&#39;sex&#39;</span>, y<span class="op">=</span><span class="st">&#39;tip&#39;</span>, color<span class="op">=</span><span class="st">&#39;black&#39;</span>, alpha<span class="op">=</span><span class="fl">0.6</span>)<span class="op">;</span></span>
 <span id="cb324-3"><a href="basics-python.html#cb324-3" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
-<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-150-1.png" width="100%" /></p>
+<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-154-1.png" width="100%" /></p>
 <div class="sourceCode" id="cb325"><pre class="sourceCode python watch-out"><code class="sourceCode python"><span id="cb325-1"><a href="basics-python.html#cb325-1" aria-hidden="true" tabindex="-1"></a>sns.boxenplot(data<span class="op">=</span>tips, x<span class="op">=</span><span class="st">&#39;sex&#39;</span>, y<span class="op">=</span><span class="st">&#39;tip&#39;</span>)<span class="op">;</span></span>
 <span id="cb325-2"><a href="basics-python.html#cb325-2" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
-<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-151-1.png" width="100%" /></p>
+<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-155-1.png" width="100%" /></p>
 <div class="sourceCode" id="cb326"><pre class="sourceCode python watch-out"><code class="sourceCode python"><span id="cb326-1"><a href="basics-python.html#cb326-1" aria-hidden="true" tabindex="-1"></a>sns.boxenplot(data<span class="op">=</span>tips, x<span class="op">=</span><span class="st">&#39;sex&#39;</span>, y<span class="op">=</span><span class="st">&#39;tip&#39;</span>, hue<span class="op">=</span><span class="st">&#39;smoker&#39;</span>)<span class="op">;</span></span>
 <span id="cb326-2"><a href="basics-python.html#cb326-2" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
-<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-151-2.png" width="100%" /></p>
+<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-155-2.png" width="100%" /></p>
 <hr />
 <div class="sourceCode" id="cb327"><pre class="sourceCode python watch-out"><code class="sourceCode python"><span id="cb327-1"><a href="basics-python.html#cb327-1" aria-hidden="true" tabindex="-1"></a>sns.displot(data<span class="op">=</span>tips, x<span class="op">=</span><span class="st">&#39;tip&#39;</span>)<span class="op">;</span></span>
 <span id="cb327-2"><a href="basics-python.html#cb327-2" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
-<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-152-1.png" width="100%" /></p>
+<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-156-1.png" width="100%" /></p>
 <div class="sourceCode" id="cb328"><pre class="sourceCode python watch-out"><code class="sourceCode python"><span id="cb328-1"><a href="basics-python.html#cb328-1" aria-hidden="true" tabindex="-1"></a>sns.displot(data<span class="op">=</span>tips, x<span class="op">=</span><span class="st">&#39;tip&#39;</span>, kind<span class="op">=</span><span class="st">&#39;kde&#39;</span>)<span class="op">;</span></span>
 <span id="cb328-2"><a href="basics-python.html#cb328-2" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
-<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-152-2.png" width="100%" /></p>
+<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-156-2.png" width="100%" /></p>
 <p><strong>Multiple plots</strong></p>
 <div class="sourceCode" id="cb329"><pre class="sourceCode python watch-out"><code class="sourceCode python"><span id="cb329-1"><a href="basics-python.html#cb329-1" aria-hidden="true" tabindex="-1"></a>fig, axes <span class="op">=</span> plt.subplots(nrows<span class="op">=</span><span class="dv">1</span>, ncols<span class="op">=</span><span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">12</span>,<span class="dv">6</span>))</span>
 <span id="cb329-2"><a href="basics-python.html#cb329-2" aria-hidden="true" tabindex="-1"></a>sns.boxenplot(data<span class="op">=</span>tips, x<span class="op">=</span><span class="st">&#39;sex&#39;</span>, y<span class="op">=</span><span class="st">&#39;tip&#39;</span>, ax<span class="op">=</span>axes.flat[<span class="dv">0</span>])<span class="op">;</span></span>
 <span id="cb329-3"><a href="basics-python.html#cb329-3" aria-hidden="true" tabindex="-1"></a>sns.violinplot(data<span class="op">=</span>tips, x<span class="op">=</span><span class="st">&#39;sex&#39;</span>, y<span class="op">=</span><span class="st">&#39;tip&#39;</span>, ax<span class="op">=</span>axes.flat[<span class="dv">1</span>])<span class="op">;</span></span>
 <span id="cb329-4"><a href="basics-python.html#cb329-4" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
-<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-153-1.png" width="100%" /></p>
+<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-157-1.png" width="100%" /></p>
 <p><strong>Multidimensional KDE for numeric variables</strong></p>
 <div class="sourceCode" id="cb330"><pre class="sourceCode python watch-out"><code class="sourceCode python"><span id="cb330-1"><a href="basics-python.html#cb330-1" aria-hidden="true" tabindex="-1"></a>plt.rcParams[<span class="st">&#39;figure.figsize&#39;</span>] <span class="op">=</span> (<span class="dv">10</span>,<span class="dv">8</span>)</span>
 <span id="cb330-2"><a href="basics-python.html#cb330-2" aria-hidden="true" tabindex="-1"></a>sns.kdeplot(data<span class="op">=</span>tips, x<span class="op">=</span><span class="st">&#39;tip&#39;</span>, y<span class="op">=</span><span class="st">&#39;total_bill&#39;</span>, shade<span class="op">=</span><span class="va">True</span>, cbar<span class="op">=</span><span class="va">True</span>)<span class="op">;</span></span>
 <span id="cb330-3"><a href="basics-python.html#cb330-3" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
-<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-154-1.png" width="100%" /></p>
+<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-158-1.png" width="100%" /></p>
 <div class="sourceCode" id="cb331"><pre class="sourceCode python watch-out"><code class="sourceCode python"><span id="cb331-1"><a href="basics-python.html#cb331-1" aria-hidden="true" tabindex="-1"></a>sns.histplot(d.mpg)<span class="op">;</span> <span class="co"># Histogram</span></span>
 <span id="cb331-2"><a href="basics-python.html#cb331-2" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
-<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-155-1.png" width="100%" /></p>
+<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-159-1.png" width="100%" /></p>
 <div class="sourceCode" id="cb332"><pre class="sourceCode python watch-out"><code class="sourceCode python"><span id="cb332-1"><a href="basics-python.html#cb332-1" aria-hidden="true" tabindex="-1"></a>sns.histplot(d.mpg, bins<span class="op">=</span><span class="dv">20</span>)<span class="op">;</span> <span class="co"># with binwidth</span></span>
 <span id="cb332-2"><a href="basics-python.html#cb332-2" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
-<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-156-1.png" width="100%" /></p>
+<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-160-1.png" width="100%" /></p>
 <div class="sourceCode" id="cb333"><pre class="sourceCode python watch-out"><code class="sourceCode python"><span id="cb333-1"><a href="basics-python.html#cb333-1" aria-hidden="true" tabindex="-1"></a>sns.histplot(data<span class="op">=</span>d, x<span class="op">=</span><span class="st">&#39;mpg&#39;</span>, bins<span class="op">=</span><span class="dv">20</span>)<span class="op">;</span> </span>
 <span id="cb333-2"><a href="basics-python.html#cb333-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb333-3"><a href="basics-python.html#cb333-3" aria-hidden="true" tabindex="-1"></a>sns.histplot(data<span class="op">=</span>d, x<span class="op">=</span><span class="st">&#39;mpg&#39;</span>, bins<span class="op">=</span><span class="dv">20</span>, cumulative<span class="op">=</span><span class="va">True</span>)<span class="op">;</span> <span class="co"># cumulative values</span></span></code></pre></div>
-<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-156-2.png" width="100%" /></p>
+<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-160-2.png" width="100%" /></p>
 <div class="sourceCode" id="cb334"><pre class="sourceCode python watch-out"><code class="sourceCode python"><span id="cb334-1"><a href="basics-python.html#cb334-1" aria-hidden="true" tabindex="-1"></a><span class="co">#d.origin = pd.Categorical(d.origin.replace({1: &#39;america&#39;, 2:&#39;europe&#39; 3: &#39;japan&#39;}))</span></span>
 <span id="cb334-2"><a href="basics-python.html#cb334-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb334-3"><a href="basics-python.html#cb334-3" aria-hidden="true" tabindex="-1"></a>sns.relplot(data<span class="op">=</span>d, x<span class="op">=</span><span class="st">&#39;hp&#39;</span>, y<span class="op">=</span><span class="st">&#39;mpg&#39;</span>, hue<span class="op">=</span><span class="st">&#39;origin&#39;</span>, palette<span class="op">=</span><span class="st">&#39;tab10&#39;</span>)</span></code></pre></div>
-<pre><code>&lt;seaborn.axisgrid.FacetGrid object at 0x7fe2065184a8&gt;</code></pre>
+<pre><code>&lt;seaborn.axisgrid.FacetGrid object at 0x7fbd273d8b00&gt;</code></pre>
 <div class="sourceCode" id="cb336"><pre class="sourceCode python watch-out"><code class="sourceCode python"><span id="cb336-1"><a href="basics-python.html#cb336-1" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
-<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-157-1.png" width="100%" /></p>
+<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-161-1.png" width="100%" /></p>
 <div class="sourceCode" id="cb337"><pre class="sourceCode python watch-out"><code class="sourceCode python"><span id="cb337-1"><a href="basics-python.html#cb337-1" aria-hidden="true" tabindex="-1"></a>corr <span class="op">=</span> d.corr()</span>
 <span id="cb337-2"><a href="basics-python.html#cb337-2" aria-hidden="true" tabindex="-1"></a>sns.heatmap(corr) <span class="co"># simple</span></span>
 <span id="cb337-3"><a href="basics-python.html#cb337-3" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
-<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-158-1.png" width="100%" /></p>
+<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-162-1.png" width="100%" /></p>
 <div class="sourceCode" id="cb338"><pre class="sourceCode python watch-out"><code class="sourceCode python"><span id="cb338-1"><a href="basics-python.html#cb338-1" aria-hidden="true" tabindex="-1"></a>sns.heatmap(corr, cmap<span class="op">=</span>plt.cm.RdYlGn, annot<span class="op">=</span><span class="va">True</span>, linewidths<span class="op">=</span><span class="dv">1</span>, square<span class="op">=</span><span class="va">True</span>, vmin<span class="op">=-</span><span class="dv">1</span>, vmax<span class="op">=</span><span class="dv">1</span>) <span class="co"># designed</span></span>
 <span id="cb338-2"><a href="basics-python.html#cb338-2" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
-<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-158-2.png" width="100%" /></p>
+<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-162-2.png" width="100%" /></p>
 </div>
 <div id="preparing-the-data" class="section level3" number="6.5.2">
 <h3><span class="header-section-number">6.5.2</span> Preparing the data</h3>

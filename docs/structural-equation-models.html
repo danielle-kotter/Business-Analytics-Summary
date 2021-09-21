@@ -438,7 +438,7 @@ Variances:
 <span id="cb207-2"><a href="structural-equation-models.html#cb207-2" aria-hidden="true" tabindex="-1"></a><span class="at">weighted =</span> <span class="cn">FALSE</span>, <span class="at">sizeInt =</span> <span class="dv">4</span>, <span class="at">sizeMan =</span> <span class="dv">5</span>,</span>
 <span id="cb207-3"><a href="structural-equation-models.html#cb207-3" aria-hidden="true" tabindex="-1"></a><span class="at">edge.label.cex =</span> <span class="fl">1.3</span>, <span class="at">asize =</span> <span class="dv">2</span>)</span>
 <span id="cb207-4"><a href="structural-equation-models.html#cb207-4" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span>(<span class="st">&quot;SEM path&quot;</span>, <span class="at">line =</span> <span class="dv">3</span>)</span></code></pre></div>
-<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-103-1.png" width="100%" /></p>
+<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-106-1.png" width="100%" /></p>
 <p><em>“std” =</em> standardizing the variables</p>
 <p><em>“est” =</em> true estimation</p>
 <p><em>style=“ram” =</em> to get circles around the measurement arrows</p>
@@ -451,7 +451,7 @@ Variances:
 <span id="cb208-6"><a href="structural-equation-models.html#cb208-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb208-7"><a href="structural-equation-models.html#cb208-7" aria-hidden="true" tabindex="-1"></a>fit <span class="ot">&lt;-</span> <span class="fu">sem</span>(model, <span class="at">data =</span> iris, <span class="at">sample.cov =</span> S, <span class="at">sample.nobs =</span> <span class="dv">122</span>)</span>
 <span id="cb208-8"><a href="structural-equation-models.html#cb208-8" aria-hidden="true" tabindex="-1"></a><span class="fu">semPaths</span>(fit, <span class="st">&quot;std&quot;</span>, <span class="at">sizeInt =</span> <span class="dv">4</span>, <span class="at">sizeMan =</span> <span class="dv">3</span>, <span class="at">edge.label.cex =</span> <span class="dv">1</span>, <span class="at">asize=</span><span class="dv">3</span>, <span class="at">weighted=</span><span class="cn">TRUE</span>, <span class="at">exoCov =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
-<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-104-1.png" width="100%" /></p>
+<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-107-1.png" width="100%" /></p>
 <p><br />
 <strong>Testing the model</strong></p>
 <div class="sourceCode" id="cb209"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb209-1"><a href="structural-equation-models.html#cb209-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fitMeasures</span>(fit)[ <span class="fu">c</span>(<span class="st">&quot;chisq&quot;</span>,<span class="st">&quot;df&quot;</span>, <span class="st">&quot;pvalue&quot;</span> ,<span class="st">&quot;rmsea&quot;</span>)]</span></code></pre></div>
@@ -522,7 +522,7 @@ variable3 0.15670560 0.9841531 1.2142232</code></pre>
 <p><img src="images/paste-3355EB34.png" /></p>
 <p><strong>Option 2: based on the standardized path diagram</strong></p>
 <p>The square of the standardized loading is the reliability of the variable. Example:</p>
-<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-110-1.png" width="100%" /></p>
+<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-113-1.png" width="100%" /></p>
 <p>Here the reliability of the variable distance (dst) = <span class="math inline">\(0.35 ^ 2 = 0.12 = k\)</span></p>
 <p>____________________________________________________</p>
 <p><strong>Testing the model</strong></p>

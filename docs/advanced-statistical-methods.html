@@ -853,7 +853,7 @@ USA
 <div class="sourceCode" id="cb387"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb387-1"><a href="advanced-statistical-methods.html#cb387-1" aria-hidden="true" tabindex="-1"></a>DK.clust <span class="ot">&lt;-</span> <span class="fu">hclust</span>(<span class="fu">as.dist</span>(table))</span>
 <span id="cb387-2"><a href="advanced-statistical-methods.html#cb387-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(DK.clust) <span class="sc">+</span></span>
 <span id="cb387-3"><a href="advanced-statistical-methods.html#cb387-3" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> <span class="dv">6</span>, <span class="at">col=</span><span class="st">&quot;red&quot;</span>) </span></code></pre></div>
-<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-194-1.png" width="100%" /></p>
+<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-200-1.png" width="100%" /></p>
 <pre><code>integer(0)</code></pre>
 <hr />
 </div>
@@ -861,7 +861,7 @@ USA
 <h4><span class="header-section-number">8.1.1.2</span> Average linkage</h4>
 <div class="sourceCode" id="cb389"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb389-1"><a href="advanced-statistical-methods.html#cb389-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">hclust</span>(<span class="fu">as.dist</span>(table), <span class="at">method=</span><span class="st">&quot;average&quot;</span>), <span class="at">main=</span><span class="st">&quot;Average linkage&quot;</span>) <span class="sc">+</span></span>
 <span id="cb389-2"><a href="advanced-statistical-methods.html#cb389-2" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> <span class="dv">5</span>, <span class="at">col=</span><span class="st">&quot;red&quot;</span>) </span></code></pre></div>
-<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-195-1.png" width="100%" /></p>
+<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-201-1.png" width="100%" /></p>
 <pre><code>integer(0)</code></pre>
 <p><strong>Significance clustering</strong></p>
 <p>Total sum of squares (total variance):  </p>
@@ -884,7 +884,7 @@ observations are grouped.</p>
 <div class="sourceCode" id="cb391"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb391-1"><a href="advanced-statistical-methods.html#cb391-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">hclust</span>(<span class="fu">as.dist</span>(table), <span class="at">method=</span><span class="st">&quot;ward.D2&quot;</span>), <span class="at">main=</span><span class="st">&quot;Ward linkage&quot;</span>, </span>
 <span id="cb391-2"><a href="advanced-statistical-methods.html#cb391-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab=</span><span class="st">&quot;Countries&quot;</span>, <span class="at">hang=</span><span class="sc">-</span><span class="dv">1</span>) <span class="sc">+</span></span>
 <span id="cb391-3"><a href="advanced-statistical-methods.html#cb391-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">abline</span>(<span class="at">h =</span> <span class="dv">8</span>, <span class="at">col=</span><span class="st">&quot;red&quot;</span>) </span></code></pre></div>
-<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-196-1.png" width="100%" /></p>
+<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-202-1.png" width="100%" /></p>
 <pre><code>integer(0)</code></pre>
 <p>Ward clustering:</p>
 <p><img src="images/paste-6EC08FDE.png" width="487" /></p>
@@ -938,7 +938,7 @@ there is a range between 0-1. This is classed range-standardized data.</p>
 <li><p>Non-metric MDS</p></li>
 </ul></li>
 </ul>
-<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-197-1.png" width="100%" /></p>
+<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-203-1.png" width="100%" /></p>
 <pre><code>[1] 0.7181458 0.7909089</code></pre>
 <pre><code>[1] 0.09199945</code></pre>
 </div>
@@ -953,11 +953,11 @@ there is a range between 0-1. This is classed range-standardized data.</p>
 <span id="cb396-2"><a href="advanced-statistical-methods.html#cb396-2" aria-hidden="true" tabindex="-1"></a>DK.data <span class="ot">&lt;-</span> <span class="fu">cmdscale</span>(DK.diss, <span class="at">eig=</span><span class="cn">TRUE</span>)</span></code></pre></div>
 <div id="biplots" class="section level3" number="8.3.1">
 <h3><span class="header-section-number">8.3.1</span> Biplots</h3>
-<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-202-1.png" width="100%" style="display: block; margin: auto;" /></p>
-<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-203-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-208-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-209-1.png" width="100%" style="display: block; margin: auto;" /></p>
 <div class="sourceCode" id="cb397"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb397-1"><a href="advanced-statistical-methods.html#cb397-1" aria-hidden="true" tabindex="-1"></a>DK.PCA <span class="ot">&lt;-</span> <span class="fu">PCA</span>(<span class="fu">as.matrix</span>(data), <span class="at">weight=</span><span class="cn">FALSE</span>)</span>
 <span id="cb397-2"><a href="advanced-statistical-methods.html#cb397-2" aria-hidden="true" tabindex="-1"></a><span class="fu">PLOT.PCA</span>(DK.PCA, <span class="at">map=</span><span class="st">&quot;asymmetric&quot;</span>, <span class="at">rescale=</span><span class="fl">0.5</span>, <span class="at">axes.inv=</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>), <span class="at">dim=</span><span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">3</span>))</span></code></pre></div>
-<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-204-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-210-1.png" width="100%" style="display: block; margin: auto;" /></p>
 </div>
 </div>
 <div id="correspondence-analysis" class="section level2" number="8.4">
@@ -1161,7 +1161,7 @@ does not provide a interaction.</p>
 these row profiles lie.</p>
 <div class="sourceCode" id="cb399"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb399-1"><a href="advanced-statistical-methods.html#cb399-1" aria-hidden="true" tabindex="-1"></a>my.ca <span class="ot">&lt;-</span> <span class="fu">ca</span>(age.V18.US)</span>
 <span id="cb399-2"><a href="advanced-statistical-methods.html#cb399-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(my.ca, <span class="at">main=</span><span class="st">&quot;One parent can bring up a child as well as two parents together&quot;</span>, <span class="at">mass=</span><span class="fu">c</span>(<span class="cn">TRUE</span>,<span class="cn">TRUE</span>))</span></code></pre></div>
-<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-208-1.png" width="100%" /></p>
+<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-214-1.png" width="100%" /></p>
 <p>The <strong>inertia</strong> measures the amount of variance in the table or how much
 association between the columns and the rows variables.’</p>
 <p>Inertia = <span class="math inline">\(x^2/n=0\)</span></p>
