@@ -31,9 +31,8 @@ library(knitr)
 **Clustering** has the aim to classify similar objects (cases, people,
 companies, products, texts, advertising campaigns...) into groups so
 that within each group the objects are relatively similar, while the
-groups are different between one another.
-
-This is also called segmentation or partitioning.
+groups are different between one another. This can also be called
+segmentation or partitioning.
 
 The basic concept in clustering, as well as in most areas of statistics
 where there are many variables being measured simultaneously on the
@@ -44,6 +43,8 @@ groups. The same underlying concept is used in several methods of big
 data analysis, for example, finding people in a large database that are
 "close" to you as a client in terms of your purchasing choices.
 
+### Hierarchical clustering
+
 **Three types of hierarchical clustering:**
 
 -   Complete linkage: maximum method: take the maximum level of the two
@@ -51,11 +52,8 @@ data analysis, for example, finding people in a large database that are
 
 -   Average linkage: average method
 
--   Ward linkage
-
-Significance clustering. Visualized by a dendogram.
-
-### Hierachical clustering
+-   Ward linkage: minimum variance method based on the optimal value of
+    an objective function
 
 ```{r, echo=FALSE}
 table <- " 
@@ -77,6 +75,8 @@ my_table(table)
 
 ------------------------------------------------------------------------
 
+### Dendrogram
+
 #### Complete Linkage
 
 ```{r, warning=FALSE, message=FALSE, warning=FALSE}
@@ -96,24 +96,24 @@ abline(h = 5, col="red")
 
 **Significance clustering**
 
-Total sum of squares (total variance):  
+Total sum of squares (total variance):
 
 ![](images/paste-B6C3DE89.png){width="433"}
 
 Each subset has a different mean. We calculate the within-group SS.
 
-ANOVA: We look at the distance between groups and compare it with the
-total sum of square. Then we check if this is significant or if it is
-random.
+**ANOVA:** We look at the distance between groups and compare it with
+the total sum of square. Then we check if this is significant or if it
+is random.
 
 ------------------------------------------------------------------------
 
 #### Ward linkage
 
-Ward clustering: related to variance criteria & ANOVA. Of particular
-interest for all Euclidean and weighted Euclidean distance functions. It
-decomposed the total variance of the points in space into parts:
-"Within-clusters" and "between-clusters".
+Related to variance criteria & ANOVA. Of particular interest for all
+Euclidean and weighted Euclidean distance functions. It decomposed the
+total variance of the points in space into parts: "Within-clusters" and
+"between-clusters".
 
 The idea can be illustrated by analysis-of-variance (ANOVA) for one
 variable (SS= sum[or average] of squared deviations from the mean), when
@@ -127,7 +127,7 @@ plot(hclust(as.dist(table), method="ward.D2"), main="Ward linkage",
 
 Ward clustering:
 
-![](images/paste-6EC08FDE.png){width="487"}
+![](images/paste-6EC08FDE.png){width="426"}
 
 Ward clustering in multivariate space:
 
@@ -137,14 +137,16 @@ For any set of n points in (weighted) Euclidean space:
 
 Centroid = overall mean
 
-![](images/paste-6A8F28D1.png){width="317"}
+![](images/paste-6A8F28D1.png){width="328"}
 
 For successful clustering, we want the between-group variance to be as
 high as possible, which is equivalent to the within-group variance being
 as low as possible. This is what the hierarchical form of ward
-clustering does at each merging step of the dendogram.
+clustering does at each merging step of the dendrogram.
 
-### Non-Hierachical clustering
+------------------------------------------------------------------------
+
+### Non-Hierarchical clustering
 
 K-means: K = the number of groups.
 
@@ -172,6 +174,8 @@ effect is to simply divide each variable by its maximum value. Now,
 there is a range between 0-1. This is classed range-standardized data.
 
 ![](images/paste-34084F7A.png)
+
+------------------------------------------------------------------------
 
 ## Multi-Dimensional Scaling
 
@@ -213,6 +217,8 @@ play3d(spin3d(c(0,0,1)), duration=12)
 rgl.snapshot("view3D.png")
 ```
 
+------------------------------------------------------------------------
+
 ## Principal component analysis
 
 ```{r, comment=FALSE, warning=FALSE}
@@ -247,6 +253,8 @@ for(j in 1:5) boxplot(data[,j] ~ satis$EduLevel, main=colnames(data)[j],
 DK.PCA <- PCA(as.matrix(data), weight=FALSE)
 PLOT.PCA(DK.PCA, map="asymmetric", rescale=0.5, axes.inv=c(-1,1), dim=c(2,3))
 ```
+
+------------------------------------------------------------------------
 
 ## Correspondence analysis
 
@@ -391,6 +399,8 @@ between 0-1 = $C_{max} = \sqrt{\frac{K}{1+K}}$
 summary(my.ca)
 ```
 
+------------------------------------------------------------------------
+
 ### Multiple Correspondence Analysis
 
 Rather than look at the relationships between the demographics and the
@@ -406,7 +416,7 @@ categories are the J and the Q are the variables.
 
 The standard coordinates of the categories are identical
 
-The principal inertias of the Burt analysis are the squares of those of
+The principal inertia of the Burt analysis are the squares of those of
 the indicator matrix: thus the percentages in Burt analysis are higher!
 
 ![](images/paste-62B1D10B.png){width="391"}
@@ -416,12 +426,12 @@ matrices down the diagonal.
 
 Second principle: the "explained inertias" should be explaining the
 off-diagonal matrices (=adjusted inertia). The adjusted singular values
-(square roots of the adjusted inertias) are (where adjusted inertias)
-are (where' s are the inertias of the Burt matrix)
+(square roots of the adjusted inertia) are (where adjusted inertia) are
+(where' s are the inertia of the Burt matrix)
 
 #### Subset analysis CA
 
-CA is subcompositionally incoherent because if we extract a subsection
+CA is sub compositionally incoherent because if we extract a subsection
 of the CA then the profiles will be relative frequencies, relative to
 the total.
 
@@ -446,8 +456,3 @@ variable.
 #### Regression tree
 
 ![](images/paste-32619A7B.png)
-
-
-
-
-

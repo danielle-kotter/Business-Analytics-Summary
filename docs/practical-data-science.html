@@ -51,73 +51,8 @@
 
 <link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
-<script src="libs/kePrint-0.0.1/kePrint.js"></script>
-<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 
 
-<style type="text/css">
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-</style>
 
 <style type="text/css">
 /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
@@ -256,12 +191,16 @@ div.csl-indent {
 <li class="chapter" data-level="6.5" data-path="basics-python.html"><a href="basics-python.html#data-visualization"><i class="fa fa-check"></i><b>6.5</b> Data visualization</a>
 <ul>
 <li class="chapter" data-level="6.5.1" data-path="basics-python.html"><a href="basics-python.html#other-categorical-plots"><i class="fa fa-check"></i><b>6.5.1</b> Other categorical plots</a></li>
-<li class="chapter" data-level="6.5.2" data-path="basics-python.html"><a href="basics-python.html#preparing-the-data"><i class="fa fa-check"></i><b>6.5.2</b> Preparing the data</a></li>
-<li class="chapter" data-level="6.5.3" data-path="basics-python.html"><a href="basics-python.html#creating-the-models"><i class="fa fa-check"></i><b>6.5.3</b> Creating the models</a></li>
 </ul></li>
-<li class="chapter" data-level="6.6" data-path="basics-python.html"><a href="basics-python.html#model-selection"><i class="fa fa-check"></i><b>6.6</b> Model selection</a>
+<li class="chapter" data-level="6.6" data-path="basics-python.html"><a href="basics-python.html#preparing-data-for-modeling"><i class="fa fa-check"></i><b>6.6</b> Preparing data for modeling</a>
 <ul>
-<li class="chapter" data-level="6.6.1" data-path="basics-python.html"><a href="basics-python.html#svc"><i class="fa fa-check"></i><b>6.6.1</b> SVC</a></li>
+<li class="chapter" data-level="6.6.1" data-path="basics-python.html"><a href="basics-python.html#creating-the-models"><i class="fa fa-check"></i><b>6.6.1</b> Creating the models</a></li>
+</ul></li>
+<li class="chapter" data-level="6.7" data-path="basics-python.html"><a href="basics-python.html#model-selection"><i class="fa fa-check"></i><b>6.7</b> Model selection</a>
+<ul>
+<li class="chapter" data-level="6.7.1" data-path="basics-python.html"><a href="basics-python.html#leave-one-out-cross-validation-loocv"><i class="fa fa-check"></i><b>6.7.1</b> <strong>Leave-One-Out Cross validation (LOOCV):</strong></a></li>
+<li class="chapter" data-level="6.7.2" data-path="basics-python.html"><a href="basics-python.html#k-fold-cross-validation"><i class="fa fa-check"></i><b>6.7.2</b> <strong>K-Fold Cross validation</strong></a></li>
+<li class="chapter" data-level="6.7.3" data-path="basics-python.html"><a href="basics-python.html#svc"><i class="fa fa-check"></i><b>6.7.3</b> SVC</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="practical-data-science.html"><a href="practical-data-science.html"><i class="fa fa-check"></i><b>7</b> Practical Data Science</a>
@@ -289,7 +228,7 @@ div.csl-indent {
 <li class="chapter" data-level="7.5.1" data-path="practical-data-science.html"><a href="practical-data-science.html#hold-out-validation-method"><i class="fa fa-check"></i><b>7.5.1</b> Hold-Out validation method</a></li>
 <li class="chapter" data-level="7.5.2" data-path="practical-data-science.html"><a href="practical-data-science.html#standardization"><i class="fa fa-check"></i><b>7.5.2</b> Standardization</a></li>
 <li class="chapter" data-level="7.5.3" data-path="practical-data-science.html"><a href="practical-data-science.html#leave-one-out-cross-validation-method-loocv"><i class="fa fa-check"></i><b>7.5.3</b> Leave-One-Out Cross-validation method (LOOCV):</a></li>
-<li class="chapter" data-level="7.5.4" data-path="practical-data-science.html"><a href="practical-data-science.html#k-fold-cross-validation"><i class="fa fa-check"></i><b>7.5.4</b> K-Fold Cross Validation</a></li>
+<li class="chapter" data-level="7.5.4" data-path="practical-data-science.html"><a href="practical-data-science.html#k-fold-cross-validation-1"><i class="fa fa-check"></i><b>7.5.4</b> K-Fold Cross Validation</a></li>
 </ul></li>
 <li class="chapter" data-level="7.6" data-path="practical-data-science.html"><a href="practical-data-science.html#classification-problems"><i class="fa fa-check"></i><b>7.6</b> Classification Problems</a>
 <ul>
@@ -299,17 +238,14 @@ div.csl-indent {
 <li class="chapter" data-level="7.6.4" data-path="practical-data-science.html"><a href="practical-data-science.html#maximal-margin-classifier"><i class="fa fa-check"></i><b>7.6.4</b> Maximal Margin Classifier</a></li>
 <li class="chapter" data-level="7.6.5" data-path="practical-data-science.html"><a href="practical-data-science.html#support-vector-classifier"><i class="fa fa-check"></i><b>7.6.5</b> Support vector classifier</a></li>
 </ul></li>
-<li class="chapter" data-level="7.7" data-path="practical-data-science.html"><a href="practical-data-science.html#regularization"><i class="fa fa-check"></i><b>7.7</b> Regularization</a>
-<ul>
-<li class="chapter" data-level="7.7.1" data-path="practical-data-science.html"><a href="practical-data-science.html#interpretability"><i class="fa fa-check"></i><b>7.7.1</b> Interpretability</a></li>
-</ul></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="advanced-statistical-methods.html"><a href="advanced-statistical-methods.html"><i class="fa fa-check"></i><b>8</b> Advanced Statistical Methods</a>
 <ul>
 <li class="chapter" data-level="8.1" data-path="advanced-statistical-methods.html"><a href="advanced-statistical-methods.html#clustering"><i class="fa fa-check"></i><b>8.1</b> Clustering</a>
 <ul>
-<li class="chapter" data-level="8.1.1" data-path="advanced-statistical-methods.html"><a href="advanced-statistical-methods.html#hierachical-clustering"><i class="fa fa-check"></i><b>8.1.1</b> Hierachical clustering</a></li>
-<li class="chapter" data-level="8.1.2" data-path="advanced-statistical-methods.html"><a href="advanced-statistical-methods.html#non-hierachical-clustering"><i class="fa fa-check"></i><b>8.1.2</b> Non-Hierachical clustering</a></li>
+<li class="chapter" data-level="8.1.1" data-path="advanced-statistical-methods.html"><a href="advanced-statistical-methods.html#hierarchical-clustering"><i class="fa fa-check"></i><b>8.1.1</b> Hierarchical clustering</a></li>
+<li class="chapter" data-level="8.1.2" data-path="advanced-statistical-methods.html"><a href="advanced-statistical-methods.html#dendrogram"><i class="fa fa-check"></i><b>8.1.2</b> Dendrogram</a></li>
+<li class="chapter" data-level="8.1.3" data-path="advanced-statistical-methods.html"><a href="advanced-statistical-methods.html#non-hierarchical-clustering"><i class="fa fa-check"></i><b>8.1.3</b> Non-Hierarchical clustering</a></li>
 </ul></li>
 <li class="chapter" data-level="8.2" data-path="advanced-statistical-methods.html"><a href="advanced-statistical-methods.html#multi-dimensional-scaling"><i class="fa fa-check"></i><b>8.2</b> Multi-Dimensional Scaling</a></li>
 <li class="chapter" data-level="8.3" data-path="advanced-statistical-methods.html"><a href="advanced-statistical-methods.html#principal-component-analysis"><i class="fa fa-check"></i><b>8.3</b> Principal component analysis</a>
@@ -324,7 +260,7 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="9" data-path="marketing-analytics.html"><a href="marketing-analytics.html"><i class="fa fa-check"></i><b>9</b> Marketing Analytics</a>
 <ul>
-<li class="chapter" data-level="9.1" data-path="marketing-analytics.html"><a href="marketing-analytics.html#logistic-regressions"><i class="fa fa-check"></i><b>9.1</b> Logistic regressions</a>
+<li class="chapter" data-level="9.1" data-path="marketing-analytics.html"><a href="marketing-analytics.html#logistic-regression"><i class="fa fa-check"></i><b>9.1</b> Logistic regression</a>
 <ul>
 <li class="chapter" data-level="9.1.1" data-path="marketing-analytics.html"><a href="marketing-analytics.html#sensitivity-vs-specificity"><i class="fa fa-check"></i><b>9.1.1</b> Sensitivity vs Specificity</a></li>
 </ul></li>
@@ -356,7 +292,7 @@ div.csl-indent {
             <section class="normal" id="section-">
 <div id="practical-data-science" class="section level1" number="7">
 <h1><span class="header-section-number">Chapter - 7</span> Practical Data Science</h1>
-<p><em>Class given by: Alberto Santini</em>  </p>
+<p><em>Class given by: Alberto Santini</em></p>
 <p><em>Literature used: <span class="citation">(<a href="#ref-GJames2013" role="doc-biblioref">Gareth. James 2013</a>)</span>, <span class="citation">(<a href="#ref-THastie2017" role="doc-biblioref">Trevor. Hastie 2017</a>)</span></em></p>
 <div id="machine-learning" class="section level2" number="7.1">
 <h2><span class="header-section-number">7.1</span> Machine Learning</h2>
@@ -388,9 +324,9 @@ unlabeled data. The hope is that, through mimicry, the machine is forced
 to build a compact internal representation of its world and then
 generate imaginative content. While there are no labels available, the
 algorithm can still observe patterns and understand that there are
-commonalities. Again, it won’t be able to understand causality.</p>
-<p>It is possible to combine labeled data, for example from the passed and
-look for patterns with the unlabeled data.</p>
+commonalities. Again, it won’t be able to understand causality. It is
+possible to combine labeled data, for example from the passed and look
+for patterns with the unlabeled data.</p>
 <p><img src="images/paste-0F7C76CE.png" width="656" /></p>
 <p><strong>Supervised learning</strong></p>
 <p><strong>Supervised learning</strong> is an approach to creating <strong>artificial
@@ -409,19 +345,20 @@ applied for supervised learning such as:</p>
 <ul>
 <li><p>Regression tasks: label is a continuous number. Hereby what we want
 to predict is continuous, not necessarily the data given to predict.
-F.E. House prices</p></li>
+F.E. House prices.</p></li>
 <li><p>Classification tasks: Label is one of discrete set of possible
 values. F.E. Is it a dog or a cat. Or it is a score from 1 to 5,
 integer.</p></li>
 </ul>
+<hr />
 <div id="theory" class="section level3" number="7.1.1">
 <h3><span class="header-section-number">7.1.1</span> Theory</h3>
 <p>Throughout this chapter, only supervised learning is explored in the two
 methods: regression and classification.</p>
-<table style="width:97%;">
+<table>
 <colgroup>
-<col width="22%" />
-<col width="75%" />
+<col width="17%" />
+<col width="82%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -432,8 +369,8 @@ methods: regression and classification.</p>
 <tbody>
 <tr class="odd">
 <td>y</td>
-<td><p>The real value. Generic output. The label. (ML) The
-thing I want to predict.</p>
+<td><p>The real value. Generic output. The label. (ML) The thing I want to
+predict.</p>
 <p>Dependent variable (statistics).</p></td>
 </tr>
 <tr class="even">
@@ -450,15 +387,13 @@ thing I want to predict.</p>
 </tr>
 <tr class="odd">
 <td><strong>x</strong></td>
-<td><p>Generic input / Features. The things I use to
-predict y.</p>
+<td><p>Generic input / Features. The things I use to predict y.</p>
 <p>The independent variable (statistics).</p></td>
 </tr>
 <tr class="even">
 <td><strong>p</strong></td>
 <td><p>Number of features (machine learning).</p>
-<p>Number of independent variables I have
-(statistics).</p></td>
+<p>Number of independent variables I have (statistics).</p></td>
 </tr>
 <tr class="odd">
 <td><strong>n</strong></td>
@@ -519,6 +454,7 @@ positive)<br />
 <p><img src="images/paste-B4EC7C48.png" /></p>
 <p>Alternative way of valuing the error is the <strong>absolute error:</strong>
 <span class="math inline">\(y-\hat y\)</span></p>
+<hr />
 </div>
 <div id="data-set-1" class="section level3" number="7.1.2">
 <h3><span class="header-section-number">7.1.2</span> Data set</h3>
@@ -777,14 +713,13 @@ stable but it will give bad predictions and wont be accurate.</p>
 a small change in the training set (one point has moved) and there has
 been a small variance in the regression line.</p>
 <p><img src="images/paste-B7BAF89D.png" /></p>
-<p><br />
-So we can conclude that there is a low variance in this model. Now we
+<p>So we can conclude that there is a low variance in this model. Now we
 will look at a polynomial model where there is 0 bias. Therefore, the
 model must intercept perfectly all the points in the training set.</p>
 <p><img src="images/paste-E57B9766.png" /></p>
 <p>If I want to intercept 4 points in <span class="math inline">\(R^2\)</span>, what is the smallest degree of
-a polynomial that 1s need? –&gt; N-1</p>
-<p>The green model has a high variance, but the bias = 0. This is a
+a polynomial that 1s need? –&gt; N-1<br />
+The green model has a high variance, but the bias = 0. This is a
 overfitted model.</p>
 <hr />
 <div id="training-fitting-a-model" class="section level3" number="7.2.1">
@@ -964,7 +899,7 @@ iteration. 1 epoch has passed per iteration.</p>
 </div>
 <div id="model-selection-1" class="section level2" number="7.4">
 <h2><span class="header-section-number">7.4</span> Model Selection</h2>
-<p>Model selection = choosing the “best” model out of a set of possible
+<p><strong>Model selection =</strong> choosing the “best” model out of a set of possible
 models that we are trying to consider. The “best” is considering the
 out-of-sample predictive accuracy = lowest error (loss) on the point NOT
 used for training = test set.</p>
@@ -977,7 +912,7 @@ have hyper parameters that we need to choose which would give us even
 more different models.</p>
 <p>In machine learning, a <strong>hyper parameter</strong> is a parameter whose value is
 used to control the learning process. By contrast, the values of other
-parameters (typically node weights) are derived theough training. These
+parameters (typically node weights) are derived though training. These
 are either not trainable through gradient descent or it would not be
 effective as it would defeat their purpose.</p>
 <p>If we include the hyper parameter through gradient descent, it would be
@@ -1023,8 +958,7 @@ which I believe are reasonable and try all in sequence.</p>
 <p>I believe (intuition or proof of concept) any value large than 1 is
 unlikely to be a good value for alpha because it would overemphasize the
 penalty of the parameter. In other words, it would cause too much bias
-for the reduction of the variance.<br />
-</p>
+for the reduction of the variance.</p>
 <p><img src="images/paste-38135339.png" /></p>
 <p><strong>Hyper parameter tuning =</strong> Hyperparameter tuning is choosing a set of
 optimal hyperparameters for a learning algorithm. A hyperparameter is a
@@ -1043,7 +977,7 @@ estimate on the validation set</li>
 configuration that I am going to use. With this value, I will evaluate
 the quality model on the test set. However, a model that is trained by
 more data typically performs better than with little data. By splitting
-again, the training set becomes smaller leading to a <strong><em>scarcity</em></strong>of
+again, the training set becomes smaller leading to a <strong><em>scarcity</em></strong> of
 data.</p>
 <p><strong>(ii)</strong> Before passing to the next phase, with the fixed parameter,
 there is an intermediate step. We retrain <span class="math inline">\(\hat f_{\alpha*}\)</span> on the
@@ -1145,7 +1079,7 @@ models used.</p></li>
 </ul>
 <hr />
 </div>
-<div id="k-fold-cross-validation" class="section level3" number="7.5.4">
+<div id="k-fold-cross-validation-1" class="section level3" number="7.5.4">
 <h3><span class="header-section-number">7.5.4</span> K-Fold Cross Validation</h3>
 <p>The model will be trained k times. K = between 2 and N. Primarily the
 data set is split k times into what is called <strong>“folds”</strong>, that are
@@ -1208,10 +1142,10 @@ predict the value of one or more outcomes. Outcomes are labels that can
 be applied to a data set. It is applied when the label is not continuous
 but it is a member of a discrete set.</p>
 <p><em>Examples:</em></p>
-<table style="width:75%;">
+<table style="width:81%;">
 <colgroup>
 <col width="31%" />
-<col width="43%" />
+<col width="48%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -1302,8 +1236,8 @@ the model and perform model selection, the table below can be used:</p>
 </ul>
 <p>The perfect prediction is recall = 1 &amp; precision = 1.</p>
 <p>The bad prediction is recall = 0 &amp; precision = 0.</p>
-<p><img src="images/paste-C83C7277.png" width="697" /></p>
-<p><img src="images/paste-46CFCBC5.png" /></p>
+<p><img src="images/paste-C83C7277.png" width="557" /></p>
+<p><img src="images/paste-46CFCBC5.png" width="555" /></p>
 <p>Accuracy = # times the model is correct / number of predictions -&gt;
 <span class="math inline">\(\frac {(correct \hat y)}{predictions}\)</span> or <span class="math inline">\(TP/TN\)</span></p>
 <p>We have to be careful with a <strong>unbalanced data set</strong>. This means that
@@ -1384,9 +1318,9 @@ options:</p>
 <div id="support-vector-classifier" class="section level3" number="7.6.5">
 <h3><span class="header-section-number">7.6.5</span> Support vector classifier</h3>
 <p>It is also possible that there is non-linearity where you cannot draw a
-hyper plane and draw a line to separate the classes.</p>
-<p>If the objection is to still make this separation in a hyper plane,
-there has to be some miss-classifications.</p>
+hyper plane and draw a line to separate the classes. If the objection is
+to still make this separation in a hyper plane, there has to be some
+miss-classifications.</p>
 <p>For example, the below it might be better to classify the one “outlier”
 wrong and keep the linear separator as it might prove better
 out-of-sample accuracy. We want to pick up the true plus difference
@@ -1435,117 +1369,8 @@ small. The outlier could change the model a lot. If C=large, the bias is
 large and variance small. There will be many miss-classification.</p>
 <p>Therefore, C is a trade-off of bias and variance. We can use again the
 grid search to find the hyper parameter.</p>
-<hr />
-</div>
-</div>
-</div>
-<div id="regularization" class="section level2" number="7.7">
-<h2><span class="header-section-number">7.7</span> Regularization</h2>
-<p>When a model has very high variance and we want to reduce it at the
-expense of increasing the bias a little bit (Bias trade off). We want to
-do this to have a higher <strong>out of sample accuracy</strong> <em>(also for
-interpretation we will see it later).</em> The two of the components of the
-accuracy of the model: bias square and the variance. Two components we
-can have an effect on.</p>
-<p>We use Regularization for models that are complex with many parameters
-because they extend to exhibit high variance. We will see it in the
-context of regression mainly (polynomial normally).</p>
-<p>Regularization term = <span class="math inline">\(\alpha R(\beta)\)</span> where <span class="math inline">\(\alpha\)</span> = hyperparameter.</p>
-<p>RIDGE REGULARIZATION (Here I am penalizing a minimization problem, but I
-am adding a not negative cost and what I am penalizing is the square, so
-if beta is small not penalizing much but if it big, we are penalizing a
-lot). This works better if the data is penalized. Doing this, I am
-trying to reduce the variance of the parameters and the model.</p>
-<p><img src="images/paste-77192149.png" /></p>
-<p>VARIANCE DECREASE BUT THE BIAS INCREASE (because with the regularization
-term I am finding other parameters than those minimizing the loss
-function I am also penalizing large parameters → large penalty). So this
-will not perform as good as the other, so there is a trade-off between
-variance and bias (alpha can go to extremes, so a good parameter will
-stay somewhere in the middle)</p>
-<p>Hyperparameter Alpha</p>
-<ul>
-<li><p>Green line: Variance of the model</p></li>
-<li><p>Black Line: Bias square of the model</p></li>
-<li><p>Pink line: Mean square error (the total: sum of the other two)</p></li>
-</ul>
-<p><img src="images/paste-4624A73A.png" /></p>
-<p><em>Using logarithm scale</em></p>
-<p><u>What happens to the parameters in the model:</u></p>
-<p>the possible values for the alpha (-2,5 and use 50 values) then we
-create a list of the parameters of my model for each possible value of
-alpha. So I have a polynomial model (scale also as logarithmic).</p>
-<p>Each line corresponding to a parameter of my model is a polynomial so we
-have the linear and the quadratic terms. Here when I increase the
-hyperparameter alpha we can see that the parameters are squeezed towards
-0. An interesting thing is to count the number of parameters that are
-equal to 0 or non 0. How to do that (the number of nonzero)</p>
-<p>All will be different from 0. That is why we obtained a flat line for
-ridge regularization. So why is this the case and why do we care about
-the non zero coefficients?</p>
-<p>I want that my models are accurate (that is why we introduced
-regularization)) but also due to interpretability. This is a human
-factor.</p>
-<p>If I find a 0, the feature is not needed to predict good predictions and
-vice versa. So we can infer that the feature is not correlated with the
-label.</p>
-<div id="interpretability" class="section level3" number="7.7.1">
-<h3><span class="header-section-number">7.7.1</span> Interpretability</h3>
-<p>Is a key feature to help machine learning models in real life.
-Interpretability is required in real life and not just having a high
-accuracy. We need to know why. Besides, if we select the good features,
-it will probably be better. (the features had signal and not notice).
-This is called variable selection.</p>
-<p>Best subset of variables is a very old problem. Used to obtain the
-lowest out of sample loss, → the highest accuracy. F is considering some
-features.</p>
-<p>If I have p larger than n it will be very difficult to know the noise.
-Reducing the number can help despite the ones that we drop are
-correlated.</p>
-<p>Naive approach: try all subset of possible features.</p>
-<ol style="list-style-type: decimal">
-<li><p>Forward Heuristic: (Consider the empty set), then the sets with one
-feature. Assume that feature 3 is better. So these features will be
-fixed for all the procedures, this means that will never get out of
-my set F. The same with 2 features and always with 3.  If any of the
-values is better, we are going to fix it with the next iteration. At
-some point you don’t obtain something better so you stop.</p></li>
-<li><p>Backwards stepwise heuristic selection: Which feature to remove. For
-example, 3. So if I remove 1 and 3. And when I can’t improve anymore
-I take the last combination.</p></li>
-</ol>
-<p><u><strong>Lasso Regularization</strong></u></p>
-<p>We can consider using Lasso regularization. It is a bridge between
-regularization and feature selection. Set some parameters in the model
-equal to 0. Implicitly it helps in interpretability and indirectly to
-variable selection.</p>
-<p>I have p + 1 parameters. We penalize the large parameters (positive or
-negative) and squeeze them equal to 0.</p>
-<p>Using the same as in for ridge, this time when we plot the non zero is
-not a straight line as before. There is a point, that increase probably
-is because it didn’t find the global optimum. Empirically it’s true that
-many parameters are equal to 0. Why does this happen?</p>
-<p><strong>RIDGE AND LASSO REGULARIZATION</strong></p>
-<p>(Unconstrained minimization problems as betas can take any values.
-Remember large betas are penalized and squeezed to 0)</p>
-<p>There is an equivalent problem that is constrained (minimization
-problem) as we can see below in the image above.</p>
-<p>Ridge: All the points inside the blue circle are valid points and
-outside not valid as violates the constraint. The Beta * test a good
-training MSE = 2 but i cannot accept it. So let’s see 2.1. (light blue
-beta*).</p>
-<p>Lasso: All the points inside valid and outside not valid. This once has
-spiky regios and for that reason, the probability to intersect in one of
-the spikes first is very probable. These points have some of the betas=
-0. Lasso is more likely to produce optimal parameters where beta is
-equal to 0.  </p>
-<p><strong>Finally: ISL book:</strong></p>
-<p>In general neither of them will dominate the other (ridge and lasso) We
-will have to do first <strong>model selection</strong>. In general, we expect lasso
-to perform better for low predictors, on the other hand perform better
-when there are many predictors. However, the number of predictors is
-never known a priority.</p>
 
+</div>
 </div>
 </div>
 </div>

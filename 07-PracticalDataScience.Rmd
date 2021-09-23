@@ -10,7 +10,7 @@ editor_options:
 knitr::opts_chunk$set(echo = TRUE, class.source = "watch-out", options(scipen=999), out.width = "100%", comment = "", warning=FALSE, reticulate.repl.quiet = FALSE) 
 ```
 
-*Class given by: Alberto Santini* \ 
+*Class given by: Alberto Santini*
 
 *Literature used: [@GJames2013], [@THastie2017]*
 
@@ -50,10 +50,9 @@ unlabeled data. The hope is that, through mimicry, the machine is forced
 to build a compact internal representation of its world and then
 generate imaginative content. While there are no labels available, the
 algorithm can still observe patterns and understand that there are
-commonalities. Again, it won't be able to understand causality.
-
-It is possible to combine labeled data, for example from the passed and
-look for patterns with the unlabeled data.
+commonalities. Again, it won't be able to understand causality. It is
+possible to combine labeled data, for example from the passed and look
+for patterns with the unlabeled data.
 
 ![](images/paste-0F7C76CE.png){width="656"}
 
@@ -77,43 +76,43 @@ applied for supervised learning such as:
 
 -   Regression tasks: label is a continuous number. Hereby what we want
     to predict is continuous, not necessarily the data given to predict.
-    F.E. House prices
+    F.E. House prices.
 
 -   Classification tasks: Label is one of discrete set of possible
     values. F.E. Is it a dog or a cat. Or it is a score from 1 to 5,
     integer.
+
+------------------------------------------------------------------------
 
 ### Theory
 
 Throughout this chapter, only supervised learning is explored in the two
 methods: regression and classification.
 
-+---------------+-----------------------------------------------------+
-| Symbol        | Explanation                                         |
-+===============+=====================================================+
-| y             | The real value. Generic output. The label. (ML) The |
-|               | thing I want to predict.                            |
-|               |                                                     |
-|               | Dependent variable (statistics).                    |
-+---------------+-----------------------------------------------------+
-| **ŷ**         | Prediction                                          |
-+---------------+-----------------------------------------------------+
-| **y-ŷ**       | Absolute error                                      |
-+---------------+-----------------------------------------------------+
-| **( y-ŷ)\^2** | Squared error                                       |
-+---------------+-----------------------------------------------------+
-| **x**         | Generic input / Features. The things I use to       |
-|               | predict y.                                          |
-|               |                                                     |
-|               | The independent variable (statistics).              |
-+---------------+-----------------------------------------------------+
-| **p**         | Number of features (machine learning).              |
-|               |                                                     |
-|               | Number of independent variables I have              |
-|               | (statistics).                                       |
-+---------------+-----------------------------------------------------+
-| **n**         | Size of the data set                                |
-+---------------+-----------------------------------------------------+
++---------------+---------------------------------------------------------------------------+
+| Symbol        | Explanation                                                               |
++===============+===========================================================================+
+| **y**         | The real value. Generic output. The label. (ML) The thing I want to       |
+|               | predict.                                                                  |
+|               |                                                                           |
+|               | Dependent variable (statistics).                                          |
++---------------+---------------------------------------------------------------------------+
+| **ŷ**         | Prediction                                                                |
++---------------+---------------------------------------------------------------------------+
+| **y-ŷ**       | Absolute error                                                            |
++---------------+---------------------------------------------------------------------------+
+| **( y-ŷ)\^2** | Squared error                                                             |
++---------------+---------------------------------------------------------------------------+
+| **x**         | Generic input / Features. The things I use to predict y.                  |
+|               |                                                                           |
+|               | The independent variable (statistics).                                    |
++---------------+---------------------------------------------------------------------------+
+| **p**         | Number of features (machine learning).                                    |
+|               |                                                                           |
+|               | Number of independent variables I have (statistics).                      |
++---------------+---------------------------------------------------------------------------+
+| **n**         | Size of the data set                                                      |
++---------------+---------------------------------------------------------------------------+
 
 If I know the inputs, I could try to "predict" the output. This would
 state that in the real world, the outputs (y) are a function of the
@@ -130,7 +129,7 @@ function of x but adding some noise. Which leads to:
 
 Deterministic function: $y = f(x) + ϵ$
 
-**ϵ** = (error) noise --> a random variable which models some
+**ϵ** = (error) noise --\> a random variable which models some
 unpredictable events that happens in the real world, that we do not have
 a corresponding input for to take into account.
 
@@ -186,6 +185,8 @@ positive)\
 
 Alternative way of valuing the error is the **absolute error:**
 $y-\hat y$
+
+------------------------------------------------------------------------
 
 ### Data set
 
@@ -514,7 +515,6 @@ been a small variance in the regression line.
 
 ![](images/paste-B7BAF89D.png)
 
-\
 So we can conclude that there is a low variance in this model. Now we
 will look at a polynomial model where there is 0 bias. Therefore, the
 model must intercept perfectly all the points in the training set.
@@ -522,8 +522,7 @@ model must intercept perfectly all the points in the training set.
 ![](images/paste-E57B9766.png)
 
 If I want to intercept 4 points in $R^2$, what is the smallest degree of
-a polynomial that 1s need? --\> N-1
-
+a polynomial that 1s need? --\> N-1\
 The green model has a high variance, but the bias = 0. This is a
 overfitted model.
 
@@ -771,7 +770,7 @@ iteration. 1 epoch has passed per iteration.
 
 ## Model Selection
 
-Model selection = choosing the "best" model out of a set of possible
+**Model selection =** choosing the "best" model out of a set of possible
 models that we are trying to consider. The "best" is considering the
 out-of-sample predictive accuracy = lowest error (loss) on the point NOT
 used for training = test set.
@@ -787,7 +786,7 @@ more different models.
 
 In machine learning, a **hyper parameter** is a parameter whose value is
 used to control the learning process. By contrast, the values of other
-parameters (typically node weights) are derived theough training. These
+parameters (typically node weights) are derived though training. These
 are either not trainable through gradient descent or it would not be
 effective as it would defeat their purpose.
 
@@ -842,7 +841,7 @@ which I believe are reasonable and try all in sequence.
 I believe (intuition or proof of concept) any value large than 1 is
 unlikely to be a good value for alpha because it would overemphasize the
 penalty of the parameter. In other words, it would cause too much bias
-for the reduction of the variance.\
+for the reduction of the variance.
 
 ![](images/paste-38135339.png)
 
@@ -866,7 +865,7 @@ Therefore, the chosen $\alpha$ is going to be the hyper parameter
 configuration that I am going to use. With this value, I will evaluate
 the quality model on the test set. However, a model that is trained by
 more data typically performs better than with little data. By splitting
-again, the training set becomes smaller leading to a ***scarcity***of
+again, the training set becomes smaller leading to a ***scarcity*** of
 data.
 
 **(ii)** Before passing to the next phase, with the fixed parameter,
@@ -1043,17 +1042,17 @@ but it is a member of a discrete set.
 
 *Examples:*
 
-+----------------------+------------------------------+
-| Classification       | Label                        |
-+======================+==============================+
-| y {Spam, Not Spam}   | Binary Classification        |
-+----------------------+------------------------------+
-| y {0, 1]             | Binary with one-hot encoding |
-|                      |                              |
-|                      | Negative vs Positive         |
-+----------------------+------------------------------+
-| y {Dog, Cat, Rabbit} | Multi-class classification   |
-+----------------------+------------------------------+
++----------------------+----------------------------------+
+| Classification       | Label                            |
++======================+==================================+
+| y {Spam, Not Spam}   | Binary Classification            |
++----------------------+----------------------------------+
+| y {0, 1]             | Binary with one-hot encoding     |
+|                      |                                  |
+|                      | Negative vs Positive             |
++----------------------+----------------------------------+
+| y {Dog, Cat, Rabbit} | Multi-class classification       |
++----------------------+----------------------------------+
 
 |                     | Real class | -1             | +1             |
 |---------------------|------------|----------------|----------------|
@@ -1115,9 +1114,9 @@ The perfect prediction is recall = 1 & precision = 1.
 
 The bad prediction is recall = 0 & precision = 0.
 
-![](images/paste-C83C7277.png){width="697"}
+![](images/paste-C83C7277.png){width="557"}
 
-![](images/paste-46CFCBC5.png)
+![](images/paste-46CFCBC5.png){width="555"}
 
 Accuracy = \# times the model is correct / number of predictions -\>
 $\frac {(correct \hat y)}{predictions}$ or $TP/TN$
@@ -1222,10 +1221,9 @@ Robustness maximize the "distance" from the 2 classes.
 ### Support vector classifier
 
 It is also possible that there is non-linearity where you cannot draw a
-hyper plane and draw a line to separate the classes.
-
-If the objection is to still make this separation in a hyper plane,
-there has to be some miss-classifications.
+hyper plane and draw a line to separate the classes. If the objection is
+to still make this separation in a hyper plane, there has to be some
+miss-classifications.
 
 For example, the below it might be better to classify the one "outlier"
 wrong and keep the linear separator as it might prove better
@@ -1291,142 +1289,3 @@ large and variance small. There will be many miss-classification.
 
 Therefore, C is a trade-off of bias and variance. We can use again the
 grid search to find the hyper parameter.
-
-------------------------------------------------------------------------
-
-## Regularization
-
-When a model has very high variance and we want to reduce it at the
-expense of increasing the bias a little bit (Bias trade off). We want to
-do this to have a higher **out of sample accuracy** *(also for
-interpretation we will see it later).* The two of the components of the
-accuracy of the model: bias square and the variance. Two components we
-can have an effect on.
-
-We use Regularization for models that are complex with many parameters
-because they extend to exhibit high variance. We will see it in the
-context of regression mainly (polynomial normally).
-
-Regularization term = $\alpha R(\beta)$ where $\alpha$ = hyperparameter.
-
-RIDGE REGULARIZATION (Here I am penalizing a minimization problem, but I
-am adding a not negative cost and what I am penalizing is the square, so
-if beta is small not penalizing much but if it big, we are penalizing a
-lot). This works better if the data is penalized. Doing this, I am
-trying to reduce the variance of the parameters and the model.
-
-![](images/paste-77192149.png)
-
-VARIANCE DECREASE BUT THE BIAS INCREASE (because with the regularization
-term I am finding other parameters than those minimizing the loss
-function I am also penalizing large parameters → large penalty). So this
-will not perform as good as the other, so there is a trade-off between
-variance and bias (alpha can go to extremes, so a good parameter will
-stay somewhere in the middle)
-
-Hyperparameter Alpha
-
--   Green line: Variance of the model
-
--   Black Line: Bias square of the model
-
--   Pink line: Mean square error (the total: sum of the other two)
-
-![](images/paste-4624A73A.png)
-
-*Using logarithm scale*
-
-[What happens to the parameters in the model:]{.ul}
-
-the possible values for the alpha (-2,5 and use 50 values) then we
-create a list of the parameters of my model for each possible value of
-alpha. So I have a polynomial model (scale also as logarithmic).
-
-Each line corresponding to a parameter of my model is a polynomial so we
-have the linear and the quadratic terms. Here when I increase the
-hyperparameter alpha we can see that the parameters are squeezed towards
-0. An interesting thing is to count the number of parameters that are
-equal to 0 or non 0. How to do that (the number of nonzero)
-
-All will be different from 0. That is why we obtained a flat line for
-ridge regularization. So why is this the case and why do we care about
-the non zero coefficients?
-
-I want that my models are accurate (that is why we introduced
-regularization)) but also due to interpretability. This is a human
-factor.
-
-If I find a 0, the feature is not needed to predict good predictions and
-vice versa. So we can infer that the feature is not correlated with the
-label.
-
-### Interpretability
-
-Is a key feature to help machine learning models in real life.
-Interpretability is required in real life and not just having a high
-accuracy. We need to know why. Besides, if we select the good features,
-it will probably be better. (the features had signal and not notice).
-This is called variable selection.
-
-Best subset of variables is a very old problem. Used to obtain the
-lowest out of sample loss, → the highest accuracy. F is considering some
-features.
-
-If I have p larger than n it will be very difficult to know the noise.
-Reducing the number can help despite the ones that we drop are
-correlated.
-
-Naive approach: try all subset of possible features.
-
-1.  Forward Heuristic: (Consider the empty set), then the sets with one
-    feature. Assume that feature 3 is better. So these features will be
-    fixed for all the procedures, this means that will never get out of
-    my set F. The same with 2 features and always with 3.  If any of the
-    values is better, we are going to fix it with the next iteration. At
-    some point you don't obtain something better so you stop.
-
-2.  Backwards stepwise heuristic selection: Which feature to remove. For
-    example, 3. So if I remove 1 and 3. And when I can't improve anymore
-    I take the last combination.
-
-[**Lasso Regularization**]{.ul}
-
-We can consider using Lasso regularization. It is a bridge between
-regularization and feature selection. Set some parameters in the model
-equal to 0. Implicitly it helps in interpretability and indirectly to
-variable selection.
-
-I have p + 1 parameters. We penalize the large parameters (positive or
-negative) and squeeze them equal to 0.
-
-Using the same as in for ridge, this time when we plot the non zero is
-not a straight line as before. There is a point, that increase probably
-is because it didn't find the global optimum. Empirically it's true that
-many parameters are equal to 0. Why does this happen?
-
-**RIDGE AND LASSO REGULARIZATION**
-
-(Unconstrained minimization problems as betas can take any values.
-Remember large betas are penalized and squeezed to 0)
-
-There is an equivalent problem that is constrained (minimization
-problem) as we can see below in the image above.
-
-Ridge: All the points inside the blue circle are valid points and
-outside not valid as violates the constraint. The Beta \* test a good
-training MSE = 2 but i cannot accept it. So let's see 2.1. (light blue
-beta\*).
-
-Lasso: All the points inside valid and outside not valid. This once has
-spiky regios and for that reason, the probability to intersect in one of
-the spikes first is very probable. These points have some of the betas=
-0. Lasso is more likely to produce optimal parameters where beta is
-equal to 0.  
-
-**Finally: ISL book:**
-
-In general neither of them will dominate the other (ridge and lasso) We
-will have to do first **model selection**. In general, we expect lasso
-to perform better for low predictors, on the other hand perform better
-when there are many predictors. However, the number of predictors is
-never known a priority.
