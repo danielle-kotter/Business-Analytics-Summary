@@ -66,6 +66,26 @@ Length = len('Danielle')
 print(Length)
 ```
 
+**Creating own functions:**
+
+Saying hello + name
+
+```{python, warning=FALSE, message=FALSE}
+def printing_name(name):
+  print('Good morning,', name)
+printing_name('Danielle')
+```
+
+Multiple arguments:
+
+Saying hello + name + location
+
+```{python, warning=FALSE, message=FALSE}
+def welcome(name, location):
+  print("Good morning", name, "Welcome to", location)
+welcome("Danielle,", "class.")
+```
+
 ------------------------------------------------------------------------
 
 ## Data set
@@ -81,6 +101,8 @@ tips.head()
 tips.tail()
 ```
 
+**Basic stats**
+
 1.  Length of the variable
 2.  Shape: Number of rows and number of columns
 3.  Type of variables + basic info
@@ -88,12 +110,43 @@ tips.tail()
 
 ```{python}
 len(tips)
-
 tips.shape
-
 tips.info()
-
 tips.describe()
+```
+
+**Reading from a csv file with pandas:**
+
+```{python}
+import pandas as pd
+
+d = pd.read_csv('www/auto-mpg.csv')
+```
+
+```{python}
+d.mpg.mean().round() # rounding by amount of decimals
+```
+
+```{python}
+d.dtypes # describes the type of variables
+pd.to_numeric(d.hp) # transforms to numerical
+```
+
+**Descriptive statistics:**
+
+```{python}
+d.mpg.mean()
+d.mpg.median()
+d.mpg.max()
+d.mpg.min()
+d.mean() # mean for all columns
+d.describe().round(2).head() # statistics for the whole data set, rounded to two decimals
+```
+
+```{python}
+d[['year']] # defines a list of one variable
+d[['year', 'cylinders']] # defines a list of multiple variables
+d.year.unique() # gives me the unique values of that column, not the repetitions
 ```
 
 ------------------------------------------------------------------------
@@ -119,7 +172,7 @@ Serie2 = pd.Series({"Amsterdam": 5, "Tokyo": 8})
 Serie2
 ```
 
-Data frame:
+Data frame method + combining sets:
 
 ```{python}
 Combined_serie = pd.DataFrame({
@@ -134,90 +187,6 @@ Sub-setting by row:
 
 ```{python}
 Combined_serie["Tokyo":]
-```
-
-**Creating our own functions:**
-
-Saying hello + name
-
-```{python, warning=FALSE, message=FALSE}
-def printing_name(name):
-  print('Good morning,', name)
-printing_name('Danielle')
-```
-
-Multiple arguments:
-
-Saying hello + name + location
-
-```{python, warning=FALSE, message=FALSE}
-def welcome(name, location):
-  print("Good morning", name, "Welcome to", location)
-welcome("Danielle,", "class.")
-```
-
-**Bar plot**
-
-```{python}
-sns.set_context('paper')
-
-tips = sns.load_dataset("tips")
-tips.head()
-
-sns.barplot(x = 'day', y = 'total_bill', hue = 'sex', data = tips, palette = 'Blues', edgecolor = 'w')
-plt.show()
-
-tips.groupby(['day','sex']).mean()
-```
-
-**1-hot-encoding:**
-
-Transforming categorical features to values from 0 or 1. F.e. You can be
-from origin: America or Europe. If the observation is from America it
-receives a 1 for America and a 0 for Europe.
-
-**Reading from a csv file with pandas:**
-
-```{python}
-import pandas as pd
-
-d = pd.read_csv('www/auto-mpg.csv')
-```
-
-```{python}
-d.mpg.mean().round() # rounding by amount of decimals
-```
-
-```{python}
-d.dtypes # describes the type of variables
-pd.to_numeric(d.hp) # transforms to numerical
-```
-
-```{python}
-len(d) # amount of rows
-d.shape # amount of rows & columns
-d.columns # gives the names of the columns
-mpg = d.mpg # shows me only the values from one variable
-mpg = d['mpg'] # alternative way to show only one value
-d.head() # shows the first 5 observations of a data set
-d.tail() # shows the last 5 observations of a data set
-```
-
-**Basic statistics:**
-
-```{python}
-d.mpg.mean()
-d.mpg.median()
-d.mpg.max()
-d.mpg.min()
-d.mean() # mean for all columns
-d.describe().round(2).head() # statistics for the whole data set, rounded to two decimals
-```
-
-```{python}
-d[['year']] # defines a list of one variable
-d[['year', 'cylinders']] # defines a list of multiple variables
-d.year.unique() # gives me the unique values of that column, not the repetitions
 ```
 
 ------------------------------------------------------------------------
@@ -292,11 +261,8 @@ d.drop(columns=['sqrt_of_mpg_2', 'log(10)_of_mpg', 'nam_of_new_column']).head() 
 
 ```{python}
 pd.to_numeric(d.hp, errors='coerce').head()
-
 d.hp = pd.to_numeric(d.hp, errors='coerce')
-
 d[d.hp.isna()] # transform values to NA
-
 d[-(d.hp.isna())] # delete missing values
 ```
 
@@ -304,22 +270,33 @@ d[-(d.hp.isna())] # delete missing values
 
 ## Data visualization
 
-Getting the correlation matrix
-
 **Correlation matrix**
 
 ```{python}
 d.corr().round(decimals=2)
 ```
 
-Pair plot
+**Pair plot**
 
 ```{python}
-#sns.pairplot(d);
-
-#sns.pairplot(d, hue='origin'); # with color
+# sns.pairplot(d, hue='origin'); # with color
 ```
 
+**Bar plot**
+
+```{python}
+sns.set_context('paper')
+
+tips = sns.load_dataset("tips")
+tips.head()
+
+sns.barplot(x = 'day', y = 'total_bill', hue = 'sex', data = tips, palette = 'Blues', edgecolor = 'w')
+plt.show()
+
+tips.groupby(['day','sex']).mean()
+```
+
+**Box plot**
 
 ```{python}
 tips = sns.load_dataset("tips")
@@ -328,7 +305,6 @@ sns.set_theme(style="whitegrid")
 sns.boxplot(data=tips, x='sex', y='tip')
 plt.show()
 ```
-
 
 ```{python}
 sns.boxplot(data=tips, x='sex', y='tip', color='black', boxprops=dict(alpha=.6))
@@ -345,7 +321,6 @@ tips['weekend'] = tips.day.isin(['Sat', 'Sun'])
 sns.boxplot(data=tips, x='day', y='tip', hue='weekend', dodge=False)
 plt.show()
 ```
-
 
 ```{python}
 sns.catplot(data=tips, x='smoker', y='tip', hue='sex', col='time', kind='box');
@@ -370,13 +345,11 @@ sns.swarmplot(data=tips, x='sex', y='tip', hue='smoker', dodge=True);
 plt.show()
 ```
 
-
 ```{python}
 sns.boxplot(data=tips, x='sex', y='tip', fliersize=8)
 sns.swarmplot(data=tips, x='sex', y='tip', color='black', alpha=0.6);
 plt.show()
 ```
-
 
 ```{python}
 sns.boxenplot(data=tips, x='sex', y='tip');
@@ -385,12 +358,6 @@ plt.show()
 sns.boxenplot(data=tips, x='sex', y='tip', hue='smoker');
 plt.show()
 ```
-
-
-
-
-
-***
 
 ```{python}
 sns.displot(data=tips, x='tip');
@@ -408,7 +375,6 @@ sns.boxenplot(data=tips, x='sex', y='tip', ax=axes.flat[0]);
 sns.violinplot(data=tips, x='sex', y='tip', ax=axes.flat[1]);
 plt.show()
 ```
-
 
 **Multidimensional KDE for numeric variables**
 
@@ -448,7 +414,9 @@ sns.heatmap(corr, cmap=plt.cm.RdYlGn, annot=True, linewidths=1, square=True, vmi
 plt.show()
 ```
 
-### Preparing the data
+------------------------------------------------------------------------
+
+## Preparing data for modeling
 
 ```{r, echo=FALSE}
 library(tidyverse)
@@ -459,15 +427,12 @@ py_install("scikit-learn")
 from sklearn.model_selection import train_test_split
 ```
 
-
-Creates the input points and the output columns
-
 ```{python}
-label = 'mpg'
+label = 'mpg' # Creates the input points and the output columns
 features = [column for column in d.columns if column != label]
 ```
 
-Setting the train / test split
+**Setting the train / test split**
 
 ```{python}
 X = d[features]
@@ -483,20 +448,20 @@ len(X_test) # Size of the test set (In this case 25% of the dataset)
 There is also a way to avoid the randomness of the test selection:
 
 ```{python}
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.25, random_state=0) # We fix the random state to a certain value. 
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.25, random_state=0) # We fix the random state to a certain value to make it reproducable. 
 ```
-
 
 ### Creating the models
 
-- Linear regression (no hyperparameters)
-- Quadratic regression (no hyperparameters)
-- Quadratic regression with LASSO (1 hyperparameter)
+-   Linear regression (no hyper parameters)
+
+-   Quadratic regression (no hyper parameters)
+
+-   Quadratic regression with LASSO (1 hyper parameter)
 
 ```{python}
 from sklearn.linear_model import LinearRegression, Lasso
 ```
-
 
 ```{python}
 from sklearn.preprocessing import StandardScaler, PolynomialFeatures # automatically takes into account standardization
@@ -510,9 +475,12 @@ from sklearn.metrics import mean_squared_error
 
 **Pipeline**
 
-A pipeline is a sequence of steps applied to the data. f.e. the first step is scaling the data and is training the model on the training data.
+A pipeline is a sequence of steps applied to the data. f.e. the first
+step is scaling the data and second is training the model on the
+training data.
 
-Due to the package sklearn (StandardScaler), the training data is first standardized and then this is used for the training data and test data.
+Due to the package sklearn (StandardScaler), the training data is first
+standardized and then this is used for the training data and test data.
 
 ```{python}
 # Linear regression
@@ -530,17 +498,14 @@ Lasso(max_iter=10000)
 )
 ```
 
-
 **Training (+HP tuning)**
 
 ```{python}
 linreg.fit(X_train, y_train) # fitting linear regression
-
 quadreg.fit(X_train, y_train) # fitting the quadratic regression
 ```
 
-Logarithmic scale:
-Standard scale but raise to the power of e. 
+Logarithmic scale: Standard scale but raise to the power of e.
 
 ```{python}
 # Creating the grid, and deciding which hyper parameters to try
@@ -550,7 +515,7 @@ np.logspace(-3, 0, 4) # Logarithm scale
 quadlasso_empty.get_params() # tells us all the parameters that we have
 ```
 
-We want to use lasso__alpha as the name. 
+We want to use lasso\_\_alpha as the name.
 
 ```{python}
 grid = {'lasso__alpha': np.logspace(-3, 0, 20)}
@@ -568,9 +533,10 @@ cv = holdout,
 scoring = 'neg_mean_squared_error' # negative to understand which is the best value
 )
 
-quadlasso.fit(X_train, y_train) #automatically refits
+quadlasso.fit(X_train, y_train) # automatically refits
 ```
 
+------------------------------------------------------------------------
 
 ## Model selection
 
@@ -584,10 +550,11 @@ mean_squared_error(y_test, quadreg.predict(X_test))
 mean_squared_error(y_test, quadlasso.predict(X_test))
 ```
 
-'We choose the model with the lowest error. In this example, it is the last model.' 
+'We choose the model with the lowest error. In this example, it is the
+last model.'
 
-**IMPORTANT**
-It is important to note that before using the model in production, I must retrain it on the entire data set. 
+> **IMPORTANT** It is important to note that before using the model in
+> production, I must retrain it on the entire data set.
 
 We use the model on the entire data set:
 
@@ -597,7 +564,8 @@ winner = quadlasso.best_estimator_ # selects the best hyper parameter
 winner.fit(X, y)
 ```
 
-As an example, below a car has been included which was not part of our data set. We can test the model on the prediction accuracy. 
+As an example, below a car has been included which was not part of our
+data set. We can test the model on the prediction accuracy.
 
 ```{python}
 seat_marbella = [4, 899 * 0.061, 41, 680 * 2.2, 19.2, 83, 2] # features loaded to compare
@@ -618,9 +586,9 @@ The real value is:
 #y_marbella
 ```
 
-We can compare the accuracy of the prediction and the real value. 
+We can compare the accuracy of the prediction and the real value.
 
-**Leave-One-Out Cross validation (LOOCV):**
+### **Leave-One-Out Cross validation (LOOCV):**
 
 ```{python}
 from sklearn.model_selection import LeaveOneOut, cross_val_score
@@ -645,7 +613,9 @@ Lasso(max_iter=10000)
 )
 ```
 
-Creating a function: a set of instructions that we combine to provide some inputs to retrieve some outputs. This functions computers the $\hat {ERR}_{\hat f}$ and will take as its input the model $\hat f$:
+Creating a function: a set of instructions that we combine to provide
+some inputs to retrieve some outputs. This functions computers the
+$\hat {ERR}_{\hat f}$ and will take as its input the model $\hat f$:
 
 ```{python}
 def get_mse(model):
@@ -676,10 +646,9 @@ n_jobs=4
 #get_mse(quadlasso)
 ```
 
+### **K-Fold Cross validation**
 
-**K-Fold Cross validation**
-
-K = 5 folds. The model used is the same as above. 
+K = 5 folds. The model used is the same as above.
 
 ```{python, include=FALSE}
 from sklearn.model_selection import KFold
@@ -699,30 +668,15 @@ def get_mse(model):
 #get_mse(quadlasso)
 ```
 
-
-
 ### SVC
 
 Make list to create the model
 
-svc = make_pipeline(
-  transformer,
-  GridSearchCV(
-    estimator=SVC(kernel="linear"),
-    param_grid={
-      "C": np.logspace(-3, 3, 50)
-    },
-    cv=kfold,
-    n_jobs=4
-  )
-)
-
 ```{python}
-
+# svc = make_pipeline( transformer, GridSearchCV( estimator=SVC(kernel="linear"), param_grid={ "C": np.logspace(-3, 3, 50) }, cv=kfold, n_jobs=4 ) )
 ```
 
 The default of scoring = the estimator's score method, the accuracy
-
 
 Fit model
 
@@ -736,7 +690,8 @@ Gives us the best estimator:
 #svc[1].best_estimator_
 ```
 
-If it is at the edge of the grid, make another grid closer to the extremes. 
+If it is at the edge of the grid, make another grid closer to the
+extremes.
 
 ```{python}
 #pred = svc.predict(X_test)
@@ -749,87 +704,3 @@ from sklearn.metrics import recall_score
 #accuracy_score(y_test, pred)
 #recall_score(y_test, pred)
 ```
-
-For parameter tuning, we ask scoring to be: 
-
-```{python}
-
-```
-
-svc = make_pipeline(
-  transformer,
-  GridSearchCV(
-    estimator=SVC(kernel="linear"),
-    param_grid={
-      "C": np.logspace(-3, 3, 50)
-    },
-    cv=kfold,
-    scoring = 'recall',
-    n_jobs=4
-  )
-)
-
-svc.fit(X_tv, y_tv)
-
-svc[1].best_estimator_
-
-pred = svc.predict(X_test)
-accuracy_score(y_test, pred)
-recall_score(y_test, pred)
-
-RBF Kernel = 
-
-```{python}
-
-```
-
-svc_rbf = make_pipeline(
-  transformer,
-  GridSearchCV(
-    estimator=SVC(kernel="rbf"),
-    param_grid={
-      "C": np.logspace(-3, 3, 20),
-      "gamma": np.logspace(-3,3,20)
-    },
-    cv=kfold,
-    scoring = 'recall',
-    n_jobs=4
-  )
-)
-
-svc_rbf.fit(X_tv, y_tv)
-
-svc_rbf[1].best_estimator_
-
-pred = svc_rbf.predict(X_test)
-accuracy_score(y_test, pred)
-recall_score(y_test, pred)
-
-Polynomial Kernel = 
-
-```{python}
-
-```
-
-svc_poly = make_pipeline(
-  transformer,
-  GridSearchCV(
-    estimator=SVC(kernel="poly"),
-    param_grid={
-      "C": np.logspace(-3, 3, 20),
-      "gamma": np.logspace(-3,3,20),
-      "degree": [2,3]
-    },
-    cv=kfold,
-    scoring = 'recall',
-    n_jobs=4
-  )
-)
-
-svc_poly.fit(X_tv, y_tv)
-
-svc_poly[1].best_estimator_
-
-pred = svc_poly.predict(X_test)
-accuracy_score(y_test, pred)
-recall_score(y_test, pred)

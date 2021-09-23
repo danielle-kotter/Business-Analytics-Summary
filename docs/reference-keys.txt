@@ -118,3 +118,6 @@ sensitivity-vs-specificity
 conjoint-analytics
 random-utility-model
 logistic-regression
+preparing-data-for-modeling
+leave-one-out-cross-validation-loocv
+k-fold-cross-validation-1
