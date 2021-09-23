@@ -117,3 +117,4 @@ logistic-regressions
 sensitivity-vs-specificity
 conjoint-analytics
 random-utility-model
+logistic-regression

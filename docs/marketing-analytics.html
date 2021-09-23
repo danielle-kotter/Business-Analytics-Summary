@@ -51,73 +51,8 @@
 
 <link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
-<script src="libs/kePrint-0.0.1/kePrint.js"></script>
-<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 
 
-<style type="text/css">
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-</style>
 
 <style type="text/css">
 /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
@@ -324,7 +259,7 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="9" data-path="marketing-analytics.html"><a href="marketing-analytics.html"><i class="fa fa-check"></i><b>9</b> Marketing Analytics</a>
 <ul>
-<li class="chapter" data-level="9.1" data-path="marketing-analytics.html"><a href="marketing-analytics.html#logistic-regressions"><i class="fa fa-check"></i><b>9.1</b> Logistic regressions</a>
+<li class="chapter" data-level="9.1" data-path="marketing-analytics.html"><a href="marketing-analytics.html#logistic-regression"><i class="fa fa-check"></i><b>9.1</b> Logistic regression</a>
 <ul>
 <li class="chapter" data-level="9.1.1" data-path="marketing-analytics.html"><a href="marketing-analytics.html#sensitivity-vs-specificity"><i class="fa fa-check"></i><b>9.1.1</b> Sensitivity vs Specificity</a></li>
 </ul></li>
@@ -356,10 +291,10 @@ div.csl-indent {
             <section class="normal" id="section-">
 <div id="marketing-analytics" class="section level1" number="9">
 <h1><span class="header-section-number">Chapter - 9</span> Marketing Analytics</h1>
-<p><em>Class given by: Mohammad Ghaderi</em>  
+<p><em>Class given by: Mohammad Ghaderi</em><br />
 <em>Literature used: <span class="citation">(<a href="#ref-JHair2013" role="doc-biblioref">Joseph. Hair 2013</a>)</span></em></p>
-<div id="logistic-regressions" class="section level2" number="9.1">
-<h2><span class="header-section-number">9.1</span> Logistic regressions</h2>
+<div id="logistic-regression" class="section level2" number="9.1">
+<h2><span class="header-section-number">9.1</span> Logistic regression</h2>
 <p><strong>Logistic regression:</strong> a specialized form of regression that is
 formulated to predict and explain a binary (two-group) categorical
 variable rather than a metric dependent measure. May be described as
@@ -369,18 +304,19 @@ variable and a set of metric or non-metric independent variables:</p>
 <p><strong>Classification matrix:</strong> means of assessing the predictive ability of
 the logistic regression model. Created by cross-tabulating actual values
 with predicted values. Shows incorrect and correct classifications.</p>
+<p><img src="https://miro.medium.com/max/2102/1*fxiTNIgOyvAombPJx5KGeA.png" width="358" /></p>
 <p><strong>Cross-validation:</strong> Procedure of dividing the data in two parts.
 Avoids over fitting.</p>
 <ul>
 <li><p><em>Analysis sample:</em> Used in estimating the logistic regression model</p></li>
-<li><p><em>Holdout sample</em> (validation sample): Used to validate the results</p></li>
+<li><p><em>Holdout sample:</em> (validation sample): Used to validate the results</p></li>
 </ul>
 <p><strong>Hit ratio:</strong> Percentage of objects correctly classified by the model.</p>
 <ul>
 <li><p>TP + TN / N</p></li>
 <li><p>True Positive + True Negative / Number of observations</p></li>
 </ul>
-<p><em>Two types of the logistics coefficient:</em></p>
+<p><em>There are two types of the logistics coefficient:</em></p>
 <p><img src="images/paste-A073256A.png" width="369" /></p>
 <p><strong>Logistic coefficient: (original).</strong> A positive relationship means that
 an increase in independent variable is associated with an increase in
@@ -388,7 +324,7 @@ the predicted probability.</p>
 <ul>
 <li><p>A negative value implies a decrease in the predicted probability</p></li>
 <li><p>A positive values implies a increase of the predicted probability</p></li>
-<li><p>Value 0.0 means a probability of 50%.</p></li>
+<li><p>Value 0.0 means a probability of 50%</p></li>
 </ul>
 <p><strong>Exponentiated logistic regression:</strong> stated in terms of odds. There
 won’t be negative values.</p>
@@ -406,11 +342,11 @@ direction.</p></li>
 <p><strong>Assessing magnitude of change:</strong></p>
 <p><strong>Percentage change in odds =</strong> (Exponentiated coefficient - 1.0) * 100</p>
 <p><img src="images/paste-C42DB784.png" width="533" /></p>
-<p><strong>Logistic curve:</strong> represent the probability of an event.</p>
+<p><strong>Logistic curve:</strong> visualizes the probability of an event.</p>
 <p><img src="images/paste-B3A0D003.png" width="427" /></p>
 <p><strong>Logit transformation:</strong> transforms values into a discrete binary
 dependent variable –&gt; probability of an event. This probability is
-transformed into the odds ratio which acts as the depend variable.</p>
+transformed into the odds ratio which acts as the depended variable.</p>
 <p><strong>Maximum chance criteria (MCC) =</strong> Measure of predictive accuracy that
 is calculated as the percentage of respondents in the largest group.</p>
 <pre><code>- N largest group / total number of observation. 
@@ -423,9 +359,10 @@ Perfect fit is 0.</p>
 <p>Pseudo R^2 measures: values from 0.0-1.0. Cox &amp; Snell R^2 = the higher
 value, a greater model fit. The amount of variation accounted for by the
 model. 1.0 is a perfect fit model.</p>
+<hr />
 <div id="sensitivity-vs-specificity" class="section level3" number="9.1.1">
 <h3><span class="header-section-number">9.1.1</span> Sensitivity vs Specificity</h3>
-<p>Sensitivity = TP / TP + FN, second number<br />
+<p>Sensitivity = TP / TP + FN<br />
 Specificity = TN / FP + TN<br />
 Hit rate = TP + TN / N<br />
 True positive rate = TP / TP + FN<br />
@@ -442,11 +379,11 @@ the predictive accuracy expected by chance.</p>
 <div id="conjoint-analytics" class="section level2" number="9.2">
 <h2><span class="header-section-number">9.2</span> Conjoint Analytics</h2>
 <p><em>Quick summary</em></p>
-<p>**‘Conjoint Analytics** enables us to understand, describe, and predict
+<p>**“Conjoint Analytics** enables us to understand, describe, and predict
 consumers’ choices in the contexts where the items/products/services
 that they have to choose among could be described based on a collection
 of attributes; and that individuals make a trade-off among these
-attributes to choose the most appealing offering.’</p>
+attributes to choose the most appealing offering.”</p>
 <p>Products are composed of multiple attributes or features. Purchasing
 decisions involve complex and subtle trade-offs between different
 features. It is difficult to articulate the value that attribute to a
@@ -471,9 +408,6 @@ them)</li>
 <li>Regression analytics is then applied to their responses to isolate
 the effects of individual features on the customers perception of
 product value</li>
-</ol>
-<!-- -->
-<ol start="3" style="list-style-type: decimal">
 <li>Result: an increment “perceived value” for each of a products
 features</li>
 </ol>
@@ -516,7 +450,7 @@ pizza:</p>
 can compensate for an unattractive option on another attribute.</p>
 <p>After calculating the betas for the regression model, we can evaluate
 what attributes are more important to the individual respondent. This
-can then be used to crate <strong>benefit segments</strong> to group individuals on
+can then be used to create <strong>benefit segments</strong> to group individuals on
 the basis of the utilities they attach to different product attributes.
 Hereby cluster analytics is used to create the benefit segments using
 the attribute importance.</p>
@@ -548,10 +482,13 @@ scientifically selected fraction of combinations</p></li>
 <li>Metric conjoint: Ratings</li>
 <li>Choice-based conjoint (CBC)</li>
 </ul>
-<p><em>You should include the option of no choice in the choice method.</em></p>
-<p><em>The amount of choice tasks should not exceed 20 and be ideally less
-than 15 if possible.</em></p>
-<p>The consumer choses the product based on the highest utility.</p>
+<blockquote>
+<p>You should include the option of no choice in the choice method.</p>
+</blockquote>
+<p>The amount of choice tasks should not exceed 20 and be ideally less than
+15 if possible. The consumer chooses the product based on the highest
+utility.</p>
+<hr />
 <div id="random-utility-model" class="section level3" number="9.2.1">
 <h3><span class="header-section-number">9.2.1</span> Random utility model</h3>
 <p>The choice behavior of individuals is based on the random utility model
@@ -559,13 +496,11 @@ than 15 if possible.</em></p>
 <p>Let us denote by <span class="math inline">\(U_i\)</span> that utility that the profile <span class="math inline">\(i\)</span> generates to
 the individual. In this case, in a choice task with the choice set:
 <span class="math inline">\(C = [i,j]\)</span>, the respondent will choose <span class="math inline">\(i\)</span> if <span class="math inline">\(U_i &gt; U_j\)</span>.</p>
-<p>The utility can be decomposed into two main components</p>
-<ul>
-<li><p>A deterministic part that explains the contribution of different
-observable attributes to the choices</p></li>
-<li><p>A random component that simply is the difference between the “true”
-utility of the profile for the individual and the deterministic part</p></li>
-</ul>
+<p>The utility can be decomposed into two main components - A deterministic
+part that explains the contribution of different observable attributes
+to the choices - A random component that simply is the difference
+between the “true” utility of the profile for the individual and the
+deterministic part</p>
 <p>This leads to: <span class="math inline">\(U_i = V_i + e_i\)</span></p>
 <p>The random component is due to additional factors that influence choices
 that are not observable to the analyst. Therefore, the preferences are

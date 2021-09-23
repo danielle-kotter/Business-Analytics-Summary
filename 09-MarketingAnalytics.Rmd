@@ -10,10 +10,10 @@ editor_options:
 knitr::opts_chunk$set(echo = TRUE, class.source = "watch-out", options(scipen=999), out.width = "100%", comment = "", warning=FALSE, reticulate.repl.quiet = FALSE) 
 ```
 
-*Class given by: Mohammad Ghaderi* \ 
+*Class given by: Mohammad Ghaderi*\
 *Literature used: [@JHair2013]*
 
-## Logistic regressions
+## Logistic regression
 
 **Logistic regression:** a specialized form of regression that is
 formulated to predict and explain a binary (two-group) categorical
@@ -27,12 +27,14 @@ variable and a set of metric or non-metric independent variables:
 the logistic regression model. Created by cross-tabulating actual values
 with predicted values. Shows incorrect and correct classifications.
 
+![](https://miro.medium.com/max/2102/1*fxiTNIgOyvAombPJx5KGeA.png){width="358"}
+
 **Cross-validation:** Procedure of dividing the data in two parts.
 Avoids over fitting.
 
 -   *Analysis sample:* Used in estimating the logistic regression model
 
--   *Holdout sample* (validation sample): Used to validate the results
+-   *Holdout sample:* (validation sample): Used to validate the results
 
 **Hit ratio:** Percentage of objects correctly classified by the model.
 
@@ -40,7 +42,7 @@ Avoids over fitting.
 
 -   True Positive + True Negative / Number of observations
 
-*Two types of the logistics coefficient:*
+*There are two types of the logistics coefficient:*
 
 ![](images/paste-A073256A.png){width="369"}
 
@@ -52,7 +54,7 @@ the predicted probability.
 
 -   A positive values implies a increase of the predicted probability
 
--   Value 0.0 means a probability of 50%.
+-   Value 0.0 means a probability of 50%
 
 **Exponentiated logistic regression:** stated in terms of odds. There
 won't be negative values.
@@ -77,13 +79,13 @@ won't be negative values.
 
 ![](images/paste-C42DB784.png){width="533"}
 
-**Logistic curve:** represent the probability of an event.
+**Logistic curve:** visualizes the probability of an event.
 
 ![](images/paste-B3A0D003.png){width="427"}
 
 **Logit transformation:** transforms values into a discrete binary
 dependent variable --\> probability of an event. This probability is
-transformed into the odds ratio which acts as the depend variable.
+transformed into the odds ratio which acts as the depended variable.
 
 **Maximum chance criteria (MCC) =** Measure of predictive accuracy that
 is calculated as the percentage of respondents in the largest group.
@@ -103,9 +105,11 @@ Pseudo R\^2 measures: values from 0.0-1.0. Cox & Snell R\^2 = the higher
 value, a greater model fit. The amount of variation accounted for by the
 model. 1.0 is a perfect fit model.
 
+------------------------------------------------------------------------
+
 ### Sensitivity vs Specificity
 
-Sensitivity = TP / TP + FN, second number\
+Sensitivity = TP / TP + FN\
 Specificity = TN / FP + TN\
 Hit rate = TP + TN / N\
 True positive rate = TP / TP + FN\
@@ -126,11 +130,11 @@ the predictive accuracy expected by chance.
 
 *Quick summary*
 
-**'Conjoint Analytics** enables us to understand, describe, and predict
+**"Conjoint Analytics** enables us to understand, describe, and predict
 consumers' choices in the contexts where the items/products/services
 that they have to choose among could be described based on a collection
 of attributes; and that individuals make a trade-off among these
-attributes to choose the most appealing offering.'
+attributes to choose the most appealing offering."
 
 Products are composed of multiple attributes or features. Purchasing
 decisions involve complex and subtle trade-offs between different
@@ -159,9 +163,6 @@ Now it is possible to learn from the relative importance of attributes.
 2.  Regression analytics is then applied to their responses to isolate
     the effects of individual features on the customers perception of
     product value
-
-<!-- -->
-
 3.  Result: an increment "perceived value" for each of a products
     features
 
@@ -216,7 +217,7 @@ can compensate for an unattractive option on another attribute.
 
 After calculating the betas for the regression model, we can evaluate
 what attributes are more important to the individual respondent. This
-can then be used to crate **benefit segments** to group individuals on
+can then be used to create **benefit segments** to group individuals on
 the basis of the utilities they attach to different product attributes.
 Hereby cluster analytics is used to create the benefit segments using
 the attribute importance.
@@ -257,12 +258,13 @@ Different method of asking how to value the profiles such as:
 -   Metric conjoint: Ratings
 -   Choice-based conjoint (CBC)
 
-*You should include the option of no choice in the choice method.*
+> You should include the option of no choice in the choice method.
 
-*The amount of choice tasks should not exceed 20 and be ideally less
-than 15 if possible.*
+The amount of choice tasks should not exceed 20 and be ideally less than
+15 if possible. The consumer chooses the product based on the highest
+utility.
 
-The consumer choses the product based on the highest utility.
+------------------------------------------------------------------------
 
 ### Random utility model
 
@@ -273,13 +275,11 @@ Let us denote by $U_i$ that utility that the profile $i$ generates to
 the individual. In this case, in a choice task with the choice set:
 $C = [i,j]$, the respondent will choose $i$ if $U_i > U_j$.
 
-The utility can be decomposed into two main components
-
--   A deterministic part that explains the contribution of different
-    observable attributes to the choices
-
--   A random component that simply is the difference between the "true"
-    utility of the profile for the individual and the deterministic part
+The utility can be decomposed into two main components - A deterministic
+part that explains the contribution of different observable attributes
+to the choices - A random component that simply is the difference
+between the "true" utility of the profile for the individual and the
+deterministic part
 
 This leads to: $U_i = V_i + e_i$
 
