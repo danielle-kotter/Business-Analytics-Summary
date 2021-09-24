@@ -51,6 +51,8 @@
 
 <link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 
 
 <style type="text/css">
@@ -399,12 +401,12 @@ div.csl-indent {
 </div>
 <div id="coding-the-model" class="section level2" number="5.2">
 <h2><span class="header-section-number">5.2</span> Coding the model</h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb2-1"><a href="structural-equation-models.html#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(semPlot)</span>
-<span id="cb2-2"><a href="structural-equation-models.html#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lavaan)</span></code></pre></div>
+<div class="sourceCode" id="cb204"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb204-1"><a href="structural-equation-models.html#cb204-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(semPlot)</span>
+<span id="cb204-2"><a href="structural-equation-models.html#cb204-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lavaan)</span></code></pre></div>
 <p><strong>Setting up the model and summarizing</strong></p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb3-1"><a href="structural-equation-models.html#cb3-1" aria-hidden="true" tabindex="-1"></a>fit <span class="ot">&lt;-</span> <span class="st">&#39;dist ~ speed&#39;</span></span>
-<span id="cb3-2"><a href="structural-equation-models.html#cb3-2" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">lavaan</span>(fit, <span class="at">data =</span> cars, <span class="at">estimator=</span><span class="st">&quot;MLM&quot;</span>, <span class="at">auto.var =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb3-3"><a href="structural-equation-models.html#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model)</span></code></pre></div>
+<div class="sourceCode" id="cb205"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb205-1"><a href="structural-equation-models.html#cb205-1" aria-hidden="true" tabindex="-1"></a>fit <span class="ot">&lt;-</span> <span class="st">&#39;dist ~ speed&#39;</span></span>
+<span id="cb205-2"><a href="structural-equation-models.html#cb205-2" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">lavaan</span>(fit, <span class="at">data =</span> cars, <span class="at">estimator=</span><span class="st">&quot;MLM&quot;</span>, <span class="at">auto.var =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb205-3"><a href="structural-equation-models.html#cb205-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model)</span></code></pre></div>
 <pre><code>lavaan 0.6-8 ended normally after 15 iterations
 
   Estimator                                         ML
@@ -434,27 +436,27 @@ Variances:
    .dist            227.070   54.619    4.157    0.000</code></pre>
 <p><em>Estimator = MLM in the model:</em> protects for non-linearity, non-normality and elasticity of the raw data. This needs the raw data, not only the covariance matrix.</p>
 <p><strong>Setting up the path diagram</strong></p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb5-1"><a href="structural-equation-models.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">semPaths</span>(model, <span class="st">&quot;std&quot;</span>, <span class="at">title =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb5-2"><a href="structural-equation-models.html#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="at">weighted =</span> <span class="cn">FALSE</span>, <span class="at">sizeInt =</span> <span class="dv">4</span>, <span class="at">sizeMan =</span> <span class="dv">5</span>,</span>
-<span id="cb5-3"><a href="structural-equation-models.html#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="at">edge.label.cex =</span> <span class="fl">1.3</span>, <span class="at">asize =</span> <span class="dv">2</span>)</span>
-<span id="cb5-4"><a href="structural-equation-models.html#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span>(<span class="st">&quot;SEM path&quot;</span>, <span class="at">line =</span> <span class="dv">3</span>)</span></code></pre></div>
-<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-4-1.png" width="100%" /></p>
+<div class="sourceCode" id="cb207"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb207-1"><a href="structural-equation-models.html#cb207-1" aria-hidden="true" tabindex="-1"></a><span class="fu">semPaths</span>(model, <span class="st">&quot;std&quot;</span>, <span class="at">title =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb207-2"><a href="structural-equation-models.html#cb207-2" aria-hidden="true" tabindex="-1"></a><span class="at">weighted =</span> <span class="cn">FALSE</span>, <span class="at">sizeInt =</span> <span class="dv">4</span>, <span class="at">sizeMan =</span> <span class="dv">5</span>,</span>
+<span id="cb207-3"><a href="structural-equation-models.html#cb207-3" aria-hidden="true" tabindex="-1"></a><span class="at">edge.label.cex =</span> <span class="fl">1.3</span>, <span class="at">asize =</span> <span class="dv">2</span>)</span>
+<span id="cb207-4"><a href="structural-equation-models.html#cb207-4" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span>(<span class="st">&quot;SEM path&quot;</span>, <span class="at">line =</span> <span class="dv">3</span>)</span></code></pre></div>
+<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-106-1.png" width="100%" /></p>
 <p><em>“std” =</em> standardizing the variables</p>
 <p><em>“est” =</em> true estimation <em>style</em></p>
 <p><em>“ram” =</em> to get circles around the measurement arrows  </p>
 <p><strong>With latent variable &amp; SEM</strong></p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb6-1"><a href="structural-equation-models.html#cb6-1" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="st">&quot;</span></span>
-<span id="cb6-2"><a href="structural-equation-models.html#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="st"># regression</span></span>
-<span id="cb6-3"><a href="structural-equation-models.html#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="st">Petal =~ Petal.Width + Petal.Length</span></span>
-<span id="cb6-4"><a href="structural-equation-models.html#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="st">Sepal.Length ~ Sepal.Width  + Petal</span></span>
-<span id="cb6-5"><a href="structural-equation-models.html#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;</span></span>
-<span id="cb6-6"><a href="structural-equation-models.html#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-7"><a href="structural-equation-models.html#cb6-7" aria-hidden="true" tabindex="-1"></a>fit <span class="ot">&lt;-</span> <span class="fu">sem</span>(model, <span class="at">data =</span> iris, <span class="at">sample.cov =</span> S, <span class="at">sample.nobs =</span> <span class="dv">122</span>)</span>
-<span id="cb6-8"><a href="structural-equation-models.html#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="fu">semPaths</span>(fit, <span class="st">&quot;std&quot;</span>, <span class="at">sizeInt =</span> <span class="dv">4</span>, <span class="at">sizeMan =</span> <span class="dv">3</span>, <span class="at">edge.label.cex =</span> <span class="dv">1</span>, <span class="at">asize=</span><span class="dv">3</span>, <span class="at">weighted=</span><span class="cn">TRUE</span>, <span class="at">exoCov =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
-<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-5-1.png" width="100%" /></p>
+<div class="sourceCode" id="cb208"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb208-1"><a href="structural-equation-models.html#cb208-1" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="st">&quot;</span></span>
+<span id="cb208-2"><a href="structural-equation-models.html#cb208-2" aria-hidden="true" tabindex="-1"></a><span class="st"># regression</span></span>
+<span id="cb208-3"><a href="structural-equation-models.html#cb208-3" aria-hidden="true" tabindex="-1"></a><span class="st">Petal =~ Petal.Width + Petal.Length</span></span>
+<span id="cb208-4"><a href="structural-equation-models.html#cb208-4" aria-hidden="true" tabindex="-1"></a><span class="st">Sepal.Length ~ Sepal.Width  + Petal</span></span>
+<span id="cb208-5"><a href="structural-equation-models.html#cb208-5" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;</span></span>
+<span id="cb208-6"><a href="structural-equation-models.html#cb208-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb208-7"><a href="structural-equation-models.html#cb208-7" aria-hidden="true" tabindex="-1"></a>fit <span class="ot">&lt;-</span> <span class="fu">sem</span>(model, <span class="at">data =</span> iris, <span class="at">sample.cov =</span> S, <span class="at">sample.nobs =</span> <span class="dv">122</span>)</span>
+<span id="cb208-8"><a href="structural-equation-models.html#cb208-8" aria-hidden="true" tabindex="-1"></a><span class="fu">semPaths</span>(fit, <span class="st">&quot;std&quot;</span>, <span class="at">sizeInt =</span> <span class="dv">4</span>, <span class="at">sizeMan =</span> <span class="dv">3</span>, <span class="at">edge.label.cex =</span> <span class="dv">1</span>, <span class="at">asize=</span><span class="dv">3</span>, <span class="at">weighted=</span><span class="cn">TRUE</span>, <span class="at">exoCov =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-107-1.png" width="100%" /></p>
 <p> </p>
 <p><strong>Testing the model</strong></p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb7-1"><a href="structural-equation-models.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fitMeasures</span>(fit)[<span class="fu">c</span>(<span class="st">&quot;chisq&quot;</span>,<span class="st">&quot;df&quot;</span>, <span class="st">&quot;pvalue&quot;</span> ,<span class="st">&quot;rmsea&quot;</span>)]</span></code></pre></div>
+<div class="sourceCode" id="cb209"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb209-1"><a href="structural-equation-models.html#cb209-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fitMeasures</span>(fit)[<span class="fu">c</span>(<span class="st">&quot;chisq&quot;</span>,<span class="st">&quot;df&quot;</span>, <span class="st">&quot;pvalue&quot;</span> ,<span class="st">&quot;rmsea&quot;</span>)]</span></code></pre></div>
 <pre><code>            chisq                df            pvalue             rmsea 
 35.94875570001079  2.00000000000000  0.00000001562525  0.33639637185920 </code></pre>
 <ol style="list-style-type: decimal">
@@ -468,15 +470,15 @@ Variances:
 </blockquote>
 <p><strong>Modification indices</strong></p>
 <p>This tells us how we could improve your model. If i liberate one parameter, then _ would change.</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb9-1"><a href="structural-equation-models.html#cb9-1" aria-hidden="true" tabindex="-1"></a>modi <span class="ot">=</span> <span class="fu">modindices</span>(fit)</span>
-<span id="cb9-2"><a href="structural-equation-models.html#cb9-2" aria-hidden="true" tabindex="-1"></a>modi[<span class="fu">order</span>(modi[,<span class="dv">4</span>], <span class="at">decreasing=</span>T), ]</span></code></pre></div>
+<div class="sourceCode" id="cb211"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb211-1"><a href="structural-equation-models.html#cb211-1" aria-hidden="true" tabindex="-1"></a>modi <span class="ot">=</span> <span class="fu">modindices</span>(fit)</span>
+<span id="cb211-2"><a href="structural-equation-models.html#cb211-2" aria-hidden="true" tabindex="-1"></a>modi[<span class="fu">order</span>(modi[,<span class="dv">4</span>], <span class="at">decreasing=</span>T), ]</span></code></pre></div>
 <pre><code>           lhs op          rhs     mi    epc sepc.lv sepc.all sepc.nox
 13 Sepal.Width  ~ Sepal.Length 30.061 -0.229  -0.229   -0.499   -0.499
 14 Sepal.Width  ~        Petal 30.061 -0.263  -0.189   -0.435   -0.435
 16       Petal  ~  Sepal.Width 30.061 -0.719  -1.002   -0.435   -1.002
 15       Petal  ~ Sepal.Length 30.061 -1.104  -1.539   -1.456   -1.456</code></pre>
 <p><strong>Parameters fit</strong></p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb11-1"><a href="structural-equation-models.html#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">parameterestimates</span>(fit, <span class="at">standardized =</span> <span class="cn">TRUE</span>, <span class="at">rsquare=</span><span class="cn">TRUE</span>, <span class="at">ci=</span><span class="cn">FALSE</span>)[<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>,] <span class="co"># showing the top 4</span></span></code></pre></div>
+<div class="sourceCode" id="cb213"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb213-1"><a href="structural-equation-models.html#cb213-1" aria-hidden="true" tabindex="-1"></a><span class="fu">parameterestimates</span>(fit, <span class="at">standardized =</span> <span class="cn">TRUE</span>, <span class="at">rsquare=</span><span class="cn">TRUE</span>, <span class="at">ci=</span><span class="cn">FALSE</span>)[<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>,] <span class="co"># showing the top 4</span></span></code></pre></div>
 <pre><code>           lhs op          rhs   est    se      z pvalue std.lv std.all std.nox
 1        Petal =~  Petal.Width 1.000 0.000     NA     NA  0.717   0.944   0.944
 2        Petal =~ Petal.Length 2.500 0.065 38.745      0  1.794   1.020   1.020
@@ -491,20 +493,20 @@ Variances:
 <p><strong>Moment matrix:</strong></p>
 <p><img src="images/paste-0F03CE3C.png" width="261" /></p>
 <p><strong>Covariance matrix:</strong></p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb13-1"><a href="structural-equation-models.html#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cov</span>(cars)</span></code></pre></div>
+<div class="sourceCode" id="cb215"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb215-1"><a href="structural-equation-models.html#cb215-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cov</span>(cars)</span></code></pre></div>
 <pre><code>          speed     dist
 speed  27.95918 109.9469
 dist  109.94694 664.0608</code></pre>
 <p><img src="images/paste-BCC7A4B7.png" width="353" /></p>
 <p>Creating the covariance matrix when only having the lower half:</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb15-1"><a href="structural-equation-models.html#cb15-1" aria-hidden="true" tabindex="-1"></a>lower <span class="ot">&lt;-</span> <span class="st">&quot;</span></span>
-<span id="cb15-2"><a href="structural-equation-models.html#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="st">0.03300863</span></span>
-<span id="cb15-3"><a href="structural-equation-models.html#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="st">0.15894229 5.0185561</span></span>
-<span id="cb15-4"><a href="structural-equation-models.html#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="st">0.15670560 0.9841531 1.2142232</span></span>
-<span id="cb15-5"><a href="structural-equation-models.html#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;</span></span>
-<span id="cb15-6"><a href="structural-equation-models.html#cb15-6" aria-hidden="true" tabindex="-1"></a>S <span class="ot">&lt;-</span> <span class="fu">getCov</span>(lower,</span>
-<span id="cb15-7"><a href="structural-equation-models.html#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="at">names =</span> <span class="fu">c</span>(<span class="st">&quot;variable1&quot;</span>, <span class="st">&quot;variable2&quot;</span>, <span class="st">&quot;variable3&quot;</span>))</span>
-<span id="cb15-8"><a href="structural-equation-models.html#cb15-8" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(S)</span></code></pre></div>
+<div class="sourceCode" id="cb217"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb217-1"><a href="structural-equation-models.html#cb217-1" aria-hidden="true" tabindex="-1"></a>lower <span class="ot">&lt;-</span> <span class="st">&quot;</span></span>
+<span id="cb217-2"><a href="structural-equation-models.html#cb217-2" aria-hidden="true" tabindex="-1"></a><span class="st">0.03300863</span></span>
+<span id="cb217-3"><a href="structural-equation-models.html#cb217-3" aria-hidden="true" tabindex="-1"></a><span class="st">0.15894229 5.0185561</span></span>
+<span id="cb217-4"><a href="structural-equation-models.html#cb217-4" aria-hidden="true" tabindex="-1"></a><span class="st">0.15670560 0.9841531 1.2142232</span></span>
+<span id="cb217-5"><a href="structural-equation-models.html#cb217-5" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;</span></span>
+<span id="cb217-6"><a href="structural-equation-models.html#cb217-6" aria-hidden="true" tabindex="-1"></a>S <span class="ot">&lt;-</span> <span class="fu">getCov</span>(lower,</span>
+<span id="cb217-7"><a href="structural-equation-models.html#cb217-7" aria-hidden="true" tabindex="-1"></a><span class="at">names =</span> <span class="fu">c</span>(<span class="st">&quot;variable1&quot;</span>, <span class="st">&quot;variable2&quot;</span>, <span class="st">&quot;variable3&quot;</span>))</span>
+<span id="cb217-8"><a href="structural-equation-models.html#cb217-8" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(S)</span></code></pre></div>
 <pre><code>           variable1 variable2 variable3
 variable1 0.03300863 0.1589423 0.1567056
 variable2 0.15894229 5.0185561 0.9841531
@@ -522,7 +524,7 @@ variable3 0.15670560 0.9841531 1.2142232</code></pre>
 <p><img src="images/paste-3355EB34.png" /></p>
 <p><strong>Option 2: based on the standardized path diagram</strong></p>
 <p>The square of the standardized loading is the reliability of the variable. Example:</p>
-<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-11-1.png" width="100%" /></p>
+<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-113-1.png" width="100%" /></p>
 <p>Here the reliability of the variable distance (dst) = <span class="math inline">\(0.35 ^ 2 = 0.12 = k\)</span></p>
 <p>____________________________________________________</p>
 <p><strong>Testing the model</strong></p>
@@ -561,11 +563,11 @@ variable3 0.15670560 0.9841531 1.2142232</code></pre>
 B) Lambda_1 = 1</code></pre>
 <p>They are equivalent regarding degrees of freedom or model fit. When you put 1* variable1, you force the true beta to be 1.</p>
 <p><strong>In r setting the model =</strong></p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb18-1"><a href="structural-equation-models.html#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co">#regression equation option 1</span></span>
-<span id="cb18-2"><a href="structural-equation-models.html#cb18-2" aria-hidden="true" tabindex="-1"></a>Model <span class="ot">&lt;-</span> <span class="st">&quot;dist =~ 1 * speed&quot;</span></span>
-<span id="cb18-3"><a href="structural-equation-models.html#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-4"><a href="structural-equation-models.html#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="co">#regression equation option 2</span></span>
-<span id="cb18-5"><a href="structural-equation-models.html#cb18-5" aria-hidden="true" tabindex="-1"></a>Model <span class="ot">&lt;-</span> <span class="st">&quot;dist =~ NA * speed&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb220"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb220-1"><a href="structural-equation-models.html#cb220-1" aria-hidden="true" tabindex="-1"></a><span class="co">#regression equation option 1</span></span>
+<span id="cb220-2"><a href="structural-equation-models.html#cb220-2" aria-hidden="true" tabindex="-1"></a>Model <span class="ot">&lt;-</span> <span class="st">&quot;dist =~ 1 * speed&quot;</span></span>
+<span id="cb220-3"><a href="structural-equation-models.html#cb220-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb220-4"><a href="structural-equation-models.html#cb220-4" aria-hidden="true" tabindex="-1"></a><span class="co">#regression equation option 2</span></span>
+<span id="cb220-5"><a href="structural-equation-models.html#cb220-5" aria-hidden="true" tabindex="-1"></a>Model <span class="ot">&lt;-</span> <span class="st">&quot;dist =~ NA * speed&quot;</span></span></code></pre></div>
 <p>When using: Default NA = not available. We are asking R to calculate the beta instead of setting it to 1. This gives the equation: <span class="math inline">\(Y = Lambda*F + Error\)</span>.<br />
 </p>
 <p><strong>Degrees of freedom</strong></p>
@@ -578,6 +580,33 @@ B) Lambda_1 = 1</code></pre>
 <p>Equality with error variances (multiple independent variables) X~~X *A = setting a restriction.</p>
 <p><strong>Auto regressive =</strong> one variables keeps impacting the following. For example: 2011 impacts 2012 which impacts 2013 etc. In this case, the variables need to be set to allow for correlation.</p>
 
+<pre><code> [1] &quot;11-references.Rmd&quot;                &quot;Business-Analytics-Summary.Rmd&quot;  
+ [3] &quot;.Rhistory&quot;                        &quot;rsconnect&quot;                       
+ [5] &quot;.DS_Store&quot;                        &quot;R-Summaries.Rproj&quot;               
+ [7] &quot;01-Basics.Rmd&quot;                    &quot;preamble.tex&quot;                    
+ [9] &quot;index.Rmd&quot;                        &quot;images&quot;                          
+[11] &quot;02-Charts.Rmd&quot;                    &quot;Summary_files&quot;                   
+[13] &quot;09-MarketingAnalytics.Rmd&quot;        &quot;MIT-Coding-Brain-01-press_0.jpeg&quot;
+[15] &quot;Business-Analytics-Summary_files&quot; &quot;packages.bib&quot;                    
+[17] &quot;03-Probability.Rmd&quot;               &quot;_output.yml&quot;                     
+[19] &quot;docs&quot;                             &quot;07-PracticalDataScience.Rmd&quot;     
+[21] &quot;www&quot;                              &quot;04-Simpleregressions.Rmd&quot;        
+[23] &quot;_bookdown_files&quot;                  &quot;README.md&quot;                       
+[25] &quot;R-Summaries_files&quot;                &quot;05-SEM.Rmd&quot;                      
+[27] &quot;_bookdown.yml&quot;                    &quot;06-Python.Rmd&quot;                   
+[29] &quot;.gitignore&quot;                       &quot;.RData&quot;                          
+[31] &quot;style.css&quot;                        &quot;_book&quot;                           
+[33] &quot;book.bib&quot;                         &quot;view3D.png&quot;                      
+[35] &quot;.git&quot;                             &quot;08-AdvancedStats.Rmd&quot;            
+[37] &quot;.Rproj.user&quot;                     </code></pre>
+<div class="sourceCode" id="cb222"><pre class="sourceCode python watch-out"><code class="sourceCode python"><span id="cb222-1"><a href="structural-equation-models.html#cb222-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This Python file uses the following encoding: utf-8</span></span>
+<span id="cb222-2"><a href="structural-equation-models.html#cb222-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os, sys</span></code></pre></div>
+<div class="sourceCode" id="cb223"><pre class="sourceCode python watch-out"><code class="sourceCode python"><span id="cb223-1"><a href="structural-equation-models.html#cb223-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb223-2"><a href="structural-equation-models.html#cb223-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb223-3"><a href="structural-equation-models.html#cb223-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb223-4"><a href="structural-equation-models.html#cb223-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> matplotlib.pyplot <span class="im">import</span> figure</span>
+<span id="cb223-5"><a href="structural-equation-models.html#cb223-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb223-6"><a href="structural-equation-models.html#cb223-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span></code></pre></div>
 </div>
 </div>
 </div>

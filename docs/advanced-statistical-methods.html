@@ -119,28 +119,6 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
-<style type="text/css">
-/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}
-</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -256,12 +234,16 @@ div.csl-indent {
 <li class="chapter" data-level="6.5" data-path="basics-python.html"><a href="basics-python.html#data-visualization"><i class="fa fa-check"></i><b>6.5</b> Data visualization</a>
 <ul>
 <li class="chapter" data-level="6.5.1" data-path="basics-python.html"><a href="basics-python.html#other-categorical-plots"><i class="fa fa-check"></i><b>6.5.1</b> Other categorical plots</a></li>
-<li class="chapter" data-level="6.5.2" data-path="basics-python.html"><a href="basics-python.html#preparing-the-data"><i class="fa fa-check"></i><b>6.5.2</b> Preparing the data</a></li>
-<li class="chapter" data-level="6.5.3" data-path="basics-python.html"><a href="basics-python.html#creating-the-models"><i class="fa fa-check"></i><b>6.5.3</b> Creating the models</a></li>
 </ul></li>
-<li class="chapter" data-level="6.6" data-path="basics-python.html"><a href="basics-python.html#model-selection"><i class="fa fa-check"></i><b>6.6</b> Model selection</a>
+<li class="chapter" data-level="6.6" data-path="basics-python.html"><a href="basics-python.html#preparing-data-for-modeling"><i class="fa fa-check"></i><b>6.6</b> Preparing data for modeling</a>
 <ul>
-<li class="chapter" data-level="6.6.1" data-path="basics-python.html"><a href="basics-python.html#svc"><i class="fa fa-check"></i><b>6.6.1</b> SVC</a></li>
+<li class="chapter" data-level="6.6.1" data-path="basics-python.html"><a href="basics-python.html#creating-the-models"><i class="fa fa-check"></i><b>6.6.1</b> Creating the models</a></li>
+</ul></li>
+<li class="chapter" data-level="6.7" data-path="basics-python.html"><a href="basics-python.html#model-selection"><i class="fa fa-check"></i><b>6.7</b> Model selection</a>
+<ul>
+<li class="chapter" data-level="6.7.1" data-path="basics-python.html"><a href="basics-python.html#leave-one-out-cross-validation-loocv"><i class="fa fa-check"></i><b>6.7.1</b> <strong>Leave-One-Out Cross validation (LOOCV):</strong></a></li>
+<li class="chapter" data-level="6.7.2" data-path="basics-python.html"><a href="basics-python.html#k-fold-cross-validation"><i class="fa fa-check"></i><b>6.7.2</b> <strong>K-Fold Cross validation</strong></a></li>
+<li class="chapter" data-level="6.7.3" data-path="basics-python.html"><a href="basics-python.html#svc"><i class="fa fa-check"></i><b>6.7.3</b> SVC</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="practical-data-science.html"><a href="practical-data-science.html"><i class="fa fa-check"></i><b>7</b> Practical Data Science</a>
@@ -289,7 +271,7 @@ div.csl-indent {
 <li class="chapter" data-level="7.5.1" data-path="practical-data-science.html"><a href="practical-data-science.html#hold-out-validation-method"><i class="fa fa-check"></i><b>7.5.1</b> Hold-Out validation method</a></li>
 <li class="chapter" data-level="7.5.2" data-path="practical-data-science.html"><a href="practical-data-science.html#standardization"><i class="fa fa-check"></i><b>7.5.2</b> Standardization</a></li>
 <li class="chapter" data-level="7.5.3" data-path="practical-data-science.html"><a href="practical-data-science.html#leave-one-out-cross-validation-method-loocv"><i class="fa fa-check"></i><b>7.5.3</b> Leave-One-Out Cross-validation method (LOOCV):</a></li>
-<li class="chapter" data-level="7.5.4" data-path="practical-data-science.html"><a href="practical-data-science.html#k-fold-cross-validation"><i class="fa fa-check"></i><b>7.5.4</b> K-Fold Cross Validation</a></li>
+<li class="chapter" data-level="7.5.4" data-path="practical-data-science.html"><a href="practical-data-science.html#k-fold-cross-validation-1"><i class="fa fa-check"></i><b>7.5.4</b> K-Fold Cross Validation</a></li>
 </ul></li>
 <li class="chapter" data-level="7.6" data-path="practical-data-science.html"><a href="practical-data-science.html#classification-problems"><i class="fa fa-check"></i><b>7.6</b> Classification Problems</a>
 <ul>
@@ -299,17 +281,14 @@ div.csl-indent {
 <li class="chapter" data-level="7.6.4" data-path="practical-data-science.html"><a href="practical-data-science.html#maximal-margin-classifier"><i class="fa fa-check"></i><b>7.6.4</b> Maximal Margin Classifier</a></li>
 <li class="chapter" data-level="7.6.5" data-path="practical-data-science.html"><a href="practical-data-science.html#support-vector-classifier"><i class="fa fa-check"></i><b>7.6.5</b> Support vector classifier</a></li>
 </ul></li>
-<li class="chapter" data-level="7.7" data-path="practical-data-science.html"><a href="practical-data-science.html#regularization"><i class="fa fa-check"></i><b>7.7</b> Regularization</a>
-<ul>
-<li class="chapter" data-level="7.7.1" data-path="practical-data-science.html"><a href="practical-data-science.html#interpretability"><i class="fa fa-check"></i><b>7.7.1</b> Interpretability</a></li>
-</ul></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="advanced-statistical-methods.html"><a href="advanced-statistical-methods.html"><i class="fa fa-check"></i><b>8</b> Advanced Statistical Methods</a>
 <ul>
 <li class="chapter" data-level="8.1" data-path="advanced-statistical-methods.html"><a href="advanced-statistical-methods.html#clustering"><i class="fa fa-check"></i><b>8.1</b> Clustering</a>
 <ul>
-<li class="chapter" data-level="8.1.1" data-path="advanced-statistical-methods.html"><a href="advanced-statistical-methods.html#hierachical-clustering"><i class="fa fa-check"></i><b>8.1.1</b> Hierachical clustering</a></li>
-<li class="chapter" data-level="8.1.2" data-path="advanced-statistical-methods.html"><a href="advanced-statistical-methods.html#non-hierachical-clustering"><i class="fa fa-check"></i><b>8.1.2</b> Non-Hierachical clustering</a></li>
+<li class="chapter" data-level="8.1.1" data-path="advanced-statistical-methods.html"><a href="advanced-statistical-methods.html#hierarchical-clustering"><i class="fa fa-check"></i><b>8.1.1</b> Hierarchical clustering</a></li>
+<li class="chapter" data-level="8.1.2" data-path="advanced-statistical-methods.html"><a href="advanced-statistical-methods.html#dendrogram"><i class="fa fa-check"></i><b>8.1.2</b> Dendrogram</a></li>
+<li class="chapter" data-level="8.1.3" data-path="advanced-statistical-methods.html"><a href="advanced-statistical-methods.html#non-hierarchical-clustering"><i class="fa fa-check"></i><b>8.1.3</b> Non-Hierarchical clustering</a></li>
 </ul></li>
 <li class="chapter" data-level="8.2" data-path="advanced-statistical-methods.html"><a href="advanced-statistical-methods.html#multi-dimensional-scaling"><i class="fa fa-check"></i><b>8.2</b> Multi-Dimensional Scaling</a></li>
 <li class="chapter" data-level="8.3" data-path="advanced-statistical-methods.html"><a href="advanced-statistical-methods.html#principal-component-analysis"><i class="fa fa-check"></i><b>8.3</b> Principal component analysis</a>
@@ -324,7 +303,7 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="9" data-path="marketing-analytics.html"><a href="marketing-analytics.html"><i class="fa fa-check"></i><b>9</b> Marketing Analytics</a>
 <ul>
-<li class="chapter" data-level="9.1" data-path="marketing-analytics.html"><a href="marketing-analytics.html#logistic-regressions"><i class="fa fa-check"></i><b>9.1</b> Logistic regressions</a>
+<li class="chapter" data-level="9.1" data-path="marketing-analytics.html"><a href="marketing-analytics.html#logistic-regression"><i class="fa fa-check"></i><b>9.1</b> Logistic regression</a>
 <ul>
 <li class="chapter" data-level="9.1.1" data-path="marketing-analytics.html"><a href="marketing-analytics.html#sensitivity-vs-specificity"><i class="fa fa-check"></i><b>9.1.1</b> Sensitivity vs Specificity</a></li>
 </ul></li>
@@ -357,17 +336,17 @@ div.csl-indent {
 <div id="advanced-statistical-methods" class="section level1" number="8">
 <h1><span class="header-section-number">Chapter - 8</span> Advanced Statistical Methods</h1>
 <p><em>Class given by: Michael Greenacre</em></p>
-<div class="sourceCode" id="cb386"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb386-1"><a href="advanced-statistical-methods.html#cb386-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lavaan)</span>
-<span id="cb386-2"><a href="advanced-statistical-methods.html#cb386-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(formattable)</span>
-<span id="cb386-3"><a href="advanced-statistical-methods.html#cb386-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(kableExtra)</span>
-<span id="cb386-4"><a href="advanced-statistical-methods.html#cb386-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb1-1"><a href="advanced-statistical-methods.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lavaan)</span>
+<span id="cb1-2"><a href="advanced-statistical-methods.html#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(formattable)</span>
+<span id="cb1-3"><a href="advanced-statistical-methods.html#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(kableExtra)</span>
+<span id="cb1-4"><a href="advanced-statistical-methods.html#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span></code></pre></div>
 <div id="clustering" class="section level2" number="8.1">
 <h2><span class="header-section-number">8.1</span> Clustering</h2>
 <p><strong>Clustering</strong> has the aim to classify similar objects (cases, people,
 companies, products, texts, advertising campaigns…) into groups so
 that within each group the objects are relatively similar, while the
-groups are different between one another.</p>
-<p>This is also called segmentation or partitioning.</p>
+groups are different between one another. This can also be called
+segmentation or partitioning.</p>
 <p>The basic concept in clustering, as well as in most areas of statistics
 where there are many variables being measured simultaneously on the
 objects, is that of distance. If we can define a distance between
@@ -376,16 +355,16 @@ another in the same group, and those “far” from one another in different
 groups. The same underlying concept is used in several methods of big
 data analysis, for example, finding people in a large database that are
 “close” to you as a client in terms of your purchasing choices.</p>
+<div id="hierarchical-clustering" class="section level3" number="8.1.1">
+<h3><span class="header-section-number">8.1.1</span> Hierarchical clustering</h3>
 <p><strong>Three types of hierarchical clustering:</strong></p>
 <ul>
 <li><p>Complete linkage: maximum method: take the maximum level of the two
 options</p></li>
 <li><p>Average linkage: average method</p></li>
-<li><p>Ward linkage</p></li>
+<li><p>Ward linkage: minimum variance method based on the optimal value of
+an objective function</p></li>
 </ul>
-<p>Significance clustering. Visualized by a dendogram.</p>
-<div id="hierachical-clustering" class="section level3" number="8.1.1">
-<h3><span class="header-section-number">8.1.1</span> Hierachical clustering</h3>
 <table class="table" style="width: auto !important; ">
 <thead>
 <tr>
@@ -848,59 +827,63 @@ USA
 </tbody>
 </table>
 <hr />
-<div id="complete-linkage" class="section level4" number="8.1.1.1">
-<h4><span class="header-section-number">8.1.1.1</span> Complete Linkage</h4>
-<div class="sourceCode" id="cb387"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb387-1"><a href="advanced-statistical-methods.html#cb387-1" aria-hidden="true" tabindex="-1"></a>DK.clust <span class="ot">&lt;-</span> <span class="fu">hclust</span>(<span class="fu">as.dist</span>(table))</span>
-<span id="cb387-2"><a href="advanced-statistical-methods.html#cb387-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(DK.clust) <span class="sc">+</span></span>
-<span id="cb387-3"><a href="advanced-statistical-methods.html#cb387-3" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> <span class="dv">6</span>, <span class="at">col=</span><span class="st">&quot;red&quot;</span>) </span></code></pre></div>
-<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-200-1.png" width="100%" /></p>
+</div>
+<div id="dendrogram" class="section level3" number="8.1.2">
+<h3><span class="header-section-number">8.1.2</span> Dendrogram</h3>
+<div id="complete-linkage" class="section level4" number="8.1.2.1">
+<h4><span class="header-section-number">8.1.2.1</span> Complete Linkage</h4>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb2-1"><a href="advanced-statistical-methods.html#cb2-1" aria-hidden="true" tabindex="-1"></a>DK.clust <span class="ot">&lt;-</span> <span class="fu">hclust</span>(<span class="fu">as.dist</span>(table))</span>
+<span id="cb2-2"><a href="advanced-statistical-methods.html#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(DK.clust) <span class="sc">+</span></span>
+<span id="cb2-3"><a href="advanced-statistical-methods.html#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> <span class="dv">6</span>, <span class="at">col=</span><span class="st">&quot;red&quot;</span>) </span></code></pre></div>
+<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-5-1.png" width="100%" /></p>
 <pre><code>integer(0)</code></pre>
 <hr />
 </div>
-<div id="average-linkage" class="section level4" number="8.1.1.2">
-<h4><span class="header-section-number">8.1.1.2</span> Average linkage</h4>
-<div class="sourceCode" id="cb389"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb389-1"><a href="advanced-statistical-methods.html#cb389-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">hclust</span>(<span class="fu">as.dist</span>(table), <span class="at">method=</span><span class="st">&quot;average&quot;</span>), <span class="at">main=</span><span class="st">&quot;Average linkage&quot;</span>) <span class="sc">+</span></span>
-<span id="cb389-2"><a href="advanced-statistical-methods.html#cb389-2" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> <span class="dv">5</span>, <span class="at">col=</span><span class="st">&quot;red&quot;</span>) </span></code></pre></div>
-<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-201-1.png" width="100%" /></p>
+<div id="average-linkage" class="section level4" number="8.1.2.2">
+<h4><span class="header-section-number">8.1.2.2</span> Average linkage</h4>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb4-1"><a href="advanced-statistical-methods.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">hclust</span>(<span class="fu">as.dist</span>(table), <span class="at">method=</span><span class="st">&quot;average&quot;</span>), <span class="at">main=</span><span class="st">&quot;Average linkage&quot;</span>) <span class="sc">+</span></span>
+<span id="cb4-2"><a href="advanced-statistical-methods.html#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> <span class="dv">5</span>, <span class="at">col=</span><span class="st">&quot;red&quot;</span>) </span></code></pre></div>
+<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-6-1.png" width="100%" /></p>
 <pre><code>integer(0)</code></pre>
 <p><strong>Significance clustering</strong></p>
-<p>Total sum of squares (total variance):  </p>
+<p>Total sum of squares (total variance):</p>
 <p><img src="images/paste-B6C3DE89.png" width="433" /></p>
 <p>Each subset has a different mean. We calculate the within-group SS.</p>
-<p>ANOVA: We look at the distance between groups and compare it with the
-total sum of square. Then we check if this is significant or if it is
-random.</p>
+<p><strong>ANOVA:</strong> We look at the distance between groups and compare it with
+the total sum of square. Then we check if this is significant or if it
+is random.</p>
 <hr />
 </div>
-<div id="ward-linkage" class="section level4" number="8.1.1.3">
-<h4><span class="header-section-number">8.1.1.3</span> Ward linkage</h4>
-<p>Ward clustering: related to variance criteria &amp; ANOVA. Of particular
-interest for all Euclidean and weighted Euclidean distance functions. It
-decomposed the total variance of the points in space into parts:
-“Within-clusters” and “between-clusters.”</p>
+<div id="ward-linkage" class="section level4" number="8.1.2.3">
+<h4><span class="header-section-number">8.1.2.3</span> Ward linkage</h4>
+<p>Related to variance criteria &amp; ANOVA. Of particular interest for all
+Euclidean and weighted Euclidean distance functions. It decomposed the
+total variance of the points in space into parts: “Within-clusters” and
+“between-clusters.”</p>
 <p>The idea can be illustrated by analysis-of-variance (ANOVA) for one
 variable (SS= sum[or average] of squared deviations from the mean), when
 observations are grouped.</p>
-<div class="sourceCode" id="cb391"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb391-1"><a href="advanced-statistical-methods.html#cb391-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">hclust</span>(<span class="fu">as.dist</span>(table), <span class="at">method=</span><span class="st">&quot;ward.D2&quot;</span>), <span class="at">main=</span><span class="st">&quot;Ward linkage&quot;</span>, </span>
-<span id="cb391-2"><a href="advanced-statistical-methods.html#cb391-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab=</span><span class="st">&quot;Countries&quot;</span>, <span class="at">hang=</span><span class="sc">-</span><span class="dv">1</span>) <span class="sc">+</span></span>
-<span id="cb391-3"><a href="advanced-statistical-methods.html#cb391-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">abline</span>(<span class="at">h =</span> <span class="dv">8</span>, <span class="at">col=</span><span class="st">&quot;red&quot;</span>) </span></code></pre></div>
-<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-202-1.png" width="100%" /></p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb6-1"><a href="advanced-statistical-methods.html#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">hclust</span>(<span class="fu">as.dist</span>(table), <span class="at">method=</span><span class="st">&quot;ward.D2&quot;</span>), <span class="at">main=</span><span class="st">&quot;Ward linkage&quot;</span>, </span>
+<span id="cb6-2"><a href="advanced-statistical-methods.html#cb6-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab=</span><span class="st">&quot;Countries&quot;</span>, <span class="at">hang=</span><span class="sc">-</span><span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb6-3"><a href="advanced-statistical-methods.html#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">abline</span>(<span class="at">h =</span> <span class="dv">8</span>, <span class="at">col=</span><span class="st">&quot;red&quot;</span>) </span></code></pre></div>
+<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-7-1.png" width="100%" /></p>
 <pre><code>integer(0)</code></pre>
 <p>Ward clustering:</p>
-<p><img src="images/paste-6EC08FDE.png" width="487" /></p>
+<p><img src="images/paste-6EC08FDE.png" width="426" /></p>
 <p>Ward clustering in multivariate space:</p>
 <p>For any set of n points in (weighted) Euclidean space:</p>
 <p><img src="images/paste-9B44DA8F.png" width="332" /></p>
 <p>Centroid = overall mean</p>
-<p><img src="images/paste-6A8F28D1.png" width="317" /></p>
+<p><img src="images/paste-6A8F28D1.png" width="328" /></p>
 <p>For successful clustering, we want the between-group variance to be as
 high as possible, which is equivalent to the within-group variance being
 as low as possible. This is what the hierarchical form of ward
-clustering does at each merging step of the dendogram.</p>
+clustering does at each merging step of the dendrogram.</p>
+<hr />
 </div>
 </div>
-<div id="non-hierachical-clustering" class="section level3" number="8.1.2">
-<h3><span class="header-section-number">8.1.2</span> Non-Hierachical clustering</h3>
+<div id="non-hierarchical-clustering" class="section level3" number="8.1.3">
+<h3><span class="header-section-number">8.1.3</span> Non-Hierarchical clustering</h3>
 <p>K-means: K = the number of groups.</p>
 <p>To achieve a simple partitioning of a data set (usually very large) into
 pre-chosen number of homogeneous groups. Suppose G groups and select 3
@@ -921,6 +904,7 @@ compared to those with narrower ranges, one way to get rid of this
 effect is to simply divide each variable by its maximum value. Now,
 there is a range between 0-1. This is classed range-standardized data.</p>
 <p><img src="images/paste-34084F7A.png" /></p>
+<hr />
 </div>
 </div>
 <div id="multi-dimensional-scaling" class="section level2" number="8.2">
@@ -938,26 +922,50 @@ there is a range between 0-1. This is classed range-standardized data.</p>
 <li><p>Non-metric MDS</p></li>
 </ul></li>
 </ul>
-<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-203-1.png" width="100%" /></p>
+<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-8-1.png" width="100%" /></p>
 <pre><code>[1] 0.7181458 0.7909089</code></pre>
 <pre><code>[1] 0.09199945</code></pre>
+<p> </p>
+<hr />
 </div>
 <div id="principal-component-analysis" class="section level2" number="8.3">
 <h2><span class="header-section-number">8.3</span> Principal component analysis</h2>
-<div class="sourceCode" id="cb395"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb395-1"><a href="advanced-statistical-methods.html#cb395-1" aria-hidden="true" tabindex="-1"></a>satis <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;www/satisfaction.csv&quot;</span>, <span class="at">header =</span> <span class="cn">TRUE</span>, <span class="at">sep =</span> <span class="st">&quot;,&quot;</span>, <span class="at">dec =</span></span>
-<span id="cb395-2"><a href="advanced-statistical-methods.html#cb395-2" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;.&quot;</span>)</span>
-<span id="cb395-3"><a href="advanced-statistical-methods.html#cb395-3" aria-hidden="true" tabindex="-1"></a><span class="fu">attach</span>(satis)</span>
-<span id="cb395-4"><a href="advanced-statistical-methods.html#cb395-4" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> satis[,<span class="fu">c</span>(<span class="dv">4</span><span class="sc">:</span><span class="dv">12</span>)]</span>
-<span id="cb395-5"><a href="advanced-statistical-methods.html#cb395-5" aria-hidden="true" tabindex="-1"></a><span class="fu">row.names</span>(data) <span class="ot">&lt;-</span> satis[,<span class="dv">2</span>]</span></code></pre></div>
-<div class="sourceCode" id="cb396"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb396-1"><a href="advanced-statistical-methods.html#cb396-1" aria-hidden="true" tabindex="-1"></a>DK.diss <span class="ot">&lt;-</span> <span class="fu">dist</span>(data)</span>
-<span id="cb396-2"><a href="advanced-statistical-methods.html#cb396-2" aria-hidden="true" tabindex="-1"></a>DK.data <span class="ot">&lt;-</span> <span class="fu">cmdscale</span>(DK.diss, <span class="at">eig=</span><span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb10-1"><a href="advanced-statistical-methods.html#cb10-1" aria-hidden="true" tabindex="-1"></a>satis <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;www/satisfaction.csv&quot;</span>, <span class="at">header =</span> <span class="cn">TRUE</span>, <span class="at">sep =</span> <span class="st">&quot;,&quot;</span>, <span class="at">dec =</span></span>
+<span id="cb10-2"><a href="advanced-statistical-methods.html#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;.&quot;</span>)</span>
+<span id="cb10-3"><a href="advanced-statistical-methods.html#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="fu">attach</span>(satis)</span>
+<span id="cb10-4"><a href="advanced-statistical-methods.html#cb10-4" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> satis[,<span class="fu">c</span>(<span class="dv">4</span><span class="sc">:</span><span class="dv">12</span>)]</span>
+<span id="cb10-5"><a href="advanced-statistical-methods.html#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="fu">row.names</span>(data) <span class="ot">&lt;-</span> satis[,<span class="dv">2</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb11-1"><a href="advanced-statistical-methods.html#cb11-1" aria-hidden="true" tabindex="-1"></a>DK.diss <span class="ot">&lt;-</span> <span class="fu">dist</span>(data)</span>
+<span id="cb11-2"><a href="advanced-statistical-methods.html#cb11-2" aria-hidden="true" tabindex="-1"></a>DK.data <span class="ot">&lt;-</span> <span class="fu">cmdscale</span>(DK.diss, <span class="at">eig=</span><span class="cn">TRUE</span>)</span></code></pre></div>
 <div id="biplots" class="section level3" number="8.3.1">
 <h3><span class="header-section-number">8.3.1</span> Biplots</h3>
-<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-208-1.png" width="100%" style="display: block; margin: auto;" /></p>
-<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-209-1.png" width="100%" style="display: block; margin: auto;" /></p>
-<div class="sourceCode" id="cb397"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb397-1"><a href="advanced-statistical-methods.html#cb397-1" aria-hidden="true" tabindex="-1"></a>DK.PCA <span class="ot">&lt;-</span> <span class="fu">PCA</span>(<span class="fu">as.matrix</span>(data), <span class="at">weight=</span><span class="cn">FALSE</span>)</span>
-<span id="cb397-2"><a href="advanced-statistical-methods.html#cb397-2" aria-hidden="true" tabindex="-1"></a><span class="fu">PLOT.PCA</span>(DK.PCA, <span class="at">map=</span><span class="st">&quot;asymmetric&quot;</span>, <span class="at">rescale=</span><span class="fl">0.5</span>, <span class="at">axes.inv=</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>), <span class="at">dim=</span><span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">3</span>))</span></code></pre></div>
-<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-210-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<pre><code>Loading required package: ca</code></pre>
+<pre><code>Loading required package: vegan</code></pre>
+<pre><code>Loading required package: permute</code></pre>
+<pre><code>
+Attaching package: &#39;permute&#39;</code></pre>
+<pre><code>The following object is masked from &#39;package:LaplacesDemon&#39;:
+
+    Blocks</code></pre>
+<pre><code>This is vegan 2.5-7</code></pre>
+<pre><code>
+Attaching package: &#39;vegan&#39;</code></pre>
+<pre><code>The following object is masked from &#39;package:survey&#39;:
+
+    calibrate</code></pre>
+<pre><code>Loading required package: ellipse</code></pre>
+<pre><code>
+Attaching package: &#39;ellipse&#39;</code></pre>
+<pre><code>The following object is masked from &#39;package:graphics&#39;:
+
+    pairs</code></pre>
+<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-13-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-14-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb23-1"><a href="advanced-statistical-methods.html#cb23-1" aria-hidden="true" tabindex="-1"></a>DK.PCA <span class="ot">&lt;-</span> <span class="fu">PCA</span>(<span class="fu">as.matrix</span>(data), <span class="at">weight=</span><span class="cn">FALSE</span>)</span>
+<span id="cb23-2"><a href="advanced-statistical-methods.html#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="fu">PLOT.PCA</span>(DK.PCA, <span class="at">map=</span><span class="st">&quot;asymmetric&quot;</span>, <span class="at">rescale=</span><span class="fl">0.5</span>, <span class="at">axes.inv=</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>), <span class="at">dim=</span><span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">3</span>))</span></code></pre></div>
+<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-15-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<p> </p>
+<hr />
 </div>
 </div>
 <div id="correspondence-analysis" class="section level2" number="8.4">
@@ -993,7 +1001,7 @@ respective questions on first CA axis.</p>
 (eigenvalue). Higher correlation achieved by opposing those with strong
 opinions against those with moderate ones.</p>
 <p><strong>Creating cross-tabulation in r:</strong></p>
-<div class="sourceCode" id="cb398"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb398-1"><a href="advanced-statistical-methods.html#cb398-1" aria-hidden="true" tabindex="-1"></a><span class="fu">my_table</span>(<span class="fu">head</span>(age.V18.US))</span></code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb24-1"><a href="advanced-statistical-methods.html#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">my_table</span>(<span class="fu">head</span>(age.V18.US))</span></code></pre></div>
 <table class="table" style="width: auto !important; ">
 <thead>
 <tr>
@@ -1159,9 +1167,9 @@ does not provide a interaction.</p>
 <h4><span class="header-section-number">8.4.0.2</span> Plot</h4>
 <p>The red points are the vertices of a simplex in the full space in which
 these row profiles lie.</p>
-<div class="sourceCode" id="cb399"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb399-1"><a href="advanced-statistical-methods.html#cb399-1" aria-hidden="true" tabindex="-1"></a>my.ca <span class="ot">&lt;-</span> <span class="fu">ca</span>(age.V18.US)</span>
-<span id="cb399-2"><a href="advanced-statistical-methods.html#cb399-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(my.ca, <span class="at">main=</span><span class="st">&quot;One parent can bring up a child as well as two parents together&quot;</span>, <span class="at">mass=</span><span class="fu">c</span>(<span class="cn">TRUE</span>,<span class="cn">TRUE</span>))</span></code></pre></div>
-<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-214-1.png" width="100%" /></p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb25-1"><a href="advanced-statistical-methods.html#cb25-1" aria-hidden="true" tabindex="-1"></a>my.ca <span class="ot">&lt;-</span> <span class="fu">ca</span>(age.V18.US)</span>
+<span id="cb25-2"><a href="advanced-statistical-methods.html#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(my.ca, <span class="at">main=</span><span class="st">&quot;One parent can bring up a child as well as two parents together&quot;</span>, <span class="at">mass=</span><span class="fu">c</span>(<span class="cn">TRUE</span>,<span class="cn">TRUE</span>))</span></code></pre></div>
+<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-19-1.png" width="100%" /></p>
 <p>The <strong>inertia</strong> measures the amount of variance in the table or how much
 association between the columns and the rows variables.’</p>
 <p>Inertia = <span class="math inline">\(x^2/n=0\)</span></p>
@@ -1203,7 +1211,7 @@ between 0-1 = <span class="math inline">\(C_{max} = \sqrt{\frac{K}{1+K}}\)</span
 </tr>
 </tbody>
 </table>
-<div class="sourceCode" id="cb400"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb400-1"><a href="advanced-statistical-methods.html#cb400-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(my.ca)</span></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb26-1"><a href="advanced-statistical-methods.html#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(my.ca)</span></code></pre></div>
 <pre><code>
 Principal inertias (eigenvalues):
 
@@ -1233,6 +1241,7 @@ Columns:
 3 |   NN |   95  408   62 |  -58 119  10 |   91 289 105 |
 4 |    D |  329  996  233 |  149 719 218 |  -93 277 377 |
 5 |   SD |   89  938  151 |  255 880 173 |   65  58  51 |</code></pre>
+<hr />
 </div>
 <div id="multiple-correspondence-analysis" class="section level3" number="8.4.1">
 <h3><span class="header-section-number">8.4.1</span> Multiple Correspondence Analysis</h3>
@@ -1245,20 +1254,22 @@ Burt matrix as well.</p>
 <p>The total inertia of an indicator matrix is <span class="math inline">\(Z = (J-Q)/Q\)</span>. Where the
 categories are the J and the Q are the variables.</p>
 <p>The standard coordinates of the categories are identical</p>
-<p>The principal inertias of the Burt analysis are the squares of those of
+<p>The principal inertia of the Burt analysis are the squares of those of
 the indicator matrix: thus the percentages in Burt analysis are higher!</p>
 <p><img src="images/paste-62B1D10B.png" width="391" /></p>
-<p>First principle: the inertia of a Burt matrix should ignore the sub
+<p><strong>First principle:</strong> the inertia of a Burt matrix should ignore the sub
 matrices down the diagonal.</p>
-<p>Second principle: the “explained inertias” should be explaining the
+<p><strong>Second principle:</strong> the “explained inertia” should be explaining the
 off-diagonal matrices (=adjusted inertia). The adjusted singular values
-(square roots of the adjusted inertias) are (where adjusted inertias)
-are (where’ s are the inertias of the Burt matrix)</p>
+(square roots of the adjusted inertia) are (where adjusted inertia) are
+(where’ s are the inertia of the Burt matrix)</p>
 <div id="subset-analysis-ca" class="section level4" number="8.4.1.1">
 <h4><span class="header-section-number">8.4.1.1</span> Subset analysis CA</h4>
-<p>CA is subcompositionally incoherent because if we extract a subsection
+<p>CA is sub compositionally incoherent because if we extract a subsection
 of the CA then the profiles will be relative frequencies, relative to
 the total.</p>
+<p> </p>
+<hr />
 </div>
 </div>
 </div>
@@ -1266,9 +1277,9 @@ the total.</p>
 <h2><span class="header-section-number">8.5</span> Multiple linear regression &amp; classification trees</h2>
 <p>Assumptions:</p>
 <ul>
-<li><p>The conditional distribution is normal</p></li>
-<li><p>X,Y is a straight line</p></li>
-<li><p>The variance is the same. Homoscedastic</p></li>
+<li>The conditional distribution is normal</li>
+<li>X,Y is a straight line</li>
+<li>The variance is the same. Homoscedastic</li>
 </ul>
 <p>However, in reality this is not always true.</p>
 <p><img src="images/paste-BD32C242.png" /></p>

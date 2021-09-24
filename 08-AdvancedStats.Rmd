@@ -217,6 +217,8 @@ play3d(spin3d(c(0,0,1)), duration=12)
 rgl.snapshot("view3D.png")
 ```
 
+\ 
+
 ------------------------------------------------------------------------
 
 ## Principal component analysis
@@ -253,6 +255,8 @@ for(j in 1:5) boxplot(data[,j] ~ satis$EduLevel, main=colnames(data)[j],
 DK.PCA <- PCA(as.matrix(data), weight=FALSE)
 PLOT.PCA(DK.PCA, map="asymmetric", rescale=0.5, axes.inv=c(-1,1), dim=c(2,3))
 ```
+
+\ 
 
 ------------------------------------------------------------------------
 
@@ -421,10 +425,10 @@ the indicator matrix: thus the percentages in Burt analysis are higher!
 
 ![](images/paste-62B1D10B.png){width="391"}
 
-First principle: the inertia of a Burt matrix should ignore the sub
+**First principle:** the inertia of a Burt matrix should ignore the sub
 matrices down the diagonal.
 
-Second principle: the "explained inertias" should be explaining the
+**Second principle:** the "explained inertia" should be explaining the
 off-diagonal matrices (=adjusted inertia). The adjusted singular values
 (square roots of the adjusted inertia) are (where adjusted inertia) are
 (where' s are the inertia of the Burt matrix)
@@ -435,14 +439,16 @@ CA is sub compositionally incoherent because if we extract a subsection
 of the CA then the profiles will be relative frequencies, relative to
 the total.
 
+\ 
+
+------------------------------------------------------------------------
+
 ## Multiple linear regression & classification trees
 
 Assumptions:
 
 -   The conditional distribution is normal
-
 -   X,Y is a straight line
-
 -   The variance is the same. Homoscedastic
 
 However, in reality this is not always true.
