@@ -4,14 +4,15 @@
 knitr::opts_chunk$set(echo = TRUE, class.source = "watch-out", options(scipen=999), out.width = "100%", comment = "", warning=FALSE, reticulate.repl.quiet = FALSE) 
 ```
 
-*Class given by: Albert Satorra* \ 
+*Class given by: Albert Satorra*  
+
 *Literature used: [@kdnuggets2017]*
 
-**Structural Equation Modeling (SEM):** is an extremely broad and flexible framework for data analysis, perhaps better thought of as a family of related methods rather than as a single technique. Measuring latent constructs is challenging and we must also incorporate estimates of measurement error into our models. SEM excels at both of these tasks. SEM is especially suited for causal analysis. 
+**Structural Equation Modeling (SEM):** "is an extremely broad and flexible framework for data analysis, perhaps better thought of as a family of related methods rather than as a single technique. Measuring latent constructs is challenging and we must also incorporate estimates of measurement error into our models. SEM excels at both of these tasks. SEM is especially suited for causal analysis" [@kdnuggets2017]*.*
 
 VS
 
-**Ordinary least-squares (OLS):** models assume that the analyst is fitting a model of a relationship between one or more explanatory variables and a continuous or at least interval outcome variable that minimizes the sum of square errors, where an error is the difference between the actual and the predicted value of the outcome variable. The most common analytic method that utilizes OLS models is linear regression (with a single or multiple predictor variables).
+**Ordinary least-squares (OLS):** "models assume that the analyst is fitting a model of a relationship between one or more explanatory variables and a continuous or at least interval outcome variable that minimizes the sum of square errors, where an error is the difference between the actual and the predicted value of the outcome variable. The most common analytic method that utilizes OLS models is linear regression (with a single or multiple predictor variables)" [@BZdaniuk2014].
 
 **Latent variables =** Unobserved variables (or unmeasured variables in SEM lingo). These are theoretical concepts which can be inferred but not directly measured.
 
@@ -21,7 +22,7 @@ The model has to account for randomization. If there is a factor that that canno
 
 **Endogeneity variables =** correlated with the error terms. Arises when the marginal distribution of the independent variable is not independent of the conditional distribution of the dependent variable given the independent.
 
-**Exogenous variables =** not driven by other factors (observable or observable)
+**Exogenous variables =** not driven by other factors (observable)
 
 *Sources of endogeneity =*
 
@@ -60,6 +61,8 @@ In the structural equation model we can effectively avoid endogeneity.
 
 -   The bi-directed arrows, the ones with two side arrows (in this representation, a connecting line with no arrows) represent co-variances among variables.
 
+ 
+
 ------------------------------------------------------------------------
 
 ## Coding the model
@@ -90,9 +93,9 @@ title("SEM path", line = 3)
 
 *"std" =* standardizing the variables
 
-*"est" =* true estimation
+*"est" =* true estimation *style*
 
-*style="ram" =* to get circles around the measurement arrows
+*"ram" =* to get circles around the measurement arrows  
 
 **With latent variable & SEM**
 
@@ -107,19 +110,20 @@ fit <- sem(model, data = iris, sample.cov = S, sample.nobs = 122)
 semPaths(fit, "std", sizeInt = 4, sizeMan = 3, edge.label.cex = 1, asize=3, weighted=TRUE, exoCov = TRUE)
 ```
 
-\
+ 
+
 **Testing the model**
 
 ```{r}
-fitMeasures(fit)[ c("chisq","df", "pvalue" ,"rmsea")]
+fitMeasures(fit)[c("chisq","df", "pvalue" ,"rmsea")]
 ```
 
-1.  Chisq is a chi-squared test statistic for. H0: moment restrictions implied by the model hold true
-2.  The degrees of freedom
-3.  P-value of the chi-square test
-4.  Rmsea is a fit index, the root mean square of approximation. It should be small for a good fit of the model. Threshold of .05 is often applied to declare good fit.
+1.  **chisq** = is a chi-squared test statistic for. H0: moment restrictions implied by the model hold true
+2.  **df** = The degrees of freedom
+3.  **pvalue** = P-value of the chi-square test
+4.  **rmsea** = Rmsea is a fit index, the root mean square of approximation. It should be small for a good fit of the model. Threshold of .05 is often applied to declare good fit.
 
-*See later chapter for further explanation*
+> *See later chapter for further explanation*
 
 **Modification indices**
 
@@ -133,8 +137,7 @@ modi[order(modi[,4], decreasing=T), ]
 **Parameters fit**
 
 ```{r}
-parameterestimates(fit, 
-standardized = TRUE, rsquare=TRUE, ci=FALSE)[1:4,] # showing the top 4
+parameterestimates(fit, standardized = TRUE, rsquare=TRUE, ci=FALSE)[1:4,] # showing the top 4
 ```
 
 \+
@@ -145,9 +148,7 @@ standardized = TRUE, rsquare=TRUE, ci=FALSE)[1:4,] # showing the top 4
 
 Covariance is a measure of how much two random variables vary together. It's similar to variance, but where variance tells you how a single variable varies, co variance tells you how two variables vary together.
 
-Cov(1, 2) =
-
-$sum (1- mean(1) * (2-mean(2)  / n$
+Cov(1, 2) = $sum (1- mean(1) * (2-mean(2) / n$
 
 **Moment matrix:**
 
@@ -178,7 +179,7 @@ print(S)
 
 ### Reliability
 
-In statistics ***reliability*** is the consistency of a set of measurements or measuring instrument, often used to describe a test. This can either be whether the measurements of the same instrument give or are likely to give the same measurement (test-retest), or in the case of more subjective instruments, such as personality or trait inventories, whether two independent assessors give similar scores (inter-rater-reliability). Reliability is inversely related to random error. In words, reliability is defined as a proportion of observed variance that is true variance. Reliability is interpreted as a proportion and therefore cannot be negative.
+In statistics ***reliability*** is the consistency of a set of measurements or measuring instrument, often used to describe a test. This can either be whether the measurements of the same instrument give or are likely to give the same measurement (test-retest), or in the case of more subjective instruments, such as personality or trait inventories, whether two independent assessors give similar scores (inter-rater-reliability). Reliability is inversely related to random error. In words, reliability is defined as a proportion of observed variance that is true variance. Reliability is interpreted as a proportion and therefore cannot be negative [@LMRudner2001].
 
 Various kinds of reliability coefficients, with values ranging between 0.00 (much error) and 1.00 (no error), are usually used to indicate the amount of error in the scores.
 
@@ -217,7 +218,6 @@ Here the reliability of the variable distance (dst) = $0.35 ^ 2 = 0.12 = k$
 
 Therefore, the chi-square test allows researchers to evaluate the fitness of a model by using the null hypothesis significance test approach.
 
-
 **Degrees of freedom (df) =** Number of observations available for model estimation - Number of observations used to estimate parameters.
 
 "Number of free parameters" refers to all of the things that this model estimated freely. Parameter is a regression coefficient when standardized is called a beta coefficient.
@@ -232,7 +232,7 @@ The objective is to have the RMSEA as low as possible.
 
 ## Factor model
 
-**Factor analysis:** a statistical method used to describe variability among observed, correlated variable in terms of a potentially lower number of unobserved variables called factors. For example, it is possible that variations in six observed variables mainly reflect the variations in two unobserved (underlying) variables. Factor analysis searches for such joint variations in response to unobserved latent variables. The observed variables are modeled as linear combinations of the potential factors, plus "error" terms.
+**Factor analysis:** a statistical method used to describe variability among observed, correlated variable in terms of a potentially lower number of unobserved variables called factors. For example, it is possible that variations in six observed variables mainly reflect the variations in two unobserved (underlying) variables. Factor analysis searches for such joint variations in response to unobserved latent variables. The observed variables are modeled as linear combinations of the potential factors, plus "error" terms [@Domino2021].
 
 It is including a common return that has a impact to multiple variables. Then, you can find how much variance is due to permanent and depended on these variables.
 
@@ -254,8 +254,8 @@ $Y = alpha*1 + beta X + error$
 
 $Y = lambda*F + error1$
 
-**Lamba =** the weights \
-**F =** common factor \
+**Lamba =** the weights\
+**F =** common factor\
 **Error =** Specific to the factors
 
 Here instead of setting the alpha to 1 which we do in the basic model, now we add a weight which is the lambda.
@@ -283,7 +283,7 @@ Model <- "dist =~ NA * speed
 "
 ```
 
-When using: Default NA = not available. We are asking R to calculate the beta instead of setting it to 1. This gives the equation: $Y = Lambda*F + Error$. \
+When using: Default NA = not available. We are asking R to calculate the beta instead of setting it to 1. This gives the equation: $Y = Lambda*F + Error$.\
 
 **Degrees of freedom**
 
