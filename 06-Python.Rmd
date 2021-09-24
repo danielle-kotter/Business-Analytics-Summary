@@ -588,7 +588,7 @@ The real value is:
 
 We can compare the accuracy of the prediction and the real value.
 
-### **Leave-One-Out Cross validation (LOOCV):**
+### Leave-One-Out Cross validation (LOOCV):
 
 ```{python}
 from sklearn.model_selection import LeaveOneOut, cross_val_score
@@ -646,7 +646,7 @@ n_jobs=4
 #get_mse(quadlasso)
 ```
 
-### **K-Fold Cross validation**
+### K-Fold Cross validation
 
 K = 5 folds. The model used is the same as above.
 
