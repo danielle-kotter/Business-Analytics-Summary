@@ -562,12 +562,10 @@ B) Lambda_1 = 1</code></pre>
 <p>They are equivalent regarding degrees of freedom or model fit. When you put 1* variable1, you force the true beta to be 1.</p>
 <p><strong>In r setting the model =</strong></p>
 <div class="sourceCode" id="cb18"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb18-1"><a href="structural-equation-models.html#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co">#regression equation option 1</span></span>
-<span id="cb18-2"><a href="structural-equation-models.html#cb18-2" aria-hidden="true" tabindex="-1"></a>Model <span class="ot">&lt;-</span> <span class="st">&quot;dist =~ 1 * speed</span></span>
-<span id="cb18-3"><a href="structural-equation-models.html#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;</span></span>
-<span id="cb18-4"><a href="structural-equation-models.html#cb18-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-5"><a href="structural-equation-models.html#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="co">#regression equation option 2</span></span>
-<span id="cb18-6"><a href="structural-equation-models.html#cb18-6" aria-hidden="true" tabindex="-1"></a>Model <span class="ot">&lt;-</span> <span class="st">&quot;dist =~ NA * speed</span></span>
-<span id="cb18-7"><a href="structural-equation-models.html#cb18-7" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;</span></span></code></pre></div>
+<span id="cb18-2"><a href="structural-equation-models.html#cb18-2" aria-hidden="true" tabindex="-1"></a>Model <span class="ot">&lt;-</span> <span class="st">&quot;dist =~ 1 * speed&quot;</span></span>
+<span id="cb18-3"><a href="structural-equation-models.html#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-4"><a href="structural-equation-models.html#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="co">#regression equation option 2</span></span>
+<span id="cb18-5"><a href="structural-equation-models.html#cb18-5" aria-hidden="true" tabindex="-1"></a>Model <span class="ot">&lt;-</span> <span class="st">&quot;dist =~ NA * speed&quot;</span></span></code></pre></div>
 <p>When using: Default NA = not available. We are asking R to calculate the beta instead of setting it to 1. This gives the equation: <span class="math inline">\(Y = Lambda*F + Error\)</span>.<br />
 </p>
 <p><strong>Degrees of freedom</strong></p>

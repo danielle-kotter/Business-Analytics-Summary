@@ -275,12 +275,10 @@ They are equivalent regarding degrees of freedom or model fit. When you put 1\* 
 
 ```{r}
 #regression equation option 1
-Model <- "dist =~ 1 * speed
-"
+Model <- "dist =~ 1 * speed"
 
 #regression equation option 2
-Model <- "dist =~ NA * speed
-"
+Model <- "dist =~ NA * speed"
 ```
 
 When using: Default NA = not available. We are asking R to calculate the beta instead of setting it to 1. This gives the equation: $Y = Lambda*F + Error$.\
