@@ -147,4 +147,3 @@ bigquery
 data-cleaning
 analyzing-data-1
 combining-tables-with-sql
-tab:unnamed-chunk-17

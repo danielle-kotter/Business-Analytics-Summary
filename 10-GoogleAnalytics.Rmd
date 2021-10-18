@@ -302,52 +302,50 @@ COUNTIF() COUNT is the formula; it will be executed IF the conditions
 you create are true. For example, you could use =COUNTIF(A1:A16, "7") to
 count only the cells that contained the number 7.
 
-+-------------------------------+--------------------------------------+
-| Task                          | Process                              |
-+===============================+======================================+
-| Remove duplicates:            | Data \> Remove duplicates            |
-+-------------------------------+--------------------------------------+
-| Make all date format the      | Format \> number \> date             |
-| same:                         |                                      |
-+-------------------------------+--------------------------------------+
-| Specified text separation     | Data \> split text to column         |
-| (delimiter):                  |                                      |
-+-------------------------------+--------------------------------------+
-| CONCATENATE: a function that  | =Concatenate(item1, item 2)          |
-| joins multiple text strings   |                                      |
-| into a single string.         | or                                   |
-|                               |                                      |
-|                               | =Concatenate(item1, " ", item2)      |
-+-------------------------------+--------------------------------------+
-| SPLIT: splits based on a      | =SPLIT(item, "")                     |
-| delimiter                     |                                      |
-|                               | In between "" can be for example a , |
-|                               | - or space                           |
-+-------------------------------+--------------------------------------+
-| Select from a column part     | =RIGHT(Range, \# of characters)      |
-| from the right:               |                                      |
-+-------------------------------+--------------------------------------+
-| Select from a column part     | =LEFT(Range, \# of characters)       |
-| from the left:                |                                      |
-+-------------------------------+--------------------------------------+
-| Trim: Removing unnecessary    | =TRIM(Range)                         |
-| spaces                        |                                      |
-+-------------------------------+--------------------------------------+
-| Vertical lookup -\> VLOOKUP   | VLOOKUP(DATA, 'where you want to     |
-|                               | look'RANGE, column, false) False is  |
-|                               | for an exact match.                  |
-+-------------------------------+--------------------------------------+
-| Returns something instead of  | IFNA(\#N/A, "Does not exist")        |
-| NA                            |                                      |
-+-------------------------------+--------------------------------------+
-| Sorting with function         | =SORT(range, number sort column,     |
-|                               | TRUE/FALSE)                          |
-|                               |                                      |
-|                               | TRUE = ascending\                    |
-|                               | FALSE = descending                   |
-+-------------------------------+--------------------------------------+
-| Checking length               | =LEN()                               |
-+-------------------------------+--------------------------------------+
++----------------------------------+----------------------------------+
+| Task                             | Process                          |
++==================================+==================================+
+| Remove duplicates:               | Data \> Remove duplicates        |
++----------------------------------+----------------------------------+
+| Make all date format the same:   | Format \> number \> date         |
++----------------------------------+----------------------------------+
+| Specified text separation        | Data \> split text to column     |
+| (delimiter):                     |                                  |
++----------------------------------+----------------------------------+
+| CONCATENATE: a function that     | =Concatenate(item1, item 2)      |
+| joins multiple text strings into |                                  |
+| a single string.                 | or                               |
+|                                  |                                  |
+|                                  | =Concatenate(item1, " ", item2)  |
++----------------------------------+----------------------------------+
+| SPLIT: splits based on a         | =SPLIT(item, "")                 |
+| delimiter                        |                                  |
+|                                  | In between "" can be for example |
+|                                  | a , - or space                   |
++----------------------------------+----------------------------------+
+| Select from a column part from   | =RIGHT(Range, \# of characters)  |
+| the right:                       |                                  |
++----------------------------------+----------------------------------+
+| Select from a column part from   | =LEFT(Range, \# of characters)   |
+| the left:                        |                                  |
++----------------------------------+----------------------------------+
+| Trim: Removing unnecessary       | =TRIM(Range)                     |
+| spaces                           |                                  |
++----------------------------------+----------------------------------+
+| Vertical lookup -\> VLOOKUP      | VLOOKUP(DATA, 'where you want to |
+|                                  | look'RANGE, column, false) False |
+|                                  | is for an exact match.           |
++----------------------------------+----------------------------------+
+| Returns something instead of NA  | IFNA(\#N/A, "Does not exist")    |
++----------------------------------+----------------------------------+
+| Sorting with function            | =SORT(range, number sort column, |
+|                                  | TRUE/FALSE)                      |
+|                                  |                                  |
+|                                  | TRUE = ascending\                |
+|                                  | FALSE = descending               |
++----------------------------------+----------------------------------+
+| Checking length                  | =LEN()                           |
++----------------------------------+----------------------------------+
 
 [Errors:]{.ul}
 

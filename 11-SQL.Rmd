@@ -85,44 +85,43 @@ OR Condition 2
 
 Basic WHERE clause:
 
-+--------------------------+---------------------------------------+
-| Function                 | Meaning                               |
-+==========================+=======================================+
-| WHERE name = "Dave"      | Exact                                 |
-+--------------------------+---------------------------------------+
-| WHERE NOT name = "Dave"  | All but DaveDave                      |
-+--------------------------+---------------------------------------+
-| WHERE name LIKE "D%"     | Starting with (sometimes D\*)         |
-+--------------------------+---------------------------------------+
-| WHERE name NOT LIKE "D%" | Does not start with                   |
-+--------------------------+---------------------------------------+
-| WHERE name LIKE "[abc]"  | Starting with multiple options        |
-+--------------------------+---------------------------------------+
-| WHERE name LIKE "[!abc]" | Not starting with multiple options    |
-+--------------------------+---------------------------------------+
-| WHERE name LIKE "%e"     | Ending with e                         |
-+--------------------------+---------------------------------------+
-| WHERE name               | Second letter is \_                   |
-|                          |                                       |
-| LIKE '\_a%'              |                                       |
-+--------------------------+---------------------------------------+
-| WHERE name \<\> 'Dave'   | Exclude                               |
-| or                       |                                       |
-|                          |                                       |
-| WHERE name != 'Dave'     |                                       |
-+--------------------------+---------------------------------------+
-| WHERE salary \<= 3000    | Less than or equal to                 |
-+--------------------------+---------------------------------------+
-| WHERE salary \>= 3000    | Greater than or equal to              |
-+--------------------------+---------------------------------------+
-| WHERE salary \< 3000     | Less than                             |
-+--------------------------+---------------------------------------+
-| WHERE salary \> 3000     | Greater than                          |
-+--------------------------+---------------------------------------+
-| WHERE SUBJECT NOT NULL   | returns values with no missing values |
-+--------------------------+---------------------------------------+
-| WHERE SUBJECT IS NULL    | returns values with missing values    |
-+--------------------------+---------------------------------------+
++---------------------------+---------------------------------------+
+| Function                  | Meaning                               |
++===========================+=======================================+
+| WHERE name = "Dave"       | Exact                                 |
++---------------------------+---------------------------------------+
+| WHERE NOT name = "Dave"   | All but DaveDave                      |
++---------------------------+---------------------------------------+
+| WHERE name LIKE "D%"      | Starting with (sometimes D\*)         |
++---------------------------+---------------------------------------+
+| WHERE name NOT LIKE "D%"  | Does not start with                   |
++---------------------------+---------------------------------------+
+| WHERE name LIKE "[abc]"   | Starting with multiple options        |
++---------------------------+---------------------------------------+
+| WHERE name LIKE "[!abc]"  | Not starting with multiple options    |
++---------------------------+---------------------------------------+
+| WHERE name LIKE "%e"      | Ending with e                         |
++---------------------------+---------------------------------------+
+| WHERE name                | Second letter is \_                   |
+|                           |                                       |
+| LIKE '\_a%'               |                                       |
++---------------------------+---------------------------------------+
+| WHERE name \<\> 'Dave' or | Exclude                               |
+|                           |                                       |
+| WHERE name != 'Dave'      |                                       |
++---------------------------+---------------------------------------+
+| WHERE salary \<= 3000     | Less than or equal to                 |
++---------------------------+---------------------------------------+
+| WHERE salary \>= 3000     | Greater than or equal to              |
++---------------------------+---------------------------------------+
+| WHERE salary \< 3000      | Less than                             |
++---------------------------+---------------------------------------+
+| WHERE salary \> 3000      | Greater than                          |
++---------------------------+---------------------------------------+
+| WHERE SUBJECT NOT NULL    | returns values with no missing values |
++---------------------------+---------------------------------------+
+| WHERE SUBJECT IS NULL     | returns values with missing values    |
++---------------------------+---------------------------------------+
 
 It is additionally possible to add comments for further reference:
 
@@ -167,11 +166,11 @@ SUBJECT
 The query above will group each subject and calculate the **average**
 grades.
 
-SELECT	SUBJECT,		AVG(GRADES)
+SELECT SUBJECT, AVG(GRADES)
 
-FROM	STUDENTS
+FROM STUDENTS
 
-GROUP BY	SUBJECTHAVING 	AVG(GRADES) \>= 90
+GROUP BY SUBJECTHAVING AVG(GRADES) \>= 90
 
 <https://towardsdatascience.com/sql-cheat-sheet-776f8e3189fa>
 
@@ -268,140 +267,113 @@ SELECT SUBSTR(countr, 1, 3) AS country_code
 
 Typecasting: converting data from one type to another.
 
-+---------------+------------------+
-| Objective     | Command          |
-+===============+==================+
-| Filtering on  | WHERE            |
-| dates         |                  |
-|               | date between     |
-|               | '2020-12-01' AND |
-|               | '2021-12-31'     |
-+---------------+------------------+
-| Combine       | CONCAT(column1,  |
-| multiple      | column2)         |
-| columns       |                  |
-| together      |                  |
-+---------------+------------------+
-| Combine       | CONCAT(column1,  |
-| together with | '-', column2,    |
-| individual    | ',', column3)    |
-| separator     |                  |
-+---------------+------------------+
-| A function    | CONCAT_WS(',',   |
-| that adds two | column1,         |
-| or more       | column2)         |
-| strings       |                  |
-| together with |                  |
-| a separator   |                  |
-+---------------+------------------+
-| Display field | C                |
-| column1, if   | OALESCE(column1, |
-| null than     | column2)         |
-| display field |                  |
-| column2       |                  |
-+---------------+------------------+
-| Typecasting   | SELECT           |
-|               | CAST(column AS   |
-|               | FLOAT64)         |
-+---------------+------------------+
-| Ordering      | ORDER BY column  |
-|               | DESC             |
-|               |                  |
-|               | ORDER BY column  |
-|               | ASC              |
-+---------------+------------------+
-| Find all      | WHERE            |
-| missing       |                  |
-| values from a | column IS NULL;  |
-| column        |                  |
-+---------------+------------------+
-| Min & max     | SELECT           |
-|               |                  |
-|               | MIN()            |
-|               |                  |
-|               | MAX()            |
-+---------------+------------------+
-| Calculating   | AVG()            |
-| average       |                  |
-+---------------+------------------+
-| Counting      | COUNT()          |
-| frequencies   |                  |
-+---------------+------------------+
-| Summing       | SUM()            |
-+---------------+------------------+
-| Checking a    | SELECT           |
-| strings has   |                  |
-| the same      | LENGTH(column)   |
-| length        |                  |
-+---------------+------------------+
-| Show which    | WHERE            |
-| strings have  |                  |
-| more / less / | LENGTH(column)   |
-| the same      | \> 6             |
-| number of     |                  |
-| strings       |                  |
-+---------------+------------------+
-| Removing      | SELECT           |
-| duplicates    |                  |
-|               | DISTINCT column  |
-+---------------+------------------+
-| Trimming      | WHERE            |
-| spaces        | TRIM(column)     |
-+---------------+------------------+
-| The CASE      | CASE             |
-| statement     |                  |
-| goes through  | WHEN name =      |
-| one or more   | 'wrong' THEN     |
-| conditions    | 'Right'          |
-| and returns a |                  |
-| value as soon | ELSE name        |
-| as a          |                  |
-| condition is  | END AS           |
-| met.          | cleaned_name     |
-+---------------+------------------+
-| Deleting      | DELETE FROM      |
-| records       | table            |
-+---------------+------------------+
++----------------------------------+----------------------------------+
+| Objective                        | Command                          |
++==================================+==================================+
+| Filtering on dates               | WHERE                            |
+|                                  |                                  |
+|                                  | date between '2020-12-01' AND    |
+|                                  | '2021-12-31'                     |
++----------------------------------+----------------------------------+
+| Combine multiple columns         | CONCAT(column1, column2)         |
+| together                         |                                  |
++----------------------------------+----------------------------------+
+| Combine together with individual | CONCAT(column1, '-', column2,    |
+| separator                        | ',', column3)                    |
++----------------------------------+----------------------------------+
+| A function that adds two or more | CONCAT_WS(',', column1, column2) |
+| strings together with a          |                                  |
+| separator                        |                                  |
++----------------------------------+----------------------------------+
+| Display field column1, if null   | C OALESCE(column1, column2)      |
+| than display field column2       |                                  |
++----------------------------------+----------------------------------+
+| Typecasting                      | SELECT CAST(column AS FLOAT64)   |
++----------------------------------+----------------------------------+
+| Ordering                         | ORDER BY column DESC             |
+|                                  |                                  |
+|                                  | ORDER BY column ASC              |
++----------------------------------+----------------------------------+
+| Find all missing values from a   | WHERE                            |
+| column                           |                                  |
+|                                  | column IS NULL;                  |
++----------------------------------+----------------------------------+
+| Min & max                        | SELECT                           |
+|                                  |                                  |
+|                                  | MIN()                            |
+|                                  |                                  |
+|                                  | MAX()                            |
++----------------------------------+----------------------------------+
+| Calculating average              | AVG()                            |
++----------------------------------+----------------------------------+
+| Counting frequencies             | COUNT()                          |
++----------------------------------+----------------------------------+
+| Summing                          | SUM()                            |
++----------------------------------+----------------------------------+
+| Checking a strings has the same  | SELECT                           |
+| length                           |                                  |
+|                                  | LENGTH(column)                   |
++----------------------------------+----------------------------------+
+| Show which strings have more /   | WHERE                            |
+| less / the same number of        |                                  |
+| strings                          | LENGTH(column) \> 6              |
++----------------------------------+----------------------------------+
+| Removing duplicates              | SELECT                           |
+|                                  |                                  |
+|                                  | DISTINCT column                  |
++----------------------------------+----------------------------------+
+| Trimming spaces                  | WHERE TRIM(column)               |
++----------------------------------+----------------------------------+
+| The CASE statement goes through  | CASE                             |
+| one or more conditions and       |                                  |
+| returns a value as soon as a     | WHEN name = 'wrong' THEN 'Right' |
+| condition is met.                |                                  |
+|                                  | ELSE name                        |
+|                                  |                                  |
+|                                  | END AS cleaned_name              |
++----------------------------------+----------------------------------+
+| Deleting records                 | DELETE FROM table                |
++----------------------------------+----------------------------------+
 
 ------------------------------------------------------------------------
 
 ## Analyzing data
 
-+--------------------------------+-------------------------------------+
-| Objective                      | Command                             |
-+================================+=====================================+
-| Filtering on dates             | WHERE                               |
-|                                |                                     |
-|                                | date between '2020-12-01' AND       |
-|                                | '2021-12-31'                        |
-+--------------------------------+-------------------------------------+
-| Transforming values /          | IF(                                 |
-| characters                     |                                     |
-|                                | columnname = amount or character,\  |
-|                                | what to change it to,\              |
-|                                | in which column) FE:                |
-|                                |                                     |
-|                                | IF(\                                |
-|                                | column1= 'No answer',\              |
-|                                | NULL,\                              |
-|                                | column1)                            |
-|                                |                                     |
-|                                | Changes: the values no answer in    |
-|                                | column 1 to NULL                    |
-+--------------------------------+-------------------------------------+
-| Transforming variables         | CAST(expression AS typename)        |
-|                                |                                     |
-|                                | Typename: INT, STRING, DATETIME,    |
-+--------------------------------+-------------------------------------+
-| The **SAFE_CAST** function     | SAFE_CAST(expression AS typename)   |
-| returns a value of Null        |                                     |
-| instead of an error when a     |                                     |
-| query fail                     |                                     |
-+--------------------------------+-------------------------------------+
-|                                |                                     |
-+--------------------------------+-------------------------------------+
-|                                |                                     |
-+--------------------------------+-------------------------------------+
++----------------------------------+----------------------------------+
+| Objective                        | Command                          |
++==================================+==================================+
+| Filtering on dates               | WHERE                            |
+|                                  |                                  |
+|                                  | date between '2020-12-01' AND    |
+|                                  | '2021-12-31'                     |
++----------------------------------+----------------------------------+
+| Transforming values / characters | IF(                              |
+|                                  |                                  |
+|                                  | columnname = amount or           |
+|                                  | character,\                      |
+|                                  | what to change it to,\           |
+|                                  | in which column) FE:             |
+|                                  |                                  |
+|                                  | IF(\                             |
+|                                  | column1= 'No answer',\           |
+|                                  | NULL,\                           |
+|                                  | column1)                         |
+|                                  |                                  |
+|                                  | Changes: the values no answer in |
+|                                  | column 1 to NULL                 |
++----------------------------------+----------------------------------+
+| Transforming variables           | CAST(expression AS typename)     |
+|                                  |                                  |
+|                                  | Typename: INT, STRING, DATETIME, |
++----------------------------------+----------------------------------+
+| The **SAFE_CAST** function       | SAFE_CAST(expression AS          |
+| returns a value of Null instead  | typename)                        |
+| of an error when a query fail    |                                  |
++----------------------------------+----------------------------------+
+|                                  |                                  |
++----------------------------------+----------------------------------+
+|                                  |                                  |
++----------------------------------+----------------------------------+
 
 **Saving a query for a data table as a new table:**
 
