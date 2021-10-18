@@ -739,13 +739,16 @@ head(clean_names(penguins))
 # This ensures that there's only characters, numbers, and underscores in the names.
 ```
 
-```{r}
+```{r, warning=FALSE, message=FALSE}
 bookings_df <- read_csv("hotel_bookings.csv")
 
 trimmed_df <- bookings_df %>% 
   select(hotel, is_canceled, lead_time)
+```
 
-trimmed_df2 <- trimmed_df %>% 
+```{r}
+trimmed_df %>% 
+  head() %>% 
   select(hotel, is_canceled, lead_time) %>% 
   rename(hotel_type = hotel)
 
