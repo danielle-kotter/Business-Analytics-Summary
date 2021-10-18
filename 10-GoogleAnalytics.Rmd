@@ -739,7 +739,7 @@ head(clean_names(penguins))
 # This ensures that there's only characters, numbers, and underscores in the names.
 ```
 
-```{r}
+```{r, include=FALSE}
 library(tidyr)
 penguins2 <- penguins %>% arrange(-bill_length_mm)
 
