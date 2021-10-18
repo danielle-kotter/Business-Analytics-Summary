@@ -1,0 +1,2194 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter - 10 Data Analytics - Google course | Business Analytics - Cheatsheets &amp; Summary</title>
+  <meta name="description" content="This is a summary of code &amp; theory studied throughout several courses of my MSc in management with a specialization in Business Analytics." />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter - 10 Data Analytics - Google course | Business Analytics - Cheatsheets &amp; Summary" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This is a summary of code &amp; theory studied throughout several courses of my MSc in management with a specialization in Business Analytics." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter - 10 Data Analytics - Google course | Business Analytics - Cheatsheets &amp; Summary" />
+  
+  <meta name="twitter:description" content="This is a summary of code &amp; theory studied throughout several courses of my MSc in management with a specialization in Business Analytics." />
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="marketing-analytics.html"/>
+<link rel="next" href="references.html"/>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.5.1/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Cheatsheets & Summary</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="1" data-path="basics-r.html"><a href="basics-r.html"><i class="fa fa-check"></i><b>1</b> Basics R</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="basics-r.html"><a href="basics-r.html#simple-statistics"><i class="fa fa-check"></i><b>1.1</b> Simple statistics</a></li>
+<li class="chapter" data-level="1.2" data-path="basics-r.html"><a href="basics-r.html#tables-frames-matrices"><i class="fa fa-check"></i><b>1.2</b> Tables, frames &amp; matrices</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="basics-r.html"><a href="basics-r.html#combining-sets-and-setting-names"><i class="fa fa-check"></i><b>1.2.1</b> Combining sets and setting names:</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="basics-r.html"><a href="basics-r.html#data-sets"><i class="fa fa-check"></i><b>1.3</b> Data sets</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="basics-r.html"><a href="basics-r.html#subsetting"><i class="fa fa-check"></i><b>1.3.1</b> Subsetting</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="basics-r.html"><a href="basics-r.html#r-markdown"><i class="fa fa-check"></i><b>1.4</b> R Markdown</a>
+<ul>
+<li class="chapter" data-level="1.4.1" data-path="basics-r.html"><a href="basics-r.html#setup-rmarkdown-code-chunks"><i class="fa fa-check"></i><b>1.4.1</b> Setup rmarkdown &amp; code chunks</a></li>
+<li class="chapter" data-level="1.4.2" data-path="basics-r.html"><a href="basics-r.html#latex"><i class="fa fa-check"></i><b>1.4.2</b> Latex</a></li>
+</ul></li>
+<li class="chapter" data-level="1.5" data-path="basics-r.html"><a href="basics-r.html#miscellaneous"><i class="fa fa-check"></i><b>1.5</b> Miscellaneous</a>
+<ul>
+<li class="chapter" data-level="1.5.1" data-path="basics-r.html"><a href="basics-r.html#removing-infinite-na-values"><i class="fa fa-check"></i><b>1.5.1</b> Removing infinite + NA values</a></li>
+<li class="chapter" data-level="1.5.2" data-path="basics-r.html"><a href="basics-r.html#transforming-variable-types"><i class="fa fa-check"></i><b>1.5.2</b> Transforming variable types</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="r-data-visualization.html"><a href="r-data-visualization.html"><i class="fa fa-check"></i><b>2</b> R Data visualization</a></li>
+<li class="chapter" data-level="3" data-path="applied-statistics.html"><a href="applied-statistics.html"><i class="fa fa-check"></i><b>3</b> Applied Statistics</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="applied-statistics.html"><a href="applied-statistics.html#probability"><i class="fa fa-check"></i><b>3.1</b> Probability</a></li>
+<li class="chapter" data-level="3.2" data-path="applied-statistics.html"><a href="applied-statistics.html#bayes-theorem"><i class="fa fa-check"></i><b>3.2</b> Bayes theorem</a></li>
+<li class="chapter" data-level="3.3" data-path="applied-statistics.html"><a href="applied-statistics.html#discrete-probablity"><i class="fa fa-check"></i><b>3.3</b> Discrete probablity</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="applied-statistics.html"><a href="applied-statistics.html#uniform-discrete-probability-distribution"><i class="fa fa-check"></i><b>3.3.1</b> Uniform discrete probability distribution</a></li>
+<li class="chapter" data-level="3.3.2" data-path="applied-statistics.html"><a href="applied-statistics.html#binomial-distribution"><i class="fa fa-check"></i><b>3.3.2</b> Binomial distribution</a></li>
+<li class="chapter" data-level="3.3.3" data-path="applied-statistics.html"><a href="applied-statistics.html#poisson-distribution"><i class="fa fa-check"></i><b>3.3.3</b> Poisson distribution</a></li>
+<li class="chapter" data-level="3.3.4" data-path="applied-statistics.html"><a href="applied-statistics.html#the-normal-distribution"><i class="fa fa-check"></i><b>3.3.4</b> The normal distribution</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="applied-statistics.html"><a href="applied-statistics.html#samples-estimation-confidence-intervals"><i class="fa fa-check"></i><b>3.4</b> Samples, estimation &amp; confidence intervals</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="applied-statistics.html"><a href="applied-statistics.html#sample-size"><i class="fa fa-check"></i><b>3.4.1</b> Sample size</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="applied-statistics.html"><a href="applied-statistics.html#significance-level"><i class="fa fa-check"></i><b>3.5</b> Significance level</a>
+<ul>
+<li class="chapter" data-level="3.5.1" data-path="applied-statistics.html"><a href="applied-statistics.html#critical-values"><i class="fa fa-check"></i><b>3.5.1</b> Critical values</a></li>
+<li class="chapter" data-level="3.5.2" data-path="applied-statistics.html"><a href="applied-statistics.html#test-of-equality---two-samples"><i class="fa fa-check"></i><b>3.5.2</b> Test of equality - two samples</a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="applied-statistics.html"><a href="applied-statistics.html#non-parametric-testing"><i class="fa fa-check"></i><b>3.6</b> Non-Parametric testing</a>
+<ul>
+<li class="chapter" data-level="3.6.1" data-path="applied-statistics.html"><a href="applied-statistics.html#contingency-table-frequencies"><i class="fa fa-check"></i><b>3.6.1</b> Contingency table / frequencies</a></li>
+<li class="chapter" data-level="3.6.2" data-path="applied-statistics.html"><a href="applied-statistics.html#chi-square"><i class="fa fa-check"></i><b>3.6.2</b> Chi-square</a></li>
+<li class="chapter" data-level="3.6.3" data-path="applied-statistics.html"><a href="applied-statistics.html#goodness-of-fit"><i class="fa fa-check"></i><b>3.6.3</b> Goodness of fit</a></li>
+<li class="chapter" data-level="3.6.4" data-path="applied-statistics.html"><a href="applied-statistics.html#mann-whitney-test"><i class="fa fa-check"></i><b>3.6.4</b> Mann-whitney test</a></li>
+<li class="chapter" data-level="3.6.5" data-path="applied-statistics.html"><a href="applied-statistics.html#wilcoxon-test"><i class="fa fa-check"></i><b>3.6.5</b> Wilcoxon test</a></li>
+<li class="chapter" data-level="3.6.6" data-path="applied-statistics.html"><a href="applied-statistics.html#run-test"><i class="fa fa-check"></i><b>3.6.6</b> Run test</a></li>
+<li class="chapter" data-level="3.6.7" data-path="applied-statistics.html"><a href="applied-statistics.html#p-value"><i class="fa fa-check"></i><b>3.6.7</b> P-value</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="simple-regressions.html"><a href="simple-regressions.html"><i class="fa fa-check"></i><b>4</b> Simple regressions</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="simple-regressions.html"><a href="simple-regressions.html#basics-regressions"><i class="fa fa-check"></i><b>4.1</b> Basics regressions</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="simple-regressions.html"><a href="simple-regressions.html#summarizing-regressions"><i class="fa fa-check"></i><b>4.1.1</b> Summarizing regressions:</a></li>
+<li class="chapter" data-level="4.1.2" data-path="simple-regressions.html"><a href="simple-regressions.html#visualizing-model"><i class="fa fa-check"></i><b>4.1.2</b> Visualizing model</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="simple-regressions.html"><a href="simple-regressions.html#prediction"><i class="fa fa-check"></i><b>4.2</b> Prediction</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="simple-regressions.html"><a href="simple-regressions.html#confidence-and-prediction-plotting"><i class="fa fa-check"></i><b>4.2.1</b> Confidence and prediction plotting</a></li>
+<li class="chapter" data-level="4.2.2" data-path="simple-regressions.html"><a href="simple-regressions.html#prediction-with-dummy-variables"><i class="fa fa-check"></i><b>4.2.2</b> Prediction with dummy variables</a></li>
+<li class="chapter" data-level="4.2.3" data-path="simple-regressions.html"><a href="simple-regressions.html#prediction-intervals-examples"><i class="fa fa-check"></i><b>4.2.3</b> Prediction intervals examples</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="simple-regressions.html"><a href="simple-regressions.html#data-problems"><i class="fa fa-check"></i><b>4.3</b> Data problems</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="simple-regressions.html"><a href="simple-regressions.html#multicollinearity"><i class="fa fa-check"></i><b>4.3.1</b> Multicollinearity</a></li>
+<li class="chapter" data-level="4.3.2" data-path="simple-regressions.html"><a href="simple-regressions.html#variance-inflation-factors"><i class="fa fa-check"></i><b>4.3.2</b> Variance inflation factors</a></li>
+<li class="chapter" data-level="4.3.3" data-path="simple-regressions.html"><a href="simple-regressions.html#anova"><i class="fa fa-check"></i><b>4.3.3</b> ANOVA</a></li>
+<li class="chapter" data-level="4.3.4" data-path="simple-regressions.html"><a href="simple-regressions.html#linearizing-variables"><i class="fa fa-check"></i><b>4.3.4</b> Linearizing variables</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="structural-equation-models.html"><a href="structural-equation-models.html"><i class="fa fa-check"></i><b>5</b> Structural equation models</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="structural-equation-models.html"><a href="structural-equation-models.html#path-analysis-structural-equations"><i class="fa fa-check"></i><b>5.1</b> Path analysis (structural equations)</a></li>
+<li class="chapter" data-level="5.2" data-path="structural-equation-models.html"><a href="structural-equation-models.html#coding-the-model"><i class="fa fa-check"></i><b>5.2</b> Coding the model</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="structural-equation-models.html"><a href="structural-equation-models.html#covariance"><i class="fa fa-check"></i><b>5.2.1</b> Covariance</a></li>
+<li class="chapter" data-level="5.2.2" data-path="structural-equation-models.html"><a href="structural-equation-models.html#reliability"><i class="fa fa-check"></i><b>5.2.2</b> Reliability</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="structural-equation-models.html"><a href="structural-equation-models.html#factor-model"><i class="fa fa-check"></i><b>5.3</b> Factor model</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="structural-equation-models.html"><a href="structural-equation-models.html#setting-covariance-variances"><i class="fa fa-check"></i><b>5.3.1</b> Setting covariance &amp; variances</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="basics-python.html"><a href="basics-python.html"><i class="fa fa-check"></i><b>6</b> Basics Python</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="basics-python.html"><a href="basics-python.html#data-set"><i class="fa fa-check"></i><b>6.1</b> Data set</a></li>
+<li class="chapter" data-level="6.2" data-path="basics-python.html"><a href="basics-python.html#matrixes"><i class="fa fa-check"></i><b>6.2</b> Matrixes</a></li>
+<li class="chapter" data-level="6.3" data-path="basics-python.html"><a href="basics-python.html#filtering-a-data-set"><i class="fa fa-check"></i><b>6.3</b> Filtering a data set</a></li>
+<li class="chapter" data-level="6.4" data-path="basics-python.html"><a href="basics-python.html#data-imputation"><i class="fa fa-check"></i><b>6.4</b> Data imputation</a></li>
+<li class="chapter" data-level="6.5" data-path="basics-python.html"><a href="basics-python.html#data-visualization"><i class="fa fa-check"></i><b>6.5</b> Data visualization</a>
+<ul>
+<li class="chapter" data-level="6.5.1" data-path="basics-python.html"><a href="basics-python.html#other-categorical-plots"><i class="fa fa-check"></i><b>6.5.1</b> Other categorical plots</a></li>
+</ul></li>
+<li class="chapter" data-level="6.6" data-path="basics-python.html"><a href="basics-python.html#preparing-data-for-modeling"><i class="fa fa-check"></i><b>6.6</b> Preparing data for modeling</a>
+<ul>
+<li class="chapter" data-level="6.6.1" data-path="basics-python.html"><a href="basics-python.html#creating-the-models"><i class="fa fa-check"></i><b>6.6.1</b> Creating the models</a></li>
+</ul></li>
+<li class="chapter" data-level="6.7" data-path="basics-python.html"><a href="basics-python.html#model-selection"><i class="fa fa-check"></i><b>6.7</b> Model selection</a>
+<ul>
+<li class="chapter" data-level="6.7.1" data-path="basics-python.html"><a href="basics-python.html#leave-one-out-cross-validation-loocv"><i class="fa fa-check"></i><b>6.7.1</b> Leave-One-Out Cross validation (LOOCV):</a></li>
+<li class="chapter" data-level="6.7.2" data-path="basics-python.html"><a href="basics-python.html#k-fold-cross-validation"><i class="fa fa-check"></i><b>6.7.2</b> K-Fold Cross validation</a></li>
+<li class="chapter" data-level="6.7.3" data-path="basics-python.html"><a href="basics-python.html#svc"><i class="fa fa-check"></i><b>6.7.3</b> SVC</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="practical-data-science.html"><a href="practical-data-science.html"><i class="fa fa-check"></i><b>7</b> Practical Data Science</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="practical-data-science.html"><a href="practical-data-science.html#machine-learning"><i class="fa fa-check"></i><b>7.1</b> Machine Learning</a>
+<ul>
+<li class="chapter" data-level="7.1.1" data-path="practical-data-science.html"><a href="practical-data-science.html#theory"><i class="fa fa-check"></i><b>7.1.1</b> Theory</a></li>
+<li class="chapter" data-level="7.1.2" data-path="practical-data-science.html"><a href="practical-data-science.html#data-set-1"><i class="fa fa-check"></i><b>7.1.2</b> Data set</a></li>
+<li class="chapter" data-level="7.1.3" data-path="practical-data-science.html"><a href="practical-data-science.html#finding-the-expected-value-of-the-error"><i class="fa fa-check"></i><b>7.1.3</b> Finding the expected value of the error</a></li>
+<li class="chapter" data-level="7.1.4" data-path="practical-data-science.html"><a href="practical-data-science.html#finding-the-error"><i class="fa fa-check"></i><b>7.1.4</b> Finding the error</a></li>
+<li class="chapter" data-level="7.1.5" data-path="practical-data-science.html"><a href="practical-data-science.html#loss-function"><i class="fa fa-check"></i><b>7.1.5</b> Loss function</a></li>
+<li class="chapter" data-level="7.1.6" data-path="practical-data-science.html"><a href="practical-data-science.html#training-vs-test-set"><i class="fa fa-check"></i><b>7.1.6</b> Training vs test set</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="practical-data-science.html"><a href="practical-data-science.html#bias-variance-trade-off"><i class="fa fa-check"></i><b>7.2</b> Bias-variance trade off</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="practical-data-science.html"><a href="practical-data-science.html#training-fitting-a-model"><i class="fa fa-check"></i><b>7.2.1</b> Training (fitting) a model</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="practical-data-science.html"><a href="practical-data-science.html#gradient-descent"><i class="fa fa-check"></i><b>7.3</b> Gradient descent</a>
+<ul>
+<li class="chapter" data-level="7.3.1" data-path="practical-data-science.html"><a href="practical-data-science.html#stochastic-gradient-descent"><i class="fa fa-check"></i><b>7.3.1</b> Stochastic gradient descent</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="practical-data-science.html"><a href="practical-data-science.html#model-selection-1"><i class="fa fa-check"></i><b>7.4</b> Model Selection</a></li>
+<li class="chapter" data-level="7.5" data-path="practical-data-science.html"><a href="practical-data-science.html#validations-methods"><i class="fa fa-check"></i><b>7.5</b> Validations methods</a>
+<ul>
+<li class="chapter" data-level="7.5.1" data-path="practical-data-science.html"><a href="practical-data-science.html#hold-out-validation-method"><i class="fa fa-check"></i><b>7.5.1</b> Hold-Out validation method</a></li>
+<li class="chapter" data-level="7.5.2" data-path="practical-data-science.html"><a href="practical-data-science.html#standardization"><i class="fa fa-check"></i><b>7.5.2</b> Standardization</a></li>
+<li class="chapter" data-level="7.5.3" data-path="practical-data-science.html"><a href="practical-data-science.html#leave-one-out-cross-validation-method-loocv"><i class="fa fa-check"></i><b>7.5.3</b> Leave-One-Out Cross-validation method (LOOCV):</a></li>
+<li class="chapter" data-level="7.5.4" data-path="practical-data-science.html"><a href="practical-data-science.html#k-fold-cross-validation-1"><i class="fa fa-check"></i><b>7.5.4</b> K-Fold Cross Validation</a></li>
+</ul></li>
+<li class="chapter" data-level="7.6" data-path="practical-data-science.html"><a href="practical-data-science.html#classification-problems"><i class="fa fa-check"></i><b>7.6</b> Classification Problems</a>
+<ul>
+<li class="chapter" data-level="7.6.1" data-path="practical-data-science.html"><a href="practical-data-science.html#evaluating-model-quality"><i class="fa fa-check"></i><b>7.6.1</b> Evaluating model quality</a></li>
+<li class="chapter" data-level="7.6.2" data-path="practical-data-science.html"><a href="practical-data-science.html#receiver-operating-characteristics-roc"><i class="fa fa-check"></i><b>7.6.2</b> Receiver Operating Characteristics (ROC)</a></li>
+<li class="chapter" data-level="7.6.3" data-path="practical-data-science.html"><a href="practical-data-science.html#multi-class-classification"><i class="fa fa-check"></i><b>7.6.3</b> Multi-class classification</a></li>
+<li class="chapter" data-level="7.6.4" data-path="practical-data-science.html"><a href="practical-data-science.html#maximal-margin-classifier"><i class="fa fa-check"></i><b>7.6.4</b> Maximal Margin Classifier</a></li>
+<li class="chapter" data-level="7.6.5" data-path="practical-data-science.html"><a href="practical-data-science.html#support-vector-classifier"><i class="fa fa-check"></i><b>7.6.5</b> Support vector classifier</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="advanced-statistical-methods.html"><a href="advanced-statistical-methods.html"><i class="fa fa-check"></i><b>8</b> Advanced Statistical Methods</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="advanced-statistical-methods.html"><a href="advanced-statistical-methods.html#clustering"><i class="fa fa-check"></i><b>8.1</b> Clustering</a>
+<ul>
+<li class="chapter" data-level="8.1.1" data-path="advanced-statistical-methods.html"><a href="advanced-statistical-methods.html#hierarchical-clustering"><i class="fa fa-check"></i><b>8.1.1</b> Hierarchical clustering</a></li>
+<li class="chapter" data-level="8.1.2" data-path="advanced-statistical-methods.html"><a href="advanced-statistical-methods.html#dendrogram"><i class="fa fa-check"></i><b>8.1.2</b> Dendrogram</a></li>
+<li class="chapter" data-level="8.1.3" data-path="advanced-statistical-methods.html"><a href="advanced-statistical-methods.html#non-hierarchical-clustering"><i class="fa fa-check"></i><b>8.1.3</b> Non-Hierarchical clustering</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="advanced-statistical-methods.html"><a href="advanced-statistical-methods.html#multi-dimensional-scaling"><i class="fa fa-check"></i><b>8.2</b> Multi-Dimensional Scaling</a></li>
+<li class="chapter" data-level="8.3" data-path="advanced-statistical-methods.html"><a href="advanced-statistical-methods.html#principal-component-analysis"><i class="fa fa-check"></i><b>8.3</b> Principal component analysis</a>
+<ul>
+<li class="chapter" data-level="8.3.1" data-path="advanced-statistical-methods.html"><a href="advanced-statistical-methods.html#biplots"><i class="fa fa-check"></i><b>8.3.1</b> Biplots</a></li>
+</ul></li>
+<li class="chapter" data-level="8.4" data-path="advanced-statistical-methods.html"><a href="advanced-statistical-methods.html#correspondence-analysis"><i class="fa fa-check"></i><b>8.4</b> Correspondence analysis</a>
+<ul>
+<li class="chapter" data-level="8.4.1" data-path="advanced-statistical-methods.html"><a href="advanced-statistical-methods.html#multiple-correspondence-analysis"><i class="fa fa-check"></i><b>8.4.1</b> Multiple Correspondence Analysis</a></li>
+</ul></li>
+<li class="chapter" data-level="8.5" data-path="advanced-statistical-methods.html"><a href="advanced-statistical-methods.html#multiple-linear-regression-classification-trees"><i class="fa fa-check"></i><b>8.5</b> Multiple linear regression &amp; classification trees</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="marketing-analytics.html"><a href="marketing-analytics.html"><i class="fa fa-check"></i><b>9</b> Marketing Analytics</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="marketing-analytics.html"><a href="marketing-analytics.html#logistic-regression"><i class="fa fa-check"></i><b>9.1</b> Logistic regression</a>
+<ul>
+<li class="chapter" data-level="9.1.1" data-path="marketing-analytics.html"><a href="marketing-analytics.html#sensitivity-vs-specificity"><i class="fa fa-check"></i><b>9.1.1</b> Sensitivity vs Specificity</a></li>
+</ul></li>
+<li class="chapter" data-level="9.2" data-path="marketing-analytics.html"><a href="marketing-analytics.html#conjoint-analytics"><i class="fa fa-check"></i><b>9.2</b> Conjoint Analytics</a>
+<ul>
+<li class="chapter" data-level="9.2.1" data-path="marketing-analytics.html"><a href="marketing-analytics.html#random-utility-model"><i class="fa fa-check"></i><b>9.2.1</b> Random utility model</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="data-analytics---google-course.html"><a href="data-analytics---google-course.html"><i class="fa fa-check"></i><b>10</b> Data Analytics - Google course</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="data-analytics---google-course.html"><a href="data-analytics---google-course.html#basics"><i class="fa fa-check"></i><b>10.1</b> Basics</a>
+<ul>
+<li class="chapter" data-level="10.1.1" data-path="data-analytics---google-course.html"><a href="data-analytics---google-course.html#process-of-data-analysis"><i class="fa fa-check"></i><b>10.1.1</b> Process of data analysis</a></li>
+<li class="chapter" data-level="10.1.2" data-path="data-analytics---google-course.html"><a href="data-analytics---google-course.html#spreadsheets"><i class="fa fa-check"></i><b>10.1.2</b> Spreadsheets</a></li>
+<li class="chapter" data-level="10.1.3" data-path="data-analytics---google-course.html"><a href="data-analytics---google-course.html#query-languages"><i class="fa fa-check"></i><b>10.1.3</b> Query languages</a></li>
+<li class="chapter" data-level="10.1.4" data-path="data-analytics---google-course.html"><a href="data-analytics---google-course.html#visualization-tools"><i class="fa fa-check"></i><b>10.1.4</b> Visualization tools</a></li>
+</ul></li>
+<li class="chapter" data-level="10.2" data-path="data-analytics---google-course.html"><a href="data-analytics---google-course.html#programming"><i class="fa fa-check"></i><b>10.2</b> Programming</a>
+<ul>
+<li class="chapter" data-level="10.2.1" data-path="data-analytics---google-course.html"><a href="data-analytics---google-course.html#r-programming"><i class="fa fa-check"></i><b>10.2.1</b> R Programming</a></li>
+</ul></li>
+<li class="chapter" data-level="10.3" data-path="data-analytics---google-course.html"><a href="data-analytics---google-course.html#questions-to-make-data-drive-decisions"><i class="fa fa-check"></i><b>10.3</b> Questions to make data-drive decisions</a></li>
+<li class="chapter" data-level="10.4" data-path="data-analytics---google-course.html"><a href="data-analytics---google-course.html#prepare-for-data-exploration"><i class="fa fa-check"></i><b>10.4</b> Prepare for data exploration</a></li>
+<li class="chapter" data-level="10.5" data-path="data-analytics---google-course.html"><a href="data-analytics---google-course.html#processing-data---cleaning"><i class="fa fa-check"></i><b>10.5</b> Processing data - cleaning</a></li>
+<li class="chapter" data-level="10.6" data-path="data-analytics---google-course.html"><a href="data-analytics---google-course.html#analyzing-data"><i class="fa fa-check"></i><b>10.6</b> Analyzing data</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="chapter" data-level="11" data-path="sql.html"><a href="sql.html"><i class="fa fa-check"></i><b>11</b> SQL</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="sql.html"><a href="sql.html#introduction"><i class="fa fa-check"></i><b>11.1</b> Introduction</a></li>
+<li class="chapter" data-level="11.2" data-path="sql.html"><a href="sql.html#select-from-where"><i class="fa fa-check"></i><b>11.2</b> SELECT FROM WHERE</a></li>
+<li class="chapter" data-level="11.3" data-path="sql.html"><a href="sql.html#bigquery"><i class="fa fa-check"></i><b>11.3</b> BigQuery</a></li>
+<li class="chapter" data-level="11.4" data-path="sql.html"><a href="sql.html#data-cleaning"><i class="fa fa-check"></i><b>11.4</b> Data cleaning</a></li>
+<li class="chapter" data-level="11.5" data-path="sql.html"><a href="sql.html#analyzing-data-1"><i class="fa fa-check"></i><b>11.5</b> Analyzing data</a>
+<ul>
+<li class="chapter" data-level="11.5.1" data-path="sql.html"><a href="sql.html#combining-tables-with-sql"><i class="fa fa-check"></i><b>11.5.1</b> Combining tables with SQL:</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Business Analytics - Cheatsheets &amp; Summary</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="data-analytics---google-course" class="section level1" number="10">
+<h1><span class="header-section-number">Chapter - 10</span> Data Analytics - Google course</h1>
+<p>The following chapter includes the notes from the <a href="https://www.coursera.org/professional-certificates/google-data-analytics?utm_source=gg&amp;utm_medium=sem&amp;utm_campaign=15-GoogleDataAnalytics-ROW&amp;utm_content=15-GoogleDataAnalytics-ROW&amp;campaignid=12566515400&amp;adgroupid=117869292685&amp;device=c&amp;keyword=google%20data%20analytics&amp;matchtype=b&amp;network=g&amp;devicemodel=&amp;adpostion=&amp;creativeid=507290840627&amp;hide_mobile_promo&amp;gclid=Cj0KCQjwtrSLBhCLARIsACh6RmjrcozUpQNz5_s5y0AKtPKbCxqCaCIX78Zltj5e6a_8Ods2YZxEeCkaAogMEALw_wcB">Google Data Analytics
+Course</a>.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb1-1"><a href="data-analytics---google-course.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Packages</span></span>
+<span id="cb1-2"><a href="data-analytics---google-course.html#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;tidyverse&quot;</span>)</span></code></pre></div>
+<div id="basics" class="section level2" number="10.1">
+<h2><span class="header-section-number">10.1</span> Basics</h2>
+<blockquote>
+<p><strong>Data</strong> is a collection of facts that can be used to draw
+conclusions, make predictions, and assist in decision-making.</p>
+</blockquote>
+<blockquote>
+<p><strong>Data analysis</strong> is the collection, transformation, and organization
+of data in order to draw conclusions, make predictions, and drive
+informed decision-making.</p>
+</blockquote>
+<blockquote>
+<p>A <strong>data analyst</strong> is someone who collects, transforms, and organizes
+data in order to help make informed decisions.</p>
+</blockquote>
+<blockquote>
+<p><strong>Data analytics</strong> in the simplest terms is the science of data. It’s
+a very broad concept that encompasses everything from the job of
+managing and using data to the tools and methods that data workers use
+each and every day.</p>
+</blockquote>
+<p> </p>
+<p>Companies hire data analysts to control the waves of data they collect
+every day, makes sense of it, and then draw conclusions or make
+predictions. This is the process of turning data into insights, and it’s
+how analysts help businesses put all their data to good use.</p>
+<p><strong>People analytics</strong> is the practice of collecting and analyzing data on
+the people who make up a company’s workforce in order to gain insights
+to improve how the company operates. </p>
+<div id="process-of-data-analysis" class="section level3" number="10.1.1">
+<h3><span class="header-section-number">10.1.1</span> Process of data analysis</h3>
+<p>Six steps of data analysis:</p>
+<ol style="list-style-type: decimal">
+<li><p><strong>Ask</strong>: Business Challenge/Objective/Question</p></li>
+<li><p><strong>Prepare</strong>: Data generation, collection, storage, and data
+management</p></li>
+<li><p><strong>Process</strong>: Data cleaning/data integrity</p></li>
+<li><p><strong>Analyze</strong>: Data exploration, visualization, and analysis</p></li>
+<li><p><strong>Share</strong>: Communicating and interpreting results</p></li>
+<li><p><strong>Act</strong>: Putting your insights to work to solve the problem</p></li>
+</ol>
+<p>Or in other words:</p>
+<ol style="list-style-type: decimal">
+<li><p>To determine what would qualify as a successful result, you <strong>ask</strong>
+effective questions and collaborated with leaders and managers who
+are interested in the outcome of the analysis. Asking questions to
+define both the issue to be solved and what would equal a successful
+result.</p></li>
+<li><p>Next, is to <strong>prepared</strong> by building a timeline and collecting data
+designed to be inclusive.</p></li>
+<li><p>Then <strong>process</strong> the data by cleaning it to make sure it is
+complete, correct, relevant, and free of errors and outliers.</p></li>
+<li><p><strong>Analyze</strong> the clean data.</p></li>
+<li><p><strong>Share</strong> findings and recommendations with team leaders.</p></li>
+<li><p>Leadership <strong>acts</strong> on the results and focuses on improving key
+areas.</p></li>
+</ol>
+<p> </p>
+<p><u>Phases of the process of analyzing data - data analysis:</u></p>
+<p><strong>Ask</strong></p>
+<ul>
+<li><p>Find out the root problem</p></li>
+<li><p>Understanding stakeholders expectation</p></li>
+</ul>
+<p><strong>Process</strong></p>
+<ul>
+<li>Find and eliminate any errors and inaccuracies that can get in the
+way of results. This usually means cleaning data, transforming it
+into a more useful format, combining two or more data sets to make
+information more complete and removing outliers, which are any data
+points that could skew the information.</li>
+</ul>
+<p><img src="images/paste-69735867.png" width="610" /></p>
+<p> </p>
+<p><strong>Data science:</strong> is defined as creating new ways of modeling and
+understanding the unknown by using raw data. Data scientists create new
+questions using data, while analysts find answers to existing questions
+by creating insights from data sources.</p>
+<p><em>Data science includes three disciplines</em></p>
+<ul>
+<li><p>Machine learning</p></li>
+<li><p>Analytics</p></li>
+<li><p>Statistics</p></li>
+</ul>
+<p><img src="images/paste-AB8A8FB6.png" width="700" /></p>
+<p> </p>
+<p><strong>Data ecosystem:</strong> a group of elements that interact with one another.
+Data ecosystems are made up of various elements that interact with one
+another in order to produce, manage, store, organize, analyze, and share
+data. These elements include hardware and software tools, and the people
+who use them.</p>
+<p>The <strong>cloud</strong> is just a term used to describe the virtual location.
+Instead of on the computer hard drive, it is accessed through the
+internet.</p>
+<p><strong>Data-driven decision-making</strong> is defined as using facts to guide
+business strategy. The first step in data-driven decision-making is
+figuring out the business need. Usually, this is a problem that needs to
+be solved. Sometimes past experience helps you make a connection that no
+one else would notice.</p>
+<p> </p>
+<p><strong>Analytical skills:</strong></p>
+<ul>
+<li><p>Curiosity: Curiosity is all about wanting to learn something.
+Curious people usually seek out new challenges and experiences.</p></li>
+<li><p>Understanding context: Context is the condition in which something
+exists or happens.</p></li>
+<li><p>Having technical mindset: involves the ability to break things down
+into smaller steps or pieces and work with them in an orderly and
+logical way.</p></li>
+<li><p>Data design: how you organize information.</p></li>
+<li><p>Data strategy: the management of the people, processes, and tools
+used in data analysis.</p></li>
+</ul>
+<p><strong>Analytical thinking</strong> involves identifying and defining a problem and
+then solving it by using data in an organized, step-by-step manner.</p>
+<p> </p>
+<p><u>Five key aspects to analytical thinking:</u></p>
+<ul>
+<li><p><strong>Visualization:</strong> important because visuals can help data analysts
+understand and explain information more effectively.</p></li>
+<li><p><strong>Strategy:</strong> Strategizing helps data analysts see what they want to
+achieve with the data and how they can get there.</p></li>
+<li><p><strong>Problem-orientation:</strong> using a problem-oriented approach in order
+to identify, describe, and solve problems.</p></li>
+<li><p><strong>Correlation:</strong> like a relationship. Correlation does not equal
+causation!</p></li>
+<li><p><strong>Big-picture and detail-oriented thinking:</strong> being able to see the
+big picture as well as the details.</p></li>
+</ul>
+<p>Important questions to ask during data analysis:</p>
+<ul>
+<li><p>What is the root cause of a problem?</p></li>
+<li><p>Where are the gaps in our process?</p></li>
+</ul>
+<p><strong>Gap analysis:</strong> Gap analysis lets you examine and evaluate how a
+process works currently in order to get where you want to be in the
+future.</p>
+<p> </p>
+<p><u>Life cycle of data =</u></p>
+<ol style="list-style-type: decimal">
+<li><p><strong>Plan:</strong> Decide what kind of data is needed, how it will be
+managed, and who will be responsible for it.</p></li>
+<li><p><strong>Capture:</strong> Collect or bring in data from a variety of different
+sources.</p></li>
+<li><p><strong>Manage:</strong> Care for and maintain the data. This includes
+determining how and where it is stored and the tools used to do so.</p></li>
+<li><p><strong>Analyze:</strong> Use the data to solve problems, make decisions, and
+support business goals.</p></li>
+<li><p><strong>Archive:</strong> Keep relevant data stored for long-term and future
+reference.</p></li>
+<li><p><strong>Destroy:</strong> Remove data from storage and delete any shared copies
+of the data.</p></li>
+</ol>
+<p><strong>Database =</strong> A database is a collection of data stored in a computer
+system. When you maintain a database of customer information, ensuring
+data integrity, credibility, and privacy are all important concerns.</p>
+<p>Most common tools</p>
+<ul>
+<li><p>Query languages</p></li>
+<li><p>Spreadsheets</p></li>
+<li><p>Visualization tools</p></li>
+</ul>
+<p>A <strong>function</strong> is a preset command that automatically performs a
+specific process or task using the data in a spreadsheet.</p>
+<p><strong>Data visualization</strong> is the graphical representation of information.
+Some examples include graphs, maps, and tables.</p>
+<p> </p>
+<hr />
+</div>
+<div id="spreadsheets" class="section level3" number="10.1.2">
+<h3><span class="header-section-number">10.1.2</span> Spreadsheets</h3>
+<p>Data analysts rely on spreadsheets to collect and organize data. Two
+popular spreadsheet applications you will probably use a lot in your
+future role as a data analyst are Microsoft Excel and Google Sheets.</p>
+<p>Structure data in a meaningful way by letting you</p>
+<ul>
+<li><p>Collect, store, organize, and sort information</p></li>
+<li><p>Identify patterns and piece the data together in a way that works
+for each specific data project</p></li>
+<li><p>Create excellent data visualizations, like graphs and charts.</p></li>
+</ul>
+<p>Observation = 1 row</p>
+<p>A <strong>formula</strong> is a set of instructions that performs a specific action
+using the data in a spreadsheet.</p>
+<p><br />
+</p>
+<p><u>Spreadsheets tasks:</u></p>
+<ol style="list-style-type: decimal">
+<li><p>Organize your data</p>
+<ul>
+<li><p>Pivot table</p>
+<ul>
+<li>Sort &amp; filter</li>
+</ul></li>
+</ul></li>
+<li><p>Calculate your data</p>
+<ul>
+<li><p>Formulas</p></li>
+<li><p>Functions</p></li>
+</ul></li>
+</ol>
+<p><br />
+</p>
+<p><u>Spreadsheets and the data life cycle:</u></p>
+<ol style="list-style-type: decimal">
+<li><p><em>Plan:</em> develop organizational standards (formatting, headings,
+colors, how to order)</p></li>
+<li><p><em>Capture:</em> connecting spreadsheets so they are automatically updated
+from online source</p></li>
+<li><p><em>Manage:</em> Storing, organizing, filtering and updating and how the
+data is shared and kept safe</p></li>
+<li><p><em>Analyze:</em> formulas, aggregate, create reports and pivot tables</p></li>
+<li><p><em>Archive:</em> any that aren’t used often but want to reference later</p></li>
+<li><p><em>Destroy:</em> when you will never need it again.</p></li>
+</ol>
+<p><br />
+</p>
+<p><img src="images/paste-28149BAD.png" width="700" /></p>
+<p><br />
+</p>
+<p><strong>Formula</strong> is a set of instructions that perform a specific
+calculation.</p>
+<p>COUNTIF() COUNT is the formula; it will be executed IF the conditions
+you create are true. For example, you could use =COUNTIF(A1:A16, “7”) to
+count only the cells that contained the number 7.</p>
+<table style="width:99%;">
+<colgroup>
+<col width="44%" />
+<col width="54%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Task</th>
+<th>Process</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Remove duplicates:</td>
+<td>Data &gt; Remove duplicates</td>
+</tr>
+<tr class="even">
+<td>Make all date format the
+same:</td>
+<td>Format &gt; number &gt; date</td>
+</tr>
+<tr class="odd">
+<td>Specified text separation
+(delimiter):</td>
+<td>Data &gt; split text to column</td>
+</tr>
+<tr class="even">
+<td>CONCATENATE: a function that
+joins multiple text strings
+into a single string.</td>
+<td><p>=Concatenate(item1, item 2)</p>
+<p>or</p>
+<p>=Concatenate(item1, " ", item2)</p></td>
+</tr>
+<tr class="odd">
+<td>SPLIT: splits based on a
+delimiter</td>
+<td><p>=SPLIT(item, "")</p>
+<p>In between "" can be for example a ,
+- or space</p></td>
+</tr>
+<tr class="even">
+<td>Select from a column part
+from the right:</td>
+<td>=RIGHT(Range, # of characters)</td>
+</tr>
+<tr class="odd">
+<td>Select from a column part
+from the left:</td>
+<td>=LEFT(Range, # of characters)</td>
+</tr>
+<tr class="even">
+<td>Trim: Removing unnecessary
+spaces</td>
+<td>=TRIM(Range)</td>
+</tr>
+<tr class="odd">
+<td>Vertical lookup -&gt; VLOOKUP</td>
+<td>VLOOKUP(DATA, ’where you want to
+look’RANGE, column, false) False is
+for an exact match.</td>
+</tr>
+<tr class="even">
+<td>Returns something instead of
+NA</td>
+<td>IFNA(#N/A, “Does not exist”)</td>
+</tr>
+<tr class="odd">
+<td>Sorting with function</td>
+<td><p>=SORT(range, number sort column,
+TRUE/FALSE)</p>
+<p>TRUE = ascending<br />
+FALSE = descending</p></td>
+</tr>
+<tr class="even">
+<td>Checking length</td>
+<td>=LEN()</td>
+</tr>
+</tbody>
+</table>
+<p><u>Errors:</u></p>
+<p><img src="images/paste-19476F1A.png" width="1200" /></p>
+<p><img src="images/paste-58480EA9.png" width="1200" /></p>
+<p><strong>A function</strong> is a preset command that automatically performs a
+specific process or task using the data.</p>
+<p><strong>Data mapping</strong> is the process of matching fields from one database to
+another.</p>
+<p><strong>Data security:</strong> means protecting data from unauthorized access or
+corruption by adopting safety measures.</p>
+<p><strong>Encryption</strong> uses a unique algorithm to alter data and make it
+unusable by users and applications that don’t know the algorithm. This
+algorithm is saved as a “key” which can be used to reverse the
+encryption; so if you have the key, you can still use the data in its
+original form.</p>
+<p><strong>Tokenization</strong> replaces the data elements you want to protect with
+randomly generated data referred to as a “token.” The original data is
+stored in a separate location and mapped to the tokens. To access the
+complete original data, the user or application needs to have permission
+to use the tokenized data and the token mapping.</p>
+<p><u>Cleaning with spreadsheets:</u></p>
+<p><img src="images/paste-5BAF5C98.png" width="1200" /></p>
+<p> </p>
+<hr />
+</div>
+<div id="query-languages" class="section level3" number="10.1.3">
+<h3><span class="header-section-number">10.1.3</span> Query languages</h3>
+<p>A <strong>query language</strong> is a computer programming language that allows you
+to retrieve and manipulate data from a database.</p>
+<p><strong>SQL =</strong> Structured Query Language</p>
+<p>A database is a collection of structured data stored in a computer
+system. Some popular Structured Query Language (SQL) programs include
+MySQL, Microsoft SQL Server, and BigQuery.</p>
+<p>Query languages</p>
+<ul>
+<li><p>Allow analysts to isolate specific information from a database(s)</p></li>
+<li><p>Make it easier for you to learn and understand the requests made to
+databases</p></li>
+<li><p>Allow analysts to select, create, add, or download data from a
+database for analysis</p></li>
+</ul>
+<p>A query is a request for data or information from a database.</p>
+<p> </p>
+<hr />
+</div>
+<div id="visualization-tools" class="section level3" number="10.1.4">
+<h3><span class="header-section-number">10.1.4</span> Visualization tools</h3>
+<p>Data analysts use a number of visualization tools, like graphs, maps,
+tables, charts, and more. Two popular visualization tools are Tableau
+and Looker.</p>
+<p>These tools:</p>
+<ul>
+<li><p>Turn complex numbers into a story that people can understand</p></li>
+<li><p>Help stakeholders come up with conclusions that lead to informed
+decisions and effective business strategies</p></li>
+<li><p>Have multiple features</p></li>
+</ul>
+<p>- <strong>Tableau</strong>’s simple drag-and-drop feature lets users create
+interactive graphs in dashboards and worksheets</p>
+<p>- <strong>Looker</strong> communicates directly with a database, allowing you to
+connect your data right to the visual tool you choose</p>
+<p>A career as a data analyst also involves using programming languages,
+like R and Python, which are used a lot for statistical analysis,
+visualization, and other data analysis.</p>
+<div id="tableau" class="section level4" number="10.1.4.1">
+<h4><span class="header-section-number">10.1.4.1</span> Tableau</h4>
+<hr />
+<p><strong>Attribute</strong> is a characteristic or quality of data used to label a
+column in a table.</p>
+<p>Observation - row</p>
+<p>In data analytics, fairness means ensuring that your analysis does not
+create or reinforce bias. This requires using processes and systems that
+are fair and inclusive.</p>
+<p><img src="images/paste-7C57F347.png" width="1200" /></p>
+<p>A business task is the question or problem data analysis answers for
+business.</p>
+<p> </p>
+<hr />
+</div>
+</div>
+</div>
+<div id="programming" class="section level2" number="10.2">
+<h2><span class="header-section-number">10.2</span> Programming</h2>
+<p><strong>Computer programming</strong> refers to giving instructions to a computer to
+perform an action or set of actions. You can use different programming
+languages to write these instructions. The R programming language is
+super useful for organizing, cleaning, and analyzing data.</p>
+<p><strong>Programming</strong> means giving instructions to a computer to perform an
+action or set of actions.</p>
+<p>Programming helps you</p>
+<ul>
+<li>Clarify the steps of your analysis</li>
+</ul>
+<!-- -->
+<ul>
+<li><p>Saves time</p></li>
+<li><p>Lets you easily reproduce and share your work</p></li>
+</ul>
+<p><strong>Programming languages</strong> are the words and symbols we use to write
+instructions for computers to follow. Programming languages have their
+own set of rules for how these words and symbols should be used, called
+syntax.</p>
+<p><strong>Syntax</strong> shows you how to arrange the words and symbols you enter so
+they make sense to a computer.</p>
+<p><strong>Coding</strong> is writing instructions to the computer in the syntax of a
+specific programming language.</p>
+<p><img src="images/paste-A6F0384B.png" width="1200" /></p>
+<p> </p>
+<hr />
+<div id="r-programming" class="section level3" number="10.2.1">
+<h3><span class="header-section-number">10.2.1</span> R Programming</h3>
+<p><strong>R</strong> is a programming language frequently used for statistical
+analysis, visualization and other data analysis. R has become a
+preferred programming language of scientists, statisticians and data
+analysts around the world. R is accessible, data-centric, open-source
+and has an active community of users.</p>
+<p>RStudio is a type of software application known as an integrated
+development environment (IDE). An IDE brings together all the tools you
+may want to use in a single place.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb2-1"><a href="data-analytics---google-course.html#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;palmerpenguins&quot;</span>)</span>
+<span id="cb2-2"><a href="data-analytics---google-course.html#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;lubridate&quot;</span>) </span></code></pre></div>
+<p><strong>R fundamentals</strong></p>
+<p>An argument is information that a function in R needs in order to run.</p>
+<p>A variable is a representation of a value in R that can be stored for
+use later during programming. Variables can also be called objects.</p>
+<p>A <strong>vector</strong> is a group of data elements of the same type stored in a
+sequence in R. You can make a <strong>vector</strong> using the combined function. In
+R this function is just the letter c followed by the values you want in
+your vector inside parentheses.</p>
+<p>There are two types of vectors:</p>
+<ul>
+<li><p>Atomic vectors</p></li>
+<li><p>Lists</p></li>
+</ul>
+<p>The four most common atomic vectors:</p>
+<p><img src="images/paste-383DBEE9.png" width="1200" /></p>
+<p><img src="images/paste-9FD128DC.png" width="1200" /></p>
+<p><strong>Operator =</strong> a symbol that names the type of operation or calculation
+to be performed in a formula.</p>
+<p>You should use <strong>an operator</strong> to assign a value to a variable in R. You
+should use operators such as &lt;- after a variable to assign a value to
+it. An argument is information that a function in R needs in order to
+run and does not assign value to variables.</p>
+<ul>
+<li><strong>Assignment operators:</strong> are used to assign values to variables and
+vectors such as: &lt;- or =</li>
+</ul>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb3-1"><a href="data-analytics---google-course.html#cb3-1" aria-hidden="true" tabindex="-1"></a>r <span class="ot">=</span> <span class="dv">5</span></span>
+<span id="cb3-2"><a href="data-analytics---google-course.html#cb3-2" aria-hidden="true" tabindex="-1"></a>t <span class="ot">=</span> <span class="dv">5</span></span>
+<span id="cb3-3"><a href="data-analytics---google-course.html#cb3-3" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">5</span> <span class="sc">+</span> <span class="dv">5</span></span>
+<span id="cb3-4"><a href="data-analytics---google-course.html#cb3-4" aria-hidden="true" tabindex="-1"></a>y <span class="ot">=</span> r <span class="sc">+</span> t</span></code></pre></div>
+<ul>
+<li><strong>Arithmetic operators:</strong> +, -, :, x</li>
+</ul>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb4-1"><a href="data-analytics---google-course.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="dv">5</span> <span class="sc">*</span> <span class="dv">5</span></span></code></pre></div>
+<pre><code>[1] 25</code></pre>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb6-1"><a href="data-analytics---google-course.html#cb6-1" aria-hidden="true" tabindex="-1"></a>y <span class="sc">+</span> x</span></code></pre></div>
+<pre><code>[1] 20</code></pre>
+<ul>
+<li><strong>Logical operators:</strong> AND (&amp;), OR (|), NOT (!)</li>
+</ul>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb8-1"><a href="data-analytics---google-course.html#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="cn">TRUE</span> <span class="sc">&amp;</span> <span class="cn">TRUE</span></span></code></pre></div>
+<pre><code>[1] TRUE</code></pre>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb10-1"><a href="data-analytics---google-course.html#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="cn">TRUE</span> <span class="sc">|</span> <span class="cn">FALSE</span> </span></code></pre></div>
+<pre><code>[1] TRUE</code></pre>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb12-1"><a href="data-analytics---google-course.html#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="sc">!</span><span class="cn">TRUE</span> <span class="co"># Not true means false</span></span></code></pre></div>
+<pre><code>[1] FALSE</code></pre>
+<ul>
+<li><strong>Relations operators:</strong> identify how one R object relates to
+another—like whether an object is less than, equal to, or greater
+than another object. Output for relational operators is either TRUE
+or FALSE.</li>
+</ul>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb14-1"><a href="data-analytics---google-course.html#cb14-1" aria-hidden="true" tabindex="-1"></a>x <span class="sc">&lt;</span> y</span></code></pre></div>
+<pre><code>[1] FALSE</code></pre>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb16-1"><a href="data-analytics---google-course.html#cb16-1" aria-hidden="true" tabindex="-1"></a>x <span class="sc">&gt;</span> y</span></code></pre></div>
+<pre><code>[1] FALSE</code></pre>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb18-1"><a href="data-analytics---google-course.html#cb18-1" aria-hidden="true" tabindex="-1"></a>y <span class="sc">&gt;=</span> <span class="dv">10</span></span></code></pre></div>
+<pre><code>[1] TRUE</code></pre>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb20-1"><a href="data-analytics---google-course.html#cb20-1" aria-hidden="true" tabindex="-1"></a>y <span class="sc">&lt;=</span> <span class="dv">10</span></span></code></pre></div>
+<pre><code>[1] TRUE</code></pre>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb22-1"><a href="data-analytics---google-course.html#cb22-1" aria-hidden="true" tabindex="-1"></a>y<span class="sc">==</span><span class="dv">5</span></span></code></pre></div>
+<pre><code>[1] FALSE</code></pre>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb24-1"><a href="data-analytics---google-course.html#cb24-1" aria-hidden="true" tabindex="-1"></a>x <span class="sc">!=</span> <span class="dv">2</span></span></code></pre></div>
+<pre><code>[1] TRUE</code></pre>
+<p><strong>Lists</strong> are different from atomic vectors because their elements can
+be of any type—like dates, data frames, vectors, matrices, and more.
+Lists can even contain other lists. For example:</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb26-1"><a href="data-analytics---google-course.html#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">list</span>(<span class="st">&quot;a&quot;</span>, 1L, <span class="fl">1.5</span>, <span class="cn">TRUE</span>)</span></code></pre></div>
+<pre><code>[[1]]
+[1] &quot;a&quot;
+
+[[2]]
+[1] 1
+
+[[3]]
+[1] 1.5
+
+[[4]]
+[1] TRUE</code></pre>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb28-1"><a href="data-analytics---google-course.html#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(<span class="fu">list</span>(<span class="st">&quot;a&quot;</span>, 1L, <span class="fl">1.5</span>, <span class="cn">TRUE</span>)) <span class="co"># explains the elements of a list</span></span></code></pre></div>
+<pre><code>List of 4
+ $ : chr &quot;a&quot;
+ $ : int 1
+ $ : num 1.5
+ $ : logi TRUE</code></pre>
+<p>Lubridate package:</p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb30-1"><a href="data-analytics---google-course.html#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">today</span>() <span class="co">#current date</span></span></code></pre></div>
+<pre><code>[1] &quot;2021-10-18&quot;</code></pre>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb32-1"><a href="data-analytics---google-course.html#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">now</span>() <span class="co">#current date-time</span></span></code></pre></div>
+<pre><code>[1] &quot;2021-10-18 15:55:37 CEST&quot;</code></pre>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb34-1"><a href="data-analytics---google-course.html#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ymd</span>(<span class="st">&quot;2021-01-20&quot;</span>)</span></code></pre></div>
+<pre><code>[1] &quot;2021-01-20&quot;</code></pre>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb36-1"><a href="data-analytics---google-course.html#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ymd_hms</span>(<span class="st">&quot;2021-01-20 20:11:59&quot;</span>)</span></code></pre></div>
+<pre><code>[1] &quot;2021-01-20 20:11:59 UTC&quot;</code></pre>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb38-1"><a href="data-analytics---google-course.html#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as_date</span>(<span class="fu">now</span>())</span></code></pre></div>
+<pre><code>[1] &quot;2021-10-18&quot;</code></pre>
+<p>A conditional statement is a declaration that if a certain condition
+holds, then a certain event must take place. For example, “If the
+temperature is above freezing, then I will go outside for a walk.”
+Examples of conditional statements:</p>
+<ul>
+<li><p>if()</p></li>
+<li><p>else()</p></li>
+<li><p>else if()</p></li>
+</ul>
+<p>if()</p>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb40-1"><a href="data-analytics---google-course.html#cb40-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">4</span> <span class="co"># here x is a positive number</span></span>
+<span id="cb40-2"><a href="data-analytics---google-course.html#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (x <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
+<span id="cb40-3"><a href="data-analytics---google-course.html#cb40-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">&quot;x is a positive number&quot;</span>)</span>
+<span id="cb40-4"><a href="data-analytics---google-course.html#cb40-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<pre><code>[1] &quot;x is a positive number&quot;</code></pre>
+<p>else()</p>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb42-1"><a href="data-analytics---google-course.html#cb42-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">0</span> <span class="co"># here x is not a positive number</span></span>
+<span id="cb42-2"><a href="data-analytics---google-course.html#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (x <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
+<span id="cb42-3"><a href="data-analytics---google-course.html#cb42-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">&quot;x is a positive number&quot;</span>)</span>
+<span id="cb42-4"><a href="data-analytics---google-course.html#cb42-4" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
+<span id="cb42-5"><a href="data-analytics---google-course.html#cb42-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">&quot;x is not a positive number&quot;</span>)</span>
+<span id="cb42-6"><a href="data-analytics---google-course.html#cb42-6" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<pre><code>[1] &quot;x is not a positive number&quot;</code></pre>
+<p>else if()</p>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb44-1"><a href="data-analytics---google-course.html#cb44-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="sc">-</span><span class="dv">1</span></span>
+<span id="cb44-2"><a href="data-analytics---google-course.html#cb44-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (x <span class="sc">&lt;</span> <span class="dv">0</span>) {</span>
+<span id="cb44-3"><a href="data-analytics---google-course.html#cb44-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">&quot;x is a negative number&quot;</span>)</span>
+<span id="cb44-4"><a href="data-analytics---google-course.html#cb44-4" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> <span class="cf">if</span> (x <span class="sc">==</span> <span class="dv">0</span>) {</span>
+<span id="cb44-5"><a href="data-analytics---google-course.html#cb44-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">&quot;x is zero&quot;</span>)</span>
+<span id="cb44-6"><a href="data-analytics---google-course.html#cb44-6" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
+<span id="cb44-7"><a href="data-analytics---google-course.html#cb44-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">&quot;x is a positive number&quot;</span>)</span>
+<span id="cb44-8"><a href="data-analytics---google-course.html#cb44-8" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<pre><code>[1] &quot;x is a negative number&quot;</code></pre>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb46-1"><a href="data-analytics---google-course.html#cb46-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">10</span></span>
+<span id="cb46-2"><a href="data-analytics---google-course.html#cb46-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (x <span class="sc">&lt;</span> <span class="dv">0</span>) {</span>
+<span id="cb46-3"><a href="data-analytics---google-course.html#cb46-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">&quot;x is a negative number&quot;</span>)</span>
+<span id="cb46-4"><a href="data-analytics---google-course.html#cb46-4" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> <span class="cf">if</span> (x <span class="sc">==</span> <span class="dv">0</span>) {</span>
+<span id="cb46-5"><a href="data-analytics---google-course.html#cb46-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">&quot;x is zero&quot;</span>)</span>
+<span id="cb46-6"><a href="data-analytics---google-course.html#cb46-6" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
+<span id="cb46-7"><a href="data-analytics---google-course.html#cb46-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">&quot;x is a positive number&quot;</span>)</span>
+<span id="cb46-8"><a href="data-analytics---google-course.html#cb46-8" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<pre><code>[1] &quot;x is a positive number&quot;</code></pre>
+<div id="data-frame" class="section level4" number="10.2.1.1">
+<h4><span class="header-section-number">10.2.1.1</span> Data frame</h4>
+<p>A <strong>data frame</strong> is a collection of columns–similar to a spreadsheet or
+SQL table. Each column has a name at the top that represents a variable,
+and includes one observation per row. Data frames help summarize data
+and organize it into a format that is easy to read and use. </p>
+<p><u><strong>Tibble</strong></u></p>
+<p>In the tidyverse, tibbles are like streamlined data frames. They make
+working with data easier, but they’re a little different from standard
+data frames. First, tibbles never change the data types of the inputs.
+They won’t change your strings to factors or anything else.</p>
+<p>Variables are organized into columns. Observations are organized into
+rows</p>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb48-1"><a href="data-analytics---google-course.html#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb48-2"><a href="data-analytics---google-course.html#cb48-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb48-3"><a href="data-analytics---google-course.html#cb48-3" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(<span class="st">&quot;diamonds&quot;</span>)</span>
+<span id="cb48-4"><a href="data-analytics---google-course.html#cb48-4" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(diamonds) <span class="co"># basic information</span></span></code></pre></div>
+<pre><code>Rows: 53,940
+Columns: 10
+$ carat   &lt;dbl&gt; 0.23, 0.21, 0.23, 0.29, 0.31, 0.24, 0.24, 0.26, 0.22, 0.23, 0.…
+$ cut     &lt;ord&gt; Ideal, Premium, Good, Premium, Good, Very Good, Very Good, Ver…
+$ color   &lt;ord&gt; E, E, E, I, J, J, I, H, E, H, J, J, F, J, E, E, I, J, J, J, I,…
+$ clarity &lt;ord&gt; SI2, SI1, VS1, VS2, SI2, VVS2, VVS1, SI1, VS2, VS1, SI1, VS1, …
+$ depth   &lt;dbl&gt; 61.5, 59.8, 56.9, 62.4, 63.3, 62.8, 62.3, 61.9, 65.1, 59.4, 64…
+$ table   &lt;dbl&gt; 55, 61, 65, 58, 58, 57, 57, 55, 61, 61, 55, 56, 61, 54, 62, 58…
+$ price   &lt;int&gt; 326, 326, 327, 334, 335, 336, 336, 337, 337, 338, 339, 340, 34…
+$ x       &lt;dbl&gt; 3.95, 3.89, 4.05, 4.20, 4.34, 3.94, 3.95, 4.07, 3.87, 4.00, 4.…
+$ y       &lt;dbl&gt; 3.98, 3.84, 4.07, 4.23, 4.35, 3.96, 3.98, 4.11, 3.78, 4.05, 4.…
+$ z       &lt;dbl&gt; 2.43, 2.31, 2.31, 2.63, 2.75, 2.48, 2.47, 2.53, 2.49, 2.39, 2.…</code></pre>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb50-1"><a href="data-analytics---google-course.html#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(diamonds) <span class="co"># shows column names</span></span></code></pre></div>
+<pre><code> [1] &quot;carat&quot;   &quot;cut&quot;     &quot;color&quot;   &quot;clarity&quot; &quot;depth&quot;   &quot;table&quot;   &quot;price&quot;  
+ [8] &quot;x&quot;       &quot;y&quot;       &quot;z&quot;      </code></pre>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb52-1"><a href="data-analytics---google-course.html#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(<span class="fu">mutate</span>(diamonds, <span class="at">carat_2=</span>carat<span class="sc">*</span><span class="dv">100</span>)) <span class="co"># adds an additional column to the data frame</span></span></code></pre></div>
+<pre><code># A tibble: 6 × 11
+  carat cut       color clarity depth table price     x     y     z carat_2
+  &lt;dbl&gt; &lt;ord&gt;     &lt;ord&gt; &lt;ord&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;
+1  0.23 Ideal     E     SI2      61.5    55   326  3.95  3.98  2.43      23
+2  0.21 Premium   E     SI1      59.8    61   326  3.89  3.84  2.31      21
+3  0.23 Good      E     VS1      56.9    65   327  4.05  4.07  2.31      23
+4  0.29 Premium   I     VS2      62.4    58   334  4.2   4.23  2.63      29
+5  0.31 Good      J     SI2      63.3    58   335  4.34  4.35  2.75      31
+6  0.24 Very Good J     VVS2     62.8    57   336  3.94  3.96  2.48      24</code></pre>
+<p><u><strong>File</strong></u></p>
+<div class="sourceCode" id="cb54"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb54-1"><a href="data-analytics---google-course.html#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="co">#dir.create(&quot;destination_folder&quot;)</span></span>
+<span id="cb54-2"><a href="data-analytics---google-course.html#cb54-2" aria-hidden="true" tabindex="-1"></a><span class="fu">file.create</span>(<span class="st">&quot;new_csv_file.csv&quot;</span>)</span></code></pre></div>
+<pre><code>[1] TRUE</code></pre>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb56-1"><a href="data-analytics---google-course.html#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="fu">file.copy</span>(<span class="st">&quot;new_csv_file.csv&quot;</span> , <span class="st">&quot;destination_folder&quot;</span>)</span></code></pre></div>
+<pre><code>[1] FALSE</code></pre>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb58-1"><a href="data-analytics---google-course.html#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="fu">unlink</span>(<span class="st">&quot;new_csv_file.csv&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb59"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb59-1"><a href="data-analytics---google-course.html#cb59-1" aria-hidden="true" tabindex="-1"></a>names <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Marc&quot;</span>, <span class="st">&quot;Tom&quot;</span>, <span class="st">&quot;Esther&quot;</span>, <span class="st">&quot;Karen&quot;</span>)</span>
+<span id="cb59-2"><a href="data-analytics---google-course.html#cb59-2" aria-hidden="true" tabindex="-1"></a>age <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">13</span>, <span class="dv">24</span>, <span class="dv">55</span>, <span class="dv">69</span>)</span>
+<span id="cb59-3"><a href="data-analytics---google-course.html#cb59-3" aria-hidden="true" tabindex="-1"></a>people <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(names, age)</span>
+<span id="cb59-4"><a href="data-analytics---google-course.html#cb59-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb59-5"><a href="data-analytics---google-course.html#cb59-5" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(<span class="fu">mutate</span>(people, <span class="at">age_in_20 =</span> age <span class="sc">+</span> <span class="dv">20</span>))<span class="co">#adds an additional column</span></span></code></pre></div>
+<pre><code>   names age age_in_20
+1   Marc  13        33
+2    Tom  24        44
+3 Esther  55        75
+4  Karen  69        89</code></pre>
+<div class="sourceCode" id="cb61"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb61-1"><a href="data-analytics---google-course.html#cb61-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(<span class="fu">as_tibble</span>(diamonds)) <span class="co">#creates tibble table</span></span></code></pre></div>
+<pre><code># A tibble: 6 × 10
+  carat cut       color clarity depth table price     x     y     z
+  &lt;dbl&gt; &lt;ord&gt;     &lt;ord&gt; &lt;ord&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+1  0.23 Ideal     E     SI2      61.5    55   326  3.95  3.98  2.43
+2  0.21 Premium   E     SI1      59.8    61   326  3.89  3.84  2.31
+3  0.23 Good      E     VS1      56.9    65   327  4.05  4.07  2.31
+4  0.29 Premium   I     VS2      62.4    58   334  4.2   4.23  2.63
+5  0.31 Good      J     SI2      63.3    58   335  4.34  4.35  2.75
+6  0.24 Very Good J     VVS2     62.8    57   336  3.94  3.96  2.48</code></pre>
+<div class="sourceCode" id="cb63"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb63-1"><a href="data-analytics---google-course.html#cb63-1" aria-hidden="true" tabindex="-1"></a><span class="co"># data()  #shows the available data sets in R</span></span></code></pre></div>
+<p><u><strong>Matrices</strong></u></p>
+<p>A <strong>matrix</strong> is a two-dimensional collection of data elements. This
+means it has both rows and columns. By contrast, a vector is a
+one-dimensional sequence of data elements. But like vectors, matrices
+can only contain a single data type. For example, you can’t have both
+logicals and numerics in a matrix. </p>
+<div class="sourceCode" id="cb64"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb64-1"><a href="data-analytics---google-course.html#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">3</span><span class="sc">:</span><span class="dv">8</span>), <span class="at">nrow =</span> <span class="dv">2</span>)</span></code></pre></div>
+<pre><code>     [,1] [,2] [,3]
+[1,]    3    5    7
+[2,]    4    6    8</code></pre>
+<div class="sourceCode" id="cb66"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb66-1"><a href="data-analytics---google-course.html#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">3</span><span class="sc">:</span><span class="dv">8</span>), <span class="at">ncol =</span> <span class="dv">2</span>)</span></code></pre></div>
+<pre><code>     [,1] [,2]
+[1,]    3    6
+[2,]    4    7
+[3,]    5    8</code></pre>
+<hr />
+</div>
+<div id="preparing-the-data-for-analysis" class="section level4" number="10.2.1.2">
+<h4><span class="header-section-number">10.2.1.2</span> Preparing the data for analysis</h4>
+<div class="sourceCode" id="cb68"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb68-1"><a href="data-analytics---google-course.html#cb68-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;here&quot;</span>)</span>
+<span id="cb68-2"><a href="data-analytics---google-course.html#cb68-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;skimr&quot;</span>)</span>
+<span id="cb68-3"><a href="data-analytics---google-course.html#cb68-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;janitor&quot;</span>)</span>
+<span id="cb68-4"><a href="data-analytics---google-course.html#cb68-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;palmerpenguins&quot;</span>)</span>
+<span id="cb68-5"><a href="data-analytics---google-course.html#cb68-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb68-6"><a href="data-analytics---google-course.html#cb68-6" aria-hidden="true" tabindex="-1"></a>species <span class="ot">&lt;-</span> <span class="fu">as.character</span>(penguins<span class="sc">$</span>species)</span>
+<span id="cb68-7"><a href="data-analytics---google-course.html#cb68-7" aria-hidden="true" tabindex="-1"></a><span class="fu">skim_without_charts</span>(penguins) <span class="co">#extensive summary</span></span></code></pre></div>
+<table>
+<caption><span id="tab:unnamed-chunk-17">Table 10.1: </span>Data summary</caption>
+<tbody>
+<tr class="odd">
+<td align="left">Name</td>
+<td align="left">penguins</td>
+</tr>
+<tr class="even">
+<td align="left">Number of rows</td>
+<td align="left">344</td>
+</tr>
+<tr class="odd">
+<td align="left">Number of columns</td>
+<td align="left">8</td>
+</tr>
+<tr class="even">
+<td align="left">_______________________</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">Column type frequency:</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">factor</td>
+<td align="left">3</td>
+</tr>
+<tr class="odd">
+<td align="left">numeric</td>
+<td align="left">5</td>
+</tr>
+<tr class="even">
+<td align="left">________________________</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">Group variables</td>
+<td align="left">None</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Variable type: factor</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">skim_variable</th>
+<th align="right">n_missing</th>
+<th align="right">complete_rate</th>
+<th align="left">ordered</th>
+<th align="right">n_unique</th>
+<th align="left">top_counts</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">species</td>
+<td align="right">0</td>
+<td align="right">1.00</td>
+<td align="left">FALSE</td>
+<td align="right">3</td>
+<td align="left">Ade: 152, Gen: 124, Chi: 68</td>
+</tr>
+<tr class="even">
+<td align="left">island</td>
+<td align="right">0</td>
+<td align="right">1.00</td>
+<td align="left">FALSE</td>
+<td align="right">3</td>
+<td align="left">Bis: 168, Dre: 124, Tor: 52</td>
+</tr>
+<tr class="odd">
+<td align="left">sex</td>
+<td align="right">11</td>
+<td align="right">0.97</td>
+<td align="left">FALSE</td>
+<td align="right">2</td>
+<td align="left">mal: 168, fem: 165</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Variable type: numeric</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">skim_variable</th>
+<th align="right">n_missing</th>
+<th align="right">complete_rate</th>
+<th align="right">mean</th>
+<th align="right">sd</th>
+<th align="right">p0</th>
+<th align="right">p25</th>
+<th align="right">p50</th>
+<th align="right">p75</th>
+<th align="right">p100</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">bill_length_mm</td>
+<td align="right">2</td>
+<td align="right">0.99</td>
+<td align="right">43.92</td>
+<td align="right">5.46</td>
+<td align="right">32.1</td>
+<td align="right">39.23</td>
+<td align="right">44.45</td>
+<td align="right">48.5</td>
+<td align="right">59.6</td>
+</tr>
+<tr class="even">
+<td align="left">bill_depth_mm</td>
+<td align="right">2</td>
+<td align="right">0.99</td>
+<td align="right">17.15</td>
+<td align="right">1.97</td>
+<td align="right">13.1</td>
+<td align="right">15.60</td>
+<td align="right">17.30</td>
+<td align="right">18.7</td>
+<td align="right">21.5</td>
+</tr>
+<tr class="odd">
+<td align="left">flipper_length_mm</td>
+<td align="right">2</td>
+<td align="right">0.99</td>
+<td align="right">200.92</td>
+<td align="right">14.06</td>
+<td align="right">172.0</td>
+<td align="right">190.00</td>
+<td align="right">197.00</td>
+<td align="right">213.0</td>
+<td align="right">231.0</td>
+</tr>
+<tr class="even">
+<td align="left">body_mass_g</td>
+<td align="right">2</td>
+<td align="right">0.99</td>
+<td align="right">4201.75</td>
+<td align="right">801.95</td>
+<td align="right">2700.0</td>
+<td align="right">3550.00</td>
+<td align="right">4050.00</td>
+<td align="right">4750.0</td>
+<td align="right">6300.0</td>
+</tr>
+<tr class="odd">
+<td align="left">year</td>
+<td align="right">0</td>
+<td align="right">1.00</td>
+<td align="right">2008.03</td>
+<td align="right">0.82</td>
+<td align="right">2007.0</td>
+<td align="right">2007.00</td>
+<td align="right">2008.00</td>
+<td align="right">2009.0</td>
+<td align="right">2009.0</td>
+</tr>
+</tbody>
+</table>
+<p>penguins %&gt;% head() select(species) Only the column species</p>
+<div class="sourceCode" id="cb69"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb69-1"><a href="data-analytics---google-course.html#cb69-1" aria-hidden="true" tabindex="-1"></a><span class="co"># from the janitor package</span></span>
+<span id="cb69-2"><a href="data-analytics---google-course.html#cb69-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(<span class="fu">rename_with</span>(penguins, toupper)) <span class="co">#puts every column name in upper case</span></span></code></pre></div>
+<pre><code># A tibble: 6 × 8
+  SPECIES ISLAND BILL_LENGTH_MM BILL_DEPTH_MM FLIPPER_LENGTH_… BODY_MASS_G SEX  
+  &lt;fct&gt;   &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;            &lt;int&gt;       &lt;int&gt; &lt;fct&gt;
+1 Adelie  Torge…           39.1          18.7              181        3750 male 
+2 Adelie  Torge…           39.5          17.4              186        3800 fema…
+3 Adelie  Torge…           40.3          18                195        3250 fema…
+4 Adelie  Torge…           NA            NA                 NA          NA &lt;NA&gt; 
+5 Adelie  Torge…           36.7          19.3              193        3450 fema…
+6 Adelie  Torge…           39.3          20.6              190        3650 male 
+# … with 1 more variable: YEAR &lt;int&gt;</code></pre>
+<div class="sourceCode" id="cb71"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb71-1"><a href="data-analytics---google-course.html#cb71-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(<span class="fu">rename_with</span>(penguins, tolower)) <span class="co">#puts every column name in lower case</span></span></code></pre></div>
+<pre><code># A tibble: 6 × 8
+  species island bill_length_mm bill_depth_mm flipper_length_… body_mass_g sex  
+  &lt;fct&gt;   &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;            &lt;int&gt;       &lt;int&gt; &lt;fct&gt;
+1 Adelie  Torge…           39.1          18.7              181        3750 male 
+2 Adelie  Torge…           39.5          17.4              186        3800 fema…
+3 Adelie  Torge…           40.3          18                195        3250 fema…
+4 Adelie  Torge…           NA            NA                 NA          NA &lt;NA&gt; 
+5 Adelie  Torge…           36.7          19.3              193        3450 fema…
+6 Adelie  Torge…           39.3          20.6              190        3650 male 
+# … with 1 more variable: year &lt;int&gt;</code></pre>
+<div class="sourceCode" id="cb73"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb73-1"><a href="data-analytics---google-course.html#cb73-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(<span class="fu">clean_names</span>(penguins))</span></code></pre></div>
+<pre><code># A tibble: 6 × 8
+  species island bill_length_mm bill_depth_mm flipper_length_… body_mass_g sex  
+  &lt;fct&gt;   &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;            &lt;int&gt;       &lt;int&gt; &lt;fct&gt;
+1 Adelie  Torge…           39.1          18.7              181        3750 male 
+2 Adelie  Torge…           39.5          17.4              186        3800 fema…
+3 Adelie  Torge…           40.3          18                195        3250 fema…
+4 Adelie  Torge…           NA            NA                 NA          NA &lt;NA&gt; 
+5 Adelie  Torge…           36.7          19.3              193        3450 fema…
+6 Adelie  Torge…           39.3          20.6              190        3650 male 
+# … with 1 more variable: year &lt;int&gt;</code></pre>
+<div class="sourceCode" id="cb75"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb75-1"><a href="data-analytics---google-course.html#cb75-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This ensures that there&#39;s only characters, numbers, and underscores in the names.</span></span></code></pre></div>
+<div class="sourceCode" id="cb76"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb76-1"><a href="data-analytics---google-course.html#cb76-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
+<span id="cb76-2"><a href="data-analytics---google-course.html#cb76-2" aria-hidden="true" tabindex="-1"></a>penguins2 <span class="ot">&lt;-</span> penguins <span class="sc">%&gt;%</span> <span class="fu">arrange</span>(<span class="sc">-</span>bill_length_mm)</span>
+<span id="cb76-3"><a href="data-analytics---google-course.html#cb76-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-4"><a href="data-analytics---google-course.html#cb76-4" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(island) <span class="sc">%&gt;%</span> <span class="fu">drop_na</span>() <span class="sc">%&gt;%</span> <span class="fu">summarize</span>(<span class="at">mean_bill_length_mm =</span> <span class="fu">mean</span>(bill_length_mm))</span></code></pre></div>
+<pre><code># A tibble: 3 × 2
+  island    mean_bill_length_mm
+  &lt;fct&gt;                   &lt;dbl&gt;
+1 Biscoe                   45.2
+2 Dream                    44.2
+3 Torgersen                39.0</code></pre>
+<div class="sourceCode" id="cb78"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb78-1"><a href="data-analytics---google-course.html#cb78-1" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(island) <span class="sc">%&gt;%</span>  <span class="fu">drop_na</span>() <span class="sc">%&gt;%</span> <span class="fu">summarize</span>(<span class="at">max_bill_length_mm =</span> <span class="fu">max</span>(bill_length_mm))</span></code></pre></div>
+<pre><code># A tibble: 3 × 2
+  island    max_bill_length_mm
+  &lt;fct&gt;                  &lt;dbl&gt;
+1 Biscoe                  59.6
+2 Dream                   58  
+3 Torgersen               46  </code></pre>
+<div class="sourceCode" id="cb80"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb80-1"><a href="data-analytics---google-course.html#cb80-1" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(species, island) <span class="sc">%&gt;%</span>  <span class="fu">drop_na</span>() <span class="sc">%&gt;%</span> <span class="fu">summarize</span>(<span class="at">max_bl =</span> <span class="fu">max</span>(bill_length_mm), <span class="at">mean_bl =</span> <span class="fu">mean</span>(bill_length_mm))</span></code></pre></div>
+<pre><code># A tibble: 5 × 4
+# Groups:   species [3]
+  species   island    max_bl mean_bl
+  &lt;fct&gt;     &lt;fct&gt;      &lt;dbl&gt;   &lt;dbl&gt;
+1 Adelie    Biscoe      45.6    39.0
+2 Adelie    Dream       44.1    38.5
+3 Adelie    Torgersen   46      39.0
+4 Chinstrap Dream       58      48.8
+5 Gentoo    Biscoe      59.6    47.6</code></pre>
+<div class="sourceCode" id="cb82"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb82-1"><a href="data-analytics---google-course.html#cb82-1" aria-hidden="true" tabindex="-1"></a>bookings_df <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;hotel_bookings.csv&quot;</span>)</span>
+<span id="cb82-2"><a href="data-analytics---google-course.html#cb82-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb82-3"><a href="data-analytics---google-course.html#cb82-3" aria-hidden="true" tabindex="-1"></a>trimmed_df <span class="ot">&lt;-</span> bookings_df <span class="sc">%&gt;%</span> </span>
+<span id="cb82-4"><a href="data-analytics---google-course.html#cb82-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(hotel, is_canceled, lead_time)</span>
+<span id="cb82-5"><a href="data-analytics---google-course.html#cb82-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb82-6"><a href="data-analytics---google-course.html#cb82-6" aria-hidden="true" tabindex="-1"></a>trimmed_df2 <span class="ot">&lt;-</span> trimmed_df <span class="sc">%&gt;%</span> </span>
+<span id="cb82-7"><a href="data-analytics---google-course.html#cb82-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(hotel, is_canceled, lead_time) <span class="sc">%&gt;%</span> </span>
+<span id="cb82-8"><a href="data-analytics---google-course.html#cb82-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">hotel_type =</span> hotel)</span>
+<span id="cb82-9"><a href="data-analytics---google-course.html#cb82-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb82-10"><a href="data-analytics---google-course.html#cb82-10" aria-hidden="true" tabindex="-1"></a>example_df <span class="ot">&lt;-</span> bookings_df <span class="sc">%&gt;%</span></span>
+<span id="cb82-11"><a href="data-analytics---google-course.html#cb82-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(arrival_date_year, arrival_date_month) <span class="sc">%&gt;%</span> </span>
+<span id="cb82-12"><a href="data-analytics---google-course.html#cb82-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unite</span>(arrival_month_year, <span class="fu">c</span>(<span class="st">&quot;arrival_date_month&quot;</span>, <span class="st">&quot;arrival_date_year&quot;</span>), <span class="at">sep =</span> <span class="st">&quot; &quot;</span>)</span>
+<span id="cb82-13"><a href="data-analytics---google-course.html#cb82-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb82-14"><a href="data-analytics---google-course.html#cb82-14" aria-hidden="true" tabindex="-1"></a>example_df <span class="ot">&lt;-</span> bookings_df <span class="sc">%&gt;%</span></span>
+<span id="cb82-15"><a href="data-analytics---google-course.html#cb82-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">guests =</span> adults <span class="sc">+</span> children <span class="sc">+</span> babies)</span>
+<span id="cb82-16"><a href="data-analytics---google-course.html#cb82-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb82-17"><a href="data-analytics---google-course.html#cb82-17" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(example_df)</span></code></pre></div>
+<pre><code># A tibble: 6 × 33
+  hotel        is_canceled lead_time arrival_date_ye… arrival_date_mo… arrival_date_we…
+  &lt;chr&gt;              &lt;dbl&gt;     &lt;dbl&gt;            &lt;dbl&gt; &lt;chr&gt;                       &lt;dbl&gt;
+1 Resort Hotel           0       342             2015 July                           27
+2 Resort Hotel           0       737             2015 July                           27
+3 Resort Hotel           0         7             2015 July                           27
+4 Resort Hotel           0        13             2015 July                           27
+5 Resort Hotel           0        14             2015 July                           27
+6 Resort Hotel           0        14             2015 July                           27
+# … with 27 more variables: arrival_date_day_of_month &lt;dbl&gt;,
+#   stays_in_weekend_nights &lt;dbl&gt;, stays_in_week_nights &lt;dbl&gt;, adults &lt;dbl&gt;,
+#   children &lt;dbl&gt;, babies &lt;dbl&gt;, meal &lt;chr&gt;, country &lt;chr&gt;,
+#   market_segment &lt;chr&gt;, distribution_channel &lt;chr&gt;, is_repeated_guest &lt;dbl&gt;,
+#   previous_cancellations &lt;dbl&gt;, previous_bookings_not_canceled &lt;dbl&gt;,
+#   reserved_room_type &lt;chr&gt;, assigned_room_type &lt;chr&gt;, booking_changes &lt;dbl&gt;,
+#   deposit_type &lt;chr&gt;, agent &lt;chr&gt;, company &lt;chr&gt;, …</code></pre>
+<div class="sourceCode" id="cb84"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb84-1"><a href="data-analytics---google-course.html#cb84-1" aria-hidden="true" tabindex="-1"></a>example_df <span class="ot">&lt;-</span> bookings_df <span class="sc">%&gt;%</span></span>
+<span id="cb84-2"><a href="data-analytics---google-course.html#cb84-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">number_canceled =</span> <span class="fu">sum</span>(is_canceled),</span>
+<span id="cb84-3"><a href="data-analytics---google-course.html#cb84-3" aria-hidden="true" tabindex="-1"></a>            <span class="at">average_lead_time =</span> <span class="fu">mean</span>(lead_time))</span>
+<span id="cb84-4"><a href="data-analytics---google-course.html#cb84-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb84-5"><a href="data-analytics---google-course.html#cb84-5" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(example_df)</span></code></pre></div>
+<pre><code># A tibble: 1 × 2
+  number_canceled average_lead_time
+            &lt;dbl&gt;             &lt;dbl&gt;
+1           44224              104.</code></pre>
+<p><u><strong>Transforming Data</strong></u></p>
+<div class="sourceCode" id="cb86"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb86-1"><a href="data-analytics---google-course.html#cb86-1" aria-hidden="true" tabindex="-1"></a><span class="co"># first creating a data frame</span></span>
+<span id="cb86-2"><a href="data-analytics---google-course.html#cb86-2" aria-hidden="true" tabindex="-1"></a>id <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>)</span>
+<span id="cb86-3"><a href="data-analytics---google-course.html#cb86-3" aria-hidden="true" tabindex="-1"></a>name <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;John Mendes&quot;</span>, <span class="st">&quot;Rob Stewart&quot;</span>, <span class="st">&quot;Rachel Abrahamson&quot;</span>, <span class="st">&quot;Christy Hickman&quot;</span>, <span class="st">&quot;Johnson Harper&quot;</span>, <span class="st">&quot;Candace Miller&quot;</span>, <span class="st">&quot;Carlson Landy&quot;</span>, <span class="st">&quot;Pansy Jordan&quot;</span>, <span class="st">&quot;Darius Berry&quot;</span>, <span class="st">&quot;Claudia Garcia&quot;</span>)</span>
+<span id="cb86-4"><a href="data-analytics---google-course.html#cb86-4" aria-hidden="true" tabindex="-1"></a>job_title <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Professional&quot;</span>, <span class="st">&quot;Programmer&quot;</span>, <span class="st">&quot;Management&quot;</span>, <span class="st">&quot;Clerical&quot;</span>, <span class="st">&quot;Developer&quot;</span>, <span class="st">&quot;Programmer&quot;</span>, <span class="st">&quot;Management&quot;</span>, <span class="st">&quot;Clerical&quot;</span>, <span class="st">&quot;Developer&quot;</span>, <span class="st">&quot;Programmer&quot;</span>)</span>
+<span id="cb86-5"><a href="data-analytics---google-course.html#cb86-5" aria-hidden="true" tabindex="-1"></a>employee <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(id, name, job_title)</span>
+<span id="cb86-6"><a href="data-analytics---google-course.html#cb86-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb86-7"><a href="data-analytics---google-course.html#cb86-7" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(employee)</span></code></pre></div>
+<pre><code>  id              name    job_title
+1  1       John Mendes Professional
+2  2       Rob Stewart   Programmer
+3  3 Rachel Abrahamson   Management
+4  4   Christy Hickman     Clerical
+5  5    Johnson Harper    Developer
+6  6    Candace Miller   Programmer</code></pre>
+<div class="sourceCode" id="cb88"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb88-1"><a href="data-analytics---google-course.html#cb88-1" aria-hidden="true" tabindex="-1"></a>sep_employee <span class="ot">&lt;-</span> <span class="fu">separate</span>(employee, name, <span class="at">into=</span><span class="fu">c</span>(<span class="st">&#39;first_name&#39;</span>, <span class="st">&#39;last_name&#39;</span>), <span class="at">sep=</span><span class="st">&#39; &#39;</span>) <span class="co"># splits a part of a column by the given seperator. In this case a space</span></span>
+<span id="cb88-2"><a href="data-analytics---google-course.html#cb88-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb88-3"><a href="data-analytics---google-course.html#cb88-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(sep_employee)</span></code></pre></div>
+<pre><code>  id first_name  last_name    job_title
+1  1       John     Mendes Professional
+2  2        Rob    Stewart   Programmer
+3  3     Rachel Abrahamson   Management
+4  4    Christy    Hickman     Clerical
+5  5    Johnson     Harper    Developer
+6  6    Candace     Miller   Programmer</code></pre>
+<div class="sourceCode" id="cb90"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb90-1"><a href="data-analytics---google-course.html#cb90-1" aria-hidden="true" tabindex="-1"></a><span class="fu">unite</span>(sep_employee, <span class="st">&#39;name&#39;</span>, first_name, last_name, <span class="at">sep=</span><span class="st">&#39; &#39;</span>)</span></code></pre></div>
+<pre><code>   id              name    job_title
+1   1       John Mendes Professional
+2   2       Rob Stewart   Programmer
+3   3 Rachel Abrahamson   Management
+4   4   Christy Hickman     Clerical
+5   5    Johnson Harper    Developer
+6   6    Candace Miller   Programmer
+7   7     Carlson Landy   Management
+8   8      Pansy Jordan     Clerical
+9   9      Darius Berry    Developer
+10 10    Claudia Garcia   Programmer</code></pre>
+<div class="sourceCode" id="cb92"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb92-1"><a href="data-analytics---google-course.html#cb92-1" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">%&gt;%</span> </span>
+<span id="cb92-2"><a href="data-analytics---google-course.html#cb92-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb92-3"><a href="data-analytics---google-course.html#cb92-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">body_mass_kg=</span>body_mass_g<span class="sc">/</span><span class="dv">1000</span>, <span class="at">flipper_length_m=</span>flipper_length_mm<span class="sc">/</span><span class="dv">1000</span>)</span></code></pre></div>
+<pre><code># A tibble: 6 × 10
+  species island bill_length_mm bill_depth_mm flipper_length_… body_mass_g sex  
+  &lt;fct&gt;   &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;            &lt;int&gt;       &lt;int&gt; &lt;fct&gt;
+1 Adelie  Torge…           39.1          18.7              181        3750 male 
+2 Adelie  Torge…           39.5          17.4              186        3800 fema…
+3 Adelie  Torge…           40.3          18                195        3250 fema…
+4 Adelie  Torge…           NA            NA                 NA          NA &lt;NA&gt; 
+5 Adelie  Torge…           36.7          19.3              193        3450 fema…
+6 Adelie  Torge…           39.3          20.6              190        3650 male 
+# … with 3 more variables: year &lt;int&gt;, body_mass_kg &lt;dbl&gt;,
+#   flipper_length_m &lt;dbl&gt;</code></pre>
+<p>A <strong>pipe</strong> is a tool in R for expressing a sequence of multiple
+operations. A pipe is represented by a % sign, followed by a &gt; sign,
+and another % sign.</p>
+<p><strong>Nested</strong> describes code that performs a particular function and is
+contained within code that performs a broader function.</p>
+<div class="sourceCode" id="cb94"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb94-1"><a href="data-analytics---google-course.html#cb94-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(<span class="st">&quot;ToothGrowth&quot;</span>)</span>
+<span id="cb94-2"><a href="data-analytics---google-course.html#cb94-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(ToothGrowth)</span></code></pre></div>
+<pre><code>   len supp dose
+1  4.2   VC  0.5
+2 11.5   VC  0.5
+3  7.3   VC  0.5
+4  5.8   VC  0.5
+5  6.4   VC  0.5
+6 10.0   VC  0.5</code></pre>
+<div class="sourceCode" id="cb96"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb96-1"><a href="data-analytics---google-course.html#cb96-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb96-2"><a href="data-analytics---google-course.html#cb96-2" aria-hidden="true" tabindex="-1"></a>filtered_tg <span class="ot">&lt;-</span> <span class="fu">filter</span>(ToothGrowth, dose<span class="sc">==</span><span class="fl">0.5</span>)</span>
+<span id="cb96-3"><a href="data-analytics---google-course.html#cb96-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(<span class="fu">arrange</span>(filtered_tg,len))</span></code></pre></div>
+<pre><code>  len supp dose
+1 4.2   VC  0.5
+2 5.2   VC  0.5
+3 5.8   VC  0.5
+4 6.4   VC  0.5
+5 7.0   VC  0.5
+6 7.3   VC  0.5</code></pre>
+<p><strong>Nested function method</strong>: which is a function that is completely
+contained within another function. Reads from the inside out:</p>
+<div class="sourceCode" id="cb98"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb98-1"><a href="data-analytics---google-course.html#cb98-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(<span class="fu">arrange</span>(<span class="fu">filter</span>(ToothGrowth,dose<span class="sc">==</span><span class="fl">0.5</span>),len))</span></code></pre></div>
+<pre><code>  len supp dose
+1 4.2   VC  0.5
+2 5.2   VC  0.5
+3 5.8   VC  0.5
+4 6.4   VC  0.5
+5 7.0   VC  0.5
+6 7.3   VC  0.5</code></pre>
+<p><strong>Pipe method:</strong></p>
+<p>Command + Shift + M to get the shortcut to inside pipe operators.</p>
+<div class="sourceCode" id="cb100"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb100-1"><a href="data-analytics---google-course.html#cb100-1" aria-hidden="true" tabindex="-1"></a>filtered_tootgroth <span class="ot">&lt;-</span> ToothGrowth <span class="sc">%&gt;%</span> </span>
+<span id="cb100-2"><a href="data-analytics---google-course.html#cb100-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(dose<span class="sc">==</span><span class="fl">0.5</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb100-3"><a href="data-analytics---google-course.html#cb100-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(len)</span></code></pre></div>
+<div class="sourceCode" id="cb101"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb101-1"><a href="data-analytics---google-course.html#cb101-1" aria-hidden="true" tabindex="-1"></a>filtered_tootgrowth <span class="ot">&lt;-</span> ToothGrowth <span class="sc">%&gt;%</span> </span>
+<span id="cb101-2"><a href="data-analytics---google-course.html#cb101-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(dose<span class="sc">==</span><span class="fl">0.5</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb101-3"><a href="data-analytics---google-course.html#cb101-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(supp) <span class="sc">%&gt;%</span> </span>
+<span id="cb101-4"><a href="data-analytics---google-course.html#cb101-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean_len =</span> <span class="fu">mean</span>(len,<span class="at">na.rm=</span>T),<span class="at">.group=</span><span class="st">&quot;drop&quot;</span>)</span>
+<span id="cb101-5"><a href="data-analytics---google-course.html#cb101-5" aria-hidden="true" tabindex="-1"></a>filtered_tootgrowth</span></code></pre></div>
+<pre><code># A tibble: 2 × 3
+  supp  mean_len .group
+  &lt;fct&gt;    &lt;dbl&gt; &lt;chr&gt; 
+1 OJ       13.2  drop  
+2 VC        7.98 drop  </code></pre>
+<hr />
+</div>
+<div id="data-structures" class="section level4" number="10.2.1.3">
+<h4><span class="header-section-number">10.2.1.3</span> Data structures</h4>
+<p><strong>Data structure</strong> is a format for organizing and storing data. Most
+common data structures in the R programming language include: - Vectors
+- Data frames - Matrices - Arrays</p>
+<p><strong>Packages</strong> are units of reproducible R code that you can use to add
+more functionality to R. Packages will not only include the code itself,
+but also documentation that explains the package’s author, function, and
+any other packages that you will need to download.</p>
+<p><strong>Tidyverse</strong> is actually a collection of packages in R with a common
+design philosophy for data manipulation, exploration, and visualization.</p>
+<p>installed.packages() to see which are currently loaded in the r session.</p>
+<p><em>Tidyr</em> is a package used for data cleaning to make tidy data.</p>
+<p><em>Dplyr</em> offers a consistent set of functions that help you complete some
+common data manipulation tasks. For example, the select function picks
+variables based on their names, and the filter function finds cases
+where certain conditions are true.</p>
+<p><strong>Factors</strong> store categorical data in R where the data values are
+limited and usually based on a finite group like country or year.</p>
+<p>Anscombe’s quartet:</p>
+<div class="sourceCode" id="cb103"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb103-1"><a href="data-analytics---google-course.html#cb103-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;Tmisc&quot;</span>)</span>
+<span id="cb103-2"><a href="data-analytics---google-course.html#cb103-2" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(quartet)</span>
+<span id="cb103-3"><a href="data-analytics---google-course.html#cb103-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(quartet)</span></code></pre></div>
+<pre><code>  set  x    y
+1   I 10 8.04
+2   I  8 6.95
+3   I 13 7.58
+4   I  9 8.81
+5   I 11 8.33
+6   I 14 9.96</code></pre>
+<div class="sourceCode" id="cb105"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb105-1"><a href="data-analytics---google-course.html#cb105-1" aria-hidden="true" tabindex="-1"></a>quartet <span class="sc">%&gt;%</span> </span>
+<span id="cb105-2"><a href="data-analytics---google-course.html#cb105-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(set) <span class="sc">%&gt;%</span> </span>
+<span id="cb105-3"><a href="data-analytics---google-course.html#cb105-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="fu">mean</span>(x),<span class="fu">sd</span>(x), <span class="fu">mean</span>(y), <span class="fu">sd</span>(y), <span class="fu">cor</span>(x,y))</span></code></pre></div>
+<pre><code># A tibble: 4 × 6
+  set   `mean(x)` `sd(x)` `mean(y)` `sd(y)` `cor(x, y)`
+  &lt;fct&gt;     &lt;dbl&gt;   &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;       &lt;dbl&gt;
+1 I             9    3.32      7.50    2.03       0.816
+2 II            9    3.32      7.50    2.03       0.816
+3 III           9    3.32      7.5     2.03       0.816
+4 IV            9    3.32      7.50    2.03       0.817</code></pre>
+<div class="sourceCode" id="cb107"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb107-1"><a href="data-analytics---google-course.html#cb107-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(quartet, <span class="fu">aes</span>(x,y)) <span class="sc">+</span></span>
+<span id="cb107-2"><a href="data-analytics---google-course.html#cb107-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb107-3"><a href="data-analytics---google-course.html#cb107-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method=</span>lm, <span class="at">se=</span><span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb107-4"><a href="data-analytics---google-course.html#cb107-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>set)</span></code></pre></div>
+<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-28-1.png" width="100%" /></p>
+<div class="sourceCode" id="cb108"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb108-1"><a href="data-analytics---google-course.html#cb108-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&#39;datasauRus&#39;</span>)</span>
+<span id="cb108-2"><a href="data-analytics---google-course.html#cb108-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb108-3"><a href="data-analytics---google-course.html#cb108-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(datasaurus_dozen, <span class="fu">aes</span>(<span class="at">x=</span>x,<span class="at">y=</span>y, <span class="at">colour=</span>dataset)) <span class="sc">+</span></span>
+<span id="cb108-4"><a href="data-analytics---google-course.html#cb108-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb108-5"><a href="data-analytics---google-course.html#cb108-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_void</span>() <span class="sc">+</span></span>
+<span id="cb108-6"><a href="data-analytics---google-course.html#cb108-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position=</span> <span class="st">&quot;none&quot;</span>) <span class="sc">+</span></span>
+<span id="cb108-7"><a href="data-analytics---google-course.html#cb108-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>dataset)</span></code></pre></div>
+<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-29-1.png" width="100%" /></p>
+<p><strong>The bias function</strong></p>
+<p>Basically the bias function finds the average amount that the actual
+outcome is greater than the predicted outcome.</p>
+<p>An unbiased model should be close to zero.</p>
+<div class="sourceCode" id="cb109"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb109-1"><a href="data-analytics---google-course.html#cb109-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;SimDesign&quot;</span>)</span>
+<span id="cb109-2"><a href="data-analytics---google-course.html#cb109-2" aria-hidden="true" tabindex="-1"></a><span class="co"># We&#39;ll use the bias function to compare forecasted temperatures with actual temperatures. </span></span>
+<span id="cb109-3"><a href="data-analytics---google-course.html#cb109-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb109-4"><a href="data-analytics---google-course.html#cb109-4" aria-hidden="true" tabindex="-1"></a>actual_temp <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">68.3</span>, <span class="dv">70</span>, <span class="fl">72.4</span>, <span class="dv">71</span>, <span class="dv">67</span>, <span class="dv">70</span>)</span>
+<span id="cb109-5"><a href="data-analytics---google-course.html#cb109-5" aria-hidden="true" tabindex="-1"></a>predicted_temp <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">67.9</span>, <span class="dv">69</span>, <span class="fl">71.5</span>, <span class="dv">70</span>, <span class="dv">67</span>, <span class="dv">69</span>)</span>
+<span id="cb109-6"><a href="data-analytics---google-course.html#cb109-6" aria-hidden="true" tabindex="-1"></a><span class="fu">bias</span>(actual_temp, predicted_temp)</span></code></pre></div>
+<pre><code>[1] 0.7166667</code></pre>
+<div class="sourceCode" id="cb111"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb111-1"><a href="data-analytics---google-course.html#cb111-1" aria-hidden="true" tabindex="-1"></a>actual_sales <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">150</span>, <span class="dv">203</span>, <span class="dv">137</span>, <span class="dv">247</span>, <span class="dv">116</span>, <span class="dv">287</span>)</span>
+<span id="cb111-2"><a href="data-analytics---google-course.html#cb111-2" aria-hidden="true" tabindex="-1"></a>predicted_sales <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">200</span>, <span class="dv">300</span>, <span class="dv">150</span>, <span class="dv">250</span>, <span class="dv">150</span>, <span class="dv">300</span>)</span>
+<span id="cb111-3"><a href="data-analytics---google-course.html#cb111-3" aria-hidden="true" tabindex="-1"></a><span class="fu">bias</span>(actual_sales, predicted_sales)</span></code></pre></div>
+<pre><code>[1] -35</code></pre>
+<p>The predicted outcome is larger than the actual outcome which means they
+may be ordering too much stock for release days.</p>
+<div class="sourceCode" id="cb113"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb113-1"><a href="data-analytics---google-course.html#cb113-1" aria-hidden="true" tabindex="-1"></a>hotel_bookings <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;hotel_bookings.csv&quot;</span>)</span>
+<span id="cb113-2"><a href="data-analytics---google-course.html#cb113-2" aria-hidden="true" tabindex="-1"></a>hotel_bookings_v2 <span class="ot">&lt;-</span> <span class="fu">arrange</span>(hotel_bookings, <span class="fu">desc</span>(lead_time))</span></code></pre></div>
+<div class="sourceCode" id="cb114"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb114-1"><a href="data-analytics---google-course.html#cb114-1" aria-hidden="true" tabindex="-1"></a>hotel_bookings_city <span class="ot">&lt;-</span> <span class="fu">filter</span>(hotel_bookings, hotel_bookings<span class="sc">$</span>hotel<span class="sc">==</span><span class="st">&quot;City Hotel&quot;</span>)</span>
+<span id="cb114-2"><a href="data-analytics---google-course.html#cb114-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(hotel_bookings_city<span class="sc">$</span>lead_time)</span></code></pre></div>
+<pre><code>[1] 109.7357</code></pre>
+<div class="sourceCode" id="cb116"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb116-1"><a href="data-analytics---google-course.html#cb116-1" aria-hidden="true" tabindex="-1"></a>hotel_summary <span class="ot">&lt;-</span> </span>
+<span id="cb116-2"><a href="data-analytics---google-course.html#cb116-2" aria-hidden="true" tabindex="-1"></a>  hotel_bookings <span class="sc">%&gt;%</span></span>
+<span id="cb116-3"><a href="data-analytics---google-course.html#cb116-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(hotel) <span class="sc">%&gt;%</span></span>
+<span id="cb116-4"><a href="data-analytics---google-course.html#cb116-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">average_lead_time=</span><span class="fu">mean</span>(lead_time),</span>
+<span id="cb116-5"><a href="data-analytics---google-course.html#cb116-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">min_lead_time=</span><span class="fu">min</span>(lead_time),</span>
+<span id="cb116-6"><a href="data-analytics---google-course.html#cb116-6" aria-hidden="true" tabindex="-1"></a>            <span class="at">max_lead_time=</span><span class="fu">max</span>(lead_time))</span>
+<span id="cb116-7"><a href="data-analytics---google-course.html#cb116-7" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(hotel_summary)</span></code></pre></div>
+<pre><code># A tibble: 2 × 4
+  hotel        average_lead_time min_lead_time max_lead_time
+  &lt;chr&gt;                    &lt;dbl&gt;         &lt;dbl&gt;         &lt;dbl&gt;
+1 City Hotel               110.              0           629
+2 Resort Hotel              92.7             0           737</code></pre>
+<hr />
+</div>
+<div id="visualization-in-r" class="section level4" number="10.2.1.4">
+<h4><span class="header-section-number">10.2.1.4</span> Visualization in R</h4>
+<p><strong>Ggplot:</strong></p>
+<p>The first two letters of ggplot2 actually stand for grammar of graphics.</p>
+<p>Ggplot2 cheat sheet: <a href="https://ggplot2.tidyverse.org/" class="uri">https://ggplot2.tidyverse.org/</a></p>
+<p>4 concepts:</p>
+<ul>
+<li><p><strong>Aesthetic:</strong> In ggplot2 an aesthetic is a visual property of an
+object in your plot.</p></li>
+<li><p><strong>Geom:</strong> A geom refers to the geometric object used to represent
+your data.For example, you can use points to create a scatter plot,
+bars to create a bar chart, or lines to create a line diagram.</p></li>
+<li><p><strong>Facets:</strong> Facets let you display smaller groups or subsets of your
+data. With facets, you can create separate plots for all the
+variables in your dataset.</p></li>
+<li><p><strong>Labels and annotate:</strong> the label and annotate functions let you
+customize your plot. You can add text like titles, subtitles and
+captions to communicate the purpose of your plot or highlight
+important data.</p></li>
+</ul>
+<p>Building blocks of ggplot2:</p>
+<ul>
+<li><p>A data set</p></li>
+<li><p>A set of geoms</p></li>
+<li><p>A set of aesthetics</p></li>
+</ul>
+<div class="sourceCode" id="cb118"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb118-1"><a href="data-analytics---google-course.html#cb118-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;ggplot2&quot;</span>)</span>
+<span id="cb118-2"><a href="data-analytics---google-course.html#cb118-2" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(penguins)</span>
+<span id="cb118-3"><a href="data-analytics---google-course.html#cb118-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins) <span class="sc">+</span> </span>
+<span id="cb118-4"><a href="data-analytics---google-course.html#cb118-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> flipper_length_mm, <span class="at">y =</span> body_mass_g))</span></code></pre></div>
+<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-34-1.png" width="100%" /></p>
+<div class="sourceCode" id="cb119"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb119-1"><a href="data-analytics---google-course.html#cb119-1" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(penguins)</span></code></pre></div>
+<pre><code>[1] &quot;species&quot;           &quot;island&quot;            &quot;bill_length_mm&quot;   
+[4] &quot;bill_depth_mm&quot;     &quot;flipper_length_mm&quot; &quot;body_mass_g&quot;      
+[7] &quot;sex&quot;               &quot;year&quot;             </code></pre>
+<div class="sourceCode" id="cb121"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb121-1"><a href="data-analytics---google-course.html#cb121-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins) <span class="sc">+</span> </span>
+<span id="cb121-2"><a href="data-analytics---google-course.html#cb121-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, <span class="at">y =</span> bill_depth_mm))</span></code></pre></div>
+<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-34-2.png" width="100%" /></p>
+<p>Mapping means matching up a specific variable in your dataset with a
+specific aesthetic. For example, you can map a variable to the x- axis
+of your plot, or you can map a variable to the y-axis of your plot.</p>
+<div class="sourceCode" id="cb122"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb122-1"><a href="data-analytics---google-course.html#cb122-1" aria-hidden="true" tabindex="-1"></a><span class="co">#basic plot</span></span>
+<span id="cb122-2"><a href="data-analytics---google-course.html#cb122-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> hotel_bookings) <span class="sc">+</span></span>
+<span id="cb122-3"><a href="data-analytics---google-course.html#cb122-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> lead_time, <span class="at">y =</span> children))</span></code></pre></div>
+<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-35-1.png" width="100%" /></p>
+<div class="sourceCode" id="cb123"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb123-1"><a href="data-analytics---google-course.html#cb123-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins) <span class="sc">+</span></span>
+<span id="cb123-2"><a href="data-analytics---google-course.html#cb123-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> flipper_length_mm, <span class="at">y =</span> body_mass_g, <span class="at">color=</span>species))<span class="co"># changing the aesthetic of the data by grouping per color</span></span></code></pre></div>
+<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-35-2.png" width="100%" /></p>
+<div class="sourceCode" id="cb124"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb124-1"><a href="data-analytics---google-course.html#cb124-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins) <span class="sc">+</span></span>
+<span id="cb124-2"><a href="data-analytics---google-course.html#cb124-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> flipper_length_mm, <span class="at">y =</span> body_mass_g, <span class="at">shape=</span>species))<span class="co"># shape per group</span></span></code></pre></div>
+<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-35-3.png" width="100%" /></p>
+<div class="sourceCode" id="cb125"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb125-1"><a href="data-analytics---google-course.html#cb125-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins) <span class="sc">+</span></span>
+<span id="cb125-2"><a href="data-analytics---google-course.html#cb125-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> flipper_length_mm, <span class="at">y =</span> body_mass_g, <span class="at">shape=</span>species, <span class="at">color=</span>species))<span class="co"># shape per group &amp; color</span></span></code></pre></div>
+<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-35-4.png" width="100%" /></p>
+<div class="sourceCode" id="cb126"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb126-1"><a href="data-analytics---google-course.html#cb126-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins) <span class="sc">+</span></span>
+<span id="cb126-2"><a href="data-analytics---google-course.html#cb126-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> flipper_length_mm, <span class="at">y =</span> body_mass_g, <span class="at">shape=</span>species, <span class="at">color=</span>species, <span class="at">size=</span>species))<span class="co"># shape per group &amp; color &amp; size</span></span></code></pre></div>
+<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-35-5.png" width="100%" /></p>
+<div class="sourceCode" id="cb127"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb127-1"><a href="data-analytics---google-course.html#cb127-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins) <span class="sc">+</span></span>
+<span id="cb127-2"><a href="data-analytics---google-course.html#cb127-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> flipper_length_mm, <span class="at">y =</span> body_mass_g, <span class="at">alpha=</span>species)) <span class="co"># aplha</span></span></code></pre></div>
+<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-35-6.png" width="100%" /></p>
+<p>Different geoms:</p>
+<div class="sourceCode" id="cb128"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb128-1"><a href="data-analytics---google-course.html#cb128-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Combining multiple geoms in one plot</span></span>
+<span id="cb128-2"><a href="data-analytics---google-course.html#cb128-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins) <span class="sc">+</span></span>
+<span id="cb128-3"><a href="data-analytics---google-course.html#cb128-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> flipper_length_mm, <span class="at">y =</span> body_mass_g)) <span class="sc">+</span></span>
+<span id="cb128-4"><a href="data-analytics---google-course.html#cb128-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> flipper_length_mm, <span class="at">y =</span> body_mass_g)) </span></code></pre></div>
+<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-36-1.png" width="100%" /></p>
+<div class="sourceCode" id="cb129"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb129-1"><a href="data-analytics---google-course.html#cb129-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins) <span class="sc">+</span></span>
+<span id="cb129-2"><a href="data-analytics---google-course.html#cb129-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> flipper_length_mm, <span class="at">y =</span> body_mass_g, <span class="at">linetype=</span>species)) <span class="co"># seperate line for each group</span></span></code></pre></div>
+<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-36-2.png" width="100%" /></p>
+<div class="sourceCode" id="cb130"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb130-1"><a href="data-analytics---google-course.html#cb130-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins) <span class="sc">+</span></span>
+<span id="cb130-2"><a href="data-analytics---google-course.html#cb130-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> flipper_length_mm, <span class="at">y =</span> body_mass_g)) <span class="sc">+</span></span>
+<span id="cb130-3"><a href="data-analytics---google-course.html#cb130-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> flipper_length_mm, <span class="at">y =</span> body_mass_g))</span></code></pre></div>
+<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-36-3.png" width="100%" /></p>
+<div class="sourceCode" id="cb131"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb131-1"><a href="data-analytics---google-course.html#cb131-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> diamonds) <span class="sc">+</span></span>
+<span id="cb131-2"><a href="data-analytics---google-course.html#cb131-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> cut, <span class="at">fill=</span>cut))</span></code></pre></div>
+<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-36-4.png" width="100%" /></p>
+<div class="sourceCode" id="cb132"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb132-1"><a href="data-analytics---google-course.html#cb132-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> diamonds) <span class="sc">+</span></span>
+<span id="cb132-2"><a href="data-analytics---google-course.html#cb132-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> cut, <span class="at">fill=</span>clarity))</span></code></pre></div>
+<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-36-5.png" width="100%" /></p>
+<p><strong>Smoothing</strong> enables the detection of a data trend even when you can’t
+easily notice a trend from the plotted data points. Ggplot2’s smoothing
+functionality is helpful because it adds a <strong>smoothing line</strong> as another
+layer to a plot; the smoothing line helps the data to make sense to a
+casual observer.</p>
+<p><img src="images/paste-DEC74C0B.png" width="1200" /></p>
+<p><strong>Facet functions</strong> let you display smaller groups or subsets of your
+data. A facet is a side or section of an object, like the sides of a
+gemstone. Facets show different sides of your data by placing each
+subset on its own plot. Two functions for faceting:</p>
+<ul>
+<li>Facet_wrap()</li>
+</ul>
+<div class="sourceCode" id="cb133"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb133-1"><a href="data-analytics---google-course.html#cb133-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>penguins) <span class="sc">+</span></span>
+<span id="cb133-2"><a href="data-analytics---google-course.html#cb133-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> flipper_length_mm, <span class="at">y =</span> body_mass_g, <span class="at">color=</span>species)) <span class="sc">+</span></span>
+<span id="cb133-3"><a href="data-analytics---google-course.html#cb133-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>species)</span></code></pre></div>
+<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-37-1.png" width="100%" /></p>
+<ul>
+<li>Facet_grid()</li>
+</ul>
+<div class="sourceCode" id="cb134"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb134-1"><a href="data-analytics---google-course.html#cb134-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>penguins) <span class="sc">+</span></span>
+<span id="cb134-2"><a href="data-analytics---google-course.html#cb134-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> flipper_length_mm, <span class="at">y =</span> body_mass_g, <span class="at">color=</span>species)) <span class="sc">+</span></span>
+<span id="cb134-3"><a href="data-analytics---google-course.html#cb134-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_grid</span>(sex<span class="sc">~</span>species)</span></code></pre></div>
+<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-38-1.png" width="100%" /></p>
+<div class="sourceCode" id="cb135"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb135-1"><a href="data-analytics---google-course.html#cb135-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> hotel_bookings) <span class="sc">+</span></span>
+<span id="cb135-2"><a href="data-analytics---google-course.html#cb135-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> distribution_channel))</span></code></pre></div>
+<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-39-1.png" width="100%" /></p>
+<div class="sourceCode" id="cb136"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb136-1"><a href="data-analytics---google-course.html#cb136-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> hotel_bookings) <span class="sc">+</span></span>
+<span id="cb136-2"><a href="data-analytics---google-course.html#cb136-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> distribution_channel, <span class="at">fill=</span>market_segment))</span></code></pre></div>
+<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-39-2.png" width="100%" /></p>
+<div class="sourceCode" id="cb137"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb137-1"><a href="data-analytics---google-course.html#cb137-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> hotel_bookings) <span class="sc">+</span></span>
+<span id="cb137-2"><a href="data-analytics---google-course.html#cb137-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> distribution_channel)) <span class="sc">+</span></span>
+<span id="cb137-3"><a href="data-analytics---google-course.html#cb137-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>deposit_type)</span></code></pre></div>
+<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-39-3.png" width="100%" /></p>
+<div class="sourceCode" id="cb138"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb138-1"><a href="data-analytics---google-course.html#cb138-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> hotel_bookings) <span class="sc">+</span></span>
+<span id="cb138-2"><a href="data-analytics---google-course.html#cb138-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> distribution_channel)) <span class="sc">+</span></span>
+<span id="cb138-3"><a href="data-analytics---google-course.html#cb138-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>deposit_type) <span class="sc">+</span></span>
+<span id="cb138-4"><a href="data-analytics---google-course.html#cb138-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>))</span></code></pre></div>
+<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-39-4.png" width="100%" /></p>
+<div class="sourceCode" id="cb139"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb139-1"><a href="data-analytics---google-course.html#cb139-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> hotel_bookings) <span class="sc">+</span></span>
+<span id="cb139-2"><a href="data-analytics---google-course.html#cb139-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> distribution_channel)) <span class="sc">+</span></span>
+<span id="cb139-3"><a href="data-analytics---google-course.html#cb139-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_grid</span>(<span class="sc">~</span>deposit_type) <span class="sc">+</span></span>
+<span id="cb139-4"><a href="data-analytics---google-course.html#cb139-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>))</span></code></pre></div>
+<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-39-5.png" width="100%" /></p>
+<p><u>Filtering data for plotting:</u></p>
+<div class="sourceCode" id="cb140"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb140-1"><a href="data-analytics---google-course.html#cb140-1" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">%&gt;%</span></span>
+<span id="cb140-2"><a href="data-analytics---google-course.html#cb140-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(species <span class="sc">==</span> <span class="st">&quot;Chinstrap&quot;</span>) <span class="sc">%&gt;%</span>  </span>
+<span id="cb140-3"><a href="data-analytics---google-course.html#cb140-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, <span class="at">y =</span> flipper_length_mm, <span class="at">colour =</span> sex)) <span class="sc">+</span>  </span>
+<span id="cb140-4"><a href="data-analytics---google-course.html#cb140-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.3</span>,  <span class="at">position =</span> <span class="fu">position_jitter</span>()) <span class="sc">+</span> <span class="fu">stat_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>)</span></code></pre></div>
+<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-40-1.png" width="100%" /></p>
+<div class="sourceCode" id="cb141"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb141-1"><a href="data-analytics---google-course.html#cb141-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> hotel_bookings) <span class="sc">+</span></span>
+<span id="cb141-2"><a href="data-analytics---google-course.html#cb141-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> hotel)) <span class="sc">+</span></span>
+<span id="cb141-3"><a href="data-analytics---google-course.html#cb141-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>market_segment)</span></code></pre></div>
+<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-41-1.png" width="100%" /></p>
+<div class="sourceCode" id="cb142"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb142-1"><a href="data-analytics---google-course.html#cb142-1" aria-hidden="true" tabindex="-1"></a>onlineta_city_hotels_v2 <span class="ot">&lt;-</span> hotel_bookings <span class="sc">%&gt;%</span></span>
+<span id="cb142-2"><a href="data-analytics---google-course.html#cb142-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(hotel<span class="sc">==</span><span class="st">&quot;City Hotel&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb142-3"><a href="data-analytics---google-course.html#cb142-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(market_segment<span class="sc">==</span><span class="st">&quot;Online TA&quot;</span>)</span>
+<span id="cb142-4"><a href="data-analytics---google-course.html#cb142-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb142-5"><a href="data-analytics---google-course.html#cb142-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> onlineta_city_hotels_v2) <span class="sc">+</span></span>
+<span id="cb142-6"><a href="data-analytics---google-course.html#cb142-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> lead_time, <span class="at">y =</span> children))</span></code></pre></div>
+<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-42-1.png" width="100%" /></p>
+<p><u>Annotation layer</u></p>
+<p><strong>Annotate:</strong> to annotate means to add notes to a document or diagram to
+explain or comment upon it.</p>
+<div class="sourceCode" id="cb143"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb143-1"><a href="data-analytics---google-course.html#cb143-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>penguins) <span class="sc">+</span></span>
+<span id="cb143-2"><a href="data-analytics---google-course.html#cb143-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> flipper_length_mm, <span class="at">y =</span> body_mass_g, <span class="at">color=</span>species)) <span class="sc">+</span></span>
+<span id="cb143-3"><a href="data-analytics---google-course.html#cb143-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">&quot;Palmer peguins: Body Mass vs Flipper Length&quot;</span>, <span class="at">subtitle=</span><span class="st">&quot;Sample of three penguin species&quot;</span>, <span class="at">caption=</span><span class="st">&quot;Data collected by Dr. Kristen Gorman&quot;</span>) <span class="sc">+</span></span>
+<span id="cb143-4"><a href="data-analytics---google-course.html#cb143-4" aria-hidden="true" tabindex="-1"></a><span class="fu">annotate</span>(<span class="st">&quot;text&quot;</span>, <span class="at">x=</span><span class="dv">220</span>,<span class="at">y=</span><span class="dv">3500</span>, <span class="at">label=</span><span class="st">&quot;The gentoos are the largest&quot;</span>, <span class="at">color=</span><span class="st">&quot;red&quot;</span>, <span class="at">fontface=</span><span class="st">&quot;bold&quot;</span>, <span class="at">size=</span><span class="dv">2</span>, <span class="at">angle=</span><span class="dv">45</span>)</span></code></pre></div>
+<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-43-1.png" width="100%" /></p>
+<div class="sourceCode" id="cb144"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb144-1"><a href="data-analytics---google-course.html#cb144-1" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data=</span>penguins) <span class="sc">+</span></span>
+<span id="cb144-2"><a href="data-analytics---google-course.html#cb144-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> flipper_length_mm, <span class="at">y =</span> body_mass_g, <span class="at">color=</span>species)) <span class="sc">+</span></span>
+<span id="cb144-3"><a href="data-analytics---google-course.html#cb144-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">&quot;Palmer peguins: Body Mass vs Flipper Length&quot;</span>, <span class="at">subtitle=</span><span class="st">&quot;Sample of three penguin species&quot;</span>, <span class="at">caption=</span><span class="st">&quot;Data collected by Dr. Kristen Gorman&quot;</span>) </span>
+<span id="cb144-4"><a href="data-analytics---google-course.html#cb144-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb144-5"><a href="data-analytics---google-course.html#cb144-5" aria-hidden="true" tabindex="-1"></a>p <span class="sc">+</span> <span class="fu">annotate</span>(<span class="st">&quot;text&quot;</span>, <span class="at">x=</span><span class="dv">220</span>,<span class="at">y=</span><span class="dv">3500</span>, <span class="at">label=</span><span class="st">&quot;The gentoos are the largest&quot;</span>) <span class="co"># saves the plot as a variable and then using it in order to avoid typing too much</span></span></code></pre></div>
+<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-43-2.png" width="100%" /></p>
+<p>Saving plots with ggsave:</p>
+<div class="sourceCode" id="cb145"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb145-1"><a href="data-analytics---google-course.html#cb145-1" aria-hidden="true" tabindex="-1"></a>mindate <span class="ot">&lt;-</span> <span class="fu">min</span>(hotel_bookings<span class="sc">$</span>arrival_date_year)</span>
+<span id="cb145-2"><a href="data-analytics---google-course.html#cb145-2" aria-hidden="true" tabindex="-1"></a>maxdate <span class="ot">&lt;-</span> <span class="fu">max</span>(hotel_bookings<span class="sc">$</span>arrival_date_year)</span>
+<span id="cb145-3"><a href="data-analytics---google-course.html#cb145-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb145-4"><a href="data-analytics---google-course.html#cb145-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> hotel_bookings) <span class="sc">+</span></span>
+<span id="cb145-5"><a href="data-analytics---google-course.html#cb145-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> market_segment)) <span class="sc">+</span></span>
+<span id="cb145-6"><a href="data-analytics---google-course.html#cb145-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>hotel) <span class="sc">+</span></span>
+<span id="cb145-7"><a href="data-analytics---google-course.html#cb145-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>)) <span class="sc">+</span></span>
+<span id="cb145-8"><a href="data-analytics---google-course.html#cb145-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">&quot;Comparison of market segments by hotel type for hotel bookings&quot;</span>,</span>
+<span id="cb145-9"><a href="data-analytics---google-course.html#cb145-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption=</span><span class="fu">paste0</span>(<span class="st">&quot;Data from: &quot;</span>, mindate, <span class="st">&quot; to &quot;</span>, maxdate))</span></code></pre></div>
+<p><img src="Business-Analytics-Summary_files/figure-html/unnamed-chunk-45-1.png" width="100%" /></p>
+</div>
+<div id="r-markdown-1" class="section level4" number="10.2.1.5">
+<h4><span class="header-section-number">10.2.1.5</span> R markdown</h4>
+<p><strong>R Markdown</strong> is a file format for making dynamic documents with R.You
+can use an R Markdown file as a code notebook to save, organize, and
+document your analysis using code chunks, comments, and other features.</p>
+<p><strong>Markdown</strong> is a syntax for formatting plain text files.</p>
+<p><strong>R Notebook</strong> lets users run the code and show the graphs and charts
+that visualize the code.</p>
+<p><strong>HTML</strong> is the set of markup symbols and codes used to create a web
+page.</p>
+<p>Rmarkdown cheat sheet: <a href="https://rmarkdown.rstudio.com/lesson-15.html" class="uri">https://rmarkdown.rstudio.com/lesson-15.html</a></p>
+<p><strong>Jupyter notebooks</strong> are documents that contain computer code and rich
+text elements – such as comments, links, or descriptions of your
+analysis and results.</p>
+<p><strong>YAML</strong> is a language for data that translates it, so it’s readable.
+YAML originally stood for yet another markup language. This section is
+called out using three dashes on the first and last lines. This syntax
+automatically creates the YAML header section when it’s used in an RMD
+file. In an RMD file, this section’s basically for metadata or the data
+about the data in the rest of the file. The title author, date and file
+type of an output are automatically included when you create a new file.</p>
+<p>This:</p>
+<div class="sourceCode" id="cb146"><pre class="sourceCode r watch-out"><code class="sourceCode r"><span id="cb146-1"><a href="data-analytics---google-course.html#cb146-1" aria-hidden="true" tabindex="-1"></a><span class="co">#[click link](https://nl.wikipedia.org/wiki/Dog)</span></span>
+<span id="cb146-2"><a href="data-analytics---google-course.html#cb146-2" aria-hidden="true" tabindex="-1"></a><span class="co">#![example 1](r-project.org/logo/Rlogo.png)</span></span></code></pre></div>
+<p>Creates this: <a href="https://nl.wikipedia.org/wiki/Dog">click link</a> <img src="r-project.org/logo/Rlogo.png" alt="example 1" /></p>
+<p>A <strong>delimiter</strong> is a character that indicates the beginning or end of a
+data item. For example: ```.</p>
+<p> </p>
+<hr />
+</div>
+</div>
+</div>
+<div id="questions-to-make-data-drive-decisions" class="section level2" number="10.3">
+<h2><span class="header-section-number">10.3</span> Questions to make data-drive decisions</h2>
+<p><strong>Structured thinking i</strong>s the process of recognizing the current
+problem or situation, organizing available information, revealing gaps
+and opportunities, and identifying the options. In this process, you
+address a vague, complex problem by breaking it down into smaller steps,
+and then those steps lead you to a logical solution.</p>
+<p>This process involves four basic activities:</p>
+<ol style="list-style-type: decimal">
+<li><p>Recognizing the current problem or situation</p></li>
+<li><p>Organizing available information</p></li>
+<li><p>Revealing gaps and opportunities</p></li>
+<li><p>Identifying your options</p></li>
+</ol>
+<p> </p>
+<p><strong>A scope of work</strong> or SOW is an agreed- upon outline of the work you’re
+going to perform on a project. For many businesses, this includes things
+like work details, schedules, and reports that the client can expect.</p>
+<ul>
+<li><p>Deliverables</p></li>
+<li><p>Timelines</p></li>
+<li><p>Milestones</p></li>
+<li><p>Reports</p></li>
+</ul>
+<p><img src="images/paste-D8B37881.png" /></p>
+<p> </p>
+<p><strong>Marketing analytics</strong> is the process of measuring, analyzing, and
+managing a company’s marketing strategy and budget. Often, this involves
+identifying the company’s target audience.</p>
+<p><u>Possible problems types:</u></p>
+<ul>
+<li><p><em>Making predictions:</em> involves using data to make an informed
+decision about how things may be in the future.</p></li>
+<li><p><em>Categorizing things:</em> assigning information to different groups or
+clusters based on common features.</p></li>
+<li><p><em>Spotting something unusual:</em> data analysts identify data that is
+different from the norm.</p></li>
+<li><p><em>Identifying themes:</em> Identifying themes takes categorization as a
+step further by grouping information into broader concepts.</p></li>
+<li><p><em>Discovering connections:</em> enables data analysts to find similar
+challenges faced by different entities, and then combine data and
+insights to address them.</p></li>
+<li><p><em>Finding patterns:</em> Data analysts use data to find patterns by using
+historical data to understand what happened in the past and is
+therefore likely to happen again.</p></li>
+</ul>
+<p> </p>
+<div id="smart-questions" class="section level4" number="10.3.0.1">
+<h4><span class="header-section-number">10.3.0.1</span> SMART questions</h4>
+<p><strong>- Specific questions</strong> are simple, significant and focused on a single
+topic or a few closely related ideas.</p>
+<p><strong>- Measurable questions</strong> can be quantified and assessed.</p>
+<p><strong>- Action-oriented questions</strong> encourage change.</p>
+<p><strong>- Relevant questions</strong> matter, are important and have significance to
+the problem you’re trying to solve.</p>
+<p><strong>- Time-bound questions</strong> specify the time to be studied.</p>
+<p><img src="images/paste-8D3D72E1.png" width="1200" /></p>
+<p><strong>Fairness:</strong> means ensuring that your questions don’t create or
+reinforce bias.</p>
+<p><strong>Leading questions</strong>: questions that only have a particular response.
+Example: This product is too expensive, isn’t it?</p>
+<p><strong>Closed-ended questions</strong>: questions that ask for a one-word or brief
+response only. <a href="Example:Were" class="uri">Example:Were</a> you satisfied with the customer trial?</p>
+<p> </p>
+<hr />
+<p><strong>Data-inspired decision-making</strong> explores different data sources to
+find out what they have in common.</p>
+<p><strong>Quantitative data</strong> is all about the specific and objective measures
+of numerical facts. This can often be the what, how many, and how often
+about a problem. In other words, things you can measure.</p>
+<p><strong>Qualitative data</strong> describes subjective or explanatory measures of
+qualities and characteristics or things that can’t be measured with
+numerical data.</p>
+<p><strong>Stakeholders</strong> are people that have invested time, interest, and
+resources into the projects.</p>
+<p><strong>Project managers</strong> support you and your work by managing the project
+timeline, providing guidance and resources, and setting up efficient
+workflows.</p>
+<p> </p>
+<p>Questions to ask to stay on task:</p>
+<ul>
+<li><p>Who are the primary and secondary stakeholders?</p></li>
+<li><p>Who is managing the data?</p></li>
+<li><p>Where can you go for help?</p></li>
+</ul>
+<p>Four important questions related to your audience:in an email</p>
+<ol style="list-style-type: decimal">
+<li><p>Who is your audience?</p></li>
+<li><p>What do they already know?</p></li>
+<li><p>What do they need to know?</p></li>
+<li><p>How can you best communicate what they need to know?</p></li>
+</ol>
+<p> </p>
+<hr />
+</div>
+<div id="data-presentation-tools" class="section level4" number="10.3.0.2">
+<h4><span class="header-section-number">10.3.0.2</span> Data presentation tools</h4>
+<ul>
+<li><p><strong>Reports:</strong> a static collection of data given to stakeholders
+periodically. Reports are great for giving snapshots of high level
+historical data for an organization. They’re quick to design and
+easy to use as long as you continually maintain them. They reflect
+data that’s already been cleaned and sorted.</p></li>
+<li><p><strong>Dashboards:</strong> monitors live, incoming data. Give your team more
+access to information being recorded, you can interact through data
+by playing with filters, and because they’re dynamic, they have
+long-term value. They take a lot of time to design and can actually
+be less efficient than reports, if they’re not used very often.
+Dashboards can sometimes overwhelm people with information too.</p></li>
+</ul>
+<p><strong>A pivot table</strong> is a data summarization tool that is used in data
+processing. Pivot tables are used to summarize, sort, re-organize,
+group, count, total,or average data stored in a database. It allows its
+users to transform columns into rows and rows into columns.</p>
+<p>A <strong>metric</strong> is a single, quantifiable type of data that can be used for
+measurement. Think of it this way. Data starts as a collection of raw
+facts, until we organize them into individual metrics that represent a
+single type of data.</p>
+<p><strong>Return On Investment (ROI)</strong> = Net profit / cost of investment</p>
+<p><strong>Mathematical approach:</strong> It means looking at a problem and logically
+breaking it down step-by-step, so you can see the relationship of
+patterns in your data, and use that to analyze your problem.</p>
+<p><strong>Small data:</strong> These kinds of data tend to be made up of datasets
+concerned with specific metrics over a short, well defined period of
+time.</p>
+<p><strong>Big data:</strong> Big data on the other hand has larger, less specific
+datasets covering a longer period of time.</p>
+<p><img src="images/paste-D35F45EF.png" width="1200" /></p>
+<p><strong>V words for big data:</strong></p>
+<p><img src="images/paste-7F7139C0.png" width="1200" /></p>
+<p> </p>
+<hr />
+</div>
+</div>
+<div id="prepare-for-data-exploration" class="section level2" number="10.4">
+<h2><span class="header-section-number">10.4</span> Prepare for data exploration</h2>
+<p><strong>Cookies:</strong> which are small files stored on computers that contain
+information about users. Cookies can help inform advertisers about your
+personal interests and habits based on your online surfing, without
+personally identifying you.</p>
+<p><u>Types of data sources:</u></p>
+<p><strong>First-party data:</strong> This is data collected by an individual or group
+using their own resources.</p>
+<p><strong>Second-party data:</strong> which is data collected by a group directly from
+its audience and then sold.</p>
+<p><strong>Third-party data</strong> or data collected from outside sources might have
+come from a number of different sources before you investigated it. It
+might not be as reliable, but that doesn’t mean it can’t be useful.
+You’ll just want to make sure you check it for accuracy, bias, and
+credibility.</p>
+<p><strong>Population</strong> refers to all possible data values in a certain data set.
+Collecting data from the entire population can be pretty challenging.</p>
+<p><strong>Sample</strong> is a part of a population that is representative of the
+population.</p>
+<p>Data collection considerations:</p>
+<ol style="list-style-type: decimal">
+<li><p>Select the right type of data</p></li>
+<li><p>Determine the time frame</p>
+<ol style="list-style-type: decimal">
+<li><p>Collect new data?</p>
+<ul>
+<li><p>Decide how data will be collected</p></li>
+<li><p>Decide how much data to collect</p></li>
+</ul></li>
+<li><p>Use existing data?</p>
+<ul>
+<li><p>Choose data sources</p></li>
+<li><p>Decide what data to use</p></li>
+</ul></li>
+</ol></li>
+</ol>
+<p> </p>
+<p><strong>Internal data:</strong> data that lives within a company’s own systems.</p>
+<p><strong>External data:</strong> data that lives and is generated outside of an
+organization.</p>
+<p><strong>Structured data:</strong> data that’s organized in a certain format, such as
+rows and columns. Spreadsheets and relational databases are two examples
+of software that can store data in a structured way.</p>
+<p><strong>Unstructured data:</strong> Not organized in any easy-to-identify way. Audio
+files, video files, emails, photos, and social media are all examples of
+unstructured data.</p>
+<p><strong>Unfair dataset:</strong> does not accurately represent the population,
+causing skewed outcomes, low accuracy levels, and unreliable analysis.</p>
+<p> </p>
+<div id="data-modeling" class="section level4" number="10.4.0.1">
+<h4><span class="header-section-number">10.4.0.1</span> Data modeling</h4>
+<p><strong>Data modeling</strong> is the process of creating diagrams that visually
+represent how data is organized and structured. These visual
+representations are called <strong>data models</strong>.</p>
+<p><strong>Data model:</strong> a model that is used for organizing data elements and
+how they relate to one another.</p>
+<p>Three most common types:</p>
+<p><img src="images/paste-D0793DB8.png" width="1200" /><br />
+</p>
+<p> </p>
+<ol style="list-style-type: decimal">
+<li><strong>Conceptual data modeling</strong> gives a high-level view of the data
+structure, such as how data interacts across an organization. For
+example, to define the business requirements for a new database. A
+conceptual data model doesn’t contain technical details.</li>
+</ol>
+<!-- -->
+<ol style="list-style-type: decimal">
+<li><p><strong>Logical data modeling</strong> focuses on the technical details of a
+database such as relationships, attributes, and entities. For
+example, how individual records are uniquely identified in a
+database.</p></li>
+<li><p><strong>Physical data modeling</strong> depicts how a database operates. Defines
+all entities and attributes used; for example, it includes table
+names, column names, and data types for the database.</p></li>
+</ol>
+<p>Developing data models:</p>
+<p><strong>Entity Relationship Diagram (ERD)</strong>: a visual way to understand the
+relationship between entities in the data model.</p>
+<p><strong>Unified Modeling Language (UML)</strong> diagram: are very detailed diagrams
+that describe the structure of a system by showing the system’s
+entities, attributes, operations, and their relationships.</p>
+<p> </p>
+<p><strong>Data types:</strong></p>
+<p><strong>Numeric</strong></p>
+<p><strong>Text data type/string data type:</strong> which is a sequence of characters
+and punctuation that contains textual information.</p>
+<p><strong>A Boolean data type:</strong> a data type with only two possible values: true
+or false.</p>
+<p>Row -&gt; record</p>
+<p>Column -&gt; field</p>
+<p><u>Data formats:</u></p>
+<p><strong>Wide data:</strong> every data subject has a single row with multiple columns
+to hold the values of various attributes of the subject. Easily identify
+and quickly compare.</p>
+<p><strong>Long data</strong> is data in which each row is one time point per subject,
+so each subject will have data in multiple rows. More impact.</p>
+<p><strong>Data transformation</strong> is the process of changing the data’s format,
+structure, or values. Data transformation usually involves:</p>
+<ul>
+<li><p>Adding, copying, or replicating data </p></li>
+<li><p>Deleting fields or records </p></li>
+<li><p>Standardizing the names of variables</p></li>
+<li><p>Renaming, moving, or combining columns in a database</p></li>
+<li><p>Joining one set of data with another</p></li>
+<li><p>Saving a file in a different format. For example, saving a
+spreadsheet as a comma separated values (CSV) file.</p></li>
+</ul>
+<p> </p>
+<p>Goals for data transformation might be: </p>
+<ul>
+<li><p>Data <strong>organization</strong>: better organized data is easier to use</p></li>
+<li><p>Data <strong>compatibility</strong>: different applications or systems can then
+use the same data</p></li>
+<li><p>Data <strong>migration</strong>: data with matching formats can be moved from one
+system to another</p></li>
+<li><p>Data <strong>merging</strong>: data with the same organization can be merged
+together</p></li>
+<li><p>Data <strong>enhancement</strong>: data can be displayed with more detailed
+fields </p></li>
+<li><p>Data <strong>comparison</strong>: apples-to-apples comparisons of the data can
+then be made </p></li>
+</ul>
+<p><img src="images/paste-D3216283.png" width="1200" /></p>
+<p> </p>
+<hr />
+</div>
+<div id="bias" class="section level4" number="10.4.0.2">
+<h4><span class="header-section-number">10.4.0.2</span> Bias</h4>
+<p><strong>Data bias</strong> is a type of error that systematically skews results in a
+certain direction.</p>
+<p><u>Several types of bias:</u></p>
+<p><strong>Sampling bias</strong> is when a sample isn’t representative of the
+population as a whole. You can avoid this by making sure the sample is
+chosen at random, so that all parts of the population have an equal
+chance of being included.</p>
+<p><strong>Observer bias:</strong> which is sometimes referred to as experimenter bias
+or research bias. The tendency for different people to observe things
+differently.</p>
+<p><strong>Interpretation bias:</strong> The tendency to always interpret ambiguous
+situations in a positive, or negative way.</p>
+<p><strong>Confirmation bias:</strong> is the tendency to search for, or interpret
+information in a way that confirms preexisting beliefs.</p>
+<p><em>What is a good data source:</em> <strong>ROCCC</strong></p>
+<p>R - Reliable</p>
+<p>O - Original</p>
+<p>C - Comprehensive</p>
+<p>C - Current</p>
+<p>C - Cited</p>
+<p><u>Data ethics examples:</u></p>
+<ul>
+<li><p><em>Ownership</em></p></li>
+<li><p><em>Transaction transparency:</em> the idea that all data processing
+activities and algorithms should be completely explainable and
+understood by the individual who provides their data.</p></li>
+<li><p><em>Consent</em></p></li>
+<li><p><em>Currency:</em> individuals should be aware of financial transactions
+resulting from the use of their personal data and the scale of these
+transactions.</p></li>
+<li><p><em>Privacy:</em> information privacy or data protection. Privacy means
+preserving a data subject’s information and activity any time a data
+transaction occurs. It also covers a person’s legal right to their
+data.</p></li>
+<li><p><em>Openness:</em> Free access, usage and sharing of data.</p></li>
+</ul>
+<p><strong>Data anonymization</strong> is the process of protecting people’s private or
+sensitive data by eliminating that kind of information. Typically, data
+anonymization involves blanking, hashing, or masking personal
+information, often by using fixed-length codes to represent data
+columns, or hiding data with altered values.</p>
+<p><strong>Personally identifiable information</strong>, or <strong>PII</strong>, is data that is
+reasonably likely to identify a person and make information known about
+them.</p>
+<p><strong>Data base:</strong> a collection of data stored in a computer system.</p>
+<p><strong>A relational database</strong> is a database that contains a series of
+related tables that can be connected via their relationships. For two
+tables to have a relationship, one or more of the same fields must exist
+inside both tables.</p>
+<p>A <strong>primary key</strong> is an identifier that references a column in which
+each value is unique. No rows can have the same primary key. For example
+a participant ID.</p>
+<p>A <strong>foreign key</strong> is a field within a table that’s a primary key in
+another table. A column or group of columns in a relational database
+table that provides a link between the data in two tables. Can have
+multiple foreign keys in one table.</p>
+<p><em>Example:</em></p>
+<p><img src="images/paste-C27C46CF.png" width="1200" /></p>
+<p> </p>
+<p>A primary key may also be constructed using multiple columns of a table.
+This type of primary key is called a <strong>composite key</strong>.</p>
+<p><strong>Metadata</strong> is data about data. Metadata tells you where the data comes
+from, when and how it was created, and what it’s all about. For example,
+an image on a laptop has metadata such as: pixels, when its taken, type
+of photo etc.</p>
+<p>In data analytics, metadata helps data analysts interpret the contents
+of the data within a database. Three types:</p>
+<ul>
+<li><p>Descriptive: describes a piece of data and can be used to identify
+it at a later point in time. F.E. book title, author etc.</p></li>
+<li><p>Structural: metadata that indicates how a piece of data is organized
+and whether it’s part of one or more than one data collection. F.E.
+book pages chapters</p></li>
+<li><p>Administrative: Administrative metadata is metadata that indicates
+the technical source of a digital asset. F.E. when the book was
+released.</p></li>
+</ul>
+<p>A <strong>metadata repository</strong> is a database specifically created to store
+metadata.</p>
+<p>Data analysts use metadata to create a single source of truth, keep data
+consistent and uniform, and ensure that the data we work with is
+accurate, precise, relevant, and timely.</p>
+<p><strong>Data governance</strong> is a process to ensure the formal management of a
+company’s data assets. It’s about the roles and responsibilities of the
+people who work with the metadata every day.</p>
+<p> </p>
+<hr />
+</div>
+</div>
+<div id="processing-data---cleaning" class="section level2" number="10.5">
+<h2><span class="header-section-number">10.5</span> Processing data - cleaning</h2>
+<p><strong>Data integrity</strong> is the accuracy, completeness, consistency, and
+trustworthiness of data throughout its life cycle.</p>
+<p><strong>Data replication</strong> is the process of storing data in multiple
+locations.</p>
+<p><strong>Data transfer</strong> is the process of copying data from a storage device
+to memory, or from one computer to another.</p>
+<p>D<strong>ata manipulation</strong> process involves changing the data to make it more
+organized and easier to read.</p>
+<p><strong>Proxy data:</strong> replacement data</p>
+<p><u>Types of insufficient data</u></p>
+<ul>
+<li><p>Data from only one source</p></li>
+<li><p>Data that keeps updating</p></li>
+<li><p>Outdated data</p></li>
+<li><p>Geographically limited</p></li>
+</ul>
+<p>The <strong>sample size</strong> helps ensure the degree to which you can be
+confident that your conclusions accurately represent the population.</p>
+<p><strong>Margin of error</strong> is the maximum that the sample results are expected
+to differ from those of the actual population.</p>
+<p>#1 cause of poor quality data = human error</p>
+<p><strong>Dirty data</strong> is data that’s incomplete, incorrect, or irrelevant to
+the problem you’re trying to solve. Types of dirty data</p>
+<ul>
+<li><p>Duplicate</p></li>
+<li><p>Outdated</p></li>
+<li><p>Incomplete</p></li>
+<li><p>Incorrect / inaccurate</p></li>
+<li><p>Inconsistent</p></li>
+</ul>
+<p><strong>Data engineers</strong> transform data into a useful format for analysis and
+give it a reliable infrastructure. This means they develop, maintain,
+and test databases, data processors and related systems.</p>
+<p><strong>Data warehousing specialists</strong> develop processes and procedures to
+effectively store and organize data.</p>
+<p><strong>Data validation</strong> is a tool for checking the accuracy and quality of
+data before adding or importing it.</p>
+<p> </p>
+<hr />
+<p><strong>Verification</strong> is a process to confirm that a data cleaning effort was
+well-executed and the resulting data is accurate and reliable.</p>
+<p>A <strong>changelog</strong> is a file containing a chronologically ordered list of
+modifications made to a project. It’s usually organized by version and
+includes the date followed by a list of added, improved, and removed
+features. Changelogs are very useful for keeping track of how a dataset
+evolved over the course of a project.</p>
+<p><strong>Big picture view:</strong></p>
+<ol style="list-style-type: decimal">
+<li>Consider the business problem you’re trying to solve</li>
+<li>Consider the goal of the project</li>
+<li>Consider whether your data is capable of solving the problem</li>
+</ol>
+<p><strong>Documentation:</strong> process of tracking changes, additions, deletions and
+errors involved in your data cleaning effort. Goals:</p>
+<ul>
+<li><p>Recover data-cleaning errors</p></li>
+<li><p>Inform other users of changes</p></li>
+<li><p>Determine quality of data</p></li>
+</ul>
+<p><strong>Changelogs:</strong></p>
+<p>Spreadsheets &gt; version history</p>
+<p>SQL &gt; query history</p>
+<p> </p>
+<hr />
+</div>
+<div id="analyzing-data" class="section level2" number="10.6">
+<h2><span class="header-section-number">10.6</span> Analyzing data</h2>
+<p>The four phases of analysis:</p>
+<ol style="list-style-type: decimal">
+<li>Organize data</li>
+<li>Format and adjust data</li>
+<li>Get input from others</li>
+<li>Transform data</li>
+</ol>
+<p><strong>Transforming data</strong> means identifying relationships and patterns
+between the data, and making calculations based on the data you have.</p>
+<p><strong>Sorting</strong> involves arranging data into a meaningful order to make it
+easier to understand, analyze, and visualize.</p>
+<p><strong>Filtering</strong> is used when you are only interested in seeing data that
+meets a specific criteria, and hiding the rest.</p>
+<p><strong>Outliers</strong> are data points that are very different from similarly
+collected data and might not be reliable values.</p>
+<p><strong>Data validation:</strong> allows you to control what can and can’t be entered
+in your worksheet. Usually, data validation is used to add drop-down
+lists to cells with predetermined options for users to choose from.</p>
+<p>Examples spreadsheets data validation:</p>
+<ul>
+<li><p>Adding drop-down lists</p></li>
+<li><p>Creating custom checkboxes</p></li>
+<li><p>Protecting structured data and formulas</p></li>
+</ul>
+<p><strong>Data aggregation:</strong> the process of gathering data from multiple
+sources in order to combine it into a single summarized collection.</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="marketing-analytics.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["Business-Analytics-Summary.pdf", "Business-Analytics-Summary.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
